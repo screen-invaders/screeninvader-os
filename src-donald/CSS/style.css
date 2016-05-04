@@ -1,17 +1,3 @@
-/* FONTS */
-
-	/* first for IE 4–8 */
-	@font-face {
-		font-family: DIN;
-		src: url("Fonts/DINWeb.eot");
-	}
-
-	/* then for WOFF-capable browsers */
-	@font-face {
-		font-family: DIN;
-		src: url("Fonts/DINWeb.woff") format("woff");
-	}
-
 
 /* TYPOGRAPHY */
 a {

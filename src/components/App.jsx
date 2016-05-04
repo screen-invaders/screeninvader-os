@@ -1,10 +1,16 @@
 import React from 'react';
 
+import Folder from './folder.jsx'
+import Nav from './nav.jsx'
+
 class App extends React.Component{
   render() {
   		return (
-  			<div>
-  				<h1>Hoi ik werk</h1>
+  			<div className="layout__desktop">
+          <Nav />
+          <Folder />
+          <Folder />
+          <Folder />
   			</div>
   		)
 		}

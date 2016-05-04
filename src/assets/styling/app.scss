@@ -1,9 +1,6 @@
-@import 'fonts.scss';
+@import 'typography';
+@import 'colors';
+@import 'base';
+@import 'layout';
 
-body {
-	background: black;
-}
-h1 {
-	font-family: SimplisticSans-Bold;
-	color: white;
-}
+@import 'components/folder';
