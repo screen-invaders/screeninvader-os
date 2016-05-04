@@ -1,7 +1,7 @@
 {
-  "name": "reactstarter",
+  "name": "OS-Template",
   "version": "1.0.0",
-  "description": "Een beginnetje voor nieuwe Reactprojecten",
+  "description": "OS template",
   "main": "index.js",
   "scripts": {
     "prepare": "mkdir -p build/ && cp index.html build/",
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "https://github.com/evanzummeren/reactstarter.git"
   },
-  "author": "Erik van Zummeren",
+  "author": "RJ Korteschiel",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/evanzummeren/reactstarter/issues"
