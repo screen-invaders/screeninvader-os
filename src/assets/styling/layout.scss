@@ -1,8 +1,12 @@
 .layout__desktop {
+  display: flex;
+  flex-direction: column;
+
   width: 100%;
   height: 100%;
   overflow: hidden;
 
+  // shouldn't be in layout
   background: $yellow url(../Images/SI_Logo.svg) no-repeat;
   background-size: 60%; 
   background-attachment: fixed;
@@ -10,5 +14,10 @@
 }
 
 .layout__navigation {
+  flex-grow: 0;
+  overflow: hidden;
+}
 
+.layout__desktop-area {
+  width: 100%;
 }

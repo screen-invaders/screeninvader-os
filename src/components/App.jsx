@@ -8,9 +8,11 @@ class App extends React.Component{
   		return (
   			<div className="layout__desktop">
           <Nav />
-          <Folder />
-          <Folder />
-          <Folder />
+          <div className="layout__desktop-area">
+            <Folder />
+            <Folder />
+            <Folder />
+          </div>
   			</div>
   		)
 		}
