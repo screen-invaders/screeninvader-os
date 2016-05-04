@@ -1,2 +1,1 @@
-# reactstarter
-Een beginnetje voor nieuwe Reactprojecten
+# Screen Invaders - OS Template
