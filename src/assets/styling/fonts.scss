@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'SimplisticSans-Bold';
+  src: url('../fonts/SimplisticSans-Bold.eot'); /* IE9 */
+  src: url('../fonts/SimplisticSans-Bold.woff') format('woff'), /* Modern browsers */
+       url('../fonts/SimplisticSans-Bold.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'SimplisticSans-Medium';
+  src: url('../fonts/SimplisticSans-Medium.eot'); /* IE9 */
+  src: url('../fonts/SimplisticSans-Medium.woff') format('woff'), /* Modern browsers */
+       url('../fonts/SimplisticSans-Medium.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'SimplisticSans-Normal';
+  src: url('../fonts/SimplisticSans-Normal.eot'); /* IE9 */
+  src: url('../fonts/SimplisticSans-Normal.woff') format('woff'), /* Modern browsers */
+       url('../fonts/SimplisticSans-Normal.ttf') format('ttf');
+}
+
+/* Declaration for normal variant */
+@font-face {
+    font-family: 'vpro_vesta';
+    src: url('../fonts/VPROVesta-Regular.eot'); /* IE9 Compatibility Modes */
+    src: url('../fonts/VPROVesta-Regular.eot') format('eot'),  /* IE6-IE8 */
+         url('../fonts/VPROVesta-Regular.woff') format('woff'); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Declaration for the bold variant (this is also used in the logo) */
+@font-face {
+    font-family: 'vpro_vesta';
+    src: url('../fonts/VPROVesta-Bold.eot'); /* IE9 Compatibility Modes */
+    src: url('../fonts/VPROVesta-Bold.eot') format('eot'),  /* IE6-IE8 */
+         url('../fonts/VPROVesta-Bold.woff') format('woff'); /* Modern Browsers */
+
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Declaration for the italic variant */
+@font-face {
+    font-family: 'vpro_vesta';
+    src: url('../fonts/VPROVesta-Italic.eot'); /* IE9 Compatibility Modes */
+    src: url('../fonts/VPROVesta-Italic.eot') format('eot'),  /* IE6-IE8 */
+         url('../fonts/VPROVesta-Italic.woff') format('woff'); /* Modern Browsers */
+
+    font-weight: normal;
+    font-style: italic;
+}
+
+/* Declaration for the bold italic variant */
+@font-face {
+    font-family: 'vpro_vesta';
+    src: url('../fonts/VPROVesta-BoldItalic.eot'); /* IE9 Compatibility Modes */
+    src: url('../fonts/VPROVesta-BoldItalic.eot') format('eot'),  /* IE6-IE8 */
+         url('../fonts/VPROVesta-BoldItalic.woff') format('woff'); /* Modern Browsers */
+
+    font-weight: bold;
+    font-style: italic;
+}
