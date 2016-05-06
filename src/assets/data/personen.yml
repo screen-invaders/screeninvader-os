@@ -1,0 +1,11 @@
+personen:
+- type: "dir"
+  name: "something"
+  contents: 
+- type: "dir"
+  name: "directory"
+  contents:
+- type: "txt"
+  name: "textfile"
+  created:
+  edited:

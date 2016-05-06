@@ -1,16 +1,26 @@
 import React from 'react';
 import Draggable, {DraggableCore} from 'react-draggable';
 
-import imgLogo from '../assets/images/SI_folder.svg'
+import imgLogo from '../assets/images/SI_folder.svg';
 
-class Folder extends React.Component{
+class Window extends React.Component{
   render() {
 		return (
       <Draggable>
-  			<img draggable="false" className="folder" src={imgLogo}></img>
+  			<div draggable="false" className="window">
+          <header className="window__header">
+
+          </header>
+          <main className="window__body">
+
+          </main>
+          <footer className="window__footer">
+
+          </footer>
+        </div>
 		  </Draggable>
     )
 	}
 }
 
-export default Folder;
+export default Window;

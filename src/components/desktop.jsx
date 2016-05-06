@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Folder from './folder.jsx'
+import Folder from './folder.jsx';
 
 class Desktop extends React.Component{
   render() {
