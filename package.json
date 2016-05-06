@@ -7,7 +7,7 @@
     "prepare": "mkdir -p build/ && cp index.html build/",
     "dev": "webpack-dev-server --host 0.0.0.0 --hot --progress --colors --content-base build",
     "predeploy": "mkdir -p build/ && cp index.html build/",
-    "deploy": "NODE_ENV=production webpack -p"
+    "deploy": "NODE_ENV=production webpack -p && sh deploy.sh"
   },
   "repository": {
     "type": "git",
