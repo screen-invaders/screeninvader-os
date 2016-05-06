@@ -1,0 +1,27 @@
+// List of possible colors:
+$lightblue: rgba(225, 236, 247, 1);
+$lightblue-intense: rgba(217, 235, 245, 1);
+$mediumblue: rgba(171, 205, 232, 1);
+$mediumblue-intense: rgba(138, 190, 222, 1);
+$darkblue: rgba(31, 86, 134, 1);
+$darkblue-intense: rgba(23, 52, 94, 1);
+
+$roseypurple: rgba(152, 30, 79, 1);
+
+$white: rgba(255, 255, 255, 1);
+$lightgray: rgba(242, 242, 242, 1);
+$gray: rgba(218, 218, 218, 1);
+$darkgray: rgba(65, 65, 65, 1);
+$black: rgba(0, 0, 0, 1);
+$black-hover: rgba(0,0,0,0.9);
+
+// Definitions used troughout the stylesheets:
+$primary: $darkblue;
+$secundary: $mediumblue;
+$tertiary: $lightblue;
+$complementairy: $roseypurple;
+$night: $black;
+$light: $lightgray;
+$medium: $gray;
+$dark: $darkgray;
+$day: $white;

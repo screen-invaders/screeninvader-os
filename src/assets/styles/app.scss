@@ -3,5 +3,9 @@
 @import 'base';
 @import 'layout';
 
+@import 'components/desktop';
+@import 'components/menu';
 @import 'components/folder';
-@import 'components/nav';
+@import 'components/window';
+
+@import 'theme';

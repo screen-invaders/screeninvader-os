@@ -1,0 +1,17 @@
+.layout__OS {
+  display: flex;
+  flex-direction: column;
+  
+  width: 100%;
+  height: 100%;
+}
+
+.layout__header {
+  display: flex;
+  flex: 0 0 2rem;
+}
+
+.layout__desktop {  
+  display: flex;
+  flex: 1 1;
+}
