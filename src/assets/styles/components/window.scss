@@ -1,3 +1,20 @@
 .window {
-  
+  position: absolute;
+  left: 100px;
+  top: 100px;
+  width: 600px;
+  height: 400px;
+  z-index: 500;
+}
+
+.window__header {
+  height: 80px;
+}
+
+.window__body {
+  height: 300px;
+}
+
+.window__footer {
+  height: 20px;
 }

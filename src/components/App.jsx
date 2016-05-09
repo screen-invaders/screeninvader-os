@@ -18,7 +18,15 @@ class App extends React.Component{
           attempts: 0          
         },
         windows: [
-
+          {
+            type: "explorer",
+            filesystem: "main",
+            filesystemPos: 1,
+            viewPos: {
+              x: 200,
+              y: 200
+            }
+          }
         ]
       },
       databases: {
@@ -40,6 +48,31 @@ class App extends React.Component{
     });
   }
 
+  folderHandler(event){
+    var randX = Math.random() * 400;
+    var randY = Math.random() * 600;
+    this.setState((prevState)=>{
+      prevState.view.windows.push(
+        {
+          type: "explorer",
+          filesystem: "main",
+          filesystemPos: 1,
+          viewPos: {
+            x: randX,
+            y: randY
+          }
+        }
+      );
+      return prevState;
+    });
+  }
+
+  windowHandler(event, action){
+    if (action == "close"){
+
+    }
+  }
+
   overlay(){
     switch (this.state.view.overlay.type){
       case "login": return <Login loginHandler={this.loginHandler.bind(this)} />;
@@ -56,7 +89,7 @@ class App extends React.Component{
             <Menu />
           </header>
           <div className="layout__desktop-main">
-            <Desktop filesystem={this.state.filesystems.main}/>
+            <Desktop windows={this.state.view.windows} filesystem={this.state.filesystems.main} folderHandler={this.folderHandler.bind(this)} windowHandler={this.windowHandler.bind(this)}/>
           </div>
         </div>
 			</div>

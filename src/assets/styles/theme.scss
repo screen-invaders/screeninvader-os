@@ -9,3 +9,19 @@
 .login {
   background: $secundary;
 }
+
+.window {
+  border: 1px solid $night;
+}
+
+.window__header {
+  background: $primary;
+}
+
+.window__body {
+  background: $secundary;
+}
+
+.window__footer {
+  background: $primary;
+}

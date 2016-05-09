@@ -1,16 +1,16 @@
 import React from 'react';
 
 import Folder from './folder.jsx';
+import Window from './window.jsx';
 
 class Desktop extends React.Component{
   render() {
-    console.log(this.props.filesystem)
 		return (
   		<div className="desktop">
         { this.props.filesystem.map((item, key)=>{
-          console.log(item, key);
-          return <Folder key={key} itemData={item}/>
-        })}
+          return <Folder key={key} itemData={item} folderHandler={this.props.folderHandler}/> })}
+        { this.props.windows.map((item, key)=>{
+          return <Window key={key} itemData={item} filesystem={this.props.filesystem} folderHandler={this.props.folderHandler} windowHandler={this.props.windowHandler}/> })}
       </div>
     )
 	}
