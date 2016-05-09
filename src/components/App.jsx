@@ -6,7 +6,6 @@ import Login from './login.jsx';
 import Search from './search.jsx';
 
 import main from '../assets/data/filesystems/main.yml';
-import personen from '../assets/data/filesystems/personen.yml';
 
 class App extends React.Component{
   constructor(props){
@@ -25,7 +24,7 @@ class App extends React.Component{
       databases: {
 
       },
-      filesystems: { main, personen }
+      filesystems: { main }
     }
   }
 
