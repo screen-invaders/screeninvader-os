@@ -24,7 +24,7 @@ class App extends React.Component{
       databases: {
 
       },
-      filesystems: { main }
+      filesystems: { ...main }
     }
   }
 
@@ -56,7 +56,7 @@ class App extends React.Component{
             <Menu />
           </header>
           <div className="layout__desktop-main">
-            <Desktop />
+            <Desktop filesystem={this.state.filesystems.main}/>
           </div>
         </div>
 			</div>

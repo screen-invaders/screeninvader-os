@@ -2,7 +2,8 @@ var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
 
 var babelSettings = {
-	presets: ['react', 'es2015']
+	presets: ['react', 'es2015'],
+  plugins: ['transform-object-rest-spread']
 }
 
 var config = {

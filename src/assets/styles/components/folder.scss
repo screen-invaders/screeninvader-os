@@ -1,5 +1,17 @@
 .folder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100px;
   height: 100px;
-  user-select: none;
+}
+
+.folder__image {
+  width: 50px;
+  heigth: 50px;
+}
+
+.folder__text {
+  text-align: center;
 }

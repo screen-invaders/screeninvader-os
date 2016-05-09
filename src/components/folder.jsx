@@ -7,7 +7,10 @@ class Folder extends React.Component{
   render() {
 		return (
       <Draggable>
-  			<img draggable="false" className="folder" src={imgLogo}></img>
+        <div className="folder">
+  			  <img className="folder__image" draggable="false" src={imgLogo}></img>
+          <p className="folder__text">{this.props.itemData.name}</p>
+        </div>
 		  </Draggable>
     )
 	}
