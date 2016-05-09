@@ -29,9 +29,21 @@ class App extends React.Component{
     }
   }
 
+  loginHandler(event){
+    event.preventDefault();
+    this.setState((prevState)=>{
+      if (this.state.view.overlay.attempts >= 2) {
+        prevState.view.overlay.type = "none";
+      } else {
+        prevState.view.overlay.attempts++;
+      }
+      return prevState;
+    });
+  }
+
   overlay(){
     switch (this.state.view.overlay.type){
-      case "login": return <Login />;
+      case "login": return <Login loginHandler={this.loginHandler.bind(this)} />;
       case "search": return <Search />;
     }
   }

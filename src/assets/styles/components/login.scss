@@ -1,4 +1,40 @@
 .login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
   width: 100%;
   height: 100%;
+}
+
+.login__details {
+  display: flex;
+  flex-direction: column;
+}
+
+.login__username {
+  width: 15rem;
+  height: 2rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.login__password {
+  width: 15rem;
+  height: 2rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.login__submit {
+  width: 15rem;
+  padding: 1rem;
+  border: 1px solid $light;
+  background: $day;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.login__submit:hover {
+  background: $light;
 }

@@ -1,5 +1,8 @@
 # Deploy
 cd build
+
+pwd
+
 git init
 git add -A
 git commit -m "deploy"
