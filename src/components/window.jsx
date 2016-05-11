@@ -8,7 +8,7 @@ class Window extends React.Component{
 		return (
 			<div draggable="false" className="window" style={{left: this.props.itemData.viewPos.x, top: this.props.itemData.viewPos.y}}>
         <header className="window__header">
-
+          <div className="window__close-button" onClick={this.props.windowHandler.bind(null, "close", this.props.itemData)}>x</div>
         </header>
         <main className="window__body">
         { this.props.filesystem.map((item, key)=>{

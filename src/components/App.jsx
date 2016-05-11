@@ -19,6 +19,7 @@ class App extends React.Component{
         },
         windows: [
           {
+            id: 0,
             type: "explorer",
             filesystem: "main",
             filesystemPos: 1,
@@ -28,9 +29,6 @@ class App extends React.Component{
             }
           }
         ]
-      },
-      databases: {
-
       },
       filesystems: { ...main }
     }
@@ -51,9 +49,11 @@ class App extends React.Component{
   folderHandler(event){
     var randX = Math.random() * 400;
     var randY = Math.random() * 600;
+    var nextID = this.state.view.windows.length++;
     this.setState((prevState)=>{
       prevState.view.windows.push(
         {
+          id: nextID,
           type: "explorer",
           filesystem: "main",
           filesystemPos: 1,
@@ -67,9 +67,16 @@ class App extends React.Component{
     });
   }
 
-  windowHandler(event, action){
+  windowHandler(action, windowData, event){
+    console.log("handling windows", this, event, action)
     if (action == "close"){
-
+      this.setState((prevState)=>{
+        this.state.view.windows.map((window, key)=>{
+          if (windowData.id == window.id){
+            prevState.view.windows.splice(key,1);
+          }
+        })
+      })
     }
   }
 

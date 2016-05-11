@@ -12,9 +12,18 @@
 }
 
 .window__body {
+  display:  flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start; 
   height: 300px;
 }
 
 .window__footer {
   height: 20px;
+}
+
+.window__close-button {
+  width: 10px;
+  height: 10px;
 }
