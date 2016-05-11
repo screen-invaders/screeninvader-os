@@ -15,8 +15,13 @@ class Window extends React.Component{
   }
 
   render() {
+    var style = {
+      left: this.props.itemData.viewPos.x, 
+      top: this.props.itemData.viewPos.y, 
+      zIndex: this.props.itemData.viewIndex
+    };
 		return (
-			<div draggable="false" className="window" style={{left: this.props.itemData.viewPos.x, top: this.props.itemData.viewPos.y}}>
+			<div draggable="false" className="window" style={style} onClick={this.props.windowHandler.bind(null, "tofront", this.props.itemData)}>
         <header className="window__header">
           <div className="window__close-button" onClick={this.props.windowHandler.bind(null, "close", this.props.itemData)}>x</div>
         </header>

@@ -102,11 +102,21 @@ class App extends React.Component{
   windowHandler(action, windowData, event){
     if (action == "close"){
       this.setState((prevState)=>{
-        this.state.view.windows.map((window, key)=>{
+        prevState.view.windows.map((window, key)=>{
           if (windowData.id == window.id){
             prevState.view.windows.splice(key,1);
           }
         })
+        return prevState;
+      })
+    } else if (action == "tofront") {
+      this.setState((prevState)=>{
+        prevState.view.windows.map((window, key)=>{
+          if (windowData.id == window.id){
+            prevState.view.windows[key].viewIndex++
+          }
+        })
+        return prevState;
       })
     }
   }
