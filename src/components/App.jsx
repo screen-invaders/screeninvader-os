@@ -52,8 +52,8 @@ class App extends React.Component{
   }
 
   folderHandler(itemData, event){
-    var randX = Math.random() * 400;
-    var randY = Math.random() * 600;
+    var randX = Math.random() * 40;
+    var randY = Math.random() * 60;
     var nextID = Math.random() * 0x10000;
     this.setState((prevState)=>{
       prevState.view.windows.push(

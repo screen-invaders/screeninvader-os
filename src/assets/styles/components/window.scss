@@ -2,8 +2,11 @@
   position: absolute;
   left: 100px;
   top: 100px;
-  width: 600px;
-  height: 400px;
+
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: 40%;
   z-index: 500;
 }
 
@@ -15,8 +18,8 @@
   display:  flex;
   flex-direction: column;
   flex-wrap: wrap;
-  align-content: flex-start; 
-  height: 300px;
+  align-content: flex-start;
+  flex: 1; 
 }
 
 .window__footer {

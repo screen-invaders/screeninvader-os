@@ -16,8 +16,8 @@ class Window extends React.Component{
 
   render() {
     var style = {
-      left: this.props.itemData.viewPos.x, 
-      top: this.props.itemData.viewPos.y, 
+      left: this.props.itemData.viewPos.x + "%", 
+      top: this.props.itemData.viewPos.y + "%", 
       zIndex: this.props.itemData.viewIndex
     };
 
