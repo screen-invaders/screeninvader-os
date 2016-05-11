@@ -88,6 +88,13 @@ class App extends React.Component{
     }
   }
 
+  searchHandler(){
+    this.setState((prevState)=>{
+      prevState.view.overlay.type = "search";
+      return prevState;
+    });
+  }
+
   overlay(){
     switch (this.state.view.overlay.type){
       case "login": return <Login loginHandler={this.loginHandler.bind(this)} />;
@@ -101,7 +108,7 @@ class App extends React.Component{
         { this.overlay() }
         <div className="layout__desktop">
           <header className="layout__desktop-header">
-            <Menu />
+            <Menu searchHandler={this.searchHandler}/>
           </header>
           <div className="layout__desktop-main">
             <Desktop windows={this.state.view.windows} filesystem={this.state.filesystems.main} folderHandler={this.folderHandler.bind(this)} windowHandler={this.windowHandler.bind(this)}/>
