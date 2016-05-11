@@ -10,6 +10,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  font-size: 1rem;
 }
 
 .menu__list-item {
@@ -22,6 +24,17 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
+}
+
+.menu__searchbar {
+  flex: 1 1;
+  height: 100%;
+  width: 100%;
+  font-size: 1rem; 
+  background: $secundary;
+  color: white;
+  -webkit-appearance: none;
+  border: none;
 }
 
 .menu__search-icon {

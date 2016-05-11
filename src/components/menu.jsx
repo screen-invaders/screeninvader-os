@@ -14,10 +14,12 @@ class Menu extends React.Component{
           <li className="menu__list-item">Aangifte</li>
           <li className="menu__list-item">Meldingen</li>
         </ul>
-        <div className="menu__search" onClick={this.props.searchActivate}>
-          <p>Zoeken</p>
-          <img className="menu__search-icon" draggable="false" src={imgLogo}></img>
-        </div>
+
+        <form className="menu__search" onSubmit={this.props.searchHandler}>
+          <input className="menu__searchbar" type="text" defaultValue="Zoeken"></input>
+          <input className="menu__search-icon" type="image" name="image" src={imgLogo}></input>
+        </form>
+
         <div className="menu__user-container">
           <h6 className="menu__user-notice">ingelogd als</h6>
           <p className="menu__user">Mevr. I. XXX</p>
