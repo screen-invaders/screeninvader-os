@@ -12,6 +12,10 @@
   color: white;
 }
 
+.menu__user-notice {
+  color: $secundary;
+}
+
 .login {
   background: $tertiary;
 }
@@ -21,7 +25,7 @@
 }
 
 .window {
-  border: 1px solid $night;
+  border: 1px solid $primary;
 }
 
 .window__header {
@@ -29,7 +33,7 @@
 }
 
 .window__body {
-  background: $secundary;
+  background: $day;
 }
 
 .window__footer {

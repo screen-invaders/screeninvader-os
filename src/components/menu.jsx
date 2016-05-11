@@ -16,7 +16,11 @@ class Menu extends React.Component{
         </ul>
         <div className="menu__search" onClick={this.props.searchActivate}>
           <p>Zoeken</p>
-          <img className="folder__image" draggable="false" src={imgLogo}></img>
+          <img className="menu__search-icon" draggable="false" src={imgLogo}></img>
+        </div>
+        <div className="menu__user-container">
+          <h6 className="menu__user-notice">ingelogd als</h6>
+          <p className="menu__user">Mevr. I. XXX</p>
         </div>
       </div>
 		)

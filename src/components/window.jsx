@@ -29,9 +29,6 @@ class Window extends React.Component{
         <main className="window__body">
         { this.folders() }
         </main>
-        <footer className="window__footer">
-
-        </footer>
       </div>
     )
 	}

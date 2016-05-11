@@ -3,6 +3,7 @@
   width: 100%;
   flex: 1;
   display: flex;
+  justify-content: space-between;
 }
 
 .menu__list {
@@ -17,6 +18,27 @@
 
 .menu__search {
   width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.menu__search-icon {
+  height: 2rem;
+}
+
+.menu__user-container {
+  display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1rem;
+}
+
+.menu__user-notice {
+  padding-right: 1rem;
+}
+
+.menu__user {
+
 }

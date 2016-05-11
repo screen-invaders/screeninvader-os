@@ -11,7 +11,7 @@
 }
 
 .window__header {
-  height: 80px;
+  height: 2rem;
 }
 
 .window__body {
@@ -20,10 +20,6 @@
   flex-wrap: wrap;
   align-content: flex-start;
   flex: 1; 
-}
-
-.window__footer {
-  height: 20px;
 }
 
 .window__close-button {
