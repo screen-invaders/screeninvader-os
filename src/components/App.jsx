@@ -26,6 +26,10 @@ class App extends React.Component{
             viewPos: {
               x: 200,
               y: 200
+            },
+            viewSize: {
+              x: 600,
+              y: 400
             }
           }
         ]
@@ -60,6 +64,10 @@ class App extends React.Component{
           viewPos: {
             x: randX,
             y: randY
+          },
+          viewSize: {
+            x: 600,
+            y: 400
           }
         }
       );

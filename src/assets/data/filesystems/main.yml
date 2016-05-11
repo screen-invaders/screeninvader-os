@@ -1,15 +1,57 @@
 main:
 - type: "dir"
-  name: "something"
+  name: "AFM"
   contents: 
+    - type: "dir"
+    - name: 
 - type: "dir"
-  name: "directory"
+  name: "AMLC"
   contents:
-- type: "txt"
-  name: "textfile"
-  created:
-  edited:
-- type: "txt"
-  name: "textfile"
-  created:
-  edited:
+- type: "dir"
+  name: "AO/IO"
+  contents:
+- type: "dir"
+  name: "BES"
+  contents:
+- type: "dir"
+  name: "BOOM"
+  contents:
+- type: "dir"
+  name: "BVI"
+  contents:
+- type: "dir"
+  name: "CJIB"
+  contents:
+- type: "dir"
+  name: "CN"
+  contents:
+- type: "dir"
+  name: "CT&PF"
+  contents:
+- type: "dir"
+  name: "CT Infobox"
+  contents:
+- type: "dir"
+  name: "CWI"
+  contents:
+- type: "dir"
+  name: "DLR"
+  contents:
+- type: "dir"
+  name: "DNB"
+  contents:
+- type: "dir"
+  name: "DWI"
+  contents:
+- type: "dir"
+  name: "EC"
+  contents:
+- type: "dir"
+  name: "EMM"
+  contents:
+- type: "dir"
+  name: "EMPACT"
+  contents:
+- type: "dir"
+  name: "ESW"
+  contents:
