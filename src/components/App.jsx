@@ -30,7 +30,8 @@ class App extends React.Component{
             viewSize: {
               x: 600,
               y: 400
-            }
+            },
+            viewIndex: 500
           }
         ]
       },
@@ -83,7 +84,8 @@ class App extends React.Component{
           viewSize: {
             x: 600,
             y: 400
-          }
+          },
+          viewIndex: 500
         }
       );
       return prevState;
@@ -91,7 +93,6 @@ class App extends React.Component{
   }
 
   windowHandler(action, windowData, event){
-    console.log("handling windows", this, event, action)
     if (action == "close"){
       this.setState((prevState)=>{
         this.state.view.windows.map((window, key)=>{
