@@ -25,15 +25,23 @@
 }
 
 .window {
-  border: 1px solid $primary;
 }
 
 .window__header {
   background: $primary;
 }
 
+.window__close-button {
+  background: $secundary;
+  color: white;
+}
+
 .window__body {
   background: $day;
+  border-right: 1px solid $primary;
+  border-bottom: 1px solid $primary;
+  border-left: 1px solid $primary;
+
 }
 
 .window__footer {
