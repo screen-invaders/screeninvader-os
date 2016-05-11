@@ -30,6 +30,6 @@
   flex-direction: column;
   flex-wrap: wrap;
   align-content: flex-start;
-  flex: 1;
+  height: calc(100% - 2rem);
 }
 
