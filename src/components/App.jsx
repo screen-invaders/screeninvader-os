@@ -10,7 +10,6 @@ import { main } from '../assets/data/filesystems/main.yml';
 class App extends React.Component{
   constructor(props){
     super(props);
-    console.log(main[0])
     this.state = {
       view: {
         screen: "desktop",
@@ -20,10 +19,9 @@ class App extends React.Component{
         },
         windows: [
           {
-            id: 0,
+            id: 1923798734985,
             folder: main[0],
             type: "explorer",
-            filesystemPos: 1,
             viewPos: {
               x: 200,
               y: 200
@@ -68,22 +66,15 @@ class App extends React.Component{
   }
 
   folderHandler(itemData, event){
-    console.log(itemData);
     var randX = Math.random() * 400;
     var randY = Math.random() * 600;
-    var nextID = this.state.view.windows.length++;
-    if (itemData.depth){
-      var depth = this.itemData.depth; 
-    } else {
-      depth = 0;
-    }
+    var nextID = Math.random() * 0x10000;
     this.setState((prevState)=>{
       prevState.view.windows.push(
         {
           id: nextID,
           folder: itemData,
           type: "explorer",
-          filesystemPos: depth++,
           viewPos: {
             x: randX,
             y: randY
@@ -101,21 +92,32 @@ class App extends React.Component{
 
   windowHandler(action, windowData, event){
     if (action == "close"){
+      event.stopPropagation();
       this.setState((prevState)=>{
-        prevState.view.windows.map((window, key)=>{
-          if (windowData.id == window.id){
+        prevState.view.windows.map((windowItem, key)=>{
+          if (windowData.id == windowItem.id){
             prevState.view.windows.splice(key,1);
           }
         })
         return prevState;
       })
-    } else if (action == "tofront") {
+    } 
+
+    else if (action == "tofront") {
       this.setState((prevState)=>{
-        prevState.view.windows.map((window, key)=>{
-          if (windowData.id == window.id){
-            prevState.view.windows[key].viewIndex++
+        var temp;
+        prevState.view.windows.map((windowItem, key)=>{
+          if (windowData.id == windowItem.id){
+            temp = prevState.view.windows.splice(key,1);
           }
         })
+
+        prevState.view.windows.push(temp[0]);
+
+        prevState.view.windows.map((windowItem, key)=>{
+          return prevState.view.windows[key].viewIndex = 500 + key;
+        });
+
         return prevState;
       })
     }
@@ -129,6 +131,7 @@ class App extends React.Component{
   }
 
   render() {
+    console.log(this.state.view.windows)
 		return (
 			<div className="layout__OS">
         { this.overlay() }

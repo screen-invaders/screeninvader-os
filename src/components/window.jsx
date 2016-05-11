@@ -20,6 +20,7 @@ class Window extends React.Component{
       top: this.props.itemData.viewPos.y, 
       zIndex: this.props.itemData.viewIndex
     };
+
 		return (
 			<div draggable="false" className="window" style={style} onClick={this.props.windowHandler.bind(null, "tofront", this.props.itemData)}>
         <header className="window__header">
