@@ -2,23 +2,43 @@ main:
 - type: "dir"
   name: "AFM"
   contents: 
+  - type: "dir"
+    name: 2009
+  - type: "dir"
+    name: 2010
+  - type: "dir"
+    name: 2011
+  - type: "dir"
+    name: 2012
+  - type: "dir"
+    name: 2013
+  - type: "dir"
+    name: 2014
+    contents:
     - type: "dir"
-    - name: 
+      name: "Klaas"
+      contents:
+      - type: "dir"
+        name: 2009
+      - type: "dir"
+        name: 2010
+    - type: "dir"
+      name: "piet"
 - type: "dir"
   name: "AMLC"
-  contents:
+  contents: 
+  - type: "dir"
+    name: "Klaas"
+  - type: "dir"
+    name: "piet"
 - type: "dir"
   name: "AO/IO"
-  contents:
 - type: "dir"
   name: "BES"
-  contents:
 - type: "dir"
   name: "BOOM"
-  contents:
 - type: "dir"
   name: "BVI"
-  contents:
 - type: "dir"
   name: "CJIB"
   contents:

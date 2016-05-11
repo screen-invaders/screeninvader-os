@@ -5,11 +5,12 @@ import Desktop from './desktop.jsx';
 import Login from './login.jsx';
 import Search from './search.jsx';
 
-import main from '../assets/data/filesystems/main.yml';
+import { main } from '../assets/data/filesystems/main.yml';
 
 class App extends React.Component{
   constructor(props){
     super(props);
+    console.log(main[0])
     this.state = {
       view: {
         screen: "desktop",
@@ -20,8 +21,8 @@ class App extends React.Component{
         windows: [
           {
             id: 0,
+            folder: main[0],
             type: "explorer",
-            filesystem: "main",
             filesystemPos: 1,
             viewPos: {
               x: 200,
@@ -35,7 +36,7 @@ class App extends React.Component{
           }
         ]
       },
-      filesystems: { ...main }
+      filesystems: main
     }
   }
 
@@ -66,17 +67,23 @@ class App extends React.Component{
     });
   }
 
-  folderHandler(event){
+  folderHandler(itemData, event){
+    console.log(itemData);
     var randX = Math.random() * 400;
     var randY = Math.random() * 600;
     var nextID = this.state.view.windows.length++;
+    if (itemData.depth){
+      var depth = this.itemData.depth; 
+    } else {
+      depth = 0;
+    }
     this.setState((prevState)=>{
       prevState.view.windows.push(
         {
           id: nextID,
+          folder: itemData,
           type: "explorer",
-          filesystem: "main",
-          filesystemPos: 1,
+          filesystemPos: depth++,
           viewPos: {
             x: randX,
             y: randY
@@ -120,7 +127,7 @@ class App extends React.Component{
             <Menu searchActivate={this.searchActivate.bind(this)}/>
           </header>
           <div className="layout__desktop-main">
-            <Desktop windows={this.state.view.windows} filesystem={this.state.filesystems.main} folderHandler={this.folderHandler.bind(this)} windowHandler={this.windowHandler.bind(this)}/>
+            <Desktop windows={this.state.view.windows} filesystem={this.state.filesystems} folderHandler={this.folderHandler.bind(this)} windowHandler={this.windowHandler.bind(this)}/>
           </div>
         </div>
 			</div>

@@ -6,7 +6,7 @@ import imgLogo from '../assets/images/SI_folder.svg'
 class Folder extends React.Component{
   render() {
 		return (
-      <div className="folder" onDoubleClick={this.props.folderHandler}>
+      <div className="folder" onDoubleClick={this.props.folderHandler.bind(this.props.itemData)}>
 			  <img className="folder__image" draggable="false" src={imgLogo}></img>
         <p className="folder__text">{this.props.itemData.name}</p>
       </div>
