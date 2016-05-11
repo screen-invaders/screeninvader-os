@@ -117,7 +117,6 @@ class App extends React.Component{
   }
 
   render() {
-    console.log(this.state.view.windows)
 		return (
 			<div className="layout__OS">
         { this.overlay() }
