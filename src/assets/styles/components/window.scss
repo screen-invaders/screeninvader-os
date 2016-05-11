@@ -27,9 +27,10 @@
 
 .window__body {
   display:  flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   align-content: flex-start;
   height: calc(100% - 2rem);
+  overflow-y: scroll;
 }
 
