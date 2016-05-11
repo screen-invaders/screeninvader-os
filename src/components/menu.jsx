@@ -4,7 +4,7 @@ class Menu extends React.Component{
   render() {
 		return (
       <div className="menu">
-        <div onClick={this.props.searchHandler}>search</div>
+        <div onClick={this.props.searchActivate}>search</div>
       </div>
 		)
 	}

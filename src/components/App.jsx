@@ -50,6 +50,21 @@ class App extends React.Component{
     });
   }
 
+  searchActivate(){
+    this.setState((prevState)=>{
+      prevState.view.overlay.type = "search";
+      return prevState;
+    });
+  }
+
+  searchHandler(event){
+    event.preventDefault();
+    this.setState((prevState)=>{
+      prevState.view.overlay.type = "none";
+      return prevState;
+    });
+  }
+
   folderHandler(event){
     var randX = Math.random() * 400;
     var randY = Math.random() * 600;
@@ -88,17 +103,10 @@ class App extends React.Component{
     }
   }
 
-  searchHandler(){
-    this.setState((prevState)=>{
-      prevState.view.overlay.type = "search";
-      return prevState;
-    });
-  }
-
   overlay(){
     switch (this.state.view.overlay.type){
       case "login": return <Login loginHandler={this.loginHandler.bind(this)} />;
-      case "search": return <Search />;
+      case "search": return <Search searchHandler={this.searchHandler.bind(this)}/>;
     }
   }
 
@@ -108,7 +116,7 @@ class App extends React.Component{
         { this.overlay() }
         <div className="layout__desktop">
           <header className="layout__desktop-header">
-            <Menu searchHandler={this.searchHandler}/>
+            <Menu searchActivate={this.searchActivate.bind(this)}/>
           </header>
           <div className="layout__desktop-main">
             <Desktop windows={this.state.view.windows} filesystem={this.state.filesystems.main} folderHandler={this.folderHandler.bind(this)} windowHandler={this.windowHandler.bind(this)}/>
