@@ -18,20 +18,6 @@ class App extends React.Component{
           attempts: 0          
         },
         windows: [
-          {
-            id: 1923798734985,
-            folder: main[0],
-            type: "explorer",
-            viewPos: {
-              x: 200,
-              y: 200
-            },
-            viewSize: {
-              x: 600,
-              y: 400
-            },
-            viewIndex: 500
-          }
         ]
       },
       filesystems: main
