@@ -2,4 +2,21 @@
   height: 100%;
   width: 100%;
   flex: 1;
+  display: flex;
+}
+
+.menu__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu__list-item {
+  padding: 1rem;
+}
+
+.menu__search {
+  width: 300px;
+  align-items: center;
+  justify-content: center;
 }

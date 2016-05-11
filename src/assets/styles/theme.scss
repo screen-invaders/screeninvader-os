@@ -1,13 +1,19 @@
 .desktop {
-  background: $secundary;
+  background: $tertiary;
 }
 
 .menu {
   background: $primary;
+  color: white;
+}
+
+.menu__search {
+  background: $secundary;
+  color: white;
 }
 
 .login {
-  background: $secundary;
+  background: $tertiary;
 }
 
 .search {

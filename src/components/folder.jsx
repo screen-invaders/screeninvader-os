@@ -1,7 +1,7 @@
 import React from 'react';
 import Draggable, {DraggableCore} from 'react-draggable';
 
-import imgLogo from '../assets/images/SI_folder.svg'
+import imgLogo from '../assets/images/folder.png'
 
 class Folder extends React.Component{
   render() {
