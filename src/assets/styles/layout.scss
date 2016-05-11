@@ -26,7 +26,8 @@
   flex: 0 0 3rem;
 }
 
-.layout__desktop-main {  
+.layout__desktop-main {
+  position: relative;
   display: flex;
   flex: 1 1;
 }
