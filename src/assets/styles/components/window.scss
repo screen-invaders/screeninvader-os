@@ -1,8 +1,15 @@
-.react-resizable {
+.window {
   position: absolute;
-  top: 100px;
-  left: 100px;
+  display: flex;
+  flex-direction: column;
+  z-index: 500;
 }
+
+.react-resizable {
+  display: flex;
+  flex-direction: column;
+}
+
 .react-resizable-handle {
   position: absolute;
   width: 50px;
@@ -16,14 +23,6 @@
   background-origin: content-box;
   box-sizing: border-box;
   cursor: se-resize;
-}
-
-.window {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  z-index: 500;
 }
 
 .window__header {
