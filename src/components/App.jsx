@@ -69,7 +69,7 @@ class App extends React.Component{
             x: 600,
             y: 400
           },
-          viewIndex: 500
+          viewIndex: 600
         }
       );
       return prevState;
