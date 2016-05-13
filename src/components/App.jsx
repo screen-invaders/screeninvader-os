@@ -107,6 +107,11 @@ class App extends React.Component{
         return prevState;
       })
     }
+
+    else if (action == "move") {
+
+    }
+
   }
 
   overlay(){

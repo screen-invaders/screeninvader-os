@@ -36,6 +36,10 @@
   border: none;
 }
 
+.menu__searchbar::placeholder {
+  color: $day;
+}
+
 .menu__search-icon {
   height: 2rem;
 }
