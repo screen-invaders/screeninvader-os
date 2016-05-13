@@ -24,7 +24,8 @@ class Window extends React.Component{
 		return (
       <ResizableBox 
         width={600} 
-        height={400}>
+        height={400}
+        minConstraints={[200, 200]} maxConstraints={[1000, 600]}>
   			<div className="window" style={style} onClick={this.props.windowHandler.bind(null, "tofront", this.props.itemData)}>
           <header className="window__header">
             <div className="window__close-button" onClick={this.props.windowHandler.bind(null, "close", this.props.itemData)}>x</div>
