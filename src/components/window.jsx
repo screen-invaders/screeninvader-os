@@ -25,19 +25,23 @@ class Window extends React.Component{
 
 		return (
       <div className="window" style={style} onClick={this.props.windowHandler.bind(null, "tofront", this.props.itemData)}>
-        <ResizableBox 
-          width={600} 
-          height={400}
-          minConstraints={[200, 200]} 
-          maxConstraints={[1000, 600]}
-          >
-            <header className="window__header">
-              <div className="window__close-button" onClick={this.props.windowHandler.bind(null, "close", this.props.itemData)}>x</div>
-            </header>
-            <main className="window__body">
-            { this.folders() }
-            </main>
-        </ResizableBox>
+        <Draggable className="window__draggable">
+          <div>
+            <ResizableBox 
+              width={600} 
+              height={400}
+              minConstraints={[200, 200]} 
+              maxConstraints={[1000, 600]}
+              >
+                <header className="window__header">
+                  <div className="window__close-button" onClick={this.props.windowHandler.bind(null, "close", this.props.itemData)}>x</div>
+                </header>
+                <main className="window__body">
+                  { this.folders() }
+                </main>
+            </ResizableBox>
+          </div>
+        </Draggable>
       </div>
     )
 	}
