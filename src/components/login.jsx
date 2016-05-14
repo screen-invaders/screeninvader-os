@@ -9,10 +9,19 @@ class Login extends React.Component{
   			<div className="login">
           <form className="login__details" onSubmit={this.props.loginHandler}>
             <img className="login__logo" src={imgLogo} />
-            <div className="login__error">
-              <p>Verkeerd Wachtwoord! Nog 2 pogingen</p>
-              <p>klik voor meer info</p>
-            </div>
+            
+            {(()=>{
+              console.log(this.props.view.overlay.attempts)
+              if (this.props.view.overlay.attempts < 2){
+                console.log("passed")
+                return (
+                <div className="login__error">
+                  <p>Verkeerd Wachtwoord! Nog {this.props.view.overlay.attempts + 1} pogingen</p>
+                  <p>klik voor meer info</p>
+                </div> )
+              }
+            })()}            
+            
             <div className="login__group">
               <label className="login__label">Gebruikersnaam</label>
               <input className="login__username" type="text" defaultValue="IvMourik"></input>

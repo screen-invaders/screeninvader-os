@@ -17,19 +17,20 @@
   padding: 0 3rem 3rem 3rem; 
 }
 
+.login__logo {
+  width: 100%;
+  height: auto;
+  margin: 0 0 1rem 0
+}
+
 .login__error {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin: 1rem 0;
+  margin: 0 0 1rem 0;
   padding: 1rem;
   border: 2px solid $complementary;
   color: $complementary;
-}
-
-.login__logo {
-  width: 100%;
-  height: auto;
 }
 
 .login__label {

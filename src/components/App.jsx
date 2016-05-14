@@ -15,7 +15,7 @@ class App extends React.Component{
         screen: "desktop",
         overlay: {
           type: "login",
-          attempts: 0          
+          attempts: 2          
         },
         windows: [
         ]
@@ -27,10 +27,10 @@ class App extends React.Component{
   loginHandler(event){
     event.preventDefault();
     this.setState((prevState)=>{
-      if (this.state.view.overlay.attempts >= 2) {
+      if (this.state.view.overlay.attempts == 0) {
         prevState.view.overlay.type = "none";
       } else {
-        prevState.view.overlay.attempts++;
+        prevState.view.overlay.attempts--;
       }
       return prevState;
     });
@@ -127,7 +127,7 @@ class App extends React.Component{
 
   overlay(){
     switch (this.state.view.overlay.type){
-      case "login": return <Login loginHandler={this.loginHandler.bind(this)} />;
+      case "login": return <Login view={this.state.view} loginHandler={this.loginHandler.bind(this)} />;
       case "search": return <Search searchHandler={this.searchHandler.bind(this)}/>;
     }
   }
