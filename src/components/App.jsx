@@ -76,7 +76,7 @@ class App extends React.Component{
     });
   }
 
-  windowHandler(action, windowData, event, draggableEvent){
+  windowHandler(action, windowData, newPosition, event){
     
     if (action == "close"){
       event.stopPropagation();
@@ -114,8 +114,8 @@ class App extends React.Component{
         prevState.view.windows.map((windowItem, key)=>{
           if (windowData.id == windowItem.id){
             prevState.view.windows[key].viewPos = {
-              x: prevState.view.windows[key].viewPos.x + draggableEvent.position.deltaX,
-              y: prevState.view.windows[key].viewPos.y + draggableEvent.position.deltaY
+              x: newPosition.x,
+              y: newPosition.y
             }
           }
           return prevState;

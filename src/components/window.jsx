@@ -45,9 +45,8 @@ class Window extends React.Component{
       top: this.state.currentY + "px", 
       zIndex: this.props.itemData.viewIndex
     };
-
     return (
-      <div className="window" style={style} onClick={this.props.windowHandler.bind(null, "tofront", this.props.itemData)}>
+      <div className="window" style={style} onClick={this.props.windowHandler.bind(null, "tofront", this.props.itemData, {})}>
         <ResizableBox 
           width={600} 
           height={400}
@@ -57,9 +56,9 @@ class Window extends React.Component{
           <div className="window__inner">
             <DraggableCore 
             onDrag={this.dragStart.bind(this)}
-            onStop={this.props.windowHandler.bind(null, "move", this.props.itemData)}>
+            onStop={this.props.windowHandler.bind(null, "move", this.props.itemData, {x: this.state.currentX, y: this.state.currentY})}>
               <header className="window__header">
-                <div className="window__close-button" onClick={this.props.windowHandler.bind(null, "close", this.props.itemData)}>x</div>
+                <div className="window__close-button" onClick={this.props.windowHandler.bind(null, "close", this.props.itemData, {})}>x</div>
               </header>
             </DraggableCore>
             <main className="window__body">
