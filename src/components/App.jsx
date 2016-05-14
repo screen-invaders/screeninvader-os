@@ -77,6 +77,7 @@ class App extends React.Component{
   }
 
   windowHandler(action, windowData, event, draggableEvent){
+    
     if (action == "close"){
       event.stopPropagation();
       this.setState((prevState)=>{
