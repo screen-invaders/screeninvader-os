@@ -10,31 +10,61 @@
 .login__details {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 35rem;
+
+  padding: 0 3rem 3rem 3rem; 
+}
+
+.login__error {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 2px solid $complementary;
+  color: $complementary;
+}
+
+.login__logo {
+  width: 100%;
+  height: auto;
+}
+
+.login__label {
+
+}
+
+.login__group {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .login__username {
-  width: 15rem;
-  height: 2rem;
+  width: 60%;
+  height: 3rem;
   padding: 1rem;
-  margin-bottom: 1rem;
+  border: none;
+  background: $light;
 }
 
 .login__password {
-  width: 15rem;
-  height: 2rem;
+  width: 60%;
+  height: 3rem;
   padding: 1rem;
-  margin-bottom: 1rem;
+  border: none;
+  background: $light;
 }
 
 .login__submit {
-  width: 15rem;
+  width: 25%;
   padding: 1rem;
-  border: 1px solid $light;
-  background: $day;
+  margin-right: 35%;
+  align-self: flex-end;
   -webkit-appearance: none;
   cursor: pointer;
-}
-
-.login__submit:hover {
-  background: $light;
 }

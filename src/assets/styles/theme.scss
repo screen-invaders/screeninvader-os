@@ -24,6 +24,22 @@
   background: $tertiary;
 }
 
+.login__details {
+  background: $day;
+  border: 1px solid $primary;
+  box-shadow: 3px 3px 0px 0px rgba($primary,0.5);
+}
+
+.login__submit:hover {
+  background: $secundary;
+}
+
+.login__submit {
+  border: 1px solid $light;
+  background: $primary;
+  color: $day;
+}
+
 .search {
   background: rgba($secundary, 0.5);
 }
