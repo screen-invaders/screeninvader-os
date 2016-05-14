@@ -1,11 +1,18 @@
 import React from 'react';
 import Draggable, {DraggableCore} from 'react-draggable';
 
-import { ResizableBox } from 'react-resizable';
+import { Resizable, ResizableBox } from 'react-resizable';
 
 import Folder from './folder.jsx';
 
 class Window extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      currentX: this.props.itemData.viewPos.x,
+      currentY: this.props.itemData.viewPos.y
+    }
+  }
 
   folders(){
     if (this.props.itemData.folder.contents){
@@ -16,32 +23,41 @@ class Window extends React.Component{
     return folders;
   }
 
+  dragStart(e, draggableEvent){
+    this.setState((prevState)=>{ 
+      return {
+        currentX: prevState.currentX + draggableEvent.position.deltaX,
+        currentY: prevState.currentY + draggableEvent.position.deltaY
+      }
+    });
+  }
+
   render() {
     var style = {
-      left: this.props.itemData.viewPos.x + "%", 
-      top: this.props.itemData.viewPos.y + "%", 
-      zIndex: this.props.itemData.viewIndex,
+      left: this.state.currentX + "px", 
+      top: this.state.currentY + "px", 
+      zIndex: this.props.itemData.viewIndex
     };
 
 		return (
       <div className="window" style={style} onClick={this.props.windowHandler.bind(null, "tofront", this.props.itemData)}>
-        <Draggable className="window__draggable">
-          <div>
-            <ResizableBox 
-              width={600} 
-              height={400}
-              minConstraints={[200, 200]} 
-              maxConstraints={[1000, 600]}
-              >
-                <header className="window__header">
-                  <div className="window__close-button" onClick={this.props.windowHandler.bind(null, "close", this.props.itemData)}>x</div>
-                </header>
-                <main className="window__body">
-                  { this.folders() }
-                </main>
-            </ResizableBox>
+        <ResizableBox 
+          width={600} 
+          height={400}
+          minConstraints={[200, 200]} 
+          maxConstraints={[1000, 600]}
+          >
+          <div className="window__inner">
+            <DraggableCore onDrag={this.dragStart.bind(this)}>
+              <header className="window__header">
+                <div className="window__close-button" onClick={this.props.windowHandler.bind(null, "close", this.props.itemData)}>x</div>
+              </header>
+            </DraggableCore>
+            <main className="window__body">
+              { this.folders() }
+            </main>
           </div>
-        </Draggable>
+        </ResizableBox>
       </div>
     )
 	}

@@ -5,13 +5,11 @@
   z-index: 500;
 }
 
-.window__draggable {
-
-}
-
-.react-resizable {
+.window__inner {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  height: 100%;
 }
 
 .react-resizable-handle {
