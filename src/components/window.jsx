@@ -6,13 +6,6 @@ import { Resizable, ResizableBox } from 'react-resizable';
 import Folder from './folder.jsx';
 
 class Window extends React.Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      currentX: this.props.itemData.viewPos.x,
-      currentY: this.props.itemData.viewPos.y
-    }
-  }
 
   folders(){
     if (this.props.itemData.folder.contents){
@@ -23,19 +16,10 @@ class Window extends React.Component{
     return folders;
   }
 
-  dragStart(e, draggableEvent){
-    this.setState((prevState)=>{ 
-      return {
-        currentX: prevState.currentX + draggableEvent.position.deltaX,
-        currentY: prevState.currentY + draggableEvent.position.deltaY
-      }
-    });
-  }
-
   render() {
     var style = {
-      left: this.state.currentX + "px", 
-      top: this.state.currentY + "px", 
+      left: this.props.itemData.viewPos.x + "px", 
+      top: this.props.itemData.viewPos.y + "px", 
       zIndex: this.props.itemData.viewIndex
     };
 
@@ -48,7 +32,7 @@ class Window extends React.Component{
           maxConstraints={[1000, 600]}
           >
           <div className="window__inner">
-            <DraggableCore onDrag={this.dragStart.bind(this)}>
+            <DraggableCore onDrag={this.props.windowHandler.bind(null, "move", this.props.itemData)}>
               <header className="window__header">
                 <div className="window__close-button" onClick={this.props.windowHandler.bind(null, "close", this.props.itemData)}>x</div>
               </header>

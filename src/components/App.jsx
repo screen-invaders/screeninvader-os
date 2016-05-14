@@ -52,8 +52,8 @@ class App extends React.Component{
   }
 
   folderHandler(itemData, event){
-    var randX = Math.random() * 200;
-    var randY = Math.random() * 100;
+    var randX = Math.random() * (window.innerWidth - 620);
+    var randY = Math.random() * (window.innerHeight - 500);
     var nextID = Math.random() * 0x10000;
     this.setState((prevState)=>{
       prevState.view.windows.push(
@@ -76,7 +76,7 @@ class App extends React.Component{
     });
   }
 
-  windowHandler(action, windowData, event){
+  windowHandler(action, windowData, event, draggableEvent){
     if (action == "close"){
       event.stopPropagation();
       this.setState((prevState)=>{
@@ -109,7 +109,17 @@ class App extends React.Component{
     }
 
     else if (action == "move") {
-
+      this.setState((prevState)=>{ 
+        prevState.view.windows.map((windowItem, key)=>{
+          if (windowData.id == windowItem.id){
+            prevState.view.windows[key].viewPos = {
+              x: prevState.view.windows[key].viewPos.x + draggableEvent.position.deltaX,
+              y: prevState.view.windows[key].viewPos.y + draggableEvent.position.deltaY
+            }
+          }
+          return prevState;
+        })
+      });
     }
 
   }
