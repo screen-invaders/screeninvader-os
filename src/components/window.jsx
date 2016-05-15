@@ -54,7 +54,7 @@ class Window extends React.Component{
             </DraggableCore>
             <main className="window__body">
               { (()=>{
-                if (this.props.itemData.folder.contents){
+                if (this.props.itemData.type == "explorer" && this.props.itemData.folder.contents){
                   var folders = this.props.itemData.folder.contents.map((item, key)=>{
                     return <FolderDraggable key={key} itemData={item} folderHandler={this.props.folderHandler}/> 
                   })  
