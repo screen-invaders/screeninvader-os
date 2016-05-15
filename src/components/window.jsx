@@ -3,7 +3,7 @@ import Draggable, {DraggableCore} from 'react-draggable';
 
 import { Resizable, ResizableBox } from 'react-resizable';
 
-import FolderDraggable from './folder-draggable.jsx';
+import WindowExplorer from './window-explorer.jsx';
 
 class Window extends React.Component{
   constructor(props){
@@ -53,14 +53,12 @@ class Window extends React.Component{
               </header>
             </DraggableCore>
             <main className="window__body">
-              { (()=>{
-                if (this.props.itemData.type == "explorer" && this.props.itemData.folder.contents){
-                  var folders = this.props.itemData.folder.contents.map((item, key)=>{
-                    return <FolderDraggable key={key} itemData={item} folderHandler={this.props.folderHandler}/> 
-                  })  
-                }
-                return folders;
-              })() }
+            { (()=>{
+            switch (this.props.itemData.type){
+              case "explorer": return <WindowExplorer itemData={this.props.itemData} folderHandler={this.props.folderHandler}/> ;
+              case "search": return "";
+            }
+            })() }
             </main>
           </div>
         </ResizableBox>

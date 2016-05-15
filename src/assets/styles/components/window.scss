@@ -51,4 +51,10 @@
   overflow-y: scroll;
 }
 
+.window__body-inner {
+  display:  flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
 
