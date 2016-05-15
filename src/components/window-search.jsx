@@ -4,6 +4,10 @@ import Draggable, {DraggableCore} from 'react-draggable';
 import FolderDraggable from './folder-draggable.jsx';
 
 class WindowSearch extends React.Component{
+  componentWillMount(){
+    this.setState({searchItems: this.pureSearch(this.props.itemData.searchQuery, this.props.filesystem)});
+  }
+
   pureSearch(query, folder){
     let result = [];
     folder.forEach((item)=>{
@@ -14,30 +18,39 @@ class WindowSearch extends React.Component{
         result.push(...this.pureSearch(query, item.contents));
       }
     });
-    return result;
-  }
 
-  renderSearch(query, filesystem){
-    let folders = this.pureSearch(query, filesystem).sort((a, b)=>{
+    result = result.sort((a, b)=>{
       if (a.name > b.name) {
         return 1;
       }
       if (a.name < b.name) {
         return -1;
       }
-      // a must be equal to b
       return 0;
     });
-    let templatedFolders = folders.map((item, key)=>{
+
+    return result;
+  }
+
+  renderSearch(searchItems){
+    let templatedFolders = searchItems.map((item, key)=>{
       return <FolderDraggable key={key} itemData={item} folderHandler={this.props.folderHandler}/>
     })
     return templatedFolders;
   }
 
+  activateAll(searchItems){
+    console.log("run");
+    searchItems.map((itemData)=>{
+      this.props.folderHandler.bind(null, itemData)();
+    })
+  }
+
   render() {
     return (
       <div className="window__body-inner">
-        {this.renderSearch(this.props.itemData.searchQuery, this.props.filesystem)}
+        <button className ="window__search-open-all" onClick={this.activateAll.bind(this, this.state.searchItems)}>Open alle</button>
+        {this.renderSearch(this.state.searchItems)}
       </div>
     )
   }
