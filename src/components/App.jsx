@@ -76,15 +76,20 @@ class App extends React.Component{
   }
 
   folderHandler(itemData, event){
-    var randX = Math.random() * (window.innerWidth - 620);
-    var randY = Math.random() * (window.innerHeight - 500);
-    var nextID = Math.random() * 0x10000;
-    var type;
+    let randX = Math.random() * (window.innerWidth - 620);
+    let randY = Math.random() * (window.innerHeight - 500);
+    let nextID = Math.random() * 0x10000;
+    let type;
 
     switch (itemData.type) {
-      case "dir": type = "Verkenner";
-      case "txt": type = "Tekstbestand";
+      case "dir": 
+        type = "Verkenner";
+        break;
+      case "txt": 
+        type = "Tekstbestand";
+        break;
     }
+    console.log(itemData.type, type)
 
     this.setState((prevState)=>{
       prevState.view.windows.push(

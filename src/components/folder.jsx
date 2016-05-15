@@ -7,10 +7,14 @@ import imgFile from '../assets/images/file.png'
 class Folder extends React.Component{
   render() {
     var imgLogo = imgFolder;
-    // switch (this.props.itemData.type){
-    //   case "txt": imgLogo = imgFile;
-    //   case "dir": imgLogo = imgFolder;
-    // }
+    switch (this.props.itemData.type){
+      case "txt": 
+        imgLogo = imgFile;
+        break;
+      case "dir": 
+        imgLogo = imgFolder;
+        break;
+    }
 		return (
       <div className="folder" onDoubleClick={this.props.folderHandler.bind(null, this.props.itemData)}>
 			  <img className="folder__image" draggable="false" src={imgLogo}></img>
