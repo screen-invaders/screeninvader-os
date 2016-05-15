@@ -3,7 +3,7 @@ import Draggable, {DraggableCore} from 'react-draggable';
 
 import { Resizable, ResizableBox } from 'react-resizable';
 
-import Folder from './folder.jsx';
+import FolderDraggable from './folder-draggable.jsx';
 
 class Window extends React.Component{
   constructor(props){
@@ -12,15 +12,6 @@ class Window extends React.Component{
       currentX: this.props.itemData.viewPos.x,
       currentY: this.props.itemData.viewPos.y
     }
-  }
-
-  folders(){
-    if (this.props.itemData.folder.contents){
-      var folders = this.props.itemData.folder.contents.map((item, key)=>{
-        return <Folder key={key} itemData={item} folderHandler={this.props.folderHandler}/> 
-      })  
-    }
-    return folders;
   }
 
   dragStart(e, draggableEvent){
@@ -62,7 +53,14 @@ class Window extends React.Component{
               </header>
             </DraggableCore>
             <main className="window__body">
-              { this.folders() }
+              { (()=>{
+                if (this.props.itemData.folder.contents){
+                  var folders = this.props.itemData.folder.contents.map((item, key)=>{
+                    return <FolderDraggable key={key} itemData={item} folderHandler={this.props.folderHandler}/> 
+                  })  
+                }
+                return folders;
+              })() }
             </main>
           </div>
         </ResizableBox>

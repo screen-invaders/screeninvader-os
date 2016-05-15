@@ -11,9 +11,7 @@ class Login extends React.Component{
             <img className="login__logo" src={imgLogo} />
             
             {(()=>{
-              console.log(this.props.view.overlay.attempts)
               if (this.props.view.overlay.attempts < 2){
-                console.log("passed")
                 return (
                 <div className="login__error">
                   <p>Verkeerd Wachtwoord! Nog {this.props.view.overlay.attempts + 1} pogingen</p>
