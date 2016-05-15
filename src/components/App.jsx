@@ -79,12 +79,19 @@ class App extends React.Component{
     var randX = Math.random() * (window.innerWidth - 620);
     var randY = Math.random() * (window.innerHeight - 500);
     var nextID = Math.random() * 0x10000;
+    var type;
+
+    switch (itemData.type) {
+      case "dir": type = "Verkenner";
+      case "txt": type = "Tekstbestand";
+    }
+
     this.setState((prevState)=>{
       prevState.view.windows.push(
         {
           id: nextID,
           folder: itemData,
-          type: "Verkenner",
+          type: type,
           viewPos: {
             x: randX,
             y: randY

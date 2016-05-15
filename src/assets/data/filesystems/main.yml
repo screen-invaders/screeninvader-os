@@ -35,6 +35,9 @@ main:
     name: "AFM-thing"
 - type: "dir"
   name: "AO/IO"
+  contents: 
+  - type: "txt"
+    name: "important.txt"
 - type: "dir"
   name: "BES"
 - type: "dir"

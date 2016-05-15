@@ -5,6 +5,7 @@ import { Resizable, ResizableBox } from 'react-resizable';
 
 import WindowExplorer from './window-explorer.jsx';
 import WindowSearch from './window-search.jsx';
+import WindowText from './window-text.jsx';
 
 class Window extends React.Component{
   // Setting local position for the first time
@@ -62,6 +63,7 @@ class Window extends React.Component{
             switch (this.props.itemData.type){
               case "Verkenner": return <WindowExplorer itemData={this.props.itemData} folderHandler={this.props.folderHandler}/> ;
               case "Zoeken": return <WindowSearch filesystem={this.props.filesystem} itemData={this.props.itemData} folderHandler={this.props.folderHandler}/>;
+              case "Tekstbestand": return <WindowText filesystem={this.props.filesystem} itemData={this.props.itemData} folderHandler={this.props.folderHandler}/>;
             }
             })()}
             </main>
