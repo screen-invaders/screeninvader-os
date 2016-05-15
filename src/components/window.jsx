@@ -53,15 +53,15 @@ class Window extends React.Component{
             onDrag={this.dragStart.bind(this)}
             onStop={this.props.windowHandler.bind(null, "move", this.props.itemData, {x: this.state.currentX, y: this.state.currentY})}>
               <header className="window__header">
-                <p className="window__header-text">{this.props.itemData.type} </p>
+                <p className="window__header-text">{this.props.itemData.type} {this.props.itemData.searchQuery} </p>
                 <div className="window__close-button" onClick={this.props.windowHandler.bind(null, "close", this.props.itemData, {})}>x</div>
               </header>
             </DraggableCore>
             <main className="window__body">
             {(()=>{
             switch (this.props.itemData.type){
-              case "Explorer": return <WindowExplorer itemData={this.props.itemData} folderHandler={this.props.folderHandler}/> ;
-              case "Search": return <WindowSearch itemData={this.props.itemData} />;
+              case "Verkenner": return <WindowExplorer itemData={this.props.itemData} folderHandler={this.props.folderHandler}/> ;
+              case "Zoeken": return <WindowSearch filesystem={this.props.filesystem} itemData={this.props.itemData} folderHandler={this.props.folderHandler}/>;
             }
             })()}
             </main>

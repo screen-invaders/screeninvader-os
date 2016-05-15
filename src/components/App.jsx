@@ -47,10 +47,9 @@ class App extends React.Component{
     var randY = Math.random() * (window.innerHeight - 500);
     var nextID = Math.random() * 0x10000;
     this.setState((prevState)=>{
-      console.log(prevState.view.searchQuery)
       var newWindow = {
         id: nextID,
-        type: "Search",
+        type: "Zoeken",
         searchQuery: prevState.view.searchQuery,
         viewPos: {
           x: randX,
@@ -64,7 +63,6 @@ class App extends React.Component{
       };
       prevState.view.windows.push(newWindow);
       prevState.view.searchQuery = "";
-      console.log(prevState.view.searchQuery)
       return prevState;
     });
   }
@@ -86,7 +84,7 @@ class App extends React.Component{
         {
           id: nextID,
           folder: itemData,
-          type: "Explorer",
+          type: "Verkenner",
           viewPos: {
             x: randX,
             y: randY
