@@ -60,7 +60,7 @@ class App extends React.Component{
         {
           id: nextID,
           folder: itemData,
-          type: "explorer",
+          type: "Explorer",
           viewPos: {
             x: randX,
             y: randY

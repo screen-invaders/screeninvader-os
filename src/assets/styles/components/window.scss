@@ -29,8 +29,14 @@
 
 .window__header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 1rem;
   height: 2rem;
+}
+
+.window__header-text {
+  color: $day;
 }
 
 .window__close-button {
@@ -56,5 +62,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-content: flex-start;
+  padding: 1rem;
 }
 

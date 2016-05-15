@@ -13,6 +13,8 @@ class WindowExplorer extends React.Component{
             return <FolderDraggable key={key} itemData={item} folderHandler={this.props.folderHandler}/> 
           }) 
         return folders;
+        } else {
+          return "Geen inhoud";
         }
         })()}
       </div>
