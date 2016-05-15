@@ -63,6 +63,8 @@ class App extends React.Component{
         viewIndex: 600
       };
       prevState.view.windows.push(newWindow);
+      prevState.view.searchQuery = "";
+      console.log(prevState.view.searchQuery)
       return prevState;
     });
   }
@@ -72,7 +74,7 @@ class App extends React.Component{
     this.setState((prevState)=>{
       prevState.view.searchQuery = newSearchQuery;
       return prevState;
-    });  
+    });
   }
 
   folderHandler(itemData, event){

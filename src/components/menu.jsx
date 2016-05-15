@@ -16,7 +16,7 @@ class Menu extends React.Component{
         </ul>
 
         <form className="menu__search" onSubmit={this.props.searchHandler}>
-          <input className="menu__searchbar" type="text" placeholder="Zoeken" defaultValue={this.props.searchQuery} onChange={this.props.searchQueryHandler}></input>
+          <input className="menu__searchbar" type="text" placeholder="Zoeken" value={this.props.searchQuery} onChange={this.props.searchQueryHandler}></input>
           <input className="menu__search-icon" type="image" name="image" src={imgLogo}></input>
         </form>
 
