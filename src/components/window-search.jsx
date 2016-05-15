@@ -4,18 +4,30 @@ import Draggable, {DraggableCore} from 'react-draggable';
 import FolderDraggable from './folder-draggable.jsx';
 
 class WindowSearch extends React.Component{
+  pureSearch(query, folder){
+    let result = [];
+    folder.forEach((item)=>{
+      if (item.name.indexOf(query) != -1){
+        result.push(item);
+      }
+      if (item.contents) {
+        result.concat(result, pureSearch(query, item.contents));
+      }
+    });
+    return result;
+  }
+
+  renderSearch(query, folder){
+    var folders = folder.map((item, key)=>{
+      return <FolderDraggable key={key} itemData={item} folderHandler={this.props.folderHandler}/>
+    })
+    return folders;
+  }
+
   render() {
-    let searchQuery = this.props.itemData.searchQuery;
     return (
       <div className="window__body-inner">
-        {(()=>{
-          var folders = this.props.filesystem.map((item, key)=>{
-            if (item.name.indexOf(searchQuery) != -1){
-              return <FolderDraggable key={key} itemData={item} folderHandler={this.props.folderHandler}/>
-            }
-          })
-          return folders;
-        })()}
+        {this.renderSearch(this.props.itemData.searchQuery, this.props.filesystem)}
       </div>
     )
   }
