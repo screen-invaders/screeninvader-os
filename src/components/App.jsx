@@ -3,6 +3,7 @@ import React from 'react';
 import Menu from './menu.jsx';
 import Desktop from './desktop.jsx';
 import Login from './login.jsx';
+import Admin from './admin.jsx';
 
 import { main } from '../assets/data/filesystems/main.yml';
 
@@ -17,7 +18,7 @@ class App extends React.Component{
       view: {
         screen: "desktop",
         overlay: {
-          type: "login",
+          type: "admin",
           attempts: 2          
         },
         searchQuery: "",
@@ -37,6 +38,13 @@ class App extends React.Component{
       } else {
         prevState.view.overlay.attempts--;
       }
+      return prevState;
+    });
+  }
+
+  adminHandler(event){
+    this.setState((prevState)=>{
+      prevState.view.overlay.type = "login";
       return prevState;
     });
   }
@@ -162,6 +170,7 @@ class App extends React.Component{
 
   overlay(){
     switch (this.state.view.overlay.type){
+      case "admin": return <Admin view={this.state.view} adminHandler={this.adminHandler.bind(this)} />
       case "login": return <Login view={this.state.view} loginHandler={this.loginHandler.bind(this)} />;
     }
   }

@@ -1,0 +1,46 @@
+.admin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  width: 100%;
+  height: 100%;
+  background: $black;
+}
+
+.admin__content {
+  padding: 4rem;
+  background: $invader;
+}
+
+.admin__logo {
+}
+
+.admin__description {
+  margin: 2rem 0;
+}
+
+.admin__header {
+  margin-bottom: 1rem;
+}
+
+.admin__list {
+  list-style-type: square;
+  list-style-position: inside;
+}
+
+.admin__button {
+  width: 10rem;
+  height: 4rem;
+  background: $black;
+  color: $invader;
+  border: 4px solid $invader;
+  cursor: pointer;
+}
+
+.admin__button:hover {
+  background: $invader;
+  color: $black;
+  border: 4px solid $black;
+
+}
