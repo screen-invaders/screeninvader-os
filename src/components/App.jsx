@@ -3,7 +3,6 @@ import React from 'react';
 import Menu from './menu.jsx';
 import Desktop from './desktop.jsx';
 import Login from './login.jsx';
-import Search from './search.jsx';
 
 import { main } from '../assets/data/filesystems/main.yml';
 
@@ -11,6 +10,10 @@ class App extends React.Component{
   constructor(props){
     super(props);
     this.state = {
+      user: {
+        username: "IvMourik",
+        password: "scotty"
+      },
       view: {
         screen: "desktop",
         overlay: {
@@ -128,7 +131,6 @@ class App extends React.Component{
   overlay(){
     switch (this.state.view.overlay.type){
       case "login": return <Login view={this.state.view} loginHandler={this.loginHandler.bind(this)} />;
-      case "search": return <Search searchHandler={this.searchHandler.bind(this)}/>;
     }
   }
 
