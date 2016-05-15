@@ -40,7 +40,6 @@ class WindowSearch extends React.Component{
   }
 
   activateAll(searchItems){
-    console.log("run");
     searchItems.map((itemData)=>{
       this.props.folderHandler.bind(null, itemData)();
     })

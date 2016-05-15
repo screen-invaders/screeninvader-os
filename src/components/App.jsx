@@ -89,7 +89,6 @@ class App extends React.Component{
         type = "Tekstbestand";
         break;
     }
-    console.log(itemData.type, type)
 
     this.setState((prevState)=>{
       prevState.view.windows.push(
