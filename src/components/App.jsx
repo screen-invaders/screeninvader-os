@@ -20,7 +20,9 @@ class App extends React.Component{
           type: "login",
           attempts: 2          
         },
+        searchQuery: "",
         windows: [
+
         ]
       },
       filesystems: main
@@ -39,29 +41,38 @@ class App extends React.Component{
     });
   }
 
-  searchHandler(itemData, event){
+  searchHandler(event){
     event.preventDefault();
     var randX = Math.random() * (window.innerWidth - 620);
     var randY = Math.random() * (window.innerHeight - 500);
     var nextID = Math.random() * 0x10000;
     this.setState((prevState)=>{
-      prevState.view.windows.push(
-        {
-          id: nextID,
-          type: "Search",
-          viewPos: {
-            x: randX,
-            y: randY
-          },
-          viewSize: {
-            x: 600,
-            y: 400
-          },
-          viewIndex: 600
-        }
-      );
+      console.log(prevState.view.searchQuery)
+      var newWindow = {
+        id: nextID,
+        type: "Search",
+        searchQuery: prevState.view.searchQuery,
+        viewPos: {
+          x: randX,
+          y: randY
+        },
+        viewSize: {
+          x: 600,
+          y: 400
+        },
+        viewIndex: 600
+      };
+      prevState.view.windows.push(newWindow);
       return prevState;
     });
+  }
+
+  searchQueryHandler(e) {
+    let newSearchQuery = e.target.value;
+    this.setState((prevState)=>{
+      prevState.view.searchQuery = newSearchQuery;
+      return prevState;
+    });  
   }
 
   folderHandler(itemData, event){
@@ -150,7 +161,7 @@ class App extends React.Component{
         { this.overlay() }
         <div className="layout__desktop">
           <header className="layout__desktop-header">
-            <Menu searchHandler={this.searchHandler.bind(this)}/>
+            <Menu searchQuery={this.state.view.searchQuery} searchQueryHandler={this.searchQueryHandler.bind(this)} searchHandler={this.searchHandler.bind(this)}/>
           </header>
           <div className="layout__desktop-main">
             <Desktop windows={this.state.view.windows} filesystem={this.state.filesystems} folderHandler={this.folderHandler.bind(this)} windowHandler={this.windowHandler.bind(this)}/>

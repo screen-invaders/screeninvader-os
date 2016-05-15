@@ -4,8 +4,10 @@ import Draggable, {DraggableCore} from 'react-draggable';
 import { Resizable, ResizableBox } from 'react-resizable';
 
 import WindowExplorer from './window-explorer.jsx';
+import WindowSearch from './window-search.jsx';
 
 class Window extends React.Component{
+  // Setting local position for the first time
   constructor(props){
     super(props);
     this.state = {
@@ -14,19 +16,21 @@ class Window extends React.Component{
     }
   }
 
+  // Setting local position dynamically
+  componentWillReceiveProps(nextProps){
+    this.setState({
+      currentX: nextProps.itemData.viewPos.x,
+      currentY: nextProps.itemData.viewPos.y
+    });
+  }
+
+  // Handle dragging locally (to prevent excessive statechanges)
   dragStart(e, draggableEvent){
     this.setState((prevState)=>{ 
       return {
         currentX: prevState.currentX + draggableEvent.position.deltaX,
         currentY: prevState.currentY + draggableEvent.position.deltaY
       }
-    });
-  }
-
-  componentWillReceiveProps(nextProps){
-    this.setState({
-      currentX: nextProps.itemData.viewPos.x,
-      currentY: nextProps.itemData.viewPos.y
     });
   }
 
@@ -54,12 +58,12 @@ class Window extends React.Component{
               </header>
             </DraggableCore>
             <main className="window__body">
-            { (()=>{
+            {(()=>{
             switch (this.props.itemData.type){
               case "Explorer": return <WindowExplorer itemData={this.props.itemData} folderHandler={this.props.folderHandler}/> ;
-              case "search": return "";
+              case "Search": return <WindowSearch itemData={this.props.itemData} />;
             }
-            })() }
+            })()}
             </main>
           </div>
         </ResizableBox>
