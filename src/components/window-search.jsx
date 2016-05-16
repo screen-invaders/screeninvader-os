@@ -30,7 +30,6 @@ class WindowSearch extends React.Component{
       }
       return 0;
     });
-    console.log(result)
     return result;
   }
 
