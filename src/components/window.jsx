@@ -49,7 +49,6 @@ class Window extends React.Component{
   }
 
   render() {
-    console.log(this.props.itemData, this.props.itemData.viewSize.x, this.state.currentSizeX)
     let stylePosition = {
       left: this.state.currentX + 'px', 
       top: this.state.currentY + 'px', 
