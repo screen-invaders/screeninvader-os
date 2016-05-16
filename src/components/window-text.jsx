@@ -1,5 +1,7 @@
 import React from 'react';
 
+import article from '../assets/data/files/article.md'
+
 class WindowText extends React.Component{
   render() {
     return (
