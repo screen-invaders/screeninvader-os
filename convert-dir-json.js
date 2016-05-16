@@ -1,6 +1,7 @@
-var requireDirectory = require('require-directory');
 var fs = require('fs'),
-    path = require('path')
+    path = require('path'),
+    util = require('util');
+
 
 function dirTree(filename) {
     var stats = fs.lstatSync(filename),
@@ -18,8 +19,6 @@ function dirTree(filename) {
         });
         info.children = info.children.filter(function(obj){if (obj != undefined) {return true;}});
     } else {
-        // Assuming it's a file. In real life it could be a symlink or
-        // something else!
         info.type = "file";
         info.contents = fs.readFileSync(filename, {encoding: "utf8"});
     }
@@ -28,8 +27,6 @@ function dirTree(filename) {
 }
 
 if (module.parent == undefined) {
-    // node dirTree.js ~/foo/bar
-    var util = require('util');
     // console.log(util.inspect(dirTree(process.argv[2]), false, null));
     fs.writeFileSync(process.argv[3], JSON.stringify(dirTree(process.argv[2])));
 }
