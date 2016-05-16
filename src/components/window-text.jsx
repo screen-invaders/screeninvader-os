@@ -1,14 +1,12 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 
-var article = "# Hello I'm a markdown header \n Im a paragraph";
-
 class WindowText extends React.Component{
   render() {
-    console.log(article)
+    console.log(this.props.itemData)
     return (
       <div className="window__body-inner">
-        <ReactMarkdown source={article} />
+        <ReactMarkdown source={this.props.itemData.folder.contents} />
       </div>
     )
   }
