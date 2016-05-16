@@ -31,13 +31,13 @@ function dirTree(filename) {
 
     } else {
         info.type = "file";
-        // info.contents = fs.readFileSync(filename, {encoding: "utf8"});
+        info.contents = fs.readFileSync(filename, {encoding: "utf8"});
     }
 
     return info;
 }
 
 if (module.parent == undefined) {
-    console.log(util.inspect(dirTree(process.argv[2]), false, null));
-    // fs.writeFileSync(process.argv[3], JSON.stringify(dirTree(process.argv[2])));
+    // console.log(util.inspect(dirTree(process.argv[2]), false, null));
+    fs.writeFileSync(process.argv[3], JSON.stringify(dirTree(process.argv[2])));
 }
