@@ -5,7 +5,6 @@ import Window from './window.jsx';
 
 class Desktop extends React.Component{
   render() {
-    console.log(this.props.filesystem)
 		return (
   		<div className="desktop">
         {(()=>{
