@@ -103,6 +103,7 @@ class App extends React.Component{
         {
           id: nextID,
           folder: itemData,
+          filesystemPos: itemData.path,
           type: type,
           viewPos: {
             x: randX,
