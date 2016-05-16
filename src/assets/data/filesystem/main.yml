@@ -80,3 +80,9 @@ main:
 - type: "dir"
   name: "ESW"
   contents:
+- type: "txt"
+  name: "important.txt"
+  link: "article.md"
+- type: "txt"
+  name: "second.txt"
+  link: "article.md"

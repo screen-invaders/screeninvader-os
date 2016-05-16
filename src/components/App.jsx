@@ -5,7 +5,7 @@ import Desktop from './desktop.jsx';
 import Login from './login.jsx';
 import Admin from './admin.jsx';
 
-import { main } from '../assets/data/filesystems/main.yml';
+import { main } from '../assets/data/filesystem/main.yml';
 
 class App extends React.Component{
   constructor(props){
@@ -165,20 +165,17 @@ class App extends React.Component{
         })
       });
     }
-
-  }
-
-  overlay(){
-    switch (this.state.view.overlay.type){
-      case "admin": return <Admin view={this.state.view} adminHandler={this.adminHandler.bind(this)} />
-      case "login": return <Login view={this.state.view} loginHandler={this.loginHandler.bind(this)} />;
-    }
   }
 
   render() {
 		return (
 			<div className="layout__OS">
-        { this.overlay() }
+        {(()=>{
+          switch (this.state.view.overlay.type){
+            case "admin": return <Admin view={this.state.view} adminHandler={this.adminHandler.bind(this)} />
+            case "login": return <Login view={this.state.view} loginHandler={this.loginHandler.bind(this)} />;
+          }
+        })()}
         <div className="layout__desktop">
           <header className="layout__desktop-header">
             <Menu searchQuery={this.state.view.searchQuery} searchQueryHandler={this.searchQueryHandler.bind(this)} searchHandler={this.searchHandler.bind(this)}/>
