@@ -10,14 +10,21 @@ class WindowSearch extends React.Component{
 
   pureSearch(query, folder){
     let result = [];
-    folder.forEach((item)=>{
-      if (item.name.indexOf(query) != -1){
-        result.push(item);
+
+    // if (this.props.itemData.folder.children){
+    //       var items = this.props.itemData.folder.children;
+    //       var templatedItems = [];
+    for (var item in folder) {
+      if (folder.hasOwnProperty(item)) {
+        console.log(folder[item])
+        if (folder[item].name.indexOf(query) != -1){
+          result.push(folder[item]);
+        }
+        if (folder[item].children) {
+          result.push(...this.pureSearch(query, folder[item].children));
+        }
       }
-      if (item.contents && item.contents.length > 0 ) {
-        result.push(...this.pureSearch(query, item.contents));
-      }
-    });
+    };
 
     result = result.sort((a, b)=>{
       if (a.name > b.name) {
@@ -28,7 +35,7 @@ class WindowSearch extends React.Component{
       }
       return 0;
     });
-
+    console.log(result)
     return result;
   }
 
