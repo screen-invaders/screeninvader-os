@@ -10,13 +10,8 @@ class WindowSearch extends React.Component{
 
   pureSearch(query, folder){
     let result = [];
-
-    // if (this.props.itemData.folder.children){
-    //       var items = this.props.itemData.folder.children;
-    //       var templatedItems = [];
     for (var item in folder) {
       if (folder.hasOwnProperty(item)) {
-        console.log(folder[item])
         if (folder[item].name.indexOf(query) != -1){
           result.push(folder[item]);
         }
