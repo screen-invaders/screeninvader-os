@@ -121,7 +121,6 @@ class App extends React.Component{
   }
 
   windowHandler(action, windowData, newPosition, event, resize){
-    
     if (action == "close"){
       event.stopPropagation();
       this.setState((prevState)=>{
@@ -133,7 +132,7 @@ class App extends React.Component{
         return prevState;
       })
     } 
-
+    
     else if (action == "tofront") {
       this.setState((prevState)=>{
         var temp;
