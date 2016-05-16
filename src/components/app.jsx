@@ -5,7 +5,7 @@ import Desktop from './desktop.jsx';
 import Login from './login.jsx';
 import Admin from './admin.jsx';
 
-import { main } from '../assets/data/filesystem/main.yml';
+import main from '../assets/data/dataDir.json';
 
 class App extends React.Component{
   constructor(props){

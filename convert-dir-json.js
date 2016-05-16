@@ -11,7 +11,7 @@ function dirTree(filename) {
         };
 
     if (stats.isDirectory()) {
-        info.type = "folder";
+        info.type = "dir";
 
         // do recursive
         var tempChildren = fs.readdirSync(filename).map(function(child) {
@@ -30,7 +30,7 @@ function dirTree(filename) {
         });
 
     } else {
-        info.type = "file";
+        info.type = "txt";
         info.contents = fs.readFileSync(filename, {encoding: "utf8"});
     }
 

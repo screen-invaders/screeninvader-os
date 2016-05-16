@@ -6,7 +6,7 @@ import imgFile from '../assets/images/file.png'
 
 class Folder extends React.Component{
   render() {
-    var imgLogo = imgFolder;
+    var imgLogo = "";
     switch (this.props.itemData.type){
       case "txt": 
         imgLogo = imgFile;
