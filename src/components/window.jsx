@@ -13,7 +13,10 @@ class Window extends React.Component{
     super(props);
     this.state = {
       currentX: this.props.itemData.viewPos.x,
-      currentY: this.props.itemData.viewPos.y
+      currentY: this.props.itemData.viewPos.y,
+      currentSizeX: this.props.itemData.viewSize.x,
+      currentSizeY: this.props.itemData.viewSize.y,
+      currentIndex: this.props.itemData.viewIndex
     }
   }
 
@@ -21,54 +24,73 @@ class Window extends React.Component{
   componentWillReceiveProps(nextProps){
     this.setState({
       currentX: nextProps.itemData.viewPos.x,
-      currentY: nextProps.itemData.viewPos.y
+      currentY: nextProps.itemData.viewPos.y,
+      currentSizeX: nextProps.itemData.viewSize.x,
+      currentSizeY: nextProps.itemData.viewSize.y,
+      currentIndex: nextProps.itemData.viewIndex
     });
   }
 
   // Handle dragging locally (to prevent excessive statechanges)
   dragStart(e, draggableEvent){
-    this.setState((prevState)=>{ 
-      return {
-        currentX: prevState.currentX + draggableEvent.position.deltaX,
-        currentY: prevState.currentY + draggableEvent.position.deltaY
-      }
+    this.setState((prevState)=>{
+      prevState.currentX = prevState.currentX + draggableEvent.position.deltaX;
+      prevState.currentY = prevState.currentY + draggableEvent.position.deltaY;
+      return prevState
+    });
+  }
+
+  resizeStart(e, resizeableEvent){
+    this.setState((prevState)=>{
+      prevState.currentSizeX = resizeableEvent.size.width;
+      prevState.currentSizeY = resizeableEvent.size.height;
+      return prevState;
     });
   }
 
   render() {
-    var style = {
-      left: this.state.currentX + "px", 
-      top: this.state.currentY + "px", 
-      zIndex: this.props.itemData.viewIndex
+    console.log(this.props.itemData, this.props.itemData.viewSize.x, this.state.currentSizeX)
+    let stylePosition = {
+      left: this.state.currentX + 'px', 
+      top: this.state.currentY + 'px', 
+      zIndex: this.state.currentIndex
+    };
+    let styleResize = {
+      width: this.state.currentSizeX + 'px', 
+      height: this.state.currentSizeY + 'px'
     };
     return (
-      <div className="window" style={style} onClick={this.props.windowHandler.bind(null, "tofront", this.props.itemData, {})}>
-        <ResizableBox 
-          width={600} 
-          height={400}
+      <div className="window" style={stylePosition} onClick={this.props.windowHandler.bind(null, "tofront", this.props.itemData, {})}>
+        <Resizable 
+          width={this.state.currentSizeX} 
+          height={this.state.currentSizeY}
           minConstraints={[200, 200]} 
           maxConstraints={[1000, 600]}
+          onResize={this.resizeStart.bind(this)}
+          onResizeStop={this.props.windowHandler.bind(null, "resize", this.props.itemData, {})}
           >
-          <div className="window__inner">
-            <DraggableCore 
-            onDrag={this.dragStart.bind(this)}
-            onStop={this.props.windowHandler.bind(null, "move", this.props.itemData, {x: this.state.currentX, y: this.state.currentY})}>
-              <header className="window__header">
-                <p className="window__header-text">{this.props.itemData.type} {this.props.itemData.searchQuery} </p>
-                <div className="window__close-button" onClick={this.props.windowHandler.bind(null, "close", this.props.itemData, {})}>x</div>
-              </header>
-            </DraggableCore>
-            <main className="window__body">
-            {(()=>{
-            switch (this.props.itemData.type){
-              case "Verkenner": return <WindowExplorer itemData={this.props.itemData} folderHandler={this.props.folderHandler}/> ;
-              case "Zoeken": return <WindowSearch filesystem={this.props.filesystem} itemData={this.props.itemData} folderHandler={this.props.folderHandler}/>;
-              case "Tekstbestand": return <WindowText filesystem={this.props.filesystem} itemData={this.props.itemData} folderHandler={this.props.folderHandler}/>;
-            }
-            })()}
-            </main>
+          <div style={styleResize}>
+            <div className="window__inner">
+              <DraggableCore 
+              onDrag={this.dragStart.bind(this)}
+              onStop={this.props.windowHandler.bind(null, "move", this.props.itemData, {x: this.state.currentX, y: this.state.currentY})}>
+                <header className="window__header">
+                  <p className="window__header-text">{this.props.itemData.type} {this.props.itemData.searchQuery} </p>
+                  <div className="window__close-button" onClick={this.props.windowHandler.bind(null, "close", this.props.itemData, {})}>x</div>
+                </header>
+              </DraggableCore>
+              <main className="window__body">
+              {(()=>{
+              switch (this.props.itemData.type){
+                case "Verkenner": return <WindowExplorer itemData={this.props.itemData} folderHandler={this.props.folderHandler}/> ;
+                case "Zoeken": return <WindowSearch filesystem={this.props.filesystem} itemData={this.props.itemData} folderHandler={this.props.folderHandler}/>;
+                case "Tekstbestand": return <WindowText filesystem={this.props.filesystem} itemData={this.props.itemData} folderHandler={this.props.folderHandler}/>;
+              }
+              })()}
+              </main>
+            </div>
           </div>
-        </ResizableBox>
+        </Resizable>
       </div>
     )
   }

@@ -26,7 +26,7 @@ class App extends React.Component{
 
         ]
       },
-      filesystems: main
+      filesystem: main
     }
   }
 
@@ -119,7 +119,7 @@ class App extends React.Component{
     });
   }
 
-  windowHandler(action, windowData, newPosition, event){
+  windowHandler(action, windowData, newPosition, event, resize){
     
     if (action == "close"){
       event.stopPropagation();
@@ -165,6 +165,21 @@ class App extends React.Component{
         })
       });
     }
+
+    else if (action == "resize") {
+      this.setState((prevState)=>{ 
+        prevState.view.windows.map((windowItem, key)=>{
+          if (windowData.id == windowItem.id){
+            prevState.view.windows[key].viewSize = {
+              x: resize.size.width,
+              y: resize.size.height
+            }
+          }
+          return prevState;
+        })
+      });
+    }
+
   }
 
   render() {
@@ -181,7 +196,7 @@ class App extends React.Component{
             <Menu searchQuery={this.state.view.searchQuery} searchQueryHandler={this.searchQueryHandler.bind(this)} searchHandler={this.searchHandler.bind(this)}/>
           </header>
           <div className="layout__desktop-main">
-            <Desktop windows={this.state.view.windows} filesystem={this.state.filesystems} folderHandler={this.folderHandler.bind(this)} windowHandler={this.windowHandler.bind(this)}/>
+            <Desktop windows={this.state.view.windows} filesystem={this.state.filesystem} folderHandler={this.folderHandler.bind(this)} windowHandler={this.windowHandler.bind(this)}/>
           </div>
         </div>
 			</div>
