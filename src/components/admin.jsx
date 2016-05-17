@@ -31,10 +31,8 @@ class Admin extends React.Component{
                 <li>Zoekfunctionaliteiten waarbij veel vensters opengaan (zoek zonder term voor alles)</li>
               </ul>
             </div>
-            <p>Om te beginnen, klik de volledig scherm kom en dan start!</p>
             <button className="admin__button" onClick={this.fullScreen}> Full Screen!</button>
             <button className="admin__button" onClick={this.props.adminHandler}> Start invading! </button>
-            <p>(Mocht er iets mis gaan, herlaad dan de pagina)</p>
           </div>
         </div>
       </div>
