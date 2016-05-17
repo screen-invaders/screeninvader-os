@@ -23,16 +23,18 @@ class Admin extends React.Component{
             <img className="admin__logo" src={imgLogo} />
             <div className="admin__description">
               <h1 className="admin__header"> Welkom bij je screeninvader!</h1>
-              <p>Deze screeninvader kan dit:</p>
+              <p>Dit intranet van de belastingdienst kan dit:</p>
               <ul className="admin__list">
-                <li>Nep inlogsysteem</li>
+                <li>Inloggen: na 2x fout inloogen, stuurt hij je de derde keer door</li>
                 <li>Openen en slepen van mappen en vensters</li>
-                <li>Weergeven van specifieke content</li>
-                <li>Zoekfunctionaliteiten (zoek zonder term voor alles)</li>
+                <li>Weergeven van mappen en documenten</li>
+                <li>Zoekfunctionaliteiten waarbij veel vensters opengaan (zoek zonder term voor alles)</li>
               </ul>
             </div>
+            <p>Om te beginnen, klik de volledig scherm kom en dan start!</p>
             <button className="admin__button" onClick={this.fullScreen}> Full Screen!</button>
             <button className="admin__button" onClick={this.props.adminHandler}> Start invading! </button>
+            <p>(Mocht er iets mis gaan, herlaad dan de pagina)</p>
           </div>
         </div>
       </div>
