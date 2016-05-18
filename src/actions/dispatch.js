@@ -1,4 +1,4 @@
-let dispatch = (action)=>{
+let dispatch = function (action) {
   console.log(this);
   if (action.type == "overlay__change"){
     this.setState((prevState)=>{
