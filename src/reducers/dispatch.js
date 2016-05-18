@@ -1,15 +1,15 @@
 let dispatch = function (action) {
-  if (action.type == "overlay__change"){
+  if (action.type == "overlay__change2login"){
     this.setState((prevState)=>{
-      prevState.view.overlay.type = action.overlay;
+      prevState.view.overlay.type = "login";
       return prevState;
     });
   }
 
-  if (action.type == "overlay__changeLogin"){
+  if (action.type == "overlay__change2none"){
     this.setState((prevState)=>{
       if (this.state.view.overlay.attempts == 0) {
-        prevState.view.overlay.type = action.overlay;
+        prevState.view.overlay.type = "";
       } else {
         prevState.view.overlay.attempts--;
       }

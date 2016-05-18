@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { search__submitQuery, search__enterQuery } from '../actions/search.js';
+
 import imgLogo from '../assets/images/search.png'
 
 class Menu extends React.Component{
@@ -17,18 +19,10 @@ class Menu extends React.Component{
 
         <form className="menu__search" onSubmit={(e)=>{
           e.preventDefault();
-          let action = {
-            type: "search__submitQuery"
-          };
-          this.props.dispatch(action);
+          this.props.dispatch(search__submitQuery());
         }}>
           <input className="menu__searchbar" type="text" placeholder="Zoeken" value={this.props.searchQuery} onChange={(e)=>{
-            e.preventDefault();
-            let action = {
-              type: "search__enterQuery",
-              query: e.target.value
-            };
-            this.props.dispatch(action);
+            this.props.dispatch(search__enterQuery(e));
           }} />
           <input className="menu__search-icon" type="image" name="image" src={imgLogo}></input>
         </form>

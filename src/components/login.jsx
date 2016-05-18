@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { overlay__change2none } from '../actions/overlay.js';
+
 import imgLogo from '../assets/images/belasting-logo.png'
 
 class Login extends React.Component{
@@ -9,12 +11,9 @@ class Login extends React.Component{
   			<div className="login">
           <form className="login__details" onSubmit={(e)=>{
             e.preventDefault();
-            this.props.dispatch({
-            type: "overlay__changeLogin",
-            overlay: ""
-          })}}>
+            this.props.dispatch(overlay__change2none());
+          }}>
             <img className="login__logo" src={imgLogo} />
-            
             {(()=>{
               if (this.props.state.view.overlay.attempts < 2){
                 return (
@@ -23,8 +22,7 @@ class Login extends React.Component{
                   <p>klik voor meer info</p>
                 </div> )
               }
-            })()}            
-            
+            })()}
             <div className="login__group">
               <label className="login__label">Gebruikersnaam</label>
               <input className="login__username" type="text" defaultValue="IvMourik"></input>

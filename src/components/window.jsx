@@ -73,8 +73,7 @@ class Window extends React.Component{
           minConstraints={[200, 200]} 
           maxConstraints={[1000, 600]}
           onResize={this.onResize.bind(this)}
-          onResizeStop={dispatch.bind(null, window__resize(windowData, this.state.size))}
-          >
+          onResizeStop={dispatch.bind(null, window__resize(windowData, this.state.size))}>
           <div style={styleSize}>
             <div className="window__inner">
               <DraggableCore 
@@ -91,7 +90,7 @@ class Window extends React.Component{
                 case "Verkenner": 
                   return <WindowExplorer windowData={windowData} dispatch={dispatch}/> ;
                 case "Zoeken": 
-                  return <WindowSearch state={this.props.state} windowData={windowData} dispatch={dispatch}/>;
+                  return <WindowSearch windowData={windowData} dispatch={dispatch} state={this.props.state} />;
                 case "Tekstbestand": 
                   return <WindowText windowData={windowData}/>;
               }
