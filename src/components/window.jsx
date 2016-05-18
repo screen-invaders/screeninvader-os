@@ -14,51 +14,59 @@ class Window extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      currentX: this.props.itemData.viewPos.x,
-      currentY: this.props.itemData.viewPos.y,
-      currentSizeX: this.props.itemData.viewSize.x,
-      currentSizeY: this.props.itemData.viewSize.y,
-      currentIndex: this.props.itemData.viewIndex
+      position: {
+        x: this.props.itemData.viewPos.x,
+        y: this.props.itemData.viewPos.y
+      },
+      size: {
+        x: this.props.itemData.viewSize.x,
+        y: this.props.itemData.viewSize.y
+      },
+      index: this.props.itemData.viewIndex
     }
   }
 
   // Setting local position dynamically
   componentWillReceiveProps(nextProps){
     this.setState({
-      currentX: nextProps.itemData.viewPos.x,
-      currentY: nextProps.itemData.viewPos.y,
-      currentSizeX: nextProps.itemData.viewSize.x,
-      currentSizeY: nextProps.itemData.viewSize.y,
-      currentIndex: nextProps.itemData.viewIndex
+      position: {
+        x: nextProps.itemData.viewPos.x,
+        y: nextProps.itemData.viewPos.y
+      },
+      size: {
+        x: nextProps.itemData.viewSize.x,
+        y: nextProps.itemData.viewSize.y
+      },
+      index: nextProps.itemData.viewIndex
     });
   }
 
   // Handle dragging locally (to prevent excessive statechanges)
   dragStart(e, draggableEvent){
     this.setState((prevState)=>{
-      prevState.currentX = prevState.currentX + draggableEvent.position.deltaX;
-      prevState.currentY = prevState.currentY + draggableEvent.position.deltaY;
+      prevState.position.x = prevState.position.x + draggableEvent.position.deltaX;
+      prevState.position.y = prevState.position.y + draggableEvent.position.deltaY;
       return prevState
     });
   }
 
   resizeStart(e, resizeableEvent){
     this.setState((prevState)=>{
-      prevState.currentSizeX = resizeableEvent.size.width;
-      prevState.currentSizeY = resizeableEvent.size.height;
+      prevState.size.x = resizeableEvent.size.width;
+      prevState.size.y = resizeableEvent.size.height;
       return prevState;
     });
   }
 
   render() {
     let stylePosition = {
-      left: this.state.currentX + 'px', 
-      top: this.state.currentY + 'px', 
-      zIndex: this.state.currentIndex
+      left: this.state.position.x + 'px', 
+      top: this.state.position.y + 'px', 
+      zIndex: this.state.index
     };
     let styleSize = {
-      width: this.state.currentSizeX + 'px', 
-      height: this.state.currentSizeY + 'px'
+      width: this.state.size.x + 'px', 
+      height: this.state.size.y+ 'px'
     };
 
     let dispatch = this.props.dispatch;
@@ -67,18 +75,18 @@ class Window extends React.Component{
     return (
       <div className="window" style={stylePosition} onClick={dispatch.bind(null, actions.window__tofront(windowData))}>
         <Resizable 
-          width={this.state.currentSizeX} 
-          height={this.state.currentSizeY}
+          width={this.state.size.x} 
+          height={this.state.size.y}
           minConstraints={[200, 200]} 
           maxConstraints={[1000, 600]}
           onResize={this.resizeStart.bind(this)}
-          onResizeStop={dispatch.bind(null, actions.window__resize(windowData, {x: this.state.currentSizeX, y: this.state.currentSizeY}))}
+          onResizeStop={dispatch.bind(null, actions.window__resize(windowData, this.state.size))}
           >
           <div style={styleSize}>
             <div className="window__inner">
               <DraggableCore 
               onDrag={this.dragStart.bind(this)}
-              onStop={dispatch.bind(null, actions.window__move(windowData, {x: this.state.currentX, y: this.state.currentY}))}>
+              onStop={dispatch.bind(null, actions.window__move(windowData, this.state.position))}>
                 <header className="window__header">
                   <p className="window__header-text">{this.props.itemData.type}</p>
                   <div className="window__close-button" onClick={dispatch.bind(null, actions.window__close(windowData))}>x</div>
