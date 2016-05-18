@@ -49,62 +49,23 @@ class App extends React.Component{
     });
   }
 
-  searchHandler(event){
-    event.preventDefault();
-    var randX = Math.random() * (window.innerWidth - 620);
-    var randY = Math.random() * (window.innerHeight - 500);
-    var nextID = Math.random() * 0x10000;
-    this.setState((prevState)=>{
-      var newWindow = {
-        id: nextID,
-        type: "Zoeken",
-        searchQuery: prevState.view.searchQuery,
-        viewPos: {
-          x: randX,
-          y: randY
-        },
-        viewSize: {
-          x: 600,
-          y: 400
-        },
-        viewIndex: 600
-      };
-      prevState.view.windows.push(newWindow);
-      prevState.view.searchQuery = "";
-      return prevState;
-    });
-  }
-
-  searchQueryHandler(e) {
-    let newSearchQuery = e.target.value;
-    this.setState((prevState)=>{
-      prevState.view.searchQuery = newSearchQuery;
-      return prevState;
-    });
-  }
-
-  folderHandler(action, event){
-    let randX = Math.random() * (window.innerWidth - 620);
-    let randY = Math.random() * (window.innerHeight - 500);
-    let nextID = Math.random() * 0x10000;
-    let type;
-
-    switch (action.folder.type) {
-      case "dir": 
-        type = "Verkenner";
-        break;
-      case "txt": 
-        type = "Tekstbestand";
-        break;
+  dispatch(action){
+    if (action.type == "search__enterQuery") {
+      this.setState((prevState)=>{
+        prevState.view.searchQuery = action.query;
+        return prevState;
+      });
     }
 
-    this.setState((prevState)=>{
-      prevState.view.windows.push(
-        {
+    else if (action.type == "search__submitQuery") {
+      var randX = Math.random() * (window.innerWidth - 620);
+      var randY = Math.random() * (window.innerHeight - 500);
+      var nextID = Math.random() * 0x10000;
+      this.setState((prevState)=>{
+        var newWindow = {
           id: nextID,
-          folder: action.folder,
-          filesystemPos: action.folder.path,
-          type: type,
+          type: "Zoeken",
+          searchQuery: prevState.view.searchQuery,
           viewPos: {
             x: randX,
             y: randY
@@ -114,16 +75,51 @@ class App extends React.Component{
             y: 400
           },
           viewIndex: 600
-        }
-      );
-      return prevState;
-    });
-  }
+        };
+        prevState.view.windows.push(newWindow);
+        prevState.view.searchQuery = "";
+        return prevState;
+      });
+    }
 
-  dispatch(action, event){
+    else if (action.type == "folder__open") {
+      let randX = Math.random() * (window.innerWidth - 620);
+      let randY = Math.random() * (window.innerHeight - 500);
+      let nextID = Math.random() * 0x10000;
+      let type;
 
-    if (action.type == "window__close"){
-      event.stopPropagation();
+      switch (action.folder.type) {
+        case "dir": 
+          type = "Verkenner";
+          break;
+        case "txt": 
+          type = "Tekstbestand";
+          break;
+      }
+
+      this.setState((prevState)=>{
+        prevState.view.windows.push(
+          {
+            id: nextID,
+            folder: action.folder,
+            filesystemPos: action.folder.path,
+            type: type,
+            viewPos: {
+              x: randX,
+              y: randY
+            },
+            viewSize: {
+              x: 600,
+              y: 400
+            },
+            viewIndex: 600
+          }
+        );
+        return prevState;
+      });
+    }
+
+    else if (action.type == "window__close"){
       this.setState((prevState)=>{
         prevState.view.windows.map((windowItem, key)=>{
           if (action.window.id == windowItem.id){
@@ -176,7 +172,6 @@ class App extends React.Component{
         })
       });
     }
-
   }
 
   render() {
@@ -190,10 +185,10 @@ class App extends React.Component{
         })()}
         <div className="layout__desktop">
           <header className="layout__desktop-header">
-            <Menu searchQuery={this.state.view.searchQuery} searchQueryHandler={this.searchQueryHandler.bind(this)} searchHandler={this.searchHandler.bind(this)}/>
+            <Menu searchQuery={this.state.view.searchQuery} dispatch={this.dispatch.bind(this)}/>
           </header>
           <div className="layout__desktop-main">
-            <Desktop windows={this.state.view.windows} filesystem={this.state.filesystem} folderHandler={this.folderHandler.bind(this)} dispatch={this.dispatch.bind(this)}/>
+            <Desktop windows={this.state.view.windows} filesystem={this.state.filesystem}dispatch={this.dispatch.bind(this)}/>
           </div>
         </div>
 			</div>

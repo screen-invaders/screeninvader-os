@@ -35,7 +35,7 @@ class WindowSearch extends React.Component{
 
   renderSearch(searchItems){
     let templatedFolders = searchItems.map((item, key)=>{
-      return <FolderDraggable key={key} itemData={item} folderHandler={this.props.folderHandler}/>
+      return <FolderDraggable key={key} itemData={item} dispatch={this.props.dispatch}/>
     })
     return templatedFolders;
   }

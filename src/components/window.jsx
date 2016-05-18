@@ -111,9 +111,9 @@ class Window extends React.Component{
               <main className="window__body">
               {(()=>{
               switch (this.props.itemData.type){
-                case "Verkenner": return <WindowExplorer itemData={this.props.itemData} folderHandler={this.props.folderHandler}/> ;
-                case "Zoeken": return <WindowSearch filesystem={this.props.filesystem} itemData={this.props.itemData} folderHandler={this.props.folderHandler}/>;
-                case "Tekstbestand": return <WindowText filesystem={this.props.filesystem} itemData={this.props.itemData} folderHandler={this.props.folderHandler}/>;
+                case "Verkenner": return <WindowExplorer itemData={this.props.itemData} dispatch={dispatch}/> ;
+                case "Zoeken": return <WindowSearch filesystem={this.props.filesystem} itemData={this.props.itemData} dispatch={dispatch}/>;
+                case "Tekstbestand": return <WindowText itemData={this.props.itemData}/>;
               }
               })()}
               </main>

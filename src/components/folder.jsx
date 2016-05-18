@@ -22,9 +22,8 @@ class Folder extends React.Component{
         folder: this.props.itemData
       }
     };
-
 		return (
-      <div className="folder" onDoubleClick={this.props.folderHandler.bind(null, actions.folder__open)}>
+      <div className="folder" onDoubleClick={this.props.dispatch.bind(null, actions.folder__open)}>
 			  <img className="folder__image" draggable="false" src={imgLogo}></img>
         <p className="folder__text">{this.props.itemData.name}</p>
       </div>

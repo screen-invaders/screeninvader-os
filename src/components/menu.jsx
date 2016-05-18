@@ -15,8 +15,21 @@ class Menu extends React.Component{
           <li className="menu__list-item">Meldingen</li>
         </ul>
 
-        <form className="menu__search" onSubmit={this.props.searchHandler}>
-          <input className="menu__searchbar" type="text" placeholder="Zoeken" value={this.props.searchQuery} onChange={this.props.searchQueryHandler}></input>
+        <form className="menu__search" onSubmit={(e)=>{
+          e.preventDefault();
+          let action = {
+            type: "search__submitQuery"
+          };
+          this.props.dispatch(action);
+        }}>
+          <input className="menu__searchbar" type="text" placeholder="Zoeken" value={this.props.searchQuery} onChange={(e)=>{
+            e.preventDefault();
+            let action = {
+              type: "search__enterQuery",
+              query: e.target.value
+            };
+            this.props.dispatch(action);
+          }} />
           <input className="menu__search-icon" type="image" name="image" src={imgLogo}></input>
         </form>
 
