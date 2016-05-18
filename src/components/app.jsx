@@ -120,7 +120,7 @@ class App extends React.Component{
     });
   }
 
-  windowHandler(action, event){
+  dispatch(action, event){
 
     if (action.type == "window__close"){
       event.stopPropagation();
@@ -193,7 +193,7 @@ class App extends React.Component{
             <Menu searchQuery={this.state.view.searchQuery} searchQueryHandler={this.searchQueryHandler.bind(this)} searchHandler={this.searchHandler.bind(this)}/>
           </header>
           <div className="layout__desktop-main">
-            <Desktop windows={this.state.view.windows} filesystem={this.state.filesystem} folderHandler={this.folderHandler.bind(this)} windowHandler={this.windowHandler.bind(this)}/>
+            <Desktop windows={this.state.view.windows} filesystem={this.state.filesystem} folderHandler={this.folderHandler.bind(this)} dispatch={this.dispatch.bind(this)}/>
           </div>
         </div>
 			</div>

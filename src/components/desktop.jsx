@@ -18,7 +18,7 @@ class Desktop extends React.Component{
           return templatedItems;
         })()}
         { this.props.windows.map((item, key)=>{
-          return <Window key={key} itemData={item} filesystem={this.props.filesystem} folderHandler={this.props.folderHandler} windowHandler={this.props.windowHandler}/> })}
+          return <Window key={key} itemData={item} filesystem={this.props.filesystem} folderHandler={this.props.folderHandler} dispatch={this.props.dispatch}/> })}
       </div>
     )
 	}

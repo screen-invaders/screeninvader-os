@@ -86,24 +86,26 @@ class Window extends React.Component{
       }
     }
 
+    let dispatch = this.props.dispatch;
+
     return (
-      <div className="window" style={stylePosition} onClick={this.props.windowHandler.bind(null, actions.tofront)}>
+      <div className="window" style={stylePosition} onClick={dispatch.bind(null, actions.tofront)}>
         <Resizable 
           width={this.state.currentSizeX} 
           height={this.state.currentSizeY}
           minConstraints={[200, 200]} 
           maxConstraints={[1000, 600]}
           onResize={this.resizeStart.bind(this)}
-          onResizeStop={this.props.windowHandler.bind(null, actions.resize)}
+          onResizeStop={dispatch.bind(null, actions.resize)}
           >
           <div style={styleResize}>
             <div className="window__inner">
               <DraggableCore 
               onDrag={this.dragStart.bind(this)}
-              onStop={this.props.windowHandler.bind(null, actions.move)}>
+              onStop={dispatch.bind(null, actions.move)}>
                 <header className="window__header">
                   <p className="window__header-text">{this.props.itemData.type}</p>
-                  <div className="window__close-button" onClick={this.props.windowHandler.bind(null, actions.close)}>x</div>
+                  <div className="window__close-button" onClick={dispatch.bind(null, actions.close)}>x</div>
                 </header>
               </DraggableCore>
               <main className="window__body">
