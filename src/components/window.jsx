@@ -13,14 +13,14 @@ class Window extends React.Component{
   // Setting local state (to prevent excessive rendering)
   constructor(props){
     super(props);
-    this.state = this.setLocalState(this.props);
+    this.state = this.localStateModel(this.props);
   }
 
   componentWillReceiveProps(nextProps){
-    this.setState(this.setLocalState(nextProps));
+    this.setState(this.localStateModel(nextProps));
   }
 
-  setLocalState(props){
+  localStateModel(props){
     return {
       position: {
         x: props.windowData.viewPos.x,
