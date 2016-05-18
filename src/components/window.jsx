@@ -88,9 +88,12 @@ class Window extends React.Component{
               <main className="window__body">
               {(()=>{
               switch (windowData.type){
-                case "Verkenner": return <WindowExplorer windowData={windowData} dispatch={dispatch}/> ;
-                case "Zoeken": return <WindowSearch state={this.props.state} windowData={windowData} dispatch={dispatch}/>;
-                case "Tekstbestand": return <WindowText windowData={windowData}/>;
+                case "Verkenner": 
+                  return <WindowExplorer windowData={windowData} dispatch={dispatch}/> ;
+                case "Zoeken": 
+                  return <WindowSearch state={this.props.state} windowData={windowData} dispatch={dispatch}/>;
+                case "Tekstbestand": 
+                  return <WindowText windowData={windowData}/>;
               }
               })()}
               </main>
