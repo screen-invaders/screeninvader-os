@@ -7,7 +7,7 @@ import WindowExplorer from './window-explorer.jsx';
 import WindowSearch from './window-search.jsx';
 import WindowText from './window-text.jsx';
 
-import actions from '../actions/window.js';
+import { window__tofront, window__close, window__resize, window__move } from '../actions/window.js';
 
 class Window extends React.Component{
   // Setting local position for the first time
@@ -73,23 +73,23 @@ class Window extends React.Component{
     let windowData = this.props.itemData;
 
     return (
-      <div className="window" style={stylePosition} onClick={dispatch.bind(null, actions.window__tofront(windowData))}>
+      <div className="window" style={stylePosition} onClick={dispatch.bind(null, window__tofront(windowData))}>
         <Resizable 
           width={this.state.size.x} 
           height={this.state.size.y}
           minConstraints={[200, 200]} 
           maxConstraints={[1000, 600]}
           onResize={this.resizeStart.bind(this)}
-          onResizeStop={dispatch.bind(null, actions.window__resize(windowData, this.state.size))}
+          onResizeStop={dispatch.bind(null, window__resize(windowData, this.state.size))}
           >
           <div style={styleSize}>
             <div className="window__inner">
               <DraggableCore 
               onDrag={this.dragStart.bind(this)}
-              onStop={dispatch.bind(null, actions.window__move(windowData, this.state.position))}>
+              onStop={dispatch.bind(null, window__move(windowData, this.state.position))}>
                 <header className="window__header">
                   <p className="window__header-text">{this.props.itemData.type}</p>
-                  <div className="window__close-button" onClick={dispatch.bind(null, actions.window__close(windowData))}>x</div>
+                  <div className="window__close-button" onClick={dispatch.bind(null, window__close(windowData))}>x</div>
                 </header>
               </DraggableCore>
               <main className="window__body">
