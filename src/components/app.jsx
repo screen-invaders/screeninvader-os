@@ -120,45 +120,42 @@ class App extends React.Component{
     });
   }
 
-  windowHandler(action, windowData, newPosition, event, resize){
-    if (action == "close"){
+  windowHandler(action, event){
+
+    if (action.type == "window__close"){
       event.stopPropagation();
       this.setState((prevState)=>{
         prevState.view.windows.map((windowItem, key)=>{
-          if (windowData.id == windowItem.id){
+          if (action.window.id == windowItem.id){
             prevState.view.windows.splice(key,1);
           }
         })
         return prevState;
       })
     } 
-    
-    else if (action == "tofront") {
+
+    else if (action.type == "window__tofront") {
       this.setState((prevState)=>{
-        var temp;
         prevState.view.windows.map((windowItem, key)=>{
-          if (windowData.id == windowItem.id){
-            temp = prevState.view.windows.splice(key,1);
+          if (action.window.id == windowItem.id){
+            var temp = prevState.view.windows.splice(key,1);
+            prevState.view.windows.push(temp[0]);
+            prevState.view.windows.map((windowItem, key)=>{
+              return prevState.view.windows[key].viewIndex = 500 + key;
+            });
           }
         })
-
-        prevState.view.windows.push(temp[0]);
-
-        prevState.view.windows.map((windowItem, key)=>{
-          return prevState.view.windows[key].viewIndex = 500 + key;
-        });
-
         return prevState;
       })
     }
 
-    else if (action == "move") {
+    else if (action.type == "window__move") {
       this.setState((prevState)=>{ 
         prevState.view.windows.map((windowItem, key)=>{
-          if (windowData.id == windowItem.id){
+          if (action.window.id == windowItem.id){
             prevState.view.windows[key].viewPos = {
-              x: newPosition.x,
-              y: newPosition.y
+              x: action.position.x,
+              y: action.position.y
             }
           }
           return prevState;
@@ -166,13 +163,13 @@ class App extends React.Component{
       });
     }
 
-    else if (action == "resize") {
+    else if (action.type == "window__resize") {
       this.setState((prevState)=>{ 
         prevState.view.windows.map((windowItem, key)=>{
-          if (windowData.id == windowItem.id){
+          if (action.window.id == windowItem.id){
             prevState.view.windows[key].viewSize = {
-              x: resize.size.width,
-              y: resize.size.height
+              x: action.size.x,
+              y: action.size.y
             }
           }
           return prevState;

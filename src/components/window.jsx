@@ -58,24 +58,52 @@ class Window extends React.Component{
       width: this.state.currentSizeX + 'px', 
       height: this.state.currentSizeY + 'px'
     };
+
+    let actions = {
+      tofront: {
+        type: "window__tofront",
+        window: this.props.itemData
+      },
+      close: {
+        type: "window__close",
+        window: this.props.itemData
+      },
+      resize: {
+        type: "window__resize",
+        window: this.props.itemData,
+        size: {
+          x: this.state.currentSizeX,
+          y: this.state.currentSizeY
+        }
+      },
+      move: {
+        type: "window__move",
+        window: this.props.itemData,
+        position: {
+          x: this.state.currentX,
+          y: this.state.currentY
+        }
+      }
+    }
+
     return (
-      <div className="window" style={stylePosition} onClick={this.props.windowHandler.bind(null, "tofront", this.props.itemData, {})}>
+      <div className="window" style={stylePosition} onClick={this.props.windowHandler.bind(null, actions.tofront)}>
         <Resizable 
           width={this.state.currentSizeX} 
           height={this.state.currentSizeY}
           minConstraints={[200, 200]} 
           maxConstraints={[1000, 600]}
           onResize={this.resizeStart.bind(this)}
-          onResizeStop={this.props.windowHandler.bind(null, "resize", this.props.itemData, {})}
+          onResizeStop={this.props.windowHandler.bind(null, actions.resize)}
           >
           <div style={styleResize}>
             <div className="window__inner">
               <DraggableCore 
               onDrag={this.dragStart.bind(this)}
-              onStop={this.props.windowHandler.bind(null, "move", this.props.itemData, {x: this.state.currentX, y: this.state.currentY})}>
+              onStop={this.props.windowHandler.bind(null, actions.move)}>
                 <header className="window__header">
-                  <p className="window__header-text">{this.props.itemData.type} {this.props.itemData.searchQuery} </p>
-                  <div className="window__close-button" onClick={this.props.windowHandler.bind(null, "close", this.props.itemData, {})}>x</div>
+                  <p className="window__header-text">{this.props.itemData.type}</p>
+                  <div className="window__close-button" onClick={this.props.windowHandler.bind(null, actions.close)}>x</div>
                 </header>
               </DraggableCore>
               <main className="window__body">
