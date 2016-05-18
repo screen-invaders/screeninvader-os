@@ -1,7 +1,7 @@
 import React from 'react';
 
 import initialState from '../models/initial-state.js';
-import dispatch from '../actions/dispatch.js';
+import dispatch from '../reducers/dispatch.js';
 
 import Menu from './menu.jsx';
 import Desktop from './desktop.jsx';

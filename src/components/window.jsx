@@ -112,7 +112,7 @@ class Window extends React.Component{
               {(()=>{
               switch (this.props.itemData.type){
                 case "Verkenner": return <WindowExplorer itemData={this.props.itemData} dispatch={dispatch}/> ;
-                case "Zoeken": return <WindowSearch filesystem={this.props.filesystem} itemData={this.props.itemData} dispatch={dispatch}/>;
+                case "Zoeken": return <WindowSearch state={this.props.state} itemData={this.props.itemData} dispatch={dispatch}/>;
                 case "Tekstbestand": return <WindowText itemData={this.props.itemData}/>;
               }
               })()}

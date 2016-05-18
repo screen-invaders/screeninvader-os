@@ -8,7 +8,7 @@ class Desktop extends React.Component{
 		return (
   		<div className="desktop">
         {(()=>{
-          var items = this.props.filesystem.children;
+          var items = this.props.state.filesystem.children;
           var templatedItems = [];
           for (var item in items) {
             if (items.hasOwnProperty(item)) {
@@ -17,8 +17,8 @@ class Desktop extends React.Component{
           }
           return templatedItems;
         })()}
-        { this.props.windows.map((item, key)=>{
-          return <Window key={key} itemData={item} filesystem={this.props.filesystem} dispatch={this.props.dispatch}/> })}
+        { this.props.state.view.windows.map((item, key)=>{
+          return <Window key={key} itemData={item} state={this.props.state} dispatch={this.props.dispatch}/> })}
       </div>
     )
 	}

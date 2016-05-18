@@ -13,7 +13,7 @@ class WindowExplorer extends React.Component{
           var templatedItems = [];
           for (var item in items) {
             if (items.hasOwnProperty(item)) {
-              templatedItems.push(<FolderDraggable key={item} itemData={items[item]} folderHandler={this.props.folderHandler}/>);
+              templatedItems.push(<FolderDraggable key={item} itemData={items[item]} dispatch={this.props.dispatch}/>);
             }
           }
           return templatedItems;
