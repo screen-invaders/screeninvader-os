@@ -5,7 +5,7 @@ class WindowText extends React.Component{
   render() {
     return (
       <div className="window__body-inner">
-        <ReactMarkdown source={this.props.itemData.folder.contents} />
+        <ReactMarkdown source={this.props.windowData.folder.contents} />
       </div>
     )
   }

@@ -33,4 +33,3 @@ export function window__move(windowData, {x, y}){
     }
   }
 };
-

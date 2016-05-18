@@ -10,6 +10,7 @@ import WindowText from './window-text.jsx';
 import { window__tofront, window__close, window__resize, window__move } from '../actions/window.js';
 
 class Window extends React.Component{
+  // Setting local state (to prevent excessive rendering)
   constructor(props){
     super(props);
     this.state = this.setLocalState(this.props);
@@ -22,18 +23,18 @@ class Window extends React.Component{
   setLocalState(props){
     return {
       position: {
-        x: props.itemData.viewPos.x,
-        y: props.itemData.viewPos.y
+        x: props.windowData.viewPos.x,
+        y: props.windowData.viewPos.y
       },
       size: {
-        x: props.itemData.viewSize.x,
-        y: props.itemData.viewSize.y
+        x: props.windowData.viewSize.x,
+        y: props.windowData.viewSize.y
       },
-      index: props.itemData.viewIndex
+      index: props.windowData.viewIndex
     };
   }
 
-  // Handle dragging locally (to prevent excessive statechanges)
+  // Handle dragging locally (to prevent excessive rendering)
   onDrag(e, draggableEvent){
     this.setState((prevState)=>{
       prevState.position.x = prevState.position.x + draggableEvent.position.deltaX;
@@ -58,11 +59,11 @@ class Window extends React.Component{
     };
     let styleSize = {
       width: this.state.size.x + 'px', 
-      height: this.state.size.y+ 'px'
+      height: this.state.size.y + 'px'
     };
 
     let dispatch = this.props.dispatch;
-    let windowData = this.props.itemData;
+    let windowData = this.props.windowData;
 
     return (
       <div className="window" style={stylePosition} onClick={dispatch.bind(null, window__tofront(windowData))}>
@@ -80,16 +81,16 @@ class Window extends React.Component{
               onDrag={this.onDrag.bind(this)}
               onStop={dispatch.bind(null, window__move(windowData, this.state.position))}>
                 <header className="window__header">
-                  <p className="window__header-text">{this.props.itemData.type}</p>
+                  <p className="window__header-text">{this.props.windowData.type}</p>
                   <div className="window__close-button" onClick={dispatch.bind(null, window__close(windowData))}>x</div>
                 </header>
               </DraggableCore>
               <main className="window__body">
               {(()=>{
-              switch (this.props.itemData.type){
-                case "Verkenner": return <WindowExplorer itemData={this.props.itemData} dispatch={dispatch}/> ;
-                case "Zoeken": return <WindowSearch state={this.props.state} itemData={this.props.itemData} dispatch={dispatch}/>;
-                case "Tekstbestand": return <WindowText itemData={this.props.itemData}/>;
+              switch (windowData.type){
+                case "Verkenner": return <WindowExplorer windowData={windowData} dispatch={dispatch}/> ;
+                case "Zoeken": return <WindowSearch state={this.props.state} windowData={windowData} dispatch={dispatch}/>;
+                case "Tekstbestand": return <WindowText windowData={windowData}/>;
               }
               })()}
               </main>

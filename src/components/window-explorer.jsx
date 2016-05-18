@@ -8,8 +8,8 @@ class WindowExplorer extends React.Component{
     return (
       <div className="window__body-inner">
         {(()=>{
-        if (this.props.itemData.folder.children){
-          var items = this.props.itemData.folder.children;
+        if (this.props.windowData.folder.children){
+          var items = this.props.windowData.folder.children;
           var templatedItems = [];
           for (var item in items) {
             if (items.hasOwnProperty(item)) {

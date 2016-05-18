@@ -5,7 +5,7 @@ import FolderDraggable from './folder-draggable.jsx';
 
 class WindowSearch extends React.Component{
   componentWillMount(){
-    this.setState({searchItems: this.pureSearch(this.props.itemData.searchQuery, this.props.state.filesystem.children)});
+    this.setState({searchItems: this.pureSearch(this.props.windowData.searchQuery, this.props.state.filesystem.children)});
   }
 
   pureSearch(query, folder){
