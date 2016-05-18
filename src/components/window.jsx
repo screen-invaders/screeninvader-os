@@ -60,15 +60,15 @@ class Window extends React.Component{
     };
 
     let actions = {
-      tofront: {
+      window__tofront: {
         type: "window__tofront",
         window: this.props.itemData
       },
-      close: {
+      window__close: {
         type: "window__close",
         window: this.props.itemData
       },
-      resize: {
+      window__resize: {
         type: "window__resize",
         window: this.props.itemData,
         size: {
@@ -76,7 +76,7 @@ class Window extends React.Component{
           y: this.state.currentSizeY
         }
       },
-      move: {
+      window__move: {
         type: "window__move",
         window: this.props.itemData,
         position: {
@@ -89,23 +89,23 @@ class Window extends React.Component{
     let dispatch = this.props.dispatch;
 
     return (
-      <div className="window" style={stylePosition} onClick={dispatch.bind(null, actions.tofront)}>
+      <div className="window" style={stylePosition} onClick={dispatch.bind(null, actions.window__tofront)}>
         <Resizable 
           width={this.state.currentSizeX} 
           height={this.state.currentSizeY}
           minConstraints={[200, 200]} 
           maxConstraints={[1000, 600]}
           onResize={this.resizeStart.bind(this)}
-          onResizeStop={dispatch.bind(null, actions.resize)}
+          onResizeStop={dispatch.bind(null, actions.window__resize)}
           >
           <div style={styleResize}>
             <div className="window__inner">
               <DraggableCore 
               onDrag={this.dragStart.bind(this)}
-              onStop={dispatch.bind(null, actions.move)}>
+              onStop={dispatch.bind(null, actions.window__move)}>
                 <header className="window__header">
                   <p className="window__header-text">{this.props.itemData.type}</p>
-                  <div className="window__close-button" onClick={dispatch.bind(null, actions.close)}>x</div>
+                  <div className="window__close-button" onClick={dispatch.bind(null, actions.window__close)}>x</div>
                 </header>
               </DraggableCore>
               <main className="window__body">

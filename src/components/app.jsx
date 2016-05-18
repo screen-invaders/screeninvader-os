@@ -83,13 +83,13 @@ class App extends React.Component{
     });
   }
 
-  folderHandler(itemData, event){
+  folderHandler(action, event){
     let randX = Math.random() * (window.innerWidth - 620);
     let randY = Math.random() * (window.innerHeight - 500);
     let nextID = Math.random() * 0x10000;
     let type;
 
-    switch (itemData.type) {
+    switch (action.folder.type) {
       case "dir": 
         type = "Verkenner";
         break;
@@ -102,8 +102,8 @@ class App extends React.Component{
       prevState.view.windows.push(
         {
           id: nextID,
-          folder: itemData,
-          filesystemPos: itemData.path,
+          folder: action.folder,
+          filesystemPos: action.folder.path,
           type: type,
           viewPos: {
             x: randX,
