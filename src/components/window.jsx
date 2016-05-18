@@ -10,13 +10,11 @@ import WindowText from './window-text.jsx';
 import { window__tofront, window__close, window__resize, window__move } from '../actions/window.js';
 
 class Window extends React.Component{
-  // Setting local position for the first time
   constructor(props){
     super(props);
     this.state = this.setLocalState(this.props);
   }
 
-  // Setting local position dynamically
   componentWillReceiveProps(nextProps){
     this.setState(this.setLocalState(nextProps));
   }
