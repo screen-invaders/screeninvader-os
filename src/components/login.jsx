@@ -16,10 +16,10 @@ class Login extends React.Component{
             <img className="login__logo" src={imgLogo} />
             
             {(()=>{
-              if (this.props.view.overlay.attempts < 2){
+              if (this.props.state.view.overlay.attempts < 2){
                 return (
                 <div className="login__error">
-                  <p>Verkeerd Wachtwoord! Nog {this.props.view.overlay.attempts + 1} pogingen</p>
+                  <p>Verkeerd Wachtwoord! Nog {this.props.state.view.overlay.attempts + 1} pogingen</p>
                   <p>klik voor meer info</p>
                 </div> )
               }

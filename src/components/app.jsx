@@ -21,17 +21,17 @@ class App extends React.Component{
         {(()=>{
         switch (this.state.view.overlay.type){
           case "admin": 
-            return <Admin view={this.state.view} dispatch={this.dispatch.bind(this)} />;
+            return <Admin dispatch={this.dispatch} />;
           case "login": 
-            return <Login view={this.state.view} dispatch={this.dispatch.bind(this)} />;
+            return <Login state={this.state} dispatch={this.dispatch} />;
         }
         })()}
         <div className="layout__desktop">
           <header className="layout__desktop-header">
-            <Menu searchQuery={this.state.view.searchQuery} dispatch={this.dispatch.bind(this)}/>
+            <Menu state={this.state} dispatch={this.dispatch}/>
           </header>
           <div className="layout__desktop-main">
-            <Desktop windows={this.state.view.windows} filesystem={this.state.filesystem}dispatch={this.dispatch.bind(this)}/>
+            <Desktop state={this.state} dispatch={this.dispatch}/>
           </div>
         </div>
 			</div>
