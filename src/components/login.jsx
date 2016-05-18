@@ -7,7 +7,12 @@ class Login extends React.Component{
 		return (
       <div className="layout__overlay">
   			<div className="login">
-          <form className="login__details" onSubmit={this.props.loginHandler}>
+          <form className="login__details" onSubmit={(e)=>{
+            e.preventDefault();
+            this.props.dispatch({
+            type: "overlay__changeLogin",
+            overlay: ""
+          })}}>
             <img className="login__logo" src={imgLogo} />
             
             {(()=>{
