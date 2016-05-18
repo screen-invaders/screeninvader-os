@@ -13,36 +13,30 @@ class Window extends React.Component{
   // Setting local position for the first time
   constructor(props){
     super(props);
-    this.state = {
-      position: {
-        x: this.props.itemData.viewPos.x,
-        y: this.props.itemData.viewPos.y
-      },
-      size: {
-        x: this.props.itemData.viewSize.x,
-        y: this.props.itemData.viewSize.y
-      },
-      index: this.props.itemData.viewIndex
-    }
+    this.state = this.setLocalState(this.props);
   }
 
   // Setting local position dynamically
   componentWillReceiveProps(nextProps){
-    this.setState({
+    this.setState(this.setLocalState(nextProps));
+  }
+
+  setLocalState(props){
+    return {
       position: {
-        x: nextProps.itemData.viewPos.x,
-        y: nextProps.itemData.viewPos.y
+        x: props.itemData.viewPos.x,
+        y: props.itemData.viewPos.y
       },
       size: {
-        x: nextProps.itemData.viewSize.x,
-        y: nextProps.itemData.viewSize.y
+        x: props.itemData.viewSize.x,
+        y: props.itemData.viewSize.y
       },
-      index: nextProps.itemData.viewIndex
-    });
+      index: props.itemData.viewIndex
+    };
   }
 
   // Handle dragging locally (to prevent excessive statechanges)
-  dragStart(e, draggableEvent){
+  onDrag(e, draggableEvent){
     this.setState((prevState)=>{
       prevState.position.x = prevState.position.x + draggableEvent.position.deltaX;
       prevState.position.y = prevState.position.y + draggableEvent.position.deltaY;
@@ -50,7 +44,7 @@ class Window extends React.Component{
     });
   }
 
-  resizeStart(e, resizeableEvent){
+  onResize(e, resizeableEvent){
     this.setState((prevState)=>{
       prevState.size.x = resizeableEvent.size.width;
       prevState.size.y = resizeableEvent.size.height;
@@ -79,13 +73,13 @@ class Window extends React.Component{
           height={this.state.size.y}
           minConstraints={[200, 200]} 
           maxConstraints={[1000, 600]}
-          onResize={this.resizeStart.bind(this)}
+          onResize={this.onResize.bind(this)}
           onResizeStop={dispatch.bind(null, window__resize(windowData, this.state.size))}
           >
           <div style={styleSize}>
             <div className="window__inner">
               <DraggableCore 
-              onDrag={this.dragStart.bind(this)}
+              onDrag={this.onDrag.bind(this)}
               onStop={dispatch.bind(null, window__move(windowData, this.state.position))}>
                 <header className="window__header">
                   <p className="window__header-text">{this.props.itemData.type}</p>
