@@ -7,6 +7,8 @@ import WindowExplorer from './window-explorer.jsx';
 import WindowSearch from './window-search.jsx';
 import WindowText from './window-text.jsx';
 
+import actions from '../actions/window.js';
+
 class Window extends React.Component{
   // Setting local position for the first time
   constructor(props){
@@ -54,58 +56,32 @@ class Window extends React.Component{
       top: this.state.currentY + 'px', 
       zIndex: this.state.currentIndex
     };
-    let styleResize = {
+    let styleSize = {
       width: this.state.currentSizeX + 'px', 
       height: this.state.currentSizeY + 'px'
     };
 
-    let actions = {
-      window__tofront: {
-        type: "window__tofront",
-        window: this.props.itemData
-      },
-      window__close: {
-        type: "window__close",
-        window: this.props.itemData
-      },
-      window__resize: {
-        type: "window__resize",
-        window: this.props.itemData,
-        size: {
-          x: this.state.currentSizeX,
-          y: this.state.currentSizeY
-        }
-      },
-      window__move: {
-        type: "window__move",
-        window: this.props.itemData,
-        position: {
-          x: this.state.currentX,
-          y: this.state.currentY
-        }
-      }
-    }
-
     let dispatch = this.props.dispatch;
+    let windowData = this.props.itemData;
 
     return (
-      <div className="window" style={stylePosition} onClick={dispatch.bind(null, actions.window__tofront)}>
+      <div className="window" style={stylePosition} onClick={dispatch.bind(null, actions.window__tofront(windowData))}>
         <Resizable 
           width={this.state.currentSizeX} 
           height={this.state.currentSizeY}
           minConstraints={[200, 200]} 
           maxConstraints={[1000, 600]}
           onResize={this.resizeStart.bind(this)}
-          onResizeStop={dispatch.bind(null, actions.window__resize)}
+          onResizeStop={dispatch.bind(null, actions.window__resize(windowData, {x: this.state.currentSizeX, y: this.state.currentSizeY}))}
           >
-          <div style={styleResize}>
+          <div style={styleSize}>
             <div className="window__inner">
               <DraggableCore 
               onDrag={this.dragStart.bind(this)}
-              onStop={dispatch.bind(null, actions.window__move)}>
+              onStop={dispatch.bind(null, actions.window__move(windowData, {x: this.state.currentX, y: this.state.currentY}))}>
                 <header className="window__header">
                   <p className="window__header-text">{this.props.itemData.type}</p>
-                  <div className="window__close-button" onClick={dispatch.bind(null, actions.window__close)}>x</div>
+                  <div className="window__close-button" onClick={dispatch.bind(null, actions.window__close(windowData))}>x</div>
                 </header>
               </DraggableCore>
               <main className="window__body">

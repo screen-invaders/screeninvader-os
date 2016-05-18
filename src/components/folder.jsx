@@ -1,5 +1,4 @@
 import React from 'react';
-import Draggable, {DraggableCore} from 'react-draggable';
 
 import imgFolder from '../assets/images/folder.png'
 import imgFile from '../assets/images/file.png'
