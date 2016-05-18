@@ -1,6 +1,5 @@
-export function window__tofront(windowData){
+export function (){
   return {
-    type: "window__tofront",
-    window: windowData
+    type: ""
   }
 };
