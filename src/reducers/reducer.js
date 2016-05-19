@@ -1,151 +1,175 @@
-
-
-let dispatch = function (state, action) {
-
+let reducer = function (state, action) {
   if (action.type == "overlay__change2login"){
-    this.setState((prevState)=>{
-      prevState.view.overlay.type = "login";
-      return prevState;
-    });
-  }
 
-  if (action.type == "overlay__change2none"){
-    this.setState((prevState)=>{
-      if (this.state.view.overlay.attempts == 0) {
-        prevState.view.overlay.type = "";
-      } else {
-        prevState.view.overlay.attempts--;
+    // let newState = state;
+    // newState = { view: "something" };
+    // console.log(state);
+    // console.log(newState);
+    // console.log(state);
+
+
+
+    function renderData(){
+      var data = {
+        name: "david",
+        job: "engineer"
       }
-      return prevState;
-    });
-  }
-
-  else if (action.type == "search__enterQuery") {
-    this.setState((prevState)=>{
-      prevState.view.searchQuery = action.query;
-      return prevState;
-    });
-  }
-
-  else if (action.type == "search__submitQuery") {
-    var randX = Math.random() * (window.innerWidth - 620);
-    var randY = Math.random() * (window.innerHeight - 500);
-    var nextID = Math.random() * 0x10000;
-    this.setState((prevState)=>{
-      var newWindow = {
-        id: nextID,
-        type: "Zoeken",
-        searchQuery: prevState.view.searchQuery,
-        viewPos: {
-          x: randX,
-          y: randY
-        },
-        viewSize: {
-          x: 600,
-          y: 400
-        },
-        viewIndex: 600
-      };
-      prevState.view.windows.push(newWindow);
-      prevState.view.searchQuery = "";
-      return prevState;
-    });
-  }
-
-  else if (action.type == "folder__open") {
-    let randX = Math.random() * (window.innerWidth - 620);
-    let randY = Math.random() * (window.innerHeight - 500);
-    let nextID = Math.random() * 0x10000;
-    let type;
-
-    switch (action.folder.type) {
-      case "dir": 
-        type = "Verkenner";
-        break;
-      case "txt": 
-        type = "Tekstbestand";
-        break;
+      console.log(data);
+      updataData(data);
+      console.log(data);
     }
 
-    this.setState((prevState)=>{
-      prevState.view.windows.push(
-        {
-          id: nextID,
-          folder: action.folder,
-          filesystemPos: action.folder.path,
-          type: type,
-          viewPos: {
-            x: randX,
-            y: randY
-          },
-          viewSize: {
-            x: 600,
-            y: 400
-          },
-          viewIndex: 600
-        }
-      );
-      return prevState;
-    });
+    function updataData(data){
+      var tempData = data;
+      tempData["name"] = "klaas";
+      return tempData;
+    }
+    // renderData();
+
+
+
+    var data = {
+      name: "david",
+      job: "engineer"
+    };
+    console.log(data);
+    var tempData = data;
+    tempData.name = "klaas";
+    console.log(data);
+
+
+
+    let newState = {
+      view: {
+        ...state.view,
+        overlay: {
+          ...state.view.overlay,
+          type: "login"}}};
+    return {...state, ...newState};
   }
 
-  else if (action.type == "window__close"){
-    this.setState((prevState)=>{
-      prevState.view.windows.map((windowItem, key)=>{
-        if (action.window.id == windowItem.id){
-          prevState.view.windows.splice(key,1);
-        }
-      })
-      return prevState;
-    })
-  } 
+  // if (action.type == "overlay__change2none"){
+  //   if (state.view.overlay.attempts == 0) {
+  //     newState.view.overlay.type = "";
+  //   } else {
+  //     newState.view.overlay.attempts--;
+  //   }
+  //   return newState;
+  // }
 
-  else if (action.type == "window__tofront") {
-    this.setState((prevState)=>{
-      prevState.view.windows.map((windowItem, key)=>{
-        if (action.window.id == windowItem.id){
-          var temp = prevState.view.windows.splice(key,1);
-          prevState.view.windows.push(temp[0]);
-          prevState.view.windows.map((windowItem, key)=>{
-            return prevState.view.windows[key].viewIndex = 500 + key;
-          });
-        }
-      })
-      return prevState;
-    })
-  }
+  // else if (action.type == "search__enterQuery") {
+  //   newState.view.searchQuery = action.query;
+  //   return newState;
+  // }
 
-  else if (action.type == "window__move") {
-    this.setState((prevState)=>{ 
-      prevState.view.windows.map((windowItem, key)=>{
-        if (action.window.id == windowItem.id){
-          prevState.view.windows[key].viewPos = {
-            x: action.position.x,
-            y: action.position.y
-          }
-        }
-        return prevState;
-      })
-    });
-  }
+  // else if (action.type == "search__submitQuery") {
+  //   var randX = Math.random() * (window.innerWidth - 620);
+  //   var randY = Math.random() * (window.innerHeight - 500);
+  //   var nextID = Math.random() * 0x10000;
+  //   var newWindow = {
+  //     id: nextID,
+  //     type: "Zoeken",
+  //     searchQuery: state.view.searchQuery,
+  //     viewPos: {
+  //       x: randX,
+  //       y: randY
+  //     },
+  //     viewSize: {
+  //       x: 600,
+  //       y: 400
+  //     },
+  //     viewIndex: 600
+  //   };
+  //   newState.view.windows.push(newWindow);
+  //   newState.view.searchQuery = "";
+  //   return newState;
+  // }
 
-  else if (action.type == "window__resize") {
-    this.setState((prevState)=>{ 
-      prevState.view.windows.map((windowItem, key)=>{
-        if (action.window.id == windowItem.id){
-          prevState.view.windows[key].viewSize = {
-            x: action.size.x,
-            y: action.size.y
-          }
-        }
-        return prevState;
-      })
-    });
-  } 
+  // else if (action.type == "folder__open") {
+  //   let randX = Math.random() * (window.innerWidth - 620);
+  //   let randY = Math.random() * (window.innerHeight - 500);
+  //   let nextID = Math.random() * 0x10000;
+  //   let type;
+
+  //   switch (action.folder.type) {
+  //     case "dir": 
+  //       type = "Verkenner";
+  //       break;
+  //     case "txt": 
+  //       type = "Tekstbestand";
+  //       break;
+  //   }
+
+  //   newState.view.windows.push(
+  //     {
+  //       id: nextID,
+  //       folder: action.folder,
+  //       filesystemPos: action.folder.path,
+  //       type: type,
+  //       viewPos: {
+  //         x: randX,
+  //         y: randY
+  //       },
+  //       viewSize: {
+  //         x: 600,
+  //         y: 400
+  //       },
+  //       viewIndex: 600
+  //     }
+  //   );
+
+  //   return newState;
+  // }
+
+  // else if (action.type == "window__close"){
+  //   state.view.windows.map((windowItem, key)=>{
+  //     if (action.window.id == windowItem.id){
+  //       newState.view.windows.splice(key,1);
+  //     }
+  //   })
+  //   return newState;
+  // } 
+
+  // else if (action.type == "window__tofront") {
+  //   state.view.windows.map((windowItem, key)=>{
+  //     if (action.window.id == windowItem.id){
+  //       var temp = newState.view.windows.splice(key,1);
+  //       newState.view.windows.push(temp[0]);
+  //       newState.view.windows.map((windowItem, key)=>{
+  //         return state.view.windows[key].viewIndex = 500 + key;
+  //       });
+  //     }
+  //   })
+  //   return newState;
+  // }
+
+  // else if (action.type == "window__move") {
+  //   state.view.windows.map((windowItem, key)=>{
+  //     if (action.window.id == windowItem.id){
+  //       newState.view.windows[key].viewPos = {
+  //         x: action.position.x,
+  //         y: action.position.y
+  //       }
+  //     }
+  //     return newState;
+  //   })
+  // }
+
+  // else if (action.type == "window__resize") {
+  //   state.view.windows.map((windowItem, key)=>{
+  //     if (action.window.id == windowItem.id){
+  //       newState.view.windows[key].viewSize = {
+  //         x: action.size.x,
+  //         y: action.size.y
+  //       }
+  //     }
+  //     return newState;
+  //   });
+  // } 
 
   else {
-    return state;
+    return Object.assign({}, state);
   }
 }
 
-export default dispatch;
+export default reducer;

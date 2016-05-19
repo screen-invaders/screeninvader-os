@@ -10,6 +10,12 @@ import App from "./components/app.jsx";
 
 import "./assets/styles/app.scss";
 
-const store = (window.devToolsExtension ? window.devToolsExtension()(createStore) : createStore)(reducer, initialState);
+// Normal createStore
+// const store = createStore(reducer, initialState);
+
+// Mount the store with devtools
+const store = createStore(reducer, initialState, 
+  window.devToolsExtension ? window.devToolsExtension() : undefined
+);
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById("app"));
