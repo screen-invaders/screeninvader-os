@@ -1,6 +1,6 @@
 import React from 'react';
+import { bindActionCreators } from 'redux'
 import Draggable, {DraggableCore} from 'react-draggable';
-
 import { Resizable, ResizableBox } from 'react-resizable';
 
 import WindowExplorer from './window-explorer.jsx';
@@ -61,9 +61,14 @@ class Window extends React.Component{
       width: this.state.size.x + 'px', 
       height: this.state.size.y + 'px'
     };
+    let { dispatch, windowData } = this.props;
 
-    let dispatch = this.props.dispatch;
-    let windowData = this.props.windowData;
+    // Hack to make unknowing components knowledgeable
+    let bound__window__close = bindActionCreators(window__resize.bind(null, windowData), dispatch);
+    let bound__window__move = bindActionCreators(window__resize.bind(null, windowData, this.state.position), dispatch);
+    let bound__window__resize = bindActionCreators(window__resize.bind(null, windowData, this.state.size), dispatch);
+
+    console.log(bound__window__resize);
 
     return (
       <div className="window" style={stylePosition} onClick={dispatch.bind(null, window__tofront(windowData))}>
@@ -73,15 +78,15 @@ class Window extends React.Component{
           minConstraints={[200, 200]} 
           maxConstraints={[1000, 600]}
           onResize={this.onResize.bind(this)}
-          onResizeStop={dispatch.bind(null, window__resize(windowData, this.state.size))}>
+          onResizeStop={bound__window__resize}>
           <div style={styleSize}>
             <div className="window__inner">
               <DraggableCore 
               onDrag={this.onDrag.bind(this)}
-              onStop={dispatch.bind(null, window__move(windowData, this.state.position))}>
+              onStop={bound__window__move}>
                 <header className="window__header">
                   <p className="window__header-text">{this.props.windowData.type}</p>
-                  <div className="window__close-button" onClick={dispatch.bind(null, window__close(windowData))}>x</div>
+                  <div className="window__close-button" onClick={bound__window__close}>x</div>
                 </header>
               </DraggableCore>
               <main className="window__body">
