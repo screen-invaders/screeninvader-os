@@ -8,7 +8,7 @@ class FolderDraggable extends React.Component{
 		return (
       <Draggable>
         <div>
-		      <Folder itemData={this.props.itemData} dispatch={this.props.dispatch}/>
+		      <Folder {...this.props}/>
         </div>
       </Draggable>
     )
