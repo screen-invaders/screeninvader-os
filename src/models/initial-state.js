@@ -6,7 +6,6 @@ let initialState = {
     password: "scotty"
   },
   view: {
-    screen: "desktop",
     overlay: {
       type: "admin",
       attempts: 2          
