@@ -32,4 +32,4 @@ class App extends React.Component{
 	}
 }
 
-export default connect((state)=>{return {state: state}})(App);
+export default connect(state => ({state: state}))(App);

@@ -1,9 +1,8 @@
 let reducer = function (state, action) {
   // This line is potentially harmfull (for example: Date objects aren't properly copied)
-  console.log(state);
-  // console.log(JSON.stringify(state));
-  // let newState = JSON.parse(JSON.stringify(state));
-  let newState = {...state};
+  let newState = JSON.parse(JSON.stringify(state));
+
+  console.log("reducer", action.type, action, state);
 
   if (action.type == "overlay__change2login"){
     newState.view.overlay.type = "login";
@@ -113,10 +112,9 @@ let reducer = function (state, action) {
           y: action.position.y
         }
       }
-      return newState;
     })
+    return newState;
   }
-
   else if (action.type == "window__resize") {
     newState.view.windows.map((windowItem, key)=>{
       if (action.window.id == windowItem.id){
@@ -125,8 +123,8 @@ let reducer = function (state, action) {
           y: action.size.y
         }
       }
-      return newState;
     });
+    return newState;
   } 
 
   else {

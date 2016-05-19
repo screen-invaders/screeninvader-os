@@ -64,19 +64,21 @@ class Window extends React.Component{
     let { dispatch, windowData } = this.props;
 
     // Hack to skip bounds of stupid components
-    let bound__window__close = function(){dispatch(window__close(this.props.windowData))}.bind(this);
-    let bound__window__move = function(){dispatch(window__move(this.props.windowData, this.state.position))}.bind(this);
-    let bound__window__resize = function(){dispatch(window__resize(this.props.windowData, this.state.size))}.bind(this);
+    let bound__window__tofront = function(){return dispatch(window__tofront(this.props.windowData))}.bind(this);
+    let bound__window__close = function(){return dispatch(window__close(this.props.windowData))}.bind(this);
+    let bound__window__move = function(){return dispatch(window__move(this.props.windowData, this.state.position))}.bind(this);
+    let bound__window__resize = function(){return dispatch(window__resize(this.props.windowData, this.state.size))}.bind(this);
 
     return (
-      <div className="window" style={stylePosition} onClick={dispatch.bind(null, window__tofront(windowData))}>
+      <div className="window" style={stylePosition} onclick={bound__window__tofront}>
         <Resizable 
           width={this.state.size.x} 
           height={this.state.size.y}
           minConstraints={[200, 200]} 
           maxConstraints={[1000, 600]}
           onResize={this.onResize.bind(this)}
-          onStop={bound__window__resize}>
+          onResizeStop={bound__window__resize}
+          >
           <div style={styleSize}>
             <div className="window__inner">
               <DraggableCore 
