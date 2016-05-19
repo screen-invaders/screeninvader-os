@@ -1,4 +1,7 @@
-let dispatch = function (action) {
+
+
+let dispatch = function (state, action) {
+
   if (action.type == "overlay__change2login"){
     this.setState((prevState)=>{
       prevState.view.overlay.type = "login";
@@ -138,6 +141,10 @@ let dispatch = function (action) {
         return prevState;
       })
     });
+  } 
+
+  else {
+    return state;
   }
 }
 

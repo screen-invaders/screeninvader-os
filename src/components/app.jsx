@@ -1,7 +1,5 @@
 import React from 'react';
-
-import initialState from '../models/initial-state.js';
-import dispatch from '../reducers/dispatch.js';
+import { connect } from 'react-redux'
 
 import Menu from './menu.jsx';
 import Desktop from './desktop.jsx';
@@ -9,29 +7,24 @@ import Login from './login.jsx';
 import Admin from './admin.jsx';
 
 class App extends React.Component{
-  constructor(props){
-    super(props);
-    this.state = initialState;
-    this.dispatch = dispatch.bind(this);
-  }
-
   render() {
+    let {state, dispatch} = this.props;
 		return (
 			<div className="layout__OS">
         {(()=>{
-        switch (this.state.view.overlay.type){
+        switch (state.view.overlay.type){
           case "admin": 
-            return <Admin dispatch={this.dispatch} />;
+            return <Admin dispatch={dispatch} />;
           case "login": 
-            return <Login state={this.state} dispatch={this.dispatch} />;
+            return <Login state={state} dispatch={dispatch} />;
         }
         })()}
         <div className="layout__desktop">
           <header className="layout__desktop-header">
-            <Menu state={this.state} dispatch={this.dispatch}/>
+            <Menu state={state} dispatch={dispatch}/>
           </header>
           <div className="layout__desktop-main">
-            <Desktop state={this.state} dispatch={this.dispatch}/>
+            <Desktop state={state} dispatch={dispatch}/>
           </div>
         </div>
 			</div>
@@ -39,4 +32,4 @@ class App extends React.Component{
 	}
 }
 
-export default App;
+export default connect((state)=>{return {state: state}})(App);

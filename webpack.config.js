@@ -6,6 +6,10 @@ var babelSettings = {
   plugins: ['transform-object-rest-spread']
 }
 
+new webpack.DefinePlugin({
+  'process.env.NODE_ENV': '"development"'
+})
+
 var config = {
   entry: './src/entry.jsx',
   output: {
