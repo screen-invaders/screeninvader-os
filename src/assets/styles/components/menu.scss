@@ -10,7 +10,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
 }
 
 .menu__list-item {
@@ -18,7 +17,8 @@
   align-items: center;
   position: relative;
   padding: 1rem;
-  height: 4rem;
+  font-size: 1.2rem;
+  line-height: 1.2rem; 
 }
 
 .menu__list-item:hover .dropdown{
@@ -27,10 +27,11 @@
 
 .menu__search {
   position: relative;
-  width: 300px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
+  width: 300px;
   padding: 1rem;
 }
 
@@ -41,7 +42,8 @@
 .menu__searchbar {
   flex: 1 1;
   height: 100%;
-  font-size: 1rem; 
+  font-size: 1.2rem; 
+  line-height: 1.2rem; 
   background: $secundary;
   color: white;
   -webkit-appearance: none;
@@ -61,6 +63,8 @@
   align-items: center;
   justify-content: center;
   padding: 1rem;
+  font-size: 1.2rem; 
+  line-height: 1.2rem; 
 }
 
 .menu__user-notice {

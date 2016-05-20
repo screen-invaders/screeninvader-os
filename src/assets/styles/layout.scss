@@ -25,10 +25,10 @@
 .layout__desktop-header {
   display: flex;
   flex-direction: column;
-  flex: 0 0 4rem;
+  flex: 0 0 3.2rem;
 }
 
 .layout__desktop-main {
   position: relative;
-  height: calc(100% - 4rem);
+  height: calc(100% - 3.2rem);
 }
