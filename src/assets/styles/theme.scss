@@ -3,7 +3,10 @@
 }
 
 .desktop {
-  background: $tertiary;
+  background-image: url("../images/background.png");
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .menu {
