@@ -7,7 +7,6 @@ import imgLogo from '../assets/images/search.png'
 
 class Menu extends React.Component{
   render() {
-    console.log(this.props.state.menu);
 		return (
       <div className="menu">
         <ul className="menu__list">

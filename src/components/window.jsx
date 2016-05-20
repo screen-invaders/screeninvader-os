@@ -4,6 +4,7 @@ import Draggable, {DraggableCore} from 'react-draggable';
 import { Resizable, ResizableBox } from 'react-resizable';
 
 import WindowExplorer from './window-explorer.jsx';
+import WindowExplorerList from './window-explorer-list.jsx';
 import WindowSearch from './window-search.jsx';
 import WindowText from './window-text.jsx';
 
@@ -94,7 +95,7 @@ class Window extends React.Component{
               {(()=>{
               switch (windowData.type){
                 case "Verkenner": 
-                  return <WindowExplorer windowData={windowData} dispatch={dispatch}/> ;
+                  return <WindowExplorerList windowData={windowData} dispatch={dispatch}/> ;
                 case "Zoeken": 
                   return <WindowSearch windowData={windowData} dispatch={dispatch} state={this.props.state} />;
                 case "Tekstbestand": 

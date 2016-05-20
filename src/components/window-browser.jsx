@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 
-class WindowText extends React.Component{
+class WindowBrowser extends React.Component{
   render() {
     return (
       <div className="window__body-inner">
@@ -11,4 +11,4 @@ class WindowText extends React.Component{
   }
 }
 
-export default WindowText;
+export default WindowBrowser;

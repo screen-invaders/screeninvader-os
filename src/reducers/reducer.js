@@ -90,6 +90,7 @@ let reducer = function (state, action) {
   } 
 
   else if (action.type == "window__tofront") {
+    console.log("tofront")
     newState.windows.map((windowItem, key)=>{
       if (action.window.id == windowItem.id){
         var temp = newState.windows.splice(key,1);
