@@ -71,7 +71,7 @@ class Window extends React.Component{
     let bound__window__resize = function(){return dispatch(window__resize(windowData, this.state.size))}.bind(this);
 
     return (
-      <div className="window" style={stylePosition} onclick={bound__window__tofront}>
+      <div className="window" style={stylePosition} onClick={bound__window__tofront}>
         <Resizable 
           width={this.state.size.x} 
           height={this.state.size.y}

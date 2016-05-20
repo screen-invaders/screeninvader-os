@@ -65,8 +65,24 @@
   align-content: flex-start;
 }
 
+.window__body-inner-outer {
+  width: 100%;
+  height: 100%;
+}
+
+.window__search-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $light;
+  width: 100%;
+  padding: 1rem;
+}
+
 .window__search-open-all {
-  width: 8rem;
-  height: 8rem;
+  padding: 1rem;
+  background: $primary;
+  color: $day;
+  border: none;
 }
 

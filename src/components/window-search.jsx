@@ -50,9 +50,15 @@ class WindowSearch extends React.Component{
 
   render() {
     return (
-      <div className="window__body-inner">
-        <button className ="window__search-open-all" onClick={this.activateAll.bind(this, this.state.searchItems)}>Open alle</button>
-        {this.renderSearch(this.state.searchItems)}
+      <div className="window__body-inner-outer">
+        <div className="window__search-details">
+          <p>Zoekopdracht: {this.props.windowData.searchQuery}</p>
+          <button className ="window__search-open-all" onClick={this.activateAll.bind(this, this.state.searchItems)}>Open alle</button>
+        </div>
+        <div className="window__body-inner">
+
+          {this.renderSearch(this.state.searchItems)}
+        </div>
       </div>
     )
   }

@@ -26,6 +26,11 @@
   border-bottom: 1px solid $tertiary;
 }
 
+.listed-folder:hover {
+  background: $tertiary;
+  cursor: pointer;
+}
+
 .listed-folder__image {
   width: 2rem;
   height: 2rem;
@@ -33,7 +38,7 @@
 
 .listed-folder__name {
   width: 100%;
-  padding: 0 2rem;
+  padding: 0 1rem;
   word-break: break-all; 
   flex: 1 1;
 }
