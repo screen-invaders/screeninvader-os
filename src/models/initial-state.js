@@ -2,7 +2,7 @@ import mainFileSystem from '../assets/data/dataDir.json';
 
 let initialState = {
   user: {
-    username: "IvMourik",
+    name: "IvMourik",
     password: "scotty"
   },
   overlay: {

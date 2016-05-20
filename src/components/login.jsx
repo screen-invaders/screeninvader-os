@@ -25,7 +25,7 @@ class Login extends React.Component{
             })()}
             <div className="login__group">
               <label className="login__label">Gebruikersnaam</label>
-              <input className="login__username" type="text" defaultValue="IvMourik"></input>
+              <input className="login__username" type="text" defaultValue={this.props.state.user.name}></input>
             </div>
             <div className="login__group">
               <label className="login__label">Wachtwoord</label>

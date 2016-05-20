@@ -29,7 +29,7 @@ class Menu extends React.Component{
 
         <div className="menu__user-container">
           <h6 className="menu__user-notice">ingelogd als</h6>
-          <p className="menu__user">Mevr. I. XXX</p>
+          <p className="menu__user">{this.props.state.user.name}</p>
         </div>
       </div>
 		)
