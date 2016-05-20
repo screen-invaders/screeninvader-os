@@ -13,7 +13,7 @@ class Menu extends React.Component{
         <ul className="menu__list">
           { this.props.state.menu.map((item, key)=>{
             return <li key={key} className="menu__list-item">
-              {item.name}
+              <p>{item.name}</p>
               {item.dropdown && <Dropdown key={key} dropdown={item.dropdown}/>}
             </li>
           })}
@@ -25,6 +25,7 @@ class Menu extends React.Component{
         }}>
           <input className="menu__searchbar" type="text" placeholder="Zoeken" value={this.props.state.searchQuery} onChange={(e)=>{this.props.dispatch(search__enterQuery(e))}} />
           <input className="menu__search-icon" type="image" name="image" src={imgLogo}></input>
+          <Dropdown dropdown={this.props.state.searchDropdown}/>
         </form>
 
         <div className="menu__user-container">

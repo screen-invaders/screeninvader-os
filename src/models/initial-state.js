@@ -48,6 +48,20 @@ let initialState = {
       name: "Organisatie"
     }
   ],
+  searchDropdown: [
+    {
+      name: "Configuratiescherm"
+    },
+    {
+      name: "Teksteditor"
+    },
+    {
+      name: "Browser"
+    },
+    {
+      name: "Fotobewerking"
+    }
+  ],
   filesystem: mainFileSystem 
 };
 
