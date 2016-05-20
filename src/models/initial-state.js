@@ -6,7 +6,7 @@ let initialState = {
     password: "scotty"
   },
   overlay: {
-    type: "admin",
+    type: "",
   },
   login: {
     attempts: 2
@@ -14,6 +14,39 @@ let initialState = {
   searchQuery: "",
   windows: [
 
+  ],
+  menu: [
+    {
+      name: "Systeem",
+      dropdown: [
+        {
+          name: "Configuratie"
+        }
+      ]
+    },
+    {
+      name: "Programma's",
+      dropdown: [
+        {
+          name: "Configuratiescherm"
+        },
+        {
+          name: "Teksteditor"
+        },
+        {
+          name: "Browser"
+        },
+        {
+          name: "Fotobewerking"
+        }
+      ]
+    },
+    {
+      name: "Belastingen"
+    },
+    {
+      name: "Organisatie"
+    }
   ],
   filesystem: mainFileSystem 
 };

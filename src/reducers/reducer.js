@@ -2,8 +2,6 @@ let reducer = function (state, action) {
   // This line is potentially harmfull (for example: Date objects aren't properly copied)
   let newState = JSON.parse(JSON.stringify(state));
 
-  console.log("reducer", action.type, action, state);
-
   if (action.type == "overlay__change2login"){
     newState.overlay.type = "login";
     return newState;
