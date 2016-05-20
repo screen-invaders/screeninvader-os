@@ -5,21 +5,21 @@ let reducer = function (state, action) {
   console.log("reducer", action.type, action, state);
 
   if (action.type == "overlay__change2login"){
-    newState.view.overlay.type = "login";
+    newState.overlay.type = "login";
     return newState;
   }
 
   if (action.type == "overlay__change2none"){
-    if (newState.view.overlay.attempts == 0) {
-      newState.view.overlay.type = "";
+    if (newState.login.attempts == 0) {
+      newState.overlay.type = "";
     } else {
-      newState.view.overlay.attempts--;
+      newState.login.attempts--;
     }
     return newState;
   }
 
   else if (action.type == "search__enterQuery") {
-    newState.view.searchQuery = action.query;
+    newState.searchQuery = action.query;
     return newState;
   }
 
@@ -30,7 +30,7 @@ let reducer = function (state, action) {
     var newWindow = {
       id: nextID,
       type: "Zoeken",
-      searchQuery: state.view.searchQuery,
+      searchQuery: state.searchQuery,
       viewPos: {
         x: randX,
         y: randY
@@ -41,8 +41,8 @@ let reducer = function (state, action) {
       },
       viewIndex: 600
     };
-    newState.view.windows.push(newWindow);
-    newState.view.searchQuery = "";
+    newState.windows.push(newWindow);
+    newState.searchQuery = "";
     return newState;
   }
 
@@ -61,7 +61,7 @@ let reducer = function (state, action) {
         break;
     }
 
-    newState.view.windows.push(
+    newState.windows.push(
       {
         id: nextID,
         folder: action.folder,
@@ -83,21 +83,21 @@ let reducer = function (state, action) {
   }
 
   else if (action.type == "window__close"){
-    newState.view.windows.map((windowItem, key)=>{
+    newState.windows.map((windowItem, key)=>{
       if (action.window.id == windowItem.id){
-        newState.view.windows.splice(key,1);
+        newState.windows.splice(key,1);
       }
     })
     return newState;
   } 
 
   else if (action.type == "window__tofront") {
-    newState.view.windows.map((windowItem, key)=>{
+    newState.windows.map((windowItem, key)=>{
       if (action.window.id == windowItem.id){
-        var temp = newState.view.windows.splice(key,1);
-        newState.view.windows.push(temp[0]);
-        newState.view.windows.map((windowItem, key)=>{
-          return newState.view.windows[key].viewIndex = 500 + key;
+        var temp = newState.windows.splice(key,1);
+        newState.windows.push(temp[0]);
+        newState.windows.map((windowItem, key)=>{
+          return newState.windows[key].viewIndex = 500 + key;
         });
       }
     })
@@ -105,9 +105,9 @@ let reducer = function (state, action) {
   }
 
   else if (action.type == "window__move") {
-    newState.view.windows.map((windowItem, key)=>{
+    newState.windows.map((windowItem, key)=>{
       if (action.window.id == windowItem.id){
-        newState.view.windows[key].viewPos = {
+        newState.windows[key].viewPos = {
           x: action.position.x,
           y: action.position.y
         }
@@ -116,9 +116,9 @@ let reducer = function (state, action) {
     return newState;
   }
   else if (action.type == "window__resize") {
-    newState.view.windows.map((windowItem, key)=>{
+    newState.windows.map((windowItem, key)=>{
       if (action.window.id == windowItem.id){
-        newState.view.windows[key].viewSize = {
+        newState.windows[key].viewSize = {
           x: action.size.x,
           y: action.size.y
         }

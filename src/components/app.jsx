@@ -12,7 +12,7 @@ class App extends React.Component{
 		return (
 			<div className="layout__OS">
         {(()=>{
-        switch (state.view.overlay.type){
+        switch (state.overlay.type){
           case "admin": 
             return <Admin dispatch={dispatch} />;
           case "login": 

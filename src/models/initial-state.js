@@ -5,16 +5,16 @@ let initialState = {
     username: "IvMourik",
     password: "scotty"
   },
-  view: {
-    overlay: {
-      type: "admin",
-      attempts: 2          
-    },
-    searchQuery: "",
-    windows: [
-
-    ]
+  overlay: {
+    type: "admin",
   },
+  login: {
+    attempts: 2
+  },
+  searchQuery: "",
+  windows: [
+
+  ],
   filesystem: mainFileSystem 
 };
 

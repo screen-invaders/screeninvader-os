@@ -17,7 +17,7 @@ class Desktop extends React.Component{
           }
           return templatedItems;
         })()}
-        { this.props.state.view.windows.map((item, key)=>{
+        { this.props.state.windows.map((item, key)=>{
           return <Window key={key} windowData={item} state={this.props.state} dispatch={this.props.dispatch}/> })}
       </div>
     )

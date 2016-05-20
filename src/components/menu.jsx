@@ -21,7 +21,7 @@ class Menu extends React.Component{
           e.preventDefault();
           this.props.dispatch(search__submitQuery());
         }}>
-          <input className="menu__searchbar" type="text" placeholder="Zoeken" value={this.props.searchQuery} onChange={(e)=>{
+          <input className="menu__searchbar" type="text" placeholder="Zoeken" value={this.props.state.searchQuery} onChange={(e)=>{
             this.props.dispatch(search__enterQuery(e));
           }} />
           <input className="menu__search-icon" type="image" name="image" src={imgLogo}></input>
