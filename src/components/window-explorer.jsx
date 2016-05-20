@@ -4,6 +4,9 @@ import Draggable, {DraggableCore} from 'react-draggable';
 import FolderDraggable from './folder-draggable.jsx';
 
 class WindowExplorer extends React.Component{
+  shouldComponentUpdate(){
+    return false;
+  }
   render() {
     return (
       <div className="window__body-inner">

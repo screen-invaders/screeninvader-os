@@ -20,7 +20,16 @@ let initialState = {
       name: "Systeem",
       dropdown: [
         {
-          name: "Configuratie"
+          name: "Over dit Intranet"
+        },
+        {
+          name: "Uitloggen"
+        },
+        {
+          name: "Herstarten"
+        },
+        {
+          name: "Afsluiten"
         }
       ]
     },
@@ -50,16 +59,19 @@ let initialState = {
   ],
   searchDropdown: [
     {
-      name: "Configuratiescherm"
+      name: "Zoekinstelling"
     },
     {
-      name: "Teksteditor"
+      name: "Pas filters toe"
     },
     {
-      name: "Browser"
+      name: "Laatste Zoekopdracht"
     },
     {
-      name: "Fotobewerking"
+      name: "Recente zoekopdrachten"
+    },
+    {
+      name: "Wis zoekgeschiedenis"
     }
   ],
   filesystem: mainFileSystem 

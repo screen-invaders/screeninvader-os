@@ -17,6 +17,15 @@
   border-bottom: 1px solid $primary;
 }
 
+.dropdown__list-item:hover {
+  background: $primary;
+  color: $day;
+}
+
 li:last-child.dropdown__list-item {
+  border: none;
+}
+
+li:nth-child(2n).dropdown__list-item {
   border: none;
 }
