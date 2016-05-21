@@ -1,7 +1,4 @@
 let reducer = function (state, action) {
-  // This line is potentially harmfull (for example: Date objects aren't properly copied)
-  // Perf is slow too... Updates take way longer if you have to clone a gigantic state.
-
   if (action.type == "overlay__change2login"){
     return {...state, ...{
       overlay: {
@@ -19,14 +16,14 @@ let reducer = function (state, action) {
           ...state.overlay, 
           type: ""
         }
-      }}
+      }};
     } else {
       return {...state, ...{
         login: {
           ...state.login, 
           attempts: state.login.attempts - 1
         }
-      }}
+      }};
     }
   }
 
@@ -37,8 +34,6 @@ let reducer = function (state, action) {
   }
 
   else if (action.type == "search__submitQuery") {
-  let newState = JSON.parse(JSON.stringify(state));
-
     var randX = Math.random() * (window.innerWidth - 620);
     var randY = Math.random() * (window.innerHeight - 500);
     var nextID = Math.random() * 0x10000;
@@ -56,13 +51,16 @@ let reducer = function (state, action) {
       },
       viewIndex: 600
     };
-    newState.windows.push(newWindow);
-    newState.searchQuery = "";
-    return newState;
+    return {...state, ...{
+      windows: [
+        ...state.windows,
+        newWindow
+      ],
+      searchQuery: ""
+    }};
   }
 
   else if (action.type == "folder__open") {
-  let newState = JSON.parse(JSON.stringify(state));
 
     let randX = Math.random() * (window.innerWidth - 620);
     let randY = Math.random() * (window.innerHeight - 500);
@@ -78,41 +76,44 @@ let reducer = function (state, action) {
         break;
     }
 
-    newState.windows.push(
-      {
-        id: nextID,
-        folder: action.folder,
-        filesystemPos: action.folder.path,
-        type: type,
-        viewPos: {
-          x: randX,
-          y: randY
-        },
-        viewSize: {
-          x: 600,
-          y: 400
-        },
-        viewIndex: 600
-      }
-    );
-
-    return newState;
+    newWindow = {
+      id: nextID,
+      folder: action.folder,
+      filesystemPos: action.folder.path,
+      type: type,
+      viewPos: {
+        x: randX,
+        y: randY
+      },
+      viewSize: {
+        x: 600,
+        y: 400
+      },
+      viewIndex: 600
+    };
+    return {...state, ...{
+      windows: [
+        ...state.windows,
+        newWindow
+      ],
+      searchQuery: ""
+    }};
   }
 
   else if (action.type == "window__close"){
-  let newState = JSON.parse(JSON.stringify(state));
-
-    newState.windows.map((windowItem, key)=>{
+    newWindows = [...state.windows];
+    newWindows.map((windowItem, key)=>{
       if (action.window.id == windowItem.id){
-        newState.windows.splice(key,1);
+        newWindows.splice(key,1);
       }
     })
-    return newState;
+    return {...state, ...{
+      windows: [...newWindows]
+    }};
   } 
 
   else if (action.type == "window__tofront") {
-  let newState = JSON.parse(JSON.stringify(state));
-
+    let newState = JSON.parse(JSON.stringify(state));
     newState.windows.map((windowItem, key)=>{
       if (action.window.id == windowItem.id){
         var temp = newState.windows.splice(key,1);
@@ -126,8 +127,7 @@ let reducer = function (state, action) {
   }
 
   else if (action.type == "window__move") {
-  let newState = JSON.parse(JSON.stringify(state));
-
+    let newState = JSON.parse(JSON.stringify(state));
     newState.windows.map((windowItem, key)=>{
       if (action.window.id == windowItem.id){
         newState.windows[key].viewPos = {
@@ -138,9 +138,9 @@ let reducer = function (state, action) {
     })
     return newState;
   }
-  else if (action.type == "window__resize") {
-  let newState = JSON.parse(JSON.stringify(state));
 
+  else if (action.type == "window__resize") {
+    let newState = JSON.parse(JSON.stringify(state));
     newState.windows.map((windowItem, key)=>{
       if (action.window.id == windowItem.id){
         newState.windows[key].viewSize = {
