@@ -15,11 +15,20 @@ let reducer = function (state, action) {
 
   if (action.type == "overlay__change2none"){
     if (newState.login.attempts == 0) {
-      newState.overlay.type = "";
+      return {...state, ...{
+        overlay: {
+          ...state.overlay, 
+          type: ""
+        }
+      }}
     } else {
-      newState.login.attempts--;
+      return {...state, ...{
+        login: {
+          ...state.login, 
+          attempts: state.login.attempts - 1
+        }
+      }}
     }
-    return newState;
   }
 
   else if (action.type == "search__enterQuery") {
