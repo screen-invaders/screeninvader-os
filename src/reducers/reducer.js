@@ -76,7 +76,7 @@ let reducer = function (state, action) {
         break;
     }
 
-    newWindow = {
+    let newWindow = {
       id: nextID,
       folder: action.folder,
       filesystemPos: action.folder.path,
@@ -101,59 +101,65 @@ let reducer = function (state, action) {
   }
 
   else if (action.type == "window__close"){
-    newWindows = [...state.windows];
+    let newWindows = [...state.windows];
     newWindows.map((windowItem, key)=>{
       if (action.window.id == windowItem.id){
         newWindows.splice(key,1);
       }
     })
     return {...state, ...{
-      windows: [...newWindows]
+      windows: newWindows
     }};
   } 
 
   else if (action.type == "window__tofront") {
-    let newState = JSON.parse(JSON.stringify(state));
-    newState.windows.map((windowItem, key)=>{
+    let newWindows = [...state.windows];
+    newWindows.map((windowItem, key)=>{
       if (action.window.id == windowItem.id){
-        var temp = newState.windows.splice(key,1);
-        newState.windows.push(temp[0]);
-        newState.windows.map((windowItem, key)=>{
-          return newState.windows[key].viewIndex = 500 + key;
+        var temp = newWindows.splice(key,1);
+        newWindows.push(temp[0]);
+        newWindows.map((windowItem, key)=>{
+          return newWindows[key].viewIndex = 500 + key;
         });
       }
     })
-    return newState;
+    return {...state, ...{
+      windows: newWindows
+    }}
   }
 
   else if (action.type == "window__move") {
-    let newState = JSON.parse(JSON.stringify(state));
-    newState.windows.map((windowItem, key)=>{
+    let newWindows = [...state.windows];
+    newWindows.map((windowItem, key)=>{
       if (action.window.id == windowItem.id){
-        newState.windows[key].viewPos = {
+        newWindows[key].viewPos = {
           x: action.position.x,
           y: action.position.y
         }
       }
     })
-    return newState;
+    return {...state, ...{
+      windows: newWindows
+    }}
   }
 
   else if (action.type == "window__resize") {
-    let newState = JSON.parse(JSON.stringify(state));
-    newState.windows.map((windowItem, key)=>{
+    let newWindows = [...state.windows];
+    newWindows.map((windowItem, key)=>{
       if (action.window.id == windowItem.id){
-        newState.windows[key].viewSize = {
+        newWindows[key].viewSize = {
           x: action.size.x,
           y: action.size.y
         }
       }
     });
-    return newState;
+    return {...state, ...{
+      windows: newWindows
+    }}
   } 
 
   else {
-    return Object.assign({}, state);
+    return {...state};
   }
 }
 
