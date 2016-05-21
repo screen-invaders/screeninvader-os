@@ -1,10 +1,16 @@
 let reducer = function (state, action) {
   // This line is potentially harmfull (for example: Date objects aren't properly copied)
+  // Perf is slow too... Updates take way longer if you have to clone a gigantic state.
   let newState = JSON.parse(JSON.stringify(state));
 
   if (action.type == "overlay__change2login"){
-    newState.overlay.type = "login";
-    return newState;
+    return {...state, ...{
+      overlay: {
+        ...state.overlay, 
+        type: "login"
+        }
+      }
+    };
   }
 
   if (action.type == "overlay__change2none"){
@@ -28,7 +34,7 @@ let reducer = function (state, action) {
     var newWindow = {
       id: nextID,
       type: "Zoeken",
-      searchQuery: state.searchQuery,
+      searchQuery: state.searchQuery || "AFM",
       viewPos: {
         x: randX,
         y: randY
@@ -90,7 +96,6 @@ let reducer = function (state, action) {
   } 
 
   else if (action.type == "window__tofront") {
-    console.log("tofront")
     newState.windows.map((windowItem, key)=>{
       if (action.window.id == windowItem.id){
         var temp = newState.windows.splice(key,1);

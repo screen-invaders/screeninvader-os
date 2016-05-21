@@ -20,9 +20,9 @@ class Menu extends React.Component{
 
         <form className="menu__search" onSubmit={(e)=>{
           e.preventDefault();
-          this.props.dispatch(search__submitQuery());
+          this.props.dispatch(search__submitQuery(e));
         }}>
-          <input className="menu__searchbar" type="text" placeholder="Zoeken" value={this.props.state.searchQuery} onChange={(e)=>{this.props.dispatch(search__enterQuery(e))}} />
+          <input className="menu__searchbar" type="text" placeholder="Zoeken" onChange={(e)=>{this.props.dispatch(search__enterQuery(e))}} />
           <input className="menu__search-icon" type="image" name="image" src={imgLogo}></input>
           <Dropdown dropdown={this.props.state.searchDropdown}/>
         </form>
