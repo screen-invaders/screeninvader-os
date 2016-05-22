@@ -24,8 +24,12 @@ class Menu extends React.Component{
         }}>
           <input className="menu__searchbar" type="text" placeholder="Zoeken" onChange={(e)=>{this.props.dispatch(search__enterQuery(e))}} />
           <input className="menu__search-icon" type="image" name="image" src={imgLogo}></input>
-          <Dropdown dropdown={this.props.state.searchDropdown}/>
+          <div className="menu__search-dropdown-button">
+            \/
+            <Dropdown dropdown={this.props.state.searchDropdown}/>
+          </div>
         </form>
+
 
         <div className="menu__user-container">
           <h6 className="menu__user-notice">ingelogd als</h6>

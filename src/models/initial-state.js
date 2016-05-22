@@ -59,7 +59,7 @@ let initialState = {
   ],
   searchDropdown: [
     {
-      name: "Zoekinstelling"
+      name: "Zoekinstellingen"
     },
     {
       name: "Pas filters toe"

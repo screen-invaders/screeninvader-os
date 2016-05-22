@@ -31,19 +31,16 @@
   align-items: center;
   justify-content: space-between;
   
-  width: 300px;
-  padding: 1rem;
+  width: 22rem;
+  height:  3.2rem;
 }
 
-.menu__search:hover .dropdown{
-  display: block;
-}
 
 .menu__searchbar {
   flex: 1 1;
-  height: 100%;
+  padding: 0 1rem;
   font-size: 1.2rem; 
-  line-height: 1.2rem; 
+  line-height: 1rem; 
   background: $secundary;
   color: white;
   -webkit-appearance: none;
@@ -56,6 +53,18 @@
 
 .menu__search-icon {
   height: 2rem;
+}
+
+.menu__search-dropdown-button {
+  width: 3rem;
+  height: 100%;
+  background: $day;
+  border-left: 1px solid $primary;
+  border-right: 1px solid $primary;
+}
+
+.menu__search-dropdown-button:hover .dropdown{
+  display: block;
 }
 
 .menu__user-container {

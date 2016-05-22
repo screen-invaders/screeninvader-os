@@ -5,7 +5,7 @@ class Dropdown extends React.Component{
 		return (
       <ul className="dropdown">
         {this.props.dropdown.map((subItem, key)=>{
-          return <li key={key} className="dropdown__list-item">{ subItem.name }</li>
+          return <li key={key} className="dropdown__list-item"><p className="dropdown__list-item-text">{ subItem.name }</p></li>
         })}
       </ul>
 		)
