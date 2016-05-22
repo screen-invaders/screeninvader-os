@@ -84,5 +84,10 @@
   background: $primary;
   color: $day;
   border: none;
+  cursor: pointer;
+}
+
+.window__search-open-all:hover {
+  background: $secundary;
 }
 
