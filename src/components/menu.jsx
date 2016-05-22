@@ -4,7 +4,7 @@ import Dropdown from './dropdown.jsx';
 import { search__submitQuery, search__enterQuery } from '../actions/search.js';
 
 import imgLogo from '../assets/images/search.png'
-import imgArrow from '../assets/images/arrow.png'
+import imgArrow from '../assets/images/arrow.svg'
 
 class Menu extends React.Component{
   render() {
@@ -34,7 +34,7 @@ class Menu extends React.Component{
 
         <div className="menu__user-container">
           <h6 className="menu__user-notice">ingelogd als</h6>
-          <p className="menu__user">{this.props.state.user.name}</p>
+          <p className="menu__user">{this.props.state.user.displayName}</p>
         </div>
       </div>
 		)
