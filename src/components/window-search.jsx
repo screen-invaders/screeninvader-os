@@ -2,7 +2,7 @@ import React from 'react';
 
 import FolderDraggable from './folder-draggable.jsx';
 
-import { folder__open } from '../actions/folder.js';
+import { window__open } from '../actions/window.js';
 
 
 class WindowSearch extends React.Component{
@@ -44,7 +44,7 @@ class WindowSearch extends React.Component{
 
   activateAll(searchItems){
     searchItems.forEach((itemData)=>{
-      this.props.dispatch(folder__open(itemData));
+      this.props.dispatch(window__open(itemData));
     })
   }
 

@@ -1,14 +1,13 @@
-export function window__open(folder, searchQuery){
+export function window__open(windowData, query){
   return {
     type: "window__open",
-    windowType: folder.type
     data: {
-      type: folder.type
-      folder: folder.type,
-      filesystemPos: folder.path,
-      searchQuery: searchQuery
-    } 
-    window: windowData
+      type: (windowData.type || "search"),
+      path: windowData.path,
+      children: windowData.children,
+      content: windowData.content,
+      query: query
+    }
   }
 };
 

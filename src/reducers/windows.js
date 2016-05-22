@@ -1,51 +1,4 @@
-// Needs dispatcher
-function login(state, action) {
-  switch (action.type) {
-    case "login__attempt":
-      return {...state, ...{
-          attempts: state.login.attempts - 1
-        }
-      };
-    default:
-      return state;
-  }
-}
-
-function overlay(state, action) {
-  switch (action.type) {
-    case "overlay__change2login":
-      return {...state, ...{
-        type: "login"
-      }};
-    case "overlay__change2none":
-      return {...state, ...{
-        type: ""
-      }};
-    default:
-      return state;
-  }
-}
-
-function search(state, action) {
-  switch (action.type){
-    case "search__enterQuery":
-      return {...state, ...{
-        query: action.query
-      }};
-    case "search__submitQuery":
-      return {...state, ...{
-        query: "",
-        history: [
-          ...state.history,
-          action.query
-        ]
-      }};
-    default:
-      return state;
-  }
-}
-
-function windows(state, action) {
+export default function windows(state, action) {
   let newWindows;
   switch (action.type){
     case "window__open":
@@ -129,18 +82,5 @@ function windows(state, action) {
       return newWindows
     default:
       return state || [];
-  }
-}
-
-export default function reducer(state = {}, action) {
-  return {
-    login: login(state.login, action),
-    overlay: overlay(state.overlay, action),
-    search: search(state, action),
-    windows: windows(state.window, action),
-    menu: (state => state)(state.menu),
-    user: (state => state)(state.user),
-    searchDropdown: (state => state)(state.searchDropdown),
-    filesystem: (state => state)(state.filesystem)
   }
 }
