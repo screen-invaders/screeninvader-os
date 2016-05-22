@@ -12,7 +12,12 @@ let initialState = {
   login: {
     attempts: 2
   },
-  searchQuery: "",
+  search: {
+    query: "",
+    history: [
+
+    ]
+  },
   windows: [
 
   ],

@@ -1,3 +1,17 @@
+export function window__open(folder, searchQuery){
+  return {
+    type: "window__open",
+    windowType: folder.type
+    data: {
+      type: folder.type
+      folder: folder.type,
+      filesystemPos: folder.path,
+      searchQuery: searchQuery
+    } 
+    window: windowData
+  }
+};
+
 export function window__tofront(windowData){
   return {
     type: "window__tofront",

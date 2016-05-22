@@ -8,6 +8,7 @@ import imgArrow from '../assets/images/arrow.svg'
 
 class Menu extends React.Component{
   render() {
+    console.log(this.props.state)
 		return (
       <div className="menu">
         <ul className="menu__list">
