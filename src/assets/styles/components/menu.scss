@@ -53,14 +53,19 @@
 
 .menu__search-icon {
   height: 2rem;
+  padding-right: 0.5rem;
 }
 
 .menu__search-dropdown-button {
-  width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.2rem;
   height: 100%;
   background: $day;
   border-left: 1px solid $primary;
   border-right: 1px solid $primary;
+  color: $primary;
 }
 
 .menu__search-dropdown-button:hover .dropdown{
