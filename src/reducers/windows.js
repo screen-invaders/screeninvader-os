@@ -2,7 +2,7 @@ export default function windows(state, action) {
   let newWindows;
   switch (action.type){
     case "window__open":
-      switch (action.folder.type) {
+      switch (action.data.type) {
         case "dir": 
           type = "Verkenner";
           break;
@@ -18,9 +18,9 @@ export default function windows(state, action) {
         id: Math.random() * 0x10000,
         type: "Verkenner", // "Zoeken" || "Verkenner" || "Tekstbestand" 
         data: {
-          searchQuery: state.searchQuery || "AFM",
-          folder: action.folder,
-          filesystemPos: action.folder.path
+          query: state.data.query || "AFM",
+          folder: action.data.children,
+          path: action.data.path
         },
         viewPos: {
           x: Math.random() * (window.innerWidth - 620),

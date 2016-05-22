@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { overlay__change2none } from '../actions/overlay.js';
+import { login__attempt } from '../actions/login.js';
 
 import imgLogo from '../assets/images/belasting-logo.png'
 
@@ -11,7 +12,10 @@ class Login extends React.Component{
   			<div className="login">
           <form className="login__details" onSubmit={(e)=>{
             e.preventDefault();
-            this.props.dispatch(overlay__change2none());
+            this.props.dispatch(login__attempt());
+            if (this.props.state.login.attempts == 0) {
+              this.props.dispatch(overlay__change2none());
+            }
           }}>
             <img className="login__logo" src={imgLogo} />
             {(()=>{
