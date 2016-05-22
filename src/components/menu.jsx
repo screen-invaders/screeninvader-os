@@ -4,6 +4,7 @@ import Dropdown from './dropdown.jsx';
 import { search__submitQuery, search__enterQuery } from '../actions/search.js';
 
 import imgLogo from '../assets/images/search.png'
+import imgArrow from '../assets/images/arrow.png'
 
 class Menu extends React.Component{
   render() {
@@ -25,7 +26,7 @@ class Menu extends React.Component{
           <input className="menu__searchbar" type="text" placeholder="Zoeken" onChange={(e)=>{this.props.dispatch(search__enterQuery(e))}} />
           <input className="menu__search-icon" type="image" name="image" src={imgLogo}></input>
           <div className="menu__search-dropdown-button">
-            \/
+            <img className="menu__search-dropdown-button-arrow" src={imgArrow} />
             <Dropdown dropdown={this.props.state.searchDropdown}/>
           </div>
         </form>
