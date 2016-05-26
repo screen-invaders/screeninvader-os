@@ -13,10 +13,15 @@ $black-hover: rgba(0,0,0,0.9);
 
 $invader: rgba(#ffd900,1);
 
+// New defs
+$green: rgba(91, 142, 142,1);
+$darkbrown: rgba(60, 60, 45,1);
+$lightbrown: rgba(186,186,185,1);
+
 // Definitions used troughout the stylesheets:
-$primary: $darkblue;
-$secundary: $mediumblue;
-$tertiary: $lightblue;
+$primary: $darkbrown;
+$secundary: $lightbrown;
+$tertiary: $green;
 $complementary: $red;
 $night: $black;
 $light: $lightgray;
