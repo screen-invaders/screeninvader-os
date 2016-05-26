@@ -3,10 +3,10 @@ import { bindActionCreators } from 'redux'
 import Draggable, {DraggableCore} from 'react-draggable';
 import { Resizable, ResizableBox } from 'react-resizable';
 
-import WindowExplorer from './window-explorer.jsx';
-import WindowExplorerList from './window-explorer-list.jsx';
-import WindowSearch from './window-search.jsx';
-import WindowText from './window-text.jsx';
+import WindowExplorer from './explorer.jsx';
+import WindowExplorerList from './explorer-list.jsx';
+import WindowSearch from './search.jsx';
+import WindowText from './textfile.jsx';
 
 import { window__tofront, window__close, window__resize, window__move } from '../../actions/window.js';
 

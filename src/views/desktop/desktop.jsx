@@ -1,7 +1,7 @@
 import React from 'react';
 
 import FolderDraggable from '../items/folder-draggable.jsx';
-import Window from '../windows/window.jsx';
+import Window from '../windows/index.jsx';
 
 class Desktop extends React.Component{
   render() {
