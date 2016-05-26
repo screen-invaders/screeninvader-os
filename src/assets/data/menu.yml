@@ -1,0 +1,15 @@
+menu:
+- name: "Systeem"
+  dropdown:
+  - name: "Over dit Intranet"
+  - name: "Uitloggen"
+  - name: "Herstarten"
+  - name: "Afsluiten"
+- name: "Programma's"
+  dropdown:
+  - name: "Configuratiescherm"
+  - name: "Teksteditor"
+  - name: "Browser"
+  - name: "Fotobewerking"
+- name: "Belastingen"
+- name: "Organisatie"

@@ -1,4 +1,6 @@
 import mainFileSystem from '../assets/data/dataDir.json';
+import { menu } from '../assets/data/menu.yml';
+import { searchDropdown } from '../assets/data/searchDropdown.yml';
 
 let initialState = {
   user: {
@@ -22,65 +24,8 @@ let initialState = {
   windows: [
 
   ],
-  menu: [
-    {
-      name: "Systeem",
-      dropdown: [
-        {
-          name: "Over dit Intranet"
-        },
-        {
-          name: "Uitloggen"
-        },
-        {
-          name: "Herstarten"
-        },
-        {
-          name: "Afsluiten"
-        }
-      ]
-    },
-    {
-      name: "Programma's",
-      dropdown: [
-        {
-          name: "Configuratiescherm"
-        },
-        {
-          name: "Teksteditor"
-        },
-        {
-          name: "Browser"
-        },
-        {
-          name: "Fotobewerking"
-        }
-      ]
-    },
-    {
-      name: "Belastingen"
-    },
-    {
-      name: "Organisatie"
-    }
-  ],
-  searchDropdown: [
-    {
-      name: "Zoekinstellingen"
-    },
-    {
-      name: "Pas filters toe"
-    },
-    {
-      name: "Laatste Zoekopdracht"
-    },
-    {
-      name: "Recente zoekopdrachten"
-    },
-    {
-      name: "Wis zoekgeschiedenis"
-    }
-  ],
+  menu: menu,
+  searchDropdown: searchDropdown,
   filesystem: mainFileSystem 
 };
 
