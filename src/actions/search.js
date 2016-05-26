@@ -12,9 +12,10 @@ export function search__submitQuery(query){
   }
 };
 
-export function search__submitQuery(query){
+export function search__searchQuery(query, filesystem){
   return {
-    type: "search__submitQuery",
-    query: query
+    type: "search__searchQuery",
+    query: query,
+    filesystem: filesystem
   }
 };

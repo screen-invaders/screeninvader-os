@@ -8,7 +8,7 @@ export default function reducer(state = {}, action) {
     login: login(state.login, action),
     overlay: overlay(state.overlay, action),
     search: search(state.search, action),
-    windows: windows(state.windows, action),
+    windows: windows(state, action),
     menu: (state => state)(state.menu),
     user: (state => state)(state.user),
     searchDropdown: (state => state)(state.searchDropdown),

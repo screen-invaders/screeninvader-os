@@ -1,8 +1,9 @@
 export default function windows(state, action) {
-  let newWindows;
+  let newState;
   switch (action.type){
     case "window__open":
-      
+      console.log("Window reducer", state, action)
+
       let type;
       switch (action.data.type) {
         case "dir": 
@@ -34,55 +35,55 @@ export default function windows(state, action) {
         },
         viewIndex: 600
       };
-      return [...state, newWindow];
+      return [...state.windows, newWindow];
 
     case "window__close":
-      newWindows = [...state];
-      newWindows.map((windowItem, key)=>{
+      newState = [...state.windows];
+      newState.map((windowItem, key)=>{
         if (action.window.id == windowItem.id){
-          newWindows.splice(key,1);
+          newState.splice(key,1);
         }
       })
-      return newWindows;
+      return newState;
 
     case "window__tofront": 
-      newWindows = [...state];
-      newWindows.map((windowItem, key)=>{
+      newState = [...state.windows];
+      newState.map((windowItem, key)=>{
         if (action.window.id == windowItem.id){
-          var temp = newWindows.splice(key,1);
-          newWindows.push(temp[0]);
-          newWindows.map((windowItem, key)=>{
-            return newWindows[key].viewIndex = 500 + key;
+          var temp = newState.splice(key,1);
+          newState.push(temp[0]);
+          newState.map((windowItem, key)=>{
+            return newState[key].viewIndex = 500 + key;
           });
         }
       })
-      return newWindows;
+      return newState;
   
 
     case "window__move": 
-      newWindows = [...state];
-      newWindows.map((windowItem, key)=>{
+      newState = [...state.windows];
+      newState.map((windowItem, key)=>{
         if (action.window.id == windowItem.id){
-          newWindows[key].viewPos = {
+          newState[key].viewPos = {
             x: action.position.x,
             y: action.position.y
           }
         }
       })
-      return newWindows;
+      return newState;
 
     case "window__resize":
-      newWindows = [...state];
-      newWindows.map((windowItem, key)=>{
+      newState = [...state.windows];
+      newState.map((windowItem, key)=>{
         if (action.window.id == windowItem.id){
-          newWindows[key].viewSize = {
+          newState[key].viewSize = {
             x: action.size.x,
             y: action.size.y
           }
         }
       });
-      return newWindows
+      return newState
     default:
-      return state || [];
+      return state.windows || [];
   }
 }

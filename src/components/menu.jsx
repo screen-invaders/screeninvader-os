@@ -1,7 +1,8 @@
 import React from 'react';
 import Dropdown from './dropdown.jsx';
 
-import { search__submitQuery, search__enterQuery } from '../actions/search.js';
+import { search__submitQuery, search__enterQuery, search__searchQuery } from '../actions/search.js';
+import { window__open } from '../actions/window.js';
 
 import imgLogo from '../assets/images/search.png'
 import imgArrow from '../assets/images/arrow.svg'
@@ -22,8 +23,11 @@ class Menu extends React.Component{
 
         <form className="menu__search" onSubmit={(e)=>{
           e.preventDefault();
-          let query = this.state.query;
-          dispatch(search__submitQuery(query)).then(search__searchQuery(query));
+          let query = state.search.query;
+          dispatch(search__submitQuery(query));
+          dispatch(search__searchQuery(query, state.filesystem));
+          console.log("after search", state)
+          dispatch(window__open(state.search.current));
         }}>
           <input className="menu__searchbar" type="text" placeholder="Zoeken" onChange={(e)=>{dispatch(search__enterQuery(e))}} />
           <input className="menu__search-icon" type="image" name="image" src={imgLogo}></input>

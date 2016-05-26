@@ -6,44 +6,20 @@ import { window__open } from '../actions/window.js';
 
 
 class WindowSearch extends React.Component{
-  componentWillMount(){
-    this.setState({searchItems: this.pureSearch(this.props.windowData.searchQuery, this.props.state.filesystem.children)});
+
+  renderSearch(items){
+    if (items){
+      let templatedFolders = items.map((item, key)=>{
+        return <FolderDraggable key={key} itemData={item} dispatch={this.props.dispatch}/>
+      })
+      return templatedFolders;
+    } else {
+      return "no results"
+    }
   }
 
-  pureSearch(query, folder){
-    let result = [];
-    for (var item in folder) {
-      if (folder.hasOwnProperty(item)) {
-        if (folder[item].name.indexOf(query) != -1){
-          result.push(folder[item]);
-        }
-        if (folder[item].children) {
-          result.push(...this.pureSearch(query, folder[item].children));
-        }
-      }
-    };
-
-    result = result.sort((a, b)=>{
-      if (a.name > b.name) {
-        return 1;
-      }
-      if (a.name < b.name) {
-        return -1;
-      }
-      return 0;
-    });
-    return result;
-  }
-
-  renderSearch(searchItems){
-    let templatedFolders = searchItems.map((item, key)=>{
-      return <FolderDraggable key={key} itemData={item} dispatch={this.props.dispatch}/>
-    })
-    return templatedFolders;
-  }
-
-  activateAll(searchItems){
-    searchItems.forEach((itemData)=>{
+  activateAll(items){
+    items.forEach((itemData)=>{
       this.props.dispatch(window__open(itemData));
     })
   }
@@ -52,12 +28,11 @@ class WindowSearch extends React.Component{
     return (
       <div className="window__body-inner-outer">
         <div className="window__search-details">
-          <p>Zoekopdracht: {this.props.windowData.searchQuery}</p>
-          <button className ="window__search-open-all" onClick={this.activateAll.bind(this, this.state.searchItems)}>Open alle</button>
+          <p>Zoekopdracht: {this.props.windowData.data.query}</p>
+          <button className ="window__search-open-all" onClick={this.activateAll.bind(this, this.props.windowData.data.items)}>Open alle</button>
         </div>
         <div className="window__body-inner">
-
-          {this.renderSearch(this.state.searchItems)}
+          {this.renderSearch(this.props.windowData.items)}
         </div>
       </div>
     )
