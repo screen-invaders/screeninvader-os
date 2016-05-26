@@ -11,8 +11,8 @@ class WindowExplorerList extends React.Component{
     return (
       <div className="window__body-inner">
         {(()=>{
-        if (this.props.windowData.folder.children){
-          var items = this.props.windowData.folder.children;
+        if (this.props.windowData.data.items){
+          var items = this.props.windowData.data.items;
           var templatedItems = [];
           for (var item in items) {
             if (items.hasOwnProperty(item)) {

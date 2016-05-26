@@ -2,6 +2,8 @@ export default function windows(state, action) {
   let newWindows;
   switch (action.type){
     case "window__open":
+      
+      let type;
       switch (action.data.type) {
         case "dir": 
           type = "Verkenner";
@@ -16,10 +18,10 @@ export default function windows(state, action) {
 
       var newWindow = {
         id: Math.random() * 0x10000,
-        type: "Verkenner", // "Zoeken" || "Verkenner" || "Tekstbestand" 
+        type: type,
         data: {
-          query: state.data.query || "AFM",
-          folder: action.data.children,
+          query: (()=>{ return action.data.query ? action.data.query : null;})(),
+          items: action.data.children,
           path: action.data.path
         },
         viewPos: {
