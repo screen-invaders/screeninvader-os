@@ -38,6 +38,5 @@ function dirTree(filename) {
 }
 
 if (module.parent == undefined) {
-    // console.log(util.inspect(dirTree(process.argv[2]), false, null));
-    fs.writeFileSync(process.argv[3], JSON.stringify(dirTree(process.argv[2])));
+    fs.writeFileSync("./src/assets/data/filesystem.json", JSON.stringify(dirTree("./.generate")));
 }

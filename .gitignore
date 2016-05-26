@@ -1,4 +1,6 @@
 .DS_Store
 
+/.generate
+
 /build
 /node_modules

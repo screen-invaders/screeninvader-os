@@ -8,7 +8,7 @@
     "dev": "webpack-dev-server --host 0.0.0.0 --hot --progress --colors --content-base build",
     "predeploy": "mkdir -p build/ && cp index.html build/",
     "deploy": "NODE_ENV=production webpack -p && sh deploy.sh",
-    "serialize": "node convert-dir-json.js ./src/assets/data/dataDir ./src/assets/data/dataDir.json"
+    "data": "sh generate.sh && node convert-dir-json.js"
   },
   "repository": {
     "type": "git",

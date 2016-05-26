@@ -1,4 +1,4 @@
-import mainFileSystem from '../assets/data/dataDir.json';
+import fileSystem from '../assets/data/filesystem.json';
 import { menu } from '../assets/data/menu.yml';
 import { searchDropdown } from '../assets/data/searchDropdown.yml';
 
@@ -26,7 +26,7 @@ let initialState = {
   ],
   menu: menu,
   searchDropdown: searchDropdown,
-  filesystem: mainFileSystem 
+  filesystem: fileSystem 
 };
 
 export default initialState;

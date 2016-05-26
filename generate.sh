@@ -1,6 +1,6 @@
-rm -rf "./src/assets/data/dataDir/"
-mkdir "./src/assets/data/dataDir/"
-cd "./src/assets/data/dataDir/"
+rm -rf "./.generate"
+mkdir "./.generate"
+cd "./.generate"
 
 top_level_names=("AFM" "CN" "ESW" "FATF" "IND" "LIEC" "KPCN" "PPS" "RIEC" "UNODC" "VFN" "UWV")
 
