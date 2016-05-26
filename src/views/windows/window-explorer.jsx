@@ -4,8 +4,12 @@ import Draggable, {DraggableCore} from 'react-draggable';
 import FolderDraggable from '../items/folder-draggable.jsx';
 
 class WindowExplorer extends React.Component{
-  shouldComponentUpdate(){
-    return false;
+  shouldComponentUpdate(nextProps){
+    if (this.props == nextProps){
+      return false;
+    } else {
+      return true;
+    }
   }
   render() {
     let {dispatch, windowData} = this.props;

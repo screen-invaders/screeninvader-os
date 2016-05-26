@@ -6,8 +6,12 @@ import { window__open } from '../../actions/window.js';
 
 
 class WindowSearch extends React.Component{
-  shouldComponentUpdate(){
-    return false;
+  shouldComponentUpdate(nextProps){
+    if (this.props == nextProps){
+      return false;
+    } else {
+      return true;
+    }
   }
 
   activateAll(items){
@@ -18,7 +22,6 @@ class WindowSearch extends React.Component{
 
   render() {
     let {windowData} = this.props;
-    console.log(windowData)
     return (
       <div className="window__body-inner-outer">
         <div className="window__search-details">
