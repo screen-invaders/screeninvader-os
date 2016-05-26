@@ -1,12 +1,20 @@
-export function search__submitQuery(){
-  return {
-    type: "search__submitQuery"
-  }
-};
-
 export function search__enterQuery(e){
   return {
     type: "search__enterQuery",
     query: e.target.value
+  }
+};
+
+export function search__submitQuery(query){
+  return {
+    type: "search__submitQuery",
+    query: query
+  }
+};
+
+export function search__submitQuery(query){
+  return {
+    type: "search__submitQuery",
+    query: query
   }
 };

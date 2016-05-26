@@ -12,6 +12,14 @@ export default function search(state, action) {
           action.query
         ]
       }};
+    case "search__searchQuery":
+      // do search
+
+
+      // return result
+      return {...state, ...{
+        current
+      }};
     default:
       return state;
   }

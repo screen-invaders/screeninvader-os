@@ -16,7 +16,8 @@ let initialState = {
     query: "",
     history: [
 
-    ]
+    ],
+    current: {}
   },
   windows: [
 
