@@ -3,11 +3,7 @@ import ReactMarkdown from 'react-markdown';
 
 class WindowText extends React.Component{
   shouldComponentUpdate(nextProps){
-    if (this.props == nextProps){
-      return false;
-    } else {
-      return true;
-    }
+    return this.props.windowData !== nextProps.windowData;
   }
   render() {
     return (

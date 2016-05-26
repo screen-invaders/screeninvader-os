@@ -7,11 +7,7 @@ import { window__open } from '../../actions/window.js';
 
 class WindowSearch extends React.Component{
   shouldComponentUpdate(nextProps){
-    if (this.props == nextProps){
-      return false;
-    } else {
-      return true;
-    }
+    return this.props.windowData !== nextProps.windowData;
   }
 
   activateAll(items){
