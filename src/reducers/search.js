@@ -40,7 +40,6 @@ export default function search(state, action) {
       }
 
       let current = search(action.query, action.filesystem.children);
-      console.log("search reducer: ", current)
 
       // return result
       return {...state, ...{

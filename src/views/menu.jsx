@@ -26,8 +26,7 @@ class Menu extends React.Component{
           let query = state.search.query;
           dispatch(search__submitQuery(query));
           dispatch(search__searchQuery(query, state.filesystem));
-          console.log("after search", state)
-          dispatch(window__open(state.search.current));
+          dispatch(window__open("search", {}, query));
         }}>
           <input className="menu__searchbar" type="text" placeholder="Zoeken" onChange={(e)=>{dispatch(search__enterQuery(e))}} />
           <input className="menu__search-icon" type="image" name="image" src={imgLogo}></input>

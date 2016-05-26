@@ -1,11 +1,11 @@
-export function window__open(windowData, query){
+export function window__open(type, itemData, query){
   return {
     type: "window__open",
     data: {
-      type: (windowData.type || "search"),
-      path: windowData.path,
-      children: windowData.children,
-      content: windowData.content,
+      type: type,
+      path: itemData && itemData.path,
+      children: itemData && itemData.children,
+      content: itemData && itemData.content,
       query: query
     }
   }

@@ -1,41 +1,23 @@
+import newWindow from '../models/window.js';
+
 export default function windows(state, action) {
   let newState;
   switch (action.type){
     case "window__open":
-      console.log("Window reducer", state, action)
 
-      let type;
+      let type, windowInstance;
       switch (action.data.type) {
         case "dir": 
-          type = "Verkenner";
+          windowInstance = new newWindow("Verkenner", action.data.children, action.data.path, null, null);
           break;
         case "txt": 
-          type = "Tekstbestand";
+          windowInstance = new newWindow("Tekstbestand", null, action.data.path, null, action.data.content);
           break;
         case "search":
-          type = "Zoeken";
+          windowInstance = new newWindow("Zoeken", state.search.current, null, action.data.query, null);
           break;
       }
-
-      var newWindow = {
-        id: Math.random() * 0x10000,
-        type: type,
-        data: {
-          query: (()=>{ return action.data.query ? action.data.query : null;})(),
-          items: action.data.children,
-          path: action.data.path
-        },
-        viewPos: {
-          x: Math.random() * (window.innerWidth - 620),
-          y: Math.random() * (window.innerHeight - 500)
-        },
-        viewSize: {
-          x: 600,
-          y: 400
-        },
-        viewIndex: 600
-      };
-      return [...state.windows, newWindow];
+      return [...state.windows, windowInstance];
 
     case "window__close":
       newState = [...state.windows];

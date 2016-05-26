@@ -8,16 +8,15 @@ class WindowExplorer extends React.Component{
     return false;
   }
   render() {
+    let {dispatch, windowData} = this.props;
     return (
       <div className="window__body-inner">
         {(()=>{
-        console.log(this.props.windowData)
-        if (this.props.windowData.data.items){
-          var items = this.props.windowData.data.items;
+        if (windowData.data.items){
           var templatedItems = [];
-          for (var item in items) {
+          for (var item in windowData.data.items) {
             if (items.hasOwnProperty(item)) {
-              templatedItems.push(<FolderDraggable key={item} itemData={items[item]} dispatch={this.props.dispatch}/>);
+              templatedItems.push(<FolderDraggable key={item} itemData={items[item]} dispatch={dispatch}/>);
             }
           }
           return templatedItems;
