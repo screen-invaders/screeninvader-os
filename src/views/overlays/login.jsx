@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { overlay__change2none } from '../actions/overlay.js';
-import { login__attempt } from '../actions/login.js';
+import { overlay__change2none } from '../../actions/overlay.js';
+import { login__attempt } from '../../actions/login.js';
 
-import imgLogo from '../assets/images/belasting-logo.png'
+import imgLogo from '../../assets/images/belasting-logo.png'
 
 class Login extends React.Component{
   render() {

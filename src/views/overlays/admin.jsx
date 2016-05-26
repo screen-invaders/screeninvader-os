@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { overlay__change2login } from '../actions/overlay.js';
+import { overlay__change2login } from '../../actions/overlay.js';
 
-import imgLogo from '../assets/images/si-logo.svg'
+import imgLogo from '../../assets/images/si-logo.svg'
 
 class Admin extends React.Component{
   fullScreen(){

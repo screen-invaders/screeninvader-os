@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux'
 
-import Menu from './menu.jsx';
-import Desktop from './desktop.jsx';
-import Login from './login.jsx';
-import Admin from './admin.jsx';
+import Menu from './desktop/menu.jsx';
+import Desktop from './desktop/desktop.jsx';
+import Login from './overlays/login.jsx';
+import Admin from './overlays/admin.jsx';
 
 class App extends React.Component{
   render() {

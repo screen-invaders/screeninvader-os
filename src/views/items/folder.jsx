@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { window__open } from '../actions/window.js';
+import { window__open } from '../../actions/window.js';
 
-import imgFolder from '../assets/images/folder.png'
-import imgFile from '../assets/images/file.png'
+import imgFolder from '../../assets/images/folder.png'
+import imgFile from '../../assets/images/file.png'
 
 class Folder extends React.Component{
   render() {

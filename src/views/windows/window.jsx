@@ -8,7 +8,7 @@ import WindowExplorerList from './window-explorer-list.jsx';
 import WindowSearch from './window-search.jsx';
 import WindowText from './window-text.jsx';
 
-import { window__tofront, window__close, window__resize, window__move } from '../actions/window.js';
+import { window__tofront, window__close, window__resize, window__move } from '../../actions/window.js';
 
 class Window extends React.Component{
   // Setting local state (to prevent excessive rendering)

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import FolderDraggable from './folder-draggable.jsx';
+import FolderDraggable from '../items/folder-draggable.jsx';
 
-import { window__open } from '../actions/window.js';
+import { window__open } from '../../actions/window.js';
 
 
 class WindowSearch extends React.Component{
