@@ -18,6 +18,9 @@ export default function search(state, action) {
         let result = [];
         for (var item in folder) {
           if (folder.hasOwnProperty(item)) {
+            if (result.length > 500){
+              break;
+            }
             if (folder[item].name.indexOf(query) != -1){
               result.push(folder[item]);
             }

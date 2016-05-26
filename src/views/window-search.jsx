@@ -6,6 +6,9 @@ import { window__open } from '../actions/window.js';
 
 
 class WindowSearch extends React.Component{
+  shouldComponentUpdate(){
+    return false;
+  }
 
   activateAll(items){
     items.forEach((itemData)=>{
