@@ -20,6 +20,19 @@
   align-self: flex-start;
 }
 
+.admin__browser-error {
+  margin: 2rem 0 0 0;
+  padding: 1rem;
+  border: 10px solid red;
+  color: red;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.admin__browser-error-link {
+  text-decoration: underline;
+}
+
 .admin__description {
   margin: 2rem 0;
 }
