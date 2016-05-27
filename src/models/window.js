@@ -1,4 +1,4 @@
-class newWindow {
+  class newWindow {
   constructor(type, items, path, query, content){
     this.id = Math.random() * 0x10000;
     this.type = type;
