@@ -71,15 +71,28 @@
   align-content: flex-start;
 }
 
+
+.window__menubar {
+  width: 100%;
+  height: 5rem;
+  background: $secundary;
+}
+
+.window__sidebar {
+  width: 20%;
+  height: calc(100% - 5rem);
+  background: $gray;
+}
+
 .window__body {
   display:  flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-content: flex-start;
-  height: calc(100% - 2rem);
+  width: 80%;
+  height: calc(100% - 5rem);
   overflow-y: scroll;
 }
-
 
 
 
