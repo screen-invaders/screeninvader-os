@@ -6,7 +6,7 @@ var fs = require('fs'),
 function dirTree(filename) {
     var stats = fs.lstatSync(filename),
         info = {
-            path: filename.replace("./src/assets/data/dataDir/", ""),
+            path: filename.replace("./.generate/", ""),
             name: path.basename(filename)
         };
 

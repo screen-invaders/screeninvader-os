@@ -12,12 +12,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/evanzummeren/reactstarter.git"
+    "url": ""
   },
   "author": "RJ Korteschiel",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/evanzummeren/reactstarter/issues"
+    "url": ""
   },
   "dependencies": {
     "react": "^0.14.7",
