@@ -82,7 +82,7 @@ class Window extends React.Component{
             onDrag={this.onDrag.bind(this)}
             onStop={bound__window__move}
             >
-              <header className="window__header">
+              <header className="window__titlebar">
                 <Titlebar windowData={windowData} dispatch={dispatch} />
               </header>
             </DraggableCore>

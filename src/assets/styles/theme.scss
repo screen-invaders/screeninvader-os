@@ -50,11 +50,11 @@
 .window {
 }
 
-.window__header {
+.window__titlebar {
   background: $primary;
 }
 
-.window__close-button {
+.window__titlebar-close-button {
   background: $secundary;
   color: white;
 }
