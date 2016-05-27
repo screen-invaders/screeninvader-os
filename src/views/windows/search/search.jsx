@@ -11,8 +11,8 @@ class WindowSearch extends React.Component{
   }
 
   activateAll(items){
-    items.forEach((itemData)=>{
-      this.props.dispatch(window__open(itemData));
+    items.forEach((item)=>{
+      this.props.dispatch(window__open(item.type, item));
     })
   }
 

@@ -77,18 +77,16 @@ class Window extends React.Component{
           onResize={this.onResize.bind(this)}
           onResizeStop={bound__window__resize}
           >
-          <div style={styleSize}>
-            <div className="window__inner">
-              <DraggableCore 
-              onDrag={this.onDrag.bind(this)}
-              onStop={bound__window__move}
-              >
-                <header className="window__header">
-                  <Titlebar windowData={windowData} dispatch={dispatch} />
-                </header>
-              </DraggableCore>
-              <Content windowData={windowData} dispatch={dispatch} />
-            </div>
+          <div style={styleSize} className="window__inner">
+            <DraggableCore 
+            onDrag={this.onDrag.bind(this)}
+            onStop={bound__window__move}
+            >
+              <header className="window__header">
+                <Titlebar windowData={windowData} dispatch={dispatch} />
+              </header>
+            </DraggableCore>
+            <Content windowData={windowData} dispatch={dispatch} />
           </div>
         </Resizable>
       </div>
