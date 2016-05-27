@@ -9,12 +9,15 @@
 
 .folder__image {
   width: 4rem;
-  heigth: 4rem;
 }
 
 .folder__text {
   text-align: center;
   word-break: break-all; 
+  font-weight: bold;
+  background: rgba($primary, 0.1);
+  border-radius: 5px;
+  padding: 0.1rem 0.2rem;
 }
 
 .listed-folder {
