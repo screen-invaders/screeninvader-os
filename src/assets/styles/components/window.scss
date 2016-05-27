@@ -85,13 +85,21 @@
   width: 60%;
   border-radius: 5px;
   border: none;
-  padding: 5px;
+  padding: 0.5rem;
 }
 
 .window__sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 20%;
   height: calc(100% - 5rem);
+  padding: 1rem;
   background: $gray;
+}
+
+.window__sidebar-text {
+  padding-bottom: 5px;
 }
 
 
