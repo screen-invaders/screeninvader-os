@@ -1,3 +1,5 @@
+// Containers
+
 .window {
   position: absolute;
   display: flex;
@@ -28,6 +30,8 @@
   cursor: se-resize;
 }
 
+// titlebar
+
 .window__titlebar {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -57,6 +61,8 @@
   border-top-right-radius: 5px;
 }
 
+// Containers
+
 .window__content {
   width: 100%;
   height: calc(100% - 2rem);
@@ -71,6 +77,8 @@
   align-content: flex-start;
 }
 
+
+// Menubar
 
 .window__menubar {
   width: 100%;
@@ -93,6 +101,24 @@
   justify-content: space-between;
 }
 
+
+.window__search-open-all {
+  padding: 1rem;
+  background: $primary;
+  color: $day;
+  border: none;
+  cursor: pointer;
+}
+
+.window__search-open-all:hover {
+  background: $secundary;
+}
+
+
+
+
+// Sidebar
+
 .window__sidebar {
   display: flex;
   flex-direction: column;
@@ -108,6 +134,7 @@
 }
 
 
+// Body
 
 .window__body {
   display:  flex;
@@ -118,27 +145,3 @@
   height: calc(100% - 5rem);
   overflow-y: scroll;
 }
-
-
-
-.window__search-details {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: $light;
-  width: 100%;
-  padding: 1rem;
-}
-
-.window__search-open-all {
-  padding: 1rem;
-  background: $primary;
-  color: $day;
-  border: none;
-  cursor: pointer;
-}
-
-.window__search-open-all:hover {
-  background: $secundary;
-}
-

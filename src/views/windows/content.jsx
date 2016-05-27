@@ -2,7 +2,7 @@ import React from 'react';
 
 import Explorer from './explorer/index.jsx';
 import WindowSearch from './search/index.jsx';
-import WindowText from './textfile/textfile.jsx';
+import WindowText from './textfile/index.jsx';
 
 class Content extends React.Component{
   render() {
