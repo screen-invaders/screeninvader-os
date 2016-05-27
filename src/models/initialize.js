@@ -9,7 +9,7 @@ let initialState = {
     password: "1984"
   },
   overlay: {
-    type: "admin",
+    type: "",
   },
   login: {
     attempts: 5,

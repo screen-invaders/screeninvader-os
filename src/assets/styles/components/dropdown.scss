@@ -4,11 +4,13 @@
   min-width: 100%;
   z-index: 900;
   left: 0;
-  top: 3.2rem;
+  top: 2.4rem;
   background: $day;
   color: $primary;
   border: 1px solid $primary;
   border-top: none;
+  font-size: 1rem;
+  line-height: 1rem; 
 }
 
 .dropdown__list-item {
