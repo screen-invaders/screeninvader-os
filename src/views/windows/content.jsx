@@ -1,6 +1,6 @@
 import React from 'react';
 
-import WindowExplorerList from './explorer/explorer-list.jsx';
+import Explorer from './explorer/explorer.jsx';
 import WindowSearch from './search/search.jsx';
 import WindowText from './textfile/textfile.jsx';
 
@@ -8,12 +8,12 @@ class Content extends React.Component{
   render() {
     let {windowData, dispatch} = this.props;
     return (
-      <main className="window__body">
+      <main className="window__content">
       {(()=>{
       let windows = {
-        Verkenner: <WindowExplorerList windowData={windowData} dispatch={dispatch}/>,
-        Zoeken: <WindowSearch windowData={windowData} dispatch={dispatch} state={this.props.state} />,
-        Tekstbestand: <WindowText windowData={windowData}/>
+        Verkenner:    <Explorer     windowData={windowData} dispatch={dispatch}/>,
+        Zoeken:       <WindowSearch windowData={windowData} dispatch={dispatch}/>,
+        Tekstbestand: <WindowText   windowData={windowData}/>
       }
       return windows[windowData.type];
       })()}

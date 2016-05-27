@@ -66,16 +66,18 @@
   overflow-y: scroll;
 }
 
-.window__body-inner {
+.window__content {
+  width: 100%;
+  height: 100%;
+}
+
+.window__content-inner {
+  width: 100%;
+  height: 100%;
   display:  flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-content: flex-start;
-}
-
-.window__body-inner-outer {
-  width: 100%;
-  height: 100%;
 }
 
 .window__search-details {

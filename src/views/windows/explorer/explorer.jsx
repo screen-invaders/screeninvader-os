@@ -1,32 +1,38 @@
 import React from 'react';
 import Draggable, {DraggableCore} from 'react-draggable';
 
-import FolderDraggable from '../../items/folder-draggable.jsx';
+import ListedFolder from '../../items/listed-folder.jsx';
 
-class WindowExplorer extends React.Component{
+class Explorer extends React.Component{
   shouldComponentUpdate(nextProps){
     return this.props.windowData !== nextProps.windowData;
   }
   render() {
-    let {dispatch, windowData} = this.props;
     return (
-      <div className="window__body-inner">
+      <div className="window__content-inner">
+        <div className="window__menubar">
+        </div>
+        <div className="window__sidebar">
+        </div>
+        <div className="window__body">
         {(()=>{
-        if (windowData.data.items){
-          var templatedItems = [];
-          for (var item in windowData.data.items) {
-            if (items.hasOwnProperty(item)) {
-              templatedItems.push(<FolderDraggable key={item} itemData={items[item]} dispatch={dispatch}/>);
+          if (this.props.windowData.data.items){
+            var items = this.props.windowData.data.items;
+            var templatedItems = [];
+            for (var item in items) {
+              if (items.hasOwnProperty(item)) {
+                templatedItems.push(<ListedFolder key={item} itemData={items[item]} dispatch={this.props.dispatch}/>);
+              }
             }
+            return templatedItems;
+          } else {
+            return "Geen inhoud";
           }
-          return templatedItems;
-        } else {
-          return "Geen inhoud";
-        }
-        })()}
+          })()}
+        </div>
       </div>
     )
   }
 }
 
-export default WindowExplorer;
+export default Explorer;
