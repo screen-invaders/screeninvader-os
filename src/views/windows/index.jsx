@@ -3,12 +3,10 @@ import { bindActionCreators } from 'redux'
 import Draggable, {DraggableCore} from 'react-draggable';
 import { Resizable, ResizableBox } from 'react-resizable';
 
-import WindowExplorer from './explorer.jsx';
-import WindowExplorerList from './explorer-list.jsx';
-import WindowSearch from './search.jsx';
-import WindowText from './textfile.jsx';
+import Titlebar from './titlebar.jsx';
+import Content from './content.jsx';
 
-import { window__tofront, window__close, window__resize, window__move } from '../../actions/window.js';
+import { window__tofront, window__resize, window__move } from '../../actions/window.js';
 
 class Window extends React.Component{
   // Setting local state (to prevent excessive rendering)
@@ -66,7 +64,6 @@ class Window extends React.Component{
 
     // Hack to skip bounds of components that have no knowledge of the store
     let bound__window__tofront = function(){return dispatch(window__tofront(windowData))}.bind(this);
-    let bound__window__close = function(){return dispatch(window__close(windowData))}.bind(this);
     let bound__window__move = function(){return dispatch(window__move(windowData, this.state.position))}.bind(this);
     let bound__window__resize = function(){return dispatch(window__resize(windowData, this.state.size))}.bind(this);
 
@@ -87,22 +84,10 @@ class Window extends React.Component{
               onStop={bound__window__move}
               >
                 <header className="window__header">
-                  <p className="window__header-text">{this.props.windowData.type}</p>
-                  <div className="window__close-button" onClick={bound__window__close}>x</div>
+                  <Titlebar windowData={windowData} dispatch={dispatch} />
                 </header>
               </DraggableCore>
-              <main className="window__body">
-              {(()=>{
-              switch (windowData.type){
-                case "Verkenner": 
-                  return <WindowExplorerList windowData={windowData} dispatch={dispatch}/> ;
-                case "Zoeken": 
-                  return <WindowSearch windowData={windowData} dispatch={dispatch} state={this.props.state} />;
-                case "Tekstbestand": 
-                  return <WindowText windowData={windowData}/>;
-              }
-              })()}
-              </main>
+              <Content windowData={windowData} dispatch={dispatch} />
             </div>
           </div>
         </Resizable>

@@ -29,6 +29,11 @@
 }
 
 .window__header {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.window__header-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;

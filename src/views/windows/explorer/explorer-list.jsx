@@ -1,7 +1,7 @@
 import React from 'react';
 import Draggable, {DraggableCore} from 'react-draggable';
 
-import ListedFolder from '../items/listed-folder.jsx';
+import ListedFolder from '../../items/listed-folder.jsx';
 
 class WindowExplorerList extends React.Component{
   shouldComponentUpdate(nextProps){

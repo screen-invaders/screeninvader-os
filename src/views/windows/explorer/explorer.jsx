@@ -1,7 +1,7 @@
 import React from 'react';
 import Draggable, {DraggableCore} from 'react-draggable';
 
-import FolderDraggable from '../items/folder-draggable.jsx';
+import FolderDraggable from '../../items/folder-draggable.jsx';
 
 class WindowExplorer extends React.Component{
   shouldComponentUpdate(nextProps){
