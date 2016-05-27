@@ -6,13 +6,14 @@ let initialState = {
   user: {
     name: "IvMourik",
     displayName: "I. van Mourik",
-    password: "scotty"
+    password: "1984"
   },
   overlay: {
     type: "login",
   },
   login: {
-    attempts: 2
+    attempts: 5,
+    password: ""
   },
   search: {
     query: "",

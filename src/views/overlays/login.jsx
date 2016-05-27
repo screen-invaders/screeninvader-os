@@ -1,39 +1,38 @@
 import React from 'react';
 
 import { overlay__change2none } from '../../actions/overlay.js';
-import { login__attempt } from '../../actions/login.js';
+import { login__attempt, login__enterName } from '../../actions/login.js';
 
 import imgLogo from '../../assets/images/belasting-logo.png'
 
 class Login extends React.Component{
   render() {
+    let {state, dispatch} = this.props;
 		return (
       <div className="layout__overlay">
   			<div className="login">
           <form className="login__details" onSubmit={(e)=>{
             e.preventDefault();
-            this.props.dispatch(login__attempt());
-            if (this.props.state.login.attempts == 0) {
-              this.props.dispatch(overlay__change2none());
-            }
+            dispatch(login__attempt());
+            dispatch(overlay__change2none());
           }}>
             <img className="login__logo" src={imgLogo} />
             {(()=>{
-              if (this.props.state.login.attempts < 2){
+              if (state.login.attempts < 5){
                 return (
                 <div className="login__error">
-                  <p>Verkeerd Wachtwoord! Nog {this.props.state.login.attempts + 1} pogingen</p>
+                  <p>Verkeerd Wachtwoord! Nog {this.props.state.login.attempts} pogingen</p>
                   <p>klik voor meer info</p>
                 </div> )
               }
             })()}
             <div className="login__group">
               <label className="login__label">Gebruikersnaam</label>
-              <input className="login__username" type="text" defaultValue={this.props.state.user.name}></input>
+              <input className="login__username" type="text" defaultValue={state.user.name}></input>
             </div>
             <div className="login__group">
               <label className="login__label">Wachtwoord</label>
-              <input className="login__password" placeholder="Wachtwoord" type="text"></input>
+              <input className="login__password" placeholder="Wachtwoord" type="text" onChange={(e)=>{dispatch(login__enterName(e))}}></input>
             </div>
             <input className="login__submit" value="Inloggen" type="submit"></input>
           </form>

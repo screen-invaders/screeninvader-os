@@ -66,6 +66,6 @@ export default function windows(state, action) {
       });
       return newState
     default:
-      return state.windows || [];
+      return [ ...state.windows ] || [];
   }
 }

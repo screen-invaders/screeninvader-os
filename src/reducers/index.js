@@ -5,8 +5,8 @@ import windows from "./windows.js";
 
 export default function reducer(state = {}, action) {
   return {
-    login: login(state.login, action),
-    overlay: overlay(state.overlay, action),
+    login: login(state, action),
+    overlay: overlay(state, action),
     search: search(state.search, action),
     windows: windows(state, action),
     menu: (state => state)(state.menu),

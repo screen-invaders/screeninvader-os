@@ -49,6 +49,6 @@ export default function search(state, action) {
         current: current
       }};
     default:
-      return state;
+      return {...state};
   }
 }
