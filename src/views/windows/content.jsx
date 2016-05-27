@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Explorer from './explorer/explorer.jsx';
+import Explorer from './explorer/index.jsx';
 import WindowSearch from './search/search.jsx';
 import WindowText from './textfile/textfile.jsx';
 
