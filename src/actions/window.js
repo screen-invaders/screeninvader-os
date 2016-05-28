@@ -11,6 +11,14 @@ export function window__open(type, itemData, query){
   }
 };
 
+export function window__updatePath(windowData, path){
+  return {
+    type: "window__updatePath",
+    window: windowData,
+    path: path
+  }
+};
+
 export function window__tofront(windowData){
   return {
     type: "window__tofront",

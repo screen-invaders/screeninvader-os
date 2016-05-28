@@ -6,9 +6,10 @@ import ListedFolder from '../../items/listed-folder.jsx';
 class Body extends React.Component{
   getItems(dir, path){
     // recursively get items from the filesystem
-    if (path.length != 0) {
-      let current = path.shift();
-      return this.getItems(dir.children[current], path);
+    let newPath = [...path];
+    if (newPath.length != 0) {
+      let current = newPath.shift();
+      return this.getItems(dir.children[current], newPath);
     } else {
       return dir.children;
     }
@@ -24,7 +25,7 @@ class Body extends React.Component{
           var templatedItems = [];
           for (var item in items) {
             if (items.hasOwnProperty(item)) {
-              templatedItems.push(<ListedFolder key={item} itemData={items[item]} dispatch={dispatch}/>);
+              templatedItems.push(<ListedFolder key={item} windowData={windowData} itemData={items[item]} dispatch={dispatch}/>);
             }
           }
           return templatedItems;
@@ -37,4 +38,4 @@ class Body extends React.Component{
   }
 }
 
-export default connect(state => ({filesystem: state.filesystem}))(Body);
+export default connect(state => ({filesystem: state.filesystem}),null ,null ,{pure: false})(Body);
