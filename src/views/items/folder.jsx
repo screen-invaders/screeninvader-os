@@ -2,7 +2,7 @@ import React from 'react';
 
 import { window__open } from '../../actions/window.js';
 
-import imgFolder from '../../assets/images/folder.png'
+import imgFolder from '../../assets/images/icons/row-11/3.png'
 import imgFile from '../../assets/images/file.png'
 
 class Folder extends React.Component{
