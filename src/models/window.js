@@ -6,16 +6,18 @@
       query: query,
       items: items,
       path: path,
-      content: content
+      content: content,
+      viewType: "list"
     };
     this.history = [];
+    this.focus = 0;
     this.viewPos = {
-      x: Math.random() * (window.innerWidth - 620),
+      x: Math.random() * (window.innerWidth - 800),
       y: Math.random() * (window.innerHeight - 500)
     };
     this.viewSize = {
-      x: 600,
-      y: 400
+      x: 800,
+      y: 500
     };
     this.viewIndex = 600;
   }

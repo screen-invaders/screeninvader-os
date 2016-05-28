@@ -26,6 +26,14 @@ export function window__moveUp(windowData, path){
   }
 };
 
+export function window__changeViewType(windowData, viewType){
+  return {
+    type: "window__changeViewType",
+    window: windowData,
+    viewType: viewType
+  }
+};
+
 export function window__tofront(windowData){
   return {
     type: "window__tofront",

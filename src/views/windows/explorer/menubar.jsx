@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { window__moveUp } from '../../../actions/window.js';
+import { window__moveUp, window__changeViewType } from '../../../actions/window.js';
 
 import iconLeft from '../../../assets/images/icons/row-8/4.png'
 import iconRight from '../../../assets/images/icons/row-8/5.png'
@@ -20,8 +20,8 @@ class Menubar extends React.Component{
         </div>
         <input className="window__menubar-path" value={windowData.data.path.unsplit} onChange={()=>{}} type="text"/>
         <div  className="window__menubar-icon-group">
-          <div className="window__menubar-icon"><img className="window__menubar-icon-img" src={iconList}/></div>
-          <div className="window__menubar-icon"><img className="window__menubar-icon-img" src={iconIcons}/></div>
+          <div className="window__menubar-icon" onClick={dispatch.bind(null, window__changeViewType(windowData, "list"))}><img className="window__menubar-icon-img" src={iconList} /></div>
+          <div className="window__menubar-icon" onClick={dispatch.bind(null, window__changeViewType(windowData, "icons"))}><img className="window__menubar-icon-img" src={iconIcons} /></div>
         </div>
       </div>
     )

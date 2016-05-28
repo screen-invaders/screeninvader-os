@@ -81,6 +81,26 @@ export default function windows(state, action) {
       }
       return newState;
   
+    case "window__changeViewType": 
+      // Not immutable! Children are overwritten.
+      newState = [...state.windows];
+      newState.map((windowItem, key)=>{
+        if (action.window.id == windowItem.id){
+          console.log("reducer", {
+            ...windowItem, 
+            data: {
+              ...windowItem.data, 
+              viewType: action.viewType
+          }})
+          return {
+            ...windowItem, 
+            data: {
+              ...windowItem.data, 
+              viewType: action.viewType
+          }}; 
+        }
+      })
+      return newState;
 
     case "window__move": 
       newState = [...state.windows];
