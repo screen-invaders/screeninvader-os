@@ -39,6 +39,8 @@ export default function windows(state, action) {
       newState = newState.map((windowItem, key)=>{
         if (action.window.id == windowItem.id){
           let newPath = { ...windowItem.data.path };
+          newPath.splitted.pop();
+          newPath.unsplit = newPath.splitted.join("/");
           return {...windowItem, ...{ 
             data: {
               ...windowItem.data,
