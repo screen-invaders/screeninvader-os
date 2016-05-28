@@ -5,7 +5,7 @@ class Menubar extends React.Component{
     let {windowData, dispatch} = this.props;
     return (
       <div className="window__menubar">
-          <input className="window__menubar-path" defaultValue={windowData.data.path.unsplit} type="text"/>
+          <input className="window__menubar-path" value={windowData.data.path.unsplit} type="text"/>
       </div>
     )
   }
