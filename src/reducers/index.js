@@ -11,7 +11,6 @@ export default function reducer(state = {}, action) {
     windows: windows(state, action),
     menu: (state => state)(state.menu),
     user: (state => state)(state.user),
-    searchDropdown: (state => state)(state.searchDropdown),
     filesystem: (state => state)(state.filesystem)
   }
 }

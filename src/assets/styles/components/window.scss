@@ -89,7 +89,7 @@
   align-items: center;
   justify-content: center;
   background: $secundary;
-  border-bottom: 1px solid $medium;
+  border-bottom: 1px solid $dark;
 }
 
 .window__menubar-path {
@@ -128,7 +128,7 @@
   width: 20%;
   height: calc(100% - 3rem);
   padding: 1rem;
-  border-right: 1px solid $medium;
+  border-right: 1px solid $dark;
   background: $gray;
   overflow: scroll;
 }

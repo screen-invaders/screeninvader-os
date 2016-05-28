@@ -78,12 +78,17 @@
 }
 
 .menu__user-container {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1rem;
   font-size: 1rem; 
   line-height: 1rem; 
+}
+
+.menu__user-container:hover .dropdown{
+  display: block;
 }
 
 .menu__user-notice {
