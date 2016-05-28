@@ -24,7 +24,6 @@ export default function windows(state, action) {
       newState = [...state.windows];
       newState = newState.map((windowItem, key)=>{
         if (action.window.id == windowItem.id){
-          console.log(action.path.splitted)
           return {...windowItem, ...{ 
             data: {
               ...windowItem.data,
@@ -43,7 +42,6 @@ export default function windows(state, action) {
           let newPath = { ...windowItem.data.path };
           newPath.splitted.pop();
           newPath.unsplit = newPath.splitted.join("/");
-          console.log(newPath.splitted)
           return {...windowItem, ...{ 
             data: {
               ...windowItem.data,
@@ -78,7 +76,9 @@ export default function windows(state, action) {
         windowItem.focus = 0;
         return windowItem;
       });
-      newState[newState.length-1].focus = 1;
+      if (newState.length != 0){
+        newState[newState.length-1].focus = 1;
+      }
       return newState;
   
 
