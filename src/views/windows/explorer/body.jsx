@@ -4,12 +4,13 @@ import { connect } from 'react-redux'
 import ListedFolder from '../../items/listed-folder.jsx';
 
 class Body extends React.Component{
-  getItems(dir, current){
+  getItems(dir, path){
     // recursively get items from the filesystem
-    if (current.type == "dir") {
-      return getItems(dir.children[current.path.name], path);
+    if (path.length != 0) {
+      let current = path.shift();
+      return this.getItems(dir.children[current], path);
     } else {
-      return current.items;
+      return dir.children;
     }
   }
 
@@ -18,7 +19,7 @@ class Body extends React.Component{
     return (
       <div className="window__body">
       {(()=>{
-        let items = this.getItems(filesystem, windowData.data);
+        let items = this.getItems(filesystem, windowData.data.path.splitted);
         if (items){
           var templatedItems = [];
           for (var item in items) {
