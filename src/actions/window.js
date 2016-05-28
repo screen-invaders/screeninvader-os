@@ -4,7 +4,7 @@ export function window__open(type, itemData, query){
     data: {
       type: type,
       path: itemData && itemData.path,
-      // children: itemData && itemData.children,
+      children: itemData && itemData.children,
       content: itemData && itemData.content,
       query: query
     }
