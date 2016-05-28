@@ -6,9 +6,13 @@ var fs = require('fs'),
 function dirTree(filename) {
     var stats = fs.lstatSync(filename),
         info = {
-            path: filename.replace("./.generate/", ""),
+            path: path.parse(filename.replace("./.generate/", "")),
             name: path.basename(filename)
         };
+
+        if (info.path.dir) {
+            info.path.dir = info.path.dir.split(path.sep);
+        }
 
     if (stats.isDirectory()) {
         info.type = "dir";
