@@ -1,6 +1,7 @@
 import newWindow from '../models/window.js';
 
 export default function windows(state, action) {
+  console.log(action)
   let newState;
   switch (action.type){
     case "window__open":
@@ -23,6 +24,7 @@ export default function windows(state, action) {
       newState = [...state.windows];
       newState = newState.map((windowItem, key)=>{
         if (action.window.id == windowItem.id){
+          console.log(action.path.splitted)
           return {...windowItem, ...{ 
             data: {
               ...windowItem.data,
@@ -41,6 +43,7 @@ export default function windows(state, action) {
           let newPath = { ...windowItem.data.path };
           newPath.splitted.pop();
           newPath.unsplit = newPath.splitted.join("/");
+          console.log(newPath.splitted)
           return {...windowItem, ...{ 
             data: {
               ...windowItem.data,
