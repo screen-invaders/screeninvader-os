@@ -12,8 +12,8 @@ class Explorer extends React.Component{
     let {windowData, dispatch} = this.props;
     return (
       <div className="window__content-inner">
-        <Menubar windowData={windowData}/>
-        <Sidebar windowData={windowData}/>
+        <Menubar windowData={windowData} dispatch={dispatch}/>
+        <Sidebar windowData={windowData} dispatch={dispatch}/>
         <Body windowData={windowData} dispatch={dispatch}/>
       </div>
     )

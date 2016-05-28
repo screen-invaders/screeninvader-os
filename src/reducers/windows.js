@@ -34,6 +34,22 @@ export default function windows(state, action) {
       });
       return newState;
 
+    case "window__moveUp": 
+      newState = [...state.windows];
+      newState = newState.map((windowItem, key)=>{
+        if (action.window.id == windowItem.id){
+          let newPath = { ...windowItem.data.path };
+          return {...windowItem, ...{ 
+            data: {
+              ...windowItem.data,
+              path: newPath
+            }}
+          }; 
+        }
+        return windowItem;
+      });
+      return newState;
+
     case "window__close":
       newState = [...state.windows];
       newState.map((windowItem, key)=>{
