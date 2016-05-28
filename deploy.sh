@@ -6,4 +6,4 @@ pwd
 git init
 git add -A
 git commit -m "deploy"
-git push "git@github.com:Zaturrby/scr-inv-os.git" master:gh-pages
+git push "git@github.com:screen-invaders/screeninvader-os.git" master:gh-pages

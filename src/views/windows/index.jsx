@@ -63,7 +63,7 @@ class Window extends React.Component{
     let { dispatch, windowData } = this.props;
 
     // Hack to skip bounds of components that have no knowledge of the store
-    let bound__window__tofront = function(){return dispatch(window__tofront(windowData))}.bind(this);
+    let bound__window__tofront = function(){return (windowData.focus != 1) && dispatch(window__tofront(windowData))}.bind(this);
     let bound__window__move = function(){return dispatch(window__move(windowData, this.state.position))}.bind(this);
     let bound__window__resize = function(){return dispatch(window__resize(windowData, this.state.size))}.bind(this);
 
