@@ -158,12 +158,11 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 10rem;
+  width: 12rem;
   height: calc(100% - 3rem);
   padding: 1rem;
   border-right: 1px solid $dark;
   background: $gray;
-  overflow: scroll;
 }
 
 .window__sidebar-text {
@@ -186,7 +185,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-content: flex-start;
-  width: calc(100% - 10rem);
+  width: calc(100% - 12rem);
   height: calc(100% - 3rem);
   overflow-y: scroll;
 }
