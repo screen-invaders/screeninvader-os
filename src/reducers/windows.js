@@ -19,7 +19,7 @@ export default function windows(state, action) {
       }
       return [...state.windows, windowInstance];
 
-    case "window__updatePath": 
+    case "window__moveDown": 
       newState = [...state.windows];
       newState = newState.map((windowItem, key)=>{
         if (action.window.id == windowItem.id){

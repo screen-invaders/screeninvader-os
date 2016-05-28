@@ -11,11 +11,18 @@ export function window__open(type, itemData, query){
   }
 };
 
-export function window__updatePath(windowData, path){
+export function window__moveDown(windowData, path){
   return {
-    type: "window__updatePath",
+    type: "window__moveDown",
     window: windowData,
     path: path
+  }
+};
+
+export function window__moveUp(windowData, path){
+  return {
+    type: "window__moveUp",
+    window: windowData
   }
 };
 

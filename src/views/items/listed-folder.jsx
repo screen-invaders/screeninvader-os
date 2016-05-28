@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { window__open, window__updatePath } from '../../actions/window.js';
+import { window__open, window__moveDown } from '../../actions/window.js';
 
 import imgFolder from '../../assets/images/icons/row-11/3.png'
 import imgFile from '../../assets/images/file.png'
@@ -9,7 +9,7 @@ class ListedFolder extends React.Component{
   openFolder(){
     let {dispatch, itemData, windowData} = this.props;
     if (windowData.type == "Verkenner"){
-      dispatch(window__updatePath(windowData, itemData.path))
+      dispatch(window__moveDown(windowData, itemData.path))
     } else {
       dispatch(window__open(itemData.type, itemData))
     }
