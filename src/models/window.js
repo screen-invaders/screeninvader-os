@@ -8,6 +8,7 @@
       path: path,
       content: content
     };
+    this.history = [];
     this.viewPos = {
       x: Math.random() * (window.innerWidth - 620),
       y: Math.random() * (window.innerHeight - 500)
