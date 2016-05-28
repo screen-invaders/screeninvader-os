@@ -72,7 +72,7 @@ class Window extends React.Component{
         <Resizable 
           width={this.state.size.x} 
           height={this.state.size.y}
-          minConstraints={[400, 200]} 
+          minConstraints={[500, 350]} 
           maxConstraints={[1000, 600]}
           onResize={this.onResize.bind(this)}
           onResizeStop={bound__window__resize}
