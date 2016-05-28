@@ -65,16 +65,20 @@ export default function windows(state, action) {
       return newState;
 
     case "window__tofront": 
+      // Not immutable! Children are overwritten.
       newState = [...state.windows];
       newState.map((windowItem, key)=>{
         if (action.window.id == windowItem.id){
           var temp = newState.splice(key,1);
           newState.push(temp[0]);
-          newState.map((windowItem, key)=>{
-            return newState[key].viewIndex = 500 + key;
-          });
         }
       })
+      newState.map((windowItem, key)=>{
+        windowItem.viewIndex = 500 + key;
+        windowItem.focus = 0;
+        return windowItem;
+      });
+      newState[newState.length-1].focus = 1;
       return newState;
   
 
