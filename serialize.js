@@ -10,10 +10,6 @@ function dirTree(filename) {
             name: path.basename(filename)
         };
 
-        if (info.path.dir) {
-            info.path.dir = info.path.dir.split(path.sep);
-        }
-
     if (stats.isDirectory()) {
         info.type = "dir";
 

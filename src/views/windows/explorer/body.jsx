@@ -4,24 +4,26 @@ import { connect } from 'react-redux'
 import ListedFolder from '../../items/listed-folder.jsx';
 
 class Body extends React.Component{
-  getItems(){
-    let { windowData, filesystem } = this.props;
-    console.log(filesystem)
-    console.log(filesystem.children[windowData.data.path])
-
+  getItems(dir, current){
+    // recursively get items from the filesystem
+    if (current.type == "dir") {
+      return getItems(dir.children[current.path.name], path);
+    } else {
+      return current.items;
+    }
   }
 
   render() {
-    this.getItems();
+    let { windowData, filesystem, dispatch } = this.props;
     return (
       <div className="window__body">
       {(()=>{
-        if (this.props.windowData.data.items){
-          var items = this.props.windowData.data.items;
+        let items = this.getItems(filesystem, windowData.data);
+        if (items){
           var templatedItems = [];
           for (var item in items) {
             if (items.hasOwnProperty(item)) {
-              templatedItems.push(<ListedFolder key={item} itemData={items[item]} dispatch={this.props.dispatch}/>);
+              templatedItems.push(<ListedFolder key={item} itemData={items[item]} dispatch={dispatch}/>);
             }
           }
           return templatedItems;
