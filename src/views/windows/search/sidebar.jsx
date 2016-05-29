@@ -11,13 +11,13 @@ import iconBeveiligd from '../../../assets/images/icons/row-3/4.png'
 class Sidebar extends React.Component{
   render() {
     return (
-      <div className="window__sidebar">
-        <p className="window__sidebar-text"><img src={iconDesktop} className="window__sidebar-icon"/>Bureaublad</p>
-        <p className="window__sidebar-text"><img src={iconDocumenten} className="window__sidebar-icon"/>Documenten</p>
-        <p className="window__sidebar-text"><img src={iconAfbeeldingen} className="window__sidebar-icon"/>Afbeeldingen</p>
-        <p className="window__sidebar-text"><img src={iconSpreadsheets} className="window__sidebar-icon"/>Spreadsheets</p>
-        <p className="window__sidebar-text"><img src={iconDatabases} className="window__sidebar-icon"/>Databases</p>
-        <p className="window__sidebar-text"><img src={iconBeveiligd} className="window__sidebar-icon"/>Beveiligd</p>
+      <div className="search__sidebar">
+        <p className="search__sidebar-text"><img src={iconDesktop} className="search__sidebar-icon"/>Verfijn:</p>
+        <p className="search__sidebar-text"><img src={iconDocumenten} className="search__sidebar-icon"/>Bestandstype</p>
+        <p className="search__sidebar-text"><img src={iconAfbeeldingen} className="search__sidebar-icon"/>Datum</p>
+        <p className="search__sidebar-text"><img src={iconSpreadsheets} className="search__sidebar-icon"/>Grootte</p>
+        <p className="search__sidebar-text"><img src={iconDatabases} className="search__sidebar-icon"/>Eigenaar</p>
+        <p className="search__sidebar-text"><img src={iconBeveiligd} className="search__sidebar-icon"/>Beveiligd</p>
       </div>
     )
   }

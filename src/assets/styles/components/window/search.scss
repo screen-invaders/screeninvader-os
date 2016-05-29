@@ -1,6 +1,6 @@
 // Menubar
 
-.window__menubar {
+.search__menubar {
   width: 100%;
   padding: 0 1rem;
   height: 3rem;
@@ -11,7 +11,7 @@
   border-bottom: 1px solid $dark;
 }
 
-.window__menubar-path {
+.search__menubar-path {
   margin-left: 0rem;
   margin-right: 1rem;
   width: 22rem;
@@ -20,12 +20,9 @@
   padding: 0.5rem;
 }
 
-.window__menubar-search {
-  justify-content: space-between;
-}
 
 
-.window__search-open-all {
+.search__menubar-open-all {
   padding: 0.5rem;
   background: $primary;
   color: $day;
@@ -33,15 +30,15 @@
   cursor: pointer;
 }
 
-.window__search-open-all:hover {
+.search__menubar-open-all:hover {
   background: $secundary;
 }
 
-.window__menubar-icon-group {
+.search__menubar-icon-group {
   display: flex;
 }
 
-.window__menubar-icon {
+.search__menubar-icon {
   width: 1.5rem;
   height: 1.5rem;
   padding: 0.25rem;
@@ -49,19 +46,19 @@
   transition: 0.1s ease all;
 }
 
-.window__menubar-icon-img {
+.search__menubar-icon-img {
   width: 100%;
   height: 100%;
 }
 
-.window__menubar-icon:hover {
+.search__menubar-icon:hover {
   padding: 0rem;
 }
 
 
 // Sidebar
 
-.window__sidebar {
+.search__sidebar {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -72,13 +69,13 @@
   background: $gray;
 }
 
-.window__sidebar-text {
+.search__sidebar-text {
   display: flex;
   padding-bottom: 5px;
   font-weight: bold;
 }
 
-.window__sidebar-icon {
+.search__sidebar-icon {
   width: 1.5rem;
   height: 1.5rem;
   padding: 0.25rem;
@@ -87,7 +84,7 @@
 
 // Body
 
-.window__body {
+.search__body {
   display:  flex;
   flex-direction: row;
   flex-wrap: wrap;

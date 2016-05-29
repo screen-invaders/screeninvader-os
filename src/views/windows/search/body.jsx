@@ -6,7 +6,7 @@ class Body extends React.Component{
   render() {
     let {windowData} = this.props;
     return (
-      <div className="window__body">
+      <div className="search__body">
       { (windowData.data.items.length && 
           windowData.data.items.map((item, key)=>{
             return <Item key={key} itemData={item} dispatch={this.props.dispatch}/>
