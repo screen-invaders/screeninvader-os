@@ -1,14 +1,23 @@
 import React from 'react';
 
-import { window__open } from '../../actions/window.js';
+import { window__open, window__moveDown } from '../../actions/window.js';
 
 import imgFolder from '../../assets/images/icons/row-11/3.png'
 import imgFile from '../../assets/images/file.png'
 
 class Folder extends React.Component{
+  openFolder(){
+    let {dispatch, itemData, windowData} = this.props;
+    if (!windowData){windowData = {type: "desktop"};}
+    if (windowData.type == "Verkenner"){
+      dispatch(window__moveDown(windowData, itemData.path))
+    } else {
+      dispatch(window__open(itemData.type, itemData))
+    }
+  }
   render() {
 		return (
-      <div className="folder" onDoubleClick={this.props.dispatch.bind(null, window__open(this.props.itemData.type, this.props.itemData))}>
+      <div className="folder" onDoubleClick={this.openFolder.bind(this)}>
 			  <img className="folder__image" draggable="false" src={(()=>{
           switch (this.props.itemData.type){
             case "txt": 

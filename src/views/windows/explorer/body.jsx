@@ -30,7 +30,6 @@ class Body extends React.Component{
               templatedItems.push(<ListedFolder key={item} windowData={windowData} itemData={items[item]} dispatch={dispatch}/>);
               } else {
               templatedItems.push(<Folder key={item} windowData={windowData} itemData={items[item]} dispatch={dispatch}/>);
-
               }
             }
           }
