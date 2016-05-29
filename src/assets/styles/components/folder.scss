@@ -1,4 +1,4 @@
-.folder {
+.item {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,12 +7,12 @@
   padding: 1rem;
 }
 
-.folder__image {
+.item__image {
   width: 3rem;
   margin-bottom: 0.5rem;
 }
 
-.folder__text {
+.item__text {
   text-align: center;
   word-break: break-all; 
   font-weight: bold;
@@ -21,7 +21,7 @@
   padding: 0.1rem 0.6rem;
 }
 
-.listed-folder {
+.listed-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -30,22 +30,22 @@
   border-bottom: 1px dashed $light;
 }
 
-.listed-folder:hover {
+.listed-item:hover {
   background: $tertiary;
   cursor: pointer;
 }
 
-.listed-folder__image {
+.listed-item__image {
   width: 2rem;
   height: 2rem;
 }
 
-.listed-folder__name {
+.listed-item__name {
   width: 100%;
   padding: 0 1rem;
   word-break: break-all; 
   flex: 1 1;
 }
 
-.listed-folder__date {
+.listed-item__date {
 }

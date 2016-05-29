@@ -5,8 +5,8 @@ import { window__open, window__moveDown } from '../../actions/window.js';
 import imgFolder from '../../assets/images/icons/row-11/3.png'
 import imgFile from '../../assets/images/file.png'
 
-class ListedFolder extends React.Component{
-  openFolder(){
+class ListedItem extends React.Component{
+  openItem(){
     let {dispatch, itemData, windowData} = this.props;
     if (windowData.type == "Verkenner"){
       dispatch(window__moveDown(windowData, itemData.path))
@@ -17,8 +17,8 @@ class ListedFolder extends React.Component{
 
   render() {
 		return (
-      <div className="listed-folder" onDoubleClick={this.openFolder.bind(this)}>
-			  <img className="listed-folder__image" draggable="false" src={(()=>{
+      <div className="listed-item" onDoubleClick={this.openItem.bind(this)}>
+			  <img className="listed-item__image" draggable="false" src={(()=>{
           switch (this.props.itemData.type){
             case "txt": 
               return imgFile;
@@ -26,13 +26,13 @@ class ListedFolder extends React.Component{
               return imgFolder;
           }
         })()}></img>
-        <div className="listed-folder__name">
+        <div className="listed-item__name">
           <p>{this.props.itemData.name}</p>
         </div>
-        <p className="listed-folder__date">25-01-1998</p>
+        <p className="listed-item__date">25-01-1998</p>
       </div>
     )
 	}
 }
 
-export default ListedFolder;
+export default ListedItem;

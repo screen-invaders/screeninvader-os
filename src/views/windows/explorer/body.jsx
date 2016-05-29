@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux'
 
-import ListedFolder from '../../items/listed-folder.jsx';
-import Folder from '../../items/folder.jsx';
+import ListedItem from '../../items/listed-item.jsx';
+import Item from '../../items/item.jsx';
 
 class Body extends React.Component{
   getItems(dir, path){
@@ -28,9 +28,9 @@ class Body extends React.Component{
           for (var item in items) {
             if (items.hasOwnProperty(item)) {
               if (windowData.data.viewType == "list"){
-              templatedItems.push(<ListedFolder key={item} windowData={windowData} itemData={items[item]} dispatch={dispatch}/>);
+              templatedItems.push(<ListedItem key={item} windowData={windowData} itemData={items[item]} dispatch={dispatch}/>);
               } else {
-              templatedItems.push(<Folder key={item} windowData={windowData} itemData={items[item]} dispatch={dispatch}/>);
+              templatedItems.push(<Item key={item} windowData={windowData} itemData={items[item]} dispatch={dispatch}/>);
               }
             }
           }
