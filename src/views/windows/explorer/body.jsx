@@ -18,7 +18,7 @@ class Body extends React.Component{
 
   render() {
     let { windowData, filesystem, dispatch } = this.props;
-    console.log(windowData.data.path, filesystem)
+    console.log(filesystem)
     return (
       <div className="window__body">
       {(()=>{
