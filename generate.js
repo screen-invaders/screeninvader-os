@@ -13,6 +13,7 @@ function createDirectoryChildren(src){
     // Which type?
     type = "txt";
     name = faker.system.commonFileName(type);
+    name = name.replace(/\//, "");
     path = JSON.parse(JSON.stringify(src));
     path.push(name);
     file = {
@@ -28,7 +29,7 @@ function createDirectoryChildren(src){
     directory[file.name] = file;
   }
 
-  console.log(directory);
+  // console.log(directory);
 
   return directory;
 }
@@ -49,11 +50,12 @@ function createFile(file){
 
 function createText(file){
   // Creates file in side effect
-  var data = faker.lorem.paragraph(10);
-  fs.writeFileSync(file.path.join('/'), data);
+  var data = faker.lorem.paragraph(10)
+
+  fs.writeFileSync("./.generate/".concat((file.path.join('/'))), data);
 }
 
-export default createDirectoryChildren;
+module.exports = createDirectoryChildren;
 
 // createDirectoryChildren([".generate"]);
 

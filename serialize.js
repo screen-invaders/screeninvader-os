@@ -1,16 +1,15 @@
 var fs = require('fs'),
     path = require('path'),
-    util = require('util');
-
+    util = require('util'),
+    createDirectoryChildren = require('./generate.js');
 
 function dirTree(filename) {
     var stats = fs.lstatSync(filename),
+        //.replace("./.generate/", "")
         info = {
-            path: { unsplit: filename.replace("./.generate/", "") },
+            path: (filename.replace("./.generate/", "")).split(path.sep),
             name: path.basename(filename)
         };
-
-        info.path.splitted = info.path.unsplit.split(path.sep);
 
     if (stats.isDirectory()) {
         info.type = "dir";
@@ -24,6 +23,13 @@ function dirTree(filename) {
 
         // filter empties
         tempChildren = tempChildren.filter(function(obj){if (obj != undefined) {return true;}});
+
+        // Generate files
+        var textChildren = tempChildren.map(function(value, key){
+            return createDirectoryChildren(value.path)
+        })
+
+        tempChildren.concat(textChildren);
 
         // transform to hashmap
         info.children = {};
