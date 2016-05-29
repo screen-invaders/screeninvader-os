@@ -3,7 +3,7 @@ import React from 'react';
 import { window__open, window__moveDown } from '../../actions/window.js';
 
 import imgFolder from '../../assets/images/icons/row-11/3.png'
-import imgFile from '../../assets/images/file.png'
+import imgFile from '../../assets/images/icons/row-11/6.png'
 
 class ListedItem extends React.Component{
   openItem(){
@@ -20,10 +20,10 @@ class ListedItem extends React.Component{
       <div className="listed-item" onDoubleClick={this.openItem.bind(this)}>
 			  <img className="listed-item__image" draggable="false" src={(()=>{
           switch (this.props.itemData.type){
-            case "txt": 
-              return imgFile;
             case "dir": 
               return imgFolder;
+            case "txt": 
+              return imgFile;
           }
         })()}></img>
         <div className="listed-item__name">

@@ -2,8 +2,8 @@ import React from 'react';
 
 import { window__open, window__moveDown } from '../../actions/window.js';
 
-import imgitem from '../../assets/images/icons/row-11/3.png'
-import imgFile from '../../assets/images/file.png'
+import imgItem from '../../assets/images/icons/row-11/3.png'
+import imgFile from '../../assets/images/icons/row-11/6.png'
 
 class Item extends React.Component{
   openItem(){
@@ -23,7 +23,7 @@ class Item extends React.Component{
             case "txt": 
               return imgFile;
             case "dir": 
-              return imgitem;
+              return imgItem;
           }
         })()}></img>
         <p className="item__text">{this.props.itemData.name}</p>
