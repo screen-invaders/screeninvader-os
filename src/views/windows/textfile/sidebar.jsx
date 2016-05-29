@@ -12,12 +12,7 @@ class Sidebar extends React.Component{
   render() {
     return (
       <div className="window__sidebar">
-        <p className="window__sidebar-text"><img src={iconDesktop} className="window__sidebar-icon"/>Bureaublad</p>
-        <p className="window__sidebar-text"><img src={iconDocumenten} className="window__sidebar-icon"/>Documenten</p>
-        <p className="window__sidebar-text"><img src={iconAfbeeldingen} className="window__sidebar-icon"/>Afbeeldingen</p>
-        <p className="window__sidebar-text"><img src={iconSpreadsheets} className="window__sidebar-icon"/>Spreadsheets</p>
-        <p className="window__sidebar-text"><img src={iconDatabases} className="window__sidebar-icon"/>Databases</p>
-        <p className="window__sidebar-text"><img src={iconBeveiligd} className="window__sidebar-icon"/>Beveiligd</p>
+        
       </div>
     )
   }

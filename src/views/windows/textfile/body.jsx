@@ -5,7 +5,9 @@ class Body extends React.Component{
   render() {
     return (
       <div className="window__body">
-        <ReactMarkdown source={this.props.windowData.folder.contents} />
+        <div className="window__markdown-container">
+          <ReactMarkdown source="hello" />
+        </div>
       </div>
     )
   }
