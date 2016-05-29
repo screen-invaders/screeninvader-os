@@ -1,99 +1,6 @@
-// Containers
-
-.window {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  z-index: 500;
-  box-shadow: 0px 0px 30px 5px rgba($night, 0.2);
-  border-radius: 5px;
-}
-
-.window__inner {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-}
-
-// Name of this needs to change..
-.react-resizable-handle {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  bottom: 0;
-  right: 0;
-  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pg08IS0tIEdlbmVyYXRvcjogQWRvYmUgRmlyZXdvcmtzIENTNiwgRXhwb3J0IFNWRyBFeHRlbnNpb24gYnkgQWFyb24gQmVhbGwgKGh0dHA6Ly9maXJld29ya3MuYWJlYWxsLmNvbSkgLiBWZXJzaW9uOiAwLjYuMSAgLS0+DTwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DTxzdmcgaWQ9IlVudGl0bGVkLVBhZ2UlMjAxIiB2aWV3Qm94PSIwIDAgNiA2IiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjojZmZmZmZmMDAiIHZlcnNpb249IjEuMSINCXhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbDpzcGFjZT0icHJlc2VydmUiDQl4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjZweCIgaGVpZ2h0PSI2cHgiDT4NCTxnIG9wYWNpdHk9IjAuMzAyIj4NCQk8cGF0aCBkPSJNIDYgNiBMIDAgNiBMIDAgNC4yIEwgNCA0LjIgTCA0LjIgNC4yIEwgNC4yIDAgTCA2IDAgTCA2IDYgTCA2IDYgWiIgZmlsbD0iIzAwMDAwMCIvPg0JPC9nPg08L3N2Zz4=');
-  background-position: bottom right;
-  padding: 0 3px 3px 0;
-  background-repeat: no-repeat;
-  background-origin: content-box;
-  box-sizing: border-box;
-  cursor: se-resize;
-}
-
-// titlebar
-
-.window__titlebar {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-
-.window__titlebar-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-left: 1rem;
-  height: 2rem;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-
-.window__titlebar-text {
-  color: $day;
-}
-
-.window__titlebar-close-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 2rem;
-  height: 2rem;
-  padding: 0.75rem;
-  cursor: pointer;
-  border-top-right-radius: 5px;
-  transition: 0.1s ease all;
-}
-
-.window__titlebar-close-button img {
-  width: 100%;
-  height: 100%;
-}
-
-.window__titlebar-close-button:hover {
-  padding: 0.5rem;
-}
-
-// Containers
-
-.window__content {
-  width: 100%;
-  height: calc(100% - 2rem);
-}
-
-.window__content-inner {
-  width: 100%;
-  height: 100%;
-  display:  flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: flex-start;
-}
-
-
 // Menubar
 
-.window__menubar {
+.explorer__menubar {
   width: 100%;
   padding: 0 1rem;
   height: 3rem;
@@ -104,7 +11,7 @@
   border-bottom: 1px solid $dark;
 }
 
-.window__menubar-path {
+.explorer__menubar-path {
   margin-left: 0rem;
   margin-right: 1rem;
   width: 22rem;
@@ -113,12 +20,12 @@
   padding: 0.5rem;
 }
 
-.window__menubar-search {
+.explorer__menubar-search {
   justify-content: space-between;
 }
 
 
-.window__search-open-all {
+.explorer__search-open-all {
   padding: 0.5rem;
   background: $primary;
   color: $day;
@@ -126,15 +33,15 @@
   cursor: pointer;
 }
 
-.window__search-open-all:hover {
+.explorer__search-open-all:hover {
   background: $secundary;
 }
 
-.window__menubar-icon-group {
+.explorer__menubar-icon-group {
   display: flex;
 }
 
-.window__menubar-icon {
+.explorer__menubar-icon {
   width: 1.5rem;
   height: 1.5rem;
   padding: 0.25rem;
@@ -142,19 +49,19 @@
   transition: 0.1s ease all;
 }
 
-.window__menubar-icon-img {
+.explorer__menubar-icon-img {
   width: 100%;
   height: 100%;
 }
 
-.window__menubar-icon:hover {
+.explorer__menubar-icon:hover {
   padding: 0rem;
 }
 
 
 // Sidebar
 
-.window__sidebar {
+.explorer__sidebar {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -165,13 +72,13 @@
   background: $gray;
 }
 
-.window__sidebar-text {
+.explorer__sidebar-text {
   display: flex;
   padding-bottom: 5px;
   font-weight: bold;
 }
 
-.window__sidebar-icon {
+.explorer__sidebar-icon {
   width: 1.5rem;
   height: 1.5rem;
   padding: 0.25rem;
@@ -180,7 +87,7 @@
 
 // Body
 
-.window__body {
+.explorer__body {
   display:  flex;
   flex-direction: row;
   flex-wrap: wrap;

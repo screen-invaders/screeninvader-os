@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Menubar from './menubar.jsx';
-import Sidebar from './sidebar.jsx';
 import Body from './body.jsx';
 
 class Explorer extends React.Component{
@@ -13,7 +12,6 @@ class Explorer extends React.Component{
     return (
       <div className="window__content-inner">
         <Menubar windowData={windowData}/>
-        <Sidebar windowData={windowData}/>
         <Body windowData={windowData} dispatch={dispatch}/>
       </div>
     )

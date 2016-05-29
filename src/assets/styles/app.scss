@@ -6,9 +6,12 @@
 @import 'components/desktop';
 @import 'components/menu';
 @import 'components/item';
-@import 'components/window/index';
 @import 'components/login';
 @import 'components/admin';
 @import 'components/dropdown';
+
+@import 'components/window/index';
+@import 'components/window/explorer';
+@import 'components/window/textfile';
 
 @import 'theme';

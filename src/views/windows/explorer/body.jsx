@@ -19,7 +19,7 @@ class Body extends React.Component{
   render() {
     let { windowData, filesystem, dispatch } = this.props;
     return (
-      <div className="window__body">
+      <div className="explorer__body">
       {(()=>{
         let items = this.getItems(filesystem, windowData.data.path);
         if (items){
