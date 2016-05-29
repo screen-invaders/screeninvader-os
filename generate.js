@@ -7,7 +7,7 @@ function createDirectoryChildren(src){
   var file, type, name;
 
   // How many files?
-  var count = faker.random.number({min: 1, max: 3});
+  var count = faker.random.number({min: 1, max: 10});
 
   for (var i = 0; i < count; i++){
     type = "txt";
@@ -50,7 +50,7 @@ function createFile(file){
 
 function createText(file){
   // Creates file in side effect
-  var data = faker.lorem.paragraph(10)
+  var data = faker.lorem.paragraph(30)
   fs.writeFileSync("./.generate/".concat((file.path.join('/'))), data);
 }
 
