@@ -1,28 +1,39 @@
 var faker = require('faker');
+var fs = require('fs');
 
-function createDirectoryChildren(path){
+function createDirectoryChildren(src){
   // random logic: which files and how many?
   var directory = {};
-  var file;
-  var type;
+  var file, type, name;
 
   // How many files?
-  var count = faker.random.number({min: 5, max: 20});
+  var count = faker.random.number({min: 1, max: 3});
 
   for (var i = 0; i < count; i++){
+    // Which type?
     type = "txt";
+    name = faker.system.commonFileName(type);
+    path = JSON.parse(JSON.stringify(src));
+    path.push(name);
     file = {
-      name: faker.system.commonFileName(type),
+      name: name,
       path: path,
       type: type
     }
-    directory[name] = createFileContent(name, path, type)
+    
+    // create file (side-effect)
+    createFile(file);
+
+    // create meta-data
+    directory[file.name] = file;
   }
+
+  console.log(directory);
 
   return directory;
 }
 
-function createFileContent(file){
+function createFile(file){
   // routing on filetype
   var types = {
     txt: createText,
@@ -33,18 +44,16 @@ function createFileContent(file){
     // 'audio': createAudio,
     // 'executable': createExe
   }
-
-  file.content = types[type]();
-
-  return file;
+  types[file.type](file);
 }
 
-function createText(){
-  // Returns file meta-data
-  // Screates file as side effect
-  var content = "some string";
-  return content;
+function createText(file){
+  // Creates file in side effect
+  var data = faker.lorem.paragraph(10);
+  fs.writeFileSync(file.path.join('/'), data);
 }
 
-createDirectoryChildren(["some", "path"]);
+export default createDirectoryChildren;
+
+// createDirectoryChildren([".generate"]);
 
