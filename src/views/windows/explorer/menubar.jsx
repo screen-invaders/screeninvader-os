@@ -18,7 +18,7 @@ class Menubar extends React.Component{
           <div className="window__menubar-icon"><img className="window__menubar-icon-img" src={iconRight}/></div>
           <div className="window__menubar-icon" onClick={dispatch.bind(null, window__moveUp(windowData))} ><img className="window__menubar-icon-img" src={iconUp} /></div>
         </div>
-        <input className="window__menubar-path" value={windowData.data.path.unsplit} onChange={()=>{}} type="text"/>
+        <input className="window__menubar-path" value={windowData.data.path.join("/")} onChange={()=>{}} type="text"/>
         <div  className="window__menubar-icon-group">
           <div className="window__menubar-icon" onClick={dispatch.bind(null, window__changeViewType(windowData, "list"))}><img className="window__menubar-icon-img" src={iconList} /></div>
           <div className="window__menubar-icon" onClick={dispatch.bind(null, window__changeViewType(windowData, "icons"))}><img className="window__menubar-icon-img" src={iconIcons} /></div>
