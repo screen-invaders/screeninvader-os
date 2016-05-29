@@ -13,12 +13,24 @@
 }
 
 .item__text {
-  text-align: center;
-  word-break: break-all; 
-  font-weight: bold;
-  background: rgba($dark, 0.1);
-  border-radius: 5px;
+  display: block;
   padding: 0.1rem 0.6rem;
+  max-width: 100%;
+  max-height: 2.2rem;
+
+  border-radius: 5px;
+
+  font-size: 1rem;
+  line-height: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+
+  word-break: break-all; 
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  background: rgba($dark, 0.1);
 }
 
 .listed-item {
