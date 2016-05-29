@@ -44,7 +44,6 @@ class Admin extends React.Component{
             <img className="admin__logo" src={imgLogo} />
             {(()=>{
             if ((this.get_browser()).name != "Chrome"){
-              console.log("pass")
               return <div className="admin__browser-error">Deze app werkt alleen op <a className="admin__browser-error-link" href="https://www.google.com/intl/en/chrome/browser/desktop/index.html">Chrome</a></div>
             }})()} 
             <div className="admin__description">

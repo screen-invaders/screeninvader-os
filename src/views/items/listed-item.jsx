@@ -8,7 +8,6 @@ import imgFile from '../../assets/images/icons/row-11/6.png'
 class ListedItem extends React.Component{
   openItem(){
     let {dispatch, itemData, windowData} = this.props;
-    console.log(windowData)
     if (windowData.type == "Verkenner" && itemData.type == "dir"){
       dispatch(window__moveDown(windowData, itemData.path))
     } else {

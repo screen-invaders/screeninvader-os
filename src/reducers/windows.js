@@ -9,7 +9,7 @@ export default function windows(state, action) {
       let type, windowInstance;
       switch (action.data.type) {
         case "dir": 
-          windowInstance = new newWindow("Verkenner", action.data.children, action.data.path, null, null);
+          windowInstance = new newWindow("Verkenner", {}, action.data.path, null, null);
           break;
         case "txt": 
           windowInstance = new newWindow("Tekstbestand", null, action.data.path, null, action.data.content);
