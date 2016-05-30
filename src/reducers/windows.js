@@ -92,6 +92,7 @@ export default function windows(state, action) {
             }
           }; 
         }
+        return windowItem;
       })
       return newState;
 
