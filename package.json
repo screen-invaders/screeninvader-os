@@ -1,12 +1,12 @@
 {
-  "name": "OS-Template",
-  "version": "1.0.0",
-  "description": "OS template",
-  "main": "index.js",
+  "name": "Screen Invaders OS",
+  "version": "0.8.0",
+  "description": "",
+  "main": "index.html",
   "scripts": {
     "prepare": "mkdir -p build/ && cp index.html build/",
     "dev": "webpack-dev-server --host 0.0.0.0 --hot --progress --colors --content-base build",
-    "predeploy": "mkdir -p build/ && cp index.html build/",
+    "build": "NODE_ENV=production webpack -p",
     "deploy": "NODE_ENV=production webpack -p && sh deploy.sh",
     "data": "sh generate.sh && node serialize.js"
   },
@@ -15,7 +15,7 @@
     "url": ""
   },
   "author": "RJ Korteschiel",
-  "license": "ISC",
+  "license": "",
   "bugs": {
     "url": ""
   },
