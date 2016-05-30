@@ -18,6 +18,8 @@ To build the app: ```npm run build```
 
 To build & deploy the app to GH-pages: ```npm run deploy```
 
+Staging deploy is visible on [GH-pages](http://screen-invaders.github.io/screeninvader-os)
+
 ## Components breakdown
  
 1. Filesytem
