@@ -3,9 +3,8 @@ import newWindow from '../models/window.js';
 export default function windows(state, action) {
   console.log(action)
   let newState;
-  switch (action.type){
+  switch (action.type){      
     case "window__open":
-
       let type, windowInstance;
       switch (action.data.type) {
         case "dir": 
@@ -119,6 +118,22 @@ export default function windows(state, action) {
         }
       });
       return newState
+    
+    case "data__receiveData": 
+      newState = [...state.windows];
+      newState = newState.map((windowItem, key)=>{
+        if (action.window.id == windowItem.id){
+          return { ...windowItem, ...{ 
+            data: {
+              ...windowItem.data,
+              content: action.content
+            }
+          }};
+        }
+        return windowItem;
+      });
+      return newState
+
     default:
       return [ ...state.windows ] || [];
   }

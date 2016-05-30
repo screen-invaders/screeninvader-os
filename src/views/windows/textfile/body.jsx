@@ -5,7 +5,6 @@ import { data__getData } from '../../../actions/data.js';
 
 class Body extends React.Component{
   componentWillMount(){
-    console.log(this.props)
     let {windowData, dispatch} = this.props;
     dispatch(data__getData(windowData, dispatch));
   }
@@ -13,8 +12,8 @@ class Body extends React.Component{
   render() {
     let {windowData, dispatch} = this.props;
     return (
-      <div className="textfile__body">
-        <ReactMarkdown source="hello" />
+      <div className={"textfile__body"}>
+        <ReactMarkdown source={windowData.data.content || "loading data"} />
       </div>
     )
   }
