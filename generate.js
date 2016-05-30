@@ -51,7 +51,7 @@ function createFile(file){
 function createText(file){
   // Creates file in side effect
   var data = faker.lorem.paragraph(30)
-  fs.writeFileSync("./.generate/".concat((file.path.join('/'))), data);
+  fs.writeFileSync("./build/filesystem/".concat((file.path.join('/'))), data);
 }
 
 module.exports = createDirectoryChildren;

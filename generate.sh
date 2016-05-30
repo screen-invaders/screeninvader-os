@@ -1,6 +1,6 @@
-rm -rf "./.generate"
-mkdir "./.generate"
-cd "./.generate"
+rm -rf "./build/filesystem"
+mkdir "./build/filesystem"
+cd "./build/filesystem"
 
 top_level_names=("AFM" "CN" "ESW" "FATF" "IND" "LIEC" "KPCN" "PPS" "RIEC" "UNODC" "VFN" "UWV")
 

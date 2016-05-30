@@ -6,7 +6,7 @@ var fs = require('fs'),
 function dirTree(filename) {
     var stats = fs.lstatSync(filename);
 
-    var pathClean = (filename.replace("./.generate/", "")).replace("./.generate", "");
+    var pathClean = (filename.replace("./build/filesystem/", "")).replace("./build/filesystem", "");
 
     var info = {
         path: pathClean.split(path.sep),
@@ -49,5 +49,5 @@ function dirTree(filename) {
 }
 
 if (module.parent == undefined) {
-    fs.writeFileSync("./src/assets/data/filesystem.json", JSON.stringify(dirTree("./.generate")));
+    fs.writeFileSync("./src/assets/data/filesystem.json", JSON.stringify(dirTree("./build/filesystem")));
 }

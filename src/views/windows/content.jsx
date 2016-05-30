@@ -13,7 +13,7 @@ class Content extends React.Component{
       let windows = {
         Verkenner:    <Explorer     windowData={windowData} dispatch={dispatch}/>,
         Zoeken:       <WindowSearch windowData={windowData} dispatch={dispatch}/>,
-        Tekstbestand: <WindowText   windowData={windowData}/>
+        Tekstbestand: <WindowText   windowData={windowData} dispatch={dispatch}/>
       }
       return windows[windowData.type];
       })()}
