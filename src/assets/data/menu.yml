@@ -3,17 +3,22 @@ menu:
   - name: "Systeem"
     dropdown:
     - name: "Over dit Intranet"
+    - name: "Configuratiescherm"
     - name: "Uitloggen"
     - name: "Herstarten"
     - name: "Afsluiten"
   - name: "Programma's"
     dropdown:
-    - name: "Configuratiescherm"
+    - name: "Verkenner"
+    - name: "Zoeken"
     - name: "Teksteditor"
+    - name: "PDF-viewer"
     - name: "Browser"
-    - name: "Fotobewerking"
-  - name: "Belastingen"
-  - name: "Organisatie"
+  - name: "Intranet"
+    dropdown:
+    - name: "Belastingen"
+    - name: "Toeslagen"
+    - name: "Organisatie"
   searchDropdown:
   - name: "Zoekinstellingen"
   - name: "Pas filters toe"
