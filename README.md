@@ -41,7 +41,7 @@ Staging deploy is visible on [GH-pages](http://screen-invaders.github.io/screeni
 
 ## Implementation details
 
-1. Component based Javascript architecture implemented with ES6, React JSX and Webpack/NPM. to create a performant app. State is managed by a single synchronous store (or tree) implemented with Redux. 
+1. Component based Javascript architecture implemented with ES6, React JSX and Webpack/NPM to create a performant app. State is managed by a single synchronous store (or tree) implemented with Redux. 
 2. Modular CSS implemented with SMACCS and SASS.
 3. Content generation scripts are implemented with Bash and Node scripts.
 4. Version control (git) used to track development.
