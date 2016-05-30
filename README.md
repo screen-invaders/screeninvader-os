@@ -45,11 +45,3 @@ Staging deploy is visible on [GH-pages](http://screen-invaders.github.io/screeni
 2. Modular CSS implemented with SMACCS and SASS.
 3. Content generation scripts are implemented with Bash and Node scripts.
 4. Version control (git) used to track development.
-
-## Process
-
-Agile (iterative) process with specifications and designs changing during development as needed and within reason. Local development environment and online staging area is provided. Final delivery by email with packaged files and Github repository.
-
-
-
-
