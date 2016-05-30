@@ -2,8 +2,9 @@ import React from 'react';
 
 import { window__open, window__moveDown } from '../../actions/window.js';
 
-import imgItem from '../../assets/images/icons/row-11/3.png'
-import imgFile from '../../assets/images/icons/row-11/6.png'
+import imgFolder from '../../assets/images/icons/row-11/3.png'
+import imgTXT from '../../assets/images/icons/row-10/12.png'
+import imgPDF from '../../assets/images/icons/row-11/6.png'
 
 class Item extends React.Component{
   openItem(){
@@ -20,10 +21,12 @@ class Item extends React.Component{
       <div className="item" onDoubleClick={this.openItem.bind(this)}>
 			  <img className="item__image" draggable="false" src={(()=>{
           switch (this.props.itemData.type){
-            case "txt": 
-              return imgFile;
             case "dir": 
-              return imgItem;
+              return imgFolder;
+            case "txt": 
+              return imgTXT;
+            case "pdf": 
+              return imgPDF;
           }
         })()}></img>
         <p className="item__text">{this.props.itemData.name}</p>

@@ -36,6 +36,7 @@
     "fs": "0.0.2",
     "html-loader": "^0.4.3",
     "json-loader": "^0.5.4",
+    "jspdf": "^1.2.61",
     "markdown-loader": "^0.1.7",
     "node-sass": "^3.4.2",
     "postcss": "^5.0.21",

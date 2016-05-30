@@ -3,7 +3,8 @@ import React from 'react';
 import { window__open, window__moveDown } from '../../actions/window.js';
 
 import imgFolder from '../../assets/images/icons/row-11/3.png'
-import imgFile from '../../assets/images/icons/row-11/6.png'
+import imgTXT from '../../assets/images/icons/row-10/12.png'
+import imgPDF from '../../assets/images/icons/row-11/6.png'
 
 class ListedItem extends React.Component{
   openItem(){
@@ -23,7 +24,9 @@ class ListedItem extends React.Component{
             case "dir": 
               return imgFolder;
             case "txt": 
-              return imgFile;
+              return imgTXT;
+            case "pdf": 
+              return imgPDF;
           }
         })()}></img>
         <div className="listed-item__name">
