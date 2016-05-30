@@ -12,9 +12,9 @@ First time initialization: ```npm run prepare```
 
 To test the app: ```npm run dev``` and check localhost:8080
 
-To build the app: ```npm run build``
+To build the app: ```npm run build```
 
-To regenerate the data: ```npm run data``
+To regenerate the data: ```npm run data```
 
 To build & deploy the app to GH-pages: ```npm run deploy```
 
