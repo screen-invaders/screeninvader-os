@@ -10,7 +10,7 @@ export function data__getData(windowData, dispatch){
   var oReq = new XMLHttpRequest();
   
   oReq.addEventListener("load", onData);
-  oReq.open("GET", "./filesystem" + windowData.data.path.join("/"));
+  oReq.open("GET", "./filesystem/" + windowData.data.path.join("/"));
   oReq.send();
 
   function onData(){
