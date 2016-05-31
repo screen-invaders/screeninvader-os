@@ -3,7 +3,7 @@ import React from 'react';
 import Menubar from './menubar.jsx';
 import Body from './body.jsx';
 
-class TXT extends React.Component{
+class PDF extends React.Component{
   shouldComponentUpdate(nextProps){
     return this.props.windowData !== nextProps.windowData;
   }
@@ -18,4 +18,4 @@ class TXT extends React.Component{
   }
 }
 
-export default TXT;
+export default PDF;

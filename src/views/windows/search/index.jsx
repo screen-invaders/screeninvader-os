@@ -4,7 +4,7 @@ import Menubar from './menubar.jsx';
 import Sidebar from './sidebar.jsx';
 import Body from './body.jsx';
 
-class Explorer extends React.Component{
+class Search extends React.Component{
   shouldComponentUpdate(nextProps){
     return this.props.windowData !== nextProps.windowData;
   }
@@ -20,4 +20,4 @@ class Explorer extends React.Component{
   }
 }
 
-export default Explorer;
+export default Search;

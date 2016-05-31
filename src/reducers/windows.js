@@ -8,14 +8,18 @@ export default function windows(state, action) {
       let type, windowInstance;
       switch (action.data.type) {
         case "dir": 
-          windowInstance = new newWindow("Verkenner", {}, action.data.path, null, null);
+          windowInstance = new newWindow("Verkenner", {}, action.data.path);
           break;
         case "txt": 
           windowInstance = new newWindow("Tekstbestand", null, action.data.path, null, action.data.content);
           break;
+        case "pdf": 
+          windowInstance = new newWindow("PDF", null, action.data.path, null, action.data.content);
+          break;
         case "search":
           windowInstance = new newWindow("Zoeken", state.search.current, null, action.data.query, null);
           break;
+        
       }
       return [...state.windows, windowInstance];
 

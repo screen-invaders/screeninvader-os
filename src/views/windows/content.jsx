@@ -1,8 +1,9 @@
 import React from 'react';
 
 import Explorer from './explorer/index.jsx';
-import WindowSearch from './search/index.jsx';
-import WindowText from './textfile/index.jsx';
+import Search from './search/index.jsx';
+import TXT from './textfile/index.jsx';
+import PDF from './pdf/index.jsx';
 
 class Content extends React.Component{
   render() {
@@ -11,9 +12,10 @@ class Content extends React.Component{
       <main className="window__content">
       {(()=>{
       let windows = {
-        Verkenner:    <Explorer     windowData={windowData} dispatch={dispatch}/>,
-        Zoeken:       <WindowSearch windowData={windowData} dispatch={dispatch}/>,
-        Tekstbestand: <WindowText   windowData={windowData} dispatch={dispatch}/>
+        Verkenner:    <Explorer   windowData={windowData} dispatch={dispatch}/>,
+        Zoeken:       <Search     windowData={windowData} dispatch={dispatch}/>,
+        Tekstbestand: <TXT        windowData={windowData} dispatch={dispatch}/>,
+        PDF:          <PDF        windowData={windowData} dispatch={dispatch}/>
       }
       return windows[windowData.type];
       })()}
