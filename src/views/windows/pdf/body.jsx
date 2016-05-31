@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
+import PDF from 'react-pdf';
 
 import { data__getData } from '../../../actions/data.js';
 
@@ -13,7 +13,14 @@ class Body extends React.Component{
     let {windowData, dispatch} = this.props;
     return ( 
       <div className={"textfile__body"}>
-
+        <PDF file="./filesystem/bacon_berkshire.pdf" loading={(<span>Your own loading message ...</span>)}/>
+        {(()=>{
+        if (windowData.data.content != ""){
+          return <PDF content="windowData.data.content" loading={(<span>Your own loading message ...</span>)}/>
+        } else {
+          return "no PDF";
+        }
+        })()}
       </div>
     )
   }
