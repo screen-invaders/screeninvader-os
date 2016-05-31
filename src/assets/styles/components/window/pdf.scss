@@ -28,11 +28,20 @@
   padding: 0rem;
 }
 
+// Sidebar
+
+.pdf__sidebar {
+  height: calc(100% - 3rem);
+  width: 12rem;
+  padding: 2rem;
+  background: $medium;
+  overflow-y: scroll;
+}
 
 // Body
 
 .pdf__body {
-  width: 100%;
+  width: calc(100% - 12rem);
   height: calc(100% - 3rem);
   padding: 2rem;
   background: $medium;
