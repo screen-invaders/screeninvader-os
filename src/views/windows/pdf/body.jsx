@@ -1,6 +1,7 @@
 import React from 'react';
-import PDF from 'react-pdf';
 import PDFDist from 'pdfjs-dist';
+
+import PDF from './pdf-wrapper.jsx';
 
 import { data__getBinaryData } from '../../../actions/data.js';
 

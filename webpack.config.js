@@ -3,7 +3,7 @@ var autoprefixer = require('autoprefixer');
 
 var babelSettings = {
 	presets: ['react', 'es2015'],
-  plugins: ['transform-object-rest-spread']
+  plugins: ['transform-object-rest-spread', 'transform-class-properties']
 }
 
 new webpack.DefinePlugin({
