@@ -8,10 +8,10 @@ function createDirectoryChildren(src){
   var file, type, name;
 
   // How many files?
-  var count = faker.random.number({min: 1, max: 3});
+  var count = faker.random.number({min: 1, max: 5});
 
   for (var i = 0; i < count; i++){
-    type = faker.random.arrayElement(['txt', 'pdf']);
+    type = faker.random.arrayElement(['txt', 'txt', 'pdf']);
 
     name = faker.system.commonFileName(type);
     name = name.replace(/\//, '');
@@ -46,20 +46,22 @@ function createFile(file){
     // 'audio': createAudio,
     // 'executable': createExe
   }
-
-  content = types[file.type](file);
-
-  // Writing in a side effect
-  fs.writeFileSync('./build/filesystem/'.concat((file.path.join('/'))), content);
+  types[file.type](file);
 }
 
 function createText(file){
   var content = faker.lorem.paragraph(30)
+  fs.writeFileSync('./build/filesystem/'.concat((file.path.join('/'))), content);
   return content;
 }
 
 function createPDF(file){
- 
+  var genHTML = '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Document</title></head><body><h1>' +  faker.company.catchPhrase() + '</h1><p>' + faker.lorem.paragraph(5) + ' </p><p>' + faker.lorem.paragraph(5) + ' </p><p>' + faker.lorem.paragraph(5) + ' </p></body></html>';
+  var options = { format: 'Letter', "timeout": 6000000 };
+  pdf.create(genHTML, options).toFile('./build/filesystem/'.concat((file.path.join('/'))), function(err, res) {
+    if (err) return console.log(err);
+    // console.log(res); // { filename: '/app/businesscard.pdf' }
+  });
 }
 
 module.exports = createDirectoryChildren;
