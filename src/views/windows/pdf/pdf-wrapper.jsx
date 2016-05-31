@@ -9,7 +9,7 @@ class Pdf extends React.Component{
 
   static defaultProps = {
     page: 1, 
-    scale: 1.0
+    scale: 2.0
   };
 
   static propTypes = {
@@ -86,6 +86,7 @@ class Pdf extends React.Component{
           context = canvas.getContext('2d'),
           scale = self.props.scale,
           viewport = self.state.page.getViewport(scale);
+          console.log(viewport)
         canvas.height = viewport.height;
         canvas.width = viewport.width;
         var renderContext = {
@@ -94,7 +95,7 @@ class Pdf extends React.Component{
         };
         self.state.page.render(renderContext);
       });
-      return (React.createElement("canvas", {ref: "pdfCanvas"}));
+      return <canvas ref="pdfCanvas" className="pdf__page"/>;
     }
     return (this.props.loading || React.createElement("div", null, "Loading pdf...."));
   }
