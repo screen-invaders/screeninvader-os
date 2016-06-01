@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import PdfPage from './pdf-page.jsx';
+
 class Pdf extends React.Component{
   constructor(props){
     super(props)
@@ -25,13 +27,13 @@ class Pdf extends React.Component{
     this._loadPDFDocument(this.props);
   }
 
-  _loadByteArray(byteArray) {
-    PDFJS.getDocument(byteArray).then(this._onDocumentComplete);
-  }
-
   _loadPDFDocument(props) {
     if(!!props.file){
-      if (typeof props.file === 'string') return PDFJS.getDocument(props.file).then(this._onDocumentComplete.bind(this));
+
+      if (typeof props.file === 'string') {
+        return PDFJS.getDocument(props.file).then(this._onDocumentComplete.bind(this));
+      }
+
       // Is a File object
       var reader = new FileReader(), self = this;
       reader.onloadend = function() {
@@ -39,6 +41,7 @@ class Pdf extends React.Component{
       };
       reader.readAsArrayBuffer(props.file);
     }
+
     else if(!!props.content){
       var bytes = window.atob(props.content);
       var byteLength = bytes.length;
@@ -48,9 +51,14 @@ class Pdf extends React.Component{
       }
       this._loadByteArray(byteArray);
     }
+
     else {
       console.error('React_Pdf works with a file(URL) or (base64)content. At least one needs to be provided!');
     }
+  }
+
+  _loadByteArray(byteArray) {
+    PDFJS.getDocument(byteArray).then(this._onDocumentComplete);
   }
 
   componentWillReceiveProps(newProps) {
@@ -81,7 +89,6 @@ class Pdf extends React.Component{
   render() {
     if (!!this.state.page){
       setTimeout(()=>{
-        console.log(this.props.page)
         let canvas = ReactDOM.findDOMNode(this.refs["pdfCanvas-" + this.props.page]);
         let context = canvas.getContext('2d');
         let scale = this.props.scale;

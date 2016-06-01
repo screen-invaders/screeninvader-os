@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PDF from './pdf-wrapper.jsx';
+import PDF from './pdf-loader.jsx';
 
 import { data__getBinaryData } from '../../../actions/data.js';
 

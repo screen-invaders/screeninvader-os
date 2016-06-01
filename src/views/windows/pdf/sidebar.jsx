@@ -1,6 +1,5 @@
 import React from 'react';
 import Draggable, {DraggableCore} from 'react-draggable';
-import PDF from './pdf-wrapper.jsx';
 
 import iconDesktop from '../../../assets/images/icons/row-12/9.png'
 import iconDocumenten from '../../../assets/images/icons/row-11/12.png'
@@ -17,11 +16,6 @@ class Sidebar extends React.Component{
         {(()=>{
         if (windowData.data.content == undefined){
           return <div>
-          <PDF file="filesystem/hgt.pdf" page={1} loading={(<span>Your own loading message ...</span>)}/>
-          <PDF file="filesystem/hgt.pdf" page={2} loading={(<span>Your own loading message ...</span>)}/>
-          <PDF file="filesystem/hgt.pdf" page={3} loading={(<span>Your own loading message ...</span>)}/>
-          <PDF file="filesystem/hgt.pdf" page={4} loading={(<span>Your own loading message ...</span>)}/>
-          <PDF file="filesystem/hgt.pdf" page={5} loading={(<span>Your own loading message ...</span>)}/>
           </div>
         } else {
           return "no PDF";
