@@ -8,7 +8,7 @@ class Sidebar extends React.Component{
     let {windowData, dispatch} = this.props;
     return (
       <div className="pdf__sidebar">
-        <PDF file="filesystem/hgt.pdf" />
+        <PDF file={'filesystem/' + windowData.data.path.join('/')}/>
       </div>
     )
   }
