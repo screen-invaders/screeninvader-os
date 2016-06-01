@@ -14,15 +14,7 @@ class Body extends React.Component{
     let {windowData, dispatch} = this.props;
     return ( 
       <div className="pdf__body">
-        {(()=>{
-        if (windowData.data.content == undefined){
-          return <div>
-          <PDF file="filesystem/hgt.pdf" loading={(<span>Your own loading message ...</span>)}/>
-          </div>
-        } else {
-          return "no PDF";
-        }
-        })()}
+        <PDF file="filesystem/hgt.pdf" />
       </div>
     )
   }

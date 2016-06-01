@@ -50,13 +50,13 @@ function createFile(file){
 }
 
 function createText(file){
-  var content = faker.lorem.paragraph(30)
+  var content = faker.lorem.paragraphs(30)
   fs.writeFileSync('./build/filesystem/'.concat((file.path.join('/'))), content);
   return content;
 }
 
 function createPDF(file){
-  var genHTML = '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Document</title></head><body><h1>' +  faker.company.catchPhrase() + '</h1><p>' + faker.lorem.paragraph(5) + ' </p><p>' + faker.lorem.paragraph(5) + ' </p><p>' + faker.lorem.paragraph(5) + ' </p></body></html>';
+  var genHTML = '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Document</title></head><body><h1>' +  faker.company.catchPhrase() + '</h1><p>' + faker.lorem.paragraphs(5) + ' </p><p>' + faker.lorem.paragraphs(5) + ' </p><p>' + faker.lorem.paragraphs(5) + ' </p></body></html>';
   var options = { format: 'Letter', "timeout": 6000000 };
   pdf.create(genHTML, options).toFile('./build/filesystem/'.concat((file.path.join('/'))), function(err, res) {
     if (err) return console.log(err);
