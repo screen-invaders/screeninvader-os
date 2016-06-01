@@ -69,10 +69,21 @@
   background: $gray;
 }
 
-.search__sidebar-text {
+.search__sidebar-header {
   display: flex;
   padding-bottom: 5px;
   font-weight: bold;
+}
+
+.search__sidebar-ul {
+  display: flex;
+  flex-direction: column;
+  list-style: square inside;
+  padding-bottom: 5px;
+}
+
+.search__sidebar-li {
+  padding-bottom: 5px;
 }
 
 .search__sidebar-icon {

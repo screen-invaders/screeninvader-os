@@ -12,12 +12,14 @@ class Sidebar extends React.Component{
   render() {
     return (
       <div className="search__sidebar">
-        <p className="search__sidebar-text"><img src={iconDesktop} className="search__sidebar-icon"/>Verfijn:</p>
-        <p className="search__sidebar-text"><img src={iconDocumenten} className="search__sidebar-icon"/>Bestandstype</p>
-        <p className="search__sidebar-text"><img src={iconAfbeeldingen} className="search__sidebar-icon"/>Datum</p>
-        <p className="search__sidebar-text"><img src={iconSpreadsheets} className="search__sidebar-icon"/>Grootte</p>
-        <p className="search__sidebar-text"><img src={iconDatabases} className="search__sidebar-icon"/>Eigenaar</p>
-        <p className="search__sidebar-text"><img src={iconBeveiligd} className="search__sidebar-icon"/>Beveiligd</p>
+        <p className="search__sidebar-header">Verfijn:</p>
+        <ul className="search__sidebar-ul">
+          <li className="search__sidebar-li">Bestandstype</li>
+          <li className="search__sidebar-li">Datum</li>
+          <li className="search__sidebar-li">Grootte</li>
+          <li className="search__sidebar-li">Eigenaar</li>
+          <li className="search__sidebar-li">Beveiligd</li>
+        </ul>
       </div>
     )
   }
