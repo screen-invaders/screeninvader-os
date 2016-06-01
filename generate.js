@@ -56,7 +56,7 @@ function createText(file){
 }
 
 function createPDF(file){
-  var genHTML = '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Document</title></head><body><h1>' +  faker.company.catchPhrase() + '</h1><p>' + faker.lorem.paragraphs(5) + ' </p><p>' + faker.lorem.paragraphs(5) + ' </p><p>' + faker.lorem.paragraphs(5) + ' </p></body></html>';
+  var genHTML = '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Document</title></head><body style="padding: 3rem;"><h1>' + file.path[file.path.length-1] + '</h1><p>' + faker.lorem.paragraphs(5) + ' </p><p>' + faker.lorem.paragraphs(5) + ' </p><p>' + faker.lorem.paragraphs(5) + ' </p></body></html>';
   var options = { format: 'Letter', "timeout": 6000000 };
   pdf.create(genHTML, options).toFile('./build/filesystem/'.concat((file.path.join('/'))), function(err, res) {
     if (err) return console.log(err);
