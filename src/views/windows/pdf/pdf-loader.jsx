@@ -6,21 +6,19 @@ import PdfPage from './pdf-page.jsx';
 class Pdf extends React.Component{
   constructor(props){
     super(props)
-    this.state = {};
+    this.state = {
+      pages: []
+    };
   }
 
   static defaultProps = {
-    page: 1, 
     scale: 2.0
   };
 
   static propTypes = {
     file: React.PropTypes.string,
     content: React.PropTypes.string,
-    page: React.PropTypes.number,
-    scale: React.PropTypes.number,
-    onDocumentComplete: React.PropTypes.func,
-    onPageComplete: React.PropTypes.func
+    scale: React.PropTypes.number
   };
 
   componentDidMount() {
@@ -65,45 +63,33 @@ class Pdf extends React.Component{
     if ((newProps.file && newProps.file !== this.props.file) || (newProps.content && newProps.content !== this.props.content)) {
       this._loadPDFDocument(newProps);
     }
-    if (!!this.state.pdf && !!newProps.page && newProps.page !== this.props.page) {
-      this.setState({page: null});
-      this.state.pdf.getPage(newProps.page).then(this._onPageComplete);
-    }
   }
 
   _onDocumentComplete(pdf){
     this.setState({ pdf: pdf });
-    if(!!this.props.onDocumentComplete && typeof this.props.onDocumentComplete === 'function'){
-      this.props.onDocumentComplete(pdf.numPages);
+    for (var i = 1; i <= pdf.numPages; i++){
+      pdf.getPage(i).then(this._onPageComplete.bind(this));
     }
-    pdf.getPage(this.props.page).then(this._onPageComplete.bind(this));
   }
 
   _onPageComplete(page){
-    this.setState({ page: page });
-    if(!!this.props.onPageComplete && typeof this.props.onPageComplete === 'function'){
-      this.props.onPageComplete(page.pageIndex + 1);
-    }
+    this.setState((prevState)=>{
+      prevState.pages.push(page)
+      return prevState
+    });
   }
 
   render() {
-    if (!!this.state.page){
-      setTimeout(()=>{
-        let canvas = ReactDOM.findDOMNode(this.refs["pdfCanvas-" + this.props.page]);
-        let context = canvas.getContext('2d');
-        let scale = this.props.scale;
-        let viewport = this.state.page.getViewport(scale);
-        canvas.height = viewport.height;
-        canvas.width = viewport.width;
-        var renderContext = {
-          canvasContext: context,
-          viewport: viewport
-        };
-        this.state.page.render(renderContext);
-      });
+    if (!!this.state.pdf){
+      if (this.state.pdf.numPages == this.state.pages.length){
       return (
-        <canvas ref={"pdfCanvas-" + this.props.page} className="pdf__page"/>
+        <div className="pdf__pages">
+          {this.state.pages.map((page, key)=>{
+            return <PdfPage key={key} page={page} scale={this.props.scale} loading={this.props.loading} />
+          })}
+        </div>
       )
+      }
     }
     return (this.props.loading || <div>Loading pdf....</div>);
   }
