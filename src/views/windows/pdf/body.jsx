@@ -18,10 +18,6 @@ class Body extends React.Component{
         if (windowData.data.content == undefined){
           return <div>
           <PDF file="filesystem/hgt.pdf" page={1} loading={(<span>Your own loading message ...</span>)}/>
-          <PDF file="filesystem/hgt.pdf" page={2} loading={(<span>Your own loading message ...</span>)}/>
-          <PDF file="filesystem/hgt.pdf" page={3} loading={(<span>Your own loading message ...</span>)}/>
-          <PDF file="filesystem/hgt.pdf" page={4} loading={(<span>Your own loading message ...</span>)}/>
-          <PDF file="filesystem/hgt.pdf" page={5} loading={(<span>Your own loading message ...</span>)}/>
           </div>
         } else {
           return "no PDF";

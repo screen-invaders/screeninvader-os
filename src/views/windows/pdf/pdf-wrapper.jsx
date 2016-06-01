@@ -79,25 +79,26 @@ class Pdf extends React.Component{
   }
 
   render() {
-    var self = this;
     if (!!this.state.page){
-      setTimeout(function() {
-        var canvas = ReactDOM.findDOMNode(self.refs.pdfCanvas),
-          context = canvas.getContext('2d'),
-          scale = self.props.scale,
-          viewport = self.state.page.getViewport(scale);
-          console.log(viewport)
+      setTimeout(()=>{
+        console.log(this.props.page)
+        let canvas = ReactDOM.findDOMNode(this.refs["pdfCanvas-" + this.props.page]);
+        let context = canvas.getContext('2d');
+        let scale = this.props.scale;
+        let viewport = this.state.page.getViewport(scale);
         canvas.height = viewport.height;
         canvas.width = viewport.width;
         var renderContext = {
           canvasContext: context,
           viewport: viewport
         };
-        self.state.page.render(renderContext);
+        this.state.page.render(renderContext);
       });
-      return <canvas ref="pdfCanvas" className="pdf__page"/>;
+      return (
+        <canvas ref={"pdfCanvas-" + this.props.page} className="pdf__page"/>
+      )
     }
-    return (this.props.loading || React.createElement("div", null, "Loading pdf...."));
+    return (this.props.loading || <div>Loading pdf....</div>);
   }
 }
 
