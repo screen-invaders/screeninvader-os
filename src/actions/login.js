@@ -10,3 +10,9 @@ export function login__enterName(e){
     password: e.target.value
   }
 };
+
+export function login__logout(e){
+  return {
+    type: "login__logout"
+  }
+};

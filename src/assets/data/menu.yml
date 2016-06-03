@@ -7,6 +7,7 @@ menu:
     - name: "Uitloggen"
       target: "login"
       type: "overlay"
+      special: "logout"
     - name: "Herstarten"
       target: "shutdown"
       type: "overlay"
@@ -43,3 +44,4 @@ menu:
   - name: Uitloggen
     target: "login"
     type: "overlay"
+    special: "logout"

@@ -17,6 +17,11 @@ export default function login(state, action) {
           password: action.password
         }
       };
+    case "login__logout":
+      return {...state.login, ...{
+          attempts: 5
+        }
+      };
     default:
       return {...state.login};
   }
