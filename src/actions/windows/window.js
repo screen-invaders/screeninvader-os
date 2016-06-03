@@ -5,6 +5,7 @@ export function window__open(type, itemData, query){
       type: type,
       path: (itemData && itemData.path) || [],
       content: itemData && itemData.content,
+      submitText: itemData && itemData.submitText,
       query: query
     }
   }

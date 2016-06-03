@@ -7,8 +7,8 @@ class Body extends React.Component{
     console.log(windowData.data)
     return ( 
       <div className="modal__body">
-        <p>{ windowData.data.content}</p>
-        <button>{ windowData.data.submitText }</button>
+        <p className="modal__content">{ windowData.data.content}</p>
+        <button className="modal__button">{ windowData.data.submitText }</button>
       </div>
     )
   }
