@@ -8,9 +8,9 @@
       path: options.path,
       url: options.url,
       content: options.content,
-      viewType: "list"
+      viewType: "list",
+      history: []
     };
-    this.history = [];
     this.focus = 0;
     this.viewPos = {
       x: Math.random() * (window.innerWidth - 800),
