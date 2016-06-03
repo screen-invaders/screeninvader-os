@@ -3,7 +3,7 @@ export function window__open(type, itemData, query){
     type: "window__open",
     data: {
       type: type,
-      path: itemData && itemData.path,
+      path: (itemData && itemData.path) || [],
       content: itemData && itemData.content,
       query: query
     }

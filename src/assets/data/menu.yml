@@ -10,10 +10,13 @@ menu:
   - name: "Programma's"
     dropdown:
     - name: "Verkenner"
+      target: "dir"
     - name: "Zoeken"
+      target: "search"
     - name: "Teksteditor"
     - name: "PDF-viewer"
     - name: "Browser"
+      target: "browser"
   - name: "Intranet"
     dropdown:
     - name: "Belastingen"

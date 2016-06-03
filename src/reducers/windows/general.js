@@ -5,24 +5,32 @@ export default function general(state, action) {
   switch (action.type){      
     case "window__open":
       let type, windowInstance;
+
       switch (action.data.type) {
         case "dir": 
           windowInstance = new newWindow(action.data.type, {path: action.data.path});
+          return [...state.windows, windowInstance];
           break;
         case "txt": 
           windowInstance = new newWindow(action.data.type, {path: action.data.path});
+          return [...state.windows, windowInstance];
           break;
         case "pdf": 
           windowInstance = new newWindow(action.data.type, {path: action.data.path});
+          return [...state.windows, windowInstance];
           break;
         case "search":
           windowInstance = new newWindow(action.data.type, {searchResult: [...state.search.current], query: action.data.query});
+          return [...state.windows, windowInstance];
           break;
         case "browser":
           windowInstance = new newWindow(action.data.type, {url: action.url});
+          return [...state.windows, windowInstance];
           break;
+        default:
+          console.log("defaulting");
+          return 0
       }
-      return [...state.windows, windowInstance];
 
     case "window__close":
       newState = [...state.windows];

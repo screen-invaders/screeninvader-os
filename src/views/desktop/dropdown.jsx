@@ -8,7 +8,7 @@ class Dropdown extends React.Component{
 		return (
       <ul className="dropdown">
         {this.props.dropdown.map((subItem, key)=>{
-          return <li key={key} className="dropdown__list-item"><p className="dropdown__list-item-text" onClick={dispatch.bind(null, window__open("browser", {}))} >{ subItem.name }</p></li>
+          return <li key={key} className="dropdown__list-item"><p className="dropdown__list-item-text" onClick={dispatch.bind(null, window__open(subItem.target, {}))} >{ subItem.name }</p></li>
         })}
       </ul>
 		)
