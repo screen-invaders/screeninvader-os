@@ -1,7 +1,6 @@
-import newWindow from '../models/window.js';
+import newWindow from '../../models/window.js';
 
-export default function windows(state, action) {
-  console.log(action)
+export default function general(state, action) {
   let newState;
   switch (action.type){      
     case "window__open":
@@ -24,38 +23,6 @@ export default function windows(state, action) {
           break;
       }
       return [...state.windows, windowInstance];
-
-    case "explorer__moveDown": 
-      newState = [...state.windows];
-      newState = newState.map((windowItem, key)=>{
-        if (action.window.id == windowItem.id){
-          return {...windowItem, ...{ 
-            data: {
-              ...windowItem.data,
-              path: action.path
-            }}
-          }; 
-        }
-        return windowItem;
-      });
-      return newState;
-
-    case "explorer__moveUp": 
-      newState = [...state.windows];
-      newState = newState.map((windowItem, key)=>{
-        if (action.window.id == windowItem.id){
-          let newPath = windowItem.data.path;
-          newPath.pop();
-          return {...windowItem, ...{ 
-            data: {
-              ...windowItem.data,
-              path: newPath
-            }}
-          }; 
-        }
-        return windowItem;
-      });
-      return newState;
 
     case "window__close":
       newState = [...state.windows];
@@ -84,22 +51,6 @@ export default function windows(state, action) {
         newState[newState.length-1].focus = 1;
       }
       return newState;
-  
-    case "explorer__changeViewType": 
-      newState = [...state.windows];
-      newState = newState.map((windowItem, key)=>{
-        if (action.window.id == windowItem.id){
-          return {
-            ...windowItem, 
-            data: {
-              ...windowItem.data, 
-              viewType: action.viewType
-            }
-          }; 
-        }
-        return windowItem;
-      })
-      return newState;
 
     case "window__move": 
       newState = [...state.windows];
@@ -125,23 +76,7 @@ export default function windows(state, action) {
       });
       return newState
     
-    case "data__receive": 
-      console.log("reducer")
-      newState = [...state.windows];
-      newState = newState.map((windowItem, key)=>{
-        if (action.window.id == windowItem.id){
-          return { ...windowItem, ...{ 
-            data: {
-              ...windowItem.data,
-              content: action.content
-            }
-          }};
-        }
-        return windowItem;
-      });
-      return newState
-
     default:
-      return [ ...state.windows ] || [];
+      return 0;
   }
 }
