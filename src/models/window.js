@@ -3,22 +3,23 @@
     this.id = Math.random() * 0x10000;
     this.type = type;
     this.data = {
-      query: options.query,
-      searchResult: options.searchResult,
       path: options.path,
       url: options.url,
+      query: options.query,
       content: options.content,
-      viewType: "list",
+      searchResult: options.searchResult,
+      viewType: options.viewType || "list",
+      submitText: options.submitText,
       history: []
     };
     this.focus = 0;
     this.viewPos = {
-      x: Math.random() * (window.innerWidth - 800),
-      y: Math.random() * (window.innerHeight - 500)
+      x: (options.offset && options.offset.x) || (Math.random() * (window.innerWidth - 800)),
+      y: (options.offset && options.offset.x) || (Math.random() * (window.innerHeight - 500))
     };
     this.viewSize = {
-      x: 800,
-      y: 500
+      x: (options.size && options.size.x) || 800,
+      y: (options.size && options.size.y) || 500
     };
     this.viewIndex = 600;
   }

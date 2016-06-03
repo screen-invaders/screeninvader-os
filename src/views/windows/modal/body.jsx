@@ -6,6 +6,7 @@ class Body extends React.Component{
     let {windowData, dispatch} = this.props;
     return ( 
       <div className="modal__body">
+        <p>Some Modal Content</p>
       </div>
     )
   }

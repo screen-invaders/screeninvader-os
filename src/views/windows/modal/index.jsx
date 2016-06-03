@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Menubar from './menubar.jsx';
 import Body from './body.jsx';
 
 class Modal extends React.Component{

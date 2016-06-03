@@ -27,6 +27,10 @@ export default function general(state, action) {
           windowInstance = new newWindow(action.data.type, {url: action.url});
           return [...state.windows, windowInstance];
           break;
+        case "modal":
+          windowInstance = new newWindow(action.data.type, {content: action.url, submitText: action.submitText, size: {x: 400, y: 200}});
+          return [...state.windows, windowInstance];
+          break;
         default:
           return 0
       }

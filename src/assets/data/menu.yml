@@ -38,6 +38,10 @@ menu:
   - name: "Laatste Zoekopdracht"
   - name: "Recente zoekopdrachten"
   - name: "Wis zoekgeschiedenis"
+    target: "modal"
+    type: "window"
+    content: "Weet u zeker dat u uw zoekgeschiedenis wil verwijderen?"
+    submitText: "Ja"
   userDropdown:
   - name: Profiel
   - name: Instellingen
