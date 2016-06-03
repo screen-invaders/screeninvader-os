@@ -12,10 +12,10 @@ class Content extends React.Component{
       <main className="window__content">
       {(()=>{
       let windows = {
-        Verkenner:    <Explorer   windowData={windowData} dispatch={dispatch}/>,
-        Zoeken:       <Search     windowData={windowData} dispatch={dispatch}/>,
-        Tekstbestand: <TXT        windowData={windowData} dispatch={dispatch}/>,
-        PDF:          <PDF        windowData={windowData} dispatch={dispatch}/>
+        dir:          <Explorer windowData={windowData} dispatch={dispatch}/>,
+        search:       <Search   windowData={windowData} dispatch={dispatch}/>,
+        txt:          <TXT      windowData={windowData} dispatch={dispatch}/>,
+        pdf:          <PDF      windowData={windowData} dispatch={dispatch}/>
       }
       return windows[windowData.type];
       })()}

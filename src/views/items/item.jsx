@@ -10,7 +10,7 @@ class Item extends React.Component{
   openItem(){
     let {dispatch, itemData, windowData} = this.props;
     if (!windowData){windowData = {type: "desktop"};}
-    if (windowData.type == "Verkenner" && itemData.type == "dir"){
+    if (windowData.type == "dir" && itemData.type == "dir"){
       dispatch(window__moveDown(windowData, itemData.path))
     } else {
       dispatch(window__open(itemData.type, itemData))

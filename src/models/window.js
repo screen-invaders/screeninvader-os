@@ -1,12 +1,13 @@
   class newWindow {
-  constructor(type, items, path, query, content){
+  constructor(type, options){
     this.id = Math.random() * 0x10000;
     this.type = type;
     this.data = {
-      query: query,
-      items: items,
-      path: path,
-      content: content,
+      query: options.query,
+      searchResult: options.searchResult,
+      path: options.path,
+      url: options.url,
+      content: options.content,
       viewType: "list"
     };
     this.history = [];

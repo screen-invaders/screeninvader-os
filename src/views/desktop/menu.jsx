@@ -16,7 +16,7 @@ class Menu extends React.Component{
           { state.menu.main.map((item, key)=>{
             return <li key={key} className="menu__list-item">
               <p>{item.name}</p>
-              {item.dropdown && <Dropdown key={key} dropdown={item.dropdown}/>}
+              {item.dropdown && <Dropdown key={key} dispatch={dispatch} dropdown={item.dropdown}/>}
             </li>
           })}
         </ul>
@@ -32,14 +32,14 @@ class Menu extends React.Component{
           <input className="menu__search-icon" type="image" name="image" src={imgLogo}></input>
           <div className="menu__search-dropdown-button">
             <img className="menu__search-dropdown-button-arrow" src={imgArrow} />
-            <Dropdown dropdown={state.menu.searchDropdown}/>
+            <Dropdown dispatch={dispatch} dropdown={state.menu.searchDropdown}/>
           </div>
         </form>
 
         <div className="menu__user-container">
           <h6 className="menu__user-notice">ingelogd als</h6>
           <p className="menu__user">{state.user.displayName}</p>
-          <Dropdown dropdown={state.menu.userDropdown}/>
+          <Dropdown dispatch={dispatch} dropdown={state.menu.userDropdown}/>
         </div>
       </div>
 		)

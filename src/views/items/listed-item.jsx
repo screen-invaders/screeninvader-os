@@ -9,7 +9,7 @@ import imgPDF from '../../assets/images/icons/row-11/6.png'
 class ListedItem extends React.Component{
   openItem(){
     let {dispatch, itemData, windowData} = this.props;
-    if (windowData.type == "Verkenner" && itemData.type == "dir"){
+    if (windowData.type == "dir" && itemData.type == "dir"){
       dispatch(window__moveDown(windowData, itemData.path))
     } else {
       dispatch(window__open(itemData.type, itemData))
