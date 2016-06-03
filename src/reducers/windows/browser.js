@@ -21,7 +21,6 @@ export default function browser(state, action) {
         if (action.window.id == windowItem.id){
           let history = [ ...windowItem.data.history ];
           history.unshift(action.url);
-          console.log("reducer", history);
           return { ...windowItem, ...{
             data: {
               ...windowItem.data,
