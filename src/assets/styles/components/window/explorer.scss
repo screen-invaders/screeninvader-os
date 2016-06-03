@@ -20,23 +20,6 @@
   padding: 0.5rem;
 }
 
-.explorer__menubar-search {
-  justify-content: space-between;
-}
-
-
-.explorer__search-open-all {
-  padding: 0.5rem;
-  background: $primary;
-  color: $day;
-  border: none;
-  cursor: pointer;
-}
-
-.explorer__search-open-all:hover {
-  background: $secundary;
-}
-
 .explorer__menubar-icon-group {
   display: flex;
 }
