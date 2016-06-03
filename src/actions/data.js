@@ -24,6 +24,7 @@ export function data__getData(windowData, dispatch){
   }
 };
 
+// Not used, potententially valueable
 export function data__getBinaryData(windowData, dispatch){
   var oReq = new XMLHttpRequest();
   

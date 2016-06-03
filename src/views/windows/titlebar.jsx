@@ -11,7 +11,7 @@ class Titlebar extends React.Component{
     let bound__window__close = function(){return dispatch(window__close(windowData))}.bind(this);
     return (
       <div className="window__titlebar-inner">
-        <p className="window__titlebar-text">{windowData.type}</p>
+        <p className="window__titlebar-text">{windowData.data.path[windowData.data.path.length - 1]}</p>
         <div className="window__titlebar-close-button" onClick={bound__window__close}><img src={iconCross}/></div>
       </div>
     )
