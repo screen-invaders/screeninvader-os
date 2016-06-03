@@ -1,11 +1,16 @@
 import React from 'react';
 
 import { window__open } from '../../actions/windows/window.js';
+import { overlay__change } from '../../actions/overlay.js';
 
 class Dropdown extends React.Component{
   handleClick(subItem){
     let { dispatch } = this.props;
-    dispatch(window__open(subItem.target))
+    if (subItem.type == "overlay"){
+      dispatch(window__open(subItem.target))
+    } else if (subItem.type == "window") {
+      dispatch(window__open(subItem.target))
+    }
   }
   render() {
     let { dispatch, dropdown } = this.props;

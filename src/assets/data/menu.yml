@@ -11,12 +11,15 @@ menu:
     dropdown:
     - name: "Verkenner"
       target: "dir"
+      type: "window"
     - name: "Zoeken"
       target: "search"
+      type: "window"
     - name: "Teksteditor"
     - name: "PDF-viewer"
     - name: "Browser"
       target: "browser"
+      type: "window"
   - name: "Intranet"
     dropdown:
     - name: "Belastingen"
