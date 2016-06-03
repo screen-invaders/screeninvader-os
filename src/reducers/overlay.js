@@ -1,17 +1,19 @@
 export default function overlay(state, action) {
   switch (action.type) {
-    case "overlay__change2login":
+    case "overlay__change":
       return {...state.overlay, ...{
-        type: "login"
+        type: action.target
       }};
-    case "overlay__change2none":
+
+    case "overlay__changeFromLogin":
       if (state.login.attempts == 0){
         return {...state.overlay, ...{
-          type: ""
+          type: action.target
         }};
       } else {
         return {...state.overlay}
       }
+
     default:
       return {...state.overlay};
   }

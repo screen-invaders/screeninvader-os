@@ -19,7 +19,7 @@ class Menubar extends React.Component{
         </div>
         <form className="browser__menubar-path-container" onSubmit={(e)=>{
           e.preventDefault;
-          dispatch(browser__submitUrl(windowData));
+          dispatch(browser__submitUrl(windowData, windowData.data.url));
         }}>
           <input className="browser__menubar-path" value={windowData.data.url} onChange={(e)=>{dispatch(browser__changeUrl(windowData, e))}} type="text"/>
         </form>

@@ -1,11 +1,14 @@
-export function overlay__change2login(){
+export function overlay__change(target){
   return {
-    type: "overlay__change2login"
+    type: "overlay__change",
+    target: target
   }
 };
 
-export function overlay__change2none(){
+export function overlay__changeFromLogin(target){
   return {
-    type: "overlay__change2none"
+    type: "overlay__changeFromLogin",
+    target: target
   }
 };
+

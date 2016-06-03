@@ -28,7 +28,6 @@ export default function general(state, action) {
           return [...state.windows, windowInstance];
           break;
         default:
-          console.log("defaulting");
           return 0
       }
 

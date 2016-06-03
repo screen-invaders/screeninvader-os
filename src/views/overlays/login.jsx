@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { overlay__change2none } from '../../actions/overlay.js';
+import { overlay__change, overlay__changeFromLogin } from '../../actions/overlay.js';
 import { login__attempt, login__enterName } from '../../actions/login.js';
 
 import imgLogo from '../../assets/images/belasting-logo.png'
@@ -14,14 +14,14 @@ class Login extends React.Component{
           <form className="login__details" onSubmit={(e)=>{
             e.preventDefault();
             dispatch(login__attempt());
-            dispatch(overlay__change2none());
+            dispatch(overlay__changeFromLogin(""));
           }}>
             <img className="login__logo" src={imgLogo} />
             {(()=>{
               if (state.login.attempts < 5){
                 return (
                 <div className="login__error">
-                  <p>Verkeerd Wachtwoord! Nog {this.props.state.login.attempts} pogingen</p>
+                  <p>Verkeerd Wachtwoord! Nog {state.login.attempts} pogingen</p>
                   <p>klik voor meer info</p>
                 </div> )
               }

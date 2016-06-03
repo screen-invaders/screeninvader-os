@@ -14,6 +14,17 @@ export default function browser(state, action) {
         }
         return windowItem;
       });
+      return newState
+    case "browser__submitUrl": 
+      newState = [...state.windows];
+      newState = newState.map((windowItem, key)=>{
+        if (action.window.id == windowItem.id){
+          let newWindowItem = { ...windowItem };
+          windowItem.push(action.shift);
+          return { ...windowItem, ...newWindowItem};
+        }
+        return windowItem;
+      });
       return newState     
     default:
       return 0;
