@@ -6,7 +6,7 @@ import { Resizable, ResizableBox } from 'react-resizable';
 import Titlebar from './titlebar.jsx';
 import Content from './content.jsx';
 
-import { window__tofront, window__resize, window__move } from '../../actions/window.js';
+import { window__tofront, window__resize, window__move } from '../../actions/windows/window.js';
 
 class Window extends React.Component{
   // Setting local state (to prevent excessive rendering)

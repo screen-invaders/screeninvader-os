@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { window__open } from '../../../actions/window.js';
+import { window__open } from '../../../actions/windows/window.js';
 
 class Menubar extends React.Component{
   activateAll(items){
@@ -13,7 +13,7 @@ class Menubar extends React.Component{
     return (
       <div className="search__menubar">
         <p>Zoekopdracht: {windowData.data.query}</p>
-        <button className ="search__menubar-open-all" onClick={this.activateAll.bind(this, windowData.data.items)}>Open alle</button>
+        <button className ="search__menubar-open-all" onClick={this.activateAll.bind(this, windowData.data.searchResult)}>Open alle</button>
       </div>
     )
   }

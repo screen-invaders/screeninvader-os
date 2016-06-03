@@ -25,7 +25,7 @@ export default function windows(state, action) {
       }
       return [...state.windows, windowInstance];
 
-    case "window__moveDown": 
+    case "explorer__moveDown": 
       newState = [...state.windows];
       newState = newState.map((windowItem, key)=>{
         if (action.window.id == windowItem.id){
@@ -40,7 +40,7 @@ export default function windows(state, action) {
       });
       return newState;
 
-    case "window__moveUp": 
+    case "explorer__moveUp": 
       newState = [...state.windows];
       newState = newState.map((windowItem, key)=>{
         if (action.window.id == windowItem.id){
@@ -85,7 +85,7 @@ export default function windows(state, action) {
       }
       return newState;
   
-    case "window__changeViewType": 
+    case "explorer__changeViewType": 
       newState = [...state.windows];
       newState = newState.map((windowItem, key)=>{
         if (action.window.id == windowItem.id){
@@ -125,7 +125,8 @@ export default function windows(state, action) {
       });
       return newState
     
-    case "data__receiveData": 
+    case "data__receive": 
+      console.log("reducer")
       newState = [...state.windows];
       newState = newState.map((windowItem, key)=>{
         if (action.window.id == windowItem.id){

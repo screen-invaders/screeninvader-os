@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { window__moveUp, window__changeViewType } from '../../../actions/window.js';
+import { } from '../../../actions/windows/browser.js';
 
 import iconLeft from '../../../assets/images/icons/row-8/4.png'
 import iconRight from '../../../assets/images/icons/row-8/5.png'

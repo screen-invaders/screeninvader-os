@@ -2,7 +2,7 @@ import React from 'react';
 import Dropdown from './dropdown.jsx';
 
 import { search__submitQuery, search__enterQuery, search__searchQuery } from '../../actions/search.js';
-import { window__open } from '../../actions/window.js';
+import { window__open } from '../../actions/windows/window.js';
 
 import imgLogo from '../../assets/images/icons/row-1/6.png'
 import imgArrow from '../../assets/images/arrow.svg'

@@ -1,7 +1,7 @@
 import React from 'react';
 import { bindActionCreators } from 'redux'
 
-import { window__close } from '../../actions/window.js';
+import { window__close } from '../../actions/windows/window.js';
 
 import iconCross from '../../assets/images/icons/row-8/12.png'
 

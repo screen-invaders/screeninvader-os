@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { window__open } from '../../actions/window.js';
+import { window__open } from '../../actions/windows/window.js';
 
 class Dropdown extends React.Component{
   render() {

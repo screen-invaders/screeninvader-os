@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { window__open, window__moveDown } from '../../actions/window.js';
+import { explorer__moveDown } from '../../actions/windows/explorer.js';
+import { window__open } from '../../actions/windows/window.js';
 
 import imgFolder from '../../assets/images/icons/row-11/3.png'
 import imgTXT from '../../assets/images/icons/row-10/12.png'
@@ -11,7 +12,7 @@ class Item extends React.Component{
     let {dispatch, itemData, windowData} = this.props;
     if (!windowData){windowData = {type: "desktop"};}
     if (windowData.type == "dir" && itemData.type == "dir"){
-      dispatch(window__moveDown(windowData, itemData.path))
+      dispatch(explorer__moveDown(windowData, itemData.path))
     } else {
       dispatch(window__open(itemData.type, itemData))
     }
