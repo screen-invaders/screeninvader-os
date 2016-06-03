@@ -7,10 +7,8 @@ class Dropdown extends React.Component{
   handleClick(subItem){
     let { dispatch } = this.props;
     if (subItem.type == "overlay"){
-      console.log("overlay", subItem.target)
       dispatch(overlay__change(subItem.target))
     } else if (subItem.type == "window") {
-      console.log("window", subItem.target)
       dispatch(window__open(subItem.target))
     }
   }
