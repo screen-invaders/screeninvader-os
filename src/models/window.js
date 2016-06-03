@@ -21,6 +21,12 @@
       x: (options.size && options.size.x) || 800,
       y: (options.size && options.size.y) || 500
     };
+    this.constraints = {
+      xmin: (options.constraints && options.constraints.xmin) || 500,
+      ymin: (options.constraints && options.constraints.ymin) || 350,
+      xmax: (options.constraints && options.constraints.xmax) || 1000,
+      ymax: (options.constraints && options.constraints.ymax) || 600
+    };
     this.viewIndex = 600;
   }
 }
