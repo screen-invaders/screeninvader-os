@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { } from '../../../actions/windows/browser.js';
+import { browser__changeUrl } from '../../../actions/windows/browser.js';
 
 import iconLeft from '../../../assets/images/icons/row-8/4.png'
 import iconRight from '../../../assets/images/icons/row-8/5.png'
@@ -17,7 +17,12 @@ class Menubar extends React.Component{
           <div className="browser__menubar-icon"><img className="browser__menubar-icon-img" src={iconLeft}/></div>
           <div className="browser__menubar-icon"><img className="browser__menubar-icon-img" src={iconRight}/></div>
         </div>
-        <input className="browser__menubar-path" value={windowData.data.url} onChange={()=>{}} type="text"/>
+        <form className="browser__menubar-path-container" onSubmit={(e)=>{
+          e.preventDefault;
+          dispatch(browser__submitUrl(windowData));
+        }}>
+          <input className="browser__menubar-path" value={windowData.data.url} onChange={(e)=>{dispatch(browser__changeUrl(windowData, e))}} type="text"/>
+        </form>
       </div>
     )
   }

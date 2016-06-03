@@ -8,7 +8,7 @@ class Body extends React.Component{
     let { windowData, filesystem, dispatch } = this.props;
     return (
       <div className="browser__body">
-        <iframe className="browser__iframe" src="http://screeninvaders.nl/" />
+        <iframe className="browser__iframe" src={ windowData.data.url } />
       </div>
     )
   }
