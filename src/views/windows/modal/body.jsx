@@ -4,9 +4,11 @@ import ReactMarkdown from 'react-markdown';
 class Body extends React.Component{
   render() {
     let {windowData, dispatch} = this.props;
+    console.log(windowData.data)
     return ( 
       <div className="modal__body">
-        <p>Some Modal Content</p>
+        <p>{ windowData.data.content}</p>
+        <button>{ windowData.data.submitText }</button>
       </div>
     )
   }

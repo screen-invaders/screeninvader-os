@@ -13,7 +13,7 @@ class Dropdown extends React.Component{
       }
       dispatch(overlay__change(subItem.target))
     } else if (subItem.type == "window") {
-      dispatch(window__open(subItem.target))
+      dispatch(window__open(subItem.target, {content: subItem.content, submitText: subItem.submitText}))
     }
   }
   render() {
