@@ -5,8 +5,14 @@ menu:
     - name: "Over dit Intranet"
     - name: "Configuratiescherm"
     - name: "Uitloggen"
+      target: "login"
+      type: "overlay"
     - name: "Herstarten"
+      target: "afsluiten"
+      type: "overlay"
     - name: "Afsluiten"
+      target: "afsluiten"
+      type: "overlay"
   - name: "Programma's"
     dropdown:
     - name: "Verkenner"
@@ -35,3 +41,5 @@ menu:
   - name: Profiel
   - name: Instellingen
   - name: Uitloggen
+    target: "login"
+    type: "overlay"
