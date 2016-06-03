@@ -13,7 +13,7 @@
     };
     this.focus = 0;
     this.viewPos = {
-      x: ((window.innerWidth - 400) / 2 ),
+      x: ((window.innerWidth - 400) / 2),
       y: ((window.innerHeight - 200) / 2)
     };
     this.viewSize = {
