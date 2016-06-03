@@ -8,10 +8,10 @@ menu:
       target: "login"
       type: "overlay"
     - name: "Herstarten"
-      target: "afsluiten"
+      target: "shutdown"
       type: "overlay"
     - name: "Afsluiten"
-      target: "afsluiten"
+      target: "shutdown"
       type: "overlay"
   - name: "Programma's"
     dropdown:

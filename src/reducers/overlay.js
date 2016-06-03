@@ -6,7 +6,7 @@ export default function overlay(state, action) {
       }};
 
     case "overlay__changeFromLogin":
-      if (state.login.attempts == 0){
+      if (state.login.attempts <= 0){
         return {...state.overlay, ...{
           type: action.target
         }};

@@ -5,6 +5,7 @@ import Menu from './desktop/menu.jsx';
 import Desktop from './desktop/desktop.jsx';
 import Login from './overlays/login.jsx';
 import Admin from './overlays/admin.jsx';
+import Shutdown from './overlays/shutdown.jsx';
 
 class App extends React.Component{
   render() {
@@ -17,6 +18,8 @@ class App extends React.Component{
             return <Admin dispatch={dispatch} />;
           case "login": 
             return <Login state={state} dispatch={dispatch} />;
+          case "shutdown": 
+            return <Shutdown state={state} dispatch={dispatch} />;
         }
         })()}
         <div className="layout__desktop">
