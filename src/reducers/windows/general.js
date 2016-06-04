@@ -5,31 +5,30 @@ export default function general(state, action) {
   switch (action.type){      
     case "window__open":
       let type, windowInstance;
-
+      let viewIndex = 500 + state.windows.length;
       switch (action.data.type) {
         case "dir": 
-          windowInstance = new newWindow(action.data.type, {path: action.data.path});
+          windowInstance = new newWindow(action.data.type, {viewIndex: viewIndex, path: action.data.path});
           return [...state.windows, windowInstance];
           break;
         case "txt": 
-          windowInstance = new newWindow(action.data.type, {path: action.data.path});
+          windowInstance = new newWindow(action.data.type, {viewIndex: viewIndex, path: action.data.path});
           return [...state.windows, windowInstance];
           break;
         case "pdf": 
-          windowInstance = new newWindow(action.data.type, {path: action.data.path});
+          windowInstance = new newWindow(action.data.type, {viewIndex: viewIndex, path: action.data.path});
           return [...state.windows, windowInstance];
           break;
         case "search":
-          windowInstance = new newWindow(action.data.type, {searchResult: [...state.search.current], query: action.data.query});
+          windowInstance = new newWindow(action.data.type, {viewIndex: viewIndex, searchResult: [...state.search.current], query: action.data.query});
           return [...state.windows, windowInstance];
           break;
         case "browser":
-          windowInstance = new newWindow(action.data.type, {url: action.url});
+          windowInstance = new newWindow(action.data.type, {viewIndex: viewIndex, url: action.url});
           return [...state.windows, windowInstance];
           break;
         case "modal":
-          windowInstance = new newWindow(action.data.type, {content: action.data.content, submitText: action.data.submitText, size: {x: 400, y: 200}, constraints: {xmin: 400, xmax: 400, ymin: 200, ymax: 200}});
-          console.log("Reducer", action, windowInstance)
+          windowInstance = new newWindow(action.data.type, {viewIndex: viewIndex, content: action.data.content, submitText: action.data.submitText, size: {x: 400, y: 200}, constraints: {xmin: 400, xmax: 400, ymin: 200, ymax: 200}});
           return [...state.windows, windowInstance];
           break;
         default:
@@ -45,23 +44,24 @@ export default function general(state, action) {
       })
       return newState;
 
-    case "window__tofront": 
-      // Not immutable! Children are overwritten.
+    case "window__tofront":
       newState = [...state.windows];
-      newState.map((windowItem, key)=>{
+      let zIndex = 500;
+      newState = newState.map((windowItem, key)=>{
         if (action.window.id == windowItem.id){
-          var temp = newState.splice(key,1);
-          newState.push(temp[0]);
+          zIndex = windowItem.viewIndex;
+          return { ...windowItem, ...{viewIndex: 500 + newState.length} };
         }
-      })
-      newState.map((windowItem, key)=>{
-        windowItem.viewIndex = 500 + key;
-        windowItem.focus = 0;
-        return windowItem;
+        return {...windowItem};
       });
-      if (newState.length != 0){
-        newState[newState.length-1].focus = 1;
-      }
+
+
+      newState = newState.map((windowItem, key)=>{
+        if (windowItem.viewIndex > zIndex){
+          return { ...windowItem, ...{viewIndex: windowItem.viewIndex - 1} }
+        }
+        return { ...windowItem };
+      })
       return newState;
 
     case "window__move": 

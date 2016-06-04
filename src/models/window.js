@@ -27,7 +27,7 @@
       xmax: (options.constraints && options.constraints.xmax) || 1000,
       ymax: (options.constraints && options.constraints.ymax) || 600
     };
-    this.viewIndex = 600;
+    this.viewIndex = options.viewIndex;
   }
 }
 
