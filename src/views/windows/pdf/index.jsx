@@ -8,7 +8,7 @@ import PDFDist from 'pdfjs-dist';
 
 class PDF extends React.Component{
   shouldComponentUpdate(nextProps){
-    return this.props.windowData !== nextProps.windowData;
+    return this.props.windowData.data !== nextProps.windowData.data;
   }
   render() {
     let {windowData, dispatch} = this.props;
