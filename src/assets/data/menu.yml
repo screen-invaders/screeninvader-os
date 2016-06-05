@@ -35,8 +35,6 @@ menu:
   searchDropdown:
   - name: "Zoekinstellingen"
   - name: "Pas filters toe"
-  - name: "Laatste Zoekopdracht"
-  - name: "Recente zoekopdrachten"
   - name: "Wis zoekgeschiedenis"
     target: "modal"
     type: "window"

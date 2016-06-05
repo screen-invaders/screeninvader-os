@@ -9,7 +9,8 @@ export default function search(state, action) {
         query: "",
         history: [
           ...state.history,
-          action.query
+          { name: action.query,
+            display: "small" }
         ]
       }};
     case "search__searchQuery":

@@ -10,6 +10,7 @@ import imgArrow from '../../assets/images/arrow.svg'
 class Menu extends React.Component{
   render() {
     let {state, dispatch} = this.props;
+    console.log(state.menu.searchDropdown.concat(state.search.history));
 		return (
       <div className="menu">
         <ul className="menu__list">
@@ -32,7 +33,7 @@ class Menu extends React.Component{
           <input className="menu__search-icon" type="image" name="image" src={imgLogo}></input>
           <div className="menu__search-dropdown-button">
             <img className="menu__search-dropdown-button-arrow" src={imgArrow} />
-            <Dropdown dispatch={dispatch} dropdown={state.menu.searchDropdown}/>
+            <Dropdown dispatch={dispatch} dropdown={state.menu.searchDropdown.concat(state.search.history)}/>
           </div>
         </form>
 
