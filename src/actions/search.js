@@ -19,3 +19,11 @@ export function search__searchQuery(query, filesystem){
     filesystem: filesystem
   }
 };
+
+export function search__eraseHistory(){
+  return {
+    type: "search__eraseHistory"
+  }
+};
+
+

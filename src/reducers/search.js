@@ -13,6 +13,10 @@ export default function search(state, action) {
             display: "small" }
         ]
       }};
+    case "search__eraseHistory":
+      return {...state, ...{
+        history: []
+      }};
     case "search__searchQuery":
       // Defining search function
       function search(query, folder){
