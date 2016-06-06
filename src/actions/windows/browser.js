@@ -13,3 +13,10 @@ export function browser__submitUrl(windowData, url){
     url: url
   }
 };
+
+export function browser__back(windowData){
+  return {
+    type: "browser__back",
+    window: windowData
+  }
+};

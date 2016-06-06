@@ -36,13 +36,7 @@ export default function browser(state, action) {
       newState = [...state.windows];
       newState = newState.map((windowItem, key)=>{
         if (action.window.id == windowItem.id){
-          let history = [ ...windowItem.data.history ];
-          history.unshift(action.url);
-          return { ...windowItem, ...{
-            data: {
-              ...windowItem.data,
-              history: history
-          }}};
+          console.log("browser Back is run")
         }
         return windowItem;
       });
