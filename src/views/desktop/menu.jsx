@@ -10,7 +10,6 @@ import imgArrow from '../../assets/images/arrow.svg'
 class Menu extends React.Component{
   render() {
     let {state, dispatch} = this.props;
-    console.log(state.search.history, state.search.history.length !== 0);
 		return (
       <div className="menu">
         <ul className="menu__list">
