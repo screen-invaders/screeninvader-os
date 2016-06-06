@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { browser__changeUrl, browser__submitUrl } from '../../../actions/windows/browser.js';
+import { browser__changeUrl, browser__submitUrl, browser__back } from '../../../actions/windows/browser.js';
 
 import iconLeft from '../../../assets/images/icons/row-8/4.png'
 import iconRight from '../../../assets/images/icons/row-8/5.png'
@@ -14,8 +14,12 @@ class Menubar extends React.Component{
     return (
       <div className="browser__menubar">
         <div className="browser__menubar-icon-group">
-          <div className="browser__menubar-icon"><img className="browser__menubar-icon-img" src={iconLeft}/></div>
-          <div className="browser__menubar-icon"><img className="browser__menubar-icon-img" src={iconRight}/></div>
+          <div className="browser__menubar-icon" onChange={(e)=>{dispatch(browser__back(windowData))}} >
+            <img className="browser__menubar-icon-img" src={iconLeft}/>
+          </div>
+          <div className="browser__menubar-icon">
+            <img className="browser__menubar-icon-img" src={iconRight}/>
+          </div>
         </div>
         <form className="browser__menubar-path-container" onSubmit={(e)=>{
           e.preventDefault();

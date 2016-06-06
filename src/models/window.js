@@ -10,7 +10,8 @@
       searchResult: options.searchResult,
       viewType: options.viewType || "list",
       submitText: options.submitText,
-      history: []
+      history: [],
+      historyCursor: 0
     };
     this.focus = 0;
     this.viewPos = {
