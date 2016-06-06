@@ -91,7 +91,7 @@ class Pdf extends React.Component{
       )
       }
     }
-    return (this.props.loading || <div>Loading pdf....</div>);
+    return (this.props.loading || <div>Ophalen PDF</div>);
   }
 }
 

@@ -8,7 +8,7 @@ class Shutdown extends React.Component{
 		return (
       <div className="layout__overlay">
   			<div className="shutdown">
-          <p> Afsluiten </p>
+          <div className="shutdown__details"> Afsluiten </div>
         </div>
       </div>
     )
