@@ -11,7 +11,7 @@ class Body extends React.Component{
       { (windowData.data.searchResult.length && 
           windowData.data.searchResult.map((item, key)=>{
             return <Item key={key} itemData={item} dispatch={dispatch}/>
-        })) || <div> No results </div> }
+        })) || <div className="search__no-result"> Geen resultaten </div> }
       </div>
     )
   }

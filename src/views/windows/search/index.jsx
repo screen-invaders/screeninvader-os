@@ -13,7 +13,7 @@ class Search extends React.Component{
     return (
       <div className="window__content-inner">
         <Menubar windowData={windowData} dispatch={dispatch}/>
-        <Sidebar windowData={windowData}/>
+        <Sidebar windowData={windowData} dispatch={dispatch}/>
         <Body windowData={windowData} dispatch={dispatch}/>
       </div>
     )

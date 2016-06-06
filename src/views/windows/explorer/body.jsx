@@ -43,4 +43,4 @@ class Body extends React.Component{
   }
 }
 
-export default connect(state => ({filesystem: state.filesystem}),null ,null ,{pure: false})(Body);
+export default connect(state => ({filesystem: state.filesystem}), null, null, {pure: false})(Body);
