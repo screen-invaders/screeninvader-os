@@ -20,12 +20,13 @@ export default function browser(state, action) {
       newState = [...state.windows];
       newState = newState.map((windowItem, key)=>{
         if (action.window.id == windowItem.id){
-          let history = [ ...windowItem.data.history ];
-          history.unshift(action.url);
+          let newHistory = [...windowItem.data.history].slice(windowItem.data.historyCursor, history.length);
+          newHistory.unshift(action.url);
           return { ...windowItem, ...{
             data: {
               ...windowItem.data,
-              history: history
+              history: newHistory,
+              historyCursor: 0
           }}};
         }
         return windowItem;
@@ -36,11 +37,40 @@ export default function browser(state, action) {
       newState = [...state.windows];
       newState = newState.map((windowItem, key)=>{
         if (action.window.id == windowItem.id){
-          console.log("browser Back is run")
+          let newCursor = windowItem.data.historyCursor;
+          if (windowItem.data.historyCursor < windowItem.data.history.length - 1){
+            newCursor = windowItem.data.historyCursor + 1;
+          }
+          return { ...windowItem, ...{
+            data: {
+              ...windowItem.data,
+              url: windowItem.data.history[newCursor], 
+              historyCursor: newCursor
+            }}};
         }
         return windowItem;
       });
-      return newState  
+      return newState
+
+    case "browser__forward": 
+      newState = [...state.windows];
+      newState = newState.map((windowItem, key)=>{
+        if (action.window.id == windowItem.id){
+          let newCursor = windowItem.data.historyCursor;
+          if (windowItem.data.historyCursor > 0){
+            newCursor = windowItem.data.historyCursor - 1;
+          }
+          return { ...windowItem, ...{
+            data: {
+              ...windowItem.data,
+              url: windowItem.data.history[newCursor], 
+              historyCursor: newCursor
+            }}};
+        }
+        return windowItem;
+      });
+      return newState
+
     default:
       return 0;
   }

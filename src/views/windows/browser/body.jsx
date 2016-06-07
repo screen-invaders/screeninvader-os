@@ -8,7 +8,7 @@ class Body extends React.Component{
     let { windowData, filesystem, dispatch } = this.props;
     return (
       <div className="browser__body">
-        <iframe className="browser__iframe" src={ windowData.data.history[0] } />
+        <iframe className="browser__iframe" src={ windowData.data.history[windowData.data.historyCursor] } />
       </div>
     )
   }

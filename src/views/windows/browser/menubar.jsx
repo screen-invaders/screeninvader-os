@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { browser__changeUrl, browser__submitUrl, browser__back } from '../../../actions/windows/browser.js';
+import { browser__changeUrl, browser__submitUrl, browser__back, browser__forward } from '../../../actions/windows/browser.js';
 
 import iconLeft from '../../../assets/images/icons/row-8/4.png'
 import iconRight from '../../../assets/images/icons/row-8/5.png'
@@ -11,13 +11,14 @@ import iconIcons from '../../../assets/images/icons/row-11/3.png'
 class Menubar extends React.Component{
   render() {
     let {windowData, dispatch} = this.props;
+    console.log(windowData.data.history)
     return (
       <div className="browser__menubar">
         <div className="browser__menubar-icon-group">
           <div className="browser__menubar-icon" onClick={()=>{dispatch(browser__back(windowData))}} >
             <img className="browser__menubar-icon-img" src={iconLeft}/>
           </div>
-          <div className="browser__menubar-icon">
+          <div className="browser__menubar-icon" onClick={()=>{dispatch(browser__forward(windowData))}}>
             <img className="browser__menubar-icon-img" src={iconRight}/>
           </div>
         </div>

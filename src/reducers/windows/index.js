@@ -1,4 +1,4 @@
-import general from "./container.js";
+import container from "./container.js";
 import data from "./data.js";
 import explorer from "./explorer.js";
 import browser from "./browser.js";

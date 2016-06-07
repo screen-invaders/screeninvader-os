@@ -22,7 +22,7 @@ class Titlebar extends React.Component{
         titleText = windowData.data.query;
       break;
       case "browser":
-        titleText = windowData.data.url;
+        titleText = windowData.data.history[windowData.data.historyCursor];
       break;
     };
 

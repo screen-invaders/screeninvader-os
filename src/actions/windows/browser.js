@@ -20,3 +20,10 @@ export function browser__back(windowData){
     window: windowData
   }
 };
+
+export function browser__forward(windowData){
+  return {
+    type: "browser__forward",
+    window: windowData
+  }
+};
