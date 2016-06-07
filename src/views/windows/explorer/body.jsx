@@ -18,7 +18,6 @@ class Body extends React.Component{
 
   render() {
     let { windowData, filesystem, dispatch } = this.props;
-    console.log(windowData.data.history, windowData.data.historyCursor)
     return (
       <div className="explorer__body">
       {(()=>{
