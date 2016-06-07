@@ -10,7 +10,7 @@ export default function search(state, action) {
         history: [
           ...state.history,
           { name: action.query,
-            display: "small" }
+            type: "small" }
         ]
       }};
     case "search__eraseHistory":

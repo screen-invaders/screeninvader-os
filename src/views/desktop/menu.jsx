@@ -32,7 +32,7 @@ class Menu extends React.Component{
           <input className="menu__search-icon" type="image" name="image" src={imgLogo}></input>
           <div className="menu__search-dropdown-button">
             <img className="menu__search-dropdown-button-arrow" src={imgArrow} />
-            <Dropdown dispatch={dispatch} dropdown={(state.search.history.length !== 0) ? state.menu.searchDropdown.concat([{name: "Recente zoekopdrachten:"}], state.search.history) : state.menu.searchDropdown}/>
+            <Dropdown dispatch={dispatch} dropdown={(state.search.history.length !== 0) ? state.menu.searchDropdown.concat([{type: "hr"}, {type: "normal", name: "Recente zoekopdrachten:"}], state.search.history) : state.menu.searchDropdown}/>
           </div>
         </form>
 

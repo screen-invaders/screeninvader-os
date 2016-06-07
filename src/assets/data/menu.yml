@@ -29,32 +29,50 @@ menu:
         overlay: shutdown
   - name: Programma's
     dropdown:
-    - name: "Verkenner"
-      target: "dir"
-      type: "window"
-    - name: "Zoeken"
-      target: "search"
-      type: "window"
-    - name: "Browser"
-      target: "browser"
-      type: "window"
-  - name: "Intranet"
+    - type: normal
+      name: Verkenner
+      action:
+        type: window__open
+        window: dir
+    - type: hr
+    - type: normal
+      name: Zoeken
+      action:
+        type: window__open
+        window: search
+    - type: normal
+      name: Browser
+      action:
+        type: window__open
+        window: browser
+  - name: Intranet
     dropdown:
-    - name: "Belastingen"
-    - name: "Toeslagen"
-    - name: "Organisatie"
+    - type: normal
+      name: Belastingen
+    - type: hr
+    - type: normal
+      name: Toeslagen
+    - type: normal
+      name: Organisatie
   searchDropdown:
-  - name: "Zoekinstellingen"
-  - name: "Pas filters toe"
-  - name: "Wis zoekgeschiedenis"
-    target: "modal"
-    type: "window"
-    content: "Weet u zeker dat u uw zoekgeschiedenis wil verwijderen?"
-    submitText: "Ja"
+  - type: normal
+    name: Zoekinstellingen
+  - type: hr
+  - type: normal
+    name: Pas filters toe
+  - type: normal 
+    name: Wis zoekgeschiedenis
+    action: 
+      type: window__open
+      window: modal
+      content: Weet u zeker dat u uw zoekgeschiedenis wil verwijderen?
+      submitText: Ja
   userDropdown:
-  - name: Profiel
-  - name: Instellingen
-  - name: Uitloggen
-    target: "login"
-    type: "overlay"
-    special: "logout"
+  - type: normal
+    name: Profiel
+  - type: hr
+  - type: normal
+    name: Uitloggen
+    action:
+      type: overlay__open
+      overlay: login
