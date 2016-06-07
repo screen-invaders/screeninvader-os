@@ -1,4 +1,4 @@
-import general from "./general.js";
+import general from "./container.js";
 import data from "./data.js";
 import explorer from "./explorer.js";
 import browser from "./browser.js";
@@ -6,7 +6,7 @@ import browser from "./browser.js";
 export default function windows(state, action) {
   let newState;
 
-  newState = general(state, action);
+  newState = container(state, action);
    if (newState)
     return newState;
 

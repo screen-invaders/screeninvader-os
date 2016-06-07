@@ -1,6 +1,6 @@
 import newWindow from '../../models/window.js';
 
-export default function general(state, action) {
+export default function container(state, action) {
   let newState;
   switch (action.type){      
     case "window__open":

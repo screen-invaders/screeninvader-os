@@ -5,7 +5,7 @@ menu:
     - name: "Over dit Intranet"
       target: "modal"
       type: "window"
-      content: "Belastingdienst intranet versie 01.14.23"
+      content: "Belastingdienst intranet versie 13.16.23"
       submitText: "Sluit"
       submitAction: "close"
     - name: "Configuratiescherm"
