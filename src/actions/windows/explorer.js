@@ -13,6 +13,20 @@ export function explorer__moveUp(windowData, path){
   }
 };
 
+export function explorer__back(windowData){
+  return {
+    type: "explorer__back",
+    window: windowData
+  }
+};
+
+export function explorer__forward(windowData){
+  return {
+    type: "explorer__forward",
+    window: windowData
+  }
+};
+
 export function explorer__changeViewType(windowData, viewType){
   return {
     type: "explorer__changeViewType",

@@ -11,7 +11,6 @@ import iconIcons from '../../../assets/images/icons/row-11/3.png'
 class Menubar extends React.Component{
   render() {
     let {windowData, dispatch} = this.props;
-    console.log(windowData.data.history)
     return (
       <div className="browser__menubar">
         <div className="browser__menubar-icon-group">

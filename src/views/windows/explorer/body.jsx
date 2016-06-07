@@ -18,10 +18,11 @@ class Body extends React.Component{
 
   render() {
     let { windowData, filesystem, dispatch } = this.props;
+    console.log(windowData.data.history, windowData.data.historyCursor)
     return (
       <div className="explorer__body">
       {(()=>{
-        let items = this.getItems(filesystem, windowData.data.path);
+        let items = this.getItems(filesystem, windowData.data.history[windowData.data.historyCursor]);
         if (items){
           var templatedItems = [];
           for (var item in items) {

@@ -13,6 +13,9 @@
       history: [],
       historyCursor: 0
     };
+    if (options.path){
+      this.data.history.push(options.path); 
+    }
     this.focus = 0;
     this.viewPos = {
       x: (options.offset && options.offset.x) || (Math.random() * (window.innerWidth - 800)),
