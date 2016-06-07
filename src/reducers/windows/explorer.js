@@ -5,7 +5,7 @@ export default function explorer(state, action) {
       newState = [...state.windows];
       newState = newState.map((windowItem, key)=>{
         if (action.window.id == windowItem.id){
-          let newHistory = [...windowItem.data.history].slice(windowItem.data.historyCursor, history.length);
+          let newHistory = [...windowItem.data.history].slice(windowItem.data.historyCursor, windowItem.data.history.length);
           return {...windowItem, ...{ 
             data: {
               ...windowItem.data,
@@ -26,8 +26,8 @@ export default function explorer(state, action) {
       newState = [...state.windows];
       newState = newState.map((windowItem, key)=>{
         if (action.window.id == windowItem.id){
-          let newHistory = [...windowItem.data.history].slice(windowItem.data.historyCursor, history.length);
-          let newPath = windowItem.data.path;
+          let newHistory = [...windowItem.data.history].slice(windowItem.data.historyCursor, windowItem.data.history.length);
+          let newPath = [...windowItem.data.path];
           newPath.pop();
           return {...windowItem, ...{ 
             data: {
