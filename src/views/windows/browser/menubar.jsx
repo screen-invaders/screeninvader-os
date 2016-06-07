@@ -12,7 +12,7 @@ class Menubar extends React.Component{
   render() {
     let {windowData, dispatch} = this.props;
     return (
-      <div className="browser__menubar">
+      <div className="browser__menubar" onClick={()=>{console.log("bubbbbbleee: menu")}}>
         <div className="browser__menubar-icon-group">
           <div className="browser__menubar-icon" onClick={()=>{dispatch(browser__back(windowData))}} >
             <img className="browser__menubar-icon-img" src={iconLeft}/>

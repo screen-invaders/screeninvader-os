@@ -13,7 +13,7 @@ class Body extends React.Component{
     let {windowData, dispatch} = this.props;
     return ( 
       <div className="textfile__body">
-        <ReactMarkdown source={windowData.data.content || "loading data"} />
+        <ReactMarkdown source={ windowData.data.content || "Bezig met ophalen van de data" } />
       </div>
     )
   }

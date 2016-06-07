@@ -9,10 +9,10 @@ class Dropdown extends React.Component{
     let { dispatch } = this.props;
     if (subItem.action){
       if (subItem.action.type == "overlay__change"){
-        if (subItem.action.window == "logout"){
-          dispatch(login__logout(subItem.action.window))
+        if (subItem.action.overlay == "login"){
+          dispatch(login__logout(subItem.action.overlay))
         }
-        dispatch(overlay__change(subItem.action.window))
+        dispatch(overlay__change(subItem.action.overlay))
       } else if (subItem.action.type == "window__open") {
         dispatch(window__open(subItem.action.window, {content: subItem.action.content, submitText: subItem.action.submitText}))
       }

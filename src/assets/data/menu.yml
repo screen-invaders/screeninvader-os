@@ -16,16 +16,16 @@ menu:
     - type: normal
       name: Uitloggen
       action:
-        type: overlay__open
+        type: overlay__change
         overlay: login
     - type: normal
       name: Herstarten
       action: 
-        type: overlay__open
+        type: overlay__change
         overlay: shutdown
     - name: Afsluiten
       action:
-        type: overlay__open
+        type: overlay__change
         overlay: shutdown
   - name: Programma's
     dropdown:
@@ -69,10 +69,7 @@ menu:
       submitText: Ja
   userDropdown:
   - type: normal
-    name: Profiel
-  - type: hr
-  - type: normal
     name: Uitloggen
     action:
-      type: overlay__open
+      type: overlay__change
       overlay: login
