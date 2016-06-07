@@ -18,7 +18,7 @@
   position: relative;
   display: flex;
   padding: 0.5rem 0;
-  border-bottom: 1px solid $primary;
+  // border-bottom: 1px solid $primary;
 }
 
 .dropdown__text {
@@ -39,18 +39,18 @@
   color: $day;
 }
 
-li:nth-child(2n).dropdown__list-item {
-  border: none;
-  padding-bottom: 0;
-}
+// li:nth-child(2n).dropdown__list-item {
+//   border: none;
+//   padding-bottom: 0;
+// }
 
-li:nth-child(2n+1).dropdown__list-item {
-  padding-top: 0;
-}
+// li:nth-child(2n+1).dropdown__list-item {
+//   padding-top: 0;
+// }
 
-li:first-child.dropdown__list-item {
-  padding-top: 0.5rem;
-}
+// li:first-child.dropdown__list-item {
+//   padding-top: 0.5rem;
+// }
 
 li:last-child.dropdown__list-item {
   border: none;

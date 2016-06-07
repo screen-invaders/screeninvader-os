@@ -1,25 +1,33 @@
 menu:
   main:
-  - name: "Systeem"
+  - name: Systeem
     dropdown:
-    - name: "Over dit Intranet"
-      target: "modal"
-      type: "window"
-      content: "Belastingdienst intranet versie 13.16.23"
-      submitText: "Sluit"
-      submitAction: "close"
-    - name: "Configuratiescherm"
-    - name: "Uitloggen"
-      target: "login"
-      type: "overlay"
-      special: "logout"
-    - name: "Herstarten"
-      target: "shutdown"
-      type: "overlay"
-    - name: "Afsluiten"
-      target: "shutdown"
-      type: "overlay"
-  - name: "Programma's"
+    - type: normal
+      name: Over dit Intranet
+      action:
+        type: window__open
+        window: modal
+        content: Belastingdienst intranet versie 13.16.23
+        submitText: Sluit
+        submitAction: window__close
+    - type: hr
+    - name: Configuratiescherm
+    - type: hr
+    - type: normal
+      name: Uitloggen
+      action:
+        type: overlay__open
+        overlay: login
+    - type: normal
+      name: Herstarten
+      action: 
+        type: overlay__open
+        overlay: shutdown
+    - name: Afsluiten
+      action:
+        type: overlay__open
+        overlay: shutdown
+  - name: Programma's
     dropdown:
     - name: "Verkenner"
       target: "dir"
