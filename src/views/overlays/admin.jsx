@@ -58,7 +58,7 @@ class Admin extends React.Component{
             </div>
             <div className="admin__button-container">
               <button className="admin__button" onClick={this.fullScreen}> Full Screen!</button>
-              <button className="admin__button" onClick={this.props.dispatch.bind(null, overlay__change("login"))}> Start invading!</button>
+              <button className="admin__button" onClick={this.props.dispatch.bind(null, overlay__change("off"))}> Start invading!</button>
             </div>
           </div>
         </div>

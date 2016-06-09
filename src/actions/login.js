@@ -11,7 +11,7 @@ export function login__enterName(e){
   }
 };
 
-export function login__logout(e){
+export function login__logout(){
   return {
     type: "login__logout"
   }
