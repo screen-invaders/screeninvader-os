@@ -8,7 +8,7 @@ let initialState = {
     password: "1984"
   },
   overlay: {
-    type: "",
+    type: "off",
   },
   login: {
     attempts: 5,

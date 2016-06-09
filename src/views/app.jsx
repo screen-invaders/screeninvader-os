@@ -6,6 +6,7 @@ import Desktop from './desktop/desktop.jsx';
 import Login from './overlays/login.jsx';
 import Admin from './overlays/admin.jsx';
 import Shutdown from './overlays/shutdown.jsx';
+import Off from './overlays/off.jsx';
 
 class App extends React.Component{
   render() {
@@ -20,6 +21,8 @@ class App extends React.Component{
             return <Login state={state} dispatch={dispatch} />;
           case "shutdown": 
             return <Shutdown state={state} dispatch={dispatch} />;
+          case "off": 
+            return <Off state={state} dispatch={dispatch} />;
         }
         })()}
         <div className="layout__desktop">
