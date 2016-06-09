@@ -8,10 +8,15 @@ class Shutdown extends React.Component{
     this.state = {
       messages: [
         "Wijzigingen opslaan",
+        "Wijzigingen opslaan..",
+        "Wijzigingen opslaan....",
         "Configuratie opslaan",
         "Uitloggen",
+        "Uitloggen..",
+        "Uitloggen....",
         "Verbinding met servers wordt verbroken",
-        "Systeem afsluiten"
+        "Systeem afsluiten",
+        "Systeem afsluiten.."
       ],
       messagesCursor: 0,
       turnOff: 0
@@ -25,7 +30,7 @@ class Shutdown extends React.Component{
   }
 
   turnOff(){
-    let interval = setInterval(()=>{this.setState((prevState)=>{return {...prevState, ...{messagesCursor: prevState.messagesCursor + 1}}})}, 400);
+    let interval = setInterval(()=>{this.setState((prevState)=>{return {...prevState, ...{messagesCursor: prevState.messagesCursor + 1}}})}, 200);
     setTimeout(()=>{
       clearInterval(interval);
       this.props.dispatch(overlay__change("off"));
