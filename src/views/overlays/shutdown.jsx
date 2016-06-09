@@ -8,15 +8,15 @@ class Shutdown extends React.Component{
     this.state = {
       messages: [
         "Wijzigingen opslaan",
-        "Wijzigingen opslaan..",
-        "Wijzigingen opslaan....",
+        "Wijzigingen opslaan",
+        "Wijzigingen opslaan",
         "Configuratie opslaan",
         "Uitloggen",
-        "Uitloggen..",
-        "Uitloggen....",
+        "Uitloggen",
+        "Uitloggen",
         "Verbinding met servers wordt verbroken",
         "Systeem afsluiten",
-        "Systeem afsluiten.."
+        "Systeem afsluiten"
       ],
       messagesCursor: 0,
       turnOff: 0
