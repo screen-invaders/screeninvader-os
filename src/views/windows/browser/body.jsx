@@ -1,8 +1,5 @@
 import React from 'react';
 
-import ListedItem from '../../items/listed-item.jsx';
-import Item from '../../items/item.jsx';
-
 class Body extends React.Component{
   componentDidMount(){
     this.bubbleThroughIframe();

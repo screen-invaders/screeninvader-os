@@ -4,9 +4,6 @@ import { browser__changeUrl, browser__submitUrl, browser__back, browser__forward
 
 import iconLeft from '../../../assets/images/icons/row-8/4.png'
 import iconRight from '../../../assets/images/icons/row-8/5.png'
-import iconUp from '../../../assets/images/icons/row-8/6.png'
-import iconList from '../../../assets/images/icons/row-9/13.png'
-import iconIcons from '../../../assets/images/icons/row-11/3.png'
 
 class Menubar extends React.Component{
   render() {
