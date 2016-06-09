@@ -10,20 +10,25 @@ class Menubar extends React.Component{
     let {windowData, dispatch} = this.props;
     return (
       <div className="browser__menubar">
-        <div className="browser__menubar-icon-group">
-          <div className="browser__menubar-icon" onClick={()=>{dispatch(browser__back(windowData))}} >
-            <img className="browser__menubar-icon-img" src={iconLeft}/>
-          </div>
-          <div className="browser__menubar-icon" onClick={()=>{dispatch(browser__forward(windowData))}}>
-            <img className="browser__menubar-icon-img" src={iconRight}/>
-          </div>
+        <div className="browser__menubar-tabs">
+
         </div>
-        <form className="browser__menubar-path-container" onSubmit={(e)=>{
-          e.preventDefault();
-          dispatch(browser__submitUrl(windowData, windowData.data.url));
-        }}>
-          <input className="browser__menubar-path" value={windowData.data.url} onChange={(e)=>{dispatch(browser__changeUrl(windowData, e))}} type="text"/>
-        </form>
+        <div className="browser__menubar-fields">
+          <div className="browser__menubar-icon-group">
+            <div className="browser__menubar-icon" onClick={()=>{dispatch(browser__back(windowData))}} >
+              <img className="browser__menubar-icon-img" src={iconLeft}/>
+            </div>
+            <div className="browser__menubar-icon" onClick={()=>{dispatch(browser__forward(windowData))}}>
+              <img className="browser__menubar-icon-img" src={iconRight}/>
+            </div>
+          </div>
+          <form className="browser__menubar-path-container" onSubmit={(e)=>{
+            e.preventDefault();
+            dispatch(browser__submitUrl(windowData, windowData.data.url));
+          }}>
+            <input className="browser__menubar-path" value={windowData.data.url} onChange={(e)=>{dispatch(browser__changeUrl(windowData, e))}} type="text"/>
+          </form>
+        </div>
       </div>
     )
   }
