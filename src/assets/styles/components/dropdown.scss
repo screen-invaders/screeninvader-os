@@ -7,8 +7,8 @@
   top: 2.4rem;
   padding: 0.5rem 0;
   background: $day;
-  color: $primary;
-  border: 1px solid $primary;
+  color: $dark;
+  border: 1px solid $dark;
   border-top: none;
   font-size: 1rem;
   line-height: 1rem; 
@@ -30,11 +30,11 @@
 .dropdown__text-type-small {
   padding-left: 2rem;
   font-size: 1rem;
-  color: rgba($primary, 0.5);
+  color: rgba($heavy, 0.5);
 }
 
 .dropdown__text:hover{
-  background: $primary;
+  background: $dark;
   color: $day;
 }
 
@@ -43,5 +43,5 @@
   width: 100%;
   margin: 0.5rem 0;
   border: none;
-  border-bottom: 1px solid $primary;
+  border-bottom: 1px solid $dark;
 }

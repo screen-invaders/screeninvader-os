@@ -21,8 +21,7 @@ class Login extends React.Component{
               if (state.login.attempts < 5){
                 return (
                 <div className="login__error">
-                  <p>Verkeerd Wachtwoord! Nog {state.login.attempts} pogingen</p>
-                  <p>klik voor meer info</p>
+                  <p>Verkeerd wachtwoord! Nog {state.login.attempts} pogingen</p>
                 </div> )
               }
             })()}

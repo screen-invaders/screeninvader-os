@@ -12,7 +12,8 @@
 .menu__list {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  flex-grow: 1; 
 }
 
 .menu__list-item {
@@ -33,7 +34,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
   width: 22rem;
   height: 2.4rem;
 }
@@ -44,7 +44,7 @@
   padding: 0 1rem;
   font-size: 1rem; 
   line-height: 1rem; 
-  background: $secundary;
+  background: $heavy;
   color: white;
   -webkit-appearance: none;
   border: none;
@@ -67,9 +67,9 @@
   width: 2.4rem;
   height: 100%;
   background: $day;
-  border-left: 1px solid $primary;
-  border-right: 1px solid $primary;
-  color: $primary;
+  border-left: 1px solid $dark;
+  border-right: 1px solid $dark;
+  color: $dark;
 }
 
 .menu__search-dropdown-button:hover .dropdown{
@@ -86,7 +86,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 4rem;
   font-size: 1rem; 
   line-height: 1rem; 
 }

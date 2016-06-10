@@ -1,5 +1,5 @@
 .layout__desktop {
-  background: $tertiary;
+  background: $light;
 }
 
 .desktop {
@@ -10,65 +10,71 @@
 }
 
 .menu {
-  background: $primary;
+  background: $dark;
   color: white;
 }
 
 .menu__search {
-  background: $secundary;
+  background: $heavy;
   color: white;
 }
 
 .menu__user-notice {
-  color: $secundary;
-}
-
-.login {
-  background-image: url("../images/background.png");
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-color: $tertiary;
+  color: $light;
 }
 
 .shutdown {
-  background-image: url("../images/background.png");
   background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: center center;
   background-origin: content-box;
-  background-color: $tertiary;
+  background-color: $dark;
+}
+
+.login {
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: $dark;
 }
 
 .login__details {
   background: $day;
-  border: 1px solid $primary;
-  box-shadow: 3px 3px 0px 0px rgba($primary,0.5);
-}
-
-.login__submit:hover {
-  background: $secundary;
+  border: 1px solid $dark;
+  border-radius: 10px;
 }
 
 .login__submit {
   border: 1px solid $light;
-  background: $primary;
+  background: $dark;
   color: $day;
 }
 
+.login__submit:hover {
+  background: linear-gradient(70deg, rgba($day, 0), rgba($day, 0) 45%,rgba($day, 0.2) 50%, rgba($day, 0) 55%, rgba($day, 0) 100%), $primary;
+  background-size: 400% 400%;
+  animation: flash 1.5s ease infinite;
+}
+
+@keyframes flash { 
+  0%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
 .search {
-  background: rgba($secundary, 0.5);
+  background: rgba($heavy, 0.5);
 }
 
 .window {
+
 }
 
 .window__titlebar {
-  background: $primary;
+  background: $dark;
 }
 
 .window__titlebar-close-button {
-  background: $secundary;
+  background: $medium;
   color: white;
 }
 
@@ -76,10 +82,6 @@
   background: $day;
 }
 
-.window__footer {
-  background: $primary;
-}
-
 .folder__text {
-  color: $primary;
+  color: $dark;
 }
