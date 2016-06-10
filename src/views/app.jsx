@@ -6,6 +6,7 @@ import Desktop from './desktop/desktop.jsx';
 import Login from './overlays/login.jsx';
 import Admin from './overlays/admin.jsx';
 import Shutdown from './overlays/shutdown.jsx';
+import Startup from './overlays/startup.jsx';
 import Off from './overlays/off.jsx';
 
 class App extends React.Component{
@@ -17,6 +18,8 @@ class App extends React.Component{
         switch (state.overlay.type){
           case "admin": 
             return <Admin dispatch={dispatch} />;
+          case "startup": 
+            return <Startup state={state} dispatch={dispatch} />;
           case "login": 
             return <Login state={state} dispatch={dispatch} />;
           case "shutdown": 

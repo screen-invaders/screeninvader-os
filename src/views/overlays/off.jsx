@@ -28,7 +28,7 @@ class Shutdown extends React.Component{
       <div className="layout__overlay">
   			<div className="off">
           { this.state.onButton && <div className="off__reboot" onClick={()=>{
-            dispatch(overlay__change("login"))
+            dispatch(overlay__change("startup"))
             dispatch(login__logout())
           }}> Opstarten </div> }
         </div>
