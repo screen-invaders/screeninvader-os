@@ -3,7 +3,7 @@ import React from 'react';
 import { explorer__moveDown } from '../../actions/windows/explorer.js';
 import { window__open } from '../../actions/windows/window.js';
 
-import imgFolder from '../../assets/images/icons/row-11/3.png'
+import imgFolder from '../../assets/images/folder.svg'
 import imgTXT from '../../assets/images/icons/row-10/12.png'
 import imgPDF from '../../assets/images/icons/row-11/6.png'
 
