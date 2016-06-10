@@ -11,9 +11,11 @@ class Menubar extends React.Component{
     return (
       <div className="browser__menubar">
         <div className="browser__menubar-tabs">
-
+          <div className="browser__menubar-tab"> <p>Some URL</p> </div>
+          <div className="browser__menubar-tab"> <p>Some URL</p> </div>
+          <div className="browser__menubar-tab browser__menubar-tab-active"> <p>Some URL</p> </div>
         </div>
-        <div className="browser__menubar-fields">
+        <div className="browser__menubar-inner">
           <div className="browser__menubar-icon-group">
             <div className="browser__menubar-icon" onClick={()=>{dispatch(browser__back(windowData))}} >
               <img className="browser__menubar-icon-img" src={iconLeft}/>
