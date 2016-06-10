@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: $secundary;
+  background: $medium;
   border-bottom: 1px solid $dark;
 }
 
@@ -50,7 +50,7 @@
   height: calc(100% - 3rem);
   padding: 1rem;
   border-right: 1px solid $dark;
-  background: $gray;
+  background: $light;
 }
 
 .explorer__sidebar-text {

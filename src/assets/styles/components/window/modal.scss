@@ -17,11 +17,19 @@
   width: 25%;
   height: 3rem;
   color: $day;
-  background: $primary;
+  background: $dark;
   border: none;
   cursor: pointer;
+  border-radius: 10px;
 }
 
 .modal__button:hover {
-  background: $secundary;
+  background: linear-gradient(70deg, rgba($day, 0), rgba($day, 0) 45%,rgba($day, 0.2) 50%, rgba($day, 0) 55%, rgba($day, 0) 100%), $dark;
+  background-size: 400% 400%;
+  animation: flash 1.5s ease infinite;
+}
+
+@keyframes flash { 
+  0%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }

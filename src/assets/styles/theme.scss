@@ -1,3 +1,5 @@
+// Desktop
+
 .layout__desktop {
   background: $light;
 }
@@ -23,13 +25,7 @@
   color: $light;
 }
 
-.shutdown {
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-origin: content-box;
-  background-color: $dark;
-}
+// Overlays
 
 .login {
   background-size: auto 100%;
@@ -51,37 +47,33 @@
 }
 
 .login__submit:hover {
-  background: linear-gradient(70deg, rgba($day, 0), rgba($day, 0) 45%,rgba($day, 0.2) 50%, rgba($day, 0) 55%, rgba($day, 0) 100%), $primary;
+  background: linear-gradient(70deg, rgba($day, 0), rgba($day, 0) 45%,rgba($day, 0.2) 50%, rgba($day, 0) 55%, rgba($day, 0) 100%), $dark;
   background-size: 400% 400%;
   animation: flash 1.5s ease infinite;
 }
+
+.shutdown {
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-origin: content-box;
+  background-color: $dark;
+}
+
 
 @keyframes flash { 
   0%{background-position:100% 50%}
   100%{background-position:0% 50%}
 }
 
-.search {
-  background: rgba($heavy, 0.5);
-}
-
-.window {
-
-}
+// Windows
 
 .window__titlebar {
   background: $dark;
 }
 
-.window__titlebar-close-button {
-  background: $medium;
-  color: white;
-}
+
 
 .window__content-inner {
   background: $day;
-}
-
-.folder__text {
-  color: $dark;
 }

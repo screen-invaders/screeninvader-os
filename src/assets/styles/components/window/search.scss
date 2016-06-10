@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: $secundary;
+  background: $medium;
   border-bottom: 1px solid $dark;
 }
 
@@ -22,14 +22,16 @@
 
 .search__menubar-open-all {
   padding: 0.5rem;
-  background: $primary;
+  background: $dark;
   color: $day;
   border: none;
   cursor: pointer;
 }
 
 .search__menubar-open-all:hover {
-  background: $secundary;
+  background: linear-gradient(70deg, rgba($day, 0), rgba($day, 0) 45%,rgba($day, 0.2) 50%, rgba($day, 0) 55%, rgba($day, 0) 100%), $dark;
+  background-size: 400% 400%;
+  animation: flash 1.5s ease infinite;
 }
 
 .search__menubar-icon-group {
@@ -64,7 +66,7 @@
   height: calc(100% - 3rem);
   padding: 1rem;
   border-right: 1px solid $dark;
-  background: $gray;
+  background: $light;
 }
 
 .search__sidebar-header {

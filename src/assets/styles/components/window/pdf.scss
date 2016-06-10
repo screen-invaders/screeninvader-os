@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: $secundary;
+  background: $medium;
   border-bottom: 1px solid $dark;
 }
 
@@ -34,7 +34,7 @@
   height: calc(100% - 3rem);
   width: 12rem;
   padding: 2rem;
-  background: $medium;
+  background: $light;
   overflow-y: scroll;
 }
 
@@ -44,7 +44,7 @@
   width: calc(100% - 12rem);
   height: calc(100% - 3rem);
   padding: 2rem;
-  background: $medium;
+  background: $light;
   overflow-y: scroll;
 }
 

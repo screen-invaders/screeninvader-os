@@ -21,6 +21,13 @@
 
     // Window Types
 
+    if (type == "modal"){
+      this.data = {
+        content: options.content,
+        submitText: options.submitText,
+      };
+    }
+
     if (type == "txt"){
       this.data = {
         path: options.path,
