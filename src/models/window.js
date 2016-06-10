@@ -41,7 +41,7 @@
         history: [],
         historyCursor: 0
       };
-      
+
       if (options.path){
         this.data.history.push(options.path); 
       }
@@ -56,7 +56,7 @@
     }
 
     if (type == "browser"){
-      this.data.currentTab = 2;
+      this.data = {currentTab: 2};
       this.data.tabs = [{
         id: Math.random() * 0x10000,
         url: "Breeze mail",
@@ -71,8 +71,8 @@
       },
       {
         id: Math.random() * 0x10000,
-        url: options.url,
-        history: [],
+        url: "",
+        history: ["http://www.screeninvaders.nl"],
         historyCursor: 0
       }];
     }

@@ -21,9 +21,6 @@ class Titlebar extends React.Component{
       case "search":
         titleText = windowData.data.query;
       break;
-      case "browser":
-        titleText = windowData.data.history[windowData.data.historyCursor];
-      break;
     };
 
     return (

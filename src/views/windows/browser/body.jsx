@@ -31,10 +31,10 @@ class Body extends React.Component{
   }
 
   render() {
-    let { windowData, filesystem, dispatch } = this.props;
+    let { tab, dispatch } = this.props;
     return (
       <div className="browser__body">
-        <iframe ref="iframe" className="browser__iframe" src={ windowData.data.history[windowData.data.historyCursor] }/>
+        <iframe ref="iframe" className="browser__iframe" src={tab.history[tab.historyCursor]}/>
       </div>
     )
   }
