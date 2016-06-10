@@ -13,7 +13,7 @@ class Browser extends React.Component{
     return (
       <div className="window__content-inner">
         <Menubar windowData={windowData} dispatch={dispatch}/>
-        <Body tab={tab} dispatch={dispatch}/>
+        <Body tab={currentTab} dispatch={dispatch}/>
       </div>
     )
   }

@@ -7,15 +7,15 @@ export default function windows(state, action) {
   let newState;
 
   newState = container(state, action);
-   if (newState)
+  if (newState)
     return newState;
 
   newState = data(state, action);
-   if (newState)
+  if (newState)
     return newState;
 
   newState = explorer(state, action);
-   if (newState)
+  if (newState)
     return newState;
 
   newState = browser(state, action);
