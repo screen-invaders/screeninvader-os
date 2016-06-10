@@ -4,6 +4,8 @@ import { explorer__moveDown } from '../../actions/windows/explorer.js';
 import { window__open } from '../../actions/windows/window.js';
 
 import imgFolder from '../../assets/images/folder.svg'
+import imgFolderLocked from '../../assets/images/folder-locked.svg'
+import imgFolderRibbon from '../../assets/images/folder-ribbon.svg'
 import imgTXT from '../../assets/images/icons/row-10/12.png'
 import imgPDF from '../../assets/images/icons/row-11/6.png'
 
@@ -23,7 +25,14 @@ class ListedItem extends React.Component{
 			  <img className="listed-item__image" draggable="false" src={(()=>{
           switch (this.props.itemData.type){
             case "dir": 
-              return imgFolder;
+              let num = Math.random();
+              if (num < .333){
+                return imgFolder;
+              } else if (num > .333 && num < .666) {
+                return imgFolderRibbon
+              } else {
+                return imgFolderLocked
+              }
             case "txt": 
               return imgTXT;
             case "pdf": 
