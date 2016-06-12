@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 
-import { data__get } from '../../../actions/windows/data.js';
+import { data__fakeGet } from '../../../actions/windows/data.js';
 
 class Body extends React.Component{
   componentWillMount(){
     let {windowData, dispatch} = this.props;
-    dispatch(data__get(windowData, dispatch));
+    dispatch(data__fakeGet(windowData, dispatch));
   }
-
   render() {
     let {windowData, dispatch} = this.props;
     return ( 

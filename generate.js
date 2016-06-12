@@ -46,11 +46,11 @@ function createFile(file){
     // 'audio': createAudio,
     // 'executable': createExe
   }
-  types[file.type](file);
+  // types[file.type](file);
 }
 
 function createText(file){
-  var content = faker.lorem.paragraphs(30)
+  var content = faker.lorem.paragraphs(30);
   fs.writeFileSync('./build/filesystem/'.concat((file.path.join('/'))), content);
   return content;
 }

@@ -41,10 +41,10 @@ class Pdf extends React.Component{
     }
 
     else if(!!props.content){
-      var bytes = window.atob(props.content);
+      var bytes = props.content;
       var byteLength = bytes.length;
       var byteArray = new Uint8Array(new ArrayBuffer(byteLength));
-      for(index = 0; index < byteLength; index++) {
+      for(var index = 0; index < byteLength; index++) {
         byteArray[index] = bytes.charCodeAt(index);
       }
       this._loadByteArray(byteArray);

@@ -1,3 +1,5 @@
+import faker from 'faker';
+
 export function data__receive(response, windowData, dispatch){
   return {
     type: "data__receive",
@@ -16,6 +18,17 @@ export function data__get(windowData, dispatch){
   function onData(){
     dispatch(data__receive(this.responseText, windowData, dispatch))
   }
+
+  return {
+    type: "data__get",
+    window: windowData,
+    isFetching: true
+  }
+};
+
+export function data__fakeGet(windowData, dispatch){
+  
+  dispatch(data__receive(faker.lorem.paragraphs(30), windowData, dispatch));
 
   return {
     type: "data__get",

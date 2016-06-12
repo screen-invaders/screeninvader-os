@@ -7,7 +7,7 @@ import iconRight from '../../../assets/images/icons/row-8/5.png'
 
 class Menubar extends React.Component{
   render() {
-    let {windowData, dispatch} = this.props;
+    let {tab, windowData, dispatch} = this.props;
     return (
       <div className="browser__menubar">
         <div className="browser__menubar-tabs">
@@ -28,7 +28,7 @@ class Menubar extends React.Component{
             e.preventDefault();
             dispatch(browser__submitUrl(windowData, windowData.data.url));
           }}>
-            <input className="browser__menubar-path" value={windowData.data.url} onChange={(e)=>{dispatch(browser__changeUrl(windowData, e))}} type="text"/>
+            <input className="browser__menubar-path" value={tab.url} onChange={(e)=>{dispatch(browser__changeUrl(windowData, e))}} type="text"/>
           </form>
         </div>
       </div>

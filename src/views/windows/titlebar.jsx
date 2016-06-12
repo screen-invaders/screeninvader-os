@@ -18,6 +18,9 @@ class Titlebar extends React.Component{
       case "txt":
         titleText = windowData.data.path[windowData.data.path.length - 1];
       break;
+      case "pdf":
+        titleText = "Investigation Bibal";
+      break;
       case "search":
         titleText = windowData.data.query;
       break;

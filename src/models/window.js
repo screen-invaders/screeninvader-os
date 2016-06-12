@@ -78,8 +78,8 @@
       },
       {
         id: Math.random() * 0x10000,
-        url: "",
-        history: ["http://www.screeninvaders.nl"],
+        url: "http://wwww.chamberofcommerce.mt/",
+        history: ["./malta_coc/index.html"],
         historyCursor: 0
       }];
     }

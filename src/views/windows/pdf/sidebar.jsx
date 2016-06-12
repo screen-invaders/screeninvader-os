@@ -3,12 +3,14 @@ import Draggable, {DraggableCore} from 'react-draggable';
 
 import PDF from './pdf-loader.jsx';
 
+import pdfFile from '../../../assets/pdf/investigation.pdf';
+
 class Sidebar extends React.Component{
   render() {
     let {windowData, dispatch} = this.props;
     return (
       <div className="pdf__sidebar">
-        <PDF file={'filesystem/' + windowData.data.path.join('/')}/>
+        <PDF content={pdfFile}/>
       </div>
     )
   }
