@@ -10,7 +10,7 @@ class Sidebar extends React.Component{
     let {windowData, dispatch} = this.props;
     return (
       <div className="pdf__sidebar">
-        <PDF content={pdfFile}/>
+        <PDF content={pdfFile.split(',')[1]}/>
       </div>
     )
   }

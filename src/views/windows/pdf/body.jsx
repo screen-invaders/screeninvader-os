@@ -9,7 +9,7 @@ class Body extends React.Component{
     let {windowData, dispatch} = this.props;
     return ( 
       <div className="pdf__body">
-        <PDF content={pdfFile}/>
+        <PDF content={pdfFile.split(',')[1]}/>
       </div>
     )
   }

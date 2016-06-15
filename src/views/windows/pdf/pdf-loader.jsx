@@ -41,7 +41,7 @@ class Pdf extends React.Component{
     }
 
     else if(!!props.content){
-      var bytes = props.content;
+      var bytes = window.atob(props.content);
       var byteLength = bytes.length;
       var byteArray = new Uint8Array(new ArrayBuffer(byteLength));
       for(var index = 0; index < byteLength; index++) {
@@ -56,7 +56,7 @@ class Pdf extends React.Component{
   }
 
   _loadByteArray(byteArray) {
-    PDFJS.getDocument(byteArray).then(this._onDocumentComplete);
+    PDFJS.getDocument(byteArray).then(this._onDocumentComplete.bind(this));
   }
 
   componentWillReceiveProps(newProps) {
