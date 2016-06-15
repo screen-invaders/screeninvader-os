@@ -6,17 +6,12 @@ var babelSettings = {
   plugins: ['transform-object-rest-spread', 'transform-class-properties']
 }
 
-new webpack.DefinePlugin({
-  'process.env.NODE_ENV': '"development"'
-})
-
 var config = {
   entry: './src/entry.jsx',
   output: {
     path: './build',
     filename: "bundle.js"
   },
-
   module: {
     loaders: [
       { test: /\.(js|jsx)$/, loaders: ['react-hot', 'babel?'+JSON.stringify(babelSettings)], exclude: /node_modules/},
@@ -27,11 +22,21 @@ var config = {
       { test: /\.(pdf|png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
     ]
   },
+  plugins: [
+    // new webpack.optimize.UglifyJsPlugin({ 
+    //   minimize: false, 
+    //   sourceMap: true, 
+    //   compress: {
+    //       warnings: false
+    //   }
+    // })
+  ],
   postcss: function () {
-      return {
-          defaults: [autoprefixer]
-      };
-  }
+    return {
+        defaults: [autoprefixer]
+    };
+}
+
 };
 
 module.exports = config;

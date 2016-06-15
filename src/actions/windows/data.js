@@ -1,5 +1,3 @@
-import faker from 'faker';
-
 export function data__receive(response, windowData, dispatch){
   return {
     type: "data__receive",
@@ -28,7 +26,7 @@ export function data__get(windowData, dispatch){
 
 export function data__fakeGet(windowData, dispatch){
   
-  dispatch(data__receive(faker.lorem.paragraphs(30), windowData, dispatch));
+  dispatch(data__receive("Dummy text: Dit bestand bestaan alleen om de verkenner views aan te kleden.", windowData, dispatch));
 
   return {
     type: "data__get",
