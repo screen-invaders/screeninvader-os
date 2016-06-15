@@ -10,10 +10,199 @@ function createDirectoryChildren(src){
   // How many files?
   var count = faker.random.number({min: 1, max: 5});
 
+  var words = [
+    "AFM",
+    "AMLC",
+    "A0/1C",
+    "BES",
+    "BFT",
+    "BOOM",
+    "BVI",
+    "CJIB",
+    "CN",
+    "CTE/PF",
+    "CT",
+    "Infobox",
+    "CWI",
+    "DLR",
+    "DNB",
+    "DWI",
+    "EC",
+    "EMM",
+    "EMPACT",
+    "ESW",
+    "EU",
+    "FAT",
+    "F",
+    "FEC",
+    "FinEC",
+    "FIU",
+    "FIOD",
+    "FP",
+    "GoAML",
+    "iCOV",
+    "ILT/IOD",
+    "Autoriteit",
+    "FinanciÃ«le",
+    "Markten",
+    "Anti",
+    "Money",
+    "Laundering",
+    "Centre,",
+    "onderdeel",
+    "van",
+    "de",
+    "FIOD",
+    "Administratieve",
+    "organisatie",
+    "en",
+    "interne",
+    "controle",
+    "de",
+    "BES",
+    "eilanden",
+    "van",
+    "Caribisch",
+    "Nederland:",
+    "Bonaire.",
+    "Sint",
+    "Eustatiusen",
+    "Saba",
+    "Bureau",
+    "Financieel",
+    "Toezicht",
+    "Bureau",
+    "Ontnemingswetgeving",
+    "Openbaar",
+    "Ministerie,",
+    "Basisvoorziening",
+    "Informatie,",
+    "een",
+    "applicatie",
+    "van",
+    "de",
+    "politie",
+    "Centraal",
+    "Justitieel",
+    "Incasso",
+    "Bureau",
+    "Caribisch",
+    "Nederland",
+    "Contraterrorisme",
+    "&",
+    "proliferatiefmanciering.",
+    "een",
+    "team",
+    "binnen",
+    "de",
+    "FlU-Nederland",
+    "Contraterrorisme",
+    "Infobox",
+    "Cluster",
+    "Werk",
+    "en",
+    "Inkomen,",
+    "onderdeel",
+    "van",
+    "de",
+    "gemeente",
+    "Rotterdam",
+    "Dienst",
+    "Landelijke",
+    "Recherche,",
+    "onderdeel",
+    "van",
+    "de",
+    "Landelijke",
+    "Eenheid",
+    "van",
+    "de",
+    "politie",
+    "De",
+    "Nederlandsche",
+    "Bank",
+    "Dienst",
+    "Werk",
+    "en",
+    "Inkomen,",
+    "onderdeel",
+    "van",
+    "de",
+    "gemeente",
+    "Amsterdam",
+    "Europese",
+    "Commissie,",
+    "uitvoerend",
+    "orgaan",
+    "van",
+    "de",
+    "EU",
+    "Expertisecentrum",
+    "Mensenhandel",
+    "en",
+    "Mensensmokkel",
+    "European",
+    "Multidisciplinary",
+    "Platform",
+    "Against",
+    "Criminal",
+    "Europese",
+    "Unie",
+    "Financial",
+    "Action",
+    "Task",
+    "Force",
+    "Financieel",
+    "Expertise",
+    "Centrum",
+    "Programma",
+    "Financieel",
+    "Economische",
+    "Criminaliteit",
+    "Financial",
+    "Intelligence",
+    "Unit",
+    "Fiscale",
+    "Inlichtingen-",
+    "en",
+    "Opsporingsdienst",
+    "Functioneel",
+    "Parket,",
+    "onderdeel",
+    "van",
+    "het",
+    "OM",
+    "Government",
+    "Anti-Money",
+    "Laundering.",
+    "ICT",
+    "applicatie",
+    "gebouwd",
+    "door",
+    "UNODC",
+    "Infobox",
+    "Crimineel",
+    "en",
+    "Onverklaarbaar",
+    "Vermogen",
+    "Inspectie",
+    "Leefomgeving",
+    "en",
+    "Transport",
+    "/",
+    "Inlichtingen-",
+    "en",
+    "Opsporingsdienst",
+    "Andrea",
+    "Andrea",
+    "andrea",
+    "andrea"
+  ];
+
   for (var i = 0; i < count; i++){
     type = faker.random.arrayElement(['txt', 'txt', 'pdf']);
 
-    name = faker.system.commonFileName(type);
+    name = faker.random.arrayElement(words) + "_" + faker.random.arrayElement(words) + "." + type;
     name = name.replace(/\//, '');
 
     path = JSON.parse(JSON.stringify(src));
@@ -25,43 +214,11 @@ function createDirectoryChildren(src){
       type: type
     }
     
-    // create file (side-effect)
-    createFile(file);
-
     // create meta-data
     directory.push(file);
   }
 
   return directory;
-}
-
-function createFile(file){
-  // routing on filetype
-  var types = {
-    txt: createText,
-    pdf: createPDF,
-    // 'img': createImage,
-    // 'code': createCode,
-    // 'video': createVideo,
-    // 'audio': createAudio,
-    // 'executable': createExe
-  }
-  // types[file.type](file);
-}
-
-function createText(file){
-  var content = faker.lorem.paragraphs(30);
-  fs.writeFileSync('./build/filesystem/'.concat((file.path.join('/'))), content);
-  return content;
-}
-
-function createPDF(file){
-  var genHTML = '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Document</title></head><body style="padding: 3rem;"><h1>' + file.path[file.path.length-1] + '</h1><p>' + faker.lorem.paragraphs(5) + ' </p><p>' + faker.lorem.paragraphs(5) + ' </p><p>' + faker.lorem.paragraphs(5) + ' </p><p>' + faker.lorem.paragraphs(5) + ' </p><p>' + faker.lorem.paragraphs(5) + ' </p><p>' + faker.lorem.paragraphs(5) + ' </p><p>' + faker.lorem.paragraphs(5) + ' </p><p>' + faker.lorem.paragraphs(5) + ' </p><p>' + faker.lorem.paragraphs(5) + ' </p><p>' + faker.lorem.paragraphs(5) + ' </p><p>' + faker.lorem.paragraphs(5) + ' </p><p>' + faker.lorem.paragraphs(5) + ' </p><p>' + faker.lorem.paragraphs(5) + ' </p></body></html>';
-  var options = { format: 'Letter', "timeout": 6000000 };
-  pdf.create(genHTML, options).toFile('./build/filesystem/'.concat((file.path.join('/'))), function(err, res) {
-    if (err) return console.log(err);
-    // console.log(res); // { filename: '/app/businesscard.pdf' }
-  });
 }
 
 module.exports = createDirectoryChildren;
