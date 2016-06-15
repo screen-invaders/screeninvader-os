@@ -23,13 +23,6 @@ var config = {
     ]
   },
   plugins: [
-    // new webpack.optimize.UglifyJsPlugin({ 
-    //   minimize: false, 
-    //   sourceMap: true, 
-    //   compress: {
-    //       warnings: false
-    //   }
-    // })
   ],
   postcss: function () {
     return {
