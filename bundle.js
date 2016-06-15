@@ -22113,81 +22113,79 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 	exports.default = browser;
-
-	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
 	function browser(state, action) {
 	  var newState = void 0;
 	  switch (action.type) {
-	    case "browser__changeUrl":
-	      newState = [].concat(_toConsumableArray(state.windows));
-	      newState = newState.map(function (windowItem, key) {
-	        if (action.window.id == windowItem.id) {
-	          return _extends({}, windowItem, {
-	            data: _extends({}, windowItem.data, {
-	              url: action.url
-	            })
-	          });
-	        }
-	        return windowItem;
-	      });
-	      return newState;
+	    //   case "browser__changeUrl":
+	    //     newState = [...state.windows];
+	    //     newState = newState.map((windowItem, key)=>{
+	    //       if (action.window.id == windowItem.id){
+	    //         return { ...windowItem, ...{
+	    //           data: {
+	    //             ...windowItem.data,
+	    //             url: action.url
+	    //           }
+	    //         }};
+	    //       }
+	    //       return windowItem;
+	    //     });
+	    //     return newState
 
-	    case "browser__submitUrl":
-	      newState = [].concat(_toConsumableArray(state.windows));
-	      newState = newState.map(function (windowItem, key) {
-	        if (action.window.id == windowItem.id) {
-	          var newHistory = [].concat(_toConsumableArray(windowItem.data.history)).slice(windowItem.data.historyCursor, history.length);
-	          newHistory.unshift(action.url);
-	          return _extends({}, windowItem, {
-	            data: _extends({}, windowItem.data, {
-	              history: newHistory,
-	              historyCursor: 0
-	            }) });
-	        }
-	        return windowItem;
-	      });
-	      return newState;
+	    //   case "browser__submitUrl":
+	    //     newState = [...state.windows];
+	    //     newState = newState.map((windowItem, key)=>{
+	    //       if (action.window.id == windowItem.id){
+	    //         let newHistory = [...windowItem.data.history].slice(windowItem.data.historyCursor, history.length);
+	    //         newHistory.unshift(action.url);
+	    //         return { ...windowItem, ...{
+	    //           data: {
+	    //             ...windowItem.data,
+	    //             history: newHistory,
+	    //             historyCursor: 0
+	    //         }}};
+	    //       }
+	    //       return windowItem;
+	    //     });
+	    //     return newState
 
-	    case "browser__back":
-	      newState = [].concat(_toConsumableArray(state.windows));
-	      newState = newState.map(function (windowItem, key) {
-	        if (action.window.id == windowItem.id) {
-	          var newCursor = windowItem.data.historyCursor;
-	          if (windowItem.data.historyCursor < windowItem.data.history.length - 1) {
-	            newCursor = windowItem.data.historyCursor + 1;
-	          }
-	          return _extends({}, windowItem, {
-	            data: _extends({}, windowItem.data, {
-	              url: windowItem.data.history[newCursor],
-	              historyCursor: newCursor
-	            }) });
-	        }
-	        return windowItem;
-	      });
-	      return newState;
+	    //   case "browser__back":
+	    //     newState = [...state.windows];
+	    //     newState = newState.map((windowItem, key)=>{
+	    //       if (action.window.id == windowItem.id){
+	    //         let newCursor = windowItem.data.historyCursor;
+	    //         if (windowItem.data.historyCursor < windowItem.data.history.length - 1){
+	    //           newCursor = windowItem.data.historyCursor + 1;
+	    //         }
+	    //         return { ...windowItem, ...{
+	    //           data: {
+	    //             ...windowItem.data,
+	    //             url: windowItem.data.history[newCursor],
+	    //             historyCursor: newCursor
+	    //           }}};
+	    //       }
+	    //       return windowItem;
+	    //     });
+	    //     return newState
 
-	    case "browser__forward":
-	      newState = [].concat(_toConsumableArray(state.windows));
-	      newState = newState.map(function (windowItem, key) {
-	        if (action.window.id == windowItem.id) {
-	          var newCursor = windowItem.data.historyCursor;
-	          if (windowItem.data.historyCursor > 0) {
-	            newCursor = windowItem.data.historyCursor - 1;
-	          }
-	          return _extends({}, windowItem, {
-	            data: _extends({}, windowItem.data, {
-	              url: windowItem.data.history[newCursor],
-	              historyCursor: newCursor
-	            }) });
-	        }
-	        return windowItem;
-	      });
-	      return newState;
+	    //   case "browser__forward":
+	    //     newState = [...state.windows];
+	    //     newState = newState.map((windowItem, key)=>{
+	    //       if (action.window.id == windowItem.id){
+	    //         let newCursor = windowItem.data.historyCursor;
+	    //         if (windowItem.data.historyCursor > 0){
+	    //           newCursor = windowItem.data.historyCursor - 1;
+	    //         }
+	    //         return { ...windowItem, ...{
+	    //           data: {
+	    //             ...windowItem.data,
+	    //             url: windowItem.data.history[newCursor],
+	    //             historyCursor: newCursor
+	    //           }}};
+	    //       }
+	    //       return windowItem;
+	    //     });
+	    //     return newState
 
 	    default:
 	      return 0;
@@ -22253,7 +22251,7 @@
 		],
 		"name": "filesystem",
 		"type": "dir",
-		"locked": true,
+		"dirType": "locked",
 		"children": {
 			"AFM": {
 				"path": [
@@ -22261,1448 +22259,1237 @@
 				],
 				"name": "AFM",
 				"type": "dir",
-				"locked": false,
+				"dirType": "locked",
 				"children": {
-					"1996-2296422772976": {
+					"1962-152701442726247": {
 						"path": [
 							"AFM",
-							"1996-2296422772976"
+							"1962-152701442726247"
 						],
-						"name": "1996-2296422772976",
+						"name": "1962-152701442726247",
 						"type": "dir",
-						"locked": true,
+						"dirType": "normal",
 						"children": {
-							"DOSSIER-121871779932078": {
+							"DOSSIER-14769117929448": {
 								"path": [
 									"AFM",
-									"1996-2296422772976",
-									"DOSSIER-121871779932078"
+									"1962-152701442726247",
+									"DOSSIER-14769117929448"
 								],
-								"name": "DOSSIER-121871779932078",
+								"name": "DOSSIER-14769117929448",
 								"type": "dir",
-								"locked": false,
+								"dirType": "normal",
 								"children": {
-									"backing_up_deliverables_gorgeous_steel_keyboard.txt": {
-										"name": "backing_up_deliverables_gorgeous_steel_keyboard.txt",
+									"Andrea_Landelijke.pdf": {
+										"name": "Andrea_Landelijke.pdf",
 										"path": [
 											"AFM",
-											"1996-2296422772976",
-											"DOSSIER-121871779932078",
-											"backing_up_deliverables_gorgeous_steel_keyboard.txt"
-										],
-										"type": "txt"
-									},
-									"chips.pdf": {
-										"name": "chips.pdf",
-										"path": [
-											"AFM",
-											"1996-2296422772976",
-											"DOSSIER-121871779932078",
-											"chips.pdf"
+											"1962-152701442726247",
+											"DOSSIER-14769117929448",
+											"Andrea_Landelijke.pdf"
 										],
 										"type": "pdf"
 									},
-									"chair_small.pdf": {
-										"name": "chair_small.pdf",
+									"controle_Laundering.pdf": {
+										"name": "controle_Laundering.pdf",
 										"path": [
 											"AFM",
-											"1996-2296422772976",
-											"DOSSIER-121871779932078",
-											"chair_small.pdf"
+											"1962-152701442726247",
+											"DOSSIER-14769117929448",
+											"controle_Laundering.pdf"
 										],
 										"type": "pdf"
 									},
-									"auto_loan_account.pdf": {
-										"name": "auto_loan_account.pdf",
+									"Basisvoorziening_Caribisch.pdf": {
+										"name": "Basisvoorziening_Caribisch.pdf",
 										"path": [
 											"AFM",
-											"1996-2296422772976",
-											"DOSSIER-121871779932078",
-											"auto_loan_account.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-197561935218556": {
-								"path": [
-									"AFM",
-									"1996-2296422772976",
-									"DOSSIER-197561935218556"
-								],
-								"name": "DOSSIER-197561935218556",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"table.txt": {
-										"name": "table.txt",
-										"path": [
-											"AFM",
-											"1996-2296422772976",
-											"DOSSIER-197561935218556",
-											"table.txt"
-										],
-										"type": "txt"
-									},
-									"multi_tiered_digital_productize.txt": {
-										"name": "multi_tiered_digital_productize.txt",
-										"path": [
-											"AFM",
-											"1996-2296422772976",
-											"DOSSIER-197561935218556",
-											"multi_tiered_digital_productize.txt"
-										],
-										"type": "txt"
-									},
-									"function_based.txt": {
-										"name": "function_based.txt",
-										"path": [
-											"AFM",
-											"1996-2296422772976",
-											"DOSSIER-197561935218556",
-											"function_based.txt"
-										],
-										"type": "txt"
-									},
-									"mission_program_borders.pdf": {
-										"name": "mission_program_borders.pdf",
-										"path": [
-											"AFM",
-											"1996-2296422772976",
-											"DOSSIER-197561935218556",
-											"mission_program_borders.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-236971099624881": {
-								"path": [
-									"AFM",
-									"1996-2296422772976",
-									"DOSSIER-236971099624881"
-								],
-								"name": "DOSSIER-236971099624881",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"capacitor.pdf": {
-										"name": "capacitor.pdf",
-										"path": [
-											"AFM",
-											"1996-2296422772976",
-											"DOSSIER-236971099624881",
-											"capacitor.pdf"
+											"1962-152701442726247",
+											"DOSSIER-14769117929448",
+											"Basisvoorziening_Caribisch.pdf"
 										],
 										"type": "pdf"
 									},
-									"backing_up_group_capacitor.pdf": {
-										"name": "backing_up_group_capacitor.pdf",
+									"Unie_Toezicht.txt": {
+										"name": "Unie_Toezicht.txt",
 										"path": [
 											"AFM",
-											"1996-2296422772976",
-											"DOSSIER-236971099624881",
-											"backing_up_group_capacitor.pdf"
-										],
-										"type": "pdf"
-									},
-									"personal_loan_account_salad.txt": {
-										"name": "personal_loan_account_salad.txt",
-										"path": [
-											"AFM",
-											"1996-2296422772976",
-											"DOSSIER-236971099624881",
-											"personal_loan_account_salad.txt"
-										],
-										"type": "txt"
-									},
-									"ability.txt": {
-										"name": "ability.txt",
-										"path": [
-											"AFM",
-											"1996-2296422772976",
-											"DOSSIER-236971099624881",
-											"ability.txt"
+											"1962-152701442726247",
+											"DOSSIER-14769117929448",
+											"Unie_Toezicht.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-3106722917833": {
+							"DOSSIER-158981070124991": {
 								"path": [
 									"AFM",
-									"1996-2296422772976",
-									"DOSSIER-3106722917833"
+									"1962-152701442726247",
+									"DOSSIER-158981070124991"
 								],
-								"name": "DOSSIER-3106722917833",
+								"name": "DOSSIER-158981070124991",
 								"type": "dir",
-								"locked": false,
+								"dirType": "normal",
 								"children": {
-									"cross_group_maximized_baby.pdf": {
-										"name": "cross_group_maximized_baby.pdf",
+									"Multidisciplinary_Crimineel.pdf": {
+										"name": "Multidisciplinary_Crimineel.pdf",
 										"path": [
 											"AFM",
-											"1996-2296422772976",
-											"DOSSIER-3106722917833",
-											"cross_group_maximized_baby.pdf"
+											"1962-152701442726247",
+											"DOSSIER-158981070124991",
+											"Multidisciplinary_Crimineel.pdf"
 										],
 										"type": "pdf"
 									},
-									"proactive_planner_aggregate.txt": {
-										"name": "proactive_planner_aggregate.txt",
+									"de_.txt": {
+										"name": "de_.txt",
 										"path": [
 											"AFM",
-											"1996-2296422772976",
-											"DOSSIER-3106722917833",
-											"proactive_planner_aggregate.txt"
+											"1962-152701442726247",
+											"DOSSIER-158981070124991",
+											"de_.txt"
 										],
 										"type": "txt"
 									},
-									"incredible_fresh_bacon.txt": {
-										"name": "incredible_fresh_bacon.txt",
+									"een_Anti-Money.pdf": {
+										"name": "een_Anti-Money.pdf",
 										"path": [
 											"AFM",
-											"1996-2296422772976",
-											"DOSSIER-3106722917833",
-											"incredible_fresh_bacon.txt"
+											"1962-152701442726247",
+											"DOSSIER-158981070124991",
+											"een_Anti-Money.pdf"
 										],
-										"type": "txt"
+										"type": "pdf"
 									},
-									"corporate_industrial_small_frozen_salad.txt": {
-										"name": "corporate_industrial_small_frozen_salad.txt",
+									"Bank_CTEPF.txt": {
+										"name": "Bank_CTEPF.txt",
 										"path": [
 											"AFM",
-											"1996-2296422772976",
-											"DOSSIER-3106722917833",
-											"corporate_industrial_small_frozen_salad.txt"
-										],
-										"type": "txt"
-									},
-									"encompassing.txt": {
-										"name": "encompassing.txt",
-										"path": [
-											"AFM",
-											"1996-2296422772976",
-											"DOSSIER-3106722917833",
-											"encompassing.txt"
+											"1962-152701442726247",
+											"DOSSIER-158981070124991",
+											"Bank_CTEPF.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-315222105319710": {
+							"DOSSIER-23472856211461": {
 								"path": [
 									"AFM",
-									"1996-2296422772976",
-									"DOSSIER-315222105319710"
+									"1962-152701442726247",
+									"DOSSIER-23472856211461"
 								],
-								"name": "DOSSIER-315222105319710",
+								"name": "DOSSIER-23472856211461",
 								"type": "dir",
-								"locked": false,
+								"dirType": "archive",
 								"children": {
-									"chair_calculating_repurpose.txt": {
-										"name": "chair_calculating_repurpose.txt",
+									"Recherche,_UNODC.txt": {
+										"name": "Recherche,_UNODC.txt",
 										"path": [
 											"AFM",
-											"1996-2296422772976",
-											"DOSSIER-315222105319710",
-											"chair_calculating_repurpose.txt"
+											"1962-152701442726247",
+											"DOSSIER-23472856211461",
+											"Recherche,_UNODC.txt"
 										],
 										"type": "txt"
-									},
-									"avon.pdf": {
-										"name": "avon.pdf",
+									}
+								}
+							},
+							"DOSSIER-28846435131968": {
+								"path": [
+									"AFM",
+									"1962-152701442726247",
+									"DOSSIER-28846435131968"
+								],
+								"name": "DOSSIER-28846435131968",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Administratieve_gebouwd.pdf": {
+										"name": "Administratieve_gebouwd.pdf",
 										"path": [
 											"AFM",
-											"1996-2296422772976",
-											"DOSSIER-315222105319710",
-											"avon.pdf"
+											"1962-152701442726247",
+											"DOSSIER-28846435131968",
+											"Administratieve_gebouwd.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"models_salad.txt": {
-								"name": "models_salad.txt",
+							"DOSSIER-4436312131562": {
 								"path": [
 									"AFM",
-									"1996-2296422772976",
-									"models_salad.txt"
+									"1962-152701442726247",
+									"DOSSIER-4436312131562"
+								],
+								"name": "DOSSIER-4436312131562",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"EMM_Eustatiusen.txt": {
+										"name": "EMM_Eustatiusen.txt",
+										"path": [
+											"AFM",
+											"1962-152701442726247",
+											"DOSSIER-4436312131562",
+											"EMM_Eustatiusen.txt"
+										],
+										"type": "txt"
+									},
+									"Bureau_Administratieve.txt": {
+										"name": "Bureau_Administratieve.txt",
+										"path": [
+											"AFM",
+											"1962-152701442726247",
+											"DOSSIER-4436312131562",
+											"Bureau_Administratieve.txt"
+										],
+										"type": "txt"
+									},
+									"Sint_gemeente.pdf": {
+										"name": "Sint_gemeente.pdf",
+										"path": [
+											"AFM",
+											"1962-152701442726247",
+											"DOSSIER-4436312131562",
+											"Sint_gemeente.pdf"
+										],
+										"type": "pdf"
+									},
+									"Ontnemingswetgeving_CTEPF.txt": {
+										"name": "Ontnemingswetgeving_CTEPF.txt",
+										"path": [
+											"AFM",
+											"1962-152701442726247",
+											"DOSSIER-4436312131562",
+											"Ontnemingswetgeving_CTEPF.txt"
+										],
+										"type": "txt"
+									},
+									"Saba_Dienst.txt": {
+										"name": "Saba_Dienst.txt",
+										"path": [
+											"AFM",
+											"1962-152701442726247",
+											"DOSSIER-4436312131562",
+											"Saba_Dienst.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"en_Unit.txt": {
+								"name": "en_Unit.txt",
+								"path": [
+									"AFM",
+									"1962-152701442726247",
+									"en_Unit.txt"
+								],
+								"type": "txt"
+							}
+						}
+					},
+					"1980-232561519329241": {
+						"path": [
+							"AFM",
+							"1980-232561519329241"
+						],
+						"name": "1980-232561519329241",
+						"type": "dir",
+						"dirType": "archive",
+						"children": {
+							"DOSSIER-1171582226588": {
+								"path": [
+									"AFM",
+									"1980-232561519329241",
+									"DOSSIER-1171582226588"
+								],
+								"name": "DOSSIER-1171582226588",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Caribisch_Sint.txt": {
+										"name": "Caribisch_Sint.txt",
+										"path": [
+											"AFM",
+											"1980-232561519329241",
+											"DOSSIER-1171582226588",
+											"Caribisch_Sint.txt"
+										],
+										"type": "txt"
+									},
+									"Financieel_de.pdf": {
+										"name": "Financieel_de.pdf",
+										"path": [
+											"AFM",
+											"1980-232561519329241",
+											"DOSSIER-1171582226588",
+											"Financieel_de.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-22151672120285": {
+								"path": [
+									"AFM",
+									"1980-232561519329241",
+									"DOSSIER-22151672120285"
+								],
+								"name": "DOSSIER-22151672120285",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Leefomgeving_ILTIOD.txt": {
+										"name": "Leefomgeving_ILTIOD.txt",
+										"path": [
+											"AFM",
+											"1980-232561519329241",
+											"DOSSIER-22151672120285",
+											"Leefomgeving_ILTIOD.txt"
+										],
+										"type": "txt"
+									},
+									"en_Informatie,.txt": {
+										"name": "en_Informatie,.txt",
+										"path": [
+											"AFM",
+											"1980-232561519329241",
+											"DOSSIER-22151672120285",
+											"en_Informatie,.txt"
+										],
+										"type": "txt"
+									},
+									"Nederlandsche_van.txt": {
+										"name": "Nederlandsche_van.txt",
+										"path": [
+											"AFM",
+											"1980-232561519329241",
+											"DOSSIER-22151672120285",
+											"Nederlandsche_van.txt"
+										],
+										"type": "txt"
+									},
+									"en_Anti-Money.pdf": {
+										"name": "en_Anti-Money.pdf",
+										"path": [
+											"AFM",
+											"1980-232561519329241",
+											"DOSSIER-22151672120285",
+											"en_Anti-Money.pdf"
+										],
+										"type": "pdf"
+									},
+									"van_en.txt": {
+										"name": "van_en.txt",
+										"path": [
+											"AFM",
+											"1980-232561519329241",
+											"DOSSIER-22151672120285",
+											"van_en.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-235652292810021": {
+								"path": [
+									"AFM",
+									"1980-232561519329241",
+									"DOSSIER-235652292810021"
+								],
+								"name": "DOSSIER-235652292810021",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"CWI_van.pdf": {
+										"name": "CWI_van.pdf",
+										"path": [
+											"AFM",
+											"1980-232561519329241",
+											"DOSSIER-235652292810021",
+											"CWI_van.pdf"
+										],
+										"type": "pdf"
+									},
+									"DLR_ICT.txt": {
+										"name": "DLR_ICT.txt",
+										"path": [
+											"AFM",
+											"1980-232561519329241",
+											"DOSSIER-235652292810021",
+											"DLR_ICT.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-276383249317396": {
+								"path": [
+									"AFM",
+									"1980-232561519329241",
+									"DOSSIER-276383249317396"
+								],
+								"name": "DOSSIER-276383249317396",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Crimineel_en.txt": {
+										"name": "Crimineel_en.txt",
+										"path": [
+											"AFM",
+											"1980-232561519329241",
+											"DOSSIER-276383249317396",
+											"Crimineel_en.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-30140327014258": {
+								"path": [
+									"AFM",
+									"1980-232561519329241",
+									"DOSSIER-30140327014258"
+								],
+								"name": "DOSSIER-30140327014258",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"onderdeel_de.pdf": {
+										"name": "onderdeel_de.pdf",
+										"path": [
+											"AFM",
+											"1980-232561519329241",
+											"DOSSIER-30140327014258",
+											"onderdeel_de.pdf"
+										],
+										"type": "pdf"
+									},
+									"Caribisch_Infobox.txt": {
+										"name": "Caribisch_Infobox.txt",
+										"path": [
+											"AFM",
+											"1980-232561519329241",
+											"DOSSIER-30140327014258",
+											"Caribisch_Infobox.txt"
+										],
+										"type": "txt"
+									},
+									"politie_Saba.txt": {
+										"name": "politie_Saba.txt",
+										"path": [
+											"AFM",
+											"1980-232561519329241",
+											"DOSSIER-30140327014258",
+											"politie_Saba.txt"
+										],
+										"type": "txt"
+									},
+									"Bank_Inlichtingen-.txt": {
+										"name": "Bank_Inlichtingen-.txt",
+										"path": [
+											"AFM",
+											"1980-232561519329241",
+											"DOSSIER-30140327014258",
+											"Bank_Inlichtingen-.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"Unit_en.txt": {
+								"name": "Unit_en.txt",
+								"path": [
+									"AFM",
+									"1980-232561519329241",
+									"Unit_en.txt"
 								],
 								"type": "txt"
 							},
-							"netherlands_berkshire_metrics.txt": {
-								"name": "netherlands_berkshire_metrics.txt",
+							"CN_AFM.txt": {
+								"name": "CN_AFM.txt",
 								"path": [
 									"AFM",
-									"1996-2296422772976",
-									"netherlands_berkshire_metrics.txt"
+									"1980-232561519329241",
+									"CN_AFM.txt"
 								],
 								"type": "txt"
 							},
-							"vertical_maryland_front_end.txt": {
-								"name": "vertical_maryland_front_end.txt",
+							"Ministerie,_applicatie.txt": {
+								"name": "Ministerie,_applicatie.txt",
 								"path": [
 									"AFM",
-									"1996-2296422772976",
-									"vertical_maryland_front_end.txt"
+									"1980-232561519329241",
+									"Ministerie,_applicatie.txt"
+								],
+								"type": "txt"
+							}
+						}
+					},
+					"1989-11495168426045": {
+						"path": [
+							"AFM",
+							"1989-11495168426045"
+						],
+						"name": "1989-11495168426045",
+						"type": "dir",
+						"dirType": "normal",
+						"children": {
+							"DOSSIER-156572797617368": {
+								"path": [
+									"AFM",
+									"1989-11495168426045",
+									"DOSSIER-156572797617368"
+								],
+								"name": "DOSSIER-156572797617368",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"van_Infobox.pdf": {
+										"name": "van_Infobox.pdf",
+										"path": [
+											"AFM",
+											"1989-11495168426045",
+											"DOSSIER-156572797617368",
+											"van_Infobox.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-2032152499281": {
+								"path": [
+									"AFM",
+									"1989-11495168426045",
+									"DOSSIER-2032152499281"
+								],
+								"name": "DOSSIER-2032152499281",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"CN_BVI.pdf": {
+										"name": "CN_BVI.pdf",
+										"path": [
+											"AFM",
+											"1989-11495168426045",
+											"DOSSIER-2032152499281",
+											"CN_BVI.pdf"
+										],
+										"type": "pdf"
+									},
+									"de_Infobox.txt": {
+										"name": "de_Infobox.txt",
+										"path": [
+											"AFM",
+											"1989-11495168426045",
+											"DOSSIER-2032152499281",
+											"de_Infobox.txt"
+										],
+										"type": "txt"
+									},
+									"A01C_en.txt": {
+										"name": "A01C_en.txt",
+										"path": [
+											"AFM",
+											"1989-11495168426045",
+											"DOSSIER-2032152499281",
+											"A01C_en.txt"
+										],
+										"type": "txt"
+									},
+									"Ontnemingswetgeving_ICT.txt": {
+										"name": "Ontnemingswetgeving_ICT.txt",
+										"path": [
+											"AFM",
+											"1989-11495168426045",
+											"DOSSIER-2032152499281",
+											"Ontnemingswetgeving_ICT.txt"
+										],
+										"type": "txt"
+									},
+									"Leefomgeving_Economische.txt": {
+										"name": "Leefomgeving_Economische.txt",
+										"path": [
+											"AFM",
+											"1989-11495168426045",
+											"DOSSIER-2032152499281",
+											"Leefomgeving_Economische.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-22584168595793": {
+								"path": [
+									"AFM",
+									"1989-11495168426045",
+									"DOSSIER-22584168595793"
+								],
+								"name": "DOSSIER-22584168595793",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"AFM_en.pdf": {
+										"name": "AFM_en.pdf",
+										"path": [
+											"AFM",
+											"1989-11495168426045",
+											"DOSSIER-22584168595793",
+											"AFM_en.pdf"
+										],
+										"type": "pdf"
+									},
+									"organisatie_Landelijke.txt": {
+										"name": "organisatie_Landelijke.txt",
+										"path": [
+											"AFM",
+											"1989-11495168426045",
+											"DOSSIER-22584168595793",
+											"organisatie_Landelijke.txt"
+										],
+										"type": "txt"
+									},
+									"en_het.txt": {
+										"name": "en_het.txt",
+										"path": [
+											"AFM",
+											"1989-11495168426045",
+											"DOSSIER-22584168595793",
+											"en_het.txt"
+										],
+										"type": "txt"
+									},
+									"DLR_Andrea.txt": {
+										"name": "DLR_Andrea.txt",
+										"path": [
+											"AFM",
+											"1989-11495168426045",
+											"DOSSIER-22584168595793",
+											"DLR_Andrea.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-2811125372219": {
+								"path": [
+									"AFM",
+									"1989-11495168426045",
+									"DOSSIER-2811125372219"
+								],
+								"name": "DOSSIER-2811125372219",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Eustatiusen_Infobox.txt": {
+										"name": "Eustatiusen_Infobox.txt",
+										"path": [
+											"AFM",
+											"1989-11495168426045",
+											"DOSSIER-2811125372219",
+											"Eustatiusen_Infobox.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-54052203924363": {
+								"path": [
+									"AFM",
+									"1989-11495168426045",
+									"DOSSIER-54052203924363"
+								],
+								"name": "DOSSIER-54052203924363",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"en_Contraterrorisme.txt": {
+										"name": "en_Contraterrorisme.txt",
+										"path": [
+											"AFM",
+											"1989-11495168426045",
+											"DOSSIER-54052203924363",
+											"en_Contraterrorisme.txt"
+										],
+										"type": "txt"
+									},
+									"Infobox_Financieel.pdf": {
+										"name": "Infobox_Financieel.pdf",
+										"path": [
+											"AFM",
+											"1989-11495168426045",
+											"DOSSIER-54052203924363",
+											"Infobox_Financieel.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"BES_de.txt": {
+								"name": "BES_de.txt",
+								"path": [
+									"AFM",
+									"1989-11495168426045",
+									"BES_de.txt"
 								],
 								"type": "txt"
 							},
-							"knolls_functionalities.txt": {
-								"name": "knolls_functionalities.txt",
+							"FAT_Multidisciplinary.pdf": {
+								"name": "FAT_Multidisciplinary.pdf",
 								"path": [
 									"AFM",
-									"1996-2296422772976",
-									"knolls_functionalities.txt"
+									"1989-11495168426045",
+									"FAT_Multidisciplinary.pdf"
+								],
+								"type": "pdf"
+							},
+							"van_controle.txt": {
+								"name": "van_controle.txt",
+								"path": [
+									"AFM",
+									"1989-11495168426045",
+									"van_controle.txt"
 								],
 								"type": "txt"
 							},
-							"technologies.pdf": {
-								"name": "technologies.pdf",
+							"Inspectie_Criminaliteit.txt": {
+								"name": "Inspectie_Criminaliteit.txt",
 								"path": [
 									"AFM",
-									"1996-2296422772976",
-									"technologies.pdf"
+									"1989-11495168426045",
+									"Inspectie_Criminaliteit.txt"
+								],
+								"type": "txt"
+							},
+							"F_EU.pdf": {
+								"name": "F_EU.pdf",
+								"path": [
+									"AFM",
+									"1989-11495168426045",
+									"F_EU.pdf"
 								],
 								"type": "pdf"
 							}
 						}
 					},
-					"2006-116931748119458": {
+					"1995-28670191353718": {
 						"path": [
 							"AFM",
-							"2006-116931748119458"
+							"1995-28670191353718"
 						],
-						"name": "2006-116931748119458",
+						"name": "1995-28670191353718",
 						"type": "dir",
-						"locked": false,
+						"dirType": "locked",
 						"children": {
-							"DOSSIER-117741600029258": {
+							"DOSSIER-107222877410502": {
 								"path": [
 									"AFM",
-									"2006-116931748119458",
-									"DOSSIER-117741600029258"
+									"1995-28670191353718",
+									"DOSSIER-107222877410502"
 								],
-								"name": "DOSSIER-117741600029258",
+								"name": "DOSSIER-107222877410502",
 								"type": "dir",
-								"locked": false,
+								"dirType": "normal",
 								"children": {
-									"system.txt": {
-										"name": "system.txt",
+									"Nederland_Infobox.txt": {
+										"name": "Nederland_Infobox.txt",
 										"path": [
 											"AFM",
-											"2006-116931748119458",
-											"DOSSIER-117741600029258",
-											"system.txt"
-										],
-										"type": "txt"
-									},
-									"ohio.txt": {
-										"name": "ohio.txt",
-										"path": [
-											"AFM",
-											"2006-116931748119458",
-											"DOSSIER-117741600029258",
-											"ohio.txt"
-										],
-										"type": "txt"
-									},
-									"optical.txt": {
-										"name": "optical.txt",
-										"path": [
-											"AFM",
-											"2006-116931748119458",
-											"DOSSIER-117741600029258",
-											"optical.txt"
-										],
-										"type": "txt"
-									},
-									"berkshire_generate_health.txt": {
-										"name": "berkshire_generate_health.txt",
-										"path": [
-											"AFM",
-											"2006-116931748119458",
-											"DOSSIER-117741600029258",
-											"berkshire_generate_health.txt"
+											"1995-28670191353718",
+											"DOSSIER-107222877410502",
+											"Nederland_Infobox.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-1494036855977": {
+							"DOSSIER-187963006726908": {
 								"path": [
 									"AFM",
-									"2006-116931748119458",
-									"DOSSIER-1494036855977"
+									"1995-28670191353718",
+									"DOSSIER-187963006726908"
 								],
-								"name": "DOSSIER-1494036855977",
+								"name": "DOSSIER-187963006726908",
 								"type": "dir",
-								"locked": false,
+								"dirType": "locked",
 								"children": {
-									"baby_pixel.txt": {
-										"name": "baby_pixel.txt",
+									"Sint_Dienst.txt": {
+										"name": "Sint_Dienst.txt",
 										"path": [
 											"AFM",
-											"2006-116931748119458",
-											"DOSSIER-1494036855977",
-											"baby_pixel.txt"
+											"1995-28670191353718",
+											"DOSSIER-187963006726908",
+											"Sint_Dienst.txt"
 										],
 										"type": "txt"
 									},
-									"exploit_personal_loan_account.txt": {
-										"name": "exploit_personal_loan_account.txt",
+									"uitvoerend_Platform.txt": {
+										"name": "uitvoerend_Platform.txt",
 										"path": [
 											"AFM",
-											"2006-116931748119458",
-											"DOSSIER-1494036855977",
-											"exploit_personal_loan_account.txt"
-										],
-										"type": "txt"
-									},
-									"usb_handcrafted_cotton_chair_backing_up.txt": {
-										"name": "usb_handcrafted_cotton_chair_backing_up.txt",
-										"path": [
-											"AFM",
-											"2006-116931748119458",
-											"DOSSIER-1494036855977",
-											"usb_handcrafted_cotton_chair_backing_up.txt"
+											"1995-28670191353718",
+											"DOSSIER-187963006726908",
+											"uitvoerend_Platform.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-1525326693505": {
+							"DOSSIER-20090791132432": {
 								"path": [
 									"AFM",
-									"2006-116931748119458",
-									"DOSSIER-1525326693505"
+									"1995-28670191353718",
+									"DOSSIER-20090791132432"
 								],
-								"name": "DOSSIER-1525326693505",
+								"name": "DOSSIER-20090791132432",
 								"type": "dir",
-								"locked": false,
+								"dirType": "locked",
 								"children": {
-									"withdrawal.txt": {
-										"name": "withdrawal.txt",
+									"Transport_Money.txt": {
+										"name": "Transport_Money.txt",
 										"path": [
 											"AFM",
-											"2006-116931748119458",
-											"DOSSIER-1525326693505",
-											"withdrawal.txt"
+											"1995-28670191353718",
+											"DOSSIER-20090791132432",
+											"Transport_Money.txt"
 										],
 										"type": "txt"
 									},
-									"money_market_account.txt": {
-										"name": "money_market_account.txt",
+									"uitvoerend_applicatie.txt": {
+										"name": "uitvoerend_applicatie.txt",
 										"path": [
 											"AFM",
-											"2006-116931748119458",
-											"DOSSIER-1525326693505",
-											"money_market_account.txt"
+											"1995-28670191353718",
+											"DOSSIER-20090791132432",
+											"uitvoerend_applicatie.txt"
 										],
 										"type": "txt"
 									},
-									"incubate_bleeding_edge.pdf": {
-										"name": "incubate_bleeding_edge.pdf",
+									"van_Financieel.pdf": {
+										"name": "van_Financieel.pdf",
 										"path": [
 											"AFM",
-											"2006-116931748119458",
-											"DOSSIER-1525326693505",
-											"incubate_bleeding_edge.pdf"
-										],
-										"type": "pdf"
-									},
-									"xml_indiana_input.txt": {
-										"name": "xml_indiana_input.txt",
-										"path": [
-											"AFM",
-											"2006-116931748119458",
-											"DOSSIER-1525326693505",
-											"xml_indiana_input.txt"
-										],
-										"type": "txt"
-									},
-									"ram_integrated_district.pdf": {
-										"name": "ram_integrated_district.pdf",
-										"path": [
-											"AFM",
-											"2006-116931748119458",
-											"DOSSIER-1525326693505",
-											"ram_integrated_district.pdf"
+											"1995-28670191353718",
+											"DOSSIER-20090791132432",
+											"van_Financieel.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"DOSSIER-16372397928189": {
+							"DOSSIER-271033017813721": {
 								"path": [
 									"AFM",
-									"2006-116931748119458",
-									"DOSSIER-16372397928189"
+									"1995-28670191353718",
+									"DOSSIER-271033017813721"
 								],
-								"name": "DOSSIER-16372397928189",
+								"name": "DOSSIER-271033017813721",
 								"type": "dir",
-								"locked": true,
+								"dirType": "locked",
 								"children": {
-									"global_benchmark.txt": {
-										"name": "global_benchmark.txt",
+									"de_Justitieel.pdf": {
+										"name": "de_Justitieel.pdf",
 										"path": [
 											"AFM",
-											"2006-116931748119458",
-											"DOSSIER-16372397928189",
-											"global_benchmark.txt"
-										],
-										"type": "txt"
-									},
-									"gorgeous_us_dollar_driver.txt": {
-										"name": "gorgeous_us_dollar_driver.txt",
-										"path": [
-											"AFM",
-											"2006-116931748119458",
-											"DOSSIER-16372397928189",
-											"gorgeous_us_dollar_driver.txt"
-										],
-										"type": "txt"
-									},
-									"coordinator_bandwidth.txt": {
-										"name": "coordinator_bandwidth.txt",
-										"path": [
-											"AFM",
-											"2006-116931748119458",
-											"DOSSIER-16372397928189",
-											"coordinator_bandwidth.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-17357400329061": {
-								"path": [
-									"AFM",
-									"2006-116931748119458",
-									"DOSSIER-17357400329061"
-								],
-								"name": "DOSSIER-17357400329061",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"ib_exclusive_rufiyaa.txt": {
-										"name": "ib_exclusive_rufiyaa.txt",
-										"path": [
-											"AFM",
-											"2006-116931748119458",
-											"DOSSIER-17357400329061",
-											"ib_exclusive_rufiyaa.txt"
-										],
-										"type": "txt"
-									},
-									"oklahoma.txt": {
-										"name": "oklahoma.txt",
-										"path": [
-											"AFM",
-											"2006-116931748119458",
-											"DOSSIER-17357400329061",
-											"oklahoma.txt"
-										],
-										"type": "txt"
-									},
-									"content_based_hdd_compress.pdf": {
-										"name": "content_based_hdd_compress.pdf",
-										"path": [
-											"AFM",
-											"2006-116931748119458",
-											"DOSSIER-17357400329061",
-											"content_based_hdd_compress.pdf"
-										],
-										"type": "pdf"
-									},
-									"colombia_invoice_ssl.pdf": {
-										"name": "colombia_invoice_ssl.pdf",
-										"path": [
-											"AFM",
-											"2006-116931748119458",
-											"DOSSIER-17357400329061",
-											"colombia_invoice_ssl.pdf"
-										],
-										"type": "pdf"
-									},
-									"synthesize_open_source.txt": {
-										"name": "synthesize_open_source.txt",
-										"path": [
-											"AFM",
-											"2006-116931748119458",
-											"DOSSIER-17357400329061",
-											"synthesize_open_source.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"upgradable.txt": {
-								"name": "upgradable.txt",
-								"path": [
-									"AFM",
-									"2006-116931748119458",
-									"upgradable.txt"
-								],
-								"type": "txt"
-							},
-							"distributed.txt": {
-								"name": "distributed.txt",
-								"path": [
-									"AFM",
-									"2006-116931748119458",
-									"distributed.txt"
-								],
-								"type": "txt"
-							},
-							"credit_card_account.txt": {
-								"name": "credit_card_account.txt",
-								"path": [
-									"AFM",
-									"2006-116931748119458",
-									"credit_card_account.txt"
-								],
-								"type": "txt"
-							},
-							"navigating_copying.txt": {
-								"name": "navigating_copying.txt",
-								"path": [
-									"AFM",
-									"2006-116931748119458",
-									"navigating_copying.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"2006-317831400824807": {
-						"path": [
-							"AFM",
-							"2006-317831400824807"
-						],
-						"name": "2006-317831400824807",
-						"type": "dir",
-						"locked": true,
-						"children": {
-							"DOSSIER-128162039023360": {
-								"path": [
-									"AFM",
-									"2006-317831400824807",
-									"DOSSIER-128162039023360"
-								],
-								"name": "DOSSIER-128162039023360",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"program_multi_tasking_personal_loan_account.txt": {
-										"name": "program_multi_tasking_personal_loan_account.txt",
-										"path": [
-											"AFM",
-											"2006-317831400824807",
-											"DOSSIER-128162039023360",
-											"program_multi_tasking_personal_loan_account.txt"
-										],
-										"type": "txt"
-									},
-									"specialist_malaysia_teal.txt": {
-										"name": "specialist_malaysia_teal.txt",
-										"path": [
-											"AFM",
-											"2006-317831400824807",
-											"DOSSIER-128162039023360",
-											"specialist_malaysia_teal.txt"
-										],
-										"type": "txt"
-									},
-									"michigan_bike.txt": {
-										"name": "michigan_bike.txt",
-										"path": [
-											"AFM",
-											"2006-317831400824807",
-											"DOSSIER-128162039023360",
-											"michigan_bike.txt"
-										],
-										"type": "txt"
-									},
-									"well_modulated_programming_compressing.txt": {
-										"name": "well_modulated_programming_compressing.txt",
-										"path": [
-											"AFM",
-											"2006-317831400824807",
-											"DOSSIER-128162039023360",
-											"well_modulated_programming_compressing.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-13696579219323": {
-								"path": [
-									"AFM",
-									"2006-317831400824807",
-									"DOSSIER-13696579219323"
-								],
-								"name": "DOSSIER-13696579219323",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"bypass.txt": {
-										"name": "bypass.txt",
-										"path": [
-											"AFM",
-											"2006-317831400824807",
-											"DOSSIER-13696579219323",
-											"bypass.txt"
-										],
-										"type": "txt"
-									},
-									"product_representative_partnerships.txt": {
-										"name": "product_representative_partnerships.txt",
-										"path": [
-											"AFM",
-											"2006-317831400824807",
-											"DOSSIER-13696579219323",
-											"product_representative_partnerships.txt"
-										],
-										"type": "txt"
-									},
-									"awesome_concrete_cheese.txt": {
-										"name": "awesome_concrete_cheese.txt",
-										"path": [
-											"AFM",
-											"2006-317831400824807",
-											"DOSSIER-13696579219323",
-											"awesome_concrete_cheese.txt"
-										],
-										"type": "txt"
-									},
-									"intelligent_steel_bike_australian_dollar.txt": {
-										"name": "intelligent_steel_bike_australian_dollar.txt",
-										"path": [
-											"AFM",
-											"2006-317831400824807",
-											"DOSSIER-13696579219323",
-											"intelligent_steel_bike_australian_dollar.txt"
-										],
-										"type": "txt"
-									},
-									"licensed_granite_table.txt": {
-										"name": "licensed_granite_table.txt",
-										"path": [
-											"AFM",
-											"2006-317831400824807",
-											"DOSSIER-13696579219323",
-											"licensed_granite_table.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-2101292762939": {
-								"path": [
-									"AFM",
-									"2006-317831400824807",
-									"DOSSIER-2101292762939"
-								],
-								"name": "DOSSIER-2101292762939",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"island_sql_principal.txt": {
-										"name": "island_sql_principal.txt",
-										"path": [
-											"AFM",
-											"2006-317831400824807",
-											"DOSSIER-2101292762939",
-											"island_sql_principal.txt"
-										],
-										"type": "txt"
-									},
-									"credit_card_account_new_jersey_afghani.pdf": {
-										"name": "credit_card_account_new_jersey_afghani.pdf",
-										"path": [
-											"AFM",
-											"2006-317831400824807",
-											"DOSSIER-2101292762939",
-											"credit_card_account_new_jersey_afghani.pdf"
-										],
-										"type": "pdf"
-									},
-									"extensible_auto_loan_account.txt": {
-										"name": "extensible_auto_loan_account.txt",
-										"path": [
-											"AFM",
-											"2006-317831400824807",
-											"DOSSIER-2101292762939",
-											"extensible_auto_loan_account.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-31531771418333": {
-								"path": [
-									"AFM",
-									"2006-317831400824807",
-									"DOSSIER-31531771418333"
-								],
-								"name": "DOSSIER-31531771418333",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"exploit_primary_parsing.txt": {
-										"name": "exploit_primary_parsing.txt",
-										"path": [
-											"AFM",
-											"2006-317831400824807",
-											"DOSSIER-31531771418333",
-											"exploit_primary_parsing.txt"
-										],
-										"type": "txt"
-									},
-									"multi_layered.txt": {
-										"name": "multi_layered.txt",
-										"path": [
-											"AFM",
-											"2006-317831400824807",
-											"DOSSIER-31531771418333",
-											"multi_layered.txt"
-										],
-										"type": "txt"
-									},
-									"program_ergonomic.txt": {
-										"name": "program_ergonomic.txt",
-										"path": [
-											"AFM",
-											"2006-317831400824807",
-											"DOSSIER-31531771418333",
-											"program_ergonomic.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-7183795417078": {
-								"path": [
-									"AFM",
-									"2006-317831400824807",
-									"DOSSIER-7183795417078"
-								],
-								"name": "DOSSIER-7183795417078",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"override_generic_sas.txt": {
-										"name": "override_generic_sas.txt",
-										"path": [
-											"AFM",
-											"2006-317831400824807",
-											"DOSSIER-7183795417078",
-											"override_generic_sas.txt"
-										],
-										"type": "txt"
-									},
-									"lead.txt": {
-										"name": "lead.txt",
-										"path": [
-											"AFM",
-											"2006-317831400824807",
-											"DOSSIER-7183795417078",
-											"lead.txt"
-										],
-										"type": "txt"
-									},
-									"transition_interface_awesome_concrete_fish.pdf": {
-										"name": "transition_interface_awesome_concrete_fish.pdf",
-										"path": [
-											"AFM",
-											"2006-317831400824807",
-											"DOSSIER-7183795417078",
-											"transition_interface_awesome_concrete_fish.pdf"
+											"1995-28670191353718",
+											"DOSSIER-271033017813721",
+											"de_Justitieel.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"automotive_software_strategist.txt": {
-								"name": "automotive_software_strategist.txt",
+							"DOSSIER-77082381211165": {
 								"path": [
 									"AFM",
-									"2006-317831400824807",
-									"automotive_software_strategist.txt"
+									"1995-28670191353718",
+									"DOSSIER-77082381211165"
 								],
-								"type": "txt"
-							},
-							"technician_synthesize.txt": {
-								"name": "technician_synthesize.txt",
-								"path": [
-									"AFM",
-									"2006-317831400824807",
-									"technician_synthesize.txt"
-								],
-								"type": "txt"
-							},
-							"creative.txt": {
-								"name": "creative.txt",
-								"path": [
-									"AFM",
-									"2006-317831400824807",
-									"creative.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"2009-184613080210383": {
-						"path": [
-							"AFM",
-							"2009-184613080210383"
-						],
-						"name": "2009-184613080210383",
-						"type": "dir",
-						"locked": false,
-						"children": {
-							"DOSSIER-1793445207183": {
-								"path": [
-									"AFM",
-									"2009-184613080210383",
-									"DOSSIER-1793445207183"
-								],
-								"name": "DOSSIER-1793445207183",
+								"name": "DOSSIER-77082381211165",
 								"type": "dir",
-								"locked": true,
+								"dirType": "locked",
 								"children": {
-									"pa'anga_assistant.txt": {
-										"name": "pa'anga_assistant.txt",
+									"Werk_van.pdf": {
+										"name": "Werk_van.pdf",
 										"path": [
 											"AFM",
-											"2009-184613080210383",
-											"DOSSIER-1793445207183",
-											"pa'anga_assistant.txt"
-										],
-										"type": "txt"
-									},
-									"cross_platform_benin_payment.txt": {
-										"name": "cross_platform_benin_payment.txt",
-										"path": [
-											"AFM",
-											"2009-184613080210383",
-											"DOSSIER-1793445207183",
-											"cross_platform_benin_payment.txt"
-										],
-										"type": "txt"
-									},
-									"wireless_rustic.txt": {
-										"name": "wireless_rustic.txt",
-										"path": [
-											"AFM",
-											"2009-184613080210383",
-											"DOSSIER-1793445207183",
-											"wireless_rustic.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-27012159436772": {
-								"path": [
-									"AFM",
-									"2009-184613080210383",
-									"DOSSIER-27012159436772"
-								],
-								"name": "DOSSIER-27012159436772",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"national_product_home.txt": {
-										"name": "national_product_home.txt",
-										"path": [
-											"AFM",
-											"2009-184613080210383",
-											"DOSSIER-27012159436772",
-											"national_product_home.txt"
-										],
-										"type": "txt"
-									},
-									"intelligent_concrete_car.txt": {
-										"name": "intelligent_concrete_car.txt",
-										"path": [
-											"AFM",
-											"2009-184613080210383",
-											"DOSSIER-27012159436772",
-											"intelligent_concrete_car.txt"
-										],
-										"type": "txt"
-									},
-									"robust.txt": {
-										"name": "robust.txt",
-										"path": [
-											"AFM",
-											"2009-184613080210383",
-											"DOSSIER-27012159436772",
-											"robust.txt"
-										],
-										"type": "txt"
-									},
-									"kentucky.pdf": {
-										"name": "kentucky.pdf",
-										"path": [
-											"AFM",
-											"2009-184613080210383",
-											"DOSSIER-27012159436772",
-											"kentucky.pdf"
+											"1995-28670191353718",
+											"DOSSIER-77082381211165",
+											"Werk_van.pdf"
 										],
 										"type": "pdf"
 									},
-									"exe_multi_byte_parallelism.txt": {
-										"name": "exe_multi_byte_parallelism.txt",
+									"gemeente_Transport.pdf": {
+										"name": "gemeente_Transport.pdf",
 										"path": [
 											"AFM",
-											"2009-184613080210383",
-											"DOSSIER-27012159436772",
-											"exe_multi_byte_parallelism.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-29152467322648": {
-								"path": [
-									"AFM",
-									"2009-184613080210383",
-									"DOSSIER-29152467322648"
-								],
-								"name": "DOSSIER-29152467322648",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"new_mexico_myanmar.txt": {
-										"name": "new_mexico_myanmar.txt",
-										"path": [
-											"AFM",
-											"2009-184613080210383",
-											"DOSSIER-29152467322648",
-											"new_mexico_myanmar.txt"
-										],
-										"type": "txt"
-									},
-									"engineer_plastic_iterate.pdf": {
-										"name": "engineer_plastic_iterate.pdf",
-										"path": [
-											"AFM",
-											"2009-184613080210383",
-											"DOSSIER-29152467322648",
-											"engineer_plastic_iterate.pdf"
+											"1995-28670191353718",
+											"DOSSIER-77082381211165",
+											"gemeente_Transport.pdf"
 										],
 										"type": "pdf"
 									},
-									"national.txt": {
-										"name": "national.txt",
+									"Infobox_BOOM.txt": {
+										"name": "Infobox_BOOM.txt",
 										"path": [
 											"AFM",
-											"2009-184613080210383",
-											"DOSSIER-29152467322648",
-											"national.txt"
+											"1995-28670191353718",
+											"DOSSIER-77082381211165",
+											"Infobox_BOOM.txt"
 										],
 										"type": "txt"
 									},
-									"orchid.txt": {
-										"name": "orchid.txt",
+									"Against_de.txt": {
+										"name": "Against_de.txt",
 										"path": [
 											"AFM",
-											"2009-184613080210383",
-											"DOSSIER-29152467322648",
-											"orchid.txt"
-										],
-										"type": "txt"
-									},
-									"wisconsin_invoice_communications.txt": {
-										"name": "wisconsin_invoice_communications.txt",
-										"path": [
-											"AFM",
-											"2009-184613080210383",
-											"DOSSIER-29152467322648",
-											"wisconsin_invoice_communications.txt"
+											"1995-28670191353718",
+											"DOSSIER-77082381211165",
+											"Against_de.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-32677910619354": {
+							"Programma_Government.pdf": {
+								"name": "Programma_Government.pdf",
 								"path": [
 									"AFM",
-									"2009-184613080210383",
-									"DOSSIER-32677910619354"
-								],
-								"name": "DOSSIER-32677910619354",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"guyana_administrator_niches.pdf": {
-										"name": "guyana_administrator_niches.pdf",
-										"path": [
-											"AFM",
-											"2009-184613080210383",
-											"DOSSIER-32677910619354",
-											"guyana_administrator_niches.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-569097596047": {
-								"path": [
-									"AFM",
-									"2009-184613080210383",
-									"DOSSIER-569097596047"
-								],
-								"name": "DOSSIER-569097596047",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"cheese_http.txt": {
-										"name": "cheese_http.txt",
-										"path": [
-											"AFM",
-											"2009-184613080210383",
-											"DOSSIER-569097596047",
-											"cheese_http.txt"
-										],
-										"type": "txt"
-									},
-									"tan_hard_drive.txt": {
-										"name": "tan_hard_drive.txt",
-										"path": [
-											"AFM",
-											"2009-184613080210383",
-											"DOSSIER-569097596047",
-											"tan_hard_drive.txt"
-										],
-										"type": "txt"
-									},
-									"actuating.txt": {
-										"name": "actuating.txt",
-										"path": [
-											"AFM",
-											"2009-184613080210383",
-											"DOSSIER-569097596047",
-											"actuating.txt"
-										],
-										"type": "txt"
-									},
-									"pizza.txt": {
-										"name": "pizza.txt",
-										"path": [
-											"AFM",
-											"2009-184613080210383",
-											"DOSSIER-569097596047",
-											"pizza.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"plaza_niches.txt": {
-								"name": "plaza_niches.txt",
-								"path": [
-									"AFM",
-									"2009-184613080210383",
-									"plaza_niches.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"2014-6934287367583": {
-						"path": [
-							"AFM",
-							"2014-6934287367583"
-						],
-						"name": "2014-6934287367583",
-						"type": "dir",
-						"locked": false,
-						"children": {
-							"DOSSIER-13705895130767": {
-								"path": [
-									"AFM",
-									"2014-6934287367583",
-									"DOSSIER-13705895130767"
-								],
-								"name": "DOSSIER-13705895130767",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"grenada_programming.pdf": {
-										"name": "grenada_programming.pdf",
-										"path": [
-											"AFM",
-											"2014-6934287367583",
-											"DOSSIER-13705895130767",
-											"grenada_programming.pdf"
-										],
-										"type": "pdf"
-									},
-									"monetize_e_tailers.pdf": {
-										"name": "monetize_e_tailers.pdf",
-										"path": [
-											"AFM",
-											"2014-6934287367583",
-											"DOSSIER-13705895130767",
-											"monetize_e_tailers.pdf"
-										],
-										"type": "pdf"
-									},
-									"unbranded_parse_portals.txt": {
-										"name": "unbranded_parse_portals.txt",
-										"path": [
-											"AFM",
-											"2014-6934287367583",
-											"DOSSIER-13705895130767",
-											"unbranded_parse_portals.txt"
-										],
-										"type": "txt"
-									},
-									"calculating_compress.txt": {
-										"name": "calculating_compress.txt",
-										"path": [
-											"AFM",
-											"2014-6934287367583",
-											"DOSSIER-13705895130767",
-											"calculating_compress.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-14956450017195": {
-								"path": [
-									"AFM",
-									"2014-6934287367583",
-									"DOSSIER-14956450017195"
-								],
-								"name": "DOSSIER-14956450017195",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"administrator_homogeneous.txt": {
-										"name": "administrator_homogeneous.txt",
-										"path": [
-											"AFM",
-											"2014-6934287367583",
-											"DOSSIER-14956450017195",
-											"administrator_homogeneous.txt"
-										],
-										"type": "txt"
-									},
-									"invoice_garden_forward.pdf": {
-										"name": "invoice_garden_forward.pdf",
-										"path": [
-											"AFM",
-											"2014-6934287367583",
-											"DOSSIER-14956450017195",
-											"invoice_garden_forward.pdf"
-										],
-										"type": "pdf"
-									},
-									"tools_ubiquitous.txt": {
-										"name": "tools_ubiquitous.txt",
-										"path": [
-											"AFM",
-											"2014-6934287367583",
-											"DOSSIER-14956450017195",
-											"tools_ubiquitous.txt"
-										],
-										"type": "txt"
-									},
-									"slovakia_(slovak_republic)_emulation_small.txt": {
-										"name": "slovakia_(slovak_republic)_emulation_small.txt",
-										"path": [
-											"AFM",
-											"2014-6934287367583",
-											"DOSSIER-14956450017195",
-											"slovakia_(slovak_republic)_emulation_small.txt"
-										],
-										"type": "txt"
-									},
-									"burg.txt": {
-										"name": "burg.txt",
-										"path": [
-											"AFM",
-											"2014-6934287367583",
-											"DOSSIER-14956450017195",
-											"burg.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-185981563313737": {
-								"path": [
-									"AFM",
-									"2014-6934287367583",
-									"DOSSIER-185981563313737"
-								],
-								"name": "DOSSIER-185981563313737",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"manager_granite.txt": {
-										"name": "manager_granite.txt",
-										"path": [
-											"AFM",
-											"2014-6934287367583",
-											"DOSSIER-185981563313737",
-											"manager_granite.txt"
-										],
-										"type": "txt"
-									},
-									"payment_chair.txt": {
-										"name": "payment_chair.txt",
-										"path": [
-											"AFM",
-											"2014-6934287367583",
-											"DOSSIER-185981563313737",
-											"payment_chair.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-206831750528644": {
-								"path": [
-									"AFM",
-									"2014-6934287367583",
-									"DOSSIER-206831750528644"
-								],
-								"name": "DOSSIER-206831750528644",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"overriding.pdf": {
-										"name": "overriding.pdf",
-										"path": [
-											"AFM",
-											"2014-6934287367583",
-											"DOSSIER-206831750528644",
-											"overriding.pdf"
-										],
-										"type": "pdf"
-									},
-									"generic_handmade.pdf": {
-										"name": "generic_handmade.pdf",
-										"path": [
-											"AFM",
-											"2014-6934287367583",
-											"DOSSIER-206831750528644",
-											"generic_handmade.pdf"
-										],
-										"type": "pdf"
-									},
-									"distributed.txt": {
-										"name": "distributed.txt",
-										"path": [
-											"AFM",
-											"2014-6934287367583",
-											"DOSSIER-206831750528644",
-											"distributed.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-76982360223902": {
-								"path": [
-									"AFM",
-									"2014-6934287367583",
-									"DOSSIER-76982360223902"
-								],
-								"name": "DOSSIER-76982360223902",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"chicken_locks_wyoming.txt": {
-										"name": "chicken_locks_wyoming.txt",
-										"path": [
-											"AFM",
-											"2014-6934287367583",
-											"DOSSIER-76982360223902",
-											"chicken_locks_wyoming.txt"
-										],
-										"type": "txt"
-									},
-									"http_refined_fresh_gloves_cambridgeshire.txt": {
-										"name": "http_refined_fresh_gloves_cambridgeshire.txt",
-										"path": [
-											"AFM",
-											"2014-6934287367583",
-											"DOSSIER-76982360223902",
-											"http_refined_fresh_gloves_cambridgeshire.txt"
-										],
-										"type": "txt"
-									},
-									"facilitate_content.txt": {
-										"name": "facilitate_content.txt",
-										"path": [
-											"AFM",
-											"2014-6934287367583",
-											"DOSSIER-76982360223902",
-											"facilitate_content.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"program_deposit.txt": {
-								"name": "program_deposit.txt",
-								"path": [
-									"AFM",
-									"2014-6934287367583",
-									"program_deposit.txt"
-								],
-								"type": "txt"
-							},
-							"grocery_kenya.pdf": {
-								"name": "grocery_kenya.pdf",
-								"path": [
-									"AFM",
-									"2014-6934287367583",
-									"grocery_kenya.pdf"
+									"1995-28670191353718",
+									"Programma_Government.pdf"
 								],
 								"type": "pdf"
 							},
-							"concrete_collaboration.pdf": {
-								"name": "concrete_collaboration.pdf",
+							"Criminaliteit_DWI.txt": {
+								"name": "Criminaliteit_DWI.txt",
 								"path": [
 									"AFM",
-									"2014-6934287367583",
-									"concrete_collaboration.pdf"
+									"1995-28670191353718",
+									"Criminaliteit_DWI.txt"
 								],
-								"type": "pdf"
+								"type": "txt"
+							},
+							"EC_BES.txt": {
+								"name": "EC_BES.txt",
+								"path": [
+									"AFM",
+									"1995-28670191353718",
+									"EC_BES.txt"
+								],
+								"type": "txt"
 							}
 						}
 					},
-					"deposit_indonesia.txt": {
-						"name": "deposit_indonesia.txt",
+					"2015-54811291623709": {
 						"path": [
 							"AFM",
-							"deposit_indonesia.txt"
+							"2015-54811291623709"
+						],
+						"name": "2015-54811291623709",
+						"type": "dir",
+						"dirType": "normal",
+						"children": {
+							"DOSSIER-124462146912021": {
+								"path": [
+									"AFM",
+									"2015-54811291623709",
+									"DOSSIER-124462146912021"
+								],
+								"name": "DOSSIER-124462146912021",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Inkomen,_.pdf": {
+										"name": "Inkomen,_.pdf",
+										"path": [
+											"AFM",
+											"2015-54811291623709",
+											"DOSSIER-124462146912021",
+											"Inkomen,_.pdf"
+										],
+										"type": "pdf"
+									},
+									"en_Intelligence.txt": {
+										"name": "en_Intelligence.txt",
+										"path": [
+											"AFM",
+											"2015-54811291623709",
+											"DOSSIER-124462146912021",
+											"en_Intelligence.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-208582905810021": {
+								"path": [
+									"AFM",
+									"2015-54811291623709",
+									"DOSSIER-208582905810021"
+								],
+								"name": "DOSSIER-208582905810021",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"CT_Autoriteit.pdf": {
+										"name": "CT_Autoriteit.pdf",
+										"path": [
+											"AFM",
+											"2015-54811291623709",
+											"DOSSIER-208582905810021",
+											"CT_Autoriteit.pdf"
+										],
+										"type": "pdf"
+									},
+									"FinanciÃ«le_Unie.txt": {
+										"name": "FinanciÃ«le_Unie.txt",
+										"path": [
+											"AFM",
+											"2015-54811291623709",
+											"DOSSIER-208582905810021",
+											"FinanciÃ«le_Unie.txt"
+										],
+										"type": "txt"
+									},
+									"ILTIOD_FinanciÃ«le.txt": {
+										"name": "ILTIOD_FinanciÃ«le.txt",
+										"path": [
+											"AFM",
+											"2015-54811291623709",
+											"DOSSIER-208582905810021",
+											"ILTIOD_FinanciÃ«le.txt"
+										],
+										"type": "txt"
+									},
+									"Europese_EMM.txt": {
+										"name": "Europese_EMM.txt",
+										"path": [
+											"AFM",
+											"2015-54811291623709",
+											"DOSSIER-208582905810021",
+											"Europese_EMM.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-210051573924832": {
+								"path": [
+									"AFM",
+									"2015-54811291623709",
+									"DOSSIER-210051573924832"
+								],
+								"name": "DOSSIER-210051573924832",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"de_Government.txt": {
+										"name": "de_Government.txt",
+										"path": [
+											"AFM",
+											"2015-54811291623709",
+											"DOSSIER-210051573924832",
+											"de_Government.txt"
+										],
+										"type": "txt"
+									},
+									"onderdeel_Bank.txt": {
+										"name": "onderdeel_Bank.txt",
+										"path": [
+											"AFM",
+											"2015-54811291623709",
+											"DOSSIER-210051573924832",
+											"onderdeel_Bank.txt"
+										],
+										"type": "txt"
+									},
+									"Incasso_Unie.txt": {
+										"name": "Incasso_Unie.txt",
+										"path": [
+											"AFM",
+											"2015-54811291623709",
+											"DOSSIER-210051573924832",
+											"Incasso_Unie.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-270543105811412": {
+								"path": [
+									"AFM",
+									"2015-54811291623709",
+									"DOSSIER-270543105811412"
+								],
+								"name": "DOSSIER-270543105811412",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Inkomen,_Infobox.txt": {
+										"name": "Inkomen,_Infobox.txt",
+										"path": [
+											"AFM",
+											"2015-54811291623709",
+											"DOSSIER-270543105811412",
+											"Inkomen,_Infobox.txt"
+										],
+										"type": "txt"
+									},
+									"team_Inkomen,.pdf": {
+										"name": "team_Inkomen,.pdf",
+										"path": [
+											"AFM",
+											"2015-54811291623709",
+											"DOSSIER-270543105811412",
+											"team_Inkomen,.pdf"
+										],
+										"type": "pdf"
+									},
+									"Ontnemingswetgeving_Criminal.txt": {
+										"name": "Ontnemingswetgeving_Criminal.txt",
+										"path": [
+											"AFM",
+											"2015-54811291623709",
+											"DOSSIER-270543105811412",
+											"Ontnemingswetgeving_Criminal.txt"
+										],
+										"type": "txt"
+									},
+									"GoAML_de.txt": {
+										"name": "GoAML_de.txt",
+										"path": [
+											"AFM",
+											"2015-54811291623709",
+											"DOSSIER-270543105811412",
+											"GoAML_de.txt"
+										],
+										"type": "txt"
+									},
+									"Saba_door.txt": {
+										"name": "Saba_door.txt",
+										"path": [
+											"AFM",
+											"2015-54811291623709",
+											"DOSSIER-270543105811412",
+											"Saba_door.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-29627233283490": {
+								"path": [
+									"AFM",
+									"2015-54811291623709",
+									"DOSSIER-29627233283490"
+								],
+								"name": "DOSSIER-29627233283490",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"de_een.txt": {
+										"name": "de_een.txt",
+										"path": [
+											"AFM",
+											"2015-54811291623709",
+											"DOSSIER-29627233283490",
+											"de_een.txt"
+										],
+										"type": "txt"
+									},
+									"de_Inlichtingen-.txt": {
+										"name": "de_Inlichtingen-.txt",
+										"path": [
+											"AFM",
+											"2015-54811291623709",
+											"DOSSIER-29627233283490",
+											"de_Inlichtingen-.txt"
+										],
+										"type": "txt"
+									},
+									"de_Administratieve.pdf": {
+										"name": "de_Administratieve.pdf",
+										"path": [
+											"AFM",
+											"2015-54811291623709",
+											"DOSSIER-29627233283490",
+											"de_Administratieve.pdf"
+										],
+										"type": "pdf"
+									},
+									"en_door.txt": {
+										"name": "en_door.txt",
+										"path": [
+											"AFM",
+											"2015-54811291623709",
+											"DOSSIER-29627233283490",
+											"en_door.txt"
+										],
+										"type": "txt"
+									},
+									"Informatie,_Against.pdf": {
+										"name": "Informatie,_Against.pdf",
+										"path": [
+											"AFM",
+											"2015-54811291623709",
+											"DOSSIER-29627233283490",
+											"Informatie,_Against.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"BFT_Mensensmokkel.txt": {
+								"name": "BFT_Mensensmokkel.txt",
+								"path": [
+									"AFM",
+									"2015-54811291623709",
+									"BFT_Mensensmokkel.txt"
+								],
+								"type": "txt"
+							}
+						}
+					},
+					"onderdeel_&.txt": {
+						"name": "onderdeel_&.txt",
+						"path": [
+							"AFM",
+							"onderdeel_&.txt"
 						],
 						"type": "txt"
 					},
-					"hat_checking_account.txt": {
-						"name": "hat_checking_account.txt",
+					"Markten_&.txt": {
+						"name": "Markten_&.txt",
 						"path": [
 							"AFM",
-							"hat_checking_account.txt"
+							"Markten_&.txt"
 						],
 						"type": "txt"
 					},
-					"innovate_arizona_avon.txt": {
-						"name": "innovate_arizona_avon.txt",
+					"Autoriteit_team.pdf": {
+						"name": "Autoriteit_team.pdf",
 						"path": [
 							"AFM",
-							"innovate_arizona_avon.txt"
+							"Autoriteit_team.pdf"
+						],
+						"type": "pdf"
+					},
+					"Financial_en.pdf": {
+						"name": "Financial_en.pdf",
+						"path": [
+							"AFM",
+							"Financial_en.pdf"
+						],
+						"type": "pdf"
+					},
+					"Opsporingsdienst_de.txt": {
+						"name": "Opsporingsdienst_de.txt",
+						"path": [
+							"AFM",
+							"Opsporingsdienst_de.txt"
 						],
 						"type": "txt"
 					}
@@ -23714,1210 +23501,1427 @@
 				],
 				"name": "CN",
 				"type": "dir",
-				"locked": false,
+				"dirType": "normal",
 				"children": {
-					"1970-111781315321851": {
+					"1964-26242248384350": {
 						"path": [
 							"CN",
-							"1970-111781315321851"
+							"1964-26242248384350"
 						],
-						"name": "1970-111781315321851",
+						"name": "1964-26242248384350",
 						"type": "dir",
-						"locked": false,
+						"dirType": "normal",
 						"children": {
-							"DOSSIER-16490144571785": {
+							"DOSSIER-123462279913131": {
 								"path": [
 									"CN",
-									"1970-111781315321851",
-									"DOSSIER-16490144571785"
+									"1964-26242248384350",
+									"DOSSIER-123462279913131"
 								],
-								"name": "DOSSIER-16490144571785",
+								"name": "DOSSIER-123462279913131",
 								"type": "dir",
-								"locked": false,
+								"dirType": "normal",
 								"children": {
-									"savings_account.txt": {
-										"name": "savings_account.txt",
+									"Sint_Bank.txt": {
+										"name": "Sint_Bank.txt",
 										"path": [
 											"CN",
-											"1970-111781315321851",
-											"DOSSIER-16490144571785",
-											"savings_account.txt"
+											"1964-26242248384350",
+											"DOSSIER-123462279913131",
+											"Sint_Bank.txt"
 										],
 										"type": "txt"
 									},
-									"tcp.pdf": {
-										"name": "tcp.pdf",
+									"Opsporingsdienst_EU.txt": {
+										"name": "Opsporingsdienst_EU.txt",
 										"path": [
 											"CN",
-											"1970-111781315321851",
-											"DOSSIER-16490144571785",
-											"tcp.pdf"
-										],
-										"type": "pdf"
-									},
-									"solid_state_interactions.txt": {
-										"name": "solid_state_interactions.txt",
-										"path": [
-											"CN",
-											"1970-111781315321851",
-											"DOSSIER-16490144571785",
-											"solid_state_interactions.txt"
+											"1964-26242248384350",
+											"DOSSIER-123462279913131",
+											"Opsporingsdienst_EU.txt"
 										],
 										"type": "txt"
 									},
-									"dynamic_new_hampshire.txt": {
-										"name": "dynamic_new_hampshire.txt",
+									"A01C_en.pdf": {
+										"name": "A01C_en.pdf",
 										"path": [
 											"CN",
-											"1970-111781315321851",
-											"DOSSIER-16490144571785",
-											"dynamic_new_hampshire.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-227822255113057": {
-								"path": [
-									"CN",
-									"1970-111781315321851",
-									"DOSSIER-227822255113057"
-								],
-								"name": "DOSSIER-227822255113057",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"unbranded_plastic_shoes_coordinator_handmade.txt": {
-										"name": "unbranded_plastic_shoes_coordinator_handmade.txt",
-										"path": [
-											"CN",
-											"1970-111781315321851",
-											"DOSSIER-227822255113057",
-											"unbranded_plastic_shoes_coordinator_handmade.txt"
-										],
-										"type": "txt"
-									},
-									"usability_sensor_brazilian_real.pdf": {
-										"name": "usability_sensor_brazilian_real.pdf",
-										"path": [
-											"CN",
-											"1970-111781315321851",
-											"DOSSIER-227822255113057",
-											"usability_sensor_brazilian_real.pdf"
-										],
-										"type": "pdf"
-									},
-									"optimization_microchip_synthesizing.txt": {
-										"name": "optimization_microchip_synthesizing.txt",
-										"path": [
-											"CN",
-											"1970-111781315321851",
-											"DOSSIER-227822255113057",
-											"optimization_microchip_synthesizing.txt"
-										],
-										"type": "txt"
-									},
-									"even_keeled_payment.pdf": {
-										"name": "even_keeled_payment.pdf",
-										"path": [
-											"CN",
-											"1970-111781315321851",
-											"DOSSIER-227822255113057",
-											"even_keeled_payment.pdf"
-										],
-										"type": "pdf"
-									},
-									"frozen_interactions_collaboration.txt": {
-										"name": "frozen_interactions_collaboration.txt",
-										"path": [
-											"CN",
-											"1970-111781315321851",
-											"DOSSIER-227822255113057",
-											"frozen_interactions_collaboration.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-250821284213004": {
-								"path": [
-									"CN",
-									"1970-111781315321851",
-									"DOSSIER-250821284213004"
-								],
-								"name": "DOSSIER-250821284213004",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"iraq_cambridgeshire_png.txt": {
-										"name": "iraq_cambridgeshire_png.txt",
-										"path": [
-											"CN",
-											"1970-111781315321851",
-											"DOSSIER-250821284213004",
-											"iraq_cambridgeshire_png.txt"
-										],
-										"type": "txt"
-									},
-									"parsing_hawaii_bolivar_fuerte.txt": {
-										"name": "parsing_hawaii_bolivar_fuerte.txt",
-										"path": [
-											"CN",
-											"1970-111781315321851",
-											"DOSSIER-250821284213004",
-											"parsing_hawaii_bolivar_fuerte.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-26015195168058": {
-								"path": [
-									"CN",
-									"1970-111781315321851",
-									"DOSSIER-26015195168058"
-								],
-								"name": "DOSSIER-26015195168058",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"granite_communities.pdf": {
-										"name": "granite_communities.pdf",
-										"path": [
-											"CN",
-											"1970-111781315321851",
-											"DOSSIER-26015195168058",
-											"granite_communities.pdf"
-										],
-										"type": "pdf"
-									},
-									"internal_savings_account_planner.txt": {
-										"name": "internal_savings_account_planner.txt",
-										"path": [
-											"CN",
-											"1970-111781315321851",
-											"DOSSIER-26015195168058",
-											"internal_savings_account_planner.txt"
-										],
-										"type": "txt"
-									},
-									"home_loan_account.pdf": {
-										"name": "home_loan_account.pdf",
-										"path": [
-											"CN",
-											"1970-111781315321851",
-											"DOSSIER-26015195168058",
-											"home_loan_account.pdf"
+											"1964-26242248384350",
+											"DOSSIER-123462279913131",
+											"A01C_en.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"DOSSIER-31991267812493": {
+							"DOSSIER-14508213919931": {
 								"path": [
 									"CN",
-									"1970-111781315321851",
-									"DOSSIER-31991267812493"
+									"1964-26242248384350",
+									"DOSSIER-14508213919931"
 								],
-								"name": "DOSSIER-31991267812493",
+								"name": "DOSSIER-14508213919931",
 								"type": "dir",
-								"locked": true,
+								"dirType": "locked",
 								"children": {
-									"stravenue_connecting_modular.txt": {
-										"name": "stravenue_connecting_modular.txt",
+									"Rotterdam_BOOM.pdf": {
+										"name": "Rotterdam_BOOM.pdf",
 										"path": [
 											"CN",
-											"1970-111781315321851",
-											"DOSSIER-31991267812493",
-											"stravenue_connecting_modular.txt"
+											"1964-26242248384350",
+											"DOSSIER-14508213919931",
+											"Rotterdam_BOOM.pdf"
+										],
+										"type": "pdf"
+									},
+									"Centre,_Bureau.pdf": {
+										"name": "Centre,_Bureau.pdf",
+										"path": [
+											"CN",
+											"1964-26242248384350",
+											"DOSSIER-14508213919931",
+											"Centre,_Bureau.pdf"
+										],
+										"type": "pdf"
+									},
+									"orgaan_Landelijke.txt": {
+										"name": "orgaan_Landelijke.txt",
+										"path": [
+											"CN",
+											"1964-26242248384350",
+											"DOSSIER-14508213919931",
+											"orgaan_Landelijke.txt"
+										],
+										"type": "txt"
+									},
+									"Money_en.txt": {
+										"name": "Money_en.txt",
+										"path": [
+											"CN",
+											"1964-26242248384350",
+											"DOSSIER-14508213919931",
+											"Money_en.txt"
+										],
+										"type": "txt"
+									},
+									"de_Bank.txt": {
+										"name": "de_Bank.txt",
+										"path": [
+											"CN",
+											"1964-26242248384350",
+											"DOSSIER-14508213919931",
+											"de_Bank.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"checking_account_haptic_personal_loan_account.txt": {
-								"name": "checking_account_haptic_personal_loan_account.txt",
+							"DOSSIER-156962579125244": {
 								"path": [
 									"CN",
-									"1970-111781315321851",
-									"checking_account_haptic_personal_loan_account.txt"
+									"1964-26242248384350",
+									"DOSSIER-156962579125244"
+								],
+								"name": "DOSSIER-156962579125244",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Crimineel_Basisvoorziening.txt": {
+										"name": "Crimineel_Basisvoorziening.txt",
+										"path": [
+											"CN",
+											"1964-26242248384350",
+											"DOSSIER-156962579125244",
+											"Crimineel_Basisvoorziening.txt"
+										],
+										"type": "txt"
+									},
+									"Caribisch_Werk.txt": {
+										"name": "Caribisch_Werk.txt",
+										"path": [
+											"CN",
+											"1964-26242248384350",
+											"DOSSIER-156962579125244",
+											"Caribisch_Werk.txt"
+										],
+										"type": "txt"
+									},
+									"Economische_en.txt": {
+										"name": "Economische_en.txt",
+										"path": [
+											"CN",
+											"1964-26242248384350",
+											"DOSSIER-156962579125244",
+											"Economische_en.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-25788640911971": {
+								"path": [
+									"CN",
+									"1964-26242248384350",
+									"DOSSIER-25788640911971"
+								],
+								"name": "DOSSIER-25788640911971",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"de_van.txt": {
+										"name": "de_van.txt",
+										"path": [
+											"CN",
+											"1964-26242248384350",
+											"DOSSIER-25788640911971",
+											"de_van.txt"
+										],
+										"type": "txt"
+									},
+									"onderdeel_Ministerie,.txt": {
+										"name": "onderdeel_Ministerie,.txt",
+										"path": [
+											"CN",
+											"1964-26242248384350",
+											"DOSSIER-25788640911971",
+											"onderdeel_Ministerie,.txt"
+										],
+										"type": "txt"
+									},
+									"CWI_interne.txt": {
+										"name": "CWI_interne.txt",
+										"path": [
+											"CN",
+											"1964-26242248384350",
+											"DOSSIER-25788640911971",
+											"CWI_interne.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-725252387285": {
+								"path": [
+									"CN",
+									"1964-26242248384350",
+									"DOSSIER-725252387285"
+								],
+								"name": "DOSSIER-725252387285",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"OM_applicatie.txt": {
+										"name": "OM_applicatie.txt",
+										"path": [
+											"CN",
+											"1964-26242248384350",
+											"DOSSIER-725252387285",
+											"OM_applicatie.txt"
+										],
+										"type": "txt"
+									},
+									"Andrea_DNB.txt": {
+										"name": "Andrea_DNB.txt",
+										"path": [
+											"CN",
+											"1964-26242248384350",
+											"DOSSIER-725252387285",
+											"Andrea_DNB.txt"
+										],
+										"type": "txt"
+									},
+									"Toezicht_Force.txt": {
+										"name": "Toezicht_Force.txt",
+										"path": [
+											"CN",
+											"1964-26242248384350",
+											"DOSSIER-725252387285",
+											"Toezicht_Force.txt"
+										],
+										"type": "txt"
+									},
+									"Economische_Nederland:.txt": {
+										"name": "Economische_Nederland:.txt",
+										"path": [
+											"CN",
+											"1964-26242248384350",
+											"DOSSIER-725252387285",
+											"Economische_Nederland:.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"CWI_UNODC.txt": {
+								"name": "CWI_UNODC.txt",
+								"path": [
+									"CN",
+									"1964-26242248384350",
+									"CWI_UNODC.txt"
 								],
 								"type": "txt"
-							}
-						}
-					},
-					"1982-9193430411297": {
-						"path": [
-							"CN",
-							"1982-9193430411297"
-						],
-						"name": "1982-9193430411297",
-						"type": "dir",
-						"locked": true,
-						"children": {
-							"DOSSIER-112922002232737": {
-								"path": [
-									"CN",
-									"1982-9193430411297",
-									"DOSSIER-112922002232737"
-								],
-								"name": "DOSSIER-112922002232737",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"moldovan_leu.txt": {
-										"name": "moldovan_leu.txt",
-										"path": [
-											"CN",
-											"1982-9193430411297",
-											"DOSSIER-112922002232737",
-											"moldovan_leu.txt"
-										],
-										"type": "txt"
-									}
-								}
 							},
-							"DOSSIER-240343065615204": {
+							"Expertisecentrum_Contraterrorisme.pdf": {
+								"name": "Expertisecentrum_Contraterrorisme.pdf",
 								"path": [
 									"CN",
-									"1982-9193430411297",
-									"DOSSIER-240343065615204"
-								],
-								"name": "DOSSIER-240343065615204",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"b2c_bluetooth_drives.pdf": {
-										"name": "b2c_bluetooth_drives.pdf",
-										"path": [
-											"CN",
-											"1982-9193430411297",
-											"DOSSIER-240343065615204",
-											"b2c_bluetooth_drives.pdf"
-										],
-										"type": "pdf"
-									},
-									"innovative.txt": {
-										"name": "innovative.txt",
-										"path": [
-											"CN",
-											"1982-9193430411297",
-											"DOSSIER-240343065615204",
-											"innovative.txt"
-										],
-										"type": "txt"
-									},
-									"investor_fantastic.txt": {
-										"name": "investor_fantastic.txt",
-										"path": [
-											"CN",
-											"1982-9193430411297",
-											"DOSSIER-240343065615204",
-											"investor_fantastic.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-3236031316508": {
-								"path": [
-									"CN",
-									"1982-9193430411297",
-									"DOSSIER-3236031316508"
-								],
-								"name": "DOSSIER-3236031316508",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"impactful_methodology_toys.txt": {
-										"name": "impactful_methodology_toys.txt",
-										"path": [
-											"CN",
-											"1982-9193430411297",
-											"DOSSIER-3236031316508",
-											"impactful_methodology_toys.txt"
-										],
-										"type": "txt"
-									},
-									"thx_capacity.pdf": {
-										"name": "thx_capacity.pdf",
-										"path": [
-											"CN",
-											"1982-9193430411297",
-											"DOSSIER-3236031316508",
-											"thx_capacity.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-7081407225803": {
-								"path": [
-									"CN",
-									"1982-9193430411297",
-									"DOSSIER-7081407225803"
-								],
-								"name": "DOSSIER-7081407225803",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"home_loan_account.txt": {
-										"name": "home_loan_account.txt",
-										"path": [
-											"CN",
-											"1982-9193430411297",
-											"DOSSIER-7081407225803",
-											"home_loan_account.txt"
-										],
-										"type": "txt"
-									},
-									"rustic_frozen_salad_deposit.pdf": {
-										"name": "rustic_frozen_salad_deposit.pdf",
-										"path": [
-											"CN",
-											"1982-9193430411297",
-											"DOSSIER-7081407225803",
-											"rustic_frozen_salad_deposit.pdf"
-										],
-										"type": "pdf"
-									},
-									"optimized_explicit.pdf": {
-										"name": "optimized_explicit.pdf",
-										"path": [
-											"CN",
-											"1982-9193430411297",
-											"DOSSIER-7081407225803",
-											"optimized_explicit.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-9032696119748": {
-								"path": [
-									"CN",
-									"1982-9193430411297",
-									"DOSSIER-9032696119748"
-								],
-								"name": "DOSSIER-9032696119748",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"dynamic_intuitive.txt": {
-										"name": "dynamic_intuitive.txt",
-										"path": [
-											"CN",
-											"1982-9193430411297",
-											"DOSSIER-9032696119748",
-											"dynamic_intuitive.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"extensible.pdf": {
-								"name": "extensible.pdf",
-								"path": [
-									"CN",
-									"1982-9193430411297",
-									"extensible.pdf"
+									"1964-26242248384350",
+									"Expertisecentrum_Contraterrorisme.pdf"
 								],
 								"type": "pdf"
 							},
-							"end_to_end_withdrawal_eritrea.txt": {
-								"name": "end_to_end_withdrawal_eritrea.txt",
+							"de_de.pdf": {
+								"name": "de_de.pdf",
 								"path": [
 									"CN",
-									"1982-9193430411297",
-									"end_to_end_withdrawal_eritrea.txt"
-								],
-								"type": "txt"
-							},
-							"generating.pdf": {
-								"name": "generating.pdf",
-								"path": [
-									"CN",
-									"1982-9193430411297",
-									"generating.pdf"
+									"1964-26242248384350",
+									"de_de.pdf"
 								],
 								"type": "pdf"
 							}
 						}
 					},
-					"1994-303212448123897": {
+					"1966-276891020823050": {
 						"path": [
 							"CN",
-							"1994-303212448123897"
+							"1966-276891020823050"
 						],
-						"name": "1994-303212448123897",
+						"name": "1966-276891020823050",
 						"type": "dir",
-						"locked": true,
+						"dirType": "archive",
 						"children": {
-							"DOSSIER-18431183525398": {
+							"DOSSIER-18413208417249": {
 								"path": [
 									"CN",
-									"1994-303212448123897",
-									"DOSSIER-18431183525398"
+									"1966-276891020823050",
+									"DOSSIER-18413208417249"
 								],
-								"name": "DOSSIER-18431183525398",
+								"name": "DOSSIER-18413208417249",
 								"type": "dir",
-								"locked": true,
+								"dirType": "normal",
 								"children": {
-									"system.txt": {
-										"name": "system.txt",
+									"EU_Landelijke.txt": {
+										"name": "EU_Landelijke.txt",
 										"path": [
 											"CN",
-											"1994-303212448123897",
-											"DOSSIER-18431183525398",
-											"system.txt"
+											"1966-276891020823050",
+											"DOSSIER-18413208417249",
+											"EU_Landelijke.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-234851956916726": {
+							"DOSSIER-185041823410509": {
 								"path": [
 									"CN",
-									"1994-303212448123897",
-									"DOSSIER-234851956916726"
+									"1966-276891020823050",
+									"DOSSIER-185041823410509"
 								],
-								"name": "DOSSIER-234851956916726",
+								"name": "DOSSIER-185041823410509",
 								"type": "dir",
-								"locked": true,
+								"dirType": "normal",
 								"children": {
-									"models_chicken.txt": {
-										"name": "models_chicken.txt",
+									"EU_de.txt": {
+										"name": "EU_de.txt",
 										"path": [
 											"CN",
-											"1994-303212448123897",
-											"DOSSIER-234851956916726",
-											"models_chicken.txt"
+											"1966-276891020823050",
+											"DOSSIER-185041823410509",
+											"EU_de.txt"
+										],
+										"type": "txt"
+									},
+									"Transport_van.txt": {
+										"name": "Transport_van.txt",
+										"path": [
+											"CN",
+											"1966-276891020823050",
+											"DOSSIER-185041823410509",
+											"Transport_van.txt"
+										],
+										"type": "txt"
+									},
+									"Financieel_van.txt": {
+										"name": "Financieel_van.txt",
+										"path": [
+											"CN",
+											"1966-276891020823050",
+											"DOSSIER-185041823410509",
+											"Financieel_van.txt"
+										],
+										"type": "txt"
+									},
+									"Eustatiusen_Programma.txt": {
+										"name": "Eustatiusen_Programma.txt",
+										"path": [
+											"CN",
+											"1966-276891020823050",
+											"DOSSIER-185041823410509",
+											"Eustatiusen_Programma.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-5845155049245": {
+							"DOSSIER-312492146110331": {
 								"path": [
 									"CN",
-									"1994-303212448123897",
-									"DOSSIER-5845155049245"
+									"1966-276891020823050",
+									"DOSSIER-312492146110331"
 								],
-								"name": "DOSSIER-5845155049245",
+								"name": "DOSSIER-312492146110331",
 								"type": "dir",
-								"locked": false,
+								"dirType": "normal",
 								"children": {
-									"firewall_practical_north_korean_won.pdf": {
-										"name": "firewall_practical_north_korean_won.pdf",
+									"onderdeel_Unie.txt": {
+										"name": "onderdeel_Unie.txt",
 										"path": [
 											"CN",
-											"1994-303212448123897",
-											"DOSSIER-5845155049245",
-											"firewall_practical_north_korean_won.pdf"
+											"1966-276891020823050",
+											"DOSSIER-312492146110331",
+											"onderdeel_Unie.txt"
+										],
+										"type": "txt"
+									},
+									"FinEC_Sint.txt": {
+										"name": "FinEC_Sint.txt",
+										"path": [
+											"CN",
+											"1966-276891020823050",
+											"DOSSIER-312492146110331",
+											"FinEC_Sint.txt"
+										],
+										"type": "txt"
+									},
+									"Openbaar_FIOD.txt": {
+										"name": "Openbaar_FIOD.txt",
+										"path": [
+											"CN",
+											"1966-276891020823050",
+											"DOSSIER-312492146110331",
+											"Openbaar_FIOD.txt"
+										],
+										"type": "txt"
+									},
+									"Openbaar_Vermogen.pdf": {
+										"name": "Openbaar_Vermogen.pdf",
+										"path": [
+											"CN",
+											"1966-276891020823050",
+											"DOSSIER-312492146110331",
+											"Openbaar_Vermogen.pdf"
 										],
 										"type": "pdf"
 									},
-									"vortals_cross_platform_mauritius_rupee.pdf": {
-										"name": "vortals_cross_platform_mauritius_rupee.pdf",
+									"Centraal_en.pdf": {
+										"name": "Centraal_en.pdf",
 										"path": [
 											"CN",
-											"1994-303212448123897",
-											"DOSSIER-5845155049245",
-											"vortals_cross_platform_mauritius_rupee.pdf"
-										],
-										"type": "pdf"
-									},
-									"gb_namibia_bahamian_dollar.pdf": {
-										"name": "gb_namibia_bahamian_dollar.pdf",
-										"path": [
-											"CN",
-											"1994-303212448123897",
-											"DOSSIER-5845155049245",
-											"gb_namibia_bahamian_dollar.pdf"
+											"1966-276891020823050",
+											"DOSSIER-312492146110331",
+											"Centraal_en.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"DOSSIER-8666042905": {
+							"DOSSIER-46271805724874": {
 								"path": [
 									"CN",
-									"1994-303212448123897",
-									"DOSSIER-8666042905"
+									"1966-276891020823050",
+									"DOSSIER-46271805724874"
 								],
-								"name": "DOSSIER-8666042905",
+								"name": "DOSSIER-46271805724874",
 								"type": "dir",
-								"locked": true,
+								"dirType": "normal",
 								"children": {
-									"awesome_cotton_computer.txt": {
-										"name": "awesome_cotton_computer.txt",
+									"Contraterrorisme_Bonaire..pdf": {
+										"name": "Contraterrorisme_Bonaire..pdf",
 										"path": [
 											"CN",
-											"1994-303212448123897",
-											"DOSSIER-8666042905",
-											"awesome_cotton_computer.txt"
+											"1966-276891020823050",
+											"DOSSIER-46271805724874",
+											"Contraterrorisme_Bonaire..pdf"
 										],
-										"type": "txt"
+										"type": "pdf"
 									},
-									"french_guiana.txt": {
-										"name": "french_guiana.txt",
+									"de_Inlichtingen-.txt": {
+										"name": "de_Inlichtingen-.txt",
 										"path": [
 											"CN",
-											"1994-303212448123897",
-											"DOSSIER-8666042905",
-											"french_guiana.txt"
-										],
-										"type": "txt"
-									},
-									"synthesizing_panel_metal.txt": {
-										"name": "synthesizing_panel_metal.txt",
-										"path": [
-											"CN",
-											"1994-303212448123897",
-											"DOSSIER-8666042905",
-											"synthesizing_panel_metal.txt"
-										],
-										"type": "txt"
-									},
-									"mouse_adp_rss.txt": {
-										"name": "mouse_adp_rss.txt",
-										"path": [
-											"CN",
-											"1994-303212448123897",
-											"DOSSIER-8666042905",
-											"mouse_adp_rss.txt"
+											"1966-276891020823050",
+											"DOSSIER-46271805724874",
+											"de_Inlichtingen-.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-917271553105": {
+							"DOSSIER-8681149048542": {
 								"path": [
 									"CN",
-									"1994-303212448123897",
-									"DOSSIER-917271553105"
+									"1966-276891020823050",
+									"DOSSIER-8681149048542"
 								],
-								"name": "DOSSIER-917271553105",
+								"name": "DOSSIER-8681149048542",
 								"type": "dir",
-								"locked": false,
+								"dirType": "normal",
 								"children": {
-									"indigo_generate_soft.txt": {
-										"name": "indigo_generate_soft.txt",
+									"Sint_FIOD.txt": {
+										"name": "Sint_FIOD.txt",
 										"path": [
 											"CN",
-											"1994-303212448123897",
-											"DOSSIER-917271553105",
-											"indigo_generate_soft.txt"
+											"1966-276891020823050",
+											"DOSSIER-8681149048542",
+											"Sint_FIOD.txt"
 										],
 										"type": "txt"
+									},
+									"de_EC.pdf": {
+										"name": "de_EC.pdf",
+										"path": [
+											"CN",
+											"1966-276891020823050",
+											"DOSSIER-8681149048542",
+											"de_EC.pdf"
+										],
+										"type": "pdf"
 									}
 								}
 							},
-							"encoding.txt": {
-								"name": "encoding.txt",
+							"Commissie,_Inkomen,.pdf": {
+								"name": "Commissie,_Inkomen,.pdf",
 								"path": [
 									"CN",
-									"1994-303212448123897",
-									"encoding.txt"
+									"1966-276891020823050",
+									"Commissie,_Inkomen,.pdf"
 								],
-								"type": "txt"
+								"type": "pdf"
 							},
-							"harness.txt": {
-								"name": "harness.txt",
+							"CT_van.pdf": {
+								"name": "CT_van.pdf",
 								"path": [
 									"CN",
-									"1994-303212448123897",
-									"harness.txt"
+									"1966-276891020823050",
+									"CT_van.pdf"
 								],
-								"type": "txt"
+								"type": "pdf"
 							},
-							"progressive_hub_outdoors.txt": {
-								"name": "progressive_hub_outdoors.txt",
+							"team_CTEPF.pdf": {
+								"name": "team_CTEPF.pdf",
 								"path": [
 									"CN",
-									"1994-303212448123897",
-									"progressive_hub_outdoors.txt"
+									"1966-276891020823050",
+									"team_CTEPF.pdf"
 								],
-								"type": "txt"
+								"type": "pdf"
 							},
-							"mall_target_4th_generation.txt": {
-								"name": "mall_target_4th_generation.txt",
+							"F_de.pdf": {
+								"name": "F_de.pdf",
 								"path": [
 									"CN",
-									"1994-303212448123897",
-									"mall_target_4th_generation.txt"
-								],
-								"type": "txt"
-							},
-							"b2b.pdf": {
-								"name": "b2b.pdf",
-								"path": [
-									"CN",
-									"1994-303212448123897",
-									"b2b.pdf"
+									"1966-276891020823050",
+									"F_de.pdf"
 								],
 								"type": "pdf"
 							}
 						}
 					},
-					"1996-104612820426650": {
+					"1969-80442550216712": {
 						"path": [
 							"CN",
-							"1996-104612820426650"
+							"1969-80442550216712"
 						],
-						"name": "1996-104612820426650",
+						"name": "1969-80442550216712",
 						"type": "dir",
-						"locked": true,
+						"dirType": "archive",
 						"children": {
-							"DOSSIER-26462365212164": {
+							"DOSSIER-111212578619356": {
 								"path": [
 									"CN",
-									"1996-104612820426650",
-									"DOSSIER-26462365212164"
+									"1969-80442550216712",
+									"DOSSIER-111212578619356"
 								],
-								"name": "DOSSIER-26462365212164",
+								"name": "DOSSIER-111212578619356",
 								"type": "dir",
-								"locked": true,
+								"dirType": "normal",
 								"children": {
-									"ergonomic_ball.txt": {
-										"name": "ergonomic_ball.txt",
+									"Force_Werk.txt": {
+										"name": "Force_Werk.txt",
 										"path": [
 											"CN",
-											"1996-104612820426650",
-											"DOSSIER-26462365212164",
-											"ergonomic_ball.txt"
+											"1969-80442550216712",
+											"DOSSIER-111212578619356",
+											"Force_Werk.txt"
 										],
 										"type": "txt"
 									},
-									"invoice_extended_games.txt": {
-										"name": "invoice_extended_games.txt",
+									"Andrea_en.pdf": {
+										"name": "Andrea_en.pdf",
 										"path": [
 											"CN",
-											"1996-104612820426650",
-											"DOSSIER-26462365212164",
-											"invoice_extended_games.txt"
+											"1969-80442550216712",
+											"DOSSIER-111212578619356",
+											"Andrea_en.pdf"
+										],
+										"type": "pdf"
+									},
+									"proliferatiefmanciering._organisatie.pdf": {
+										"name": "proliferatiefmanciering._organisatie.pdf",
+										"path": [
+											"CN",
+											"1969-80442550216712",
+											"DOSSIER-111212578619356",
+											"proliferatiefmanciering._organisatie.pdf"
+										],
+										"type": "pdf"
+									},
+									"European_Platform.txt": {
+										"name": "European_Platform.txt",
+										"path": [
+											"CN",
+											"1969-80442550216712",
+											"DOSSIER-111212578619356",
+											"European_Platform.txt"
 										],
 										"type": "txt"
 									},
-									"application_panama.txt": {
-										"name": "application_panama.txt",
+									"Caribisch_FAT.pdf": {
+										"name": "Caribisch_FAT.pdf",
 										"path": [
 											"CN",
-											"1996-104612820426650",
-											"DOSSIER-26462365212164",
-											"application_panama.txt"
-										],
-										"type": "txt"
-									},
-									"handcrafted_steel_soap.txt": {
-										"name": "handcrafted_steel_soap.txt",
-										"path": [
-											"CN",
-											"1996-104612820426650",
-											"DOSSIER-26462365212164",
-											"handcrafted_steel_soap.txt"
-										],
-										"type": "txt"
-									},
-									"com_malagasy_ariary_fantastic.pdf": {
-										"name": "com_malagasy_ariary_fantastic.pdf",
-										"path": [
-											"CN",
-											"1996-104612820426650",
-											"DOSSIER-26462365212164",
-											"com_malagasy_ariary_fantastic.pdf"
+											"1969-80442550216712",
+											"DOSSIER-111212578619356",
+											"Caribisch_FAT.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"DOSSIER-304772754010480": {
+							"DOSSIER-145391542427215": {
 								"path": [
 									"CN",
-									"1996-104612820426650",
-									"DOSSIER-304772754010480"
+									"1969-80442550216712",
+									"DOSSIER-145391542427215"
 								],
-								"name": "DOSSIER-304772754010480",
+								"name": "DOSSIER-145391542427215",
 								"type": "dir",
-								"locked": false,
+								"dirType": "normal",
 								"children": {
-									"industrial_back_up.pdf": {
-										"name": "industrial_back_up.pdf",
+									"politie_EC.txt": {
+										"name": "politie_EC.txt",
 										"path": [
 											"CN",
-											"1996-104612820426650",
-											"DOSSIER-304772754010480",
-											"industrial_back_up.pdf"
+											"1969-80442550216712",
+											"DOSSIER-145391542427215",
+											"politie_EC.txt"
+										],
+										"type": "txt"
+									},
+									"Ministerie,_Informatie,.txt": {
+										"name": "Ministerie,_Informatie,.txt",
+										"path": [
+											"CN",
+											"1969-80442550216712",
+											"DOSSIER-145391542427215",
+											"Ministerie,_Informatie,.txt"
+										],
+										"type": "txt"
+									},
+									"interne_Landelijke.pdf": {
+										"name": "interne_Landelijke.pdf",
+										"path": [
+											"CN",
+											"1969-80442550216712",
+											"DOSSIER-145391542427215",
+											"interne_Landelijke.pdf"
 										],
 										"type": "pdf"
 									},
-									"payment_european_monetary_unit_(e.m.u._6).txt": {
-										"name": "payment_european_monetary_unit_(e.m.u._6).txt",
+									"DWI_Opsporingsdienst.pdf": {
+										"name": "DWI_Opsporingsdienst.pdf",
 										"path": [
 											"CN",
-											"1996-104612820426650",
-											"DOSSIER-304772754010480",
-											"payment_european_monetary_unit_(e.m.u._6).txt"
-										],
-										"type": "txt"
-									},
-									"de_engineered_avon_haptic.pdf": {
-										"name": "de_engineered_avon_haptic.pdf",
-										"path": [
-											"CN",
-											"1996-104612820426650",
-											"DOSSIER-304772754010480",
-											"de_engineered_avon_haptic.pdf"
+											"1969-80442550216712",
+											"DOSSIER-145391542427215",
+											"DWI_Opsporingsdienst.pdf"
 										],
 										"type": "pdf"
 									},
-									"gb_viral_gorgeous_frozen_shoes.txt": {
-										"name": "gb_viral_gorgeous_frozen_shoes.txt",
+									"Laundering_proliferatiefmanciering..pdf": {
+										"name": "Laundering_proliferatiefmanciering..pdf",
 										"path": [
 											"CN",
-											"1996-104612820426650",
-											"DOSSIER-304772754010480",
-											"gb_viral_gorgeous_frozen_shoes.txt"
-										],
-										"type": "txt"
-									},
-									"grey.txt": {
-										"name": "grey.txt",
-										"path": [
-											"CN",
-											"1996-104612820426650",
-											"DOSSIER-304772754010480",
-											"grey.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-704330219980": {
-								"path": [
-									"CN",
-									"1996-104612820426650",
-									"DOSSIER-704330219980"
-								],
-								"name": "DOSSIER-704330219980",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"jbod_migration.pdf": {
-										"name": "jbod_migration.pdf",
-										"path": [
-											"CN",
-											"1996-104612820426650",
-											"DOSSIER-704330219980",
-											"jbod_migration.pdf"
-										],
-										"type": "pdf"
-									},
-									"wooden.txt": {
-										"name": "wooden.txt",
-										"path": [
-											"CN",
-											"1996-104612820426650",
-											"DOSSIER-704330219980",
-											"wooden.txt"
-										],
-										"type": "txt"
-									},
-									"bypassing_withdrawal.txt": {
-										"name": "bypassing_withdrawal.txt",
-										"path": [
-											"CN",
-											"1996-104612820426650",
-											"DOSSIER-704330219980",
-											"bypassing_withdrawal.txt"
-										],
-										"type": "txt"
-									},
-									"rustic.txt": {
-										"name": "rustic.txt",
-										"path": [
-											"CN",
-											"1996-104612820426650",
-											"DOSSIER-704330219980",
-											"rustic.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-8368116172469": {
-								"path": [
-									"CN",
-									"1996-104612820426650",
-									"DOSSIER-8368116172469"
-								],
-								"name": "DOSSIER-8368116172469",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"coordinator_killer.txt": {
-										"name": "coordinator_killer.txt",
-										"path": [
-											"CN",
-											"1996-104612820426650",
-											"DOSSIER-8368116172469",
-											"coordinator_killer.txt"
-										],
-										"type": "txt"
-									},
-									"principal_scsi_generic_concrete_fish.txt": {
-										"name": "principal_scsi_generic_concrete_fish.txt",
-										"path": [
-											"CN",
-											"1996-104612820426650",
-											"DOSSIER-8368116172469",
-											"principal_scsi_generic_concrete_fish.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-93351221220722": {
-								"path": [
-									"CN",
-									"1996-104612820426650",
-									"DOSSIER-93351221220722"
-								],
-								"name": "DOSSIER-93351221220722",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"info_mediaries_auxiliary_buckinghamshire.txt": {
-										"name": "info_mediaries_auxiliary_buckinghamshire.txt",
-										"path": [
-											"CN",
-											"1996-104612820426650",
-											"DOSSIER-93351221220722",
-											"info_mediaries_auxiliary_buckinghamshire.txt"
-										],
-										"type": "txt"
-									},
-									"projection_fantastic.txt": {
-										"name": "projection_fantastic.txt",
-										"path": [
-											"CN",
-											"1996-104612820426650",
-											"DOSSIER-93351221220722",
-											"projection_fantastic.txt"
-										],
-										"type": "txt"
-									},
-									"user_centric_moroccan_dirham.txt": {
-										"name": "user_centric_moroccan_dirham.txt",
-										"path": [
-											"CN",
-											"1996-104612820426650",
-											"DOSSIER-93351221220722",
-											"user_centric_moroccan_dirham.txt"
-										],
-										"type": "txt"
-									},
-									"bus_json_virginia.pdf": {
-										"name": "bus_json_virginia.pdf",
-										"path": [
-											"CN",
-											"1996-104612820426650",
-											"DOSSIER-93351221220722",
-											"bus_json_virginia.pdf"
+											"1969-80442550216712",
+											"DOSSIER-145391542427215",
+											"Laundering_proliferatiefmanciering..pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"calculate_hybrid.txt": {
-								"name": "calculate_hybrid.txt",
+							"DOSSIER-20920614629407": {
 								"path": [
 									"CN",
-									"1996-104612820426650",
-									"calculate_hybrid.txt"
+									"1969-80442550216712",
+									"DOSSIER-20920614629407"
 								],
-								"type": "txt"
+								"name": "DOSSIER-20920614629407",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Unie_Bureau.pdf": {
+										"name": "Unie_Bureau.pdf",
+										"path": [
+											"CN",
+											"1969-80442550216712",
+											"DOSSIER-20920614629407",
+											"Unie_Bureau.pdf"
+										],
+										"type": "pdf"
+									},
+									"Opsporingsdienst_EMM.txt": {
+										"name": "Opsporingsdienst_EMM.txt",
+										"path": [
+											"CN",
+											"1969-80442550216712",
+											"DOSSIER-20920614629407",
+											"Opsporingsdienst_EMM.txt"
+										],
+										"type": "txt"
+									},
+									"Bureau_een.pdf": {
+										"name": "Bureau_een.pdf",
+										"path": [
+											"CN",
+											"1969-80442550216712",
+											"DOSSIER-20920614629407",
+											"Bureau_een.pdf"
+										],
+										"type": "pdf"
+									},
+									"andrea_FP.txt": {
+										"name": "andrea_FP.txt",
+										"path": [
+											"CN",
+											"1969-80442550216712",
+											"DOSSIER-20920614629407",
+											"andrea_FP.txt"
+										],
+										"type": "txt"
+									},
+									"van_interne.pdf": {
+										"name": "van_interne.pdf",
+										"path": [
+											"CN",
+											"1969-80442550216712",
+											"DOSSIER-20920614629407",
+											"van_interne.pdf"
+										],
+										"type": "pdf"
+									}
+								}
 							},
-							"software.txt": {
-								"name": "software.txt",
+							"DOSSIER-4337279907485": {
 								"path": [
 									"CN",
-									"1996-104612820426650",
-									"software.txt"
+									"1969-80442550216712",
+									"DOSSIER-4337279907485"
 								],
-								"type": "txt"
+								"name": "DOSSIER-4337279907485",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Bureau_Anti-Money.pdf": {
+										"name": "Bureau_Anti-Money.pdf",
+										"path": [
+											"CN",
+											"1969-80442550216712",
+											"DOSSIER-4337279907485",
+											"Bureau_Anti-Money.pdf"
+										],
+										"type": "pdf"
+									},
+									"Centrum_FinEC.txt": {
+										"name": "Centrum_FinEC.txt",
+										"path": [
+											"CN",
+											"1969-80442550216712",
+											"DOSSIER-4337279907485",
+											"Centrum_FinEC.txt"
+										],
+										"type": "txt"
+									},
+									"Amsterdam_controle.txt": {
+										"name": "Amsterdam_controle.txt",
+										"path": [
+											"CN",
+											"1969-80442550216712",
+											"DOSSIER-4337279907485",
+											"Amsterdam_controle.txt"
+										],
+										"type": "txt"
+									},
+									"EU_Incasso.txt": {
+										"name": "EU_Incasso.txt",
+										"path": [
+											"CN",
+											"1969-80442550216712",
+											"DOSSIER-4337279907485",
+											"EU_Incasso.txt"
+										],
+										"type": "txt"
+									},
+									"Against_politie.txt": {
+										"name": "Against_politie.txt",
+										"path": [
+											"CN",
+											"1969-80442550216712",
+											"DOSSIER-4337279907485",
+											"Against_politie.txt"
+										],
+										"type": "txt"
+									}
+								}
 							},
-							"card.txt": {
-								"name": "card.txt",
+							"DOSSIER-8468129115492": {
 								"path": [
 									"CN",
-									"1996-104612820426650",
-									"card.txt"
+									"1969-80442550216712",
+									"DOSSIER-8468129115492"
+								],
+								"name": "DOSSIER-8468129115492",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Caribisch_Against.txt": {
+										"name": "Caribisch_Against.txt",
+										"path": [
+											"CN",
+											"1969-80442550216712",
+											"DOSSIER-8468129115492",
+											"Caribisch_Against.txt"
+										],
+										"type": "txt"
+									},
+									"EU_Leefomgeving.pdf": {
+										"name": "EU_Leefomgeving.pdf",
+										"path": [
+											"CN",
+											"1969-80442550216712",
+											"DOSSIER-8468129115492",
+											"EU_Leefomgeving.pdf"
+										],
+										"type": "pdf"
+									},
+									"Crimineel_Task.txt": {
+										"name": "Crimineel_Task.txt",
+										"path": [
+											"CN",
+											"1969-80442550216712",
+											"DOSSIER-8468129115492",
+											"Crimineel_Task.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"_interne.txt": {
+								"name": "_interne.txt",
+								"path": [
+									"CN",
+									"1969-80442550216712",
+									"_interne.txt"
 								],
 								"type": "txt"
 							}
 						}
 					},
-					"1999-31011852730939": {
+					"1971-90562124524937": {
 						"path": [
 							"CN",
-							"1999-31011852730939"
+							"1971-90562124524937"
 						],
-						"name": "1999-31011852730939",
+						"name": "1971-90562124524937",
 						"type": "dir",
-						"locked": false,
+						"dirType": "archive",
 						"children": {
-							"DOSSIER-122771686424523": {
+							"DOSSIER-160891699227588": {
 								"path": [
 									"CN",
-									"1999-31011852730939",
-									"DOSSIER-122771686424523"
+									"1971-90562124524937",
+									"DOSSIER-160891699227588"
 								],
-								"name": "DOSSIER-122771686424523",
+								"name": "DOSSIER-160891699227588",
 								"type": "dir",
-								"locked": true,
+								"dirType": "archive",
 								"children": {
-									"unbranded_frozen_hat.txt": {
-										"name": "unbranded_frozen_hat.txt",
+									"team_gebouwd.txt": {
+										"name": "team_gebouwd.txt",
 										"path": [
 											"CN",
-											"1999-31011852730939",
-											"DOSSIER-122771686424523",
-											"unbranded_frozen_hat.txt"
+											"1971-90562124524937",
+											"DOSSIER-160891699227588",
+											"team_gebouwd.txt"
 										],
 										"type": "txt"
 									},
-									"matrix_invoice.txt": {
-										"name": "matrix_invoice.txt",
+									"Openbaar_de.txt": {
+										"name": "Openbaar_de.txt",
 										"path": [
 											"CN",
-											"1999-31011852730939",
-											"DOSSIER-122771686424523",
-											"matrix_invoice.txt"
+											"1971-90562124524937",
+											"DOSSIER-160891699227588",
+											"Openbaar_de.txt"
+										],
+										"type": "txt"
+									},
+									"Caribisch_Bureau.txt": {
+										"name": "Caribisch_Bureau.txt",
+										"path": [
+											"CN",
+											"1971-90562124524937",
+											"DOSSIER-160891699227588",
+											"Caribisch_Bureau.txt"
+										],
+										"type": "txt"
+									},
+									"Sint_GoAML.txt": {
+										"name": "Sint_GoAML.txt",
+										"path": [
+											"CN",
+											"1971-90562124524937",
+											"DOSSIER-160891699227588",
+											"Sint_GoAML.txt"
+										],
+										"type": "txt"
+									},
+									"European_onderdeel.txt": {
+										"name": "European_onderdeel.txt",
+										"path": [
+											"CN",
+											"1971-90562124524937",
+											"DOSSIER-160891699227588",
+											"European_onderdeel.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-135273004824689": {
+							"DOSSIER-166802316524768": {
 								"path": [
 									"CN",
-									"1999-31011852730939",
-									"DOSSIER-135273004824689"
+									"1971-90562124524937",
+									"DOSSIER-166802316524768"
 								],
-								"name": "DOSSIER-135273004824689",
+								"name": "DOSSIER-166802316524768",
 								"type": "dir",
-								"locked": false,
+								"dirType": "archive",
 								"children": {
-									"shoes_user_centric_glen.txt": {
-										"name": "shoes_user_centric_glen.txt",
+									"gebouwd_FinanciÃ«le.txt": {
+										"name": "gebouwd_FinanciÃ«le.txt",
 										"path": [
 											"CN",
-											"1999-31011852730939",
-											"DOSSIER-135273004824689",
-											"shoes_user_centric_glen.txt"
+											"1971-90562124524937",
+											"DOSSIER-166802316524768",
+											"gebouwd_FinanciÃ«le.txt"
 										],
 										"type": "txt"
 									},
-									"black.txt": {
-										"name": "black.txt",
+									"Platform_Ontnemingswetgeving.txt": {
+										"name": "Platform_Ontnemingswetgeving.txt",
 										"path": [
 											"CN",
-											"1999-31011852730939",
-											"DOSSIER-135273004824689",
-											"black.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-2112289317505": {
-								"path": [
-									"CN",
-									"1999-31011852730939",
-									"DOSSIER-2112289317505"
-								],
-								"name": "DOSSIER-2112289317505",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"creative_enterprise_practical_steel_salad.txt": {
-										"name": "creative_enterprise_practical_steel_salad.txt",
-										"path": [
-											"CN",
-											"1999-31011852730939",
-											"DOSSIER-2112289317505",
-											"creative_enterprise_practical_steel_salad.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-294321249010230": {
-								"path": [
-									"CN",
-									"1999-31011852730939",
-									"DOSSIER-294321249010230"
-								],
-								"name": "DOSSIER-294321249010230",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"bypass_enhanced_bandwidth_monitored.txt": {
-										"name": "bypass_enhanced_bandwidth_monitored.txt",
-										"path": [
-											"CN",
-											"1999-31011852730939",
-											"DOSSIER-294321249010230",
-											"bypass_enhanced_bandwidth_monitored.txt"
+											"1971-90562124524937",
+											"DOSSIER-166802316524768",
+											"Platform_Ontnemingswetgeving.txt"
 										],
 										"type": "txt"
 									},
-									"forint_groupware_national.txt": {
-										"name": "forint_groupware_national.txt",
+									"Transport_van.txt": {
+										"name": "Transport_van.txt",
 										"path": [
 											"CN",
-											"1999-31011852730939",
-											"DOSSIER-294321249010230",
-											"forint_groupware_national.txt"
+											"1971-90562124524937",
+											"DOSSIER-166802316524768",
+											"Transport_van.txt"
 										],
 										"type": "txt"
 									},
-									"best_of_breed_maine_keyboard.txt": {
-										"name": "best_of_breed_maine_keyboard.txt",
+									"onderdeel_Functioneel.pdf": {
+										"name": "onderdeel_Functioneel.pdf",
 										"path": [
 											"CN",
-											"1999-31011852730939",
-											"DOSSIER-294321249010230",
-											"best_of_breed_maine_keyboard.txt"
-										],
-										"type": "txt"
-									},
-									"exclusive.txt": {
-										"name": "exclusive.txt",
-										"path": [
-											"CN",
-											"1999-31011852730939",
-											"DOSSIER-294321249010230",
-											"exclusive.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-299902375419553": {
-								"path": [
-									"CN",
-									"1999-31011852730939",
-									"DOSSIER-299902375419553"
-								],
-								"name": "DOSSIER-299902375419553",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"chicken_branding_quantifying.pdf": {
-										"name": "chicken_branding_quantifying.pdf",
-										"path": [
-											"CN",
-											"1999-31011852730939",
-											"DOSSIER-299902375419553",
-											"chicken_branding_quantifying.pdf"
+											"1971-90562124524937",
+											"DOSSIER-166802316524768",
+											"onderdeel_Functioneel.pdf"
 										],
 										"type": "pdf"
-									},
-									"program.txt": {
-										"name": "program.txt",
+									}
+								}
+							},
+							"DOSSIER-20301827110482": {
+								"path": [
+									"CN",
+									"1971-90562124524937",
+									"DOSSIER-20301827110482"
+								],
+								"name": "DOSSIER-20301827110482",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"en_Money.txt": {
+										"name": "en_Money.txt",
 										"path": [
 											"CN",
-											"1999-31011852730939",
-											"DOSSIER-299902375419553",
-											"program.txt"
+											"1971-90562124524937",
+											"DOSSIER-20301827110482",
+											"en_Money.txt"
 										],
 										"type": "txt"
 									},
-									"coordinator.txt": {
-										"name": "coordinator.txt",
+									"van_en.txt": {
+										"name": "van_en.txt",
 										"path": [
 											"CN",
-											"1999-31011852730939",
-											"DOSSIER-299902375419553",
-											"coordinator.txt"
-										],
-										"type": "txt"
-									},
-									"synergistic.txt": {
-										"name": "synergistic.txt",
-										"path": [
-											"CN",
-											"1999-31011852730939",
-											"DOSSIER-299902375419553",
-											"synergistic.txt"
-										],
-										"type": "txt"
-									},
-									"trail_avon_tasty.txt": {
-										"name": "trail_avon_tasty.txt",
-										"path": [
-											"CN",
-											"1999-31011852730939",
-											"DOSSIER-299902375419553",
-											"trail_avon_tasty.txt"
+											"1971-90562124524937",
+											"DOSSIER-20301827110482",
+											"van_en.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"pakistan_rupee.pdf": {
-								"name": "pakistan_rupee.pdf",
+							"DOSSIER-88471904523784": {
 								"path": [
 									"CN",
-									"1999-31011852730939",
-									"pakistan_rupee.pdf"
+									"1971-90562124524937",
+									"DOSSIER-88471904523784"
+								],
+								"name": "DOSSIER-88471904523784",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"AMLC_Vermogen.txt": {
+										"name": "AMLC_Vermogen.txt",
+										"path": [
+											"CN",
+											"1971-90562124524937",
+											"DOSSIER-88471904523784",
+											"AMLC_Vermogen.txt"
+										],
+										"type": "txt"
+									},
+									"AFM_Incasso.txt": {
+										"name": "AFM_Incasso.txt",
+										"path": [
+											"CN",
+											"1971-90562124524937",
+											"DOSSIER-88471904523784",
+											"AFM_Incasso.txt"
+										],
+										"type": "txt"
+									},
+									"Bank_het.txt": {
+										"name": "Bank_het.txt",
+										"path": [
+											"CN",
+											"1971-90562124524937",
+											"DOSSIER-88471904523784",
+											"Bank_het.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-902248267635": {
+								"path": [
+									"CN",
+									"1971-90562124524937",
+									"DOSSIER-902248267635"
+								],
+								"name": "DOSSIER-902248267635",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Multidisciplinary_binnen.pdf": {
+										"name": "Multidisciplinary_binnen.pdf",
+										"path": [
+											"CN",
+											"1971-90562124524937",
+											"DOSSIER-902248267635",
+											"Multidisciplinary_binnen.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"A01C_Leefomgeving.pdf": {
+								"name": "A01C_Leefomgeving.pdf",
+								"path": [
+									"CN",
+									"1971-90562124524937",
+									"A01C_Leefomgeving.pdf"
 								],
 								"type": "pdf"
 							},
-							"nepal_hdd.txt": {
-								"name": "nepal_hdd.txt",
+							"Functioneel_door.txt": {
+								"name": "Functioneel_door.txt",
 								"path": [
 									"CN",
-									"1999-31011852730939",
-									"nepal_hdd.txt"
+									"1971-90562124524937",
+									"Functioneel_door.txt"
 								],
 								"type": "txt"
 							},
-							"global_ftp_hack.pdf": {
-								"name": "global_ftp_hack.pdf",
+							"BFT_CN.txt": {
+								"name": "BFT_CN.txt",
 								"path": [
 									"CN",
-									"1999-31011852730939",
-									"global_ftp_hack.pdf"
+									"1971-90562124524937",
+									"BFT_CN.txt"
 								],
-								"type": "pdf"
+								"type": "txt"
 							},
-							"refined_plastic_tuna_invoice_maine.pdf": {
-								"name": "refined_plastic_tuna_invoice_maine.pdf",
+							"OM_Centrum.txt": {
+								"name": "OM_Centrum.txt",
 								"path": [
 									"CN",
-									"1999-31011852730939",
-									"refined_plastic_tuna_invoice_maine.pdf"
+									"1971-90562124524937",
+									"OM_Centrum.txt"
 								],
-								"type": "pdf"
+								"type": "txt"
 							}
 						}
 					},
-					"european_unit_of_account_17(e.u.a._17).pdf": {
-						"name": "european_unit_of_account_17(e.u.a._17).pdf",
+					"1992-6235212113205": {
 						"path": [
 							"CN",
-							"european_unit_of_account_17(e.u.a._17).pdf"
+							"1992-6235212113205"
+						],
+						"name": "1992-6235212113205",
+						"type": "dir",
+						"dirType": "normal",
+						"children": {
+							"DOSSIER-1131549343424": {
+								"path": [
+									"CN",
+									"1992-6235212113205",
+									"DOSSIER-1131549343424"
+								],
+								"name": "DOSSIER-1131549343424",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Landelijke_andrea.txt": {
+										"name": "Landelijke_andrea.txt",
+										"path": [
+											"CN",
+											"1992-6235212113205",
+											"DOSSIER-1131549343424",
+											"Landelijke_andrea.txt"
+										],
+										"type": "txt"
+									},
+									"Werk_Opsporingsdienst.txt": {
+										"name": "Werk_Opsporingsdienst.txt",
+										"path": [
+											"CN",
+											"1992-6235212113205",
+											"DOSSIER-1131549343424",
+											"Werk_Opsporingsdienst.txt"
+										],
+										"type": "txt"
+									},
+									"BOOM_Financieel.txt": {
+										"name": "BOOM_Financieel.txt",
+										"path": [
+											"CN",
+											"1992-6235212113205",
+											"DOSSIER-1131549343424",
+											"BOOM_Financieel.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-12516226864585": {
+								"path": [
+									"CN",
+									"1992-6235212113205",
+									"DOSSIER-12516226864585"
+								],
+								"name": "DOSSIER-12516226864585",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Money_European.txt": {
+										"name": "Money_European.txt",
+										"path": [
+											"CN",
+											"1992-6235212113205",
+											"DOSSIER-12516226864585",
+											"Money_European.txt"
+										],
+										"type": "txt"
+									},
+									"EC_Contraterrorisme.pdf": {
+										"name": "EC_Contraterrorisme.pdf",
+										"path": [
+											"CN",
+											"1992-6235212113205",
+											"DOSSIER-12516226864585",
+											"EC_Contraterrorisme.pdf"
+										],
+										"type": "pdf"
+									},
+									"Bureau_Andrea.pdf": {
+										"name": "Bureau_Andrea.pdf",
+										"path": [
+											"CN",
+											"1992-6235212113205",
+											"DOSSIER-12516226864585",
+											"Bureau_Andrea.pdf"
+										],
+										"type": "pdf"
+									},
+									"en_een.txt": {
+										"name": "en_een.txt",
+										"path": [
+											"CN",
+											"1992-6235212113205",
+											"DOSSIER-12516226864585",
+											"en_een.txt"
+										],
+										"type": "txt"
+									},
+									"Inspectie_Action.txt": {
+										"name": "Inspectie_Action.txt",
+										"path": [
+											"CN",
+											"1992-6235212113205",
+											"DOSSIER-12516226864585",
+											"Inspectie_Action.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-246122980425608": {
+								"path": [
+									"CN",
+									"1992-6235212113205",
+									"DOSSIER-246122980425608"
+								],
+								"name": "DOSSIER-246122980425608",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Infobox_Nederland.pdf": {
+										"name": "Infobox_Nederland.pdf",
+										"path": [
+											"CN",
+											"1992-6235212113205",
+											"DOSSIER-246122980425608",
+											"Infobox_Nederland.pdf"
+										],
+										"type": "pdf"
+									},
+									"Andrea_Criminal.txt": {
+										"name": "Andrea_Criminal.txt",
+										"path": [
+											"CN",
+											"1992-6235212113205",
+											"DOSSIER-246122980425608",
+											"Andrea_Criminal.txt"
+										],
+										"type": "txt"
+									},
+									"European_Eenheid.txt": {
+										"name": "European_Eenheid.txt",
+										"path": [
+											"CN",
+											"1992-6235212113205",
+											"DOSSIER-246122980425608",
+											"European_Eenheid.txt"
+										],
+										"type": "txt"
+									},
+									"onderdeel_controle.txt": {
+										"name": "onderdeel_controle.txt",
+										"path": [
+											"CN",
+											"1992-6235212113205",
+											"DOSSIER-246122980425608",
+											"onderdeel_controle.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-266733185617760": {
+								"path": [
+									"CN",
+									"1992-6235212113205",
+									"DOSSIER-266733185617760"
+								],
+								"name": "DOSSIER-266733185617760",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Infobox_Autoriteit.txt": {
+										"name": "Infobox_Autoriteit.txt",
+										"path": [
+											"CN",
+											"1992-6235212113205",
+											"DOSSIER-266733185617760",
+											"Infobox_Autoriteit.txt"
+										],
+										"type": "txt"
+									},
+									"de_Expertisecentrum.pdf": {
+										"name": "de_Expertisecentrum.pdf",
+										"path": [
+											"CN",
+											"1992-6235212113205",
+											"DOSSIER-266733185617760",
+											"de_Expertisecentrum.pdf"
+										],
+										"type": "pdf"
+									},
+									"Contraterrorisme_DNB.txt": {
+										"name": "Contraterrorisme_DNB.txt",
+										"path": [
+											"CN",
+											"1992-6235212113205",
+											"DOSSIER-266733185617760",
+											"Contraterrorisme_DNB.txt"
+										],
+										"type": "txt"
+									},
+									"Ontnemingswetgeving_Contraterrorisme.txt": {
+										"name": "Ontnemingswetgeving_Contraterrorisme.txt",
+										"path": [
+											"CN",
+											"1992-6235212113205",
+											"DOSSIER-266733185617760",
+											"Ontnemingswetgeving_Contraterrorisme.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-70861674329514": {
+								"path": [
+									"CN",
+									"1992-6235212113205",
+									"DOSSIER-70861674329514"
+								],
+								"name": "DOSSIER-70861674329514",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"CTEPF_van.pdf": {
+										"name": "CTEPF_van.pdf",
+										"path": [
+											"CN",
+											"1992-6235212113205",
+											"DOSSIER-70861674329514",
+											"CTEPF_van.pdf"
+										],
+										"type": "pdf"
+									},
+									"Infobox_BOOM.pdf": {
+										"name": "Infobox_BOOM.pdf",
+										"path": [
+											"CN",
+											"1992-6235212113205",
+											"DOSSIER-70861674329514",
+											"Infobox_BOOM.pdf"
+										],
+										"type": "pdf"
+									},
+									"Markten_Ontnemingswetgeving.txt": {
+										"name": "Markten_Ontnemingswetgeving.txt",
+										"path": [
+											"CN",
+											"1992-6235212113205",
+											"DOSSIER-70861674329514",
+											"Markten_Ontnemingswetgeving.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"Landelijke_Government.txt": {
+								"name": "Landelijke_Government.txt",
+								"path": [
+									"CN",
+									"1992-6235212113205",
+									"Landelijke_Government.txt"
+								],
+								"type": "txt"
+							},
+							"FIOD_Sint.pdf": {
+								"name": "FIOD_Sint.pdf",
+								"path": [
+									"CN",
+									"1992-6235212113205",
+									"FIOD_Sint.pdf"
+								],
+								"type": "pdf"
+							},
+							"onderdeel_FinEC.txt": {
+								"name": "onderdeel_FinEC.txt",
+								"path": [
+									"CN",
+									"1992-6235212113205",
+									"onderdeel_FinEC.txt"
+								],
+								"type": "txt"
+							},
+							"Inkomen,_onderdeel.pdf": {
+								"name": "Inkomen,_onderdeel.pdf",
+								"path": [
+									"CN",
+									"1992-6235212113205",
+									"Inkomen,_onderdeel.pdf"
+								],
+								"type": "pdf"
+							},
+							"CWI_Ontnemingswetgeving.txt": {
+								"name": "CWI_Ontnemingswetgeving.txt",
+								"path": [
+									"CN",
+									"1992-6235212113205",
+									"CWI_Ontnemingswetgeving.txt"
+								],
+								"type": "txt"
+							}
+						}
+					},
+					"gemeente_en.pdf": {
+						"name": "gemeente_en.pdf",
+						"path": [
+							"CN",
+							"gemeente_en.pdf"
 						],
 						"type": "pdf"
 					},
-					"directives.txt": {
-						"name": "directives.txt",
+					"van_Infobox.pdf": {
+						"name": "van_Infobox.pdf",
 						"path": [
 							"CN",
-							"directives.txt"
+							"van_Infobox.pdf"
+						],
+						"type": "pdf"
+					},
+					"de_Laundering.txt": {
+						"name": "de_Laundering.txt",
+						"path": [
+							"CN",
+							"de_Laundering.txt"
 						],
 						"type": "txt"
 					}
@@ -24929,1203 +24933,1171 @@
 				],
 				"name": "ESW",
 				"type": "dir",
-				"locked": true,
+				"dirType": "locked",
 				"children": {
-					"1972-73101811512181": {
+					"1976-31233364231465": {
 						"path": [
 							"ESW",
-							"1972-73101811512181"
+							"1976-31233364231465"
 						],
-						"name": "1972-73101811512181",
+						"name": "1976-31233364231465",
 						"type": "dir",
-						"locked": false,
+						"dirType": "normal",
 						"children": {
-							"DOSSIER-1310971717634": {
+							"DOSSIER-155641635621187": {
 								"path": [
 									"ESW",
-									"1972-73101811512181",
-									"DOSSIER-1310971717634"
+									"1976-31233364231465",
+									"DOSSIER-155641635621187"
 								],
-								"name": "DOSSIER-1310971717634",
+								"name": "DOSSIER-155641635621187",
 								"type": "dir",
-								"locked": true,
+								"dirType": "archive",
 								"children": {
-									"texas.txt": {
-										"name": "texas.txt",
+									"organisatie_European.pdf": {
+										"name": "organisatie_European.pdf",
 										"path": [
 											"ESW",
-											"1972-73101811512181",
-											"DOSSIER-1310971717634",
-											"texas.txt"
-										],
-										"type": "txt"
-									},
-									"bandwidth_yemeni_rial_cross_platform.txt": {
-										"name": "bandwidth_yemeni_rial_cross_platform.txt",
-										"path": [
-											"ESW",
-											"1972-73101811512181",
-											"DOSSIER-1310971717634",
-											"bandwidth_yemeni_rial_cross_platform.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-3265188797352": {
-								"path": [
-									"ESW",
-									"1972-73101811512181",
-									"DOSSIER-3265188797352"
-								],
-								"name": "DOSSIER-3265188797352",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"indigo.txt": {
-										"name": "indigo.txt",
-										"path": [
-											"ESW",
-											"1972-73101811512181",
-											"DOSSIER-3265188797352",
-											"indigo.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-4392751112267": {
-								"path": [
-									"ESW",
-									"1972-73101811512181",
-									"DOSSIER-4392751112267"
-								],
-								"name": "DOSSIER-4392751112267",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"architect_pakistan_transmit.pdf": {
-										"name": "architect_pakistan_transmit.pdf",
-										"path": [
-											"ESW",
-											"1972-73101811512181",
-											"DOSSIER-4392751112267",
-											"architect_pakistan_transmit.pdf"
+											"1976-31233364231465",
+											"DOSSIER-155641635621187",
+											"organisatie_European.pdf"
 										],
 										"type": "pdf"
 									},
-									"synthesizing_infomediaries_rustic_fresh_fish.txt": {
-										"name": "synthesizing_infomediaries_rustic_fresh_fish.txt",
+									"applicatie_Eustatiusen.txt": {
+										"name": "applicatie_Eustatiusen.txt",
 										"path": [
 											"ESW",
-											"1972-73101811512181",
-											"DOSSIER-4392751112267",
-											"synthesizing_infomediaries_rustic_fresh_fish.txt"
+											"1976-31233364231465",
+											"DOSSIER-155641635621187",
+											"applicatie_Eustatiusen.txt"
 										],
 										"type": "txt"
 									},
-									"officer_buckinghamshire_direct.txt": {
-										"name": "officer_buckinghamshire_direct.txt",
+									"door_van.txt": {
+										"name": "door_van.txt",
 										"path": [
 											"ESW",
-											"1972-73101811512181",
-											"DOSSIER-4392751112267",
-											"officer_buckinghamshire_direct.txt"
+											"1976-31233364231465",
+											"DOSSIER-155641635621187",
+											"door_van.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-795275618951": {
+							"DOSSIER-18452217020725": {
 								"path": [
 									"ESW",
-									"1972-73101811512181",
-									"DOSSIER-795275618951"
+									"1976-31233364231465",
+									"DOSSIER-18452217020725"
 								],
-								"name": "DOSSIER-795275618951",
+								"name": "DOSSIER-18452217020725",
 								"type": "dir",
-								"locked": true,
+								"dirType": "locked",
 								"children": {
-									"zloty_baht_frictionless.txt": {
-										"name": "zloty_baht_frictionless.txt",
+									"Financial_team.txt": {
+										"name": "Financial_team.txt",
 										"path": [
 											"ESW",
-											"1972-73101811512181",
-											"DOSSIER-795275618951",
-											"zloty_baht_frictionless.txt"
+											"1976-31233364231465",
+											"DOSSIER-18452217020725",
+											"Financial_team.txt"
+										],
+										"type": "txt"
+									},
+									"DNB_Openbaar.txt": {
+										"name": "DNB_Openbaar.txt",
+										"path": [
+											"ESW",
+											"1976-31233364231465",
+											"DOSSIER-18452217020725",
+											"DNB_Openbaar.txt"
+										],
+										"type": "txt"
+									},
+									"de_team.txt": {
+										"name": "de_team.txt",
+										"path": [
+											"ESW",
+											"1976-31233364231465",
+											"DOSSIER-18452217020725",
+											"de_team.txt"
+										],
+										"type": "txt"
+									},
+									"Mensenhandel_Intelligence.txt": {
+										"name": "Mensenhandel_Intelligence.txt",
+										"path": [
+											"ESW",
+											"1976-31233364231465",
+											"DOSSIER-18452217020725",
+											"Mensenhandel_Intelligence.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-92451480818035": {
+							"DOSSIER-20492614928721": {
 								"path": [
 									"ESW",
-									"1972-73101811512181",
-									"DOSSIER-92451480818035"
+									"1976-31233364231465",
+									"DOSSIER-20492614928721"
 								],
-								"name": "DOSSIER-92451480818035",
+								"name": "DOSSIER-20492614928721",
 								"type": "dir",
-								"locked": true,
+								"dirType": "archive",
 								"children": {
-									"agp_multi_lateral_red.txt": {
-										"name": "agp_multi_lateral_red.txt",
+									"Landelijke_Bonaire..pdf": {
+										"name": "Landelijke_Bonaire..pdf",
 										"path": [
 											"ESW",
-											"1972-73101811512181",
-											"DOSSIER-92451480818035",
-											"agp_multi_lateral_red.txt"
+											"1976-31233364231465",
+											"DOSSIER-20492614928721",
+											"Landelijke_Bonaire..pdf"
 										],
-										"type": "txt"
+										"type": "pdf"
 									},
-									"neural_matrix.txt": {
-										"name": "neural_matrix.txt",
+									"van_en.pdf": {
+										"name": "van_en.pdf",
 										"path": [
 											"ESW",
-											"1972-73101811512181",
-											"DOSSIER-92451480818035",
-											"neural_matrix.txt"
-										],
-										"type": "txt"
-									},
-									"nevada.txt": {
-										"name": "nevada.txt",
-										"path": [
-											"ESW",
-											"1972-73101811512181",
-											"DOSSIER-92451480818035",
-											"nevada.txt"
-										],
-										"type": "txt"
-									},
-									"producer_hacking.pdf": {
-										"name": "producer_hacking.pdf",
-										"path": [
-											"ESW",
-											"1972-73101811512181",
-											"DOSSIER-92451480818035",
-											"producer_hacking.pdf"
+											"1976-31233364231465",
+											"DOSSIER-20492614928721",
+											"van_en.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"architect_indigo_pixel.txt": {
-								"name": "architect_indigo_pixel.txt",
+							"DOSSIER-238471662516928": {
 								"path": [
 									"ESW",
-									"1972-73101811512181",
-									"architect_indigo_pixel.txt"
+									"1976-31233364231465",
+									"DOSSIER-238471662516928"
 								],
-								"type": "txt"
-							},
-							"fresh.pdf": {
-								"name": "fresh.pdf",
-								"path": [
-									"ESW",
-									"1972-73101811512181",
-									"fresh.pdf"
-								],
-								"type": "pdf"
-							}
-						}
-					},
-					"1977-78813240729736": {
-						"path": [
-							"ESW",
-							"1977-78813240729736"
-						],
-						"name": "1977-78813240729736",
-						"type": "dir",
-						"locked": true,
-						"children": {
-							"DOSSIER-105662239218488": {
-								"path": [
-									"ESW",
-									"1977-78813240729736",
-									"DOSSIER-105662239218488"
-								],
-								"name": "DOSSIER-105662239218488",
+								"name": "DOSSIER-238471662516928",
 								"type": "dir",
-								"locked": false,
+								"dirType": "normal",
 								"children": {
-									"bike_pixel_empower.txt": {
-										"name": "bike_pixel_empower.txt",
+									"Mensensmokkel_F.txt": {
+										"name": "Mensensmokkel_F.txt",
 										"path": [
 											"ESW",
-											"1977-78813240729736",
-											"DOSSIER-105662239218488",
-											"bike_pixel_empower.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-138008633164": {
-								"path": [
-									"ESW",
-									"1977-78813240729736",
-									"DOSSIER-138008633164"
-								],
-								"name": "DOSSIER-138008633164",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"css_associate.txt": {
-										"name": "css_associate.txt",
-										"path": [
-											"ESW",
-											"1977-78813240729736",
-											"DOSSIER-138008633164",
-											"css_associate.txt"
+											"1976-31233364231465",
+											"DOSSIER-238471662516928",
+											"Mensensmokkel_F.txt"
 										],
 										"type": "txt"
 									},
-									"prairie_planner_turn_key.txt": {
-										"name": "prairie_planner_turn_key.txt",
+									"onderdeel_door.txt": {
+										"name": "onderdeel_door.txt",
 										"path": [
 											"ESW",
-											"1977-78813240729736",
-											"DOSSIER-138008633164",
-											"prairie_planner_turn_key.txt"
+											"1976-31233364231465",
+											"DOSSIER-238471662516928",
+											"onderdeel_door.txt"
 										],
 										"type": "txt"
 									},
-									"calculating.txt": {
-										"name": "calculating.txt",
+									"Infobox_van.txt": {
+										"name": "Infobox_van.txt",
 										"path": [
 											"ESW",
-											"1977-78813240729736",
-											"DOSSIER-138008633164",
-											"calculating.txt"
+											"1976-31233364231465",
+											"DOSSIER-238471662516928",
+											"Infobox_van.txt"
 										],
 										"type": "txt"
 									},
-									"ball_sleek.pdf": {
-										"name": "ball_sleek.pdf",
+									"Against_Sint.txt": {
+										"name": "Against_Sint.txt",
 										"path": [
 											"ESW",
-											"1977-78813240729736",
-											"DOSSIER-138008633164",
-											"ball_sleek.pdf"
+											"1976-31233364231465",
+											"DOSSIER-238471662516928",
+											"Against_Sint.txt"
 										],
-										"type": "pdf"
+										"type": "txt"
 									},
-									"concrete.pdf": {
-										"name": "concrete.pdf",
+									"van_Inkomen,.pdf": {
+										"name": "van_Inkomen,.pdf",
 										"path": [
 											"ESW",
-											"1977-78813240729736",
-											"DOSSIER-138008633164",
-											"concrete.pdf"
+											"1976-31233364231465",
+											"DOSSIER-238471662516928",
+											"van_Inkomen,.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"DOSSIER-326242220321884": {
+							"DOSSIER-8109215231293": {
 								"path": [
 									"ESW",
-									"1977-78813240729736",
-									"DOSSIER-326242220321884"
+									"1976-31233364231465",
+									"DOSSIER-8109215231293"
 								],
-								"name": "DOSSIER-326242220321884",
+								"name": "DOSSIER-8109215231293",
 								"type": "dir",
-								"locked": false,
+								"dirType": "archive",
 								"children": {
-									"yen_connecting_implementation.txt": {
-										"name": "yen_connecting_implementation.txt",
+									"de_andrea.pdf": {
+										"name": "de_andrea.pdf",
 										"path": [
 											"ESW",
-											"1977-78813240729736",
-											"DOSSIER-326242220321884",
-											"yen_connecting_implementation.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-51192594012672": {
-								"path": [
-									"ESW",
-									"1977-78813240729736",
-									"DOSSIER-51192594012672"
-								],
-								"name": "DOSSIER-51192594012672",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"withdrawal.txt": {
-										"name": "withdrawal.txt",
-										"path": [
-											"ESW",
-											"1977-78813240729736",
-											"DOSSIER-51192594012672",
-											"withdrawal.txt"
-										],
-										"type": "txt"
-									},
-									"rapid.txt": {
-										"name": "rapid.txt",
-										"path": [
-											"ESW",
-											"1977-78813240729736",
-											"DOSSIER-51192594012672",
-											"rapid.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-9907203922385": {
-								"path": [
-									"ESW",
-									"1977-78813240729736",
-									"DOSSIER-9907203922385"
-								],
-								"name": "DOSSIER-9907203922385",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"repurpose_sudanese_pound.pdf": {
-										"name": "repurpose_sudanese_pound.pdf",
-										"path": [
-											"ESW",
-											"1977-78813240729736",
-											"DOSSIER-9907203922385",
-											"repurpose_sudanese_pound.pdf"
-										],
-										"type": "pdf"
-									},
-									"usb_investor.txt": {
-										"name": "usb_investor.txt",
-										"path": [
-											"ESW",
-											"1977-78813240729736",
-											"DOSSIER-9907203922385",
-											"usb_investor.txt"
-										],
-										"type": "txt"
-									},
-									"architect_wall.pdf": {
-										"name": "architect_wall.pdf",
-										"path": [
-											"ESW",
-											"1977-78813240729736",
-											"DOSSIER-9907203922385",
-											"architect_wall.pdf"
-										],
-										"type": "pdf"
-									},
-									"generate_trinidad_and_tobago_dollar_usability.pdf": {
-										"name": "generate_trinidad_and_tobago_dollar_usability.pdf",
-										"path": [
-											"ESW",
-											"1977-78813240729736",
-											"DOSSIER-9907203922385",
-											"generate_trinidad_and_tobago_dollar_usability.pdf"
+											"1976-31233364231465",
+											"DOSSIER-8109215231293",
+											"de_andrea.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"ivory_payment.txt": {
-								"name": "ivory_payment.txt",
+							"van_eilanden.txt": {
+								"name": "van_eilanden.txt",
 								"path": [
 									"ESW",
-									"1977-78813240729736",
-									"ivory_payment.txt"
-								],
-								"type": "txt"
-							},
-							"invoice.txt": {
-								"name": "invoice.txt",
-								"path": [
-									"ESW",
-									"1977-78813240729736",
-									"invoice.txt"
-								],
-								"type": "txt"
-							},
-							"configuration.txt": {
-								"name": "configuration.txt",
-								"path": [
-									"ESW",
-									"1977-78813240729736",
-									"configuration.txt"
+									"1976-31233364231465",
+									"van_eilanden.txt"
 								],
 								"type": "txt"
 							}
 						}
 					},
-					"1978-239832414432302": {
+					"1985-234912115019211": {
 						"path": [
 							"ESW",
-							"1978-239832414432302"
+							"1985-234912115019211"
 						],
-						"name": "1978-239832414432302",
+						"name": "1985-234912115019211",
 						"type": "dir",
-						"locked": true,
+						"dirType": "locked",
 						"children": {
-							"DOSSIER-131312402026222": {
+							"DOSSIER-108641708319056": {
 								"path": [
 									"ESW",
-									"1978-239832414432302",
-									"DOSSIER-131312402026222"
+									"1985-234912115019211",
+									"DOSSIER-108641708319056"
 								],
-								"name": "DOSSIER-131312402026222",
+								"name": "DOSSIER-108641708319056",
 								"type": "dir",
-								"locked": true,
+								"dirType": "archive",
 								"children": {
-									"montana.pdf": {
-										"name": "montana.pdf",
+									"Cluster_Expertise.pdf": {
+										"name": "Cluster_Expertise.pdf",
 										"path": [
 											"ESW",
-											"1978-239832414432302",
-											"DOSSIER-131312402026222",
-											"montana.pdf"
+											"1985-234912115019211",
+											"DOSSIER-108641708319056",
+											"Cluster_Expertise.pdf"
 										],
 										"type": "pdf"
 									},
-									"grocery_clothing_direct.pdf": {
-										"name": "grocery_clothing_direct.pdf",
+									"FlU-Nederland_Dienst.txt": {
+										"name": "FlU-Nederland_Dienst.txt",
 										"path": [
 											"ESW",
-											"1978-239832414432302",
-											"DOSSIER-131312402026222",
-											"grocery_clothing_direct.pdf"
-										],
-										"type": "pdf"
-									},
-									"swaziland_solid_state_calculate.txt": {
-										"name": "swaziland_solid_state_calculate.txt",
-										"path": [
-											"ESW",
-											"1978-239832414432302",
-											"DOSSIER-131312402026222",
-											"swaziland_solid_state_calculate.txt"
-										],
-										"type": "txt"
-									},
-									"movies.pdf": {
-										"name": "movies.pdf",
-										"path": [
-											"ESW",
-											"1978-239832414432302",
-											"DOSSIER-131312402026222",
-											"movies.pdf"
-										],
-										"type": "pdf"
-									},
-									"borders_tactics.txt": {
-										"name": "borders_tactics.txt",
-										"path": [
-											"ESW",
-											"1978-239832414432302",
-											"DOSSIER-131312402026222",
-											"borders_tactics.txt"
+											"1985-234912115019211",
+											"DOSSIER-108641708319056",
+											"FlU-Nederland_Dienst.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-14801181679046": {
+							"DOSSIER-13563932010242": {
 								"path": [
 									"ESW",
-									"1978-239832414432302",
-									"DOSSIER-14801181679046"
+									"1985-234912115019211",
+									"DOSSIER-13563932010242"
 								],
-								"name": "DOSSIER-14801181679046",
+								"name": "DOSSIER-13563932010242",
 								"type": "dir",
-								"locked": false,
+								"dirType": "locked",
 								"children": {
-									"generic_granite_cheese_wooden.pdf": {
-										"name": "generic_granite_cheese_wooden.pdf",
+									"en_Toezicht.txt": {
+										"name": "en_Toezicht.txt",
 										"path": [
 											"ESW",
-											"1978-239832414432302",
-											"DOSSIER-14801181679046",
-											"generic_granite_cheese_wooden.pdf"
-										],
-										"type": "pdf"
-									},
-									"initiative_swaziland_lari.pdf": {
-										"name": "initiative_swaziland_lari.pdf",
-										"path": [
-											"ESW",
-											"1978-239832414432302",
-											"DOSSIER-14801181679046",
-											"initiative_swaziland_lari.pdf"
-										],
-										"type": "pdf"
-									},
-									"iowa.txt": {
-										"name": "iowa.txt",
-										"path": [
-											"ESW",
-											"1978-239832414432302",
-											"DOSSIER-14801181679046",
-											"iowa.txt"
+											"1985-234912115019211",
+											"DOSSIER-13563932010242",
+											"en_Toezicht.txt"
 										],
 										"type": "txt"
 									},
-									"ireland_networks.pdf": {
-										"name": "ireland_networks.pdf",
+									"Task_Task.pdf": {
+										"name": "Task_Task.pdf",
 										"path": [
 											"ESW",
-											"1978-239832414432302",
-											"DOSSIER-14801181679046",
-											"ireland_networks.pdf"
+											"1985-234912115019211",
+											"DOSSIER-13563932010242",
+											"Task_Task.pdf"
+										],
+										"type": "pdf"
+									},
+									"FIOD_BES.pdf": {
+										"name": "FIOD_BES.pdf",
+										"path": [
+											"ESW",
+											"1985-234912115019211",
+											"DOSSIER-13563932010242",
+											"FIOD_BES.pdf"
+										],
+										"type": "pdf"
+									},
+									"Bureau_GoAML.pdf": {
+										"name": "Bureau_GoAML.pdf",
+										"path": [
+											"ESW",
+											"1985-234912115019211",
+											"DOSSIER-13563932010242",
+											"Bureau_GoAML.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"DOSSIER-223332928614882": {
+							"DOSSIER-15813941927650": {
 								"path": [
 									"ESW",
-									"1978-239832414432302",
-									"DOSSIER-223332928614882"
+									"1985-234912115019211",
+									"DOSSIER-15813941927650"
 								],
-								"name": "DOSSIER-223332928614882",
+								"name": "DOSSIER-15813941927650",
 								"type": "dir",
-								"locked": false,
+								"dirType": "normal",
 								"children": {
-									"pixel_cambridgeshire_fantastic_rubber_cheese.pdf": {
-										"name": "pixel_cambridgeshire_fantastic_rubber_cheese.pdf",
+									"politie_uitvoerend.pdf": {
+										"name": "politie_uitvoerend.pdf",
 										"path": [
 											"ESW",
-											"1978-239832414432302",
-											"DOSSIER-223332928614882",
-											"pixel_cambridgeshire_fantastic_rubber_cheese.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-3029118128555": {
-								"path": [
-									"ESW",
-									"1978-239832414432302",
-									"DOSSIER-3029118128555"
-								],
-								"name": "DOSSIER-3029118128555",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"surinam_dollar.pdf": {
-										"name": "surinam_dollar.pdf",
-										"path": [
-											"ESW",
-											"1978-239832414432302",
-											"DOSSIER-3029118128555",
-											"surinam_dollar.pdf"
+											"1985-234912115019211",
+											"DOSSIER-15813941927650",
+											"politie_uitvoerend.pdf"
 										],
 										"type": "pdf"
 									},
-									"1080p_next_generation.pdf": {
-										"name": "1080p_next_generation.pdf",
+									"Eustatiusen_eilanden.txt": {
+										"name": "Eustatiusen_eilanden.txt",
 										"path": [
 											"ESW",
-											"1978-239832414432302",
-											"DOSSIER-3029118128555",
-											"1080p_next_generation.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-8111324023786": {
-								"path": [
-									"ESW",
-									"1978-239832414432302",
-									"DOSSIER-8111324023786"
-								],
-								"name": "DOSSIER-8111324023786",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"primary_bypass.txt": {
-										"name": "primary_bypass.txt",
-										"path": [
-											"ESW",
-											"1978-239832414432302",
-											"DOSSIER-8111324023786",
-											"primary_bypass.txt"
+											"1985-234912115019211",
+											"DOSSIER-15813941927650",
+											"Eustatiusen_eilanden.txt"
 										],
 										"type": "txt"
 									},
-									"benchmark.txt": {
-										"name": "benchmark.txt",
+									"Amsterdam_en.txt": {
+										"name": "Amsterdam_en.txt",
 										"path": [
 											"ESW",
-											"1978-239832414432302",
-											"DOSSIER-8111324023786",
-											"benchmark.txt"
+											"1985-234912115019211",
+											"DOSSIER-15813941927650",
+											"Amsterdam_en.txt"
 										],
 										"type": "txt"
 									},
-									"online.txt": {
-										"name": "online.txt",
+									"andrea_Recherche,.txt": {
+										"name": "andrea_Recherche,.txt",
 										"path": [
 											"ESW",
-											"1978-239832414432302",
-											"DOSSIER-8111324023786",
-											"online.txt"
-										],
-										"type": "txt"
-									},
-									"iranian_rial_investor.txt": {
-										"name": "iranian_rial_investor.txt",
-										"path": [
-											"ESW",
-											"1978-239832414432302",
-											"DOSSIER-8111324023786",
-											"iranian_rial_investor.txt"
-										],
-										"type": "txt"
-									},
-									"parse_initiative_cambridgeshire.txt": {
-										"name": "parse_initiative_cambridgeshire.txt",
-										"path": [
-											"ESW",
-											"1978-239832414432302",
-											"DOSSIER-8111324023786",
-											"parse_initiative_cambridgeshire.txt"
+											"1985-234912115019211",
+											"DOSSIER-15813941927650",
+											"andrea_Recherche,.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"disintermediate_invoice_computers.txt": {
-								"name": "disintermediate_invoice_computers.txt",
+							"DOSSIER-271122397211283": {
 								"path": [
 									"ESW",
-									"1978-239832414432302",
-									"disintermediate_invoice_computers.txt"
+									"1985-234912115019211",
+									"DOSSIER-271122397211283"
+								],
+								"name": "DOSSIER-271122397211283",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Infobox_CJIB.pdf": {
+										"name": "Infobox_CJIB.pdf",
+										"path": [
+											"ESW",
+											"1985-234912115019211",
+											"DOSSIER-271122397211283",
+											"Infobox_CJIB.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-954661831854": {
+								"path": [
+									"ESW",
+									"1985-234912115019211",
+									"DOSSIER-954661831854"
+								],
+								"name": "DOSSIER-954661831854",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"en_en.txt": {
+										"name": "en_en.txt",
+										"path": [
+											"ESW",
+											"1985-234912115019211",
+											"DOSSIER-954661831854",
+											"en_en.txt"
+										],
+										"type": "txt"
+									},
+									"Eustatiusen_DLR.txt": {
+										"name": "Eustatiusen_DLR.txt",
+										"path": [
+											"ESW",
+											"1985-234912115019211",
+											"DOSSIER-954661831854",
+											"Eustatiusen_DLR.txt"
+										],
+										"type": "txt"
+									},
+									"en_Financial.txt": {
+										"name": "en_Financial.txt",
+										"path": [
+											"ESW",
+											"1985-234912115019211",
+											"DOSSIER-954661831854",
+											"en_Financial.txt"
+										],
+										"type": "txt"
+									},
+									"ICT_Mensenhandel.txt": {
+										"name": "ICT_Mensenhandel.txt",
+										"path": [
+											"ESW",
+											"1985-234912115019211",
+											"DOSSIER-954661831854",
+											"ICT_Mensenhandel.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"Centrum_AFM.txt": {
+								"name": "Centrum_AFM.txt",
+								"path": [
+									"ESW",
+									"1985-234912115019211",
+									"Centrum_AFM.txt"
 								],
 								"type": "txt"
 							},
-							"fully_configurable_maximize_officer.txt": {
-								"name": "fully_configurable_maximize_officer.txt",
+							"applicatie_FIOD.txt": {
+								"name": "applicatie_FIOD.txt",
 								"path": [
 									"ESW",
-									"1978-239832414432302",
-									"fully_configurable_maximize_officer.txt"
+									"1985-234912115019211",
+									"applicatie_FIOD.txt"
+								],
+								"type": "txt"
+							},
+							"Andrea_Infobox.txt": {
+								"name": "Andrea_Infobox.txt",
+								"path": [
+									"ESW",
+									"1985-234912115019211",
+									"Andrea_Infobox.txt"
+								],
+								"type": "txt"
+							},
+							"EMPACT_Multidisciplinary.txt": {
+								"name": "EMPACT_Multidisciplinary.txt",
+								"path": [
+									"ESW",
+									"1985-234912115019211",
+									"EMPACT_Multidisciplinary.txt"
 								],
 								"type": "txt"
 							}
 						}
 					},
-					"2004-219572006520962": {
+					"1987-24213204788704": {
 						"path": [
 							"ESW",
-							"2004-219572006520962"
+							"1987-24213204788704"
 						],
-						"name": "2004-219572006520962",
+						"name": "1987-24213204788704",
 						"type": "dir",
-						"locked": true,
+						"dirType": "archive",
 						"children": {
-							"DOSSIER-10298324113781": {
+							"DOSSIER-1081236011813": {
 								"path": [
 									"ESW",
-									"2004-219572006520962",
-									"DOSSIER-10298324113781"
+									"1987-24213204788704",
+									"DOSSIER-1081236011813"
 								],
-								"name": "DOSSIER-10298324113781",
+								"name": "DOSSIER-1081236011813",
 								"type": "dir",
-								"locked": false,
+								"dirType": "archive",
 								"children": {
-									"e_business_synergistic_e_tailers.txt": {
-										"name": "e_business_synergistic_e_tailers.txt",
+									"interne_Ontnemingswetgeving.pdf": {
+										"name": "interne_Ontnemingswetgeving.pdf",
 										"path": [
 											"ESW",
-											"2004-219572006520962",
-											"DOSSIER-10298324113781",
-											"e_business_synergistic_e_tailers.txt"
-										],
-										"type": "txt"
-									},
-									"recontextualize_burg.txt": {
-										"name": "recontextualize_burg.txt",
-										"path": [
-											"ESW",
-											"2004-219572006520962",
-											"DOSSIER-10298324113781",
-											"recontextualize_burg.txt"
-										],
-										"type": "txt"
-									},
-									"withdrawal_turkish_lira_new_mexico.txt": {
-										"name": "withdrawal_turkish_lira_new_mexico.txt",
-										"path": [
-											"ESW",
-											"2004-219572006520962",
-											"DOSSIER-10298324113781",
-											"withdrawal_turkish_lira_new_mexico.txt"
-										],
-										"type": "txt"
-									},
-									"berkshire_technologies_bypassing.txt": {
-										"name": "berkshire_technologies_bypassing.txt",
-										"path": [
-											"ESW",
-											"2004-219572006520962",
-											"DOSSIER-10298324113781",
-											"berkshire_technologies_bypassing.txt"
-										],
-										"type": "txt"
-									},
-									"liberian_dollar.pdf": {
-										"name": "liberian_dollar.pdf",
-										"path": [
-											"ESW",
-											"2004-219572006520962",
-											"DOSSIER-10298324113781",
-											"liberian_dollar.pdf"
+											"1987-24213204788704",
+											"DOSSIER-1081236011813",
+											"interne_Ontnemingswetgeving.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"DOSSIER-1589494166491": {
+							"DOSSIER-15566128716588": {
 								"path": [
 									"ESW",
-									"2004-219572006520962",
-									"DOSSIER-1589494166491"
+									"1987-24213204788704",
+									"DOSSIER-15566128716588"
 								],
-								"name": "DOSSIER-1589494166491",
+								"name": "DOSSIER-15566128716588",
 								"type": "dir",
-								"locked": true,
+								"dirType": "archive",
 								"children": {
-									"holistic_css.txt": {
-										"name": "holistic_css.txt",
+									"A01C_onderdeel.pdf": {
+										"name": "A01C_onderdeel.pdf",
 										"path": [
 											"ESW",
-											"2004-219572006520962",
-											"DOSSIER-1589494166491",
-											"holistic_css.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-24707277128389": {
-								"path": [
-									"ESW",
-									"2004-219572006520962",
-									"DOSSIER-24707277128389"
-								],
-								"name": "DOSSIER-24707277128389",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"guyana_dollar.txt": {
-										"name": "guyana_dollar.txt",
-										"path": [
-											"ESW",
-											"2004-219572006520962",
-											"DOSSIER-24707277128389",
-											"guyana_dollar.txt"
-										],
-										"type": "txt"
-									},
-									"steel.txt": {
-										"name": "steel.txt",
-										"path": [
-											"ESW",
-											"2004-219572006520962",
-											"DOSSIER-24707277128389",
-											"steel.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-322712611915064": {
-								"path": [
-									"ESW",
-									"2004-219572006520962",
-									"DOSSIER-322712611915064"
-								],
-								"name": "DOSSIER-322712611915064",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"bypass.txt": {
-										"name": "bypass.txt",
-										"path": [
-											"ESW",
-											"2004-219572006520962",
-											"DOSSIER-322712611915064",
-											"bypass.txt"
-										],
-										"type": "txt"
-									},
-									"capacitor_decentralized_saint_martin.pdf": {
-										"name": "capacitor_decentralized_saint_martin.pdf",
-										"path": [
-											"ESW",
-											"2004-219572006520962",
-											"DOSSIER-322712611915064",
-											"capacitor_decentralized_saint_martin.pdf"
+											"1987-24213204788704",
+											"DOSSIER-15566128716588",
+											"A01C_onderdeel.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"DOSSIER-9356433823133": {
+							"DOSSIER-178180414373": {
 								"path": [
 									"ESW",
-									"2004-219572006520962",
-									"DOSSIER-9356433823133"
+									"1987-24213204788704",
+									"DOSSIER-178180414373"
 								],
-								"name": "DOSSIER-9356433823133",
+								"name": "DOSSIER-178180414373",
 								"type": "dir",
-								"locked": true,
+								"dirType": "normal",
 								"children": {
-									"dynamic.txt": {
-										"name": "dynamic.txt",
+									"politie_Inkomen,.pdf": {
+										"name": "politie_Inkomen,.pdf",
 										"path": [
 											"ESW",
-											"2004-219572006520962",
-											"DOSSIER-9356433823133",
-											"dynamic.txt"
-										],
-										"type": "txt"
-									},
-									"hack_seamless_generate.txt": {
-										"name": "hack_seamless_generate.txt",
-										"path": [
-											"ESW",
-											"2004-219572006520962",
-											"DOSSIER-9356433823133",
-											"hack_seamless_generate.txt"
-										],
-										"type": "txt"
-									},
-									"secured_line_optical.pdf": {
-										"name": "secured_line_optical.pdf",
-										"path": [
-											"ESW",
-											"2004-219572006520962",
-											"DOSSIER-9356433823133",
-											"secured_line_optical.pdf"
+											"1987-24213204788704",
+											"DOSSIER-178180414373",
+											"politie_Inkomen,.pdf"
 										],
 										"type": "pdf"
 									},
-									"maroon_3rd_generation_demand_driven.txt": {
-										"name": "maroon_3rd_generation_demand_driven.txt",
+									"EU_CWI.txt": {
+										"name": "EU_CWI.txt",
 										"path": [
 											"ESW",
-											"2004-219572006520962",
-											"DOSSIER-9356433823133",
-											"maroon_3rd_generation_demand_driven.txt"
+											"1987-24213204788704",
+											"DOSSIER-178180414373",
+											"EU_CWI.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"buckinghamshire_transmitting_keyboard.txt": {
-								"name": "buckinghamshire_transmitting_keyboard.txt",
+							"DOSSIER-25074148472731": {
 								"path": [
 									"ESW",
-									"2004-219572006520962",
-									"buckinghamshire_transmitting_keyboard.txt"
+									"1987-24213204788704",
+									"DOSSIER-25074148472731"
 								],
-								"type": "txt"
-							}
-						}
-					},
-					"2011-15292926127519": {
-						"path": [
-							"ESW",
-							"2011-15292926127519"
-						],
-						"name": "2011-15292926127519",
-						"type": "dir",
-						"locked": false,
-						"children": {
-							"DOSSIER-257241957326061": {
-								"path": [
-									"ESW",
-									"2011-15292926127519",
-									"DOSSIER-257241957326061"
-								],
-								"name": "DOSSIER-257241957326061",
+								"name": "DOSSIER-25074148472731",
 								"type": "dir",
-								"locked": true,
+								"dirType": "normal",
 								"children": {
-									"hybrid.txt": {
-										"name": "hybrid.txt",
+									"Against_Anti-Money.pdf": {
+										"name": "Against_Anti-Money.pdf",
 										"path": [
 											"ESW",
-											"2011-15292926127519",
-											"DOSSIER-257241957326061",
-											"hybrid.txt"
-										],
-										"type": "txt"
-									},
-									"harbors_withdrawal_chair.txt": {
-										"name": "harbors_withdrawal_chair.txt",
-										"path": [
-											"ESW",
-											"2011-15292926127519",
-											"DOSSIER-257241957326061",
-											"harbors_withdrawal_chair.txt"
-										],
-										"type": "txt"
-									},
-									"square_regional.txt": {
-										"name": "square_regional.txt",
-										"path": [
-											"ESW",
-											"2011-15292926127519",
-											"DOSSIER-257241957326061",
-											"square_regional.txt"
-										],
-										"type": "txt"
-									},
-									"automotive_andorra_markets.txt": {
-										"name": "automotive_andorra_markets.txt",
-										"path": [
-											"ESW",
-											"2011-15292926127519",
-											"DOSSIER-257241957326061",
-											"automotive_andorra_markets.txt"
-										],
-										"type": "txt"
-									},
-									"unbranded.txt": {
-										"name": "unbranded.txt",
-										"path": [
-											"ESW",
-											"2011-15292926127519",
-											"DOSSIER-257241957326061",
-											"unbranded.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-299681386628096": {
-								"path": [
-									"ESW",
-									"2011-15292926127519",
-									"DOSSIER-299681386628096"
-								],
-								"name": "DOSSIER-299681386628096",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"quantify.txt": {
-										"name": "quantify.txt",
-										"path": [
-											"ESW",
-											"2011-15292926127519",
-											"DOSSIER-299681386628096",
-											"quantify.txt"
-										],
-										"type": "txt"
-									},
-									"tasty_alaska.txt": {
-										"name": "tasty_alaska.txt",
-										"path": [
-											"ESW",
-											"2011-15292926127519",
-											"DOSSIER-299681386628096",
-											"tasty_alaska.txt"
-										],
-										"type": "txt"
-									},
-									"applications_chair_3rd_generation.txt": {
-										"name": "applications_chair_3rd_generation.txt",
-										"path": [
-											"ESW",
-											"2011-15292926127519",
-											"DOSSIER-299681386628096",
-											"applications_chair_3rd_generation.txt"
-										],
-										"type": "txt"
-									},
-									"gourde_us_dollar_executive.txt": {
-										"name": "gourde_us_dollar_executive.txt",
-										"path": [
-											"ESW",
-											"2011-15292926127519",
-											"DOSSIER-299681386628096",
-											"gourde_us_dollar_executive.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-30921452926384": {
-								"path": [
-									"ESW",
-									"2011-15292926127519",
-									"DOSSIER-30921452926384"
-								],
-								"name": "DOSSIER-30921452926384",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"plug_and_play.txt": {
-										"name": "plug_and_play.txt",
-										"path": [
-											"ESW",
-											"2011-15292926127519",
-											"DOSSIER-30921452926384",
-											"plug_and_play.txt"
-										],
-										"type": "txt"
-									},
-									"borders.txt": {
-										"name": "borders.txt",
-										"path": [
-											"ESW",
-											"2011-15292926127519",
-											"DOSSIER-30921452926384",
-											"borders.txt"
-										],
-										"type": "txt"
-									},
-									"new_leu_accounts.pdf": {
-										"name": "new_leu_accounts.pdf",
-										"path": [
-											"ESW",
-											"2011-15292926127519",
-											"DOSSIER-30921452926384",
-											"new_leu_accounts.pdf"
+											"1987-24213204788704",
+											"DOSSIER-25074148472731",
+											"Against_Anti-Money.pdf"
 										],
 										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-4545949825323": {
-								"path": [
-									"ESW",
-									"2011-15292926127519",
-									"DOSSIER-4545949825323"
-								],
-								"name": "DOSSIER-4545949825323",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"home_loan_account.txt": {
-										"name": "home_loan_account.txt",
+									},
+									"BVI_EMM.pdf": {
+										"name": "BVI_EMM.pdf",
 										"path": [
 											"ESW",
-											"2011-15292926127519",
-											"DOSSIER-4545949825323",
-											"home_loan_account.txt"
+											"1987-24213204788704",
+											"DOSSIER-25074148472731",
+											"BVI_EMM.pdf"
+										],
+										"type": "pdf"
+									},
+									"Functioneel_orgaan.pdf": {
+										"name": "Functioneel_orgaan.pdf",
+										"path": [
+											"ESW",
+											"1987-24213204788704",
+											"DOSSIER-25074148472731",
+											"Functioneel_orgaan.pdf"
+										],
+										"type": "pdf"
+									},
+									"Crimineel_CTEPF.txt": {
+										"name": "Crimineel_CTEPF.txt",
+										"path": [
+											"ESW",
+											"1987-24213204788704",
+											"DOSSIER-25074148472731",
+											"Crimineel_CTEPF.txt"
 										],
 										"type": "txt"
 									},
-									"gorgeous.txt": {
-										"name": "gorgeous.txt",
+									"Financieel_UNODC.txt": {
+										"name": "Financieel_UNODC.txt",
 										"path": [
 											"ESW",
-											"2011-15292926127519",
-											"DOSSIER-4545949825323",
-											"gorgeous.txt"
+											"1987-24213204788704",
+											"DOSSIER-25074148472731",
+											"Financieel_UNODC.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-598267446": {
+								"path": [
+									"ESW",
+									"1987-24213204788704",
+									"DOSSIER-598267446"
+								],
+								"name": "DOSSIER-598267446",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"een_Onverklaarbaar.txt": {
+										"name": "een_Onverklaarbaar.txt",
+										"path": [
+											"ESW",
+											"1987-24213204788704",
+											"DOSSIER-598267446",
+											"een_Onverklaarbaar.txt"
 										],
 										"type": "txt"
 									},
-									"facilitate.txt": {
-										"name": "facilitate.txt",
+									"Unie_DLR.txt": {
+										"name": "Unie_DLR.txt",
 										"path": [
 											"ESW",
-											"2011-15292926127519",
-											"DOSSIER-4545949825323",
-											"facilitate.txt"
+											"1987-24213204788704",
+											"DOSSIER-598267446",
+											"Unie_DLR.txt"
+										],
+										"type": "txt"
+									},
+									"FinanciÃ«le_van.txt": {
+										"name": "FinanciÃ«le_van.txt",
+										"path": [
+											"ESW",
+											"1987-24213204788704",
+											"DOSSIER-598267446",
+											"FinanciÃ«le_van.txt"
+										],
+										"type": "txt"
+									},
+									"Justitieel_van.txt": {
+										"name": "Justitieel_van.txt",
+										"path": [
+											"ESW",
+											"1987-24213204788704",
+											"DOSSIER-598267446",
+											"Justitieel_van.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-4590119575100": {
+							"FEC_CWI.pdf": {
+								"name": "FEC_CWI.pdf",
 								"path": [
 									"ESW",
-									"2011-15292926127519",
-									"DOSSIER-4590119575100"
-								],
-								"name": "DOSSIER-4590119575100",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"executive_strategist.txt": {
-										"name": "executive_strategist.txt",
-										"path": [
-											"ESW",
-											"2011-15292926127519",
-											"DOSSIER-4590119575100",
-											"executive_strategist.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"program_dynamic_quantifying.txt": {
-								"name": "program_dynamic_quantifying.txt",
-								"path": [
-									"ESW",
-									"2011-15292926127519",
-									"program_dynamic_quantifying.txt"
-								],
-								"type": "txt"
-							},
-							"chief_incredible.txt": {
-								"name": "chief_incredible.txt",
-								"path": [
-									"ESW",
-									"2011-15292926127519",
-									"chief_incredible.txt"
-								],
-								"type": "txt"
-							},
-							"auto_loan_account.pdf": {
-								"name": "auto_loan_account.pdf",
-								"path": [
-									"ESW",
-									"2011-15292926127519",
-									"auto_loan_account.pdf"
+									"1987-24213204788704",
+									"FEC_CWI.pdf"
 								],
 								"type": "pdf"
 							},
-							"bike_administrator_borders.txt": {
-								"name": "bike_administrator_borders.txt",
+							"FinEC_Europese.txt": {
+								"name": "FinEC_Europese.txt",
 								"path": [
 									"ESW",
-									"2011-15292926127519",
-									"bike_administrator_borders.txt"
-								],
-								"type": "txt"
-							},
-							"cutting_edge_connecting.txt": {
-								"name": "cutting_edge_connecting.txt",
-								"path": [
-									"ESW",
-									"2011-15292926127519",
-									"cutting_edge_connecting.txt"
+									"1987-24213204788704",
+									"FinEC_Europese.txt"
 								],
 								"type": "txt"
 							}
 						}
 					},
-					"corporate.txt": {
-						"name": "corporate.txt",
+					"1988-108212577222328": {
 						"path": [
 							"ESW",
-							"corporate.txt"
+							"1988-108212577222328"
+						],
+						"name": "1988-108212577222328",
+						"type": "dir",
+						"dirType": "locked",
+						"children": {
+							"DOSSIER-1460048553589": {
+								"path": [
+									"ESW",
+									"1988-108212577222328",
+									"DOSSIER-1460048553589"
+								],
+								"name": "DOSSIER-1460048553589",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Amsterdam_van.txt": {
+										"name": "Amsterdam_van.txt",
+										"path": [
+											"ESW",
+											"1988-108212577222328",
+											"DOSSIER-1460048553589",
+											"Amsterdam_van.txt"
+										],
+										"type": "txt"
+									},
+									"Bonaire._BOOM.txt": {
+										"name": "Bonaire._BOOM.txt",
+										"path": [
+											"ESW",
+											"1988-108212577222328",
+											"DOSSIER-1460048553589",
+											"Bonaire._BOOM.txt"
+										],
+										"type": "txt"
+									},
+									"proliferatiefmanciering._Amsterdam.txt": {
+										"name": "proliferatiefmanciering._Amsterdam.txt",
+										"path": [
+											"ESW",
+											"1988-108212577222328",
+											"DOSSIER-1460048553589",
+											"proliferatiefmanciering._Amsterdam.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-183611108015406": {
+								"path": [
+									"ESW",
+									"1988-108212577222328",
+									"DOSSIER-183611108015406"
+								],
+								"name": "DOSSIER-183611108015406",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"de_FlU-Nederland.txt": {
+										"name": "de_FlU-Nederland.txt",
+										"path": [
+											"ESW",
+											"1988-108212577222328",
+											"DOSSIER-183611108015406",
+											"de_FlU-Nederland.txt"
+										],
+										"type": "txt"
+									},
+									"Bureau_Landelijke.txt": {
+										"name": "Bureau_Landelijke.txt",
+										"path": [
+											"ESW",
+											"1988-108212577222328",
+											"DOSSIER-183611108015406",
+											"Bureau_Landelijke.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-189681530310731": {
+								"path": [
+									"ESW",
+									"1988-108212577222328",
+									"DOSSIER-189681530310731"
+								],
+								"name": "DOSSIER-189681530310731",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"FAT_Fiscale.txt": {
+										"name": "FAT_Fiscale.txt",
+										"path": [
+											"ESW",
+											"1988-108212577222328",
+											"DOSSIER-189681530310731",
+											"FAT_Fiscale.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-20512306920165": {
+								"path": [
+									"ESW",
+									"1988-108212577222328",
+									"DOSSIER-20512306920165"
+								],
+								"name": "DOSSIER-20512306920165",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"controle_Expertise.txt": {
+										"name": "controle_Expertise.txt",
+										"path": [
+											"ESW",
+											"1988-108212577222328",
+											"DOSSIER-20512306920165",
+											"controle_Expertise.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-218411168623427": {
+								"path": [
+									"ESW",
+									"1988-108212577222328",
+									"DOSSIER-218411168623427"
+								],
+								"name": "DOSSIER-218411168623427",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Toezicht_Openbaar.pdf": {
+										"name": "Toezicht_Openbaar.pdf",
+										"path": [
+											"ESW",
+											"1988-108212577222328",
+											"DOSSIER-218411168623427",
+											"Toezicht_Openbaar.pdf"
+										],
+										"type": "pdf"
+									},
+									"en_F.txt": {
+										"name": "en_F.txt",
+										"path": [
+											"ESW",
+											"1988-108212577222328",
+											"DOSSIER-218411168623427",
+											"en_F.txt"
+										],
+										"type": "txt"
+									},
+									"Opsporingsdienst_Inlichtingen-.txt": {
+										"name": "Opsporingsdienst_Inlichtingen-.txt",
+										"path": [
+											"ESW",
+											"1988-108212577222328",
+											"DOSSIER-218411168623427",
+											"Opsporingsdienst_Inlichtingen-.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DWI_van.pdf": {
+								"name": "DWI_van.pdf",
+								"path": [
+									"ESW",
+									"1988-108212577222328",
+									"DWI_van.pdf"
+								],
+								"type": "pdf"
+							},
+							"Leefomgeving_Infobox.pdf": {
+								"name": "Leefomgeving_Infobox.pdf",
+								"path": [
+									"ESW",
+									"1988-108212577222328",
+									"Leefomgeving_Infobox.pdf"
+								],
+								"type": "pdf"
+							},
+							"Toezicht_de.txt": {
+								"name": "Toezicht_de.txt",
+								"path": [
+									"ESW",
+									"1988-108212577222328",
+									"Toezicht_de.txt"
+								],
+								"type": "txt"
+							}
+						}
+					},
+					"2015-13920285021059": {
+						"path": [
+							"ESW",
+							"2015-13920285021059"
+						],
+						"name": "2015-13920285021059",
+						"type": "dir",
+						"dirType": "archive",
+						"children": {
+							"DOSSIER-168882048927733": {
+								"path": [
+									"ESW",
+									"2015-13920285021059",
+									"DOSSIER-168882048927733"
+								],
+								"name": "DOSSIER-168882048927733",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Landelijke_van.txt": {
+										"name": "Landelijke_van.txt",
+										"path": [
+											"ESW",
+											"2015-13920285021059",
+											"DOSSIER-168882048927733",
+											"Landelijke_van.txt"
+										],
+										"type": "txt"
+									},
+									"Landelijke_Caribisch.txt": {
+										"name": "Landelijke_Caribisch.txt",
+										"path": [
+											"ESW",
+											"2015-13920285021059",
+											"DOSSIER-168882048927733",
+											"Landelijke_Caribisch.txt"
+										],
+										"type": "txt"
+									},
+									"FinanciÃ«le_van.txt": {
+										"name": "FinanciÃ«le_van.txt",
+										"path": [
+											"ESW",
+											"2015-13920285021059",
+											"DOSSIER-168882048927733",
+											"FinanciÃ«le_van.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-202822764325101": {
+								"path": [
+									"ESW",
+									"2015-13920285021059",
+									"DOSSIER-202822764325101"
+								],
+								"name": "DOSSIER-202822764325101",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"en_EMPACT.pdf": {
+										"name": "en_EMPACT.pdf",
+										"path": [
+											"ESW",
+											"2015-13920285021059",
+											"DOSSIER-202822764325101",
+											"en_EMPACT.pdf"
+										],
+										"type": "pdf"
+									},
+									"en_ESW.txt": {
+										"name": "en_ESW.txt",
+										"path": [
+											"ESW",
+											"2015-13920285021059",
+											"DOSSIER-202822764325101",
+											"en_ESW.txt"
+										],
+										"type": "txt"
+									},
+									"FP_de.pdf": {
+										"name": "FP_de.pdf",
+										"path": [
+											"ESW",
+											"2015-13920285021059",
+											"DOSSIER-202822764325101",
+											"FP_de.pdf"
+										],
+										"type": "pdf"
+									},
+									"een_een.txt": {
+										"name": "een_een.txt",
+										"path": [
+											"ESW",
+											"2015-13920285021059",
+											"DOSSIER-202822764325101",
+											"een_een.txt"
+										],
+										"type": "txt"
+									},
+									"EMM_politie.txt": {
+										"name": "EMM_politie.txt",
+										"path": [
+											"ESW",
+											"2015-13920285021059",
+											"DOSSIER-202822764325101",
+											"EMM_politie.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-26982193945896": {
+								"path": [
+									"ESW",
+									"2015-13920285021059",
+									"DOSSIER-26982193945896"
+								],
+								"name": "DOSSIER-26982193945896",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Dienst_van.pdf": {
+										"name": "Dienst_van.pdf",
+										"path": [
+											"ESW",
+											"2015-13920285021059",
+											"DOSSIER-26982193945896",
+											"Dienst_van.pdf"
+										],
+										"type": "pdf"
+									},
+									"Bonaire._onderdeel.pdf": {
+										"name": "Bonaire._onderdeel.pdf",
+										"path": [
+											"ESW",
+											"2015-13920285021059",
+											"DOSSIER-26982193945896",
+											"Bonaire._onderdeel.pdf"
+										],
+										"type": "pdf"
+									},
+									"van_van.txt": {
+										"name": "van_van.txt",
+										"path": [
+											"ESW",
+											"2015-13920285021059",
+											"DOSSIER-26982193945896",
+											"van_van.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-28291102952868": {
+								"path": [
+									"ESW",
+									"2015-13920285021059",
+									"DOSSIER-28291102952868"
+								],
+								"name": "DOSSIER-28291102952868",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"en_Opsporingsdienst.pdf": {
+										"name": "en_Opsporingsdienst.pdf",
+										"path": [
+											"ESW",
+											"2015-13920285021059",
+											"DOSSIER-28291102952868",
+											"en_Opsporingsdienst.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-71812961929342": {
+								"path": [
+									"ESW",
+									"2015-13920285021059",
+									"DOSSIER-71812961929342"
+								],
+								"name": "DOSSIER-71812961929342",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"politie_Anti-Money.txt": {
+										"name": "politie_Anti-Money.txt",
+										"path": [
+											"ESW",
+											"2015-13920285021059",
+											"DOSSIER-71812961929342",
+											"politie_Anti-Money.txt"
+										],
+										"type": "txt"
+									},
+									"Mensensmokkel_Bureau.txt": {
+										"name": "Mensensmokkel_Bureau.txt",
+										"path": [
+											"ESW",
+											"2015-13920285021059",
+											"DOSSIER-71812961929342",
+											"Mensensmokkel_Bureau.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"Rotterdam_onderdeel.pdf": {
+								"name": "Rotterdam_onderdeel.pdf",
+								"path": [
+									"ESW",
+									"2015-13920285021059",
+									"Rotterdam_onderdeel.pdf"
+								],
+								"type": "pdf"
+							},
+							"van_CWI.txt": {
+								"name": "van_CWI.txt",
+								"path": [
+									"ESW",
+									"2015-13920285021059",
+									"van_CWI.txt"
+								],
+								"type": "txt"
+							},
+							"Inkomen,_Basisvoorziening.txt": {
+								"name": "Inkomen,_Basisvoorziening.txt",
+								"path": [
+									"ESW",
+									"2015-13920285021059",
+									"Inkomen,_Basisvoorziening.txt"
+								],
+								"type": "txt"
+							}
+						}
+					},
+					"Centre,_GoAML.txt": {
+						"name": "Centre,_GoAML.txt",
+						"path": [
+							"ESW",
+							"Centre,_GoAML.txt"
 						],
 						"type": "txt"
 					},
-					"awesome_granite_pants.txt": {
-						"name": "awesome_granite_pants.txt",
+					"Saba_Financieel.txt": {
+						"name": "Saba_Financieel.txt",
 						"path": [
 							"ESW",
-							"awesome_granite_pants.txt"
+							"Saba_Financieel.txt"
+						],
+						"type": "txt"
+					},
+					"Contraterrorisme_Markten.txt": {
+						"name": "Contraterrorisme_Markten.txt",
+						"path": [
+							"ESW",
+							"Contraterrorisme_Markten.txt"
 						],
 						"type": "txt"
 					}
@@ -26137,1309 +26109,1329 @@
 				],
 				"name": "FATF",
 				"type": "dir",
-				"locked": true,
+				"dirType": "normal",
 				"children": {
-					"1969-225281390017900": {
+					"1969-246772788124657": {
 						"path": [
 							"FATF",
-							"1969-225281390017900"
+							"1969-246772788124657"
 						],
-						"name": "1969-225281390017900",
+						"name": "1969-246772788124657",
 						"type": "dir",
-						"locked": false,
+						"dirType": "archive",
 						"children": {
-							"DOSSIER-10464131920975": {
+							"DOSSIER-12624746010928": {
 								"path": [
 									"FATF",
-									"1969-225281390017900",
-									"DOSSIER-10464131920975"
+									"1969-246772788124657",
+									"DOSSIER-12624746010928"
 								],
-								"name": "DOSSIER-10464131920975",
+								"name": "DOSSIER-12624746010928",
 								"type": "dir",
-								"locked": false,
+								"dirType": "archive",
 								"children": {
-									"florida_payment.txt": {
-										"name": "florida_payment.txt",
+									"FAT_Bonaire..txt": {
+										"name": "FAT_Bonaire..txt",
 										"path": [
 											"FATF",
-											"1969-225281390017900",
-											"DOSSIER-10464131920975",
-											"florida_payment.txt"
-										],
-										"type": "txt"
-									},
-									"global_credit_card_account.txt": {
-										"name": "global_credit_card_account.txt",
-										"path": [
-											"FATF",
-											"1969-225281390017900",
-											"DOSSIER-10464131920975",
-											"global_credit_card_account.txt"
-										],
-										"type": "txt"
-									},
-									"cfa_franc_beac_ergonomic_costa_rican_colon.pdf": {
-										"name": "cfa_franc_beac_ergonomic_costa_rican_colon.pdf",
-										"path": [
-											"FATF",
-											"1969-225281390017900",
-											"DOSSIER-10464131920975",
-											"cfa_franc_beac_ergonomic_costa_rican_colon.pdf"
-										],
-										"type": "pdf"
-									},
-									"rich.txt": {
-										"name": "rich.txt",
-										"path": [
-											"FATF",
-											"1969-225281390017900",
-											"DOSSIER-10464131920975",
-											"rich.txt"
+											"1969-246772788124657",
+											"DOSSIER-12624746010928",
+											"FAT_Bonaire..txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-11511194002241": {
+							"DOSSIER-18709235336187": {
 								"path": [
 									"FATF",
-									"1969-225281390017900",
-									"DOSSIER-11511194002241"
+									"1969-246772788124657",
+									"DOSSIER-18709235336187"
 								],
-								"name": "DOSSIER-11511194002241",
+								"name": "DOSSIER-18709235336187",
 								"type": "dir",
-								"locked": true,
+								"dirType": "normal",
 								"children": {
-									"tuna_credit_card_account_paradigms.txt": {
-										"name": "tuna_credit_card_account_paradigms.txt",
+									"en_FinEC.txt": {
+										"name": "en_FinEC.txt",
 										"path": [
 											"FATF",
-											"1969-225281390017900",
-											"DOSSIER-11511194002241",
-											"tuna_credit_card_account_paradigms.txt"
+											"1969-246772788124657",
+											"DOSSIER-18709235336187",
+											"en_FinEC.txt"
 										],
 										"type": "txt"
 									},
-									"transmitter.txt": {
-										"name": "transmitter.txt",
+									"de_Inkomen,.txt": {
+										"name": "de_Inkomen,.txt",
 										"path": [
 											"FATF",
-											"1969-225281390017900",
-											"DOSSIER-11511194002241",
-											"transmitter.txt"
-										],
-										"type": "txt"
-									},
-									"licensed_guinea_bissau.pdf": {
-										"name": "licensed_guinea_bissau.pdf",
-										"path": [
-											"FATF",
-											"1969-225281390017900",
-											"DOSSIER-11511194002241",
-											"licensed_guinea_bissau.pdf"
-										],
-										"type": "pdf"
-									},
-									"channels_panel_forint.pdf": {
-										"name": "channels_panel_forint.pdf",
-										"path": [
-											"FATF",
-											"1969-225281390017900",
-											"DOSSIER-11511194002241",
-											"channels_panel_forint.pdf"
-										],
-										"type": "pdf"
-									},
-									"deposit.pdf": {
-										"name": "deposit.pdf",
-										"path": [
-											"FATF",
-											"1969-225281390017900",
-											"DOSSIER-11511194002241",
-											"deposit.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-128902248015324": {
-								"path": [
-									"FATF",
-									"1969-225281390017900",
-									"DOSSIER-128902248015324"
-								],
-								"name": "DOSSIER-128902248015324",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"deposit.txt": {
-										"name": "deposit.txt",
-										"path": [
-											"FATF",
-											"1969-225281390017900",
-											"DOSSIER-128902248015324",
-											"deposit.txt"
+											"1969-246772788124657",
+											"DOSSIER-18709235336187",
+											"de_Inkomen,.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-1447099098314": {
+							"DOSSIER-191441644313067": {
 								"path": [
 									"FATF",
-									"1969-225281390017900",
-									"DOSSIER-1447099098314"
+									"1969-246772788124657",
+									"DOSSIER-191441644313067"
 								],
-								"name": "DOSSIER-1447099098314",
+								"name": "DOSSIER-191441644313067",
 								"type": "dir",
-								"locked": false,
+								"dirType": "archive",
 								"children": {
-									"fresh.txt": {
-										"name": "fresh.txt",
+									"EU_BES.txt": {
+										"name": "EU_BES.txt",
 										"path": [
 											"FATF",
-											"1969-225281390017900",
-											"DOSSIER-1447099098314",
-											"fresh.txt"
+											"1969-246772788124657",
+											"DOSSIER-191441644313067",
+											"EU_BES.txt"
 										],
 										"type": "txt"
 									},
-									"productize_squares.txt": {
-										"name": "productize_squares.txt",
+									"Anti-Money_andrea.txt": {
+										"name": "Anti-Money_andrea.txt",
 										"path": [
 											"FATF",
-											"1969-225281390017900",
-											"DOSSIER-1447099098314",
-											"productize_squares.txt"
+											"1969-246772788124657",
+											"DOSSIER-191441644313067",
+											"Anti-Money_andrea.txt"
+										],
+										"type": "txt"
+									},
+									"Mensensmokkel_Europese.txt": {
+										"name": "Mensensmokkel_Europese.txt",
+										"path": [
+											"FATF",
+											"1969-246772788124657",
+											"DOSSIER-191441644313067",
+											"Mensensmokkel_Europese.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-253513419223": {
+							"DOSSIER-197162447619906": {
 								"path": [
 									"FATF",
-									"1969-225281390017900",
-									"DOSSIER-253513419223"
+									"1969-246772788124657",
+									"DOSSIER-197162447619906"
 								],
-								"name": "DOSSIER-253513419223",
+								"name": "DOSSIER-197162447619906",
 								"type": "dir",
-								"locked": true,
+								"dirType": "normal",
 								"children": {
-									"metal_invoice.txt": {
-										"name": "metal_invoice.txt",
+									"Action_Nederlandsche.txt": {
+										"name": "Action_Nederlandsche.txt",
 										"path": [
 											"FATF",
-											"1969-225281390017900",
-											"DOSSIER-253513419223",
-											"metal_invoice.txt"
+											"1969-246772788124657",
+											"DOSSIER-197162447619906",
+											"Action_Nederlandsche.txt"
 										],
 										"type": "txt"
 									},
-									"array.pdf": {
-										"name": "array.pdf",
+									"Werk_Incasso.txt": {
+										"name": "Werk_Incasso.txt",
 										"path": [
 											"FATF",
-											"1969-225281390017900",
-											"DOSSIER-253513419223",
-											"array.pdf"
-										],
-										"type": "pdf"
-									},
-									"moderator_rubber_money_market_account.txt": {
-										"name": "moderator_rubber_money_market_account.txt",
-										"path": [
-											"FATF",
-											"1969-225281390017900",
-											"DOSSIER-253513419223",
-											"moderator_rubber_money_market_account.txt"
+											"1969-246772788124657",
+											"DOSSIER-197162447619906",
+											"Werk_Incasso.txt"
 										],
 										"type": "txt"
 									},
-									"parse.txt": {
-										"name": "parse.txt",
+									"Ministerie,_Anti-Money.txt": {
+										"name": "Ministerie,_Anti-Money.txt",
 										"path": [
 											"FATF",
-											"1969-225281390017900",
-											"DOSSIER-253513419223",
-											"parse.txt"
+											"1969-246772788124657",
+											"DOSSIER-197162447619906",
+											"Ministerie,_Anti-Money.txt"
 										],
 										"type": "txt"
 									},
-									"data.txt": {
-										"name": "data.txt",
+									"DLR_Markten.txt": {
+										"name": "DLR_Markten.txt",
 										"path": [
 											"FATF",
-											"1969-225281390017900",
-											"DOSSIER-253513419223",
-											"data.txt"
+											"1969-246772788124657",
+											"DOSSIER-197162447619906",
+											"DLR_Markten.txt"
+										],
+										"type": "txt"
+									},
+									"EU_Inkomen,.txt": {
+										"name": "EU_Inkomen,.txt",
+										"path": [
+											"FATF",
+											"1969-246772788124657",
+											"DOSSIER-197162447619906",
+											"EU_Inkomen,.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"well.txt": {
-								"name": "well.txt",
+							"DOSSIER-247891760921705": {
 								"path": [
 									"FATF",
-									"1969-225281390017900",
-									"well.txt"
+									"1969-246772788124657",
+									"DOSSIER-247891760921705"
+								],
+								"name": "DOSSIER-247891760921705",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"applicatie_Andrea.txt": {
+										"name": "applicatie_Andrea.txt",
+										"path": [
+											"FATF",
+											"1969-246772788124657",
+											"DOSSIER-247891760921705",
+											"applicatie_Andrea.txt"
+										],
+										"type": "txt"
+									},
+									"en_Openbaar.txt": {
+										"name": "en_Openbaar.txt",
+										"path": [
+											"FATF",
+											"1969-246772788124657",
+											"DOSSIER-247891760921705",
+											"en_Openbaar.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"Force_gebouwd.pdf": {
+								"name": "Force_gebouwd.pdf",
+								"path": [
+									"FATF",
+									"1969-246772788124657",
+									"Force_gebouwd.pdf"
+								],
+								"type": "pdf"
+							},
+							"applicatie_Criminaliteit.txt": {
+								"name": "applicatie_Criminaliteit.txt",
+								"path": [
+									"FATF",
+									"1969-246772788124657",
+									"applicatie_Criminaliteit.txt"
 								],
 								"type": "txt"
 							},
-							"refined_bypass.txt": {
-								"name": "refined_bypass.txt",
+							"Financial_Criminal.txt": {
+								"name": "Financial_Criminal.txt",
 								"path": [
 									"FATF",
-									"1969-225281390017900",
-									"refined_bypass.txt"
+									"1969-246772788124657",
+									"Financial_Criminal.txt"
 								],
 								"type": "txt"
 							},
-							"iowa_inverse_grocery.txt": {
-								"name": "iowa_inverse_grocery.txt",
+							"applicatie_Rotterdam.txt": {
+								"name": "applicatie_Rotterdam.txt",
 								"path": [
 									"FATF",
-									"1969-225281390017900",
-									"iowa_inverse_grocery.txt"
+									"1969-246772788124657",
+									"applicatie_Rotterdam.txt"
 								],
 								"type": "txt"
 							}
 						}
 					},
-					"1981-25331809126734": {
+					"1980-279542029728596": {
 						"path": [
 							"FATF",
-							"1981-25331809126734"
+							"1980-279542029728596"
 						],
-						"name": "1981-25331809126734",
+						"name": "1980-279542029728596",
 						"type": "dir",
-						"locked": false,
+						"dirType": "archive",
 						"children": {
-							"DOSSIER-12987281308094": {
+							"DOSSIER-106282768916333": {
 								"path": [
 									"FATF",
-									"1981-25331809126734",
-									"DOSSIER-12987281308094"
+									"1980-279542029728596",
+									"DOSSIER-106282768916333"
 								],
-								"name": "DOSSIER-12987281308094",
+								"name": "DOSSIER-106282768916333",
 								"type": "dir",
-								"locked": true,
+								"dirType": "normal",
 								"children": {
-									"executive.txt": {
-										"name": "executive.txt",
+									"Inkomen,_UNODC.txt": {
+										"name": "Inkomen,_UNODC.txt",
 										"path": [
 											"FATF",
-											"1981-25331809126734",
-											"DOSSIER-12987281308094",
-											"executive.txt"
+											"1980-279542029728596",
+											"DOSSIER-106282768916333",
+											"Inkomen,_UNODC.txt"
 										],
 										"type": "txt"
 									},
-									"extended_north_korean_won.pdf": {
-										"name": "extended_north_korean_won.pdf",
+									"orgaan_en.txt": {
+										"name": "orgaan_en.txt",
 										"path": [
 											"FATF",
-											"1981-25331809126734",
-											"DOSSIER-12987281308094",
-											"extended_north_korean_won.pdf"
-										],
-										"type": "pdf"
-									},
-									"pizza_bedfordshire_swaziland.txt": {
-										"name": "pizza_bedfordshire_swaziland.txt",
-										"path": [
-											"FATF",
-											"1981-25331809126734",
-											"DOSSIER-12987281308094",
-											"pizza_bedfordshire_swaziland.txt"
-										],
-										"type": "txt"
-									},
-									"human_digital.pdf": {
-										"name": "human_digital.pdf",
-										"path": [
-											"FATF",
-											"1981-25331809126734",
-											"DOSSIER-12987281308094",
-											"human_digital.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-1820742210504": {
-								"path": [
-									"FATF",
-									"1981-25331809126734",
-									"DOSSIER-1820742210504"
-								],
-								"name": "DOSSIER-1820742210504",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"generate_quantifying.pdf": {
-										"name": "generate_quantifying.pdf",
-										"path": [
-											"FATF",
-											"1981-25331809126734",
-											"DOSSIER-1820742210504",
-											"generate_quantifying.pdf"
-										],
-										"type": "pdf"
-									},
-									"alarm_synthesize_awesome_metal_soap.txt": {
-										"name": "alarm_synthesize_awesome_metal_soap.txt",
-										"path": [
-											"FATF",
-											"1981-25331809126734",
-											"DOSSIER-1820742210504",
-											"alarm_synthesize_awesome_metal_soap.txt"
-										],
-										"type": "txt"
-									},
-									"pants_thx_target.txt": {
-										"name": "pants_thx_target.txt",
-										"path": [
-											"FATF",
-											"1981-25331809126734",
-											"DOSSIER-1820742210504",
-											"pants_thx_target.txt"
-										],
-										"type": "txt"
-									},
-									"plastic_leading_edge_fantastic_rubber_gloves.pdf": {
-										"name": "plastic_leading_edge_fantastic_rubber_gloves.pdf",
-										"path": [
-											"FATF",
-											"1981-25331809126734",
-											"DOSSIER-1820742210504",
-											"plastic_leading_edge_fantastic_rubber_gloves.pdf"
-										],
-										"type": "pdf"
-									},
-									"cheese_copying_copy.txt": {
-										"name": "cheese_copying_copy.txt",
-										"path": [
-											"FATF",
-											"1981-25331809126734",
-											"DOSSIER-1820742210504",
-											"cheese_copying_copy.txt"
+											"1980-279542029728596",
+											"DOSSIER-106282768916333",
+											"orgaan_en.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-18336324829996": {
+							"DOSSIER-224732014527008": {
 								"path": [
 									"FATF",
-									"1981-25331809126734",
-									"DOSSIER-18336324829996"
+									"1980-279542029728596",
+									"DOSSIER-224732014527008"
 								],
-								"name": "DOSSIER-18336324829996",
+								"name": "DOSSIER-224732014527008",
 								"type": "dir",
-								"locked": true,
+								"dirType": "locked",
 								"children": {
-									"kids_rhode_island.pdf": {
-										"name": "kids_rhode_island.pdf",
+									"Centraal_CJIB.txt": {
+										"name": "Centraal_CJIB.txt",
 										"path": [
 											"FATF",
-											"1981-25331809126734",
-											"DOSSIER-18336324829996",
-											"kids_rhode_island.pdf"
-										],
-										"type": "pdf"
-									},
-									"neural_bandwidth_monitored_markets.txt": {
-										"name": "neural_bandwidth_monitored_markets.txt",
-										"path": [
-											"FATF",
-											"1981-25331809126734",
-											"DOSSIER-18336324829996",
-											"neural_bandwidth_monitored_markets.txt"
+											"1980-279542029728596",
+											"DOSSIER-224732014527008",
+											"Centraal_CJIB.txt"
 										],
 										"type": "txt"
 									},
-									"payment_24365.txt": {
-										"name": "payment_24365.txt",
+									"van_Eenheid.pdf": {
+										"name": "van_Eenheid.pdf",
 										"path": [
 											"FATF",
-											"1981-25331809126734",
-											"DOSSIER-18336324829996",
-											"payment_24365.txt"
+											"1980-279542029728596",
+											"DOSSIER-224732014527008",
+											"van_Eenheid.pdf"
+										],
+										"type": "pdf"
+									},
+									"van_FIU.txt": {
+										"name": "van_FIU.txt",
+										"path": [
+											"FATF",
+											"1980-279542029728596",
+											"DOSSIER-224732014527008",
+											"van_FIU.txt"
+										],
+										"type": "txt"
+									},
+									"Openbaar_FinEC.txt": {
+										"name": "Openbaar_FinEC.txt",
+										"path": [
+											"FATF",
+											"1980-279542029728596",
+											"DOSSIER-224732014527008",
+											"Openbaar_FinEC.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-206842976129338": {
+							"DOSSIER-244201165619765": {
 								"path": [
 									"FATF",
-									"1981-25331809126734",
-									"DOSSIER-206842976129338"
+									"1980-279542029728596",
+									"DOSSIER-244201165619765"
 								],
-								"name": "DOSSIER-206842976129338",
+								"name": "DOSSIER-244201165619765",
 								"type": "dir",
-								"locked": true,
+								"dirType": "normal",
 								"children": {
-									"communities_invoice_override.txt": {
-										"name": "communities_invoice_override.txt",
+									"door_FinEC.txt": {
+										"name": "door_FinEC.txt",
 										"path": [
 											"FATF",
-											"1981-25331809126734",
-											"DOSSIER-206842976129338",
-											"communities_invoice_override.txt"
+											"1980-279542029728596",
+											"DOSSIER-244201165619765",
+											"door_FinEC.txt"
 										],
 										"type": "txt"
 									},
-									"chicken.txt": {
-										"name": "chicken.txt",
+									"Action_.pdf": {
+										"name": "Action_.pdf",
 										"path": [
 											"FATF",
-											"1981-25331809126734",
-											"DOSSIER-206842976129338",
-											"chicken.txt"
-										],
-										"type": "txt"
-									},
-									"branding_bypass_sports.pdf": {
-										"name": "branding_bypass_sports.pdf",
-										"path": [
-											"FATF",
-											"1981-25331809126734",
-											"DOSSIER-206842976129338",
-											"branding_bypass_sports.pdf"
+											"1980-279542029728596",
+											"DOSSIER-244201165619765",
+											"Action_.pdf"
 										],
 										"type": "pdf"
 									},
-									"frozen.txt": {
-										"name": "frozen.txt",
+									"onderdeel_het.txt": {
+										"name": "onderdeel_het.txt",
 										"path": [
 											"FATF",
-											"1981-25331809126734",
-											"DOSSIER-206842976129338",
-											"frozen.txt"
+											"1980-279542029728596",
+											"DOSSIER-244201165619765",
+											"onderdeel_het.txt"
 										],
 										"type": "txt"
 									},
-									"rustic_cotton_computer_buckinghamshire_innovate.pdf": {
-										"name": "rustic_cotton_computer_buckinghamshire_innovate.pdf",
+									"Toezicht_Anti.txt": {
+										"name": "Toezicht_Anti.txt",
 										"path": [
 											"FATF",
-											"1981-25331809126734",
-											"DOSSIER-206842976129338",
-											"rustic_cotton_computer_buckinghamshire_innovate.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-22280262530167": {
-								"path": [
-									"FATF",
-									"1981-25331809126734",
-									"DOSSIER-22280262530167"
-								],
-								"name": "DOSSIER-22280262530167",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"estate_chicken_dong.txt": {
-										"name": "estate_chicken_dong.txt",
-										"path": [
-											"FATF",
-											"1981-25331809126734",
-											"DOSSIER-22280262530167",
-											"estate_chicken_dong.txt"
+											"1980-279542029728596",
+											"DOSSIER-244201165619765",
+											"Toezicht_Anti.txt"
 										],
 										"type": "txt"
 									},
-									"soap_utilize.txt": {
-										"name": "soap_utilize.txt",
+									"van_Caribisch.txt": {
+										"name": "van_Caribisch.txt",
 										"path": [
 											"FATF",
-											"1981-25331809126734",
-											"DOSSIER-22280262530167",
-											"soap_utilize.txt"
+											"1980-279542029728596",
+											"DOSSIER-244201165619765",
+											"van_Caribisch.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"berkshire_borders.txt": {
-								"name": "berkshire_borders.txt",
+							"DOSSIER-307538327338": {
 								"path": [
 									"FATF",
-									"1981-25331809126734",
-									"berkshire_borders.txt"
+									"1980-279542029728596",
+									"DOSSIER-307538327338"
+								],
+								"name": "DOSSIER-307538327338",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Parket,_EC.txt": {
+										"name": "Parket,_EC.txt",
+										"path": [
+											"FATF",
+											"1980-279542029728596",
+											"DOSSIER-307538327338",
+											"Parket,_EC.txt"
+										],
+										"type": "txt"
+									},
+									"uitvoerend_iCOV.txt": {
+										"name": "uitvoerend_iCOV.txt",
+										"path": [
+											"FATF",
+											"1980-279542029728596",
+											"DOSSIER-307538327338",
+											"uitvoerend_iCOV.txt"
+										],
+										"type": "txt"
+									},
+									"de_en.pdf": {
+										"name": "de_en.pdf",
+										"path": [
+											"FATF",
+											"1980-279542029728596",
+											"DOSSIER-307538327338",
+											"de_en.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-82432450317802": {
+								"path": [
+									"FATF",
+									"1980-279542029728596",
+									"DOSSIER-82432450317802"
+								],
+								"name": "DOSSIER-82432450317802",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"eilanden_Eustatiusen.txt": {
+										"name": "eilanden_Eustatiusen.txt",
+										"path": [
+											"FATF",
+											"1980-279542029728596",
+											"DOSSIER-82432450317802",
+											"eilanden_Eustatiusen.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"Mensensmokkel_&.txt": {
+								"name": "Mensensmokkel_&.txt",
+								"path": [
+									"FATF",
+									"1980-279542029728596",
+									"Mensensmokkel_&.txt"
 								],
 								"type": "txt"
 							},
-							"rustic_function_based.pdf": {
-								"name": "rustic_function_based.pdf",
+							"Mensenhandel_EU.txt": {
+								"name": "Mensenhandel_EU.txt",
 								"path": [
 									"FATF",
-									"1981-25331809126734",
-									"rustic_function_based.pdf"
-								],
-								"type": "pdf"
-							},
-							"hack_cambridgeshire.txt": {
-								"name": "hack_cambridgeshire.txt",
-								"path": [
-									"FATF",
-									"1981-25331809126734",
-									"hack_cambridgeshire.txt"
-								],
-								"type": "txt"
-							},
-							"dynamic.txt": {
-								"name": "dynamic.txt",
-								"path": [
-									"FATF",
-									"1981-25331809126734",
-									"dynamic.txt"
+									"1980-279542029728596",
+									"Mensenhandel_EU.txt"
 								],
 								"type": "txt"
 							}
 						}
 					},
-					"1984-268052261027643": {
+					"1995-99022213843": {
 						"path": [
 							"FATF",
-							"1984-268052261027643"
+							"1995-99022213843"
 						],
-						"name": "1984-268052261027643",
+						"name": "1995-99022213843",
 						"type": "dir",
-						"locked": false,
+						"dirType": "archive",
 						"children": {
-							"DOSSIER-24303898314515": {
+							"DOSSIER-148742356920311": {
 								"path": [
 									"FATF",
-									"1984-268052261027643",
-									"DOSSIER-24303898314515"
+									"1995-99022213843",
+									"DOSSIER-148742356920311"
 								],
-								"name": "DOSSIER-24303898314515",
+								"name": "DOSSIER-148742356920311",
 								"type": "dir",
-								"locked": true,
+								"dirType": "archive",
 								"children": {
-									"salmon_brand.txt": {
-										"name": "salmon_brand.txt",
+									"Bureau_BES.txt": {
+										"name": "Bureau_BES.txt",
 										"path": [
 											"FATF",
-											"1984-268052261027643",
-											"DOSSIER-24303898314515",
-											"salmon_brand.txt"
+											"1995-99022213843",
+											"DOSSIER-148742356920311",
+											"Bureau_BES.txt"
 										],
 										"type": "txt"
 									},
-									"adp_specialist.txt": {
-										"name": "adp_specialist.txt",
+									"Bureau_politie.pdf": {
+										"name": "Bureau_politie.pdf",
 										"path": [
 											"FATF",
-											"1984-268052261027643",
-											"DOSSIER-24303898314515",
-											"adp_specialist.txt"
+											"1995-99022213843",
+											"DOSSIER-148742356920311",
+											"Bureau_politie.pdf"
 										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-257102386330632": {
-								"path": [
-									"FATF",
-									"1984-268052261027643",
-									"DOSSIER-257102386330632"
-								],
-								"name": "DOSSIER-257102386330632",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"orchestration_plum_responsive.txt": {
-										"name": "orchestration_plum_responsive.txt",
-										"path": [
-											"FATF",
-											"1984-268052261027643",
-											"DOSSIER-257102386330632",
-											"orchestration_plum_responsive.txt"
-										],
-										"type": "txt"
+										"type": "pdf"
 									},
-									"invoice_ville.txt": {
-										"name": "invoice_ville.txt",
+									"Ministerie,_en.txt": {
+										"name": "Ministerie,_en.txt",
 										"path": [
 											"FATF",
-											"1984-268052261027643",
-											"DOSSIER-257102386330632",
-											"invoice_ville.txt"
+											"1995-99022213843",
+											"DOSSIER-148742356920311",
+											"Ministerie,_en.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-26166517930188": {
+							"DOSSIER-25396302719100": {
 								"path": [
 									"FATF",
-									"1984-268052261027643",
-									"DOSSIER-26166517930188"
+									"1995-99022213843",
+									"DOSSIER-25396302719100"
 								],
-								"name": "DOSSIER-26166517930188",
+								"name": "DOSSIER-25396302719100",
 								"type": "dir",
-								"locked": false,
+								"dirType": "archive",
 								"children": {
-									"payment_avon.pdf": {
-										"name": "payment_avon.pdf",
+									"Werk_Werk.txt": {
+										"name": "Werk_Werk.txt",
 										"path": [
 											"FATF",
-											"1984-268052261027643",
-											"DOSSIER-26166517930188",
-											"payment_avon.pdf"
+											"1995-99022213843",
+											"DOSSIER-25396302719100",
+											"Werk_Werk.txt"
 										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-302232330931864": {
-								"path": [
-									"FATF",
-									"1984-268052261027643",
-									"DOSSIER-302232330931864"
-								],
-								"name": "DOSSIER-302232330931864",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"awesome_steel_mouse_centralized.pdf": {
-										"name": "awesome_steel_mouse_centralized.pdf",
-										"path": [
-											"FATF",
-											"1984-268052261027643",
-											"DOSSIER-302232330931864",
-											"awesome_steel_mouse_centralized.pdf"
-										],
-										"type": "pdf"
+										"type": "txt"
 									},
-									"copy_arkansas.pdf": {
-										"name": "copy_arkansas.pdf",
+									"Europese_onderdeel.txt": {
+										"name": "Europese_onderdeel.txt",
 										"path": [
 											"FATF",
-											"1984-268052261027643",
-											"DOSSIER-302232330931864",
-											"copy_arkansas.pdf"
+											"1995-99022213843",
+											"DOSSIER-25396302719100",
+											"Europese_onderdeel.txt"
 										],
-										"type": "pdf"
+										"type": "txt"
 									},
-									"unbranded_fantastic.pdf": {
-										"name": "unbranded_fantastic.pdf",
+									"de_Contraterrorisme.txt": {
+										"name": "de_Contraterrorisme.txt",
 										"path": [
 											"FATF",
-											"1984-268052261027643",
-											"DOSSIER-302232330931864",
-											"unbranded_fantastic.pdf"
-										],
-										"type": "pdf"
-									},
-									"info_mediaries.pdf": {
-										"name": "info_mediaries.pdf",
-										"path": [
-											"FATF",
-											"1984-268052261027643",
-											"DOSSIER-302232330931864",
-											"info_mediaries.pdf"
-										],
-										"type": "pdf"
-									},
-									"backing_up_definition.pdf": {
-										"name": "backing_up_definition.pdf",
-										"path": [
-											"FATF",
-											"1984-268052261027643",
-											"DOSSIER-302232330931864",
-											"backing_up_definition.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-5599326782514": {
-								"path": [
-									"FATF",
-									"1984-268052261027643",
-									"DOSSIER-5599326782514"
-								],
-								"name": "DOSSIER-5599326782514",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"tcp_lodge_ergonomic_cotton_shirt.txt": {
-										"name": "tcp_lodge_ergonomic_cotton_shirt.txt",
-										"path": [
-											"FATF",
-											"1984-268052261027643",
-											"DOSSIER-5599326782514",
-											"tcp_lodge_ergonomic_cotton_shirt.txt"
+											"1995-99022213843",
+											"DOSSIER-25396302719100",
+											"de_Contraterrorisme.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"matrices.txt": {
-								"name": "matrices.txt",
+							"DOSSIER-47801608312312": {
 								"path": [
 									"FATF",
-									"1984-268052261027643",
-									"matrices.txt"
+									"1995-99022213843",
+									"DOSSIER-47801608312312"
+								],
+								"name": "DOSSIER-47801608312312",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"controle_en.txt": {
+										"name": "controle_en.txt",
+										"path": [
+											"FATF",
+											"1995-99022213843",
+											"DOSSIER-47801608312312",
+											"controle_en.txt"
+										],
+										"type": "txt"
+									},
+									"onderdeel_Programma.txt": {
+										"name": "onderdeel_Programma.txt",
+										"path": [
+											"FATF",
+											"1995-99022213843",
+											"DOSSIER-47801608312312",
+											"onderdeel_Programma.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-6734188169463": {
+								"path": [
+									"FATF",
+									"1995-99022213843",
+									"DOSSIER-6734188169463"
+								],
+								"name": "DOSSIER-6734188169463",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Ministerie,_DNB.pdf": {
+										"name": "Ministerie,_DNB.pdf",
+										"path": [
+											"FATF",
+											"1995-99022213843",
+											"DOSSIER-6734188169463",
+											"Ministerie,_DNB.pdf"
+										],
+										"type": "pdf"
+									},
+									"politie_DNB.txt": {
+										"name": "politie_DNB.txt",
+										"path": [
+											"FATF",
+											"1995-99022213843",
+											"DOSSIER-6734188169463",
+											"politie_DNB.txt"
+										],
+										"type": "txt"
+									},
+									"van_Recherche,.pdf": {
+										"name": "van_Recherche,.pdf",
+										"path": [
+											"FATF",
+											"1995-99022213843",
+											"DOSSIER-6734188169463",
+											"van_Recherche,.pdf"
+										],
+										"type": "pdf"
+									},
+									"Centre,_Expertise.pdf": {
+										"name": "Centre,_Expertise.pdf",
+										"path": [
+											"FATF",
+											"1995-99022213843",
+											"DOSSIER-6734188169463",
+											"Centre,_Expertise.pdf"
+										],
+										"type": "pdf"
+									},
+									"Basisvoorziening_orgaan.txt": {
+										"name": "Basisvoorziening_orgaan.txt",
+										"path": [
+											"FATF",
+											"1995-99022213843",
+											"DOSSIER-6734188169463",
+											"Basisvoorziening_orgaan.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-9372663532057": {
+								"path": [
+									"FATF",
+									"1995-99022213843",
+									"DOSSIER-9372663532057"
+								],
+								"name": "DOSSIER-9372663532057",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"EMPACT_Laundering..txt": {
+										"name": "EMPACT_Laundering..txt",
+										"path": [
+											"FATF",
+											"1995-99022213843",
+											"DOSSIER-9372663532057",
+											"EMPACT_Laundering..txt"
+										],
+										"type": "txt"
+									},
+									"Landelijke_de.pdf": {
+										"name": "Landelijke_de.pdf",
+										"path": [
+											"FATF",
+											"1995-99022213843",
+											"DOSSIER-9372663532057",
+											"Landelijke_de.pdf"
+										],
+										"type": "pdf"
+									},
+									"en_Financieel.pdf": {
+										"name": "en_Financieel.pdf",
+										"path": [
+											"FATF",
+											"1995-99022213843",
+											"DOSSIER-9372663532057",
+											"en_Financieel.pdf"
+										],
+										"type": "pdf"
+									},
+									"Unit_Inkomen,.pdf": {
+										"name": "Unit_Inkomen,.pdf",
+										"path": [
+											"FATF",
+											"1995-99022213843",
+											"DOSSIER-9372663532057",
+											"Unit_Inkomen,.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"en_FlU-Nederland.txt": {
+								"name": "en_FlU-Nederland.txt",
+								"path": [
+									"FATF",
+									"1995-99022213843",
+									"en_FlU-Nederland.txt"
 								],
 								"type": "txt"
 							},
-							"new_york_virgin_islands__u.s._interactive.txt": {
-								"name": "new_york_virgin_islands__u.s._interactive.txt",
+							"Inkomen,_Nederland:.txt": {
+								"name": "Inkomen,_Nederland:.txt",
 								"path": [
 									"FATF",
-									"1984-268052261027643",
-									"new_york_virgin_islands__u.s._interactive.txt"
+									"1995-99022213843",
+									"Inkomen,_Nederland:.txt"
 								],
 								"type": "txt"
 							},
-							"compelling_static.txt": {
-								"name": "compelling_static.txt",
+							"Unie_organisatie.txt": {
+								"name": "Unie_organisatie.txt",
 								"path": [
 									"FATF",
-									"1984-268052261027643",
-									"compelling_static.txt"
+									"1995-99022213843",
+									"Unie_organisatie.txt"
 								],
 								"type": "txt"
 							},
-							"corners.txt": {
-								"name": "corners.txt",
+							"Justitieel_Centrum.txt": {
+								"name": "Justitieel_Centrum.txt",
 								"path": [
 									"FATF",
-									"1984-268052261027643",
-									"corners.txt"
+									"1995-99022213843",
+									"Justitieel_Centrum.txt"
+								],
+								"type": "txt"
+							},
+							"Crimineel_Bureau.txt": {
+								"name": "Crimineel_Bureau.txt",
+								"path": [
+									"FATF",
+									"1995-99022213843",
+									"Crimineel_Bureau.txt"
 								],
 								"type": "txt"
 							}
 						}
 					},
-					"1987-234528526247": {
+					"2004-113452229911775": {
 						"path": [
 							"FATF",
-							"1987-234528526247"
+							"2004-113452229911775"
 						],
-						"name": "1987-234528526247",
+						"name": "2004-113452229911775",
 						"type": "dir",
-						"locked": true,
+						"dirType": "archive",
 						"children": {
-							"DOSSIER-11209180562576": {
+							"DOSSIER-117287367838": {
 								"path": [
 									"FATF",
-									"1987-234528526247",
-									"DOSSIER-11209180562576"
+									"2004-113452229911775",
+									"DOSSIER-117287367838"
 								],
-								"name": "DOSSIER-11209180562576",
+								"name": "DOSSIER-117287367838",
 								"type": "dir",
-								"locked": true,
+								"dirType": "normal",
 								"children": {
-									"bluetooth.txt": {
-										"name": "bluetooth.txt",
+									"Saba_van.txt": {
+										"name": "Saba_van.txt",
 										"path": [
 											"FATF",
-											"1987-234528526247",
-											"DOSSIER-11209180562576",
-											"bluetooth.txt"
+											"2004-113452229911775",
+											"DOSSIER-117287367838",
+											"Saba_van.txt"
 										],
 										"type": "txt"
 									},
-									"books_silver_database.txt": {
-										"name": "books_silver_database.txt",
+									"Onverklaarbaar_Financieel.pdf": {
+										"name": "Onverklaarbaar_Financieel.pdf",
 										"path": [
 											"FATF",
-											"1987-234528526247",
-											"DOSSIER-11209180562576",
-											"books_silver_database.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-218482380510274": {
-								"path": [
-									"FATF",
-									"1987-234528526247",
-									"DOSSIER-218482380510274"
-								],
-								"name": "DOSSIER-218482380510274",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"pricing_structure.txt": {
-										"name": "pricing_structure.txt",
-										"path": [
-											"FATF",
-											"1987-234528526247",
-											"DOSSIER-218482380510274",
-											"pricing_structure.txt"
-										],
-										"type": "txt"
-									},
-									"generic.txt": {
-										"name": "generic.txt",
-										"path": [
-											"FATF",
-											"1987-234528526247",
-											"DOSSIER-218482380510274",
-											"generic.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-284841464318231": {
-								"path": [
-									"FATF",
-									"1987-234528526247",
-									"DOSSIER-284841464318231"
-								],
-								"name": "DOSSIER-284841464318231",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"money_market_account_field.txt": {
-										"name": "money_market_account_field.txt",
-										"path": [
-											"FATF",
-											"1987-234528526247",
-											"DOSSIER-284841464318231",
-											"money_market_account_field.txt"
-										],
-										"type": "txt"
-									},
-									"incredible.txt": {
-										"name": "incredible.txt",
-										"path": [
-											"FATF",
-											"1987-234528526247",
-											"DOSSIER-284841464318231",
-											"incredible.txt"
-										],
-										"type": "txt"
-									},
-									"refined_leverage.txt": {
-										"name": "refined_leverage.txt",
-										"path": [
-											"FATF",
-											"1987-234528526247",
-											"DOSSIER-284841464318231",
-											"refined_leverage.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-298852112832731": {
-								"path": [
-									"FATF",
-									"1987-234528526247",
-									"DOSSIER-298852112832731"
-								],
-								"name": "DOSSIER-298852112832731",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"tuna_contextually_based_health.pdf": {
-										"name": "tuna_contextually_based_health.pdf",
-										"path": [
-											"FATF",
-											"1987-234528526247",
-											"DOSSIER-298852112832731",
-											"tuna_contextually_based_health.pdf"
+											"2004-113452229911775",
+											"DOSSIER-117287367838",
+											"Onverklaarbaar_Financieel.pdf"
 										],
 										"type": "pdf"
 									},
-									"buckinghamshire_productize.txt": {
-										"name": "buckinghamshire_productize.txt",
+									"de_andrea.txt": {
+										"name": "de_andrea.txt",
 										"path": [
 											"FATF",
-											"1987-234528526247",
-											"DOSSIER-298852112832731",
-											"buckinghamshire_productize.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-3030090321431": {
-								"path": [
-									"FATF",
-									"1987-234528526247",
-									"DOSSIER-3030090321431"
-								],
-								"name": "DOSSIER-3030090321431",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"http_face_to_face_phased.txt": {
-										"name": "http_face_to_face_phased.txt",
-										"path": [
-											"FATF",
-											"1987-234528526247",
-											"DOSSIER-3030090321431",
-											"http_face_to_face_phased.txt"
+											"2004-113452229911775",
+											"DOSSIER-117287367838",
+											"de_andrea.txt"
 										],
 										"type": "txt"
 									},
-									"estate.txt": {
-										"name": "estate.txt",
+									"de_de.txt": {
+										"name": "de_de.txt",
 										"path": [
 											"FATF",
-											"1987-234528526247",
-											"DOSSIER-3030090321431",
-											"estate.txt"
+											"2004-113452229911775",
+											"DOSSIER-117287367838",
+											"de_de.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"pixel_analyst.pdf": {
-								"name": "pixel_analyst.pdf",
+							"DOSSIER-1187589092436": {
 								"path": [
 									"FATF",
-									"1987-234528526247",
-									"pixel_analyst.pdf"
+									"2004-113452229911775",
+									"DOSSIER-1187589092436"
 								],
-								"type": "pdf"
+								"name": "DOSSIER-1187589092436",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Inkomen,_Europese.pdf": {
+										"name": "Inkomen,_Europese.pdf",
+										"path": [
+											"FATF",
+											"2004-113452229911775",
+											"DOSSIER-1187589092436",
+											"Inkomen,_Europese.pdf"
+										],
+										"type": "pdf"
+									}
+								}
 							},
-							"springs_violet.txt": {
-								"name": "springs_violet.txt",
+							"DOSSIER-1239318305482": {
 								"path": [
 									"FATF",
-									"1987-234528526247",
-									"springs_violet.txt"
+									"2004-113452229911775",
+									"DOSSIER-1239318305482"
+								],
+								"name": "DOSSIER-1239318305482",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Vermogen_EU.pdf": {
+										"name": "Vermogen_EU.pdf",
+										"path": [
+											"FATF",
+											"2004-113452229911775",
+											"DOSSIER-1239318305482",
+											"Vermogen_EU.pdf"
+										],
+										"type": "pdf"
+									},
+									"Ministerie,_Caribisch.txt": {
+										"name": "Ministerie,_Caribisch.txt",
+										"path": [
+											"FATF",
+											"2004-113452229911775",
+											"DOSSIER-1239318305482",
+											"Ministerie,_Caribisch.txt"
+										],
+										"type": "txt"
+									},
+									"Contraterrorisme_Criminaliteit.txt": {
+										"name": "Contraterrorisme_Criminaliteit.txt",
+										"path": [
+											"FATF",
+											"2004-113452229911775",
+											"DOSSIER-1239318305482",
+											"Contraterrorisme_Criminaliteit.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-171182293719620": {
+								"path": [
+									"FATF",
+									"2004-113452229911775",
+									"DOSSIER-171182293719620"
+								],
+								"name": "DOSSIER-171182293719620",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Expertisecentrum_AFM.txt": {
+										"name": "Expertisecentrum_AFM.txt",
+										"path": [
+											"FATF",
+											"2004-113452229911775",
+											"DOSSIER-171182293719620",
+											"Expertisecentrum_AFM.txt"
+										],
+										"type": "txt"
+									},
+									"Openbaar_EMPACT.txt": {
+										"name": "Openbaar_EMPACT.txt",
+										"path": [
+											"FATF",
+											"2004-113452229911775",
+											"DOSSIER-171182293719620",
+											"Openbaar_EMPACT.txt"
+										],
+										"type": "txt"
+									},
+									"binnen_GoAML.txt": {
+										"name": "binnen_GoAML.txt",
+										"path": [
+											"FATF",
+											"2004-113452229911775",
+											"DOSSIER-171182293719620",
+											"binnen_GoAML.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-3244292547780": {
+								"path": [
+									"FATF",
+									"2004-113452229911775",
+									"DOSSIER-3244292547780"
+								],
+								"name": "DOSSIER-3244292547780",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Opsporingsdienst_Anti.txt": {
+										"name": "Opsporingsdienst_Anti.txt",
+										"path": [
+											"FATF",
+											"2004-113452229911775",
+											"DOSSIER-3244292547780",
+											"Opsporingsdienst_Anti.txt"
+										],
+										"type": "txt"
+									},
+									"Infobox_Bureau.txt": {
+										"name": "Infobox_Bureau.txt",
+										"path": [
+											"FATF",
+											"2004-113452229911775",
+											"DOSSIER-3244292547780",
+											"Infobox_Bureau.txt"
+										],
+										"type": "txt"
+									},
+									"Contraterrorisme_iCOV.txt": {
+										"name": "Contraterrorisme_iCOV.txt",
+										"path": [
+											"FATF",
+											"2004-113452229911775",
+											"DOSSIER-3244292547780",
+											"Contraterrorisme_iCOV.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"De_interne.txt": {
+								"name": "De_interne.txt",
+								"path": [
+									"FATF",
+									"2004-113452229911775",
+									"De_interne.txt"
 								],
 								"type": "txt"
 							},
-							"legacy.pdf": {
-								"name": "legacy.pdf",
+							"en_Bank.txt": {
+								"name": "en_Bank.txt",
 								"path": [
 									"FATF",
-									"1987-234528526247",
-									"legacy.pdf"
+									"2004-113452229911775",
+									"en_Bank.txt"
 								],
-								"type": "pdf"
+								"type": "txt"
 							},
-							"intelligent_concrete_shoes.pdf": {
-								"name": "intelligent_concrete_shoes.pdf",
+							"Task_Cluster.txt": {
+								"name": "Task_Cluster.txt",
 								"path": [
 									"FATF",
-									"1987-234528526247",
-									"intelligent_concrete_shoes.pdf"
+									"2004-113452229911775",
+									"Task_Cluster.txt"
+								],
+								"type": "txt"
+							}
+						}
+					},
+					"2012-29593289016246": {
+						"path": [
+							"FATF",
+							"2012-29593289016246"
+						],
+						"name": "2012-29593289016246",
+						"type": "dir",
+						"dirType": "archive",
+						"children": {
+							"DOSSIER-175321619523599": {
+								"path": [
+									"FATF",
+									"2012-29593289016246",
+									"DOSSIER-175321619523599"
+								],
+								"name": "DOSSIER-175321619523599",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Ministerie,_Werk.txt": {
+										"name": "Ministerie,_Werk.txt",
+										"path": [
+											"FATF",
+											"2012-29593289016246",
+											"DOSSIER-175321619523599",
+											"Ministerie,_Werk.txt"
+										],
+										"type": "txt"
+									},
+									"Andrea_Inlichtingen-.txt": {
+										"name": "Andrea_Inlichtingen-.txt",
+										"path": [
+											"FATF",
+											"2012-29593289016246",
+											"DOSSIER-175321619523599",
+											"Andrea_Inlichtingen-.txt"
+										],
+										"type": "txt"
+									},
+									"gemeente_Werk.txt": {
+										"name": "gemeente_Werk.txt",
+										"path": [
+											"FATF",
+											"2012-29593289016246",
+											"DOSSIER-175321619523599",
+											"gemeente_Werk.txt"
+										],
+										"type": "txt"
+									},
+									"FinEC_Contraterrorisme.txt": {
+										"name": "FinEC_Contraterrorisme.txt",
+										"path": [
+											"FATF",
+											"2012-29593289016246",
+											"DOSSIER-175321619523599",
+											"FinEC_Contraterrorisme.txt"
+										],
+										"type": "txt"
+									},
+									"eilanden_Centrum.pdf": {
+										"name": "eilanden_Centrum.pdf",
+										"path": [
+											"FATF",
+											"2012-29593289016246",
+											"DOSSIER-175321619523599",
+											"eilanden_Centrum.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-231076584543": {
+								"path": [
+									"FATF",
+									"2012-29593289016246",
+									"DOSSIER-231076584543"
+								],
+								"name": "DOSSIER-231076584543",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"gemeente_Financial.txt": {
+										"name": "gemeente_Financial.txt",
+										"path": [
+											"FATF",
+											"2012-29593289016246",
+											"DOSSIER-231076584543",
+											"gemeente_Financial.txt"
+										],
+										"type": "txt"
+									},
+									"Eenheid_Parket,.txt": {
+										"name": "Eenheid_Parket,.txt",
+										"path": [
+											"FATF",
+											"2012-29593289016246",
+											"DOSSIER-231076584543",
+											"Eenheid_Parket,.txt"
+										],
+										"type": "txt"
+									},
+									"European_Toezicht.txt": {
+										"name": "European_Toezicht.txt",
+										"path": [
+											"FATF",
+											"2012-29593289016246",
+											"DOSSIER-231076584543",
+											"European_Toezicht.txt"
+										],
+										"type": "txt"
+									},
+									"Bureau_iCOV.txt": {
+										"name": "Bureau_iCOV.txt",
+										"path": [
+											"FATF",
+											"2012-29593289016246",
+											"DOSSIER-231076584543",
+											"Bureau_iCOV.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-259522489418413": {
+								"path": [
+									"FATF",
+									"2012-29593289016246",
+									"DOSSIER-259522489418413"
+								],
+								"name": "DOSSIER-259522489418413",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"van_Bureau.txt": {
+										"name": "van_Bureau.txt",
+										"path": [
+											"FATF",
+											"2012-29593289016246",
+											"DOSSIER-259522489418413",
+											"van_Bureau.txt"
+										],
+										"type": "txt"
+									},
+									"EU_Recherche,.txt": {
+										"name": "EU_Recherche,.txt",
+										"path": [
+											"FATF",
+											"2012-29593289016246",
+											"DOSSIER-259522489418413",
+											"EU_Recherche,.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-29700254667071": {
+								"path": [
+									"FATF",
+									"2012-29593289016246",
+									"DOSSIER-29700254667071"
+								],
+								"name": "DOSSIER-29700254667071",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Incasso_binnen.txt": {
+										"name": "Incasso_binnen.txt",
+										"path": [
+											"FATF",
+											"2012-29593289016246",
+											"DOSSIER-29700254667071",
+											"Incasso_binnen.txt"
+										],
+										"type": "txt"
+									},
+									"Anti-Money_AFM.txt": {
+										"name": "Anti-Money_AFM.txt",
+										"path": [
+											"FATF",
+											"2012-29593289016246",
+											"DOSSIER-29700254667071",
+											"Anti-Money_AFM.txt"
+										],
+										"type": "txt"
+									},
+									"Contraterrorisme_ICT.txt": {
+										"name": "Contraterrorisme_ICT.txt",
+										"path": [
+											"FATF",
+											"2012-29593289016246",
+											"DOSSIER-29700254667071",
+											"Contraterrorisme_ICT.txt"
+										],
+										"type": "txt"
+									},
+									"Intelligence_van.txt": {
+										"name": "Intelligence_van.txt",
+										"path": [
+											"FATF",
+											"2012-29593289016246",
+											"DOSSIER-29700254667071",
+											"Intelligence_van.txt"
+										],
+										"type": "txt"
+									},
+									"ICT_BFT.txt": {
+										"name": "ICT_BFT.txt",
+										"path": [
+											"FATF",
+											"2012-29593289016246",
+											"DOSSIER-29700254667071",
+											"ICT_BFT.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-91351855619550": {
+								"path": [
+									"FATF",
+									"2012-29593289016246",
+									"DOSSIER-91351855619550"
+								],
+								"name": "DOSSIER-91351855619550",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"de_de.pdf": {
+										"name": "de_de.pdf",
+										"path": [
+											"FATF",
+											"2012-29593289016246",
+											"DOSSIER-91351855619550",
+											"de_de.pdf"
+										],
+										"type": "pdf"
+									},
+									"Inkomen,_BOOM.txt": {
+										"name": "Inkomen,_BOOM.txt",
+										"path": [
+											"FATF",
+											"2012-29593289016246",
+											"DOSSIER-91351855619550",
+											"Inkomen,_BOOM.txt"
+										],
+										"type": "txt"
+									},
+									"Europese_en.txt": {
+										"name": "Europese_en.txt",
+										"path": [
+											"FATF",
+											"2012-29593289016246",
+											"DOSSIER-91351855619550",
+											"Europese_en.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"onderdeel_DLR.txt": {
+								"name": "onderdeel_DLR.txt",
+								"path": [
+									"FATF",
+									"2012-29593289016246",
+									"onderdeel_DLR.txt"
+								],
+								"type": "txt"
+							},
+							"Unit_CN.txt": {
+								"name": "Unit_CN.txt",
+								"path": [
+									"FATF",
+									"2012-29593289016246",
+									"Unit_CN.txt"
+								],
+								"type": "txt"
+							},
+							"Unit_een.txt": {
+								"name": "Unit_een.txt",
+								"path": [
+									"FATF",
+									"2012-29593289016246",
+									"Unit_een.txt"
+								],
+								"type": "txt"
+							},
+							"DWI_Inkomen,.txt": {
+								"name": "DWI_Inkomen,.txt",
+								"path": [
+									"FATF",
+									"2012-29593289016246",
+									"DWI_Inkomen,.txt"
+								],
+								"type": "txt"
+							},
+							"interne_van.pdf": {
+								"name": "interne_van.pdf",
+								"path": [
+									"FATF",
+									"2012-29593289016246",
+									"interne_van.pdf"
 								],
 								"type": "pdf"
 							}
 						}
 					},
-					"2009-23506662120957": {
+					"DWI_Amsterdam.txt": {
+						"name": "DWI_Amsterdam.txt",
 						"path": [
 							"FATF",
-							"2009-23506662120957"
-						],
-						"name": "2009-23506662120957",
-						"type": "dir",
-						"locked": true,
-						"children": {
-							"DOSSIER-120412297629426": {
-								"path": [
-									"FATF",
-									"2009-23506662120957",
-									"DOSSIER-120412297629426"
-								],
-								"name": "DOSSIER-120412297629426",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"synthesizing_supply_chains.txt": {
-										"name": "synthesizing_supply_chains.txt",
-										"path": [
-											"FATF",
-											"2009-23506662120957",
-											"DOSSIER-120412297629426",
-											"synthesizing_supply_chains.txt"
-										],
-										"type": "txt"
-									},
-									"plastic_infomediaries_music.txt": {
-										"name": "plastic_infomediaries_music.txt",
-										"path": [
-											"FATF",
-											"2009-23506662120957",
-											"DOSSIER-120412297629426",
-											"plastic_infomediaries_music.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-12207291255142": {
-								"path": [
-									"FATF",
-									"2009-23506662120957",
-									"DOSSIER-12207291255142"
-								],
-								"name": "DOSSIER-12207291255142",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"mayotte.txt": {
-										"name": "mayotte.txt",
-										"path": [
-											"FATF",
-											"2009-23506662120957",
-											"DOSSIER-12207291255142",
-											"mayotte.txt"
-										],
-										"type": "txt"
-									},
-									"generating.txt": {
-										"name": "generating.txt",
-										"path": [
-											"FATF",
-											"2009-23506662120957",
-											"DOSSIER-12207291255142",
-											"generating.txt"
-										],
-										"type": "txt"
-									},
-									"new_mexico.pdf": {
-										"name": "new_mexico.pdf",
-										"path": [
-											"FATF",
-											"2009-23506662120957",
-											"DOSSIER-12207291255142",
-											"new_mexico.pdf"
-										],
-										"type": "pdf"
-									},
-									"denmark_haptic.txt": {
-										"name": "denmark_haptic.txt",
-										"path": [
-											"FATF",
-											"2009-23506662120957",
-											"DOSSIER-12207291255142",
-											"denmark_haptic.txt"
-										],
-										"type": "txt"
-									},
-									"personal_loan_account.pdf": {
-										"name": "personal_loan_account.pdf",
-										"path": [
-											"FATF",
-											"2009-23506662120957",
-											"DOSSIER-12207291255142",
-											"personal_loan_account.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-2599438624505": {
-								"path": [
-									"FATF",
-									"2009-23506662120957",
-									"DOSSIER-2599438624505"
-								],
-								"name": "DOSSIER-2599438624505",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"pre_emptive_azure_pink.txt": {
-										"name": "pre_emptive_azure_pink.txt",
-										"path": [
-											"FATF",
-											"2009-23506662120957",
-											"DOSSIER-2599438624505",
-											"pre_emptive_azure_pink.txt"
-										],
-										"type": "txt"
-									},
-									"deploy.pdf": {
-										"name": "deploy.pdf",
-										"path": [
-											"FATF",
-											"2009-23506662120957",
-											"DOSSIER-2599438624505",
-											"deploy.pdf"
-										],
-										"type": "pdf"
-									},
-									"sleek_concrete_hat_connecting_cultivate.txt": {
-										"name": "sleek_concrete_hat_connecting_cultivate.txt",
-										"path": [
-											"FATF",
-											"2009-23506662120957",
-											"DOSSIER-2599438624505",
-											"sleek_concrete_hat_connecting_cultivate.txt"
-										],
-										"type": "txt"
-									},
-									"orange.txt": {
-										"name": "orange.txt",
-										"path": [
-											"FATF",
-											"2009-23506662120957",
-											"DOSSIER-2599438624505",
-											"orange.txt"
-										],
-										"type": "txt"
-									},
-									"protocol.txt": {
-										"name": "protocol.txt",
-										"path": [
-											"FATF",
-											"2009-23506662120957",
-											"DOSSIER-2599438624505",
-											"protocol.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-27172439428393": {
-								"path": [
-									"FATF",
-									"2009-23506662120957",
-									"DOSSIER-27172439428393"
-								],
-								"name": "DOSSIER-27172439428393",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"exuding_schemas.txt": {
-										"name": "exuding_schemas.txt",
-										"path": [
-											"FATF",
-											"2009-23506662120957",
-											"DOSSIER-27172439428393",
-											"exuding_schemas.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-63032663812260": {
-								"path": [
-									"FATF",
-									"2009-23506662120957",
-									"DOSSIER-63032663812260"
-								],
-								"name": "DOSSIER-63032663812260",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"maine_awesome_interface.pdf": {
-										"name": "maine_awesome_interface.pdf",
-										"path": [
-											"FATF",
-											"2009-23506662120957",
-											"DOSSIER-63032663812260",
-											"maine_awesome_interface.pdf"
-										],
-										"type": "pdf"
-									},
-									"sensor.txt": {
-										"name": "sensor.txt",
-										"path": [
-											"FATF",
-											"2009-23506662120957",
-											"DOSSIER-63032663812260",
-											"sensor.txt"
-										],
-										"type": "txt"
-									},
-									"product_licensed.txt": {
-										"name": "product_licensed.txt",
-										"path": [
-											"FATF",
-											"2009-23506662120957",
-											"DOSSIER-63032663812260",
-											"product_licensed.txt"
-										],
-										"type": "txt"
-									},
-									"borders_vortals_directives.txt": {
-										"name": "borders_vortals_directives.txt",
-										"path": [
-											"FATF",
-											"2009-23506662120957",
-											"DOSSIER-63032663812260",
-											"borders_vortals_directives.txt"
-										],
-										"type": "txt"
-									},
-									"transmitting_interface_invoice.txt": {
-										"name": "transmitting_interface_invoice.txt",
-										"path": [
-											"FATF",
-											"2009-23506662120957",
-											"DOSSIER-63032663812260",
-											"transmitting_interface_invoice.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"generic_concrete_shirt_new_york_payment.pdf": {
-								"name": "generic_concrete_shirt_new_york_payment.pdf",
-								"path": [
-									"FATF",
-									"2009-23506662120957",
-									"generic_concrete_shirt_new_york_payment.pdf"
-								],
-								"type": "pdf"
-							},
-							"barbados_dollar_syrian_pound.txt": {
-								"name": "barbados_dollar_syrian_pound.txt",
-								"path": [
-									"FATF",
-									"2009-23506662120957",
-									"barbados_dollar_syrian_pound.txt"
-								],
-								"type": "txt"
-							},
-							"incredible_money_market_account_overriding.pdf": {
-								"name": "incredible_money_market_account_overriding.pdf",
-								"path": [
-									"FATF",
-									"2009-23506662120957",
-									"incredible_money_market_account_overriding.pdf"
-								],
-								"type": "pdf"
-							},
-							"tuna_progressive_bedfordshire.pdf": {
-								"name": "tuna_progressive_bedfordshire.pdf",
-								"path": [
-									"FATF",
-									"2009-23506662120957",
-									"tuna_progressive_bedfordshire.pdf"
-								],
-								"type": "pdf"
-							}
-						}
-					},
-					"ergonomic.txt": {
-						"name": "ergonomic.txt",
-						"path": [
-							"FATF",
-							"ergonomic.txt"
+							"DWI_Amsterdam.txt"
 						],
 						"type": "txt"
 					},
-					"bacon_compressing.pdf": {
-						"name": "bacon_compressing.pdf",
+					"binnen_de.txt": {
+						"name": "binnen_de.txt",
 						"path": [
 							"FATF",
-							"bacon_compressing.pdf"
+							"binnen_de.txt"
 						],
-						"type": "pdf"
+						"type": "txt"
 					}
 				}
 			},
@@ -27449,1295 +27441,1338 @@
 				],
 				"name": "IND",
 				"type": "dir",
-				"locked": true,
+				"dirType": "normal",
 				"children": {
-					"1963-287122959416755": {
+					"1964-308701361617923": {
 						"path": [
 							"IND",
-							"1963-287122959416755"
+							"1964-308701361617923"
 						],
-						"name": "1963-287122959416755",
+						"name": "1964-308701361617923",
 						"type": "dir",
-						"locked": false,
+						"dirType": "archive",
 						"children": {
-							"DOSSIER-13875195153161": {
+							"DOSSIER-128142638726508": {
 								"path": [
 									"IND",
-									"1963-287122959416755",
-									"DOSSIER-13875195153161"
+									"1964-308701361617923",
+									"DOSSIER-128142638726508"
 								],
-								"name": "DOSSIER-13875195153161",
+								"name": "DOSSIER-128142638726508",
 								"type": "dir",
-								"locked": false,
+								"dirType": "locked",
 								"children": {
-									"metal.pdf": {
-										"name": "metal.pdf",
+									"Financieel_Expertisecentrum.txt": {
+										"name": "Financieel_Expertisecentrum.txt",
 										"path": [
 											"IND",
-											"1963-287122959416755",
-											"DOSSIER-13875195153161",
-											"metal.pdf"
-										],
-										"type": "pdf"
-									},
-									"1080p_industrial.txt": {
-										"name": "1080p_industrial.txt",
-										"path": [
-											"IND",
-											"1963-287122959416755",
-											"DOSSIER-13875195153161",
-											"1080p_industrial.txt"
+											"1964-308701361617923",
+											"DOSSIER-128142638726508",
+											"Financieel_Expertisecentrum.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-15793843030695": {
+							"DOSSIER-15817988291": {
 								"path": [
 									"IND",
-									"1963-287122959416755",
-									"DOSSIER-15793843030695"
+									"1964-308701361617923",
+									"DOSSIER-15817988291"
 								],
-								"name": "DOSSIER-15793843030695",
+								"name": "DOSSIER-15817988291",
 								"type": "dir",
-								"locked": false,
+								"dirType": "locked",
 								"children": {
-									"circuit.txt": {
-										"name": "circuit.txt",
+									"onderdeel_van.txt": {
+										"name": "onderdeel_van.txt",
 										"path": [
 											"IND",
-											"1963-287122959416755",
-											"DOSSIER-15793843030695",
-											"circuit.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-6596224954679": {
-								"path": [
-									"IND",
-									"1963-287122959416755",
-									"DOSSIER-6596224954679"
-								],
-								"name": "DOSSIER-6596224954679",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"deposit_awesome.txt": {
-										"name": "deposit_awesome.txt",
-										"path": [
-											"IND",
-											"1963-287122959416755",
-											"DOSSIER-6596224954679",
-											"deposit_awesome.txt"
+											"1964-308701361617923",
+											"DOSSIER-15817988291",
+											"onderdeel_van.txt"
 										],
 										"type": "txt"
 									},
-									"orchid_strategist.txt": {
-										"name": "orchid_strategist.txt",
+									"Programma_CTEPF.txt": {
+										"name": "Programma_CTEPF.txt",
 										"path": [
 											"IND",
-											"1963-287122959416755",
-											"DOSSIER-6596224954679",
-											"orchid_strategist.txt"
+											"1964-308701361617923",
+											"DOSSIER-15817988291",
+											"Programma_CTEPF.txt"
 										],
 										"type": "txt"
 									},
-									"magenta_markets.txt": {
-										"name": "magenta_markets.txt",
+									"OM_een.txt": {
+										"name": "OM_een.txt",
 										"path": [
 											"IND",
-											"1963-287122959416755",
-											"DOSSIER-6596224954679",
-											"magenta_markets.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-7274247947856": {
-								"path": [
-									"IND",
-									"1963-287122959416755",
-									"DOSSIER-7274247947856"
-								],
-								"name": "DOSSIER-7274247947856",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"withdrawal_calculate_designer.txt": {
-										"name": "withdrawal_calculate_designer.txt",
-										"path": [
-											"IND",
-											"1963-287122959416755",
-											"DOSSIER-7274247947856",
-											"withdrawal_calculate_designer.txt"
+											"1964-308701361617923",
+											"DOSSIER-15817988291",
+											"OM_een.txt"
 										],
 										"type": "txt"
 									},
-									"comoro_franc.txt": {
-										"name": "comoro_franc.txt",
+									"Parket,_de.txt": {
+										"name": "Parket,_de.txt",
 										"path": [
 											"IND",
-											"1963-287122959416755",
-											"DOSSIER-7274247947856",
-											"comoro_franc.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-8720114351052": {
-								"path": [
-									"IND",
-									"1963-287122959416755",
-									"DOSSIER-8720114351052"
-								],
-								"name": "DOSSIER-8720114351052",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"connect.pdf": {
-										"name": "connect.pdf",
-										"path": [
-											"IND",
-											"1963-287122959416755",
-											"DOSSIER-8720114351052",
-											"connect.pdf"
-										],
-										"type": "pdf"
-									},
-									"deposit.txt": {
-										"name": "deposit.txt",
-										"path": [
-											"IND",
-											"1963-287122959416755",
-											"DOSSIER-8720114351052",
-											"deposit.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"licensed_concrete_pants_turquoise_anguilla.txt": {
-								"name": "licensed_concrete_pants_turquoise_anguilla.txt",
-								"path": [
-									"IND",
-									"1963-287122959416755",
-									"licensed_concrete_pants_turquoise_anguilla.txt"
-								],
-								"type": "txt"
-							},
-							"stand_alone_senior.txt": {
-								"name": "stand_alone_senior.txt",
-								"path": [
-									"IND",
-									"1963-287122959416755",
-									"stand_alone_senior.txt"
-								],
-								"type": "txt"
-							},
-							"transmitting_pizza_computer.txt": {
-								"name": "transmitting_pizza_computer.txt",
-								"path": [
-									"IND",
-									"1963-287122959416755",
-									"transmitting_pizza_computer.txt"
-								],
-								"type": "txt"
-							},
-							"chief_personal_loan_account.txt": {
-								"name": "chief_personal_loan_account.txt",
-								"path": [
-									"IND",
-									"1963-287122959416755",
-									"chief_personal_loan_account.txt"
-								],
-								"type": "txt"
-							},
-							"azerbaijanian_manat_withdrawal_unbranded_frozen_soap.pdf": {
-								"name": "azerbaijanian_manat_withdrawal_unbranded_frozen_soap.pdf",
-								"path": [
-									"IND",
-									"1963-287122959416755",
-									"azerbaijanian_manat_withdrawal_unbranded_frozen_soap.pdf"
-								],
-								"type": "pdf"
-							}
-						}
-					},
-					"1978-109393074522457": {
-						"path": [
-							"IND",
-							"1978-109393074522457"
-						],
-						"name": "1978-109393074522457",
-						"type": "dir",
-						"locked": false,
-						"children": {
-							"DOSSIER-15781243148165": {
-								"path": [
-									"IND",
-									"1978-109393074522457",
-									"DOSSIER-15781243148165"
-								],
-								"name": "DOSSIER-15781243148165",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"international_monitor_blue.pdf": {
-										"name": "international_monitor_blue.pdf",
-										"path": [
-											"IND",
-											"1978-109393074522457",
-											"DOSSIER-15781243148165",
-											"international_monitor_blue.pdf"
-										],
-										"type": "pdf"
-									},
-									"configuration_checking_account_electronics.pdf": {
-										"name": "configuration_checking_account_electronics.pdf",
-										"path": [
-											"IND",
-											"1978-109393074522457",
-											"DOSSIER-15781243148165",
-											"configuration_checking_account_electronics.pdf"
-										],
-										"type": "pdf"
-									},
-									"rubber_parsing_ssl.txt": {
-										"name": "rubber_parsing_ssl.txt",
-										"path": [
-											"IND",
-											"1978-109393074522457",
-											"DOSSIER-15781243148165",
-											"rubber_parsing_ssl.txt"
+											"1964-308701361617923",
+											"DOSSIER-15817988291",
+											"Parket,_de.txt"
 										],
 										"type": "txt"
 									},
-									"reintermediate_uganda.txt": {
-										"name": "reintermediate_uganda.txt",
+									"Parket,_BVI.pdf": {
+										"name": "Parket,_BVI.pdf",
 										"path": [
 											"IND",
-											"1978-109393074522457",
-											"DOSSIER-15781243148165",
-											"reintermediate_uganda.txt"
-										],
-										"type": "txt"
-									},
-									"panel_practical_rubber_shirt.txt": {
-										"name": "panel_practical_rubber_shirt.txt",
-										"path": [
-											"IND",
-											"1978-109393074522457",
-											"DOSSIER-15781243148165",
-											"panel_practical_rubber_shirt.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-212821206826907": {
-								"path": [
-									"IND",
-									"1978-109393074522457",
-									"DOSSIER-212821206826907"
-								],
-								"name": "DOSSIER-212821206826907",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"louisiana_networks_intuitive.txt": {
-										"name": "louisiana_networks_intuitive.txt",
-										"path": [
-											"IND",
-											"1978-109393074522457",
-											"DOSSIER-212821206826907",
-											"louisiana_networks_intuitive.txt"
-										],
-										"type": "txt"
-									},
-									"website_jewelery.txt": {
-										"name": "website_jewelery.txt",
-										"path": [
-											"IND",
-											"1978-109393074522457",
-											"DOSSIER-212821206826907",
-											"website_jewelery.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-232762245614998": {
-								"path": [
-									"IND",
-									"1978-109393074522457",
-									"DOSSIER-232762245614998"
-								],
-								"name": "DOSSIER-232762245614998",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"violet_roi_synergies.txt": {
-										"name": "violet_roi_synergies.txt",
-										"path": [
-											"IND",
-											"1978-109393074522457",
-											"DOSSIER-232762245614998",
-											"violet_roi_synergies.txt"
-										],
-										"type": "txt"
-									},
-									"ib_installation.txt": {
-										"name": "ib_installation.txt",
-										"path": [
-											"IND",
-											"1978-109393074522457",
-											"DOSSIER-232762245614998",
-											"ib_installation.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-3361527824679": {
-								"path": [
-									"IND",
-									"1978-109393074522457",
-									"DOSSIER-3361527824679"
-								],
-								"name": "DOSSIER-3361527824679",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"diverse_health_central.txt": {
-										"name": "diverse_health_central.txt",
-										"path": [
-											"IND",
-											"1978-109393074522457",
-											"DOSSIER-3361527824679",
-											"diverse_health_central.txt"
-										],
-										"type": "txt"
-									},
-									"triple_buffered_rich_towels.pdf": {
-										"name": "triple_buffered_rich_towels.pdf",
-										"path": [
-											"IND",
-											"1978-109393074522457",
-											"DOSSIER-3361527824679",
-											"triple_buffered_rich_towels.pdf"
-										],
-										"type": "pdf"
-									},
-									"gorgeous_invoice_refined_cotton_sausages.txt": {
-										"name": "gorgeous_invoice_refined_cotton_sausages.txt",
-										"path": [
-											"IND",
-											"1978-109393074522457",
-											"DOSSIER-3361527824679",
-											"gorgeous_invoice_refined_cotton_sausages.txt"
-										],
-										"type": "txt"
-									},
-									"small_plastic_tuna_practical_rubber_fish.txt": {
-										"name": "small_plastic_tuna_practical_rubber_fish.txt",
-										"path": [
-											"IND",
-											"1978-109393074522457",
-											"DOSSIER-3361527824679",
-											"small_plastic_tuna_practical_rubber_fish.txt"
-										],
-										"type": "txt"
-									},
-									"investment_account.pdf": {
-										"name": "investment_account.pdf",
-										"path": [
-											"IND",
-											"1978-109393074522457",
-											"DOSSIER-3361527824679",
-											"investment_account.pdf"
+											"1964-308701361617923",
+											"DOSSIER-15817988291",
+											"Parket,_BVI.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"DOSSIER-64022425122614": {
+							"DOSSIER-169591083320147": {
 								"path": [
 									"IND",
-									"1978-109393074522457",
-									"DOSSIER-64022425122614"
+									"1964-308701361617923",
+									"DOSSIER-169591083320147"
 								],
-								"name": "DOSSIER-64022425122614",
+								"name": "DOSSIER-169591083320147",
 								"type": "dir",
-								"locked": false,
+								"dirType": "normal",
 								"children": {
-									"supervisor_agent_games.txt": {
-										"name": "supervisor_agent_games.txt",
+									"van_de.txt": {
+										"name": "van_de.txt",
 										"path": [
 											"IND",
-											"1978-109393074522457",
-											"DOSSIER-64022425122614",
-											"supervisor_agent_games.txt"
+											"1964-308701361617923",
+											"DOSSIER-169591083320147",
+											"van_de.txt"
+										],
+										"type": "txt"
+									},
+									"en_UNODC.pdf": {
+										"name": "en_UNODC.pdf",
+										"path": [
+											"IND",
+											"1964-308701361617923",
+											"DOSSIER-169591083320147",
+											"en_UNODC.pdf"
+										],
+										"type": "pdf"
+									},
+									"EC_Force.pdf": {
+										"name": "EC_Force.pdf",
+										"path": [
+											"IND",
+											"1964-308701361617923",
+											"DOSSIER-169591083320147",
+											"EC_Force.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-20896425854": {
+								"path": [
+									"IND",
+									"1964-308701361617923",
+									"DOSSIER-20896425854"
+								],
+								"name": "DOSSIER-20896425854",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Inlichtingen-_Criminal.txt": {
+										"name": "Inlichtingen-_Criminal.txt",
+										"path": [
+											"IND",
+											"1964-308701361617923",
+											"DOSSIER-20896425854",
+											"Inlichtingen-_Criminal.txt"
+										],
+										"type": "txt"
+									},
+									"EMPACT_Bureau.pdf": {
+										"name": "EMPACT_Bureau.pdf",
+										"path": [
+											"IND",
+											"1964-308701361617923",
+											"DOSSIER-20896425854",
+											"EMPACT_Bureau.pdf"
+										],
+										"type": "pdf"
+									},
+									"Programma_onderdeel.txt": {
+										"name": "Programma_onderdeel.txt",
+										"path": [
+											"IND",
+											"1964-308701361617923",
+											"DOSSIER-20896425854",
+											"Programma_onderdeel.txt"
+										],
+										"type": "txt"
+									},
+									"F_Informatie,.pdf": {
+										"name": "F_Informatie,.pdf",
+										"path": [
+											"IND",
+											"1964-308701361617923",
+											"DOSSIER-20896425854",
+											"F_Informatie,.pdf"
+										],
+										"type": "pdf"
+									},
+									"Bureau_Opsporingsdienst.txt": {
+										"name": "Bureau_Opsporingsdienst.txt",
+										"path": [
+											"IND",
+											"1964-308701361617923",
+											"DOSSIER-20896425854",
+											"Bureau_Opsporingsdienst.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"central.txt": {
-								"name": "central.txt",
+							"DOSSIER-3229831034656": {
 								"path": [
 									"IND",
-									"1978-109393074522457",
-									"central.txt"
+									"1964-308701361617923",
+									"DOSSIER-3229831034656"
+								],
+								"name": "DOSSIER-3229831034656",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Bureau_Financieel.txt": {
+										"name": "Bureau_Financieel.txt",
+										"path": [
+											"IND",
+											"1964-308701361617923",
+											"DOSSIER-3229831034656",
+											"Bureau_Financieel.txt"
+										],
+										"type": "txt"
+									},
+									"Anti_Crimineel.txt": {
+										"name": "Anti_Crimineel.txt",
+										"path": [
+											"IND",
+											"1964-308701361617923",
+											"DOSSIER-3229831034656",
+											"Anti_Crimineel.txt"
+										],
+										"type": "txt"
+									},
+									"European_Multidisciplinary.txt": {
+										"name": "European_Multidisciplinary.txt",
+										"path": [
+											"IND",
+											"1964-308701361617923",
+											"DOSSIER-3229831034656",
+											"European_Multidisciplinary.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"Financieel_ESW.txt": {
+								"name": "Financieel_ESW.txt",
+								"path": [
+									"IND",
+									"1964-308701361617923",
+									"Financieel_ESW.txt"
 								],
 								"type": "txt"
 							},
-							"intelligent.pdf": {
-								"name": "intelligent.pdf",
+							"Anti-Money_CN.txt": {
+								"name": "Anti-Money_CN.txt",
 								"path": [
 									"IND",
-									"1978-109393074522457",
-									"intelligent.pdf"
-								],
-								"type": "pdf"
-							},
-							"sports_toys_national.pdf": {
-								"name": "sports_toys_national.pdf",
-								"path": [
-									"IND",
-									"1978-109393074522457",
-									"sports_toys_national.pdf"
-								],
-								"type": "pdf"
-							},
-							"circle_bricks_and_clicks.txt": {
-								"name": "circle_bricks_and_clicks.txt",
-								"path": [
-									"IND",
-									"1978-109393074522457",
-									"circle_bricks_and_clicks.txt"
+									"1964-308701361617923",
+									"Anti-Money_CN.txt"
 								],
 								"type": "txt"
 							},
-							"de_engineered_firewall.txt": {
-								"name": "de_engineered_firewall.txt",
+							"FEC_.txt": {
+								"name": "FEC_.txt",
 								"path": [
 									"IND",
-									"1978-109393074522457",
-									"de_engineered_firewall.txt"
+									"1964-308701361617923",
+									"FEC_.txt"
 								],
 								"type": "txt"
 							}
 						}
 					},
-					"1979-21562318282855": {
+					"1964-77751572614692": {
 						"path": [
 							"IND",
-							"1979-21562318282855"
+							"1964-77751572614692"
 						],
-						"name": "1979-21562318282855",
+						"name": "1964-77751572614692",
 						"type": "dir",
-						"locked": false,
+						"dirType": "normal",
 						"children": {
-							"DOSSIER-10374110226367": {
+							"DOSSIER-107303126629453": {
 								"path": [
 									"IND",
-									"1979-21562318282855",
-									"DOSSIER-10374110226367"
+									"1964-77751572614692",
+									"DOSSIER-107303126629453"
 								],
-								"name": "DOSSIER-10374110226367",
+								"name": "DOSSIER-107303126629453",
 								"type": "dir",
-								"locked": false,
+								"dirType": "normal",
 								"children": {
-									"web_services.txt": {
-										"name": "web_services.txt",
+									"Incasso_van.pdf": {
+										"name": "Incasso_van.pdf",
 										"path": [
 											"IND",
-											"1979-21562318282855",
-											"DOSSIER-10374110226367",
-											"web_services.txt"
+											"1964-77751572614692",
+											"DOSSIER-107303126629453",
+											"Incasso_van.pdf"
 										],
-										"type": "txt"
+										"type": "pdf"
 									},
-									"station_crest.pdf": {
-										"name": "station_crest.pdf",
+									"BES_Opsporingsdienst.pdf": {
+										"name": "BES_Opsporingsdienst.pdf",
 										"path": [
 											"IND",
-											"1979-21562318282855",
-											"DOSSIER-10374110226367",
-											"station_crest.pdf"
+											"1964-77751572614692",
+											"DOSSIER-107303126629453",
+											"BES_Opsporingsdienst.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"DOSSIER-10618273965514": {
+							"DOSSIER-142451637117842": {
 								"path": [
 									"IND",
-									"1979-21562318282855",
-									"DOSSIER-10618273965514"
+									"1964-77751572614692",
+									"DOSSIER-142451637117842"
 								],
-								"name": "DOSSIER-10618273965514",
+								"name": "DOSSIER-142451637117842",
 								"type": "dir",
-								"locked": true,
+								"dirType": "locked",
 								"children": {
-									"kentucky_rubber.txt": {
-										"name": "kentucky_rubber.txt",
+									"Programma_BES.txt": {
+										"name": "Programma_BES.txt",
 										"path": [
 											"IND",
-											"1979-21562318282855",
-											"DOSSIER-10618273965514",
-											"kentucky_rubber.txt"
+											"1964-77751572614692",
+											"DOSSIER-142451637117842",
+											"Programma_BES.txt"
 										],
 										"type": "txt"
 									},
-									"connecting.txt": {
-										"name": "connecting.txt",
+									"onderdeel_CWI.pdf": {
+										"name": "onderdeel_CWI.pdf",
 										"path": [
 											"IND",
-											"1979-21562318282855",
-											"DOSSIER-10618273965514",
-											"connecting.txt"
+											"1964-77751572614692",
+											"DOSSIER-142451637117842",
+											"onderdeel_CWI.pdf"
+										],
+										"type": "pdf"
+									},
+									"team_Amsterdam.txt": {
+										"name": "team_Amsterdam.txt",
+										"path": [
+											"IND",
+											"1964-77751572614692",
+											"DOSSIER-142451637117842",
+											"team_Amsterdam.txt"
+										],
+										"type": "txt"
+									},
+									"Inkomen,_Laundering.pdf": {
+										"name": "Inkomen,_Laundering.pdf",
+										"path": [
+											"IND",
+											"1964-77751572614692",
+											"DOSSIER-142451637117842",
+											"Inkomen,_Laundering.pdf"
+										],
+										"type": "pdf"
+									},
+									"Caribisch_Europese.txt": {
+										"name": "Caribisch_Europese.txt",
+										"path": [
+											"IND",
+											"1964-77751572614692",
+											"DOSSIER-142451637117842",
+											"Caribisch_Europese.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-13460320014980": {
+							"DOSSIER-16244927426081": {
 								"path": [
 									"IND",
-									"1979-21562318282855",
-									"DOSSIER-13460320014980"
+									"1964-77751572614692",
+									"DOSSIER-16244927426081"
 								],
-								"name": "DOSSIER-13460320014980",
+								"name": "DOSSIER-16244927426081",
 								"type": "dir",
-								"locked": true,
+								"dirType": "locked",
 								"children": {
-									"iterate_awesome_rubber_keyboard_deposit.txt": {
-										"name": "iterate_awesome_rubber_keyboard_deposit.txt",
+									"BFT_Openbaar.pdf": {
+										"name": "BFT_Openbaar.pdf",
 										"path": [
 											"IND",
-											"1979-21562318282855",
-											"DOSSIER-13460320014980",
-											"iterate_awesome_rubber_keyboard_deposit.txt"
+											"1964-77751572614692",
+											"DOSSIER-16244927426081",
+											"BFT_Openbaar.pdf"
 										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-24497252255439": {
-								"path": [
-									"IND",
-									"1979-21562318282855",
-									"DOSSIER-24497252255439"
-								],
-								"name": "DOSSIER-24497252255439",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"bedfordshire_global_borders.txt": {
-										"name": "bedfordshire_global_borders.txt",
-										"path": [
-											"IND",
-											"1979-21562318282855",
-											"DOSSIER-24497252255439",
-											"bedfordshire_global_borders.txt"
-										],
-										"type": "txt"
+										"type": "pdf"
 									},
-									"uzbekistan_sleek_cotton_shirt_compressing.txt": {
-										"name": "uzbekistan_sleek_cotton_shirt_compressing.txt",
+									"CTEPF_Centrum.pdf": {
+										"name": "CTEPF_Centrum.pdf",
 										"path": [
 											"IND",
-											"1979-21562318282855",
-											"DOSSIER-24497252255439",
-											"uzbekistan_sleek_cotton_shirt_compressing.txt"
-										],
-										"type": "txt"
-									},
-									"tennessee_monitor_sky_blue.txt": {
-										"name": "tennessee_monitor_sky_blue.txt",
-										"path": [
-											"IND",
-											"1979-21562318282855",
-											"DOSSIER-24497252255439",
-											"tennessee_monitor_sky_blue.txt"
-										],
-										"type": "txt"
-									},
-									"refined_technologies.txt": {
-										"name": "refined_technologies.txt",
-										"path": [
-											"IND",
-											"1979-21562318282855",
-											"DOSSIER-24497252255439",
-											"refined_technologies.txt"
-										],
-										"type": "txt"
-									},
-									"shoes_granular_redundant.txt": {
-										"name": "shoes_granular_redundant.txt",
-										"path": [
-											"IND",
-											"1979-21562318282855",
-											"DOSSIER-24497252255439",
-											"shoes_granular_redundant.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-29892854030646": {
-								"path": [
-									"IND",
-									"1979-21562318282855",
-									"DOSSIER-29892854030646"
-								],
-								"name": "DOSSIER-29892854030646",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"synergistic.pdf": {
-										"name": "synergistic.pdf",
-										"path": [
-											"IND",
-											"1979-21562318282855",
-											"DOSSIER-29892854030646",
-											"synergistic.pdf"
+											"1964-77751572614692",
+											"DOSSIER-16244927426081",
+											"CTEPF_Centrum.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"applications_monitoring_missouri.txt": {
-								"name": "applications_monitoring_missouri.txt",
+							"DOSSIER-24343658710358": {
 								"path": [
 									"IND",
-									"1979-21562318282855",
-									"applications_monitoring_missouri.txt"
+									"1964-77751572614692",
+									"DOSSIER-24343658710358"
 								],
-								"type": "txt"
-							},
-							"metal_avon_rustic_concrete_chicken.pdf": {
-								"name": "metal_avon_rustic_concrete_chicken.pdf",
-								"path": [
-									"IND",
-									"1979-21562318282855",
-									"metal_avon_rustic_concrete_chicken.pdf"
-								],
-								"type": "pdf"
-							},
-							"producer.txt": {
-								"name": "producer.txt",
-								"path": [
-									"IND",
-									"1979-21562318282855",
-									"producer.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"1990-215891612417772": {
-						"path": [
-							"IND",
-							"1990-215891612417772"
-						],
-						"name": "1990-215891612417772",
-						"type": "dir",
-						"locked": false,
-						"children": {
-							"DOSSIER-15053135415760": {
-								"path": [
-									"IND",
-									"1990-215891612417772",
-									"DOSSIER-15053135415760"
-								],
-								"name": "DOSSIER-15053135415760",
+								"name": "DOSSIER-24343658710358",
 								"type": "dir",
-								"locked": true,
+								"dirType": "normal",
 								"children": {
-									"small_soft_salad.txt": {
-										"name": "small_soft_salad.txt",
+									"Bureau_CN.txt": {
+										"name": "Bureau_CN.txt",
 										"path": [
 											"IND",
-											"1990-215891612417772",
-											"DOSSIER-15053135415760",
-											"small_soft_salad.txt"
+											"1964-77751572614692",
+											"DOSSIER-24343658710358",
+											"Bureau_CN.txt"
+										],
+										"type": "txt"
+									},
+									"F_onderdeel.txt": {
+										"name": "F_onderdeel.txt",
+										"path": [
+											"IND",
+											"1964-77751572614692",
+											"DOSSIER-24343658710358",
+											"F_onderdeel.txt"
+										],
+										"type": "txt"
+									},
+									"FIOD_een.txt": {
+										"name": "FIOD_een.txt",
+										"path": [
+											"IND",
+											"1964-77751572614692",
+											"DOSSIER-24343658710358",
+											"FIOD_een.txt"
+										],
+										"type": "txt"
+									},
+									"UNODC_binnen.txt": {
+										"name": "UNODC_binnen.txt",
+										"path": [
+											"IND",
+											"1964-77751572614692",
+											"DOSSIER-24343658710358",
+											"UNODC_binnen.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-16099107814906": {
+							"DOSSIER-32131803026635": {
 								"path": [
 									"IND",
-									"1990-215891612417772",
-									"DOSSIER-16099107814906"
+									"1964-77751572614692",
+									"DOSSIER-32131803026635"
 								],
-								"name": "DOSSIER-16099107814906",
+								"name": "DOSSIER-32131803026635",
 								"type": "dir",
-								"locked": true,
+								"dirType": "archive",
 								"children": {
-									"checking_account_pakistan_rupee_sports.txt": {
-										"name": "checking_account_pakistan_rupee_sports.txt",
+									"Centre,_Infobox.pdf": {
+										"name": "Centre,_Infobox.pdf",
 										"path": [
 											"IND",
-											"1990-215891612417772",
-											"DOSSIER-16099107814906",
-											"checking_account_pakistan_rupee_sports.txt"
-										],
-										"type": "txt"
-									},
-									"tools_interactions.txt": {
-										"name": "tools_interactions.txt",
-										"path": [
-											"IND",
-											"1990-215891612417772",
-											"DOSSIER-16099107814906",
-											"tools_interactions.txt"
-										],
-										"type": "txt"
-									},
-									"missouri_rustic_rubber_chicken.txt": {
-										"name": "missouri_rustic_rubber_chicken.txt",
-										"path": [
-											"IND",
-											"1990-215891612417772",
-											"DOSSIER-16099107814906",
-											"missouri_rustic_rubber_chicken.txt"
-										],
-										"type": "txt"
-									},
-									"buckinghamshire_24365.txt": {
-										"name": "buckinghamshire_24365.txt",
-										"path": [
-											"IND",
-											"1990-215891612417772",
-											"DOSSIER-16099107814906",
-											"buckinghamshire_24365.txt"
-										],
-										"type": "txt"
-									},
-									"buckinghamshire_pixel.txt": {
-										"name": "buckinghamshire_pixel.txt",
-										"path": [
-											"IND",
-											"1990-215891612417772",
-											"DOSSIER-16099107814906",
-											"buckinghamshire_pixel.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-196651006029353": {
-								"path": [
-									"IND",
-									"1990-215891612417772",
-									"DOSSIER-196651006029353"
-								],
-								"name": "DOSSIER-196651006029353",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"transmitting_lao_people's_democratic_republic.pdf": {
-										"name": "transmitting_lao_people's_democratic_republic.pdf",
-										"path": [
-											"IND",
-											"1990-215891612417772",
-											"DOSSIER-196651006029353",
-											"transmitting_lao_people's_democratic_republic.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-3665153378658": {
-								"path": [
-									"IND",
-									"1990-215891612417772",
-									"DOSSIER-3665153378658"
-								],
-								"name": "DOSSIER-3665153378658",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"jamaica.txt": {
-										"name": "jamaica.txt",
-										"path": [
-											"IND",
-											"1990-215891612417772",
-											"DOSSIER-3665153378658",
-											"jamaica.txt"
-										],
-										"type": "txt"
-									},
-									"table_deposit.txt": {
-										"name": "table_deposit.txt",
-										"path": [
-											"IND",
-											"1990-215891612417772",
-											"DOSSIER-3665153378658",
-											"table_deposit.txt"
-										],
-										"type": "txt"
-									},
-									"implementation.txt": {
-										"name": "implementation.txt",
-										"path": [
-											"IND",
-											"1990-215891612417772",
-											"DOSSIER-3665153378658",
-											"implementation.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-66081686624892": {
-								"path": [
-									"IND",
-									"1990-215891612417772",
-									"DOSSIER-66081686624892"
-								],
-								"name": "DOSSIER-66081686624892",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"dynamic_intranet.txt": {
-										"name": "dynamic_intranet.txt",
-										"path": [
-											"IND",
-											"1990-215891612417772",
-											"DOSSIER-66081686624892",
-											"dynamic_intranet.txt"
-										],
-										"type": "txt"
-									},
-									"rustic_soft_soap_system_engine.pdf": {
-										"name": "rustic_soft_soap_system_engine.pdf",
-										"path": [
-											"IND",
-											"1990-215891612417772",
-											"DOSSIER-66081686624892",
-											"rustic_soft_soap_system_engine.pdf"
+											"1964-77751572614692",
+											"DOSSIER-32131803026635",
+											"Centre,_Infobox.pdf"
 										],
 										"type": "pdf"
 									},
-									"transmitting_copy_tasty.txt": {
-										"name": "transmitting_copy_tasty.txt",
+									"Saba_EMM.pdf": {
+										"name": "Saba_EMM.pdf",
 										"path": [
 											"IND",
-											"1990-215891612417772",
-											"DOSSIER-66081686624892",
-											"transmitting_copy_tasty.txt"
+											"1964-77751572614692",
+											"DOSSIER-32131803026635",
+											"Saba_EMM.pdf"
+										],
+										"type": "pdf"
+									},
+									"de_Onverklaarbaar.pdf": {
+										"name": "de_Onverklaarbaar.pdf",
+										"path": [
+											"IND",
+											"1964-77751572614692",
+											"DOSSIER-32131803026635",
+											"de_Onverklaarbaar.pdf"
+										],
+										"type": "pdf"
+									},
+									"DWI_Nederlandsche.txt": {
+										"name": "DWI_Nederlandsche.txt",
+										"path": [
+											"IND",
+											"1964-77751572614692",
+											"DOSSIER-32131803026635",
+											"DWI_Nederlandsche.txt"
 										],
 										"type": "txt"
 									},
-									"guinea_franc_principal.txt": {
-										"name": "guinea_franc_principal.txt",
+									"Landelijke_OM.txt": {
+										"name": "Landelijke_OM.txt",
 										"path": [
 											"IND",
-											"1990-215891612417772",
-											"DOSSIER-66081686624892",
-											"guinea_franc_principal.txt"
-										],
-										"type": "txt"
-									},
-									"e_markets.txt": {
-										"name": "e_markets.txt",
-										"path": [
-											"IND",
-											"1990-215891612417772",
-											"DOSSIER-66081686624892",
-											"e_markets.txt"
+											"1964-77751572614692",
+											"DOSSIER-32131803026635",
+											"Landelijke_OM.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"deposit_white_hdd.txt": {
-								"name": "deposit_white_hdd.txt",
+							"FP_A01C.pdf": {
+								"name": "FP_A01C.pdf",
 								"path": [
 									"IND",
-									"1990-215891612417772",
-									"deposit_white_hdd.txt"
-								],
-								"type": "txt"
-							},
-							"pizza_concrete.pdf": {
-								"name": "pizza_concrete.pdf",
-								"path": [
-									"IND",
-									"1990-215891612417772",
-									"pizza_concrete.pdf"
-								],
-								"type": "pdf"
-							},
-							"synthesizing_developer_savings_account.pdf": {
-								"name": "synthesizing_developer_savings_account.pdf",
-								"path": [
-									"IND",
-									"1990-215891612417772",
-									"synthesizing_developer_savings_account.pdf"
-								],
-								"type": "pdf"
-							},
-							"hawaii.pdf": {
-								"name": "hawaii.pdf",
-								"path": [
-									"IND",
-									"1990-215891612417772",
-									"hawaii.pdf"
+									"1964-77751572614692",
+									"FP_A01C.pdf"
 								],
 								"type": "pdf"
 							}
 						}
 					},
-					"2015-201052294713445": {
+					"1967-2655232379255": {
 						"path": [
 							"IND",
-							"2015-201052294713445"
+							"1967-2655232379255"
 						],
-						"name": "2015-201052294713445",
+						"name": "1967-2655232379255",
 						"type": "dir",
-						"locked": true,
+						"dirType": "normal",
 						"children": {
-							"DOSSIER-14128496521641": {
+							"DOSSIER-169403095618591": {
 								"path": [
 									"IND",
-									"2015-201052294713445",
-									"DOSSIER-14128496521641"
+									"1967-2655232379255",
+									"DOSSIER-169403095618591"
 								],
-								"name": "DOSSIER-14128496521641",
+								"name": "DOSSIER-169403095618591",
 								"type": "dir",
-								"locked": true,
+								"dirType": "normal",
 								"children": {
-									"cross_platform_holy_see_(vatican_city_state).txt": {
-										"name": "cross_platform_holy_see_(vatican_city_state).txt",
+									"Bank_Against.txt": {
+										"name": "Bank_Against.txt",
 										"path": [
 											"IND",
-											"2015-201052294713445",
-											"DOSSIER-14128496521641",
-											"cross_platform_holy_see_(vatican_city_state).txt"
+											"1967-2655232379255",
+											"DOSSIER-169403095618591",
+											"Bank_Against.txt"
 										],
 										"type": "txt"
 									},
-									"pike.pdf": {
-										"name": "pike.pdf",
+									"Dienst_Caribisch.pdf": {
+										"name": "Dienst_Caribisch.pdf",
 										"path": [
 											"IND",
-											"2015-201052294713445",
-											"DOSSIER-14128496521641",
-											"pike.pdf"
-										],
-										"type": "pdf"
-									},
-									"berkshire_copying_com.pdf": {
-										"name": "berkshire_copying_com.pdf",
-										"path": [
-											"IND",
-											"2015-201052294713445",
-											"DOSSIER-14128496521641",
-											"berkshire_copying_com.pdf"
-										],
-										"type": "pdf"
-									},
-									"fish_program_e_enable.txt": {
-										"name": "fish_program_e_enable.txt",
-										"path": [
-											"IND",
-											"2015-201052294713445",
-											"DOSSIER-14128496521641",
-											"fish_program_e_enable.txt"
-										],
-										"type": "txt"
-									},
-									"technician.pdf": {
-										"name": "technician.pdf",
-										"path": [
-											"IND",
-											"2015-201052294713445",
-											"DOSSIER-14128496521641",
-											"technician.pdf"
+											"1967-2655232379255",
+											"DOSSIER-169403095618591",
+											"Dienst_Caribisch.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"DOSSIER-252261124317638": {
+							"DOSSIER-211682528515766": {
 								"path": [
 									"IND",
-									"2015-201052294713445",
-									"DOSSIER-252261124317638"
+									"1967-2655232379255",
+									"DOSSIER-211682528515766"
 								],
-								"name": "DOSSIER-252261124317638",
+								"name": "DOSSIER-211682528515766",
 								"type": "dir",
-								"locked": true,
+								"dirType": "archive",
 								"children": {
-									"eyeballs_concrete_wyoming.txt": {
-										"name": "eyeballs_concrete_wyoming.txt",
+									"Inspectie_een.txt": {
+										"name": "Inspectie_een.txt",
 										"path": [
 											"IND",
-											"2015-201052294713445",
-											"DOSSIER-252261124317638",
-											"eyeballs_concrete_wyoming.txt"
+											"1967-2655232379255",
+											"DOSSIER-211682528515766",
+											"Inspectie_een.txt"
 										],
 										"type": "txt"
 									},
-									"regional_vatu_violet.txt": {
-										"name": "regional_vatu_violet.txt",
+									"Inspectie_Dienst.txt": {
+										"name": "Inspectie_Dienst.txt",
 										"path": [
 											"IND",
-											"2015-201052294713445",
-											"DOSSIER-252261124317638",
-											"regional_vatu_violet.txt"
+											"1967-2655232379255",
+											"DOSSIER-211682528515766",
+											"Inspectie_Dienst.txt"
 										],
 										"type": "txt"
 									},
-									"vertical.txt": {
-										"name": "vertical.txt",
+									"DNB_Eustatiusen.txt": {
+										"name": "DNB_Eustatiusen.txt",
 										"path": [
 											"IND",
-											"2015-201052294713445",
-											"DOSSIER-252261124317638",
-											"vertical.txt"
+											"1967-2655232379255",
+											"DOSSIER-211682528515766",
+											"DNB_Eustatiusen.txt"
 										],
 										"type": "txt"
 									},
-									"group_liberia.txt": {
-										"name": "group_liberia.txt",
+									"ILTIOD_Expertisecentrum.txt": {
+										"name": "ILTIOD_Expertisecentrum.txt",
 										"path": [
 											"IND",
-											"2015-201052294713445",
-											"DOSSIER-252261124317638",
-											"group_liberia.txt"
+											"1967-2655232379255",
+											"DOSSIER-211682528515766",
+											"ILTIOD_Expertisecentrum.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-319553115312043": {
+							"DOSSIER-23768237272309": {
 								"path": [
 									"IND",
-									"2015-201052294713445",
-									"DOSSIER-319553115312043"
+									"1967-2655232379255",
+									"DOSSIER-23768237272309"
 								],
-								"name": "DOSSIER-319553115312043",
+								"name": "DOSSIER-23768237272309",
 								"type": "dir",
-								"locked": true,
+								"dirType": "locked",
 								"children": {
-									"solid_state.txt": {
-										"name": "solid_state.txt",
+									"Dienst_Inkomen,.txt": {
+										"name": "Dienst_Inkomen,.txt",
 										"path": [
 											"IND",
-											"2015-201052294713445",
-											"DOSSIER-319553115312043",
-											"solid_state.txt"
+											"1967-2655232379255",
+											"DOSSIER-23768237272309",
+											"Dienst_Inkomen,.txt"
 										],
 										"type": "txt"
 									},
-									"ergonomic_concrete_pizza_assistant_virtual.txt": {
-										"name": "ergonomic_concrete_pizza_assistant_virtual.txt",
+									"Financieel_CTEPF.txt": {
+										"name": "Financieel_CTEPF.txt",
 										"path": [
 											"IND",
-											"2015-201052294713445",
-											"DOSSIER-319553115312043",
-											"ergonomic_concrete_pizza_assistant_virtual.txt"
-										],
-										"type": "txt"
-									},
-									"hacking_jamaica_manager.pdf": {
-										"name": "hacking_jamaica_manager.pdf",
-										"path": [
-											"IND",
-											"2015-201052294713445",
-											"DOSSIER-319553115312043",
-											"hacking_jamaica_manager.pdf"
-										],
-										"type": "pdf"
-									},
-									"circles_libyan_dinar.pdf": {
-										"name": "circles_libyan_dinar.pdf",
-										"path": [
-											"IND",
-											"2015-201052294713445",
-											"DOSSIER-319553115312043",
-											"circles_libyan_dinar.pdf"
-										],
-										"type": "pdf"
-									},
-									"business_focused_holistic.pdf": {
-										"name": "business_focused_holistic.pdf",
-										"path": [
-											"IND",
-											"2015-201052294713445",
-											"DOSSIER-319553115312043",
-											"business_focused_holistic.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-6063641310102": {
-								"path": [
-									"IND",
-									"2015-201052294713445",
-									"DOSSIER-6063641310102"
-								],
-								"name": "DOSSIER-6063641310102",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"health.txt": {
-										"name": "health.txt",
-										"path": [
-											"IND",
-											"2015-201052294713445",
-											"DOSSIER-6063641310102",
-											"health.txt"
-										],
-										"type": "txt"
-									},
-									"transmitting.txt": {
-										"name": "transmitting.txt",
-										"path": [
-											"IND",
-											"2015-201052294713445",
-											"DOSSIER-6063641310102",
-											"transmitting.txt"
-										],
-										"type": "txt"
-									},
-									"ports.txt": {
-										"name": "ports.txt",
-										"path": [
-											"IND",
-											"2015-201052294713445",
-											"DOSSIER-6063641310102",
-											"ports.txt"
-										],
-										"type": "txt"
-									},
-									"global_alabama.txt": {
-										"name": "global_alabama.txt",
-										"path": [
-											"IND",
-											"2015-201052294713445",
-											"DOSSIER-6063641310102",
-											"global_alabama.txt"
-										],
-										"type": "txt"
-									},
-									"personal_loan_account_interface.txt": {
-										"name": "personal_loan_account_interface.txt",
-										"path": [
-											"IND",
-											"2015-201052294713445",
-											"DOSSIER-6063641310102",
-											"personal_loan_account_interface.txt"
+											"1967-2655232379255",
+											"DOSSIER-23768237272309",
+											"Financieel_CTEPF.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-62073163222825": {
+							"DOSSIER-25278303149404": {
 								"path": [
 									"IND",
-									"2015-201052294713445",
-									"DOSSIER-62073163222825"
+									"1967-2655232379255",
+									"DOSSIER-25278303149404"
 								],
-								"name": "DOSSIER-62073163222825",
+								"name": "DOSSIER-25278303149404",
 								"type": "dir",
-								"locked": false,
+								"dirType": "archive",
 								"children": {
-									"demand_driven_plains_firewall.txt": {
-										"name": "demand_driven_plains_firewall.txt",
+									"Administratieve_het.txt": {
+										"name": "Administratieve_het.txt",
 										"path": [
 											"IND",
-											"2015-201052294713445",
-											"DOSSIER-62073163222825",
-											"demand_driven_plains_firewall.txt"
+											"1967-2655232379255",
+											"DOSSIER-25278303149404",
+											"Administratieve_het.txt"
 										],
 										"type": "txt"
 									},
-									"bike.txt": {
-										"name": "bike.txt",
+									"onderdeel_Nederland:.txt": {
+										"name": "onderdeel_Nederland:.txt",
 										"path": [
 											"IND",
-											"2015-201052294713445",
-											"DOSSIER-62073163222825",
-											"bike.txt"
+											"1967-2655232379255",
+											"DOSSIER-25278303149404",
+											"onderdeel_Nederland:.txt"
 										],
 										"type": "txt"
 									},
-									"compress_gorgeous_practical.pdf": {
-										"name": "compress_gorgeous_practical.pdf",
+									"gemeente_Andrea.txt": {
+										"name": "gemeente_Andrea.txt",
 										"path": [
 											"IND",
-											"2015-201052294713445",
-											"DOSSIER-62073163222825",
-											"compress_gorgeous_practical.pdf"
+											"1967-2655232379255",
+											"DOSSIER-25278303149404",
+											"gemeente_Andrea.txt"
 										],
-										"type": "pdf"
+										"type": "txt"
 									}
 								}
 							},
-							"multi_lateral_music.txt": {
-								"name": "multi_lateral_music.txt",
+							"DOSSIER-2920911692762": {
 								"path": [
 									"IND",
-									"2015-201052294713445",
-									"multi_lateral_music.txt"
+									"1967-2655232379255",
+									"DOSSIER-2920911692762"
+								],
+								"name": "DOSSIER-2920911692762",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Opsporingsdienst_EC.txt": {
+										"name": "Opsporingsdienst_EC.txt",
+										"path": [
+											"IND",
+											"1967-2655232379255",
+											"DOSSIER-2920911692762",
+											"Opsporingsdienst_EC.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"FIU_FIOD.txt": {
+								"name": "FIU_FIOD.txt",
+								"path": [
+									"IND",
+									"1967-2655232379255",
+									"FIU_FIOD.txt"
 								],
 								"type": "txt"
 							},
-							"communities_transmitter.txt": {
-								"name": "communities_transmitter.txt",
+							"door_Bonaire..txt": {
+								"name": "door_Bonaire..txt",
 								"path": [
 									"IND",
-									"2015-201052294713445",
-									"communities_transmitter.txt"
+									"1967-2655232379255",
+									"door_Bonaire..txt"
+								],
+								"type": "txt"
+							}
+						}
+					},
+					"1997-284091615512870": {
+						"path": [
+							"IND",
+							"1997-284091615512870"
+						],
+						"name": "1997-284091615512870",
+						"type": "dir",
+						"dirType": "locked",
+						"children": {
+							"DOSSIER-117641301118069": {
+								"path": [
+									"IND",
+									"1997-284091615512870",
+									"DOSSIER-117641301118069"
+								],
+								"name": "DOSSIER-117641301118069",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Criminal_Financieel.pdf": {
+										"name": "Criminal_Financieel.pdf",
+										"path": [
+											"IND",
+											"1997-284091615512870",
+											"DOSSIER-117641301118069",
+											"Criminal_Financieel.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-210521312121706": {
+								"path": [
+									"IND",
+									"1997-284091615512870",
+									"DOSSIER-210521312121706"
+								],
+								"name": "DOSSIER-210521312121706",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Werk_door.txt": {
+										"name": "Werk_door.txt",
+										"path": [
+											"IND",
+											"1997-284091615512870",
+											"DOSSIER-210521312121706",
+											"Werk_door.txt"
+										],
+										"type": "txt"
+									},
+									"FIU_Criminaliteit.pdf": {
+										"name": "FIU_Criminaliteit.pdf",
+										"path": [
+											"IND",
+											"1997-284091615512870",
+											"DOSSIER-210521312121706",
+											"FIU_Criminaliteit.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-74651243622711": {
+								"path": [
+									"IND",
+									"1997-284091615512870",
+									"DOSSIER-74651243622711"
+								],
+								"name": "DOSSIER-74651243622711",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"onderdeel_Onverklaarbaar.txt": {
+										"name": "onderdeel_Onverklaarbaar.txt",
+										"path": [
+											"IND",
+											"1997-284091615512870",
+											"DOSSIER-74651243622711",
+											"onderdeel_Onverklaarbaar.txt"
+										],
+										"type": "txt"
+									},
+									"Nederland_Cluster.txt": {
+										"name": "Nederland_Cluster.txt",
+										"path": [
+											"IND",
+											"1997-284091615512870",
+											"DOSSIER-74651243622711",
+											"Nederland_Cluster.txt"
+										],
+										"type": "txt"
+									},
+									"Mensensmokkel_Transport.txt": {
+										"name": "Mensensmokkel_Transport.txt",
+										"path": [
+											"IND",
+											"1997-284091615512870",
+											"DOSSIER-74651243622711",
+											"Mensensmokkel_Transport.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-87941003025387": {
+								"path": [
+									"IND",
+									"1997-284091615512870",
+									"DOSSIER-87941003025387"
+								],
+								"name": "DOSSIER-87941003025387",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"organisatie_Financieel.txt": {
+										"name": "organisatie_Financieel.txt",
+										"path": [
+											"IND",
+											"1997-284091615512870",
+											"DOSSIER-87941003025387",
+											"organisatie_Financieel.txt"
+										],
+										"type": "txt"
+									},
+									"Werk_Mensensmokkel.pdf": {
+										"name": "Werk_Mensensmokkel.pdf",
+										"path": [
+											"IND",
+											"1997-284091615512870",
+											"DOSSIER-87941003025387",
+											"Werk_Mensensmokkel.pdf"
+										],
+										"type": "pdf"
+									},
+									"Crimineel_Inspectie.txt": {
+										"name": "Crimineel_Inspectie.txt",
+										"path": [
+											"IND",
+											"1997-284091615512870",
+											"DOSSIER-87941003025387",
+											"Crimineel_Inspectie.txt"
+										],
+										"type": "txt"
+									},
+									"Rotterdam_Europese.pdf": {
+										"name": "Rotterdam_Europese.pdf",
+										"path": [
+											"IND",
+											"1997-284091615512870",
+											"DOSSIER-87941003025387",
+											"Rotterdam_Europese.pdf"
+										],
+										"type": "pdf"
+									},
+									"Criminal_van.txt": {
+										"name": "Criminal_van.txt",
+										"path": [
+											"IND",
+											"1997-284091615512870",
+											"DOSSIER-87941003025387",
+											"Criminal_van.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-9138300446244": {
+								"path": [
+									"IND",
+									"1997-284091615512870",
+									"DOSSIER-9138300446244"
+								],
+								"name": "DOSSIER-9138300446244",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Platform_proliferatiefmanciering..txt": {
+										"name": "Platform_proliferatiefmanciering..txt",
+										"path": [
+											"IND",
+											"1997-284091615512870",
+											"DOSSIER-9138300446244",
+											"Platform_proliferatiefmanciering..txt"
+										],
+										"type": "txt"
+									},
+									"Mensenhandel_Platform.txt": {
+										"name": "Mensenhandel_Platform.txt",
+										"path": [
+											"IND",
+											"1997-284091615512870",
+											"DOSSIER-9138300446244",
+											"Mensenhandel_Platform.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"CWI_de.txt": {
+								"name": "CWI_de.txt",
+								"path": [
+									"IND",
+									"1997-284091615512870",
+									"CWI_de.txt"
 								],
 								"type": "txt"
 							},
-							"electronics.pdf": {
-								"name": "electronics.pdf",
+							"EU_Expertisecentrum.txt": {
+								"name": "EU_Expertisecentrum.txt",
 								"path": [
 									"IND",
-									"2015-201052294713445",
-									"electronics.pdf"
+									"1997-284091615512870",
+									"EU_Expertisecentrum.txt"
 								],
-								"type": "pdf"
+								"type": "txt"
 							},
-							"practical_cotton_chair.pdf": {
-								"name": "practical_cotton_chair.pdf",
+							"Transport_DLR.txt": {
+								"name": "Transport_DLR.txt",
 								"path": [
 									"IND",
-									"2015-201052294713445",
-									"practical_cotton_chair.pdf"
+									"1997-284091615512870",
+									"Transport_DLR.txt"
+								],
+								"type": "txt"
+							},
+							"van_Contraterrorisme.pdf": {
+								"name": "van_Contraterrorisme.pdf",
+								"path": [
+									"IND",
+									"1997-284091615512870",
+									"van_Contraterrorisme.pdf"
 								],
 								"type": "pdf"
 							}
 						}
 					},
-					"deploy_concrete.pdf": {
-						"name": "deploy_concrete.pdf",
+					"1999-162831271913699": {
 						"path": [
 							"IND",
-							"deploy_concrete.pdf"
+							"1999-162831271913699"
+						],
+						"name": "1999-162831271913699",
+						"type": "dir",
+						"dirType": "normal",
+						"children": {
+							"DOSSIER-11625718331273": {
+								"path": [
+									"IND",
+									"1999-162831271913699",
+									"DOSSIER-11625718331273"
+								],
+								"name": "DOSSIER-11625718331273",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Contraterrorisme_organisatie.pdf": {
+										"name": "Contraterrorisme_organisatie.pdf",
+										"path": [
+											"IND",
+											"1999-162831271913699",
+											"DOSSIER-11625718331273",
+											"Contraterrorisme_organisatie.pdf"
+										],
+										"type": "pdf"
+									},
+									"Mensensmokkel_Caribisch.txt": {
+										"name": "Mensensmokkel_Caribisch.txt",
+										"path": [
+											"IND",
+											"1999-162831271913699",
+											"DOSSIER-11625718331273",
+											"Mensensmokkel_Caribisch.txt"
+										],
+										"type": "txt"
+									},
+									"Inkomen,_Anti.txt": {
+										"name": "Inkomen,_Anti.txt",
+										"path": [
+											"IND",
+											"1999-162831271913699",
+											"DOSSIER-11625718331273",
+											"Inkomen,_Anti.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-125512466927969": {
+								"path": [
+									"IND",
+									"1999-162831271913699",
+									"DOSSIER-125512466927969"
+								],
+								"name": "DOSSIER-125512466927969",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"andrea_DLR.txt": {
+										"name": "andrea_DLR.txt",
+										"path": [
+											"IND",
+											"1999-162831271913699",
+											"DOSSIER-125512466927969",
+											"andrea_DLR.txt"
+										],
+										"type": "txt"
+									},
+									"onderdeel_uitvoerend.txt": {
+										"name": "onderdeel_uitvoerend.txt",
+										"path": [
+											"IND",
+											"1999-162831271913699",
+											"DOSSIER-125512466927969",
+											"onderdeel_uitvoerend.txt"
+										],
+										"type": "txt"
+									},
+									"_door.txt": {
+										"name": "_door.txt",
+										"path": [
+											"IND",
+											"1999-162831271913699",
+											"DOSSIER-125512466927969",
+											"_door.txt"
+										],
+										"type": "txt"
+									},
+									"Saba_DNB.txt": {
+										"name": "Saba_DNB.txt",
+										"path": [
+											"IND",
+											"1999-162831271913699",
+											"DOSSIER-125512466927969",
+											"Saba_DNB.txt"
+										],
+										"type": "txt"
+									},
+									"Basisvoorziening_de.txt": {
+										"name": "Basisvoorziening_de.txt",
+										"path": [
+											"IND",
+											"1999-162831271913699",
+											"DOSSIER-125512466927969",
+											"Basisvoorziening_de.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-22155233761749": {
+								"path": [
+									"IND",
+									"1999-162831271913699",
+									"DOSSIER-22155233761749"
+								],
+								"name": "DOSSIER-22155233761749",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Platform_&.pdf": {
+										"name": "Platform_&.pdf",
+										"path": [
+											"IND",
+											"1999-162831271913699",
+											"DOSSIER-22155233761749",
+											"Platform_&.pdf"
+										],
+										"type": "pdf"
+									},
+									"politie_Functioneel.txt": {
+										"name": "politie_Functioneel.txt",
+										"path": [
+											"IND",
+											"1999-162831271913699",
+											"DOSSIER-22155233761749",
+											"politie_Functioneel.txt"
+										],
+										"type": "txt"
+									},
+									"FIOD_en.pdf": {
+										"name": "FIOD_en.pdf",
+										"path": [
+											"IND",
+											"1999-162831271913699",
+											"DOSSIER-22155233761749",
+											"FIOD_en.pdf"
+										],
+										"type": "pdf"
+									},
+									"DWI_.txt": {
+										"name": "DWI_.txt",
+										"path": [
+											"IND",
+											"1999-162831271913699",
+											"DOSSIER-22155233761749",
+											"DWI_.txt"
+										],
+										"type": "txt"
+									},
+									"Autoriteit_organisatie.pdf": {
+										"name": "Autoriteit_organisatie.pdf",
+										"path": [
+											"IND",
+											"1999-162831271913699",
+											"DOSSIER-22155233761749",
+											"Autoriteit_organisatie.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-290422315512974": {
+								"path": [
+									"IND",
+									"1999-162831271913699",
+									"DOSSIER-290422315512974"
+								],
+								"name": "DOSSIER-290422315512974",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Intelligence_Toezicht.txt": {
+										"name": "Intelligence_Toezicht.txt",
+										"path": [
+											"IND",
+											"1999-162831271913699",
+											"DOSSIER-290422315512974",
+											"Intelligence_Toezicht.txt"
+										],
+										"type": "txt"
+									},
+									"Andrea_Financieel.txt": {
+										"name": "Andrea_Financieel.txt",
+										"path": [
+											"IND",
+											"1999-162831271913699",
+											"DOSSIER-290422315512974",
+											"Andrea_Financieel.txt"
+										],
+										"type": "txt"
+									},
+									"Onverklaarbaar_van.txt": {
+										"name": "Onverklaarbaar_van.txt",
+										"path": [
+											"IND",
+											"1999-162831271913699",
+											"DOSSIER-290422315512974",
+											"Onverklaarbaar_van.txt"
+										],
+										"type": "txt"
+									},
+									"A01C_van.txt": {
+										"name": "A01C_van.txt",
+										"path": [
+											"IND",
+											"1999-162831271913699",
+											"DOSSIER-290422315512974",
+											"A01C_van.txt"
+										],
+										"type": "txt"
+									},
+									"van_Bonaire..txt": {
+										"name": "van_Bonaire..txt",
+										"path": [
+											"IND",
+											"1999-162831271913699",
+											"DOSSIER-290422315512974",
+											"van_Bonaire..txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-3937261336875": {
+								"path": [
+									"IND",
+									"1999-162831271913699",
+									"DOSSIER-3937261336875"
+								],
+								"name": "DOSSIER-3937261336875",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Bureau_team.pdf": {
+										"name": "Bureau_team.pdf",
+										"path": [
+											"IND",
+											"1999-162831271913699",
+											"DOSSIER-3937261336875",
+											"Bureau_team.pdf"
+										],
+										"type": "pdf"
+									},
+									"Laundering_Force.pdf": {
+										"name": "Laundering_Force.pdf",
+										"path": [
+											"IND",
+											"1999-162831271913699",
+											"DOSSIER-3937261336875",
+											"Laundering_Force.pdf"
+										],
+										"type": "pdf"
+									},
+									"de_Basisvoorziening.txt": {
+										"name": "de_Basisvoorziening.txt",
+										"path": [
+											"IND",
+											"1999-162831271913699",
+											"DOSSIER-3937261336875",
+											"de_Basisvoorziening.txt"
+										],
+										"type": "txt"
+									},
+									"Mensensmokkel_Openbaar.txt": {
+										"name": "Mensensmokkel_Openbaar.txt",
+										"path": [
+											"IND",
+											"1999-162831271913699",
+											"DOSSIER-3937261336875",
+											"Mensensmokkel_Openbaar.txt"
+										],
+										"type": "txt"
+									},
+									"Informatie,_Werk.pdf": {
+										"name": "Informatie,_Werk.pdf",
+										"path": [
+											"IND",
+											"1999-162831271913699",
+											"DOSSIER-3937261336875",
+											"Informatie,_Werk.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"AMLC_uitvoerend.txt": {
+								"name": "AMLC_uitvoerend.txt",
+								"path": [
+									"IND",
+									"1999-162831271913699",
+									"AMLC_uitvoerend.txt"
+								],
+								"type": "txt"
+							},
+							"Criminal_A01C.txt": {
+								"name": "Criminal_A01C.txt",
+								"path": [
+									"IND",
+									"1999-162831271913699",
+									"Criminal_A01C.txt"
+								],
+								"type": "txt"
+							}
+						}
+					},
+					"Contraterrorisme_en.txt": {
+						"name": "Contraterrorisme_en.txt",
+						"path": [
+							"IND",
+							"Contraterrorisme_en.txt"
+						],
+						"type": "txt"
+					},
+					"en_DWI.txt": {
+						"name": "en_DWI.txt",
+						"path": [
+							"IND",
+							"en_DWI.txt"
+						],
+						"type": "txt"
+					},
+					"Financieel_FP.pdf": {
+						"name": "Financieel_FP.pdf",
+						"path": [
+							"IND",
+							"Financieel_FP.pdf"
 						],
 						"type": "pdf"
 					},
-					"disintermediate_copy.pdf": {
-						"name": "disintermediate_copy.pdf",
+					"BOOM_Inspectie.txt": {
+						"name": "BOOM_Inspectie.txt",
 						"path": [
 							"IND",
-							"disintermediate_copy.pdf"
+							"BOOM_Inspectie.txt"
+						],
+						"type": "txt"
+					},
+					"Unit_van.pdf": {
+						"name": "Unit_van.pdf",
+						"path": [
+							"IND",
+							"Unit_van.pdf"
 						],
 						"type": "pdf"
 					}
@@ -28749,1309 +28784,1410 @@
 				],
 				"name": "KPCN",
 				"type": "dir",
-				"locked": false,
+				"dirType": "normal",
 				"children": {
-					"1962-20150238473379": {
+					"1970-172522044313400": {
 						"path": [
 							"KPCN",
-							"1962-20150238473379"
+							"1970-172522044313400"
 						],
-						"name": "1962-20150238473379",
+						"name": "1970-172522044313400",
 						"type": "dir",
-						"locked": false,
+						"dirType": "normal",
 						"children": {
-							"DOSSIER-121541046430909": {
+							"DOSSIER-12281251020163": {
 								"path": [
 									"KPCN",
-									"1962-20150238473379",
-									"DOSSIER-121541046430909"
+									"1970-172522044313400",
+									"DOSSIER-12281251020163"
 								],
-								"name": "DOSSIER-121541046430909",
+								"name": "DOSSIER-12281251020163",
 								"type": "dir",
-								"locked": true,
+								"dirType": "normal",
 								"children": {
-									"credit_card_account.txt": {
-										"name": "credit_card_account.txt",
+									"FP_van.txt": {
+										"name": "FP_van.txt",
 										"path": [
 											"KPCN",
-											"1962-20150238473379",
-											"DOSSIER-121541046430909",
-											"credit_card_account.txt"
+											"1970-172522044313400",
+											"DOSSIER-12281251020163",
+											"FP_van.txt"
 										],
 										"type": "txt"
 									},
-									"invoice.txt": {
-										"name": "invoice.txt",
+									"AMLC_Werk.txt": {
+										"name": "AMLC_Werk.txt",
 										"path": [
 											"KPCN",
-											"1962-20150238473379",
-											"DOSSIER-121541046430909",
-											"invoice.txt"
+											"1970-172522044313400",
+											"DOSSIER-12281251020163",
+											"AMLC_Werk.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-212912494025703": {
+								"path": [
+									"KPCN",
+									"1970-172522044313400",
+									"DOSSIER-212912494025703"
+								],
+								"name": "DOSSIER-212912494025703",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Platform_Expertise.txt": {
+										"name": "Platform_Expertise.txt",
+										"path": [
+											"KPCN",
+											"1970-172522044313400",
+											"DOSSIER-212912494025703",
+											"Platform_Expertise.txt"
 										],
 										"type": "txt"
 									},
-									"connect_lavender_copying.pdf": {
-										"name": "connect_lavender_copying.pdf",
+									"DLR_Infobox.txt": {
+										"name": "DLR_Infobox.txt",
 										"path": [
 											"KPCN",
-											"1962-20150238473379",
-											"DOSSIER-121541046430909",
-											"connect_lavender_copying.pdf"
+											"1970-172522044313400",
+											"DOSSIER-212912494025703",
+											"DLR_Infobox.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-22942463710395": {
+								"path": [
+									"KPCN",
+									"1970-172522044313400",
+									"DOSSIER-22942463710395"
+								],
+								"name": "DOSSIER-22942463710395",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"de_Task.txt": {
+										"name": "de_Task.txt",
+										"path": [
+											"KPCN",
+											"1970-172522044313400",
+											"DOSSIER-22942463710395",
+											"de_Task.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-3579174842953": {
+								"path": [
+									"KPCN",
+									"1970-172522044313400",
+									"DOSSIER-3579174842953"
+								],
+								"name": "DOSSIER-3579174842953",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Bureau_en.txt": {
+										"name": "Bureau_en.txt",
+										"path": [
+											"KPCN",
+											"1970-172522044313400",
+											"DOSSIER-3579174842953",
+											"Bureau_en.txt"
+										],
+										"type": "txt"
+									},
+									"en_onderdeel.txt": {
+										"name": "en_onderdeel.txt",
+										"path": [
+											"KPCN",
+											"1970-172522044313400",
+											"DOSSIER-3579174842953",
+											"en_onderdeel.txt"
+										],
+										"type": "txt"
+									},
+									"Programma_BOOM.txt": {
+										"name": "Programma_BOOM.txt",
+										"path": [
+											"KPCN",
+											"1970-172522044313400",
+											"DOSSIER-3579174842953",
+											"Programma_BOOM.txt"
+										],
+										"type": "txt"
+									},
+									"de_CN.pdf": {
+										"name": "de_CN.pdf",
+										"path": [
+											"KPCN",
+											"1970-172522044313400",
+											"DOSSIER-3579174842953",
+											"de_CN.pdf"
+										],
+										"type": "pdf"
+									},
+									"eilanden_Cluster.pdf": {
+										"name": "eilanden_Cluster.pdf",
+										"path": [
+											"KPCN",
+											"1970-172522044313400",
+											"DOSSIER-3579174842953",
+											"eilanden_Cluster.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"DOSSIER-18625304325992": {
+							"DOSSIER-81831018827590": {
 								"path": [
 									"KPCN",
-									"1962-20150238473379",
-									"DOSSIER-18625304325992"
+									"1970-172522044313400",
+									"DOSSIER-81831018827590"
 								],
-								"name": "DOSSIER-18625304325992",
+								"name": "DOSSIER-81831018827590",
 								"type": "dir",
-								"locked": true,
+								"dirType": "archive",
 								"children": {
-									"group.pdf": {
-										"name": "group.pdf",
+									"OM_team.txt": {
+										"name": "OM_team.txt",
 										"path": [
 											"KPCN",
-											"1962-20150238473379",
-											"DOSSIER-18625304325992",
-											"group.pdf"
+											"1970-172522044313400",
+											"DOSSIER-81831018827590",
+											"OM_team.txt"
+										],
+										"type": "txt"
+									},
+									"Transport_Platform.txt": {
+										"name": "Transport_Platform.txt",
+										"path": [
+											"KPCN",
+											"1970-172522044313400",
+											"DOSSIER-81831018827590",
+											"Transport_Platform.txt"
+										],
+										"type": "txt"
+									},
+									"Criminal_en.txt": {
+										"name": "Criminal_en.txt",
+										"path": [
+											"KPCN",
+											"1970-172522044313400",
+											"DOSSIER-81831018827590",
+											"Criminal_en.txt"
+										],
+										"type": "txt"
+									},
+									"Centrum_Europese.txt": {
+										"name": "Centrum_Europese.txt",
+										"path": [
+											"KPCN",
+											"1970-172522044313400",
+											"DOSSIER-81831018827590",
+											"Centrum_Europese.txt"
+										],
+										"type": "txt"
+									},
+									"Rotterdam_EU.pdf": {
+										"name": "Rotterdam_EU.pdf",
+										"path": [
+											"KPCN",
+											"1970-172522044313400",
+											"DOSSIER-81831018827590",
+											"Rotterdam_EU.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"DOSSIER-280782257010058": {
+							"BES_Bureau.pdf": {
+								"name": "BES_Bureau.pdf",
 								"path": [
 									"KPCN",
-									"1962-20150238473379",
-									"DOSSIER-280782257010058"
-								],
-								"name": "DOSSIER-280782257010058",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"consultant_yellow.txt": {
-										"name": "consultant_yellow.txt",
-										"path": [
-											"KPCN",
-											"1962-20150238473379",
-											"DOSSIER-280782257010058",
-											"consultant_yellow.txt"
-										],
-										"type": "txt"
-									},
-									"orchard.txt": {
-										"name": "orchard.txt",
-										"path": [
-											"KPCN",
-											"1962-20150238473379",
-											"DOSSIER-280782257010058",
-											"orchard.txt"
-										],
-										"type": "txt"
-									},
-									"backing_up_indonesia.txt": {
-										"name": "backing_up_indonesia.txt",
-										"path": [
-											"KPCN",
-											"1962-20150238473379",
-											"DOSSIER-280782257010058",
-											"backing_up_indonesia.txt"
-										],
-										"type": "txt"
-									},
-									"manager_dynamic_generating.pdf": {
-										"name": "manager_dynamic_generating.pdf",
-										"path": [
-											"KPCN",
-											"1962-20150238473379",
-											"DOSSIER-280782257010058",
-											"manager_dynamic_generating.pdf"
-										],
-										"type": "pdf"
-									},
-									"product.txt": {
-										"name": "product.txt",
-										"path": [
-											"KPCN",
-											"1962-20150238473379",
-											"DOSSIER-280782257010058",
-											"product.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-338627285634": {
-								"path": [
-									"KPCN",
-									"1962-20150238473379",
-									"DOSSIER-338627285634"
-								],
-								"name": "DOSSIER-338627285634",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"parallelism_technician_cotton.txt": {
-										"name": "parallelism_technician_cotton.txt",
-										"path": [
-											"KPCN",
-											"1962-20150238473379",
-											"DOSSIER-338627285634",
-											"parallelism_technician_cotton.txt"
-										],
-										"type": "txt"
-									},
-									"garden_uniform_transmitter.txt": {
-										"name": "garden_uniform_transmitter.txt",
-										"path": [
-											"KPCN",
-											"1962-20150238473379",
-											"DOSSIER-338627285634",
-											"garden_uniform_transmitter.txt"
-										],
-										"type": "txt"
-									},
-									"metrics_json_haptic.txt": {
-										"name": "metrics_json_haptic.txt",
-										"path": [
-											"KPCN",
-											"1962-20150238473379",
-											"DOSSIER-338627285634",
-											"metrics_json_haptic.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-3661060917384": {
-								"path": [
-									"KPCN",
-									"1962-20150238473379",
-									"DOSSIER-3661060917384"
-								],
-								"name": "DOSSIER-3661060917384",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"override_quantifying.txt": {
-										"name": "override_quantifying.txt",
-										"path": [
-											"KPCN",
-											"1962-20150238473379",
-											"DOSSIER-3661060917384",
-											"override_quantifying.txt"
-										],
-										"type": "txt"
-									},
-									"deposit_south_dakota_hryvnia.txt": {
-										"name": "deposit_south_dakota_hryvnia.txt",
-										"path": [
-											"KPCN",
-											"1962-20150238473379",
-											"DOSSIER-3661060917384",
-											"deposit_south_dakota_hryvnia.txt"
-										],
-										"type": "txt"
-									},
-									"real_time.txt": {
-										"name": "real_time.txt",
-										"path": [
-											"KPCN",
-											"1962-20150238473379",
-											"DOSSIER-3661060917384",
-											"real_time.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"personal_loan_account.txt": {
-								"name": "personal_loan_account.txt",
-								"path": [
-									"KPCN",
-									"1962-20150238473379",
-									"personal_loan_account.txt"
-								],
-								"type": "txt"
-							},
-							"fantastic_green_ram.txt": {
-								"name": "fantastic_green_ram.txt",
-								"path": [
-									"KPCN",
-									"1962-20150238473379",
-									"fantastic_green_ram.txt"
-								],
-								"type": "txt"
-							},
-							"intelligent_nebraska_bypass.pdf": {
-								"name": "intelligent_nebraska_bypass.pdf",
-								"path": [
-									"KPCN",
-									"1962-20150238473379",
-									"intelligent_nebraska_bypass.pdf"
-								],
-								"type": "pdf"
-							}
-						}
-					},
-					"1964-158342651427834": {
-						"path": [
-							"KPCN",
-							"1964-158342651427834"
-						],
-						"name": "1964-158342651427834",
-						"type": "dir",
-						"locked": true,
-						"children": {
-							"DOSSIER-2143946114223": {
-								"path": [
-									"KPCN",
-									"1964-158342651427834",
-									"DOSSIER-2143946114223"
-								],
-								"name": "DOSSIER-2143946114223",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"e_enable_user_friendly_rubber.pdf": {
-										"name": "e_enable_user_friendly_rubber.pdf",
-										"path": [
-											"KPCN",
-											"1964-158342651427834",
-											"DOSSIER-2143946114223",
-											"e_enable_user_friendly_rubber.pdf"
-										],
-										"type": "pdf"
-									},
-									"applications_supervisor_web_enabled.txt": {
-										"name": "applications_supervisor_web_enabled.txt",
-										"path": [
-											"KPCN",
-											"1964-158342651427834",
-											"DOSSIER-2143946114223",
-											"applications_supervisor_web_enabled.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-23779815413629": {
-								"path": [
-									"KPCN",
-									"1964-158342651427834",
-									"DOSSIER-23779815413629"
-								],
-								"name": "DOSSIER-23779815413629",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"black_deposit.pdf": {
-										"name": "black_deposit.pdf",
-										"path": [
-											"KPCN",
-											"1964-158342651427834",
-											"DOSSIER-23779815413629",
-											"black_deposit.pdf"
-										],
-										"type": "pdf"
-									},
-									"steel.pdf": {
-										"name": "steel.pdf",
-										"path": [
-											"KPCN",
-											"1964-158342651427834",
-											"DOSSIER-23779815413629",
-											"steel.pdf"
-										],
-										"type": "pdf"
-									},
-									"digital_enhance_plum.pdf": {
-										"name": "digital_enhance_plum.pdf",
-										"path": [
-											"KPCN",
-											"1964-158342651427834",
-											"DOSSIER-23779815413629",
-											"digital_enhance_plum.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-238181635016086": {
-								"path": [
-									"KPCN",
-									"1964-158342651427834",
-									"DOSSIER-238181635016086"
-								],
-								"name": "DOSSIER-238181635016086",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"e_commerce_view_intelligent.txt": {
-										"name": "e_commerce_view_intelligent.txt",
-										"path": [
-											"KPCN",
-											"1964-158342651427834",
-											"DOSSIER-238181635016086",
-											"e_commerce_view_intelligent.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-24259262816172": {
-								"path": [
-									"KPCN",
-									"1964-158342651427834",
-									"DOSSIER-24259262816172"
-								],
-								"name": "DOSSIER-24259262816172",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"tactics_transform_sms.txt": {
-										"name": "tactics_transform_sms.txt",
-										"path": [
-											"KPCN",
-											"1964-158342651427834",
-											"DOSSIER-24259262816172",
-											"tactics_transform_sms.txt"
-										],
-										"type": "txt"
-									},
-									"virtual_transmitting.txt": {
-										"name": "virtual_transmitting.txt",
-										"path": [
-											"KPCN",
-											"1964-158342651427834",
-											"DOSSIER-24259262816172",
-											"virtual_transmitting.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-253852855727146": {
-								"path": [
-									"KPCN",
-									"1964-158342651427834",
-									"DOSSIER-253852855727146"
-								],
-								"name": "DOSSIER-253852855727146",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"system_needs_based_generic.txt": {
-										"name": "system_needs_based_generic.txt",
-										"path": [
-											"KPCN",
-											"1964-158342651427834",
-											"DOSSIER-253852855727146",
-											"system_needs_based_generic.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"refined_soft_car_unbranded.txt": {
-								"name": "refined_soft_car_unbranded.txt",
-								"path": [
-									"KPCN",
-									"1964-158342651427834",
-									"refined_soft_car_unbranded.txt"
-								],
-								"type": "txt"
-							},
-							"sexy_practical_cotton_pants.pdf": {
-								"name": "sexy_practical_cotton_pants.pdf",
-								"path": [
-									"KPCN",
-									"1964-158342651427834",
-									"sexy_practical_cotton_pants.pdf"
+									"1970-172522044313400",
+									"BES_Bureau.pdf"
 								],
 								"type": "pdf"
 							},
-							"optimize.pdf": {
-								"name": "optimize.pdf",
+							"Cluster_Anti.pdf": {
+								"name": "Cluster_Anti.pdf",
 								"path": [
 									"KPCN",
-									"1964-158342651427834",
-									"optimize.pdf"
+									"1970-172522044313400",
+									"Cluster_Anti.pdf"
 								],
 								"type": "pdf"
 							},
-							"scale_north_carolina.pdf": {
-								"name": "scale_north_carolina.pdf",
+							"de_EC.txt": {
+								"name": "de_EC.txt",
 								"path": [
 									"KPCN",
-									"1964-158342651427834",
-									"scale_north_carolina.pdf"
-								],
-								"type": "pdf"
-							},
-							"architectures.txt": {
-								"name": "architectures.txt",
-								"path": [
-									"KPCN",
-									"1964-158342651427834",
-									"architectures.txt"
+									"1970-172522044313400",
+									"de_EC.txt"
 								],
 								"type": "txt"
 							}
 						}
 					},
-					"1976-25167294572105": {
+					"1970-21589122533359": {
 						"path": [
 							"KPCN",
-							"1976-25167294572105"
+							"1970-21589122533359"
 						],
-						"name": "1976-25167294572105",
+						"name": "1970-21589122533359",
 						"type": "dir",
-						"locked": false,
+						"dirType": "normal",
 						"children": {
-							"DOSSIER-1221619057492": {
+							"DOSSIER-15426251220290": {
 								"path": [
 									"KPCN",
-									"1976-25167294572105",
-									"DOSSIER-1221619057492"
+									"1970-21589122533359",
+									"DOSSIER-15426251220290"
 								],
-								"name": "DOSSIER-1221619057492",
+								"name": "DOSSIER-15426251220290",
 								"type": "dir",
-								"locked": true,
+								"dirType": "locked",
 								"children": {
-									"bacon_aggregate_forecast.txt": {
-										"name": "bacon_aggregate_forecast.txt",
+									"controle_ILTIOD.txt": {
+										"name": "controle_ILTIOD.txt",
 										"path": [
 											"KPCN",
-											"1976-25167294572105",
-											"DOSSIER-1221619057492",
-											"bacon_aggregate_forecast.txt"
+											"1970-21589122533359",
+											"DOSSIER-15426251220290",
+											"controle_ILTIOD.txt"
 										],
 										"type": "txt"
 									},
-									"wooden_ergonomic_deliver.pdf": {
-										"name": "wooden_ergonomic_deliver.pdf",
+									"andrea_Caribisch.pdf": {
+										"name": "andrea_Caribisch.pdf",
 										"path": [
 											"KPCN",
-											"1976-25167294572105",
-											"DOSSIER-1221619057492",
-											"wooden_ergonomic_deliver.pdf"
+											"1970-21589122533359",
+											"DOSSIER-15426251220290",
+											"andrea_Caribisch.pdf"
 										],
 										"type": "pdf"
 									},
-									"outdoors_developer_movies.txt": {
-										"name": "outdoors_developer_movies.txt",
+									"Force_Nederlandsche.pdf": {
+										"name": "Force_Nederlandsche.pdf",
 										"path": [
 											"KPCN",
-											"1976-25167294572105",
-											"DOSSIER-1221619057492",
-											"outdoors_developer_movies.txt"
+											"1970-21589122533359",
+											"DOSSIER-15426251220290",
+											"Force_Nederlandsche.pdf"
+										],
+										"type": "pdf"
+									},
+									"gemeente_en.txt": {
+										"name": "gemeente_en.txt",
+										"path": [
+											"KPCN",
+											"1970-21589122533359",
+											"DOSSIER-15426251220290",
+											"gemeente_en.txt"
 										],
 										"type": "txt"
 									},
-									"baby.txt": {
-										"name": "baby.txt",
+									"de_FIU.txt": {
+										"name": "de_FIU.txt",
 										"path": [
 											"KPCN",
-											"1976-25167294572105",
-											"DOSSIER-1221619057492",
-											"baby.txt"
+											"1970-21589122533359",
+											"DOSSIER-15426251220290",
+											"de_FIU.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-128651099912475": {
+							"DOSSIER-18644415614338": {
 								"path": [
 									"KPCN",
-									"1976-25167294572105",
-									"DOSSIER-128651099912475"
+									"1970-21589122533359",
+									"DOSSIER-18644415614338"
 								],
-								"name": "DOSSIER-128651099912475",
+								"name": "DOSSIER-18644415614338",
 								"type": "dir",
-								"locked": false,
+								"dirType": "locked",
 								"children": {
-									"strategize_gorgeous_frozen_towels_deposit.pdf": {
-										"name": "strategize_gorgeous_frozen_towels_deposit.pdf",
+									"de_Nederland:.txt": {
+										"name": "de_Nederland:.txt",
 										"path": [
 											"KPCN",
-											"1976-25167294572105",
-											"DOSSIER-128651099912475",
-											"strategize_gorgeous_frozen_towels_deposit.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-16622675622238": {
-								"path": [
-									"KPCN",
-									"1976-25167294572105",
-									"DOSSIER-16622675622238"
-								],
-								"name": "DOSSIER-16622675622238",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"plastic.txt": {
-										"name": "plastic.txt",
-										"path": [
-											"KPCN",
-											"1976-25167294572105",
-											"DOSSIER-16622675622238",
-											"plastic.txt"
+											"1970-21589122533359",
+											"DOSSIER-18644415614338",
+											"de_Nederland:.txt"
 										],
 										"type": "txt"
 									},
-									"computers.pdf": {
-										"name": "computers.pdf",
+									"Cluster_BES.txt": {
+										"name": "Cluster_BES.txt",
 										"path": [
 											"KPCN",
-											"1976-25167294572105",
-											"DOSSIER-16622675622238",
-											"computers.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-31559299434408": {
-								"path": [
-									"KPCN",
-									"1976-25167294572105",
-									"DOSSIER-31559299434408"
-								],
-								"name": "DOSSIER-31559299434408",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"harness_hack_heard_island_and_mcdonald_islands.txt": {
-										"name": "harness_hack_heard_island_and_mcdonald_islands.txt",
-										"path": [
-											"KPCN",
-											"1976-25167294572105",
-											"DOSSIER-31559299434408",
-											"harness_hack_heard_island_and_mcdonald_islands.txt"
-										],
-										"type": "txt"
-									},
-									"applications_approach.pdf": {
-										"name": "applications_approach.pdf",
-										"path": [
-											"KPCN",
-											"1976-25167294572105",
-											"DOSSIER-31559299434408",
-											"applications_approach.pdf"
-										],
-										"type": "pdf"
-									},
-									"soft.txt": {
-										"name": "soft.txt",
-										"path": [
-											"KPCN",
-											"1976-25167294572105",
-											"DOSSIER-31559299434408",
-											"soft.txt"
+											"1970-21589122533359",
+											"DOSSIER-18644415614338",
+											"Cluster_BES.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-65313178226109": {
+							"DOSSIER-25126846829272": {
 								"path": [
 									"KPCN",
-									"1976-25167294572105",
-									"DOSSIER-65313178226109"
+									"1970-21589122533359",
+									"DOSSIER-25126846829272"
 								],
-								"name": "DOSSIER-65313178226109",
+								"name": "DOSSIER-25126846829272",
 								"type": "dir",
-								"locked": false,
+								"dirType": "normal",
 								"children": {
-									"tan_computers_zambian_kwacha.pdf": {
-										"name": "tan_computers_zambian_kwacha.pdf",
+									"Nederlandsche_Inkomen,.txt": {
+										"name": "Nederlandsche_Inkomen,.txt",
 										"path": [
 											"KPCN",
-											"1976-25167294572105",
-											"DOSSIER-65313178226109",
-											"tan_computers_zambian_kwacha.pdf"
-										],
-										"type": "pdf"
-									},
-									"ram_unbranded_rubber_gloves_handcrafted.pdf": {
-										"name": "ram_unbranded_rubber_gloves_handcrafted.pdf",
-										"path": [
-											"KPCN",
-											"1976-25167294572105",
-											"DOSSIER-65313178226109",
-											"ram_unbranded_rubber_gloves_handcrafted.pdf"
-										],
-										"type": "pdf"
-									},
-									"credit_card_account.txt": {
-										"name": "credit_card_account.txt",
-										"path": [
-											"KPCN",
-											"1976-25167294572105",
-											"DOSSIER-65313178226109",
-											"credit_card_account.txt"
+											"1970-21589122533359",
+											"DOSSIER-25126846829272",
+											"Nederlandsche_Inkomen,.txt"
 										],
 										"type": "txt"
 									},
-									"circuit_transmit_bedfordshire.pdf": {
-										"name": "circuit_transmit_bedfordshire.pdf",
+									"DWI_FAT.txt": {
+										"name": "DWI_FAT.txt",
 										"path": [
 											"KPCN",
-											"1976-25167294572105",
-											"DOSSIER-65313178226109",
-											"circuit_transmit_bedfordshire.pdf"
+											"1970-21589122533359",
+											"DOSSIER-25126846829272",
+											"DWI_FAT.txt"
+										],
+										"type": "txt"
+									},
+									"BES_Nederland.pdf": {
+										"name": "BES_Nederland.pdf",
+										"path": [
+											"KPCN",
+											"1970-21589122533359",
+											"DOSSIER-25126846829272",
+											"BES_Nederland.pdf"
+										],
+										"type": "pdf"
+									},
+									"applicatie_de.txt": {
+										"name": "applicatie_de.txt",
+										"path": [
+											"KPCN",
+											"1970-21589122533359",
+											"DOSSIER-25126846829272",
+											"applicatie_de.txt"
+										],
+										"type": "txt"
+									},
+									"European_andrea.txt": {
+										"name": "European_andrea.txt",
+										"path": [
+											"KPCN",
+											"1970-21589122533359",
+											"DOSSIER-25126846829272",
+											"European_andrea.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-26761317028455": {
+								"path": [
+									"KPCN",
+									"1970-21589122533359",
+									"DOSSIER-26761317028455"
+								],
+								"name": "DOSSIER-26761317028455",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"het_Inlichtingen-.pdf": {
+										"name": "het_Inlichtingen-.pdf",
+										"path": [
+											"KPCN",
+											"1970-21589122533359",
+											"DOSSIER-26761317028455",
+											"het_Inlichtingen-.pdf"
+										],
+										"type": "pdf"
+									},
+									"FEC_Intelligence.txt": {
+										"name": "FEC_Intelligence.txt",
+										"path": [
+											"KPCN",
+											"1970-21589122533359",
+											"DOSSIER-26761317028455",
+											"FEC_Intelligence.txt"
+										],
+										"type": "txt"
+									},
+									"Financieel_Openbaar.pdf": {
+										"name": "Financieel_Openbaar.pdf",
+										"path": [
+											"KPCN",
+											"1970-21589122533359",
+											"DOSSIER-26761317028455",
+											"Financieel_Openbaar.pdf"
+										],
+										"type": "pdf"
+									},
+									"team_de.txt": {
+										"name": "team_de.txt",
+										"path": [
+											"KPCN",
+											"1970-21589122533359",
+											"DOSSIER-26761317028455",
+											"team_de.txt"
+										],
+										"type": "txt"
+									},
+									"F_Centre,.pdf": {
+										"name": "F_Centre,.pdf",
+										"path": [
+											"KPCN",
+											"1970-21589122533359",
+											"DOSSIER-26761317028455",
+											"F_Centre,.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"e_business_money_market_account_mississippi.txt": {
-								"name": "e_business_money_market_account_mississippi.txt",
+							"DOSSIER-61181130928954": {
 								"path": [
 									"KPCN",
-									"1976-25167294572105",
-									"e_business_money_market_account_mississippi.txt"
+									"1970-21589122533359",
+									"DOSSIER-61181130928954"
+								],
+								"name": "DOSSIER-61181130928954",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"van_Inspectie.txt": {
+										"name": "van_Inspectie.txt",
+										"path": [
+											"KPCN",
+											"1970-21589122533359",
+											"DOSSIER-61181130928954",
+											"van_Inspectie.txt"
+										],
+										"type": "txt"
+									},
+									"Landelijke_DNB.txt": {
+										"name": "Landelijke_DNB.txt",
+										"path": [
+											"KPCN",
+											"1970-21589122533359",
+											"DOSSIER-61181130928954",
+											"Landelijke_DNB.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"Informatie,_van.txt": {
+								"name": "Informatie,_van.txt",
+								"path": [
+									"KPCN",
+									"1970-21589122533359",
+									"Informatie,_van.txt"
 								],
 								"type": "txt"
 							},
-							"officer_clicks_and_mortar_interface.txt": {
-								"name": "officer_clicks_and_mortar_interface.txt",
+							"Inkomen,_onderdeel.pdf": {
+								"name": "Inkomen,_onderdeel.pdf",
 								"path": [
 									"KPCN",
-									"1976-25167294572105",
-									"officer_clicks_and_mortar_interface.txt"
+									"1970-21589122533359",
+									"Inkomen,_onderdeel.pdf"
 								],
-								"type": "txt"
+								"type": "pdf"
 							},
-							"program_online.txt": {
-								"name": "program_online.txt",
+							"Informatie,_van.pdf": {
+								"name": "Informatie,_van.pdf",
 								"path": [
 									"KPCN",
-									"1976-25167294572105",
-									"program_online.txt"
+									"1970-21589122533359",
+									"Informatie,_van.pdf"
+								],
+								"type": "pdf"
+							},
+							"een_van.txt": {
+								"name": "een_van.txt",
+								"path": [
+									"KPCN",
+									"1970-21589122533359",
+									"een_van.txt"
 								],
 								"type": "txt"
 							}
 						}
 					},
-					"1997-284601695028156": {
+					"1981-136602120618312": {
 						"path": [
 							"KPCN",
-							"1997-284601695028156"
+							"1981-136602120618312"
 						],
-						"name": "1997-284601695028156",
+						"name": "1981-136602120618312",
 						"type": "dir",
-						"locked": true,
+						"dirType": "locked",
 						"children": {
-							"DOSSIER-10434950813288": {
+							"DOSSIER-123503079131009": {
 								"path": [
 									"KPCN",
-									"1997-284601695028156",
-									"DOSSIER-10434950813288"
+									"1981-136602120618312",
+									"DOSSIER-123503079131009"
 								],
-								"name": "DOSSIER-10434950813288",
+								"name": "DOSSIER-123503079131009",
 								"type": "dir",
-								"locked": false,
+								"dirType": "locked",
 								"children": {
-									"optical_united_states_of_america_indian_rupee_ngultrum.txt": {
-										"name": "optical_united_states_of_america_indian_rupee_ngultrum.txt",
+									"de_Basisvoorziening.txt": {
+										"name": "de_Basisvoorziening.txt",
 										"path": [
 											"KPCN",
-											"1997-284601695028156",
-											"DOSSIER-10434950813288",
-											"optical_united_states_of_america_indian_rupee_ngultrum.txt"
+											"1981-136602120618312",
+											"DOSSIER-123503079131009",
+											"de_Basisvoorziening.txt"
 										],
 										"type": "txt"
 									},
-									"synthesize.txt": {
-										"name": "synthesize.txt",
+									"Action_het.txt": {
+										"name": "Action_het.txt",
 										"path": [
 											"KPCN",
-											"1997-284601695028156",
-											"DOSSIER-10434950813288",
-											"synthesize.txt"
+											"1981-136602120618312",
+											"DOSSIER-123503079131009",
+											"Action_het.txt"
 										],
 										"type": "txt"
 									},
-									"leading_edge_canyon.txt": {
-										"name": "leading_edge_canyon.txt",
+									"Contraterrorisme_Inkomen,.txt": {
+										"name": "Contraterrorisme_Inkomen,.txt",
 										"path": [
 											"KPCN",
-											"1997-284601695028156",
-											"DOSSIER-10434950813288",
-											"leading_edge_canyon.txt"
+											"1981-136602120618312",
+											"DOSSIER-123503079131009",
+											"Contraterrorisme_Inkomen,.txt"
 										],
 										"type": "txt"
 									},
-									"png_tasty_rubber_towels_buckinghamshire.pdf": {
-										"name": "png_tasty_rubber_towels_buckinghamshire.pdf",
+									"Informatie,_applicatie.txt": {
+										"name": "Informatie,_applicatie.txt",
 										"path": [
 											"KPCN",
-											"1997-284601695028156",
-											"DOSSIER-10434950813288",
-											"png_tasty_rubber_towels_buckinghamshire.pdf"
+											"1981-136602120618312",
+											"DOSSIER-123503079131009",
+											"Informatie,_applicatie.txt"
 										],
-										"type": "pdf"
+										"type": "txt"
 									},
-									"methodical.txt": {
-										"name": "methodical.txt",
+									"Functioneel_Contraterrorisme.txt": {
+										"name": "Functioneel_Contraterrorisme.txt",
 										"path": [
 											"KPCN",
-											"1997-284601695028156",
-											"DOSSIER-10434950813288",
-											"methodical.txt"
+											"1981-136602120618312",
+											"DOSSIER-123503079131009",
+											"Functioneel_Contraterrorisme.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-117932570713166": {
+							"DOSSIER-173312570324528": {
 								"path": [
 									"KPCN",
-									"1997-284601695028156",
-									"DOSSIER-117932570713166"
+									"1981-136602120618312",
+									"DOSSIER-173312570324528"
 								],
-								"name": "DOSSIER-117932570713166",
+								"name": "DOSSIER-173312570324528",
 								"type": "dir",
-								"locked": false,
+								"dirType": "archive",
 								"children": {
-									"optical.txt": {
-										"name": "optical.txt",
+									"FEC_en.txt": {
+										"name": "FEC_en.txt",
 										"path": [
 											"KPCN",
-											"1997-284601695028156",
-											"DOSSIER-117932570713166",
-											"optical.txt"
+											"1981-136602120618312",
+											"DOSSIER-173312570324528",
+											"FEC_en.txt"
 										],
 										"type": "txt"
 									},
-									"multi_byte_chicken.pdf": {
-										"name": "multi_byte_chicken.pdf",
+									"Fiscale_CT.txt": {
+										"name": "Fiscale_CT.txt",
 										"path": [
 											"KPCN",
-											"1997-284601695028156",
-											"DOSSIER-117932570713166",
-											"multi_byte_chicken.pdf"
-										],
-										"type": "pdf"
-									},
-									"somalia_exuding_administrator.txt": {
-										"name": "somalia_exuding_administrator.txt",
-										"path": [
-											"KPCN",
-											"1997-284601695028156",
-											"DOSSIER-117932570713166",
-											"somalia_exuding_administrator.txt"
+											"1981-136602120618312",
+											"DOSSIER-173312570324528",
+											"Fiscale_CT.txt"
 										],
 										"type": "txt"
 									},
-									"coordinator.txt": {
-										"name": "coordinator.txt",
+									"European_uitvoerend.txt": {
+										"name": "European_uitvoerend.txt",
 										"path": [
 											"KPCN",
-											"1997-284601695028156",
-											"DOSSIER-117932570713166",
-											"coordinator.txt"
+											"1981-136602120618312",
+											"DOSSIER-173312570324528",
+											"European_uitvoerend.txt"
 										],
 										"type": "txt"
 									},
-									"somoni_generic_wooden_chips.pdf": {
-										"name": "somoni_generic_wooden_chips.pdf",
+									"de_Financial.txt": {
+										"name": "de_Financial.txt",
 										"path": [
 											"KPCN",
-											"1997-284601695028156",
-											"DOSSIER-117932570713166",
-											"somoni_generic_wooden_chips.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-31268270881746": {
-								"path": [
-									"KPCN",
-									"1997-284601695028156",
-									"DOSSIER-31268270881746"
-								],
-								"name": "DOSSIER-31268270881746",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"assistant_gabon.pdf": {
-										"name": "assistant_gabon.pdf",
-										"path": [
-											"KPCN",
-											"1997-284601695028156",
-											"DOSSIER-31268270881746",
-											"assistant_gabon.pdf"
-										],
-										"type": "pdf"
-									},
-									"synthesizing.txt": {
-										"name": "synthesizing.txt",
-										"path": [
-											"KPCN",
-											"1997-284601695028156",
-											"DOSSIER-31268270881746",
-											"synthesizing.txt"
-										],
-										"type": "txt"
-									},
-									"bandwidth.txt": {
-										"name": "bandwidth.txt",
-										"path": [
-											"KPCN",
-											"1997-284601695028156",
-											"DOSSIER-31268270881746",
-											"bandwidth.txt"
-										],
-										"type": "txt"
-									},
-									"keyboard.pdf": {
-										"name": "keyboard.pdf",
-										"path": [
-											"KPCN",
-											"1997-284601695028156",
-											"DOSSIER-31268270881746",
-											"keyboard.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-326702663413359": {
-								"path": [
-									"KPCN",
-									"1997-284601695028156",
-									"DOSSIER-326702663413359"
-								],
-								"name": "DOSSIER-326702663413359",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"marketing_neural.txt": {
-										"name": "marketing_neural.txt",
-										"path": [
-											"KPCN",
-											"1997-284601695028156",
-											"DOSSIER-326702663413359",
-											"marketing_neural.txt"
-										],
-										"type": "txt"
-									},
-									"plum_e_tailers.txt": {
-										"name": "plum_e_tailers.txt",
-										"path": [
-											"KPCN",
-											"1997-284601695028156",
-											"DOSSIER-326702663413359",
-											"plum_e_tailers.txt"
+											"1981-136602120618312",
+											"DOSSIER-173312570324528",
+											"de_Financial.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-95581643321986": {
+							"DOSSIER-2570038709417": {
 								"path": [
 									"KPCN",
-									"1997-284601695028156",
-									"DOSSIER-95581643321986"
+									"1981-136602120618312",
+									"DOSSIER-2570038709417"
 								],
-								"name": "DOSSIER-95581643321986",
+								"name": "DOSSIER-2570038709417",
 								"type": "dir",
-								"locked": false,
+								"dirType": "normal",
 								"children": {
-									"markets_calculate.txt": {
-										"name": "markets_calculate.txt",
+									"Laundering._van.txt": {
+										"name": "Laundering._van.txt",
 										"path": [
 											"KPCN",
-											"1997-284601695028156",
-											"DOSSIER-95581643321986",
-											"markets_calculate.txt"
+											"1981-136602120618312",
+											"DOSSIER-2570038709417",
+											"Laundering._van.txt"
 										],
 										"type": "txt"
 									},
-									"generic_experiences_technician.txt": {
-										"name": "generic_experiences_technician.txt",
+									"BFT_Dienst.txt": {
+										"name": "BFT_Dienst.txt",
 										"path": [
 											"KPCN",
-											"1997-284601695028156",
-											"DOSSIER-95581643321986",
-											"generic_experiences_technician.txt"
+											"1981-136602120618312",
+											"DOSSIER-2570038709417",
+											"BFT_Dienst.txt"
 										],
 										"type": "txt"
 									},
-									"arkansas.txt": {
-										"name": "arkansas.txt",
+									"de_Bureau.txt": {
+										"name": "de_Bureau.txt",
 										"path": [
 											"KPCN",
-											"1997-284601695028156",
-											"DOSSIER-95581643321986",
-											"arkansas.txt"
+											"1981-136602120618312",
+											"DOSSIER-2570038709417",
+											"de_Bureau.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-75341463426411": {
+								"path": [
+									"KPCN",
+									"1981-136602120618312",
+									"DOSSIER-75341463426411"
+								],
+								"name": "DOSSIER-75341463426411",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"onderdeel_Expertisecentrum.txt": {
+										"name": "onderdeel_Expertisecentrum.txt",
+										"path": [
+											"KPCN",
+											"1981-136602120618312",
+											"DOSSIER-75341463426411",
+											"onderdeel_Expertisecentrum.txt"
 										],
 										"type": "txt"
 									},
-									"withdrawal_lek.txt": {
-										"name": "withdrawal_lek.txt",
+									"Centrum_Anti.txt": {
+										"name": "Centrum_Anti.txt",
 										"path": [
 											"KPCN",
-											"1997-284601695028156",
-											"DOSSIER-95581643321986",
-											"withdrawal_lek.txt"
+											"1981-136602120618312",
+											"DOSSIER-75341463426411",
+											"Centrum_Anti.txt"
 										],
 										"type": "txt"
 									},
-									"capacitor.pdf": {
-										"name": "capacitor.pdf",
+									"Openbaar_het.txt": {
+										"name": "Openbaar_het.txt",
 										"path": [
 											"KPCN",
-											"1997-284601695028156",
-											"DOSSIER-95581643321986",
-											"capacitor.pdf"
+											"1981-136602120618312",
+											"DOSSIER-75341463426411",
+											"Openbaar_het.txt"
+										],
+										"type": "txt"
+									},
+									"Recherche,_Laundering.pdf": {
+										"name": "Recherche,_Laundering.pdf",
+										"path": [
+											"KPCN",
+											"1981-136602120618312",
+											"DOSSIER-75341463426411",
+											"Recherche,_Laundering.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"cambridgeshire.pdf": {
-								"name": "cambridgeshire.pdf",
+							"DOSSIER-9373138215912": {
 								"path": [
 									"KPCN",
-									"1997-284601695028156",
-									"cambridgeshire.pdf"
+									"1981-136602120618312",
+									"DOSSIER-9373138215912"
 								],
-								"type": "pdf"
+								"name": "DOSSIER-9373138215912",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Centre,_en.txt": {
+										"name": "Centre,_en.txt",
+										"path": [
+											"KPCN",
+											"1981-136602120618312",
+											"DOSSIER-9373138215912",
+											"Centre,_en.txt"
+										],
+										"type": "txt"
+									},
+									"de_organisatie.txt": {
+										"name": "de_organisatie.txt",
+										"path": [
+											"KPCN",
+											"1981-136602120618312",
+											"DOSSIER-9373138215912",
+											"de_organisatie.txt"
+										],
+										"type": "txt"
+									}
+								}
 							},
-							"checking_account_fantastic.txt": {
-								"name": "checking_account_fantastic.txt",
+							"_EMM.txt": {
+								"name": "_EMM.txt",
 								"path": [
 									"KPCN",
-									"1997-284601695028156",
-									"checking_account_fantastic.txt"
+									"1981-136602120618312",
+									"_EMM.txt"
 								],
 								"type": "txt"
 							},
-							"feed_grey_bike.pdf": {
-								"name": "feed_grey_bike.pdf",
+							"gebouwd_ILTIOD.pdf": {
+								"name": "gebouwd_ILTIOD.pdf",
 								"path": [
 									"KPCN",
-									"1997-284601695028156",
-									"feed_grey_bike.pdf"
+									"1981-136602120618312",
+									"gebouwd_ILTIOD.pdf"
 								],
 								"type": "pdf"
 							},
-							"dynamic_json.txt": {
-								"name": "dynamic_json.txt",
+							"de_een.pdf": {
+								"name": "de_een.pdf",
 								"path": [
 									"KPCN",
-									"1997-284601695028156",
-									"dynamic_json.txt"
+									"1981-136602120618312",
+									"de_een.pdf"
+								],
+								"type": "pdf"
+							},
+							"ILTIOD_F.txt": {
+								"name": "ILTIOD_F.txt",
+								"path": [
+									"KPCN",
+									"1981-136602120618312",
+									"ILTIOD_F.txt"
 								],
 								"type": "txt"
 							}
 						}
 					},
-					"2006-196422972725365": {
+					"1993-17649104313852": {
 						"path": [
 							"KPCN",
-							"2006-196422972725365"
+							"1993-17649104313852"
 						],
-						"name": "2006-196422972725365",
+						"name": "1993-17649104313852",
 						"type": "dir",
-						"locked": false,
+						"dirType": "normal",
 						"children": {
-							"DOSSIER-127281636110898": {
+							"DOSSIER-121153203629521": {
 								"path": [
 									"KPCN",
-									"2006-196422972725365",
-									"DOSSIER-127281636110898"
+									"1993-17649104313852",
+									"DOSSIER-121153203629521"
 								],
-								"name": "DOSSIER-127281636110898",
+								"name": "DOSSIER-121153203629521",
 								"type": "dir",
-								"locked": false,
+								"dirType": "normal",
 								"children": {
-									"embrace_jordanian_dinar.txt": {
-										"name": "embrace_jordanian_dinar.txt",
+									"Against_en.pdf": {
+										"name": "Against_en.pdf",
 										"path": [
 											"KPCN",
-											"2006-196422972725365",
-											"DOSSIER-127281636110898",
-											"embrace_jordanian_dinar.txt"
+											"1993-17649104313852",
+											"DOSSIER-121153203629521",
+											"Against_en.pdf"
+										],
+										"type": "pdf"
+									},
+									"Financial_Government.txt": {
+										"name": "Financial_Government.txt",
+										"path": [
+											"KPCN",
+											"1993-17649104313852",
+											"DOSSIER-121153203629521",
+											"Financial_Government.txt"
 										],
 										"type": "txt"
 									},
-									"transmitter.txt": {
-										"name": "transmitter.txt",
+									"Incasso_Autoriteit.txt": {
+										"name": "Incasso_Autoriteit.txt",
 										"path": [
 											"KPCN",
-											"2006-196422972725365",
-											"DOSSIER-127281636110898",
-											"transmitter.txt"
+											"1993-17649104313852",
+											"DOSSIER-121153203629521",
+											"Incasso_Autoriteit.txt"
 										],
 										"type": "txt"
 									},
-									"awesome.txt": {
-										"name": "awesome.txt",
+									"Sint_Centrum.txt": {
+										"name": "Sint_Centrum.txt",
 										"path": [
 											"KPCN",
-											"2006-196422972725365",
-											"DOSSIER-127281636110898",
-											"awesome.txt"
+											"1993-17649104313852",
+											"DOSSIER-121153203629521",
+											"Sint_Centrum.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-12861271479069": {
+							"DOSSIER-22714538425078": {
 								"path": [
 									"KPCN",
-									"2006-196422972725365",
-									"DOSSIER-12861271479069"
+									"1993-17649104313852",
+									"DOSSIER-22714538425078"
 								],
-								"name": "DOSSIER-12861271479069",
+								"name": "DOSSIER-22714538425078",
 								"type": "dir",
-								"locked": true,
+								"dirType": "normal",
 								"children": {
-									"frozen_hill.txt": {
-										"name": "frozen_hill.txt",
+									"binnen_CJIB.txt": {
+										"name": "binnen_CJIB.txt",
 										"path": [
 											"KPCN",
-											"2006-196422972725365",
-											"DOSSIER-12861271479069",
-											"frozen_hill.txt"
+											"1993-17649104313852",
+											"DOSSIER-22714538425078",
+											"binnen_CJIB.txt"
 										],
 										"type": "txt"
 									},
-									"back_end_software.txt": {
-										"name": "back_end_software.txt",
+									"Caribisch_Bureau.pdf": {
+										"name": "Caribisch_Bureau.pdf",
 										"path": [
 											"KPCN",
-											"2006-196422972725365",
-											"DOSSIER-12861271479069",
-											"back_end_software.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-224452618732255": {
-								"path": [
-									"KPCN",
-									"2006-196422972725365",
-									"DOSSIER-224452618732255"
-								],
-								"name": "DOSSIER-224452618732255",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"index.pdf": {
-										"name": "index.pdf",
-										"path": [
-											"KPCN",
-											"2006-196422972725365",
-											"DOSSIER-224452618732255",
-											"index.pdf"
+											"1993-17649104313852",
+											"DOSSIER-22714538425078",
+											"Caribisch_Bureau.pdf"
 										],
 										"type": "pdf"
 									},
-									"compress_yuan_renminbi.txt": {
-										"name": "compress_yuan_renminbi.txt",
+									"gemeente_Cluster.txt": {
+										"name": "gemeente_Cluster.txt",
 										"path": [
 											"KPCN",
-											"2006-196422972725365",
-											"DOSSIER-224452618732255",
-											"compress_yuan_renminbi.txt"
+											"1993-17649104313852",
+											"DOSSIER-22714538425078",
+											"gemeente_Cluster.txt"
 										],
 										"type": "txt"
 									},
-									"functionalities.txt": {
-										"name": "functionalities.txt",
+									"Andrea_onderdeel.pdf": {
+										"name": "Andrea_onderdeel.pdf",
 										"path": [
 											"KPCN",
-											"2006-196422972725365",
-											"DOSSIER-224452618732255",
-											"functionalities.txt"
-										],
-										"type": "txt"
-									},
-									"montana_applications.pdf": {
-										"name": "montana_applications.pdf",
-										"path": [
-											"KPCN",
-											"2006-196422972725365",
-											"DOSSIER-224452618732255",
-											"montana_applications.pdf"
+											"1993-17649104313852",
+											"DOSSIER-22714538425078",
+											"Andrea_onderdeel.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"DOSSIER-24081252827134": {
+							"DOSSIER-2511414749307": {
 								"path": [
 									"KPCN",
-									"2006-196422972725365",
-									"DOSSIER-24081252827134"
+									"1993-17649104313852",
+									"DOSSIER-2511414749307"
 								],
-								"name": "DOSSIER-24081252827134",
+								"name": "DOSSIER-2511414749307",
 								"type": "dir",
-								"locked": true,
+								"dirType": "locked",
 								"children": {
-									"rustic_fresh_chicken_outdoors_movies.txt": {
-										"name": "rustic_fresh_chicken_outdoors_movies.txt",
+									"en_Platform.txt": {
+										"name": "en_Platform.txt",
 										"path": [
 											"KPCN",
-											"2006-196422972725365",
-											"DOSSIER-24081252827134",
-											"rustic_fresh_chicken_outdoors_movies.txt"
+											"1993-17649104313852",
+											"DOSSIER-2511414749307",
+											"en_Platform.txt"
 										],
 										"type": "txt"
 									},
-									"re_engineered_coordinator_soft.txt": {
-										"name": "re_engineered_coordinator_soft.txt",
+									"en_en.txt": {
+										"name": "en_en.txt",
 										"path": [
 											"KPCN",
-											"2006-196422972725365",
-											"DOSSIER-24081252827134",
-											"re_engineered_coordinator_soft.txt"
+											"1993-17649104313852",
+											"DOSSIER-2511414749307",
+											"en_en.txt"
 										],
 										"type": "txt"
 									},
-									"anguilla_scale_incredible.pdf": {
-										"name": "anguilla_scale_incredible.pdf",
+									"CN_.pdf": {
+										"name": "CN_.pdf",
 										"path": [
 											"KPCN",
-											"2006-196422972725365",
-											"DOSSIER-24081252827134",
-											"anguilla_scale_incredible.pdf"
+											"1993-17649104313852",
+											"DOSSIER-2511414749307",
+											"CN_.pdf"
 										],
 										"type": "pdf"
 									},
-									"sleek_rubber_cheese_sky_blue_24365.pdf": {
-										"name": "sleek_rubber_cheese_sky_blue_24365.pdf",
+									"CTEPF_organisatie.txt": {
+										"name": "CTEPF_organisatie.txt",
 										"path": [
 											"KPCN",
-											"2006-196422972725365",
-											"DOSSIER-24081252827134",
-											"sleek_rubber_cheese_sky_blue_24365.pdf"
+											"1993-17649104313852",
+											"DOSSIER-2511414749307",
+											"CTEPF_organisatie.txt"
 										],
-										"type": "pdf"
+										"type": "txt"
 									},
-									"maryland_technician.txt": {
-										"name": "maryland_technician.txt",
+									"de_Government.txt": {
+										"name": "de_Government.txt",
 										"path": [
 											"KPCN",
-											"2006-196422972725365",
-											"DOSSIER-24081252827134",
-											"maryland_technician.txt"
+											"1993-17649104313852",
+											"DOSSIER-2511414749307",
+											"de_Government.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-324551967915824": {
+							"DOSSIER-26357535221401": {
 								"path": [
 									"KPCN",
-									"2006-196422972725365",
-									"DOSSIER-324551967915824"
+									"1993-17649104313852",
+									"DOSSIER-26357535221401"
 								],
-								"name": "DOSSIER-324551967915824",
+								"name": "DOSSIER-26357535221401",
 								"type": "dir",
-								"locked": false,
+								"dirType": "archive",
 								"children": {
-									"transmitter.pdf": {
-										"name": "transmitter.pdf",
+									"BES_van.pdf": {
+										"name": "BES_van.pdf",
 										"path": [
 											"KPCN",
-											"2006-196422972725365",
-											"DOSSIER-324551967915824",
-											"transmitter.pdf"
+											"1993-17649104313852",
+											"DOSSIER-26357535221401",
+											"BES_van.pdf"
 										],
 										"type": "pdf"
 									},
-									"utah_steel.txt": {
-										"name": "utah_steel.txt",
+									"Bonaire._van.pdf": {
+										"name": "Bonaire._van.pdf",
 										"path": [
 											"KPCN",
-											"2006-196422972725365",
-											"DOSSIER-324551967915824",
-											"utah_steel.txt"
+											"1993-17649104313852",
+											"DOSSIER-26357535221401",
+											"Bonaire._van.pdf"
+										],
+										"type": "pdf"
+									},
+									"Europese_Expertisecentrum.txt": {
+										"name": "Europese_Expertisecentrum.txt",
+										"path": [
+											"KPCN",
+											"1993-17649104313852",
+											"DOSSIER-26357535221401",
+											"Europese_Expertisecentrum.txt"
 										],
 										"type": "txt"
 									},
-									"web_enabled_licensed_refined.txt": {
-										"name": "web_enabled_licensed_refined.txt",
+									"Financial_Toezicht.txt": {
+										"name": "Financial_Toezicht.txt",
 										"path": [
 											"KPCN",
-											"2006-196422972725365",
-											"DOSSIER-324551967915824",
-											"web_enabled_licensed_refined.txt"
+											"1993-17649104313852",
+											"DOSSIER-26357535221401",
+											"Financial_Toezicht.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"infrastructures_berkshire.txt": {
-								"name": "infrastructures_berkshire.txt",
+							"DOSSIER-33661627720657": {
 								"path": [
 									"KPCN",
-									"2006-196422972725365",
-									"infrastructures_berkshire.txt"
+									"1993-17649104313852",
+									"DOSSIER-33661627720657"
+								],
+								"name": "DOSSIER-33661627720657",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Force_Platform.txt": {
+										"name": "Force_Platform.txt",
+										"path": [
+											"KPCN",
+											"1993-17649104313852",
+											"DOSSIER-33661627720657",
+											"Force_Platform.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"Criminal_Markten.txt": {
+								"name": "Criminal_Markten.txt",
+								"path": [
+									"KPCN",
+									"1993-17649104313852",
+									"Criminal_Markten.txt"
 								],
 								"type": "txt"
 							},
-							"wyoming.txt": {
-								"name": "wyoming.txt",
+							"Nederland:_Inspectie.pdf": {
+								"name": "Nederland:_Inspectie.pdf",
 								"path": [
 									"KPCN",
-									"2006-196422972725365",
-									"wyoming.txt"
-								],
-								"type": "txt"
-							},
-							"local.txt": {
-								"name": "local.txt",
-								"path": [
-									"KPCN",
-									"2006-196422972725365",
-									"local.txt"
-								],
-								"type": "txt"
-							},
-							"compress_plastic.pdf": {
-								"name": "compress_plastic.pdf",
-								"path": [
-									"KPCN",
-									"2006-196422972725365",
-									"compress_plastic.pdf"
+									"1993-17649104313852",
+									"Nederland:_Inspectie.pdf"
 								],
 								"type": "pdf"
 							}
 						}
 					},
-					"armenian_dram_bandwidth_transmitter.txt": {
-						"name": "armenian_dram_bandwidth_transmitter.txt",
+					"2014-23963171928072": {
 						"path": [
 							"KPCN",
-							"armenian_dram_bandwidth_transmitter.txt"
+							"2014-23963171928072"
+						],
+						"name": "2014-23963171928072",
+						"type": "dir",
+						"dirType": "locked",
+						"children": {
+							"DOSSIER-15161260465822": {
+								"path": [
+									"KPCN",
+									"2014-23963171928072",
+									"DOSSIER-15161260465822"
+								],
+								"name": "DOSSIER-15161260465822",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"BES_Anti-Money.txt": {
+										"name": "BES_Anti-Money.txt",
+										"path": [
+											"KPCN",
+											"2014-23963171928072",
+											"DOSSIER-15161260465822",
+											"BES_Anti-Money.txt"
+										],
+										"type": "txt"
+									},
+									"en_Inkomen,.pdf": {
+										"name": "en_Inkomen,.pdf",
+										"path": [
+											"KPCN",
+											"2014-23963171928072",
+											"DOSSIER-15161260465822",
+											"en_Inkomen,.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-15365120872706": {
+								"path": [
+									"KPCN",
+									"2014-23963171928072",
+									"DOSSIER-15365120872706"
+								],
+								"name": "DOSSIER-15365120872706",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Criminal_FlU-Nederland.pdf": {
+										"name": "Criminal_FlU-Nederland.pdf",
+										"path": [
+											"KPCN",
+											"2014-23963171928072",
+											"DOSSIER-15365120872706",
+											"Criminal_FlU-Nederland.pdf"
+										],
+										"type": "pdf"
+									},
+									"van_onderdeel.pdf": {
+										"name": "van_onderdeel.pdf",
+										"path": [
+											"KPCN",
+											"2014-23963171928072",
+											"DOSSIER-15365120872706",
+											"van_onderdeel.pdf"
+										],
+										"type": "pdf"
+									},
+									"OM_Bureau.pdf": {
+										"name": "OM_Bureau.pdf",
+										"path": [
+											"KPCN",
+											"2014-23963171928072",
+											"DOSSIER-15365120872706",
+											"OM_Bureau.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-16936314222085": {
+								"path": [
+									"KPCN",
+									"2014-23963171928072",
+									"DOSSIER-16936314222085"
+								],
+								"name": "DOSSIER-16936314222085",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"European_Inspectie.txt": {
+										"name": "European_Inspectie.txt",
+										"path": [
+											"KPCN",
+											"2014-23963171928072",
+											"DOSSIER-16936314222085",
+											"European_Inspectie.txt"
+										],
+										"type": "txt"
+									},
+									"EMM_en.txt": {
+										"name": "EMM_en.txt",
+										"path": [
+											"KPCN",
+											"2014-23963171928072",
+											"DOSSIER-16936314222085",
+											"EMM_en.txt"
+										],
+										"type": "txt"
+									},
+									"de_van.txt": {
+										"name": "de_van.txt",
+										"path": [
+											"KPCN",
+											"2014-23963171928072",
+											"DOSSIER-16936314222085",
+											"de_van.txt"
+										],
+										"type": "txt"
+									},
+									"van_de.txt": {
+										"name": "van_de.txt",
+										"path": [
+											"KPCN",
+											"2014-23963171928072",
+											"DOSSIER-16936314222085",
+											"van_de.txt"
+										],
+										"type": "txt"
+									},
+									"OM_gebouwd.pdf": {
+										"name": "OM_gebouwd.pdf",
+										"path": [
+											"KPCN",
+											"2014-23963171928072",
+											"DOSSIER-16936314222085",
+											"OM_gebouwd.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-1866472754350": {
+								"path": [
+									"KPCN",
+									"2014-23963171928072",
+									"DOSSIER-1866472754350"
+								],
+								"name": "DOSSIER-1866472754350",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"de_Bonaire..pdf": {
+										"name": "de_Bonaire..pdf",
+										"path": [
+											"KPCN",
+											"2014-23963171928072",
+											"DOSSIER-1866472754350",
+											"de_Bonaire..pdf"
+										],
+										"type": "pdf"
+									},
+									"orgaan_CWI.txt": {
+										"name": "orgaan_CWI.txt",
+										"path": [
+											"KPCN",
+											"2014-23963171928072",
+											"DOSSIER-1866472754350",
+											"orgaan_CWI.txt"
+										],
+										"type": "txt"
+									},
+									"AMLC_Infobox.txt": {
+										"name": "AMLC_Infobox.txt",
+										"path": [
+											"KPCN",
+											"2014-23963171928072",
+											"DOSSIER-1866472754350",
+											"AMLC_Infobox.txt"
+										],
+										"type": "txt"
+									},
+									"Opsporingsdienst_Parket,.txt": {
+										"name": "Opsporingsdienst_Parket,.txt",
+										"path": [
+											"KPCN",
+											"2014-23963171928072",
+											"DOSSIER-1866472754350",
+											"Opsporingsdienst_Parket,.txt"
+										],
+										"type": "txt"
+									},
+									"FIOD_gebouwd.txt": {
+										"name": "FIOD_gebouwd.txt",
+										"path": [
+											"KPCN",
+											"2014-23963171928072",
+											"DOSSIER-1866472754350",
+											"FIOD_gebouwd.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-68753150820940": {
+								"path": [
+									"KPCN",
+									"2014-23963171928072",
+									"DOSSIER-68753150820940"
+								],
+								"name": "DOSSIER-68753150820940",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"UNODC_Europese.pdf": {
+										"name": "UNODC_Europese.pdf",
+										"path": [
+											"KPCN",
+											"2014-23963171928072",
+											"DOSSIER-68753150820940",
+											"UNODC_Europese.pdf"
+										],
+										"type": "pdf"
+									},
+									"de_Unit.pdf": {
+										"name": "de_Unit.pdf",
+										"path": [
+											"KPCN",
+											"2014-23963171928072",
+											"DOSSIER-68753150820940",
+											"de_Unit.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"en_Dienst.txt": {
+								"name": "en_Dienst.txt",
+								"path": [
+									"KPCN",
+									"2014-23963171928072",
+									"en_Dienst.txt"
+								],
+								"type": "txt"
+							},
+							"binnen_en.pdf": {
+								"name": "binnen_en.pdf",
+								"path": [
+									"KPCN",
+									"2014-23963171928072",
+									"binnen_en.pdf"
+								],
+								"type": "pdf"
+							},
+							"de_F.txt": {
+								"name": "de_F.txt",
+								"path": [
+									"KPCN",
+									"2014-23963171928072",
+									"de_F.txt"
+								],
+								"type": "txt"
+							},
+							"Europese_Vermogen.pdf": {
+								"name": "Europese_Vermogen.pdf",
+								"path": [
+									"KPCN",
+									"2014-23963171928072",
+									"Europese_Vermogen.pdf"
+								],
+								"type": "pdf"
+							},
+							"Dienst_Laundering.pdf": {
+								"name": "Dienst_Laundering.pdf",
+								"path": [
+									"KPCN",
+									"2014-23963171928072",
+									"Dienst_Laundering.pdf"
+								],
+								"type": "pdf"
+							}
+						}
+					},
+					"Functioneel_ILTIOD.txt": {
+						"name": "Functioneel_ILTIOD.txt",
+						"path": [
+							"KPCN",
+							"Functioneel_ILTIOD.txt"
 						],
 						"type": "txt"
 					},
-					"invoice_1080p_exploit.txt": {
-						"name": "invoice_1080p_exploit.txt",
+					"Commissie,_en.pdf": {
+						"name": "Commissie,_en.pdf",
 						"path": [
 							"KPCN",
-							"invoice_1080p_exploit.txt"
+							"Commissie,_en.pdf"
 						],
-						"type": "txt"
+						"type": "pdf"
 					}
 				}
 			},
@@ -30061,1171 +30197,1353 @@
 				],
 				"name": "LIEC",
 				"type": "dir",
-				"locked": false,
+				"dirType": "normal",
 				"children": {
-					"1965-26751292564188": {
+					"1974-24583185117337": {
 						"path": [
 							"LIEC",
-							"1965-26751292564188"
+							"1974-24583185117337"
 						],
-						"name": "1965-26751292564188",
+						"name": "1974-24583185117337",
 						"type": "dir",
-						"locked": false,
+						"dirType": "normal",
 						"children": {
-							"DOSSIER-206142748421138": {
+							"DOSSIER-102772731528146": {
 								"path": [
 									"LIEC",
-									"1965-26751292564188",
-									"DOSSIER-206142748421138"
+									"1974-24583185117337",
+									"DOSSIER-102772731528146"
 								],
-								"name": "DOSSIER-206142748421138",
+								"name": "DOSSIER-102772731528146",
 								"type": "dir",
-								"locked": false,
+								"dirType": "normal",
 								"children": {
-									"customizable_thx_pants.txt": {
-										"name": "customizable_thx_pants.txt",
+									"organisatie_Landelijke.pdf": {
+										"name": "organisatie_Landelijke.pdf",
 										"path": [
 											"LIEC",
-											"1965-26751292564188",
-											"DOSSIER-206142748421138",
-											"customizable_thx_pants.txt"
-										],
-										"type": "txt"
-									},
-									"cotton.pdf": {
-										"name": "cotton.pdf",
-										"path": [
-											"LIEC",
-											"1965-26751292564188",
-											"DOSSIER-206142748421138",
-											"cotton.pdf"
+											"1974-24583185117337",
+											"DOSSIER-102772731528146",
+											"organisatie_Landelijke.pdf"
 										],
 										"type": "pdf"
 									},
-									"synthesize.pdf": {
-										"name": "synthesize.pdf",
+									"De_EU.txt": {
+										"name": "De_EU.txt",
 										"path": [
 											"LIEC",
-											"1965-26751292564188",
-											"DOSSIER-206142748421138",
-											"synthesize.pdf"
+											"1974-24583185117337",
+											"DOSSIER-102772731528146",
+											"De_EU.txt"
+										],
+										"type": "txt"
+									},
+									"Bonaire._Basisvoorziening.pdf": {
+										"name": "Bonaire._Basisvoorziening.pdf",
+										"path": [
+											"LIEC",
+											"1974-24583185117337",
+											"DOSSIER-102772731528146",
+											"Bonaire._Basisvoorziening.pdf"
 										],
 										"type": "pdf"
 									},
-									"concrete_assurance.txt": {
-										"name": "concrete_assurance.txt",
+									"Anti-Money_van.pdf": {
+										"name": "Anti-Money_van.pdf",
 										"path": [
 											"LIEC",
-											"1965-26751292564188",
-											"DOSSIER-206142748421138",
-											"concrete_assurance.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-255841287918113": {
-								"path": [
-									"LIEC",
-									"1965-26751292564188",
-									"DOSSIER-255841287918113"
-								],
-								"name": "DOSSIER-255841287918113",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"web_services_ram_hryvnia.txt": {
-										"name": "web_services_ram_hryvnia.txt",
-										"path": [
-											"LIEC",
-											"1965-26751292564188",
-											"DOSSIER-255841287918113",
-											"web_services_ram_hryvnia.txt"
-										],
-										"type": "txt"
-									},
-									"buckinghamshire_support.txt": {
-										"name": "buckinghamshire_support.txt",
-										"path": [
-											"LIEC",
-											"1965-26751292564188",
-											"DOSSIER-255841287918113",
-											"buckinghamshire_support.txt"
-										],
-										"type": "txt"
-									},
-									"beauty_impactful.txt": {
-										"name": "beauty_impactful.txt",
-										"path": [
-											"LIEC",
-											"1965-26751292564188",
-											"DOSSIER-255841287918113",
-											"beauty_impactful.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-29869950415009": {
-								"path": [
-									"LIEC",
-									"1965-26751292564188",
-									"DOSSIER-29869950415009"
-								],
-								"name": "DOSSIER-29869950415009",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"tennessee_reciprocal_french_southern_territories.txt": {
-										"name": "tennessee_reciprocal_french_southern_territories.txt",
-										"path": [
-											"LIEC",
-											"1965-26751292564188",
-											"DOSSIER-29869950415009",
-											"tennessee_reciprocal_french_southern_territories.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-312557297767": {
-								"path": [
-									"LIEC",
-									"1965-26751292564188",
-									"DOSSIER-312557297767"
-								],
-								"name": "DOSSIER-312557297767",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"paradigm_zero_defect.txt": {
-										"name": "paradigm_zero_defect.txt",
-										"path": [
-											"LIEC",
-											"1965-26751292564188",
-											"DOSSIER-312557297767",
-											"paradigm_zero_defect.txt"
-										],
-										"type": "txt"
-									},
-									"metrics.txt": {
-										"name": "metrics.txt",
-										"path": [
-											"LIEC",
-											"1965-26751292564188",
-											"DOSSIER-312557297767",
-											"metrics.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-768817906844": {
-								"path": [
-									"LIEC",
-									"1965-26751292564188",
-									"DOSSIER-768817906844"
-								],
-								"name": "DOSSIER-768817906844",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"frozen_alabama_turquoise.pdf": {
-										"name": "frozen_alabama_turquoise.pdf",
-										"path": [
-											"LIEC",
-											"1965-26751292564188",
-											"DOSSIER-768817906844",
-											"frozen_alabama_turquoise.pdf"
-										],
-										"type": "pdf"
-									},
-									"integration_generate.pdf": {
-										"name": "integration_generate.pdf",
-										"path": [
-											"LIEC",
-											"1965-26751292564188",
-											"DOSSIER-768817906844",
-											"integration_generate.pdf"
+											"1974-24583185117337",
+											"DOSSIER-102772731528146",
+											"Anti-Money_van.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"sleek_feed.pdf": {
-								"name": "sleek_feed.pdf",
+							"DOSSIER-1244686348": {
 								"path": [
 									"LIEC",
-									"1965-26751292564188",
-									"sleek_feed.pdf"
+									"1974-24583185117337",
+									"DOSSIER-1244686348"
 								],
-								"type": "pdf"
-							},
-							"iowa_redundant_administrator.txt": {
-								"name": "iowa_redundant_administrator.txt",
-								"path": [
-									"LIEC",
-									"1965-26751292564188",
-									"iowa_redundant_administrator.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"1979-28684847030834": {
-						"path": [
-							"LIEC",
-							"1979-28684847030834"
-						],
-						"name": "1979-28684847030834",
-						"type": "dir",
-						"locked": true,
-						"children": {
-							"DOSSIER-1468528063702": {
-								"path": [
-									"LIEC",
-									"1979-28684847030834",
-									"DOSSIER-1468528063702"
-								],
-								"name": "DOSSIER-1468528063702",
+								"name": "DOSSIER-1244686348",
 								"type": "dir",
-								"locked": false,
+								"dirType": "archive",
 								"children": {
-									"streamline_borders_netherlands_antillian_guilder.pdf": {
-										"name": "streamline_borders_netherlands_antillian_guilder.pdf",
+									"orgaan_proliferatiefmanciering..pdf": {
+										"name": "orgaan_proliferatiefmanciering..pdf",
 										"path": [
 											"LIEC",
-											"1979-28684847030834",
-											"DOSSIER-1468528063702",
-											"streamline_borders_netherlands_antillian_guilder.pdf"
+											"1974-24583185117337",
+											"DOSSIER-1244686348",
+											"orgaan_proliferatiefmanciering..pdf"
 										],
 										"type": "pdf"
 									},
-									"withdrawal.txt": {
-										"name": "withdrawal.txt",
+									"Programma_Financieel.txt": {
+										"name": "Programma_Financieel.txt",
 										"path": [
 											"LIEC",
-											"1979-28684847030834",
-											"DOSSIER-1468528063702",
-											"withdrawal.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-17068545816087": {
-								"path": [
-									"LIEC",
-									"1979-28684847030834",
-									"DOSSIER-17068545816087"
-								],
-								"name": "DOSSIER-17068545816087",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"consultant.pdf": {
-										"name": "consultant.pdf",
-										"path": [
-											"LIEC",
-											"1979-28684847030834",
-											"DOSSIER-17068545816087",
-											"consultant.pdf"
-										],
-										"type": "pdf"
-									},
-									"guyana_dollar_granite.pdf": {
-										"name": "guyana_dollar_granite.pdf",
-										"path": [
-											"LIEC",
-											"1979-28684847030834",
-											"DOSSIER-17068545816087",
-											"guyana_dollar_granite.pdf"
-										],
-										"type": "pdf"
-									},
-									"games.txt": {
-										"name": "games.txt",
-										"path": [
-											"LIEC",
-											"1979-28684847030834",
-											"DOSSIER-17068545816087",
-											"games.txt"
+											"1974-24583185117337",
+											"DOSSIER-1244686348",
+											"Programma_Financieel.txt"
 										],
 										"type": "txt"
 									},
-									"nebraska_consultant.txt": {
-										"name": "nebraska_consultant.txt",
+									"de_Administratieve.txt": {
+										"name": "de_Administratieve.txt",
 										"path": [
 											"LIEC",
-											"1979-28684847030834",
-											"DOSSIER-17068545816087",
-											"nebraska_consultant.txt"
+											"1974-24583185117337",
+											"DOSSIER-1244686348",
+											"de_Administratieve.txt"
 										],
 										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-30396243985899": {
-								"path": [
-									"LIEC",
-									"1979-28684847030834",
-									"DOSSIER-30396243985899"
-								],
-								"name": "DOSSIER-30396243985899",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"programmable.txt": {
-										"name": "programmable.txt",
+									},
+									"Force_CT.pdf": {
+										"name": "Force_CT.pdf",
 										"path": [
 											"LIEC",
-											"1979-28684847030834",
-											"DOSSIER-30396243985899",
-											"programmable.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-31584233614753": {
-								"path": [
-									"LIEC",
-									"1979-28684847030834",
-									"DOSSIER-31584233614753"
-								],
-								"name": "DOSSIER-31584233614753",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"unbranded_cotton_hat_one_to_one_borders.pdf": {
-										"name": "unbranded_cotton_hat_one_to_one_borders.pdf",
-										"path": [
-											"LIEC",
-											"1979-28684847030834",
-											"DOSSIER-31584233614753",
-											"unbranded_cotton_hat_one_to_one_borders.pdf"
+											"1974-24583185117337",
+											"DOSSIER-1244686348",
+											"Force_CT.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"DOSSIER-752146989361": {
+							"DOSSIER-21901303593768": {
 								"path": [
 									"LIEC",
-									"1979-28684847030834",
-									"DOSSIER-752146989361"
+									"1974-24583185117337",
+									"DOSSIER-21901303593768"
 								],
-								"name": "DOSSIER-752146989361",
+								"name": "DOSSIER-21901303593768",
 								"type": "dir",
-								"locked": true,
+								"dirType": "archive",
 								"children": {
-									"extensions_handmade_proactive.txt": {
-										"name": "extensions_handmade_proactive.txt",
+									"F_Incasso.txt": {
+										"name": "F_Incasso.txt",
 										"path": [
 											"LIEC",
-											"1979-28684847030834",
-											"DOSSIER-752146989361",
-											"extensions_handmade_proactive.txt"
-										],
-										"type": "txt"
-									},
-									"agent.txt": {
-										"name": "agent.txt",
-										"path": [
-											"LIEC",
-											"1979-28684847030834",
-											"DOSSIER-752146989361",
-											"agent.txt"
-										],
-										"type": "txt"
-									},
-									"connecting_plastic_ergonomic.pdf": {
-										"name": "connecting_plastic_ergonomic.pdf",
-										"path": [
-											"LIEC",
-											"1979-28684847030834",
-											"DOSSIER-752146989361",
-											"connecting_plastic_ergonomic.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"revolutionary_car_tcp.txt": {
-								"name": "revolutionary_car_tcp.txt",
-								"path": [
-									"LIEC",
-									"1979-28684847030834",
-									"revolutionary_car_tcp.txt"
-								],
-								"type": "txt"
-							},
-							"robust.txt": {
-								"name": "robust.txt",
-								"path": [
-									"LIEC",
-									"1979-28684847030834",
-									"robust.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"2001-8574142912438": {
-						"path": [
-							"LIEC",
-							"2001-8574142912438"
-						],
-						"name": "2001-8574142912438",
-						"type": "dir",
-						"locked": true,
-						"children": {
-							"DOSSIER-14753300847683": {
-								"path": [
-									"LIEC",
-									"2001-8574142912438",
-									"DOSSIER-14753300847683"
-								],
-								"name": "DOSSIER-14753300847683",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"concrete_relationships_regional.pdf": {
-										"name": "concrete_relationships_regional.pdf",
-										"path": [
-											"LIEC",
-											"2001-8574142912438",
-											"DOSSIER-14753300847683",
-											"concrete_relationships_regional.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-20652627226117": {
-								"path": [
-									"LIEC",
-									"2001-8574142912438",
-									"DOSSIER-20652627226117"
-								],
-								"name": "DOSSIER-20652627226117",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"nevada.txt": {
-										"name": "nevada.txt",
-										"path": [
-											"LIEC",
-											"2001-8574142912438",
-											"DOSSIER-20652627226117",
-											"nevada.txt"
+											"1974-24583185117337",
+											"DOSSIER-21901303593768",
+											"F_Incasso.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-291282050211865": {
+							"DOSSIER-239003024522571": {
 								"path": [
 									"LIEC",
-									"2001-8574142912438",
-									"DOSSIER-291282050211865"
+									"1974-24583185117337",
+									"DOSSIER-239003024522571"
 								],
-								"name": "DOSSIER-291282050211865",
+								"name": "DOSSIER-239003024522571",
 								"type": "dir",
-								"locked": false,
+								"dirType": "normal",
 								"children": {
-									"plastic.txt": {
-										"name": "plastic.txt",
+									"Informatie,_Opsporingsdienst.txt": {
+										"name": "Informatie,_Opsporingsdienst.txt",
 										"path": [
 											"LIEC",
-											"2001-8574142912438",
-											"DOSSIER-291282050211865",
-											"plastic.txt"
+											"1974-24583185117337",
+											"DOSSIER-239003024522571",
+											"Informatie,_Opsporingsdienst.txt"
 										],
 										"type": "txt"
 									},
-									"keyboard_bluetooth_back_end.pdf": {
-										"name": "keyboard_bluetooth_back_end.pdf",
+									"Money_eilanden.txt": {
+										"name": "Money_eilanden.txt",
 										"path": [
 											"LIEC",
-											"2001-8574142912438",
-											"DOSSIER-291282050211865",
-											"keyboard_bluetooth_back_end.pdf"
-										],
-										"type": "pdf"
-									},
-									"indiana.txt": {
-										"name": "indiana.txt",
-										"path": [
-											"LIEC",
-											"2001-8574142912438",
-											"DOSSIER-291282050211865",
-											"indiana.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-5874770217078": {
-								"path": [
-									"LIEC",
-									"2001-8574142912438",
-									"DOSSIER-5874770217078"
-								],
-								"name": "DOSSIER-5874770217078",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"solid_state_division.txt": {
-										"name": "solid_state_division.txt",
-										"path": [
-											"LIEC",
-											"2001-8574142912438",
-											"DOSSIER-5874770217078",
-											"solid_state_division.txt"
+											"1974-24583185117337",
+											"DOSSIER-239003024522571",
+											"Money_eilanden.txt"
 										],
 										"type": "txt"
 									},
-									"bike_strategic_jewelery.pdf": {
-										"name": "bike_strategic_jewelery.pdf",
+									"Parket,_CN.pdf": {
+										"name": "Parket,_CN.pdf",
 										"path": [
 											"LIEC",
-											"2001-8574142912438",
-											"DOSSIER-5874770217078",
-											"bike_strategic_jewelery.pdf"
+											"1974-24583185117337",
+											"DOSSIER-239003024522571",
+											"Parket,_CN.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"DOSSIER-82612819423008": {
+							"DOSSIER-48712691313432": {
 								"path": [
 									"LIEC",
-									"2001-8574142912438",
-									"DOSSIER-82612819423008"
+									"1974-24583185117337",
+									"DOSSIER-48712691313432"
 								],
-								"name": "DOSSIER-82612819423008",
+								"name": "DOSSIER-48712691313432",
 								"type": "dir",
-								"locked": true,
+								"dirType": "locked",
 								"children": {
-									"http_sleek_steel_fish.txt": {
-										"name": "http_sleek_steel_fish.txt",
+									"Anti_en.pdf": {
+										"name": "Anti_en.pdf",
 										"path": [
 											"LIEC",
-											"2001-8574142912438",
-											"DOSSIER-82612819423008",
-											"http_sleek_steel_fish.txt"
-										],
-										"type": "txt"
-									},
-									"representative.pdf": {
-										"name": "representative.pdf",
-										"path": [
-											"LIEC",
-											"2001-8574142912438",
-											"DOSSIER-82612819423008",
-											"representative.pdf"
+											"1974-24583185117337",
+											"DOSSIER-48712691313432",
+											"Anti_en.pdf"
 										],
 										"type": "pdf"
 									},
-									"usability_parsing.pdf": {
-										"name": "usability_parsing.pdf",
+									"CJIB_Eenheid.pdf": {
+										"name": "CJIB_Eenheid.pdf",
 										"path": [
 											"LIEC",
-											"2001-8574142912438",
-											"DOSSIER-82612819423008",
-											"usability_parsing.pdf"
+											"1974-24583185117337",
+											"DOSSIER-48712691313432",
+											"CJIB_Eenheid.pdf"
 										],
 										"type": "pdf"
 									},
-									"customer_bypass_mews.txt": {
-										"name": "customer_bypass_mews.txt",
+									"Multidisciplinary_De.txt": {
+										"name": "Multidisciplinary_De.txt",
 										"path": [
 											"LIEC",
-											"2001-8574142912438",
-											"DOSSIER-82612819423008",
-											"customer_bypass_mews.txt"
+											"1974-24583185117337",
+											"DOSSIER-48712691313432",
+											"Multidisciplinary_De.txt"
 										],
 										"type": "txt"
+									},
+									"EU_de.pdf": {
+										"name": "EU_de.pdf",
+										"path": [
+											"LIEC",
+											"1974-24583185117337",
+											"DOSSIER-48712691313432",
+											"EU_de.pdf"
+										],
+										"type": "pdf"
 									}
 								}
 							},
-							"scalable.pdf": {
-								"name": "scalable.pdf",
+							"Opsporingsdienst_Mensenhandel.pdf": {
+								"name": "Opsporingsdienst_Mensenhandel.pdf",
 								"path": [
 									"LIEC",
-									"2001-8574142912438",
-									"scalable.pdf"
-								],
-								"type": "pdf"
-							},
-							"tonga_berkshire.txt": {
-								"name": "tonga_berkshire.txt",
-								"path": [
-									"LIEC",
-									"2001-8574142912438",
-									"tonga_berkshire.txt"
-								],
-								"type": "txt"
-							},
-							"withdrawal.pdf": {
-								"name": "withdrawal.pdf",
-								"path": [
-									"LIEC",
-									"2001-8574142912438",
-									"withdrawal.pdf"
+									"1974-24583185117337",
+									"Opsporingsdienst_Mensenhandel.pdf"
 								],
 								"type": "pdf"
 							}
 						}
 					},
-					"2010-166791429023309": {
+					"1977-11808191218429": {
 						"path": [
 							"LIEC",
-							"2010-166791429023309"
+							"1977-11808191218429"
 						],
-						"name": "2010-166791429023309",
+						"name": "1977-11808191218429",
 						"type": "dir",
-						"locked": true,
+						"dirType": "archive",
 						"children": {
-							"DOSSIER-1147190618237": {
+							"DOSSIER-16492307689165": {
 								"path": [
 									"LIEC",
-									"2010-166791429023309",
-									"DOSSIER-1147190618237"
+									"1977-11808191218429",
+									"DOSSIER-16492307689165"
 								],
-								"name": "DOSSIER-1147190618237",
+								"name": "DOSSIER-16492307689165",
 								"type": "dir",
-								"locked": true,
+								"dirType": "locked",
 								"children": {
-									"visualize_director.pdf": {
-										"name": "visualize_director.pdf",
+									"Government_eilanden.txt": {
+										"name": "Government_eilanden.txt",
 										"path": [
 											"LIEC",
-											"2010-166791429023309",
-											"DOSSIER-1147190618237",
-											"visualize_director.pdf"
+											"1977-11808191218429",
+											"DOSSIER-16492307689165",
+											"Government_eilanden.txt"
 										],
-										"type": "pdf"
+										"type": "txt"
 									},
-									"networks_rustic_savings_account.txt": {
-										"name": "networks_rustic_savings_account.txt",
+									"interne_binnen.txt": {
+										"name": "interne_binnen.txt",
 										"path": [
 											"LIEC",
-											"2010-166791429023309",
-											"DOSSIER-1147190618237",
-											"networks_rustic_savings_account.txt"
+											"1977-11808191218429",
+											"DOSSIER-16492307689165",
+											"interne_binnen.txt"
+										],
+										"type": "txt"
+									},
+									"Force_het.txt": {
+										"name": "Force_het.txt",
+										"path": [
+											"LIEC",
+											"1977-11808191218429",
+											"DOSSIER-16492307689165",
+											"Force_het.txt"
+										],
+										"type": "txt"
+									},
+									"de_ESW.txt": {
+										"name": "de_ESW.txt",
+										"path": [
+											"LIEC",
+											"1977-11808191218429",
+											"DOSSIER-16492307689165",
+											"de_ESW.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-16115192114637": {
+							"DOSSIER-19255723612041": {
 								"path": [
 									"LIEC",
-									"2010-166791429023309",
-									"DOSSIER-16115192114637"
+									"1977-11808191218429",
+									"DOSSIER-19255723612041"
 								],
-								"name": "DOSSIER-16115192114637",
+								"name": "DOSSIER-19255723612041",
 								"type": "dir",
-								"locked": false,
+								"dirType": "normal",
 								"children": {
-									"auto_loan_account_avon_cotton.txt": {
-										"name": "auto_loan_account_avon_cotton.txt",
+									"Economische_Laundering..txt": {
+										"name": "Economische_Laundering..txt",
 										"path": [
 											"LIEC",
-											"2010-166791429023309",
-											"DOSSIER-16115192114637",
-											"auto_loan_account_avon_cotton.txt"
+											"1977-11808191218429",
+											"DOSSIER-19255723612041",
+											"Economische_Laundering..txt"
 										],
 										"type": "txt"
 									},
-									"licensed_plastic.pdf": {
-										"name": "licensed_plastic.pdf",
+									"FAT_FIU.txt": {
+										"name": "FAT_FIU.txt",
 										"path": [
 											"LIEC",
-											"2010-166791429023309",
-											"DOSSIER-16115192114637",
-											"licensed_plastic.pdf"
+											"1977-11808191218429",
+											"DOSSIER-19255723612041",
+											"FAT_FIU.txt"
+										],
+										"type": "txt"
+									},
+									"Expertisecentrum_Intelligence.pdf": {
+										"name": "Expertisecentrum_Intelligence.pdf",
+										"path": [
+											"LIEC",
+											"1977-11808191218429",
+											"DOSSIER-19255723612041",
+											"Expertisecentrum_Intelligence.pdf"
 										],
 										"type": "pdf"
 									},
-									"agent_architect_indigo.txt": {
-										"name": "agent_architect_indigo.txt",
+									"BVI_Inspectie.txt": {
+										"name": "BVI_Inspectie.txt",
 										"path": [
 											"LIEC",
-											"2010-166791429023309",
-											"DOSSIER-16115192114637",
-											"agent_architect_indigo.txt"
+											"1977-11808191218429",
+											"DOSSIER-19255723612041",
+											"BVI_Inspectie.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-311823087925745": {
+							"DOSSIER-24666154531952": {
 								"path": [
 									"LIEC",
-									"2010-166791429023309",
-									"DOSSIER-311823087925745"
+									"1977-11808191218429",
+									"DOSSIER-24666154531952"
 								],
-								"name": "DOSSIER-311823087925745",
+								"name": "DOSSIER-24666154531952",
 								"type": "dir",
-								"locked": false,
+								"dirType": "normal",
 								"children": {
-									"arkansas.pdf": {
-										"name": "arkansas.pdf",
+									"Intelligence_een.pdf": {
+										"name": "Intelligence_een.pdf",
 										"path": [
 											"LIEC",
-											"2010-166791429023309",
-											"DOSSIER-311823087925745",
-											"arkansas.pdf"
+											"1977-11808191218429",
+											"DOSSIER-24666154531952",
+											"Intelligence_een.pdf"
 										],
 										"type": "pdf"
 									},
-									"ivory_sausages.pdf": {
-										"name": "ivory_sausages.pdf",
+									"van_Landelijke.txt": {
+										"name": "van_Landelijke.txt",
 										"path": [
 											"LIEC",
-											"2010-166791429023309",
-											"DOSSIER-311823087925745",
-											"ivory_sausages.pdf"
+											"1977-11808191218429",
+											"DOSSIER-24666154531952",
+											"van_Landelijke.txt"
+										],
+										"type": "txt"
+									},
+									"de_FIOD.pdf": {
+										"name": "de_FIOD.pdf",
+										"path": [
+											"LIEC",
+											"1977-11808191218429",
+											"DOSSIER-24666154531952",
+											"de_FIOD.pdf"
 										],
 										"type": "pdf"
 									},
-									"program_district.pdf": {
-										"name": "program_district.pdf",
+									"Basisvoorziening_CTEPF.txt": {
+										"name": "Basisvoorziening_CTEPF.txt",
 										"path": [
 											"LIEC",
-											"2010-166791429023309",
-											"DOSSIER-311823087925745",
-											"program_district.pdf"
-										],
-										"type": "pdf"
-									},
-									"east_caribbean_dollar.txt": {
-										"name": "east_caribbean_dollar.txt",
-										"path": [
-											"LIEC",
-											"2010-166791429023309",
-											"DOSSIER-311823087925745",
-											"east_caribbean_dollar.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-320892646731485": {
-								"path": [
-									"LIEC",
-									"2010-166791429023309",
-									"DOSSIER-320892646731485"
-								],
-								"name": "DOSSIER-320892646731485",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"clothing_handcrafted_steel_chips_fresh.txt": {
-										"name": "clothing_handcrafted_steel_chips_fresh.txt",
-										"path": [
-											"LIEC",
-											"2010-166791429023309",
-											"DOSSIER-320892646731485",
-											"clothing_handcrafted_steel_chips_fresh.txt"
+											"1977-11808191218429",
+											"DOSSIER-24666154531952",
+											"Basisvoorziening_CTEPF.txt"
 										],
 										"type": "txt"
 									},
-									"bike_uganda.txt": {
-										"name": "bike_uganda.txt",
+									"EMPACT_de.pdf": {
+										"name": "EMPACT_de.pdf",
 										"path": [
 											"LIEC",
-											"2010-166791429023309",
-											"DOSSIER-320892646731485",
-											"bike_uganda.txt"
-										],
-										"type": "txt"
-									},
-									"canadian_dollar_payment.txt": {
-										"name": "canadian_dollar_payment.txt",
-										"path": [
-											"LIEC",
-											"2010-166791429023309",
-											"DOSSIER-320892646731485",
-											"canadian_dollar_payment.txt"
-										],
-										"type": "txt"
-									},
-									"integrate_home_loan_account_mesh.pdf": {
-										"name": "integrate_home_loan_account_mesh.pdf",
-										"path": [
-											"LIEC",
-											"2010-166791429023309",
-											"DOSSIER-320892646731485",
-											"integrate_home_loan_account_mesh.pdf"
+											"1977-11808191218429",
+											"DOSSIER-24666154531952",
+											"EMPACT_de.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"DOSSIER-498873517571": {
+							"DOSSIER-305243062425712": {
 								"path": [
 									"LIEC",
-									"2010-166791429023309",
-									"DOSSIER-498873517571"
+									"1977-11808191218429",
+									"DOSSIER-305243062425712"
 								],
-								"name": "DOSSIER-498873517571",
+								"name": "DOSSIER-305243062425712",
 								"type": "dir",
-								"locked": false,
+								"dirType": "archive",
 								"children": {
-									"azure.txt": {
-										"name": "azure.txt",
+									"Financial_en.txt": {
+										"name": "Financial_en.txt",
 										"path": [
 											"LIEC",
-											"2010-166791429023309",
-											"DOSSIER-498873517571",
-											"azure.txt"
-										],
-										"type": "txt"
-									},
-									"automotive_gorgeous_steel_soap_roads.txt": {
-										"name": "automotive_gorgeous_steel_soap_roads.txt",
-										"path": [
-											"LIEC",
-											"2010-166791429023309",
-											"DOSSIER-498873517571",
-											"automotive_gorgeous_steel_soap_roads.txt"
-										],
-										"type": "txt"
-									},
-									"plastic_down_sized.txt": {
-										"name": "plastic_down_sized.txt",
-										"path": [
-											"LIEC",
-											"2010-166791429023309",
-											"DOSSIER-498873517571",
-											"plastic_down_sized.txt"
-										],
-										"type": "txt"
-									},
-									"practical_rubber_ball_soft.txt": {
-										"name": "practical_rubber_ball_soft.txt",
-										"path": [
-											"LIEC",
-											"2010-166791429023309",
-											"DOSSIER-498873517571",
-											"practical_rubber_ball_soft.txt"
-										],
-										"type": "txt"
-									},
-									"chief_unbranded.txt": {
-										"name": "chief_unbranded.txt",
-										"path": [
-											"LIEC",
-											"2010-166791429023309",
-											"DOSSIER-498873517571",
-											"chief_unbranded.txt"
+											"1977-11808191218429",
+											"DOSSIER-305243062425712",
+											"Financial_en.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"system_worthy_credit_card_account_investment_account.pdf": {
-								"name": "system_worthy_credit_card_account_investment_account.pdf",
+							"DOSSIER-4514245696312": {
 								"path": [
 									"LIEC",
-									"2010-166791429023309",
-									"system_worthy_credit_card_account_investment_account.pdf"
+									"1977-11808191218429",
+									"DOSSIER-4514245696312"
 								],
-								"type": "pdf"
-							},
-							"product.txt": {
-								"name": "product.txt",
-								"path": [
-									"LIEC",
-									"2010-166791429023309",
-									"product.txt"
-								],
-								"type": "txt"
-							},
-							"credit_card_account.pdf": {
-								"name": "credit_card_account.pdf",
-								"path": [
-									"LIEC",
-									"2010-166791429023309",
-									"credit_card_account.pdf"
-								],
-								"type": "pdf"
-							}
-						}
-					},
-					"2012-2528654129694": {
-						"path": [
-							"LIEC",
-							"2012-2528654129694"
-						],
-						"name": "2012-2528654129694",
-						"type": "dir",
-						"locked": true,
-						"children": {
-							"DOSSIER-256562406888": {
-								"path": [
-									"LIEC",
-									"2012-2528654129694",
-									"DOSSIER-256562406888"
-								],
-								"name": "DOSSIER-256562406888",
+								"name": "DOSSIER-4514245696312",
 								"type": "dir",
-								"locked": true,
+								"dirType": "normal",
 								"children": {
-									"fantastic_georgia.txt": {
-										"name": "fantastic_georgia.txt",
+									"Economische_Laundering.pdf": {
+										"name": "Economische_Laundering.pdf",
 										"path": [
 											"LIEC",
-											"2012-2528654129694",
-											"DOSSIER-256562406888",
-											"fantastic_georgia.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-322481234018905": {
-								"path": [
-									"LIEC",
-									"2012-2528654129694",
-									"DOSSIER-322481234018905"
-								],
-								"name": "DOSSIER-322481234018905",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"withdrawal.txt": {
-										"name": "withdrawal.txt",
-										"path": [
-											"LIEC",
-											"2012-2528654129694",
-											"DOSSIER-322481234018905",
-											"withdrawal.txt"
-										],
-										"type": "txt"
-									},
-									"open_source_vertical_intranet.txt": {
-										"name": "open_source_vertical_intranet.txt",
-										"path": [
-											"LIEC",
-											"2012-2528654129694",
-											"DOSSIER-322481234018905",
-											"open_source_vertical_intranet.txt"
-										],
-										"type": "txt"
-									},
-									"copying_sensor.txt": {
-										"name": "copying_sensor.txt",
-										"path": [
-											"LIEC",
-											"2012-2528654129694",
-											"DOSSIER-322481234018905",
-											"copying_sensor.txt"
-										],
-										"type": "txt"
-									},
-									"organic_transmitting_one_to_one.txt": {
-										"name": "organic_transmitting_one_to_one.txt",
-										"path": [
-											"LIEC",
-											"2012-2528654129694",
-											"DOSSIER-322481234018905",
-											"organic_transmitting_one_to_one.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-378383826787": {
-								"path": [
-									"LIEC",
-									"2012-2528654129694",
-									"DOSSIER-378383826787"
-								],
-								"name": "DOSSIER-378383826787",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"payment.txt": {
-										"name": "payment.txt",
-										"path": [
-											"LIEC",
-											"2012-2528654129694",
-											"DOSSIER-378383826787",
-											"payment.txt"
-										],
-										"type": "txt"
-									},
-									"matrix_quantifying.pdf": {
-										"name": "matrix_quantifying.pdf",
-										"path": [
-											"LIEC",
-											"2012-2528654129694",
-											"DOSSIER-378383826787",
-											"matrix_quantifying.pdf"
+											"1977-11808191218429",
+											"DOSSIER-4514245696312",
+											"Economische_Laundering.pdf"
 										],
 										"type": "pdf"
 									},
-									"ai_metal.txt": {
-										"name": "ai_metal.txt",
+									"Money_ESW.pdf": {
+										"name": "Money_ESW.pdf",
 										"path": [
 											"LIEC",
-											"2012-2528654129694",
-											"DOSSIER-378383826787",
-											"ai_metal.txt"
+											"1977-11808191218429",
+											"DOSSIER-4514245696312",
+											"Money_ESW.pdf"
+										],
+										"type": "pdf"
+									},
+									"Financieel_Task.txt": {
+										"name": "Financieel_Task.txt",
+										"path": [
+											"LIEC",
+											"1977-11808191218429",
+											"DOSSIER-4514245696312",
+											"Financieel_Task.txt"
 										],
 										"type": "txt"
 									},
-									"solid_state.txt": {
-										"name": "solid_state.txt",
+									"de_Informatie,.txt": {
+										"name": "de_Informatie,.txt",
 										"path": [
 											"LIEC",
-											"2012-2528654129694",
-											"DOSSIER-378383826787",
-											"solid_state.txt"
+											"1977-11808191218429",
+											"DOSSIER-4514245696312",
+											"de_Informatie,.txt"
 										],
 										"type": "txt"
 									},
-									"sharable_corner_executive.txt": {
-										"name": "sharable_corner_executive.txt",
+									"Commissie,_Centrum.pdf": {
+										"name": "Commissie,_Centrum.pdf",
 										"path": [
 											"LIEC",
-											"2012-2528654129694",
-											"DOSSIER-378383826787",
-											"sharable_corner_executive.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-3981887218233": {
-								"path": [
-									"LIEC",
-									"2012-2528654129694",
-									"DOSSIER-3981887218233"
-								],
-								"name": "DOSSIER-3981887218233",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"syrian_pound_cheese_teal.txt": {
-										"name": "syrian_pound_cheese_teal.txt",
-										"path": [
-											"LIEC",
-											"2012-2528654129694",
-											"DOSSIER-3981887218233",
-											"syrian_pound_cheese_teal.txt"
-										],
-										"type": "txt"
-									},
-									"content_based_3rd_generation_haptic.txt": {
-										"name": "content_based_3rd_generation_haptic.txt",
-										"path": [
-											"LIEC",
-											"2012-2528654129694",
-											"DOSSIER-3981887218233",
-											"content_based_3rd_generation_haptic.txt"
-										],
-										"type": "txt"
-									},
-									"functionalities_heard_island_and_mcdonald_islands_mobile.txt": {
-										"name": "functionalities_heard_island_and_mcdonald_islands_mobile.txt",
-										"path": [
-											"LIEC",
-											"2012-2528654129694",
-											"DOSSIER-3981887218233",
-											"functionalities_heard_island_and_mcdonald_islands_mobile.txt"
-										],
-										"type": "txt"
-									},
-									"circles.txt": {
-										"name": "circles.txt",
-										"path": [
-											"LIEC",
-											"2012-2528654129694",
-											"DOSSIER-3981887218233",
-											"circles.txt"
-										],
-										"type": "txt"
-									},
-									"input_concrete.pdf": {
-										"name": "input_concrete.pdf",
-										"path": [
-											"LIEC",
-											"2012-2528654129694",
-											"DOSSIER-3981887218233",
-											"input_concrete.pdf"
+											"1977-11808191218429",
+											"DOSSIER-4514245696312",
+											"Commissie,_Centrum.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"DOSSIER-6030120155740": {
+							"Parket,_F.txt": {
+								"name": "Parket,_F.txt",
 								"path": [
 									"LIEC",
-									"2012-2528654129694",
-									"DOSSIER-6030120155740"
-								],
-								"name": "DOSSIER-6030120155740",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"incremental.txt": {
-										"name": "incremental.txt",
-										"path": [
-											"LIEC",
-											"2012-2528654129694",
-											"DOSSIER-6030120155740",
-											"incremental.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"west_virginia.txt": {
-								"name": "west_virginia.txt",
-								"path": [
-									"LIEC",
-									"2012-2528654129694",
-									"west_virginia.txt"
+									"1977-11808191218429",
+									"Parket,_F.txt"
 								],
 								"type": "txt"
 							}
 						}
 					},
-					"e_tailers_back_up.txt": {
-						"name": "e_tailers_back_up.txt",
+					"1986-324411930516589": {
 						"path": [
 							"LIEC",
-							"e_tailers_back_up.txt"
+							"1986-324411930516589"
+						],
+						"name": "1986-324411930516589",
+						"type": "dir",
+						"dirType": "locked",
+						"children": {
+							"DOSSIER-198451903129933": {
+								"path": [
+									"LIEC",
+									"1986-324411930516589",
+									"DOSSIER-198451903129933"
+								],
+								"name": "DOSSIER-198451903129933",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"ESW_Expertisecentrum.txt": {
+										"name": "ESW_Expertisecentrum.txt",
+										"path": [
+											"LIEC",
+											"1986-324411930516589",
+											"DOSSIER-198451903129933",
+											"ESW_Expertisecentrum.txt"
+										],
+										"type": "txt"
+									},
+									"Expertisecentrum_Inspectie.pdf": {
+										"name": "Expertisecentrum_Inspectie.pdf",
+										"path": [
+											"LIEC",
+											"1986-324411930516589",
+											"DOSSIER-198451903129933",
+											"Expertisecentrum_Inspectie.pdf"
+										],
+										"type": "pdf"
+									},
+									"Infobox_Laundering..txt": {
+										"name": "Infobox_Laundering..txt",
+										"path": [
+											"LIEC",
+											"1986-324411930516589",
+											"DOSSIER-198451903129933",
+											"Infobox_Laundering..txt"
+										],
+										"type": "txt"
+									},
+									"Intelligence_de.txt": {
+										"name": "Intelligence_de.txt",
+										"path": [
+											"LIEC",
+											"1986-324411930516589",
+											"DOSSIER-198451903129933",
+											"Intelligence_de.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-22222176577349": {
+								"path": [
+									"LIEC",
+									"1986-324411930516589",
+									"DOSSIER-22222176577349"
+								],
+								"name": "DOSSIER-22222176577349",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"en_Centraal.txt": {
+										"name": "en_Centraal.txt",
+										"path": [
+											"LIEC",
+											"1986-324411930516589",
+											"DOSSIER-22222176577349",
+											"en_Centraal.txt"
+										],
+										"type": "txt"
+									},
+									"Infobox_Mensenhandel.txt": {
+										"name": "Infobox_Mensenhandel.txt",
+										"path": [
+											"LIEC",
+											"1986-324411930516589",
+											"DOSSIER-22222176577349",
+											"Infobox_Mensenhandel.txt"
+										],
+										"type": "txt"
+									},
+									"ESW_Expertise.txt": {
+										"name": "ESW_Expertise.txt",
+										"path": [
+											"LIEC",
+											"1986-324411930516589",
+											"DOSSIER-22222176577349",
+											"ESW_Expertise.txt"
+										],
+										"type": "txt"
+									},
+									"Mensenhandel_Bureau.pdf": {
+										"name": "Mensenhandel_Bureau.pdf",
+										"path": [
+											"LIEC",
+											"1986-324411930516589",
+											"DOSSIER-22222176577349",
+											"Mensenhandel_Bureau.pdf"
+										],
+										"type": "pdf"
+									},
+									"Toezicht_Anti.txt": {
+										"name": "Toezicht_Anti.txt",
+										"path": [
+											"LIEC",
+											"1986-324411930516589",
+											"DOSSIER-22222176577349",
+											"Toezicht_Anti.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-2265691467414": {
+								"path": [
+									"LIEC",
+									"1986-324411930516589",
+									"DOSSIER-2265691467414"
+								],
+								"name": "DOSSIER-2265691467414",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Financial_Informatie,.txt": {
+										"name": "Financial_Informatie,.txt",
+										"path": [
+											"LIEC",
+											"1986-324411930516589",
+											"DOSSIER-2265691467414",
+											"Financial_Informatie,.txt"
+										],
+										"type": "txt"
+									},
+									"_CWI.txt": {
+										"name": "_CWI.txt",
+										"path": [
+											"LIEC",
+											"1986-324411930516589",
+											"DOSSIER-2265691467414",
+											"_CWI.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-305443243210230": {
+								"path": [
+									"LIEC",
+									"1986-324411930516589",
+									"DOSSIER-305443243210230"
+								],
+								"name": "DOSSIER-305443243210230",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"CTEPF_en.pdf": {
+										"name": "CTEPF_en.pdf",
+										"path": [
+											"LIEC",
+											"1986-324411930516589",
+											"DOSSIER-305443243210230",
+											"CTEPF_en.pdf"
+										],
+										"type": "pdf"
+									},
+									"Dienst_gemeente.txt": {
+										"name": "Dienst_gemeente.txt",
+										"path": [
+											"LIEC",
+											"1986-324411930516589",
+											"DOSSIER-305443243210230",
+											"Dienst_gemeente.txt"
+										],
+										"type": "txt"
+									},
+									"Administratieve_Nederlandsche.pdf": {
+										"name": "Administratieve_Nederlandsche.pdf",
+										"path": [
+											"LIEC",
+											"1986-324411930516589",
+											"DOSSIER-305443243210230",
+											"Administratieve_Nederlandsche.pdf"
+										],
+										"type": "pdf"
+									},
+									"UNODC_ICT.pdf": {
+										"name": "UNODC_ICT.pdf",
+										"path": [
+											"LIEC",
+											"1986-324411930516589",
+											"DOSSIER-305443243210230",
+											"UNODC_ICT.pdf"
+										],
+										"type": "pdf"
+									},
+									"politie_UNODC.txt": {
+										"name": "politie_UNODC.txt",
+										"path": [
+											"LIEC",
+											"1986-324411930516589",
+											"DOSSIER-305443243210230",
+											"politie_UNODC.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-8907474412335": {
+								"path": [
+									"LIEC",
+									"1986-324411930516589",
+									"DOSSIER-8907474412335"
+								],
+								"name": "DOSSIER-8907474412335",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"onderdeel_De.txt": {
+										"name": "onderdeel_De.txt",
+										"path": [
+											"LIEC",
+											"1986-324411930516589",
+											"DOSSIER-8907474412335",
+											"onderdeel_De.txt"
+										],
+										"type": "txt"
+									},
+									"Landelijke_FinanciÃ«le.txt": {
+										"name": "Landelijke_FinanciÃ«le.txt",
+										"path": [
+											"LIEC",
+											"1986-324411930516589",
+											"DOSSIER-8907474412335",
+											"Landelijke_FinanciÃ«le.txt"
+										],
+										"type": "txt"
+									},
+									"een_Laundering..txt": {
+										"name": "een_Laundering..txt",
+										"path": [
+											"LIEC",
+											"1986-324411930516589",
+											"DOSSIER-8907474412335",
+											"een_Laundering..txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"de_Caribisch.pdf": {
+								"name": "de_Caribisch.pdf",
+								"path": [
+									"LIEC",
+									"1986-324411930516589",
+									"de_Caribisch.pdf"
+								],
+								"type": "pdf"
+							},
+							"Action_Opsporingsdienst.pdf": {
+								"name": "Action_Opsporingsdienst.pdf",
+								"path": [
+									"LIEC",
+									"1986-324411930516589",
+									"Action_Opsporingsdienst.pdf"
+								],
+								"type": "pdf"
+							},
+							"Incasso_EU.txt": {
+								"name": "Incasso_EU.txt",
+								"path": [
+									"LIEC",
+									"1986-324411930516589",
+									"Incasso_EU.txt"
+								],
+								"type": "txt"
+							}
+						}
+					},
+					"2004-123841672216305": {
+						"path": [
+							"LIEC",
+							"2004-123841672216305"
+						],
+						"name": "2004-123841672216305",
+						"type": "dir",
+						"dirType": "archive",
+						"children": {
+							"DOSSIER-153671170927127": {
+								"path": [
+									"LIEC",
+									"2004-123841672216305",
+									"DOSSIER-153671170927127"
+								],
+								"name": "DOSSIER-153671170927127",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"CT_DLR.txt": {
+										"name": "CT_DLR.txt",
+										"path": [
+											"LIEC",
+											"2004-123841672216305",
+											"DOSSIER-153671170927127",
+											"CT_DLR.txt"
+										],
+										"type": "txt"
+									},
+									"onderdeel_Financial.pdf": {
+										"name": "onderdeel_Financial.pdf",
+										"path": [
+											"LIEC",
+											"2004-123841672216305",
+											"DOSSIER-153671170927127",
+											"onderdeel_Financial.pdf"
+										],
+										"type": "pdf"
+									},
+									"FinanciÃ«le_van.txt": {
+										"name": "FinanciÃ«le_van.txt",
+										"path": [
+											"LIEC",
+											"2004-123841672216305",
+											"DOSSIER-153671170927127",
+											"FinanciÃ«le_van.txt"
+										],
+										"type": "txt"
+									},
+									"A01C_Caribisch.txt": {
+										"name": "A01C_Caribisch.txt",
+										"path": [
+											"LIEC",
+											"2004-123841672216305",
+											"DOSSIER-153671170927127",
+											"A01C_Caribisch.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-164423109025294": {
+								"path": [
+									"LIEC",
+									"2004-123841672216305",
+									"DOSSIER-164423109025294"
+								],
+								"name": "DOSSIER-164423109025294",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Crimineel_politie.pdf": {
+										"name": "Crimineel_politie.pdf",
+										"path": [
+											"LIEC",
+											"2004-123841672216305",
+											"DOSSIER-164423109025294",
+											"Crimineel_politie.pdf"
+										],
+										"type": "pdf"
+									},
+									"CJIB_Criminaliteit.txt": {
+										"name": "CJIB_Criminaliteit.txt",
+										"path": [
+											"LIEC",
+											"2004-123841672216305",
+											"DOSSIER-164423109025294",
+											"CJIB_Criminaliteit.txt"
+										],
+										"type": "txt"
+									},
+									"Platform_Inspectie.txt": {
+										"name": "Platform_Inspectie.txt",
+										"path": [
+											"LIEC",
+											"2004-123841672216305",
+											"DOSSIER-164423109025294",
+											"Platform_Inspectie.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-2912892614832": {
+								"path": [
+									"LIEC",
+									"2004-123841672216305",
+									"DOSSIER-2912892614832"
+								],
+								"name": "DOSSIER-2912892614832",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"en_Amsterdam.txt": {
+										"name": "en_Amsterdam.txt",
+										"path": [
+											"LIEC",
+											"2004-123841672216305",
+											"DOSSIER-2912892614832",
+											"en_Amsterdam.txt"
+										],
+										"type": "txt"
+									},
+									"van_Europese.pdf": {
+										"name": "van_Europese.pdf",
+										"path": [
+											"LIEC",
+											"2004-123841672216305",
+											"DOSSIER-2912892614832",
+											"van_Europese.pdf"
+										],
+										"type": "pdf"
+									},
+									"Financieel_FinanciÃ«le.txt": {
+										"name": "Financieel_FinanciÃ«le.txt",
+										"path": [
+											"LIEC",
+											"2004-123841672216305",
+											"DOSSIER-2912892614832",
+											"Financieel_FinanciÃ«le.txt"
+										],
+										"type": "txt"
+									},
+									"en_Inlichtingen-.txt": {
+										"name": "en_Inlichtingen-.txt",
+										"path": [
+											"LIEC",
+											"2004-123841672216305",
+											"DOSSIER-2912892614832",
+											"en_Inlichtingen-.txt"
+										],
+										"type": "txt"
+									},
+									"Basisvoorziening_gebouwd.txt": {
+										"name": "Basisvoorziening_gebouwd.txt",
+										"path": [
+											"LIEC",
+											"2004-123841672216305",
+											"DOSSIER-2912892614832",
+											"Basisvoorziening_gebouwd.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-32133283723626": {
+								"path": [
+									"LIEC",
+									"2004-123841672216305",
+									"DOSSIER-32133283723626"
+								],
+								"name": "DOSSIER-32133283723626",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"DLR_Unie.pdf": {
+										"name": "DLR_Unie.pdf",
+										"path": [
+											"LIEC",
+											"2004-123841672216305",
+											"DOSSIER-32133283723626",
+											"DLR_Unie.pdf"
+										],
+										"type": "pdf"
+									},
+									"Fiscale_AFM.txt": {
+										"name": "Fiscale_AFM.txt",
+										"path": [
+											"LIEC",
+											"2004-123841672216305",
+											"DOSSIER-32133283723626",
+											"Fiscale_AFM.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-325423226316008": {
+								"path": [
+									"LIEC",
+									"2004-123841672216305",
+									"DOSSIER-325423226316008"
+								],
+								"name": "DOSSIER-325423226316008",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Leefomgeving_De.txt": {
+										"name": "Leefomgeving_De.txt",
+										"path": [
+											"LIEC",
+											"2004-123841672216305",
+											"DOSSIER-325423226316008",
+											"Leefomgeving_De.txt"
+										],
+										"type": "txt"
+									},
+									"De_Opsporingsdienst.pdf": {
+										"name": "De_Opsporingsdienst.pdf",
+										"path": [
+											"LIEC",
+											"2004-123841672216305",
+											"DOSSIER-325423226316008",
+											"De_Opsporingsdienst.pdf"
+										],
+										"type": "pdf"
+									},
+									"ILTIOD_andrea.txt": {
+										"name": "ILTIOD_andrea.txt",
+										"path": [
+											"LIEC",
+											"2004-123841672216305",
+											"DOSSIER-325423226316008",
+											"ILTIOD_andrea.txt"
+										],
+										"type": "txt"
+									},
+									"Criminaliteit_en.txt": {
+										"name": "Criminaliteit_en.txt",
+										"path": [
+											"LIEC",
+											"2004-123841672216305",
+											"DOSSIER-325423226316008",
+											"Criminaliteit_en.txt"
+										],
+										"type": "txt"
+									},
+									"Anti_Transport.txt": {
+										"name": "Anti_Transport.txt",
+										"path": [
+											"LIEC",
+											"2004-123841672216305",
+											"DOSSIER-325423226316008",
+											"Anti_Transport.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"Leefomgeving_Laundering..pdf": {
+								"name": "Leefomgeving_Laundering..pdf",
+								"path": [
+									"LIEC",
+									"2004-123841672216305",
+									"Leefomgeving_Laundering..pdf"
+								],
+								"type": "pdf"
+							}
+						}
+					},
+					"2006-1364522196505": {
+						"path": [
+							"LIEC",
+							"2006-1364522196505"
+						],
+						"name": "2006-1364522196505",
+						"type": "dir",
+						"dirType": "normal",
+						"children": {
+							"DOSSIER-1201862971484": {
+								"path": [
+									"LIEC",
+									"2006-1364522196505",
+									"DOSSIER-1201862971484"
+								],
+								"name": "DOSSIER-1201862971484",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Action_BES.pdf": {
+										"name": "Action_BES.pdf",
+										"path": [
+											"LIEC",
+											"2006-1364522196505",
+											"DOSSIER-1201862971484",
+											"Action_BES.pdf"
+										],
+										"type": "pdf"
+									},
+									"Opsporingsdienst_BES.txt": {
+										"name": "Opsporingsdienst_BES.txt",
+										"path": [
+											"LIEC",
+											"2006-1364522196505",
+											"DOSSIER-1201862971484",
+											"Opsporingsdienst_BES.txt"
+										],
+										"type": "txt"
+									},
+									"Onverklaarbaar_EC.pdf": {
+										"name": "Onverklaarbaar_EC.pdf",
+										"path": [
+											"LIEC",
+											"2006-1364522196505",
+											"DOSSIER-1201862971484",
+											"Onverklaarbaar_EC.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-1912114794902": {
+								"path": [
+									"LIEC",
+									"2006-1364522196505",
+									"DOSSIER-1912114794902"
+								],
+								"name": "DOSSIER-1912114794902",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"GoAML_EU.txt": {
+										"name": "GoAML_EU.txt",
+										"path": [
+											"LIEC",
+											"2006-1364522196505",
+											"DOSSIER-1912114794902",
+											"GoAML_EU.txt"
+										],
+										"type": "txt"
+									},
+									"de_Europese.txt": {
+										"name": "de_Europese.txt",
+										"path": [
+											"LIEC",
+											"2006-1364522196505",
+											"DOSSIER-1912114794902",
+											"de_Europese.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-209572199314136": {
+								"path": [
+									"LIEC",
+									"2006-1364522196505",
+									"DOSSIER-209572199314136"
+								],
+								"name": "DOSSIER-209572199314136",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"&_en.txt": {
+										"name": "&_en.txt",
+										"path": [
+											"LIEC",
+											"2006-1364522196505",
+											"DOSSIER-209572199314136",
+											"&_en.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-43581457330391": {
+								"path": [
+									"LIEC",
+									"2006-1364522196505",
+									"DOSSIER-43581457330391"
+								],
+								"name": "DOSSIER-43581457330391",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Fiscale_de.txt": {
+										"name": "Fiscale_de.txt",
+										"path": [
+											"LIEC",
+											"2006-1364522196505",
+											"DOSSIER-43581457330391",
+											"Fiscale_de.txt"
+										],
+										"type": "txt"
+									},
+									"BVI_de.txt": {
+										"name": "BVI_de.txt",
+										"path": [
+											"LIEC",
+											"2006-1364522196505",
+											"DOSSIER-43581457330391",
+											"BVI_de.txt"
+										],
+										"type": "txt"
+									},
+									"een_iCOV.txt": {
+										"name": "een_iCOV.txt",
+										"path": [
+											"LIEC",
+											"2006-1364522196505",
+											"DOSSIER-43581457330391",
+											"een_iCOV.txt"
+										],
+										"type": "txt"
+									},
+									"de_de.pdf": {
+										"name": "de_de.pdf",
+										"path": [
+											"LIEC",
+											"2006-1364522196505",
+											"DOSSIER-43581457330391",
+											"de_de.pdf"
+										],
+										"type": "pdf"
+									},
+									"DNB_Ontnemingswetgeving.pdf": {
+										"name": "DNB_Ontnemingswetgeving.pdf",
+										"path": [
+											"LIEC",
+											"2006-1364522196505",
+											"DOSSIER-43581457330391",
+											"DNB_Ontnemingswetgeving.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-55192384723197": {
+								"path": [
+									"LIEC",
+									"2006-1364522196505",
+									"DOSSIER-55192384723197"
+								],
+								"name": "DOSSIER-55192384723197",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"applicatie_en.txt": {
+										"name": "applicatie_en.txt",
+										"path": [
+											"LIEC",
+											"2006-1364522196505",
+											"DOSSIER-55192384723197",
+											"applicatie_en.txt"
+										],
+										"type": "txt"
+									},
+									"de_Financieel.txt": {
+										"name": "de_Financieel.txt",
+										"path": [
+											"LIEC",
+											"2006-1364522196505",
+											"DOSSIER-55192384723197",
+											"de_Financieel.txt"
+										],
+										"type": "txt"
+									},
+									"Mensenhandel_onderdeel.txt": {
+										"name": "Mensenhandel_onderdeel.txt",
+										"path": [
+											"LIEC",
+											"2006-1364522196505",
+											"DOSSIER-55192384723197",
+											"Mensenhandel_onderdeel.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"EC_gemeente.pdf": {
+								"name": "EC_gemeente.pdf",
+								"path": [
+									"LIEC",
+									"2006-1364522196505",
+									"EC_gemeente.pdf"
+								],
+								"type": "pdf"
+							},
+							"Multidisciplinary_DLR.pdf": {
+								"name": "Multidisciplinary_DLR.pdf",
+								"path": [
+									"LIEC",
+									"2006-1364522196505",
+									"Multidisciplinary_DLR.pdf"
+								],
+								"type": "pdf"
+							},
+							"Vermogen_Toezicht.pdf": {
+								"name": "Vermogen_Toezicht.pdf",
+								"path": [
+									"LIEC",
+									"2006-1364522196505",
+									"Vermogen_Toezicht.pdf"
+								],
+								"type": "pdf"
+							},
+							"EMM_Criminal.pdf": {
+								"name": "EMM_Criminal.pdf",
+								"path": [
+									"LIEC",
+									"2006-1364522196505",
+									"EMM_Criminal.pdf"
+								],
+								"type": "pdf"
+							},
+							"Financial_Informatie,.pdf": {
+								"name": "Financial_Informatie,.pdf",
+								"path": [
+									"LIEC",
+									"2006-1364522196505",
+									"Financial_Informatie,.pdf"
+								],
+								"type": "pdf"
+							}
+						}
+					},
+					"CN_Expertise.txt": {
+						"name": "CN_Expertise.txt",
+						"path": [
+							"LIEC",
+							"CN_Expertise.txt"
 						],
 						"type": "txt"
 					},
-					"white_designer_dynamic.txt": {
-						"name": "white_designer_dynamic.txt",
+					"van_en.txt": {
+						"name": "van_en.txt",
 						"path": [
 							"LIEC",
-							"white_designer_dynamic.txt"
+							"van_en.txt"
 						],
 						"type": "txt"
 					},
-					"engineer_jewelery_steel.txt": {
-						"name": "engineer_jewelery_steel.txt",
+					"Nederland:_FAT.txt": {
+						"name": "Nederland:_FAT.txt",
 						"path": [
 							"LIEC",
-							"engineer_jewelery_steel.txt"
-						],
-						"type": "txt"
-					},
-					"ball_frame_override.txt": {
-						"name": "ball_frame_override.txt",
-						"path": [
-							"LIEC",
-							"ball_frame_override.txt"
+							"Nederland:_FAT.txt"
 						],
 						"type": "txt"
 					}
@@ -31237,1280 +31555,1166 @@
 				],
 				"name": "PPS",
 				"type": "dir",
-				"locked": false,
+				"dirType": "locked",
 				"children": {
-					"1968-304402390228377": {
+					"1969-8677243831233": {
 						"path": [
 							"PPS",
-							"1968-304402390228377"
+							"1969-8677243831233"
 						],
-						"name": "1968-304402390228377",
+						"name": "1969-8677243831233",
 						"type": "dir",
-						"locked": true,
+						"dirType": "normal",
 						"children": {
-							"DOSSIER-155733615158": {
+							"DOSSIER-14488171349393": {
 								"path": [
 									"PPS",
-									"1968-304402390228377",
-									"DOSSIER-155733615158"
+									"1969-8677243831233",
+									"DOSSIER-14488171349393"
 								],
-								"name": "DOSSIER-155733615158",
+								"name": "DOSSIER-14488171349393",
 								"type": "dir",
-								"locked": false,
+								"dirType": "archive",
 								"children": {
-									"mount_whiteboard_grey.txt": {
-										"name": "mount_whiteboard_grey.txt",
+									"eilanden_&.pdf": {
+										"name": "eilanden_&.pdf",
 										"path": [
 											"PPS",
-											"1968-304402390228377",
-											"DOSSIER-155733615158",
-											"mount_whiteboard_grey.txt"
-										],
-										"type": "txt"
-									},
-									"virtual.txt": {
-										"name": "virtual.txt",
-										"path": [
-											"PPS",
-											"1968-304402390228377",
-											"DOSSIER-155733615158",
-											"virtual.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-203201659213706": {
-								"path": [
-									"PPS",
-									"1968-304402390228377",
-									"DOSSIER-203201659213706"
-								],
-								"name": "DOSSIER-203201659213706",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"infrastructures.txt": {
-										"name": "infrastructures.txt",
-										"path": [
-											"PPS",
-											"1968-304402390228377",
-											"DOSSIER-203201659213706",
-											"infrastructures.txt"
-										],
-										"type": "txt"
-									},
-									"haptic_planner_withdrawal.txt": {
-										"name": "haptic_planner_withdrawal.txt",
-										"path": [
-											"PPS",
-											"1968-304402390228377",
-											"DOSSIER-203201659213706",
-											"haptic_planner_withdrawal.txt"
-										],
-										"type": "txt"
-									},
-									"bypass.pdf": {
-										"name": "bypass.pdf",
-										"path": [
-											"PPS",
-											"1968-304402390228377",
-											"DOSSIER-203201659213706",
-											"bypass.pdf"
+											"1969-8677243831233",
+											"DOSSIER-14488171349393",
+											"eilanden_&.pdf"
 										],
 										"type": "pdf"
 									},
-									"backing_up_sdd.pdf": {
-										"name": "backing_up_sdd.pdf",
+									"en_Openbaar.txt": {
+										"name": "en_Openbaar.txt",
 										"path": [
 											"PPS",
-											"1968-304402390228377",
-											"DOSSIER-203201659213706",
-											"backing_up_sdd.pdf"
+											"1969-8677243831233",
+											"DOSSIER-14488171349393",
+											"en_Openbaar.txt"
+										],
+										"type": "txt"
+									},
+									"Action_EMPACT.pdf": {
+										"name": "Action_EMPACT.pdf",
+										"path": [
+											"PPS",
+											"1969-8677243831233",
+											"DOSSIER-14488171349393",
+											"Action_EMPACT.pdf"
 										],
 										"type": "pdf"
 									},
-									"wireless.pdf": {
-										"name": "wireless.pdf",
+									"en_uitvoerend.pdf": {
+										"name": "en_uitvoerend.pdf",
 										"path": [
 											"PPS",
-											"1968-304402390228377",
-											"DOSSIER-203201659213706",
-											"wireless.pdf"
+											"1969-8677243831233",
+											"DOSSIER-14488171349393",
+											"en_uitvoerend.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"DOSSIER-2095680887058": {
+							"DOSSIER-152671915819216": {
 								"path": [
 									"PPS",
-									"1968-304402390228377",
-									"DOSSIER-2095680887058"
+									"1969-8677243831233",
+									"DOSSIER-152671915819216"
 								],
-								"name": "DOSSIER-2095680887058",
+								"name": "DOSSIER-152671915819216",
 								"type": "dir",
-								"locked": false,
+								"dirType": "archive",
 								"children": {
-									"client_server.txt": {
-										"name": "client_server.txt",
+									"Basisvoorziening_van.txt": {
+										"name": "Basisvoorziening_van.txt",
 										"path": [
 											"PPS",
-											"1968-304402390228377",
-											"DOSSIER-2095680887058",
-											"client_server.txt"
+											"1969-8677243831233",
+											"DOSSIER-152671915819216",
+											"Basisvoorziening_van.txt"
 										],
 										"type": "txt"
 									},
-									"strategist.pdf": {
-										"name": "strategist.pdf",
+									"Centre,_en.txt": {
+										"name": "Centre,_en.txt",
 										"path": [
 											"PPS",
-											"1968-304402390228377",
-											"DOSSIER-2095680887058",
-											"strategist.pdf"
+											"1969-8677243831233",
+											"DOSSIER-152671915819216",
+											"Centre,_en.txt"
+										],
+										"type": "txt"
+									},
+									"Functioneel_eilanden.txt": {
+										"name": "Functioneel_eilanden.txt",
+										"path": [
+											"PPS",
+											"1969-8677243831233",
+											"DOSSIER-152671915819216",
+											"Functioneel_eilanden.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-213282473028432": {
+								"path": [
+									"PPS",
+									"1969-8677243831233",
+									"DOSSIER-213282473028432"
+								],
+								"name": "DOSSIER-213282473028432",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"van_onderdeel.pdf": {
+										"name": "van_onderdeel.pdf",
+										"path": [
+											"PPS",
+											"1969-8677243831233",
+											"DOSSIER-213282473028432",
+											"van_onderdeel.pdf"
 										],
 										"type": "pdf"
 									},
-									"awesome_soft_hat_cambridgeshire_kansas.pdf": {
-										"name": "awesome_soft_hat_cambridgeshire_kansas.pdf",
+									"Landelijke_Platform.pdf": {
+										"name": "Landelijke_Platform.pdf",
 										"path": [
 											"PPS",
-											"1968-304402390228377",
-											"DOSSIER-2095680887058",
-											"awesome_soft_hat_cambridgeshire_kansas.pdf"
-										],
-										"type": "pdf"
-									},
-									"electronics.txt": {
-										"name": "electronics.txt",
-										"path": [
-											"PPS",
-											"1968-304402390228377",
-											"DOSSIER-2095680887058",
-											"electronics.txt"
-										],
-										"type": "txt"
-									},
-									"executive.txt": {
-										"name": "executive.txt",
-										"path": [
-											"PPS",
-											"1968-304402390228377",
-											"DOSSIER-2095680887058",
-											"executive.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-23323327583493": {
-								"path": [
-									"PPS",
-									"1968-304402390228377",
-									"DOSSIER-23323327583493"
-								],
-								"name": "DOSSIER-23323327583493",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"paradigm_grocery.pdf": {
-										"name": "paradigm_grocery.pdf",
-										"path": [
-											"PPS",
-											"1968-304402390228377",
-											"DOSSIER-23323327583493",
-											"paradigm_grocery.pdf"
-										],
-										"type": "pdf"
-									},
-									"interfaces_plastic.txt": {
-										"name": "interfaces_plastic.txt",
-										"path": [
-											"PPS",
-											"1968-304402390228377",
-											"DOSSIER-23323327583493",
-											"interfaces_plastic.txt"
-										],
-										"type": "txt"
-									},
-									"copy.txt": {
-										"name": "copy.txt",
-										"path": [
-											"PPS",
-											"1968-304402390228377",
-											"DOSSIER-23323327583493",
-											"copy.txt"
-										],
-										"type": "txt"
-									},
-									"ai_industrial.txt": {
-										"name": "ai_industrial.txt",
-										"path": [
-											"PPS",
-											"1968-304402390228377",
-											"DOSSIER-23323327583493",
-											"ai_industrial.txt"
-										],
-										"type": "txt"
-									},
-									"transform.txt": {
-										"name": "transform.txt",
-										"path": [
-											"PPS",
-											"1968-304402390228377",
-											"DOSSIER-23323327583493",
-											"transform.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-2988215851787": {
-								"path": [
-									"PPS",
-									"1968-304402390228377",
-									"DOSSIER-2988215851787"
-								],
-								"name": "DOSSIER-2988215851787",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"borders.txt": {
-										"name": "borders.txt",
-										"path": [
-											"PPS",
-											"1968-304402390228377",
-											"DOSSIER-2988215851787",
-											"borders.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"corporate.txt": {
-								"name": "corporate.txt",
-								"path": [
-									"PPS",
-									"1968-304402390228377",
-									"corporate.txt"
-								],
-								"type": "txt"
-							},
-							"harness.txt": {
-								"name": "harness.txt",
-								"path": [
-									"PPS",
-									"1968-304402390228377",
-									"harness.txt"
-								],
-								"type": "txt"
-							},
-							"explicit_teal.txt": {
-								"name": "explicit_teal.txt",
-								"path": [
-									"PPS",
-									"1968-304402390228377",
-									"explicit_teal.txt"
-								],
-								"type": "txt"
-							},
-							"integrate.pdf": {
-								"name": "integrate.pdf",
-								"path": [
-									"PPS",
-									"1968-304402390228377",
-									"integrate.pdf"
-								],
-								"type": "pdf"
-							}
-						}
-					},
-					"1986-83122628221781": {
-						"path": [
-							"PPS",
-							"1986-83122628221781"
-						],
-						"name": "1986-83122628221781",
-						"type": "dir",
-						"locked": false,
-						"children": {
-							"DOSSIER-195063047116863": {
-								"path": [
-									"PPS",
-									"1986-83122628221781",
-									"DOSSIER-195063047116863"
-								],
-								"name": "DOSSIER-195063047116863",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"avon.txt": {
-										"name": "avon.txt",
-										"path": [
-											"PPS",
-											"1986-83122628221781",
-											"DOSSIER-195063047116863",
-											"avon.txt"
-										],
-										"type": "txt"
-									},
-									"cambridgeshire_bacon_investor.txt": {
-										"name": "cambridgeshire_bacon_investor.txt",
-										"path": [
-											"PPS",
-											"1986-83122628221781",
-											"DOSSIER-195063047116863",
-											"cambridgeshire_bacon_investor.txt"
-										],
-										"type": "txt"
-									},
-									"transmit_cambridgeshire_capacitor.txt": {
-										"name": "transmit_cambridgeshire_capacitor.txt",
-										"path": [
-											"PPS",
-											"1986-83122628221781",
-											"DOSSIER-195063047116863",
-											"transmit_cambridgeshire_capacitor.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-28524639221053": {
-								"path": [
-									"PPS",
-									"1986-83122628221781",
-									"DOSSIER-28524639221053"
-								],
-								"name": "DOSSIER-28524639221053",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"cultivate_cayman_islands.txt": {
-										"name": "cultivate_cayman_islands.txt",
-										"path": [
-											"PPS",
-											"1986-83122628221781",
-											"DOSSIER-28524639221053",
-											"cultivate_cayman_islands.txt"
-										],
-										"type": "txt"
-									},
-									"saudi_riyal_solid_state.pdf": {
-										"name": "saudi_riyal_solid_state.pdf",
-										"path": [
-											"PPS",
-											"1986-83122628221781",
-											"DOSSIER-28524639221053",
-											"saudi_riyal_solid_state.pdf"
-										],
-										"type": "pdf"
-									},
-									"withdrawal_beauty.txt": {
-										"name": "withdrawal_beauty.txt",
-										"path": [
-											"PPS",
-											"1986-83122628221781",
-											"DOSSIER-28524639221053",
-											"withdrawal_beauty.txt"
-										],
-										"type": "txt"
-									},
-									"analyst_seamless_teal.txt": {
-										"name": "analyst_seamless_teal.txt",
-										"path": [
-											"PPS",
-											"1986-83122628221781",
-											"DOSSIER-28524639221053",
-											"analyst_seamless_teal.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-32509814622194": {
-								"path": [
-									"PPS",
-									"1986-83122628221781",
-									"DOSSIER-32509814622194"
-								],
-								"name": "DOSSIER-32509814622194",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"e_enable.pdf": {
-										"name": "e_enable.pdf",
-										"path": [
-											"PPS",
-											"1986-83122628221781",
-											"DOSSIER-32509814622194",
-											"e_enable.pdf"
-										],
-										"type": "pdf"
-									},
-									"copying_neural_pines.txt": {
-										"name": "copying_neural_pines.txt",
-										"path": [
-											"PPS",
-											"1986-83122628221781",
-											"DOSSIER-32509814622194",
-											"copying_neural_pines.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-3517118708056": {
-								"path": [
-									"PPS",
-									"1986-83122628221781",
-									"DOSSIER-3517118708056"
-								],
-								"name": "DOSSIER-3517118708056",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"invoice.txt": {
-										"name": "invoice.txt",
-										"path": [
-											"PPS",
-											"1986-83122628221781",
-											"DOSSIER-3517118708056",
-											"invoice.txt"
-										],
-										"type": "txt"
-									},
-									"optical_synergize_tasty.txt": {
-										"name": "optical_synergize_tasty.txt",
-										"path": [
-											"PPS",
-											"1986-83122628221781",
-											"DOSSIER-3517118708056",
-											"optical_synergize_tasty.txt"
-										],
-										"type": "txt"
-									},
-									"regional_scale_iranian_rial.pdf": {
-										"name": "regional_scale_iranian_rial.pdf",
-										"path": [
-											"PPS",
-											"1986-83122628221781",
-											"DOSSIER-3517118708056",
-											"regional_scale_iranian_rial.pdf"
-										],
-										"type": "pdf"
-									},
-									"synthesize.txt": {
-										"name": "synthesize.txt",
-										"path": [
-											"PPS",
-											"1986-83122628221781",
-											"DOSSIER-3517118708056",
-											"synthesize.txt"
-										],
-										"type": "txt"
-									},
-									"money_market_account_generate.txt": {
-										"name": "money_market_account_generate.txt",
-										"path": [
-											"PPS",
-											"1986-83122628221781",
-											"DOSSIER-3517118708056",
-											"money_market_account_generate.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-458062092650": {
-								"path": [
-									"PPS",
-									"1986-83122628221781",
-									"DOSSIER-458062092650"
-								],
-								"name": "DOSSIER-458062092650",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"springs_feed_marketing.txt": {
-										"name": "springs_feed_marketing.txt",
-										"path": [
-											"PPS",
-											"1986-83122628221781",
-											"DOSSIER-458062092650",
-											"springs_feed_marketing.txt"
-										],
-										"type": "txt"
-									},
-									"licensed_rubber_table.pdf": {
-										"name": "licensed_rubber_table.pdf",
-										"path": [
-											"PPS",
-											"1986-83122628221781",
-											"DOSSIER-458062092650",
-											"licensed_rubber_table.pdf"
-										],
-										"type": "pdf"
-									},
-									"refined_transmitter_tennessee.txt": {
-										"name": "refined_transmitter_tennessee.txt",
-										"path": [
-											"PPS",
-											"1986-83122628221781",
-											"DOSSIER-458062092650",
-											"refined_transmitter_tennessee.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"personal_loan_account_back_end_handmade.pdf": {
-								"name": "personal_loan_account_back_end_handmade.pdf",
-								"path": [
-									"PPS",
-									"1986-83122628221781",
-									"personal_loan_account_back_end_handmade.pdf"
-								],
-								"type": "pdf"
-							},
-							"channels_assimilated_calculating.txt": {
-								"name": "channels_assimilated_calculating.txt",
-								"path": [
-									"PPS",
-									"1986-83122628221781",
-									"channels_assimilated_calculating.txt"
-								],
-								"type": "txt"
-							},
-							"circuit.txt": {
-								"name": "circuit.txt",
-								"path": [
-									"PPS",
-									"1986-83122628221781",
-									"circuit.txt"
-								],
-								"type": "txt"
-							},
-							"producer.pdf": {
-								"name": "producer.pdf",
-								"path": [
-									"PPS",
-									"1986-83122628221781",
-									"producer.pdf"
-								],
-								"type": "pdf"
-							}
-						}
-					},
-					"1987-3903201218124": {
-						"path": [
-							"PPS",
-							"1987-3903201218124"
-						],
-						"name": "1987-3903201218124",
-						"type": "dir",
-						"locked": true,
-						"children": {
-							"DOSSIER-117132807625602": {
-								"path": [
-									"PPS",
-									"1987-3903201218124",
-									"DOSSIER-117132807625602"
-								],
-								"name": "DOSSIER-117132807625602",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"orchid.txt": {
-										"name": "orchid.txt",
-										"path": [
-											"PPS",
-											"1987-3903201218124",
-											"DOSSIER-117132807625602",
-											"orchid.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-1348384733453": {
-								"path": [
-									"PPS",
-									"1987-3903201218124",
-									"DOSSIER-1348384733453"
-								],
-								"name": "DOSSIER-1348384733453",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"advanced_maximized_ivory.txt": {
-										"name": "advanced_maximized_ivory.txt",
-										"path": [
-											"PPS",
-											"1987-3903201218124",
-											"DOSSIER-1348384733453",
-											"advanced_maximized_ivory.txt"
-										],
-										"type": "txt"
-									},
-									"ivory_automotive.txt": {
-										"name": "ivory_automotive.txt",
-										"path": [
-											"PPS",
-											"1987-3903201218124",
-											"DOSSIER-1348384733453",
-											"ivory_automotive.txt"
-										],
-										"type": "txt"
-									},
-									"bypassing.txt": {
-										"name": "bypassing.txt",
-										"path": [
-											"PPS",
-											"1987-3903201218124",
-											"DOSSIER-1348384733453",
-											"bypassing.txt"
-										],
-										"type": "txt"
-									},
-									"berkshire_sleek.txt": {
-										"name": "berkshire_sleek.txt",
-										"path": [
-											"PPS",
-											"1987-3903201218124",
-											"DOSSIER-1348384733453",
-											"berkshire_sleek.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-200641756810791": {
-								"path": [
-									"PPS",
-									"1987-3903201218124",
-									"DOSSIER-200641756810791"
-								],
-								"name": "DOSSIER-200641756810791",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"yen.txt": {
-										"name": "yen.txt",
-										"path": [
-											"PPS",
-											"1987-3903201218124",
-											"DOSSIER-200641756810791",
-											"yen.txt"
-										],
-										"type": "txt"
-									},
-									"virtual_avon.txt": {
-										"name": "virtual_avon.txt",
-										"path": [
-											"PPS",
-											"1987-3903201218124",
-											"DOSSIER-200641756810791",
-											"virtual_avon.txt"
-										],
-										"type": "txt"
-									},
-									"seychelles_rupee_engineer_coordinator.pdf": {
-										"name": "seychelles_rupee_engineer_coordinator.pdf",
-										"path": [
-											"PPS",
-											"1987-3903201218124",
-											"DOSSIER-200641756810791",
-											"seychelles_rupee_engineer_coordinator.pdf"
-										],
-										"type": "pdf"
-									},
-									"representative.pdf": {
-										"name": "representative.pdf",
-										"path": [
-											"PPS",
-											"1987-3903201218124",
-											"DOSSIER-200641756810791",
-											"representative.pdf"
+											"1969-8677243831233",
+											"DOSSIER-213282473028432",
+											"Landelijke_Platform.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"DOSSIER-42213123925990": {
+							"DOSSIER-2281829524807": {
 								"path": [
 									"PPS",
-									"1987-3903201218124",
-									"DOSSIER-42213123925990"
+									"1969-8677243831233",
+									"DOSSIER-2281829524807"
 								],
-								"name": "DOSSIER-42213123925990",
+								"name": "DOSSIER-2281829524807",
 								"type": "dir",
-								"locked": true,
+								"dirType": "archive",
 								"children": {
-									"handmade_magenta_connecting.txt": {
-										"name": "handmade_magenta_connecting.txt",
+									"onderdeel_applicatie.pdf": {
+										"name": "onderdeel_applicatie.pdf",
 										"path": [
 											"PPS",
-											"1987-3903201218124",
-											"DOSSIER-42213123925990",
-											"handmade_magenta_connecting.txt"
+											"1969-8677243831233",
+											"DOSSIER-2281829524807",
+											"onderdeel_applicatie.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-322052247913453": {
+								"path": [
+									"PPS",
+									"1969-8677243831233",
+									"DOSSIER-322052247913453"
+								],
+								"name": "DOSSIER-322052247913453",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Multidisciplinary_Basisvoorziening.txt": {
+										"name": "Multidisciplinary_Basisvoorziening.txt",
+										"path": [
+											"PPS",
+											"1969-8677243831233",
+											"DOSSIER-322052247913453",
+											"Multidisciplinary_Basisvoorziening.txt"
+										],
+										"type": "txt"
+									},
+									"de_CT.txt": {
+										"name": "de_CT.txt",
+										"path": [
+											"PPS",
+											"1969-8677243831233",
+											"DOSSIER-322052247913453",
+											"de_CT.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-7804135425392": {
+							"de_onderdeel.txt": {
+								"name": "de_onderdeel.txt",
 								"path": [
 									"PPS",
-									"1987-3903201218124",
-									"DOSSIER-7804135425392"
-								],
-								"name": "DOSSIER-7804135425392",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"chair_metal.txt": {
-										"name": "chair_metal.txt",
-										"path": [
-											"PPS",
-											"1987-3903201218124",
-											"DOSSIER-7804135425392",
-											"chair_metal.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"generating_turkey.txt": {
-								"name": "generating_turkey.txt",
-								"path": [
-									"PPS",
-									"1987-3903201218124",
-									"generating_turkey.txt"
-								],
-								"type": "txt"
-							},
-							"administrator_calculating_norway.txt": {
-								"name": "administrator_calculating_norway.txt",
-								"path": [
-									"PPS",
-									"1987-3903201218124",
-									"administrator_calculating_norway.txt"
+									"1969-8677243831233",
+									"de_onderdeel.txt"
 								],
 								"type": "txt"
 							}
 						}
 					},
-					"2006-29094468012136": {
+					"1970-229902901620566": {
 						"path": [
 							"PPS",
-							"2006-29094468012136"
+							"1970-229902901620566"
 						],
-						"name": "2006-29094468012136",
+						"name": "1970-229902901620566",
 						"type": "dir",
-						"locked": true,
+						"dirType": "normal",
 						"children": {
-							"DOSSIER-233763091920476": {
+							"DOSSIER-12597490220775": {
 								"path": [
 									"PPS",
-									"2006-29094468012136",
-									"DOSSIER-233763091920476"
+									"1970-229902901620566",
+									"DOSSIER-12597490220775"
 								],
-								"name": "DOSSIER-233763091920476",
+								"name": "DOSSIER-12597490220775",
 								"type": "dir",
-								"locked": false,
+								"dirType": "archive",
 								"children": {
-									"extend.txt": {
-										"name": "extend.txt",
+									"Mensenhandel_FinEC.txt": {
+										"name": "Mensenhandel_FinEC.txt",
 										"path": [
 											"PPS",
-											"2006-29094468012136",
-											"DOSSIER-233763091920476",
-											"extend.txt"
-										],
-										"type": "txt"
-									},
-									"re_engineered_frozen_dynamic.txt": {
-										"name": "re_engineered_frozen_dynamic.txt",
-										"path": [
-											"PPS",
-											"2006-29094468012136",
-											"DOSSIER-233763091920476",
-											"re_engineered_frozen_dynamic.txt"
-										],
-										"type": "txt"
-									},
-									"buckinghamshire.txt": {
-										"name": "buckinghamshire.txt",
-										"path": [
-											"PPS",
-											"2006-29094468012136",
-											"DOSSIER-233763091920476",
-											"buckinghamshire.txt"
+											"1970-229902901620566",
+											"DOSSIER-12597490220775",
+											"Mensenhandel_FinEC.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-277782146127832": {
+							"DOSSIER-1568405326977": {
 								"path": [
 									"PPS",
-									"2006-29094468012136",
-									"DOSSIER-277782146127832"
+									"1970-229902901620566",
+									"DOSSIER-1568405326977"
 								],
-								"name": "DOSSIER-277782146127832",
+								"name": "DOSSIER-1568405326977",
 								"type": "dir",
-								"locked": false,
+								"dirType": "normal",
 								"children": {
-									"connect_generate.txt": {
-										"name": "connect_generate.txt",
+									"CN_Laundering..txt": {
+										"name": "CN_Laundering..txt",
 										"path": [
 											"PPS",
-											"2006-29094468012136",
-											"DOSSIER-277782146127832",
-											"connect_generate.txt"
+											"1970-229902901620566",
+											"DOSSIER-1568405326977",
+											"CN_Laundering..txt"
 										],
 										"type": "txt"
 									},
-									"open_source_kids.pdf": {
-										"name": "open_source_kids.pdf",
+									"FIOD_Criminaliteit.txt": {
+										"name": "FIOD_Criminaliteit.txt",
 										"path": [
 											"PPS",
-											"2006-29094468012136",
-											"DOSSIER-277782146127832",
-											"open_source_kids.pdf"
+											"1970-229902901620566",
+											"DOSSIER-1568405326977",
+											"FIOD_Criminaliteit.txt"
+										],
+										"type": "txt"
+									},
+									"FIOD_FP.pdf": {
+										"name": "FIOD_FP.pdf",
+										"path": [
+											"PPS",
+											"1970-229902901620566",
+											"DOSSIER-1568405326977",
+											"FIOD_FP.pdf"
 										],
 										"type": "pdf"
 									},
-									"scalable_facilitate.pdf": {
-										"name": "scalable_facilitate.pdf",
+									"en_Caribisch.pdf": {
+										"name": "en_Caribisch.pdf",
 										"path": [
 											"PPS",
-											"2006-29094468012136",
-											"DOSSIER-277782146127832",
-											"scalable_facilitate.pdf"
+											"1970-229902901620566",
+											"DOSSIER-1568405326977",
+											"en_Caribisch.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"DOSSIER-278551051211091": {
+							"DOSSIER-241332309415099": {
 								"path": [
 									"PPS",
-									"2006-29094468012136",
-									"DOSSIER-278551051211091"
+									"1970-229902901620566",
+									"DOSSIER-241332309415099"
 								],
-								"name": "DOSSIER-278551051211091",
+								"name": "DOSSIER-241332309415099",
 								"type": "dir",
-								"locked": false,
+								"dirType": "archive",
 								"children": {
-									"proactive_berkshire.txt": {
-										"name": "proactive_berkshire.txt",
+									"BOOM_Caribisch.txt": {
+										"name": "BOOM_Caribisch.txt",
 										"path": [
 											"PPS",
-											"2006-29094468012136",
-											"DOSSIER-278551051211091",
-											"proactive_berkshire.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-30393173302978": {
-								"path": [
-									"PPS",
-									"2006-29094468012136",
-									"DOSSIER-30393173302978"
-								],
-								"name": "DOSSIER-30393173302978",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"sql_refined_dynamic.txt": {
-										"name": "sql_refined_dynamic.txt",
-										"path": [
-											"PPS",
-											"2006-29094468012136",
-											"DOSSIER-30393173302978",
-											"sql_refined_dynamic.txt"
+											"1970-229902901620566",
+											"DOSSIER-241332309415099",
+											"BOOM_Caribisch.txt"
 										],
 										"type": "txt"
 									},
-									"bacon_orchestration_computers.txt": {
-										"name": "bacon_orchestration_computers.txt",
+									"Laundering_organisatie.txt": {
+										"name": "Laundering_organisatie.txt",
 										"path": [
 											"PPS",
-											"2006-29094468012136",
-											"DOSSIER-30393173302978",
-											"bacon_orchestration_computers.txt"
+											"1970-229902901620566",
+											"DOSSIER-241332309415099",
+											"Laundering_organisatie.txt"
 										],
 										"type": "txt"
 									},
-									"green_open_source_parks.txt": {
-										"name": "green_open_source_parks.txt",
+									"van_CJIB.pdf": {
+										"name": "van_CJIB.pdf",
 										"path": [
 											"PPS",
-											"2006-29094468012136",
-											"DOSSIER-30393173302978",
-											"green_open_source_parks.txt"
-										],
-										"type": "txt"
-									},
-									"indigo_mount.pdf": {
-										"name": "indigo_mount.pdf",
-										"path": [
-											"PPS",
-											"2006-29094468012136",
-											"DOSSIER-30393173302978",
-											"indigo_mount.pdf"
+											"1970-229902901620566",
+											"DOSSIER-241332309415099",
+											"van_CJIB.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"DOSSIER-8062150129162": {
+							"DOSSIER-25798452112609": {
 								"path": [
 									"PPS",
-									"2006-29094468012136",
-									"DOSSIER-8062150129162"
+									"1970-229902901620566",
+									"DOSSIER-25798452112609"
 								],
-								"name": "DOSSIER-8062150129162",
+								"name": "DOSSIER-25798452112609",
 								"type": "dir",
-								"locked": false,
+								"dirType": "archive",
 								"children": {
-									"branding_chicken.txt": {
-										"name": "branding_chicken.txt",
+									"Criminal_en.pdf": {
+										"name": "Criminal_en.pdf",
 										"path": [
 											"PPS",
-											"2006-29094468012136",
-											"DOSSIER-8062150129162",
-											"branding_chicken.txt"
+											"1970-229902901620566",
+											"DOSSIER-25798452112609",
+											"Criminal_en.pdf"
+										],
+										"type": "pdf"
+									},
+									"de_Crimineel.txt": {
+										"name": "de_Crimineel.txt",
+										"path": [
+											"PPS",
+											"1970-229902901620566",
+											"DOSSIER-25798452112609",
+											"de_Crimineel.txt"
+										],
+										"type": "txt"
+									},
+									"van_Nederland:.pdf": {
+										"name": "van_Nederland:.pdf",
+										"path": [
+											"PPS",
+											"1970-229902901620566",
+											"DOSSIER-25798452112609",
+											"van_Nederland:.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-30940373531013": {
+								"path": [
+									"PPS",
+									"1970-229902901620566",
+									"DOSSIER-30940373531013"
+								],
+								"name": "DOSSIER-30940373531013",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Commissie,_Bureau.pdf": {
+										"name": "Commissie,_Bureau.pdf",
+										"path": [
+											"PPS",
+											"1970-229902901620566",
+											"DOSSIER-30940373531013",
+											"Commissie,_Bureau.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"UNODC_het.pdf": {
+								"name": "UNODC_het.pdf",
+								"path": [
+									"PPS",
+									"1970-229902901620566",
+									"UNODC_het.pdf"
+								],
+								"type": "pdf"
+							}
+						}
+					},
+					"1987-24929621224659": {
+						"path": [
+							"PPS",
+							"1987-24929621224659"
+						],
+						"name": "1987-24929621224659",
+						"type": "dir",
+						"dirType": "archive",
+						"children": {
+							"DOSSIER-118223140825119": {
+								"path": [
+									"PPS",
+									"1987-24929621224659",
+									"DOSSIER-118223140825119"
+								],
+								"name": "DOSSIER-118223140825119",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Landelijke_FIOD.pdf": {
+										"name": "Landelijke_FIOD.pdf",
+										"path": [
+											"PPS",
+											"1987-24929621224659",
+											"DOSSIER-118223140825119",
+											"Landelijke_FIOD.pdf"
+										],
+										"type": "pdf"
+									},
+									"Dienst_Caribisch.txt": {
+										"name": "Dienst_Caribisch.txt",
+										"path": [
+											"PPS",
+											"1987-24929621224659",
+											"DOSSIER-118223140825119",
+											"Dienst_Caribisch.txt"
+										],
+										"type": "txt"
+									},
+									"Rotterdam_Landelijke.pdf": {
+										"name": "Rotterdam_Landelijke.pdf",
+										"path": [
+											"PPS",
+											"1987-24929621224659",
+											"DOSSIER-118223140825119",
+											"Rotterdam_Landelijke.pdf"
+										],
+										"type": "pdf"
+									},
+									"onderdeel_Action.txt": {
+										"name": "onderdeel_Action.txt",
+										"path": [
+											"PPS",
+											"1987-24929621224659",
+											"DOSSIER-118223140825119",
+											"onderdeel_Action.txt"
+										],
+										"type": "txt"
+									},
+									"de_EU.txt": {
+										"name": "de_EU.txt",
+										"path": [
+											"PPS",
+											"1987-24929621224659",
+											"DOSSIER-118223140825119",
+											"de_EU.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"bus_checking_account.pdf": {
-								"name": "bus_checking_account.pdf",
+							"DOSSIER-12959148357674": {
 								"path": [
 									"PPS",
-									"2006-29094468012136",
-									"bus_checking_account.pdf"
+									"1987-24929621224659",
+									"DOSSIER-12959148357674"
+								],
+								"name": "DOSSIER-12959148357674",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"en_een.txt": {
+										"name": "en_een.txt",
+										"path": [
+											"PPS",
+											"1987-24929621224659",
+											"DOSSIER-12959148357674",
+											"en_een.txt"
+										],
+										"type": "txt"
+									},
+									"Saba_CJIB.pdf": {
+										"name": "Saba_CJIB.pdf",
+										"path": [
+											"PPS",
+											"1987-24929621224659",
+											"DOSSIER-12959148357674",
+											"Saba_CJIB.pdf"
+										],
+										"type": "pdf"
+									},
+									"van_ICT.txt": {
+										"name": "van_ICT.txt",
+										"path": [
+											"PPS",
+											"1987-24929621224659",
+											"DOSSIER-12959148357674",
+											"van_ICT.txt"
+										],
+										"type": "txt"
+									},
+									"Action_CN.txt": {
+										"name": "Action_CN.txt",
+										"path": [
+											"PPS",
+											"1987-24929621224659",
+											"DOSSIER-12959148357674",
+											"Action_CN.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-1422130131954": {
+								"path": [
+									"PPS",
+									"1987-24929621224659",
+									"DOSSIER-1422130131954"
+								],
+								"name": "DOSSIER-1422130131954",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"van_Financieel.txt": {
+										"name": "van_Financieel.txt",
+										"path": [
+											"PPS",
+											"1987-24929621224659",
+											"DOSSIER-1422130131954",
+											"van_Financieel.txt"
+										],
+										"type": "txt"
+									},
+									"Andrea_ESW.txt": {
+										"name": "Andrea_ESW.txt",
+										"path": [
+											"PPS",
+											"1987-24929621224659",
+											"DOSSIER-1422130131954",
+											"Andrea_ESW.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-23722272910645": {
+								"path": [
+									"PPS",
+									"1987-24929621224659",
+									"DOSSIER-23722272910645"
+								],
+								"name": "DOSSIER-23722272910645",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Informatie,_GoAML.txt": {
+										"name": "Informatie,_GoAML.txt",
+										"path": [
+											"PPS",
+											"1987-24929621224659",
+											"DOSSIER-23722272910645",
+											"Informatie,_GoAML.txt"
+										],
+										"type": "txt"
+									},
+									"de_De.pdf": {
+										"name": "de_De.pdf",
+										"path": [
+											"PPS",
+											"1987-24929621224659",
+											"DOSSIER-23722272910645",
+											"de_De.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-66743043512178": {
+								"path": [
+									"PPS",
+									"1987-24929621224659",
+									"DOSSIER-66743043512178"
+								],
+								"name": "DOSSIER-66743043512178",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Vermogen_Inlichtingen-.txt": {
+										"name": "Vermogen_Inlichtingen-.txt",
+										"path": [
+											"PPS",
+											"1987-24929621224659",
+											"DOSSIER-66743043512178",
+											"Vermogen_Inlichtingen-.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"CN_Against.pdf": {
+								"name": "CN_Against.pdf",
+								"path": [
+									"PPS",
+									"1987-24929621224659",
+									"CN_Against.pdf"
+								],
+								"type": "pdf"
+							}
+						}
+					},
+					"1990-167852658828082": {
+						"path": [
+							"PPS",
+							"1990-167852658828082"
+						],
+						"name": "1990-167852658828082",
+						"type": "dir",
+						"dirType": "normal",
+						"children": {
+							"DOSSIER-2507722355950": {
+								"path": [
+									"PPS",
+									"1990-167852658828082",
+									"DOSSIER-2507722355950"
+								],
+								"name": "DOSSIER-2507722355950",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"EC_Mensensmokkel.txt": {
+										"name": "EC_Mensensmokkel.txt",
+										"path": [
+											"PPS",
+											"1990-167852658828082",
+											"DOSSIER-2507722355950",
+											"EC_Mensensmokkel.txt"
+										],
+										"type": "txt"
+									},
+									"onderdeel_Multidisciplinary.txt": {
+										"name": "onderdeel_Multidisciplinary.txt",
+										"path": [
+											"PPS",
+											"1990-167852658828082",
+											"DOSSIER-2507722355950",
+											"onderdeel_Multidisciplinary.txt"
+										],
+										"type": "txt"
+									},
+									"Centrum_gemeente.txt": {
+										"name": "Centrum_gemeente.txt",
+										"path": [
+											"PPS",
+											"1990-167852658828082",
+											"DOSSIER-2507722355950",
+											"Centrum_gemeente.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-321022198218499": {
+								"path": [
+									"PPS",
+									"1990-167852658828082",
+									"DOSSIER-321022198218499"
+								],
+								"name": "DOSSIER-321022198218499",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Centrum_FlU-Nederland.pdf": {
+										"name": "Centrum_FlU-Nederland.pdf",
+										"path": [
+											"PPS",
+											"1990-167852658828082",
+											"DOSSIER-321022198218499",
+											"Centrum_FlU-Nederland.pdf"
+										],
+										"type": "pdf"
+									},
+									"Infobox_BOOM.txt": {
+										"name": "Infobox_BOOM.txt",
+										"path": [
+											"PPS",
+											"1990-167852658828082",
+											"DOSSIER-321022198218499",
+											"Infobox_BOOM.txt"
+										],
+										"type": "txt"
+									},
+									"politie_Inspectie.pdf": {
+										"name": "politie_Inspectie.pdf",
+										"path": [
+											"PPS",
+											"1990-167852658828082",
+											"DOSSIER-321022198218499",
+											"politie_Inspectie.pdf"
+										],
+										"type": "pdf"
+									},
+									"Ontnemingswetgeving_FIU.pdf": {
+										"name": "Ontnemingswetgeving_FIU.pdf",
+										"path": [
+											"PPS",
+											"1990-167852658828082",
+											"DOSSIER-321022198218499",
+											"Ontnemingswetgeving_FIU.pdf"
+										],
+										"type": "pdf"
+									},
+									"Markten_Saba.txt": {
+										"name": "Markten_Saba.txt",
+										"path": [
+											"PPS",
+											"1990-167852658828082",
+											"DOSSIER-321022198218499",
+											"Markten_Saba.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-47541103719086": {
+								"path": [
+									"PPS",
+									"1990-167852658828082",
+									"DOSSIER-47541103719086"
+								],
+								"name": "DOSSIER-47541103719086",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Economische_UNODC.pdf": {
+										"name": "Economische_UNODC.pdf",
+										"path": [
+											"PPS",
+											"1990-167852658828082",
+											"DOSSIER-47541103719086",
+											"Economische_UNODC.pdf"
+										],
+										"type": "pdf"
+									},
+									"van_Unit.txt": {
+										"name": "van_Unit.txt",
+										"path": [
+											"PPS",
+											"1990-167852658828082",
+											"DOSSIER-47541103719086",
+											"van_Unit.txt"
+										],
+										"type": "txt"
+									},
+									"FEC_Financial.txt": {
+										"name": "FEC_Financial.txt",
+										"path": [
+											"PPS",
+											"1990-167852658828082",
+											"DOSSIER-47541103719086",
+											"FEC_Financial.txt"
+										],
+										"type": "txt"
+									},
+									"Functioneel_organisatie.pdf": {
+										"name": "Functioneel_organisatie.pdf",
+										"path": [
+											"PPS",
+											"1990-167852658828082",
+											"DOSSIER-47541103719086",
+											"Functioneel_organisatie.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-7074304278081": {
+								"path": [
+									"PPS",
+									"1990-167852658828082",
+									"DOSSIER-7074304278081"
+								],
+								"name": "DOSSIER-7074304278081",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Nederlandsche_Functioneel.txt": {
+										"name": "Nederlandsche_Functioneel.txt",
+										"path": [
+											"PPS",
+											"1990-167852658828082",
+											"DOSSIER-7074304278081",
+											"Nederlandsche_Functioneel.txt"
+										],
+										"type": "txt"
+									},
+									"Platform_andrea.txt": {
+										"name": "Platform_andrea.txt",
+										"path": [
+											"PPS",
+											"1990-167852658828082",
+											"DOSSIER-7074304278081",
+											"Platform_andrea.txt"
+										],
+										"type": "txt"
+									},
+									"BFT_de.txt": {
+										"name": "BFT_de.txt",
+										"path": [
+											"PPS",
+											"1990-167852658828082",
+											"DOSSIER-7074304278081",
+											"BFT_de.txt"
+										],
+										"type": "txt"
+									},
+									"Anti-Money_UNODC.pdf": {
+										"name": "Anti-Money_UNODC.pdf",
+										"path": [
+											"PPS",
+											"1990-167852658828082",
+											"DOSSIER-7074304278081",
+											"Anti-Money_UNODC.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-93961557422749": {
+								"path": [
+									"PPS",
+									"1990-167852658828082",
+									"DOSSIER-93961557422749"
+								],
+								"name": "DOSSIER-93961557422749",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"CJIB_Mensensmokkel.txt": {
+										"name": "CJIB_Mensensmokkel.txt",
+										"path": [
+											"PPS",
+											"1990-167852658828082",
+											"DOSSIER-93961557422749",
+											"CJIB_Mensensmokkel.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"Commissie,_en.pdf": {
+								"name": "Commissie,_en.pdf",
+								"path": [
+									"PPS",
+									"1990-167852658828082",
+									"Commissie,_en.pdf"
 								],
 								"type": "pdf"
 							},
-							"handcrafted_cotton_salad_lodge_card.pdf": {
-								"name": "handcrafted_cotton_salad_lodge_card.pdf",
+							"DNB_van.txt": {
+								"name": "DNB_van.txt",
 								"path": [
 									"PPS",
-									"2006-29094468012136",
-									"handcrafted_cotton_salad_lodge_card.pdf"
-								],
-								"type": "pdf"
-							},
-							"copy_hacking_pizza.pdf": {
-								"name": "copy_hacking_pizza.pdf",
-								"path": [
-									"PPS",
-									"2006-29094468012136",
-									"copy_hacking_pizza.pdf"
-								],
-								"type": "pdf"
-							},
-							"pink_software_tasty.txt": {
-								"name": "pink_software_tasty.txt",
-								"path": [
-									"PPS",
-									"2006-29094468012136",
-									"pink_software_tasty.txt"
+									"1990-167852658828082",
+									"DNB_van.txt"
 								],
 								"type": "txt"
 							},
-							"identity_plum_maroon.txt": {
-								"name": "identity_plum_maroon.txt",
+							"GoAML_en.pdf": {
+								"name": "GoAML_en.pdf",
 								"path": [
 									"PPS",
-									"2006-29094468012136",
-									"identity_plum_maroon.txt"
+									"1990-167852658828082",
+									"GoAML_en.pdf"
+								],
+								"type": "pdf"
+							},
+							"Caribisch_Werk.txt": {
+								"name": "Caribisch_Werk.txt",
+								"path": [
+									"PPS",
+									"1990-167852658828082",
+									"Caribisch_Werk.txt"
 								],
 								"type": "txt"
 							}
 						}
 					},
-					"2008-13967249017202": {
+					"2003-271192730612025": {
 						"path": [
 							"PPS",
-							"2008-13967249017202"
+							"2003-271192730612025"
 						],
-						"name": "2008-13967249017202",
+						"name": "2003-271192730612025",
 						"type": "dir",
-						"locked": true,
+						"dirType": "normal",
 						"children": {
-							"DOSSIER-194451555688": {
+							"DOSSIER-135766122679": {
 								"path": [
 									"PPS",
-									"2008-13967249017202",
-									"DOSSIER-194451555688"
+									"2003-271192730612025",
+									"DOSSIER-135766122679"
 								],
-								"name": "DOSSIER-194451555688",
+								"name": "DOSSIER-135766122679",
 								"type": "dir",
-								"locked": true,
+								"dirType": "normal",
 								"children": {
-									"refined_granite_pizza_withdrawal_bhutan.pdf": {
-										"name": "refined_granite_pizza_withdrawal_bhutan.pdf",
+									"Infobox_de.txt": {
+										"name": "Infobox_de.txt",
 										"path": [
 											"PPS",
-											"2008-13967249017202",
-											"DOSSIER-194451555688",
-											"refined_granite_pizza_withdrawal_bhutan.pdf"
-										],
-										"type": "pdf"
-									},
-									"handmade_metal_bacon_grass_roots.txt": {
-										"name": "handmade_metal_bacon_grass_roots.txt",
-										"path": [
-											"PPS",
-											"2008-13967249017202",
-											"DOSSIER-194451555688",
-											"handmade_metal_bacon_grass_roots.txt"
+											"2003-271192730612025",
+											"DOSSIER-135766122679",
+											"Infobox_de.txt"
 										],
 										"type": "txt"
 									},
-									"cambridgeshire_bedfordshire_operations.pdf": {
-										"name": "cambridgeshire_bedfordshire_operations.pdf",
+									"FinEC_EMM.txt": {
+										"name": "FinEC_EMM.txt",
 										"path": [
 											"PPS",
-											"2008-13967249017202",
-											"DOSSIER-194451555688",
-											"cambridgeshire_bedfordshire_operations.pdf"
+											"2003-271192730612025",
+											"DOSSIER-135766122679",
+											"FinEC_EMM.txt"
+										],
+										"type": "txt"
+									},
+									"van_Mensenhandel.pdf": {
+										"name": "van_Mensenhandel.pdf",
+										"path": [
+											"PPS",
+											"2003-271192730612025",
+											"DOSSIER-135766122679",
+											"van_Mensenhandel.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"DOSSIER-26200430330814": {
+							"DOSSIER-139715148761": {
 								"path": [
 									"PPS",
-									"2008-13967249017202",
-									"DOSSIER-26200430330814"
+									"2003-271192730612025",
+									"DOSSIER-139715148761"
 								],
-								"name": "DOSSIER-26200430330814",
+								"name": "DOSSIER-139715148761",
 								"type": "dir",
-								"locked": false,
+								"dirType": "archive",
 								"children": {
-									"computer_keyboard.pdf": {
-										"name": "computer_keyboard.pdf",
+									"andrea_FAT.txt": {
+										"name": "andrea_FAT.txt",
 										"path": [
 											"PPS",
-											"2008-13967249017202",
-											"DOSSIER-26200430330814",
-											"computer_keyboard.pdf"
+											"2003-271192730612025",
+											"DOSSIER-139715148761",
+											"andrea_FAT.txt"
+										],
+										"type": "txt"
+									},
+									"Financieel_en.txt": {
+										"name": "Financieel_en.txt",
+										"path": [
+											"PPS",
+											"2003-271192730612025",
+											"DOSSIER-139715148761",
+											"Financieel_en.txt"
+										],
+										"type": "txt"
+									},
+									"Economische_en.txt": {
+										"name": "Economische_en.txt",
+										"path": [
+											"PPS",
+											"2003-271192730612025",
+											"DOSSIER-139715148761",
+											"Economische_en.txt"
+										],
+										"type": "txt"
+									},
+									"Werk_organisatie.pdf": {
+										"name": "Werk_organisatie.pdf",
+										"path": [
+											"PPS",
+											"2003-271192730612025",
+											"DOSSIER-139715148761",
+											"Werk_organisatie.pdf"
 										],
 										"type": "pdf"
 									},
-									"credit_card_account_mint_green_sms.pdf": {
-										"name": "credit_card_account_mint_green_sms.pdf",
+									"UNODC_van.pdf": {
+										"name": "UNODC_van.pdf",
 										"path": [
 											"PPS",
-											"2008-13967249017202",
-											"DOSSIER-26200430330814",
-											"credit_card_account_mint_green_sms.pdf"
+											"2003-271192730612025",
+											"DOSSIER-139715148761",
+											"UNODC_van.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"DOSSIER-300632278516027": {
+							"DOSSIER-31994578823921": {
 								"path": [
 									"PPS",
-									"2008-13967249017202",
-									"DOSSIER-300632278516027"
+									"2003-271192730612025",
+									"DOSSIER-31994578823921"
 								],
-								"name": "DOSSIER-300632278516027",
+								"name": "DOSSIER-31994578823921",
 								"type": "dir",
-								"locked": true,
+								"dirType": "normal",
 								"children": {
-									"consultant_handcrafted_cotton_sausages.txt": {
-										"name": "consultant_handcrafted_cotton_sausages.txt",
+									"Infobox_A01C.txt": {
+										"name": "Infobox_A01C.txt",
 										"path": [
 											"PPS",
-											"2008-13967249017202",
-											"DOSSIER-300632278516027",
-											"consultant_handcrafted_cotton_sausages.txt"
+											"2003-271192730612025",
+											"DOSSIER-31994578823921",
+											"Infobox_A01C.txt"
 										],
 										"type": "txt"
 									},
-									"philippine_peso_rubber.txt": {
-										"name": "philippine_peso_rubber.txt",
+									"Criminal_De.txt": {
+										"name": "Criminal_De.txt",
 										"path": [
 											"PPS",
-											"2008-13967249017202",
-											"DOSSIER-300632278516027",
-											"philippine_peso_rubber.txt"
-										],
-										"type": "txt"
-									},
-									"deliverables.txt": {
-										"name": "deliverables.txt",
-										"path": [
-											"PPS",
-											"2008-13967249017202",
-											"DOSSIER-300632278516027",
-											"deliverables.txt"
+											"2003-271192730612025",
+											"DOSSIER-31994578823921",
+											"Criminal_De.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-5063298111722": {
+							"DOSSIER-8972100642036": {
 								"path": [
 									"PPS",
-									"2008-13967249017202",
-									"DOSSIER-5063298111722"
+									"2003-271192730612025",
+									"DOSSIER-8972100642036"
 								],
-								"name": "DOSSIER-5063298111722",
+								"name": "DOSSIER-8972100642036",
 								"type": "dir",
-								"locked": false,
+								"dirType": "locked",
 								"children": {
-									"utilize_transmit_iowa.pdf": {
-										"name": "utilize_transmit_iowa.pdf",
+									"de_Platform.pdf": {
+										"name": "de_Platform.pdf",
 										"path": [
 											"PPS",
-											"2008-13967249017202",
-											"DOSSIER-5063298111722",
-											"utilize_transmit_iowa.pdf"
+											"2003-271192730612025",
+											"DOSSIER-8972100642036",
+											"de_Platform.pdf"
 										],
 										"type": "pdf"
 									},
-									"intelligent_metal_fish_panel.txt": {
-										"name": "intelligent_metal_fish_panel.txt",
+									"Financieel_Platform.txt": {
+										"name": "Financieel_Platform.txt",
 										"path": [
 											"PPS",
-											"2008-13967249017202",
-											"DOSSIER-5063298111722",
-											"intelligent_metal_fish_panel.txt"
+											"2003-271192730612025",
+											"DOSSIER-8972100642036",
+											"Financieel_Platform.txt"
 										],
 										"type": "txt"
 									},
-									"internal_outdoors_refined_metal_shoes.txt": {
-										"name": "internal_outdoors_refined_metal_shoes.txt",
+									"BOOM_Fiscale.pdf": {
+										"name": "BOOM_Fiscale.pdf",
 										"path": [
 											"PPS",
-											"2008-13967249017202",
-											"DOSSIER-5063298111722",
-											"internal_outdoors_refined_metal_shoes.txt"
+											"2003-271192730612025",
+											"DOSSIER-8972100642036",
+											"BOOM_Fiscale.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-9582789111747": {
+								"path": [
+									"PPS",
+									"2003-271192730612025",
+									"DOSSIER-9582789111747"
+								],
+								"name": "DOSSIER-9582789111747",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Recherche,_van.txt": {
+										"name": "Recherche,_van.txt",
+										"path": [
+											"PPS",
+											"2003-271192730612025",
+											"DOSSIER-9582789111747",
+											"Recherche,_van.txt"
 										],
 										"type": "txt"
 									},
-									"withdrawal.txt": {
-										"name": "withdrawal.txt",
+									"de_van.txt": {
+										"name": "de_van.txt",
 										"path": [
 											"PPS",
-											"2008-13967249017202",
-											"DOSSIER-5063298111722",
-											"withdrawal.txt"
+											"2003-271192730612025",
+											"DOSSIER-9582789111747",
+											"de_van.txt"
+										],
+										"type": "txt"
+									},
+									"de_DNB.txt": {
+										"name": "de_DNB.txt",
+										"path": [
+											"PPS",
+											"2003-271192730612025",
+											"DOSSIER-9582789111747",
+											"de_DNB.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-71502447610933": {
+							"ICT_en.pdf": {
+								"name": "ICT_en.pdf",
 								"path": [
 									"PPS",
-									"2008-13967249017202",
-									"DOSSIER-71502447610933"
+									"2003-271192730612025",
+									"ICT_en.pdf"
 								],
-								"name": "DOSSIER-71502447610933",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"intermediate_agent.txt": {
-										"name": "intermediate_agent.txt",
-										"path": [
-											"PPS",
-											"2008-13967249017202",
-											"DOSSIER-71502447610933",
-											"intermediate_agent.txt"
-										],
-										"type": "txt"
-									},
-									"solutions_usb_rss.pdf": {
-										"name": "solutions_usb_rss.pdf",
-										"path": [
-											"PPS",
-											"2008-13967249017202",
-											"DOSSIER-71502447610933",
-											"solutions_usb_rss.pdf"
-										],
-										"type": "pdf"
-									},
-									"rwanda_franc.txt": {
-										"name": "rwanda_franc.txt",
-										"path": [
-											"PPS",
-											"2008-13967249017202",
-											"DOSSIER-71502447610933",
-											"rwanda_franc.txt"
-										],
-										"type": "txt"
-									},
-									"data_warehouse_french_guiana_flexibility.pdf": {
-										"name": "data_warehouse_french_guiana_flexibility.pdf",
-										"path": [
-											"PPS",
-											"2008-13967249017202",
-											"DOSSIER-71502447610933",
-											"data_warehouse_french_guiana_flexibility.pdf"
-										],
-										"type": "pdf"
-									},
-									"granite.txt": {
-										"name": "granite.txt",
-										"path": [
-											"PPS",
-											"2008-13967249017202",
-											"DOSSIER-71502447610933",
-											"granite.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"framework_pre_emptive_exe.txt": {
-								"name": "framework_pre_emptive_exe.txt",
-								"path": [
-									"PPS",
-									"2008-13967249017202",
-									"framework_pre_emptive_exe.txt"
-								],
-								"type": "txt"
-							},
-							"payment_intuitive_exclusive.txt": {
-								"name": "payment_intuitive_exclusive.txt",
-								"path": [
-									"PPS",
-									"2008-13967249017202",
-									"payment_intuitive_exclusive.txt"
-								],
-								"type": "txt"
-							},
-							"index_minnesota_industrial.txt": {
-								"name": "index_minnesota_industrial.txt",
-								"path": [
-									"PPS",
-									"2008-13967249017202",
-									"index_minnesota_industrial.txt"
-								],
-								"type": "txt"
+								"type": "pdf"
 							}
 						}
 					},
-					"auto_loan_account_representative.txt": {
-						"name": "auto_loan_account_representative.txt",
+					"Commissie,_Werk.pdf": {
+						"name": "Commissie,_Werk.pdf",
 						"path": [
 							"PPS",
-							"auto_loan_account_representative.txt"
+							"Commissie,_Werk.pdf"
+						],
+						"type": "pdf"
+					},
+					"Anti-Money_Incasso.txt": {
+						"name": "Anti-Money_Incasso.txt",
+						"path": [
+							"PPS",
+							"Anti-Money_Incasso.txt"
+						],
+						"type": "txt"
+					},
+					"DLR_De.txt": {
+						"name": "DLR_De.txt",
+						"path": [
+							"PPS",
+							"DLR_De.txt"
 						],
 						"type": "txt"
 					}
@@ -32522,1395 +32726,1240 @@
 				],
 				"name": "RIEC",
 				"type": "dir",
-				"locked": true,
+				"dirType": "locked",
 				"children": {
-					"2000-193691448320479": {
+					"1966-167361072610951": {
 						"path": [
 							"RIEC",
-							"2000-193691448320479"
+							"1966-167361072610951"
 						],
-						"name": "2000-193691448320479",
+						"name": "1966-167361072610951",
 						"type": "dir",
-						"locked": false,
+						"dirType": "archive",
 						"children": {
-							"DOSSIER-10519183432311": {
+							"DOSSIER-15036562128475": {
 								"path": [
 									"RIEC",
-									"2000-193691448320479",
-									"DOSSIER-10519183432311"
+									"1966-167361072610951",
+									"DOSSIER-15036562128475"
 								],
-								"name": "DOSSIER-10519183432311",
+								"name": "DOSSIER-15036562128475",
 								"type": "dir",
-								"locked": true,
+								"dirType": "normal",
 								"children": {
-									"circuit_scalable_bacon.txt": {
-										"name": "circuit_scalable_bacon.txt",
+									"onderdeel_Transport.pdf": {
+										"name": "onderdeel_Transport.pdf",
 										"path": [
 											"RIEC",
-											"2000-193691448320479",
-											"DOSSIER-10519183432311",
-											"circuit_scalable_bacon.txt"
+											"1966-167361072610951",
+											"DOSSIER-15036562128475",
+											"onderdeel_Transport.pdf"
+										],
+										"type": "pdf"
+									},
+									"AFM_en.pdf": {
+										"name": "AFM_en.pdf",
+										"path": [
+											"RIEC",
+											"1966-167361072610951",
+											"DOSSIER-15036562128475",
+											"AFM_en.pdf"
+										],
+										"type": "pdf"
+									},
+									"Caribisch_de.txt": {
+										"name": "Caribisch_de.txt",
+										"path": [
+											"RIEC",
+											"1966-167361072610951",
+											"DOSSIER-15036562128475",
+											"Caribisch_de.txt"
 										],
 										"type": "txt"
 									},
-									"kansas.pdf": {
-										"name": "kansas.pdf",
+									"UNODC_Anti-Money.txt": {
+										"name": "UNODC_Anti-Money.txt",
 										"path": [
 											"RIEC",
-											"2000-193691448320479",
-											"DOSSIER-10519183432311",
-											"kansas.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-159571487210420": {
-								"path": [
-									"RIEC",
-									"2000-193691448320479",
-									"DOSSIER-159571487210420"
-								],
-								"name": "DOSSIER-159571487210420",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"quality.txt": {
-										"name": "quality.txt",
-										"path": [
-											"RIEC",
-											"2000-193691448320479",
-											"DOSSIER-159571487210420",
-											"quality.txt"
-										],
-										"type": "txt"
-									},
-									"roi_hat.pdf": {
-										"name": "roi_hat.pdf",
-										"path": [
-											"RIEC",
-											"2000-193691448320479",
-											"DOSSIER-159571487210420",
-											"roi_hat.pdf"
-										],
-										"type": "pdf"
-									},
-									"central_cambridgeshire.pdf": {
-										"name": "central_cambridgeshire.pdf",
-										"path": [
-											"RIEC",
-											"2000-193691448320479",
-											"DOSSIER-159571487210420",
-											"central_cambridgeshire.pdf"
-										],
-										"type": "pdf"
-									},
-									"program_payment.txt": {
-										"name": "program_payment.txt",
-										"path": [
-											"RIEC",
-											"2000-193691448320479",
-											"DOSSIER-159571487210420",
-											"program_payment.txt"
+											"1966-167361072610951",
+											"DOSSIER-15036562128475",
+											"UNODC_Anti-Money.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-260731646028427": {
+							"DOSSIER-302072958629779": {
 								"path": [
 									"RIEC",
-									"2000-193691448320479",
-									"DOSSIER-260731646028427"
+									"1966-167361072610951",
+									"DOSSIER-302072958629779"
 								],
-								"name": "DOSSIER-260731646028427",
+								"name": "DOSSIER-302072958629779",
 								"type": "dir",
-								"locked": true,
+								"dirType": "normal",
 								"children": {
-									"installation.txt": {
-										"name": "installation.txt",
+									"Inlichtingen-_Markten.txt": {
+										"name": "Inlichtingen-_Markten.txt",
 										"path": [
 											"RIEC",
-											"2000-193691448320479",
-											"DOSSIER-260731646028427",
-											"installation.txt"
-										],
-										"type": "txt"
-									},
-									"savings_account.txt": {
-										"name": "savings_account.txt",
-										"path": [
-											"RIEC",
-											"2000-193691448320479",
-											"DOSSIER-260731646028427",
-											"savings_account.txt"
-										],
-										"type": "txt"
-									},
-									"robust_factors.txt": {
-										"name": "robust_factors.txt",
-										"path": [
-											"RIEC",
-											"2000-193691448320479",
-											"DOSSIER-260731646028427",
-											"robust_factors.txt"
-										],
-										"type": "txt"
-									},
-									"direct_personal_loan_account.txt": {
-										"name": "direct_personal_loan_account.txt",
-										"path": [
-											"RIEC",
-											"2000-193691448320479",
-											"DOSSIER-260731646028427",
-											"direct_personal_loan_account.txt"
-										],
-										"type": "txt"
-									},
-									"cambridgeshire.pdf": {
-										"name": "cambridgeshire.pdf",
-										"path": [
-											"RIEC",
-											"2000-193691448320479",
-											"DOSSIER-260731646028427",
-											"cambridgeshire.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-27063437918693": {
-								"path": [
-									"RIEC",
-									"2000-193691448320479",
-									"DOSSIER-27063437918693"
-								],
-								"name": "DOSSIER-27063437918693",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"empowering_neural.pdf": {
-										"name": "empowering_neural.pdf",
-										"path": [
-											"RIEC",
-											"2000-193691448320479",
-											"DOSSIER-27063437918693",
-											"empowering_neural.pdf"
-										],
-										"type": "pdf"
-									},
-									"vertical_rhode_island_surinam_dollar.txt": {
-										"name": "vertical_rhode_island_surinam_dollar.txt",
-										"path": [
-											"RIEC",
-											"2000-193691448320479",
-											"DOSSIER-27063437918693",
-											"vertical_rhode_island_surinam_dollar.txt"
-										],
-										"type": "txt"
-									},
-									"cheese_pakistan_france.pdf": {
-										"name": "cheese_pakistan_france.pdf",
-										"path": [
-											"RIEC",
-											"2000-193691448320479",
-											"DOSSIER-27063437918693",
-											"cheese_pakistan_france.pdf"
-										],
-										"type": "pdf"
-									},
-									"enable.txt": {
-										"name": "enable.txt",
-										"path": [
-											"RIEC",
-											"2000-193691448320479",
-											"DOSSIER-27063437918693",
-											"enable.txt"
-										],
-										"type": "txt"
-									},
-									"administrator.txt": {
-										"name": "administrator.txt",
-										"path": [
-											"RIEC",
-											"2000-193691448320479",
-											"DOSSIER-27063437918693",
-											"administrator.txt"
+											"1966-167361072610951",
+											"DOSSIER-302072958629779",
+											"Inlichtingen-_Markten.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-273931774327978": {
+							"DOSSIER-312543100122315": {
 								"path": [
 									"RIEC",
-									"2000-193691448320479",
-									"DOSSIER-273931774327978"
+									"1966-167361072610951",
+									"DOSSIER-312543100122315"
 								],
-								"name": "DOSSIER-273931774327978",
+								"name": "DOSSIER-312543100122315",
 								"type": "dir",
-								"locked": true,
+								"dirType": "normal",
 								"children": {
-									"burgs_naira.txt": {
-										"name": "burgs_naira.txt",
+									"CN_Werk.pdf": {
+										"name": "CN_Werk.pdf",
 										"path": [
 											"RIEC",
-											"2000-193691448320479",
-											"DOSSIER-273931774327978",
-											"burgs_naira.txt"
+											"1966-167361072610951",
+											"DOSSIER-312543100122315",
+											"CN_Werk.pdf"
+										],
+										"type": "pdf"
+									},
+									"van_Inlichtingen-.pdf": {
+										"name": "van_Inlichtingen-.pdf",
+										"path": [
+											"RIEC",
+											"1966-167361072610951",
+											"DOSSIER-312543100122315",
+											"van_Inlichtingen-.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-9478109993528": {
+								"path": [
+									"RIEC",
+									"1966-167361072610951",
+									"DOSSIER-9478109993528"
+								],
+								"name": "DOSSIER-9478109993528",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Administratieve_uitvoerend.pdf": {
+										"name": "Administratieve_uitvoerend.pdf",
+										"path": [
+											"RIEC",
+											"1966-167361072610951",
+											"DOSSIER-9478109993528",
+											"Administratieve_uitvoerend.pdf"
+										],
+										"type": "pdf"
+									},
+									"Eustatiusen_ILTIOD.txt": {
+										"name": "Eustatiusen_ILTIOD.txt",
+										"path": [
+											"RIEC",
+											"1966-167361072610951",
+											"DOSSIER-9478109993528",
+											"Eustatiusen_ILTIOD.txt"
 										],
 										"type": "txt"
 									},
-									"canadian_dollar.txt": {
-										"name": "canadian_dollar.txt",
+									"van_Eustatiusen.txt": {
+										"name": "van_Eustatiusen.txt",
 										"path": [
 											"RIEC",
-											"2000-193691448320479",
-											"DOSSIER-273931774327978",
-											"canadian_dollar.txt"
-										],
-										"type": "txt"
-									},
-									"saint_barthelemy_tajikistan_handmade.txt": {
-										"name": "saint_barthelemy_tajikistan_handmade.txt",
-										"path": [
-											"RIEC",
-											"2000-193691448320479",
-											"DOSSIER-273931774327978",
-											"saint_barthelemy_tajikistan_handmade.txt"
-										],
-										"type": "txt"
-									},
-									"zimbabwe_dollar_practical.txt": {
-										"name": "zimbabwe_dollar_practical.txt",
-										"path": [
-											"RIEC",
-											"2000-193691448320479",
-											"DOSSIER-273931774327978",
-											"zimbabwe_dollar_practical.txt"
-										],
-										"type": "txt"
-									},
-									"health_table_agent.txt": {
-										"name": "health_table_agent.txt",
-										"path": [
-											"RIEC",
-											"2000-193691448320479",
-											"DOSSIER-273931774327978",
-											"health_table_agent.txt"
+											"1966-167361072610951",
+											"DOSSIER-9478109993528",
+											"van_Eustatiusen.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"avon_berkshire.txt": {
-								"name": "avon_berkshire.txt",
+							"DOSSIER-9856290172830": {
 								"path": [
 									"RIEC",
-									"2000-193691448320479",
-									"avon_berkshire.txt"
+									"1966-167361072610951",
+									"DOSSIER-9856290172830"
+								],
+								"name": "DOSSIER-9856290172830",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Saba_Centre,.txt": {
+										"name": "Saba_Centre,.txt",
+										"path": [
+											"RIEC",
+											"1966-167361072610951",
+											"DOSSIER-9856290172830",
+											"Saba_Centre,.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"onderdeel_de.txt": {
+								"name": "onderdeel_de.txt",
+								"path": [
+									"RIEC",
+									"1966-167361072610951",
+									"onderdeel_de.txt"
 								],
 								"type": "txt"
-							}
-						}
-					},
-					"2003-21156187864121": {
-						"path": [
-							"RIEC",
-							"2003-21156187864121"
-						],
-						"name": "2003-21156187864121",
-						"type": "dir",
-						"locked": true,
-						"children": {
-							"DOSSIER-11115312728615": {
-								"path": [
-									"RIEC",
-									"2003-21156187864121",
-									"DOSSIER-11115312728615"
-								],
-								"name": "DOSSIER-11115312728615",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"regional_tonga.txt": {
-										"name": "regional_tonga.txt",
-										"path": [
-											"RIEC",
-											"2003-21156187864121",
-											"DOSSIER-11115312728615",
-											"regional_tonga.txt"
-										],
-										"type": "txt"
-									},
-									"primary_regional_regional.txt": {
-										"name": "primary_regional_regional.txt",
-										"path": [
-											"RIEC",
-											"2003-21156187864121",
-											"DOSSIER-11115312728615",
-											"primary_regional_regional.txt"
-										],
-										"type": "txt"
-									},
-									"gloves_avon_borders.pdf": {
-										"name": "gloves_avon_borders.pdf",
-										"path": [
-											"RIEC",
-											"2003-21156187864121",
-											"DOSSIER-11115312728615",
-											"gloves_avon_borders.pdf"
-										],
-										"type": "pdf"
-									},
-									"realigned.pdf": {
-										"name": "realigned.pdf",
-										"path": [
-											"RIEC",
-											"2003-21156187864121",
-											"DOSSIER-11115312728615",
-											"realigned.pdf"
-										],
-										"type": "pdf"
-									},
-									"withdrawal_quantify.txt": {
-										"name": "withdrawal_quantify.txt",
-										"path": [
-											"RIEC",
-											"2003-21156187864121",
-											"DOSSIER-11115312728615",
-											"withdrawal_quantify.txt"
-										],
-										"type": "txt"
-									}
-								}
 							},
-							"DOSSIER-12868976622657": {
+							"AMLC_Opsporingsdienst.txt": {
+								"name": "AMLC_Opsporingsdienst.txt",
 								"path": [
 									"RIEC",
-									"2003-21156187864121",
-									"DOSSIER-12868976622657"
-								],
-								"name": "DOSSIER-12868976622657",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"monitor_niches_payment.pdf": {
-										"name": "monitor_niches_payment.pdf",
-										"path": [
-											"RIEC",
-											"2003-21156187864121",
-											"DOSSIER-12868976622657",
-											"monitor_niches_payment.pdf"
-										],
-										"type": "pdf"
-									},
-									"ball.txt": {
-										"name": "ball.txt",
-										"path": [
-											"RIEC",
-											"2003-21156187864121",
-											"DOSSIER-12868976622657",
-											"ball.txt"
-										],
-										"type": "txt"
-									},
-									"palau_payment.txt": {
-										"name": "palau_payment.txt",
-										"path": [
-											"RIEC",
-											"2003-21156187864121",
-											"DOSSIER-12868976622657",
-											"palau_payment.txt"
-										],
-										"type": "txt"
-									},
-									"exe.pdf": {
-										"name": "exe.pdf",
-										"path": [
-											"RIEC",
-											"2003-21156187864121",
-											"DOSSIER-12868976622657",
-											"exe.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-13422379212230": {
-								"path": [
-									"RIEC",
-									"2003-21156187864121",
-									"DOSSIER-13422379212230"
-								],
-								"name": "DOSSIER-13422379212230",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"sticky.pdf": {
-										"name": "sticky.pdf",
-										"path": [
-											"RIEC",
-											"2003-21156187864121",
-											"DOSSIER-13422379212230",
-											"sticky.pdf"
-										],
-										"type": "pdf"
-									},
-									"plaza.pdf": {
-										"name": "plaza.pdf",
-										"path": [
-											"RIEC",
-											"2003-21156187864121",
-											"DOSSIER-13422379212230",
-											"plaza.pdf"
-										],
-										"type": "pdf"
-									},
-									"movies_inlet_convertible_marks.txt": {
-										"name": "movies_inlet_convertible_marks.txt",
-										"path": [
-											"RIEC",
-											"2003-21156187864121",
-											"DOSSIER-13422379212230",
-											"movies_inlet_convertible_marks.txt"
-										],
-										"type": "txt"
-									},
-									"support.txt": {
-										"name": "support.txt",
-										"path": [
-											"RIEC",
-											"2003-21156187864121",
-											"DOSSIER-13422379212230",
-											"support.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-156232041510962": {
-								"path": [
-									"RIEC",
-									"2003-21156187864121",
-									"DOSSIER-156232041510962"
-								],
-								"name": "DOSSIER-156232041510962",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"incentivize_intelligent_metal_bacon.pdf": {
-										"name": "incentivize_intelligent_metal_bacon.pdf",
-										"path": [
-											"RIEC",
-											"2003-21156187864121",
-											"DOSSIER-156232041510962",
-											"incentivize_intelligent_metal_bacon.pdf"
-										],
-										"type": "pdf"
-									},
-									"payment_music.txt": {
-										"name": "payment_music.txt",
-										"path": [
-											"RIEC",
-											"2003-21156187864121",
-											"DOSSIER-156232041510962",
-											"payment_music.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-30781391210395": {
-								"path": [
-									"RIEC",
-									"2003-21156187864121",
-									"DOSSIER-30781391210395"
-								],
-								"name": "DOSSIER-30781391210395",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"central.pdf": {
-										"name": "central.pdf",
-										"path": [
-											"RIEC",
-											"2003-21156187864121",
-											"DOSSIER-30781391210395",
-											"central.pdf"
-										],
-										"type": "pdf"
-									},
-									"rubber_incredible_checking_account.txt": {
-										"name": "rubber_incredible_checking_account.txt",
-										"path": [
-											"RIEC",
-											"2003-21156187864121",
-											"DOSSIER-30781391210395",
-											"rubber_incredible_checking_account.txt"
-										],
-										"type": "txt"
-									},
-									"books_shoal.txt": {
-										"name": "books_shoal.txt",
-										"path": [
-											"RIEC",
-											"2003-21156187864121",
-											"DOSSIER-30781391210395",
-											"books_shoal.txt"
-										],
-										"type": "txt"
-									},
-									"auxiliary_interfaces.txt": {
-										"name": "auxiliary_interfaces.txt",
-										"path": [
-											"RIEC",
-											"2003-21156187864121",
-											"DOSSIER-30781391210395",
-											"auxiliary_interfaces.txt"
-										],
-										"type": "txt"
-									},
-									"hub_tasty_steel_bike.txt": {
-										"name": "hub_tasty_steel_bike.txt",
-										"path": [
-											"RIEC",
-											"2003-21156187864121",
-											"DOSSIER-30781391210395",
-											"hub_tasty_steel_bike.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"interactive_dynamic.txt": {
-								"name": "interactive_dynamic.txt",
-								"path": [
-									"RIEC",
-									"2003-21156187864121",
-									"interactive_dynamic.txt"
+									"1966-167361072610951",
+									"AMLC_Opsporingsdienst.txt"
 								],
 								"type": "txt"
-							}
-						}
-					},
-					"2006-75862378818632": {
-						"path": [
-							"RIEC",
-							"2006-75862378818632"
-						],
-						"name": "2006-75862378818632",
-						"type": "dir",
-						"locked": true,
-						"children": {
-							"DOSSIER-214761219530042": {
-								"path": [
-									"RIEC",
-									"2006-75862378818632",
-									"DOSSIER-214761219530042"
-								],
-								"name": "DOSSIER-214761219530042",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"world_class_sql.txt": {
-										"name": "world_class_sql.txt",
-										"path": [
-											"RIEC",
-											"2006-75862378818632",
-											"DOSSIER-214761219530042",
-											"world_class_sql.txt"
-										],
-										"type": "txt"
-									},
-									"division_open_source_redundant.txt": {
-										"name": "division_open_source_redundant.txt",
-										"path": [
-											"RIEC",
-											"2006-75862378818632",
-											"DOSSIER-214761219530042",
-											"division_open_source_redundant.txt"
-										],
-										"type": "txt"
-									},
-									"australia_multi_tasking.pdf": {
-										"name": "australia_multi_tasking.pdf",
-										"path": [
-											"RIEC",
-											"2006-75862378818632",
-											"DOSSIER-214761219530042",
-											"australia_multi_tasking.pdf"
-										],
-										"type": "pdf"
-									},
-									"salad_credit_card_account.txt": {
-										"name": "salad_credit_card_account.txt",
-										"path": [
-											"RIEC",
-											"2006-75862378818632",
-											"DOSSIER-214761219530042",
-											"salad_credit_card_account.txt"
-										],
-										"type": "txt"
-									}
-								}
 							},
-							"DOSSIER-231591960731246": {
+							"en_Landelijke.pdf": {
+								"name": "en_Landelijke.pdf",
 								"path": [
 									"RIEC",
-									"2006-75862378818632",
-									"DOSSIER-231591960731246"
-								],
-								"name": "DOSSIER-231591960731246",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"iceland_krona_gb.txt": {
-										"name": "iceland_krona_gb.txt",
-										"path": [
-											"RIEC",
-											"2006-75862378818632",
-											"DOSSIER-231591960731246",
-											"iceland_krona_gb.txt"
-										],
-										"type": "txt"
-									},
-									"overriding_com_payment.pdf": {
-										"name": "overriding_com_payment.pdf",
-										"path": [
-											"RIEC",
-											"2006-75862378818632",
-											"DOSSIER-231591960731246",
-											"overriding_com_payment.pdf"
-										],
-										"type": "pdf"
-									},
-									"generic_fresh_chair.txt": {
-										"name": "generic_fresh_chair.txt",
-										"path": [
-											"RIEC",
-											"2006-75862378818632",
-											"DOSSIER-231591960731246",
-											"generic_fresh_chair.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-2396222531493": {
-								"path": [
-									"RIEC",
-									"2006-75862378818632",
-									"DOSSIER-2396222531493"
-								],
-								"name": "DOSSIER-2396222531493",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"contextually_based_solution.txt": {
-										"name": "contextually_based_solution.txt",
-										"path": [
-											"RIEC",
-											"2006-75862378818632",
-											"DOSSIER-2396222531493",
-											"contextually_based_solution.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-31532111193756": {
-								"path": [
-									"RIEC",
-									"2006-75862378818632",
-									"DOSSIER-31532111193756"
-								],
-								"name": "DOSSIER-31532111193756",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"forward_grey.pdf": {
-										"name": "forward_grey.pdf",
-										"path": [
-											"RIEC",
-											"2006-75862378818632",
-											"DOSSIER-31532111193756",
-											"forward_grey.pdf"
-										],
-										"type": "pdf"
-									},
-									"executive_progressive_sky_blue.pdf": {
-										"name": "executive_progressive_sky_blue.pdf",
-										"path": [
-											"RIEC",
-											"2006-75862378818632",
-											"DOSSIER-31532111193756",
-											"executive_progressive_sky_blue.pdf"
-										],
-										"type": "pdf"
-									},
-									"east_caribbean_dollar_plastic_optimal.txt": {
-										"name": "east_caribbean_dollar_plastic_optimal.txt",
-										"path": [
-											"RIEC",
-											"2006-75862378818632",
-											"DOSSIER-31532111193756",
-											"east_caribbean_dollar_plastic_optimal.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-5447181069855": {
-								"path": [
-									"RIEC",
-									"2006-75862378818632",
-									"DOSSIER-5447181069855"
-								],
-								"name": "DOSSIER-5447181069855",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"home_loan_account_manager_vista.txt": {
-										"name": "home_loan_account_manager_vista.txt",
-										"path": [
-											"RIEC",
-											"2006-75862378818632",
-											"DOSSIER-5447181069855",
-											"home_loan_account_manager_vista.txt"
-										],
-										"type": "txt"
-									},
-									"application_help_desk_invoice.txt": {
-										"name": "application_help_desk_invoice.txt",
-										"path": [
-											"RIEC",
-											"2006-75862378818632",
-											"DOSSIER-5447181069855",
-											"application_help_desk_invoice.txt"
-										],
-										"type": "txt"
-									},
-									"avon_auxiliary_assistant.txt": {
-										"name": "avon_auxiliary_assistant.txt",
-										"path": [
-											"RIEC",
-											"2006-75862378818632",
-											"DOSSIER-5447181069855",
-											"avon_auxiliary_assistant.txt"
-										],
-										"type": "txt"
-									},
-									"games_automotive.txt": {
-										"name": "games_automotive.txt",
-										"path": [
-											"RIEC",
-											"2006-75862378818632",
-											"DOSSIER-5447181069855",
-											"games_automotive.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"handcrafted.txt": {
-								"name": "handcrafted.txt",
-								"path": [
-									"RIEC",
-									"2006-75862378818632",
-									"handcrafted.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"2014-29610271955205": {
-						"path": [
-							"RIEC",
-							"2014-29610271955205"
-						],
-						"name": "2014-29610271955205",
-						"type": "dir",
-						"locked": true,
-						"children": {
-							"DOSSIER-20276247714658": {
-								"path": [
-									"RIEC",
-									"2014-29610271955205",
-									"DOSSIER-20276247714658"
-								],
-								"name": "DOSSIER-20276247714658",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"loop.pdf": {
-										"name": "loop.pdf",
-										"path": [
-											"RIEC",
-											"2014-29610271955205",
-											"DOSSIER-20276247714658",
-											"loop.pdf"
-										],
-										"type": "pdf"
-									},
-									"wireless_clothing.txt": {
-										"name": "wireless_clothing.txt",
-										"path": [
-											"RIEC",
-											"2014-29610271955205",
-											"DOSSIER-20276247714658",
-											"wireless_clothing.txt"
-										],
-										"type": "txt"
-									},
-									"pines_collaboration_generic_soft_mouse.txt": {
-										"name": "pines_collaboration_generic_soft_mouse.txt",
-										"path": [
-											"RIEC",
-											"2014-29610271955205",
-											"DOSSIER-20276247714658",
-											"pines_collaboration_generic_soft_mouse.txt"
-										],
-										"type": "txt"
-									},
-									"electronics_triple_buffered_microchip.pdf": {
-										"name": "electronics_triple_buffered_microchip.pdf",
-										"path": [
-											"RIEC",
-											"2014-29610271955205",
-											"DOSSIER-20276247714658",
-											"electronics_triple_buffered_microchip.pdf"
-										],
-										"type": "pdf"
-									},
-									"multi_state_toys_payment.txt": {
-										"name": "multi_state_toys_payment.txt",
-										"path": [
-											"RIEC",
-											"2014-29610271955205",
-											"DOSSIER-20276247714658",
-											"multi_state_toys_payment.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-24214362318634": {
-								"path": [
-									"RIEC",
-									"2014-29610271955205",
-									"DOSSIER-24214362318634"
-								],
-								"name": "DOSSIER-24214362318634",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"grey.txt": {
-										"name": "grey.txt",
-										"path": [
-											"RIEC",
-											"2014-29610271955205",
-											"DOSSIER-24214362318634",
-											"grey.txt"
-										],
-										"type": "txt"
-									},
-									"input_auto_loan_account.txt": {
-										"name": "input_auto_loan_account.txt",
-										"path": [
-											"RIEC",
-											"2014-29610271955205",
-											"DOSSIER-24214362318634",
-											"input_auto_loan_account.txt"
-										],
-										"type": "txt"
-									},
-									"dynamic.txt": {
-										"name": "dynamic.txt",
-										"path": [
-											"RIEC",
-											"2014-29610271955205",
-											"DOSSIER-24214362318634",
-											"dynamic.txt"
-										],
-										"type": "txt"
-									},
-									"bedfordshire_pixel.txt": {
-										"name": "bedfordshire_pixel.txt",
-										"path": [
-											"RIEC",
-											"2014-29610271955205",
-											"DOSSIER-24214362318634",
-											"bedfordshire_pixel.txt"
-										],
-										"type": "txt"
-									},
-									"indexing.txt": {
-										"name": "indexing.txt",
-										"path": [
-											"RIEC",
-											"2014-29610271955205",
-											"DOSSIER-24214362318634",
-											"indexing.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-26624476121663": {
-								"path": [
-									"RIEC",
-									"2014-29610271955205",
-									"DOSSIER-26624476121663"
-								],
-								"name": "DOSSIER-26624476121663",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"technician_back_up_texas.txt": {
-										"name": "technician_back_up_texas.txt",
-										"path": [
-											"RIEC",
-											"2014-29610271955205",
-											"DOSSIER-26624476121663",
-											"technician_back_up_texas.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-289551724412591": {
-								"path": [
-									"RIEC",
-									"2014-29610271955205",
-									"DOSSIER-289551724412591"
-								],
-								"name": "DOSSIER-289551724412591",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"withdrawal_rapid_human.txt": {
-										"name": "withdrawal_rapid_human.txt",
-										"path": [
-											"RIEC",
-											"2014-29610271955205",
-											"DOSSIER-289551724412591",
-											"withdrawal_rapid_human.txt"
-										],
-										"type": "txt"
-									},
-									"tasty_massachusetts.pdf": {
-										"name": "tasty_massachusetts.pdf",
-										"path": [
-											"RIEC",
-											"2014-29610271955205",
-											"DOSSIER-289551724412591",
-											"tasty_massachusetts.pdf"
-										],
-										"type": "pdf"
-									},
-									"hacking_pants.txt": {
-										"name": "hacking_pants.txt",
-										"path": [
-											"RIEC",
-											"2014-29610271955205",
-											"DOSSIER-289551724412591",
-											"hacking_pants.txt"
-										],
-										"type": "txt"
-									},
-									"front_line_concrete.txt": {
-										"name": "front_line_concrete.txt",
-										"path": [
-											"RIEC",
-											"2014-29610271955205",
-											"DOSSIER-289551724412591",
-											"front_line_concrete.txt"
-										],
-										"type": "txt"
-									},
-									"bandwidth_lempira_concrete.txt": {
-										"name": "bandwidth_lempira_concrete.txt",
-										"path": [
-											"RIEC",
-											"2014-29610271955205",
-											"DOSSIER-289551724412591",
-											"bandwidth_lempira_concrete.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-8220237567730": {
-								"path": [
-									"RIEC",
-									"2014-29610271955205",
-									"DOSSIER-8220237567730"
-								],
-								"name": "DOSSIER-8220237567730",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"reboot.txt": {
-										"name": "reboot.txt",
-										"path": [
-											"RIEC",
-											"2014-29610271955205",
-											"DOSSIER-8220237567730",
-											"reboot.txt"
-										],
-										"type": "txt"
-									},
-									"small_sensor_calculate.txt": {
-										"name": "small_sensor_calculate.txt",
-										"path": [
-											"RIEC",
-											"2014-29610271955205",
-											"DOSSIER-8220237567730",
-											"small_sensor_calculate.txt"
-										],
-										"type": "txt"
-									},
-									"hierarchy_oklahoma.txt": {
-										"name": "hierarchy_oklahoma.txt",
-										"path": [
-											"RIEC",
-											"2014-29610271955205",
-											"DOSSIER-8220237567730",
-											"hierarchy_oklahoma.txt"
-										],
-										"type": "txt"
-									},
-									"cape_executive.txt": {
-										"name": "cape_executive.txt",
-										"path": [
-											"RIEC",
-											"2014-29610271955205",
-											"DOSSIER-8220237567730",
-											"cape_executive.txt"
-										],
-										"type": "txt"
-									},
-									"hacking_bedfordshire_right_sized.pdf": {
-										"name": "hacking_bedfordshire_right_sized.pdf",
-										"path": [
-											"RIEC",
-											"2014-29610271955205",
-											"DOSSIER-8220237567730",
-											"hacking_bedfordshire_right_sized.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"lead_berkshire.txt": {
-								"name": "lead_berkshire.txt",
-								"path": [
-									"RIEC",
-									"2014-29610271955205",
-									"lead_berkshire.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"2014-309132730121577": {
-						"path": [
-							"RIEC",
-							"2014-309132730121577"
-						],
-						"name": "2014-309132730121577",
-						"type": "dir",
-						"locked": false,
-						"children": {
-							"DOSSIER-169551059012097": {
-								"path": [
-									"RIEC",
-									"2014-309132730121577",
-									"DOSSIER-169551059012097"
-								],
-								"name": "DOSSIER-169551059012097",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"parse_scsi_real_time.txt": {
-										"name": "parse_scsi_real_time.txt",
-										"path": [
-											"RIEC",
-											"2014-309132730121577",
-											"DOSSIER-169551059012097",
-											"parse_scsi_real_time.txt"
-										],
-										"type": "txt"
-									},
-									"lead.txt": {
-										"name": "lead.txt",
-										"path": [
-											"RIEC",
-											"2014-309132730121577",
-											"DOSSIER-169551059012097",
-											"lead.txt"
-										],
-										"type": "txt"
-									},
-									"product_models_paradigms.txt": {
-										"name": "product_models_paradigms.txt",
-										"path": [
-											"RIEC",
-											"2014-309132730121577",
-											"DOSSIER-169551059012097",
-											"product_models_paradigms.txt"
-										],
-										"type": "txt"
-									},
-									"lodge_producer_payment.pdf": {
-										"name": "lodge_producer_payment.pdf",
-										"path": [
-											"RIEC",
-											"2014-309132730121577",
-											"DOSSIER-169551059012097",
-											"lodge_producer_payment.pdf"
-										],
-										"type": "pdf"
-									},
-									"multi_byte_syrian_arab_republic_recontextualize.txt": {
-										"name": "multi_byte_syrian_arab_republic_recontextualize.txt",
-										"path": [
-											"RIEC",
-											"2014-309132730121577",
-											"DOSSIER-169551059012097",
-											"multi_byte_syrian_arab_republic_recontextualize.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-17872850329677": {
-								"path": [
-									"RIEC",
-									"2014-309132730121577",
-									"DOSSIER-17872850329677"
-								],
-								"name": "DOSSIER-17872850329677",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"generic_steel_chicken_granite.pdf": {
-										"name": "generic_steel_chicken_granite.pdf",
-										"path": [
-											"RIEC",
-											"2014-309132730121577",
-											"DOSSIER-17872850329677",
-											"generic_steel_chicken_granite.pdf"
-										],
-										"type": "pdf"
-									},
-									"sleek_metal_pizza_ergonomic_digital.pdf": {
-										"name": "sleek_metal_pizza_ergonomic_digital.pdf",
-										"path": [
-											"RIEC",
-											"2014-309132730121577",
-											"DOSSIER-17872850329677",
-											"sleek_metal_pizza_ergonomic_digital.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-292982769529993": {
-								"path": [
-									"RIEC",
-									"2014-309132730121577",
-									"DOSSIER-292982769529993"
-								],
-								"name": "DOSSIER-292982769529993",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"functionalities_awesome_frozen_keyboard_customer.pdf": {
-										"name": "functionalities_awesome_frozen_keyboard_customer.pdf",
-										"path": [
-											"RIEC",
-											"2014-309132730121577",
-											"DOSSIER-292982769529993",
-											"functionalities_awesome_frozen_keyboard_customer.pdf"
-										],
-										"type": "pdf"
-									},
-									"djibouti.txt": {
-										"name": "djibouti.txt",
-										"path": [
-											"RIEC",
-											"2014-309132730121577",
-											"DOSSIER-292982769529993",
-											"djibouti.txt"
-										],
-										"type": "txt"
-									},
-									"nebraska_smtp_firewall.pdf": {
-										"name": "nebraska_smtp_firewall.pdf",
-										"path": [
-											"RIEC",
-											"2014-309132730121577",
-											"DOSSIER-292982769529993",
-											"nebraska_smtp_firewall.pdf"
-										],
-										"type": "pdf"
-									},
-									"frozen_sas.pdf": {
-										"name": "frozen_sas.pdf",
-										"path": [
-											"RIEC",
-											"2014-309132730121577",
-											"DOSSIER-292982769529993",
-											"frozen_sas.pdf"
-										],
-										"type": "pdf"
-									},
-									"relationships.pdf": {
-										"name": "relationships.pdf",
-										"path": [
-											"RIEC",
-											"2014-309132730121577",
-											"DOSSIER-292982769529993",
-											"relationships.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-31695427320061": {
-								"path": [
-									"RIEC",
-									"2014-309132730121577",
-									"DOSSIER-31695427320061"
-								],
-								"name": "DOSSIER-31695427320061",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"trinidad_and_tobago_dollar_object_oriented_e_markets.txt": {
-										"name": "trinidad_and_tobago_dollar_object_oriented_e_markets.txt",
-										"path": [
-											"RIEC",
-											"2014-309132730121577",
-											"DOSSIER-31695427320061",
-											"trinidad_and_tobago_dollar_object_oriented_e_markets.txt"
-										],
-										"type": "txt"
-									},
-									"synergy.pdf": {
-										"name": "synergy.pdf",
-										"path": [
-											"RIEC",
-											"2014-309132730121577",
-											"DOSSIER-31695427320061",
-											"synergy.pdf"
-										],
-										"type": "pdf"
-									},
-									"navigating.pdf": {
-										"name": "navigating.pdf",
-										"path": [
-											"RIEC",
-											"2014-309132730121577",
-											"DOSSIER-31695427320061",
-											"navigating.pdf"
-										],
-										"type": "pdf"
-									},
-									"killer_iceland_krona.txt": {
-										"name": "killer_iceland_krona.txt",
-										"path": [
-											"RIEC",
-											"2014-309132730121577",
-											"DOSSIER-31695427320061",
-											"killer_iceland_krona.txt"
-										],
-										"type": "txt"
-									},
-									"health_lilangeni.txt": {
-										"name": "health_lilangeni.txt",
-										"path": [
-											"RIEC",
-											"2014-309132730121577",
-											"DOSSIER-31695427320061",
-											"health_lilangeni.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-9241493413423": {
-								"path": [
-									"RIEC",
-									"2014-309132730121577",
-									"DOSSIER-9241493413423"
-								],
-								"name": "DOSSIER-9241493413423",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"frozen_hdd_rustic_fresh_chicken.pdf": {
-										"name": "frozen_hdd_rustic_fresh_chicken.pdf",
-										"path": [
-											"RIEC",
-											"2014-309132730121577",
-											"DOSSIER-9241493413423",
-											"frozen_hdd_rustic_fresh_chicken.pdf"
-										],
-										"type": "pdf"
-									},
-									"tcp_black_michigan.txt": {
-										"name": "tcp_black_michigan.txt",
-										"path": [
-											"RIEC",
-											"2014-309132730121577",
-											"DOSSIER-9241493413423",
-											"tcp_black_michigan.txt"
-										],
-										"type": "txt"
-									},
-									"rial_omani_css.txt": {
-										"name": "rial_omani_css.txt",
-										"path": [
-											"RIEC",
-											"2014-309132730121577",
-											"DOSSIER-9241493413423",
-											"rial_omani_css.txt"
-										],
-										"type": "txt"
-									},
-									"home.pdf": {
-										"name": "home.pdf",
-										"path": [
-											"RIEC",
-											"2014-309132730121577",
-											"DOSSIER-9241493413423",
-											"home.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"optimal.pdf": {
-								"name": "optimal.pdf",
-								"path": [
-									"RIEC",
-									"2014-309132730121577",
-									"optimal.pdf"
+									"1966-167361072610951",
+									"en_Landelijke.pdf"
 								],
 								"type": "pdf"
 							}
 						}
 					},
-					"course_books.pdf": {
-						"name": "course_books.pdf",
+					"1971-17576876314363": {
 						"path": [
 							"RIEC",
-							"course_books.pdf"
+							"1971-17576876314363"
 						],
-						"type": "pdf"
+						"name": "1971-17576876314363",
+						"type": "dir",
+						"dirType": "locked",
+						"children": {
+							"DOSSIER-188262923420900": {
+								"path": [
+									"RIEC",
+									"1971-17576876314363",
+									"DOSSIER-188262923420900"
+								],
+								"name": "DOSSIER-188262923420900",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Informatie,_GoAML.txt": {
+										"name": "Informatie,_GoAML.txt",
+										"path": [
+											"RIEC",
+											"1971-17576876314363",
+											"DOSSIER-188262923420900",
+											"Informatie,_GoAML.txt"
+										],
+										"type": "txt"
+									},
+									"en_Nederland.txt": {
+										"name": "en_Nederland.txt",
+										"path": [
+											"RIEC",
+											"1971-17576876314363",
+											"DOSSIER-188262923420900",
+											"en_Nederland.txt"
+										],
+										"type": "txt"
+									},
+									"Government_Force.txt": {
+										"name": "Government_Force.txt",
+										"path": [
+											"RIEC",
+											"1971-17576876314363",
+											"DOSSIER-188262923420900",
+											"Government_Force.txt"
+										],
+										"type": "txt"
+									},
+									"EMM_Markten.txt": {
+										"name": "EMM_Markten.txt",
+										"path": [
+											"RIEC",
+											"1971-17576876314363",
+											"DOSSIER-188262923420900",
+											"EMM_Markten.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-25191716117239": {
+								"path": [
+									"RIEC",
+									"1971-17576876314363",
+									"DOSSIER-25191716117239"
+								],
+								"name": "DOSSIER-25191716117239",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"interne_Andrea.pdf": {
+										"name": "interne_Andrea.pdf",
+										"path": [
+											"RIEC",
+											"1971-17576876314363",
+											"DOSSIER-25191716117239",
+											"interne_Andrea.pdf"
+										],
+										"type": "pdf"
+									},
+									"iCOV_BFT.txt": {
+										"name": "iCOV_BFT.txt",
+										"path": [
+											"RIEC",
+											"1971-17576876314363",
+											"DOSSIER-25191716117239",
+											"iCOV_BFT.txt"
+										],
+										"type": "txt"
+									},
+									"Task_Criminaliteit.pdf": {
+										"name": "Task_Criminaliteit.pdf",
+										"path": [
+											"RIEC",
+											"1971-17576876314363",
+											"DOSSIER-25191716117239",
+											"Task_Criminaliteit.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-276841602327071": {
+								"path": [
+									"RIEC",
+									"1971-17576876314363",
+									"DOSSIER-276841602327071"
+								],
+								"name": "DOSSIER-276841602327071",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Europese_FlU-Nederland.txt": {
+										"name": "Europese_FlU-Nederland.txt",
+										"path": [
+											"RIEC",
+											"1971-17576876314363",
+											"DOSSIER-276841602327071",
+											"Europese_FlU-Nederland.txt"
+										],
+										"type": "txt"
+									},
+									"Sint_en.pdf": {
+										"name": "Sint_en.pdf",
+										"path": [
+											"RIEC",
+											"1971-17576876314363",
+											"DOSSIER-276841602327071",
+											"Sint_en.pdf"
+										],
+										"type": "pdf"
+									},
+									"Financieel_onderdeel.pdf": {
+										"name": "Financieel_onderdeel.pdf",
+										"path": [
+											"RIEC",
+											"1971-17576876314363",
+											"DOSSIER-276841602327071",
+											"Financieel_onderdeel.pdf"
+										],
+										"type": "pdf"
+									},
+									"FIOD_Multidisciplinary.txt": {
+										"name": "FIOD_Multidisciplinary.txt",
+										"path": [
+											"RIEC",
+											"1971-17576876314363",
+											"DOSSIER-276841602327071",
+											"FIOD_Multidisciplinary.txt"
+										],
+										"type": "txt"
+									},
+									"Bureau_Leefomgeving.pdf": {
+										"name": "Bureau_Leefomgeving.pdf",
+										"path": [
+											"RIEC",
+											"1971-17576876314363",
+											"DOSSIER-276841602327071",
+											"Bureau_Leefomgeving.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-30780180449572": {
+								"path": [
+									"RIEC",
+									"1971-17576876314363",
+									"DOSSIER-30780180449572"
+								],
+								"name": "DOSSIER-30780180449572",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Administratieve_FinEC.txt": {
+										"name": "Administratieve_FinEC.txt",
+										"path": [
+											"RIEC",
+											"1971-17576876314363",
+											"DOSSIER-30780180449572",
+											"Administratieve_FinEC.txt"
+										],
+										"type": "txt"
+									},
+									"Europese_BOOM.txt": {
+										"name": "Europese_BOOM.txt",
+										"path": [
+											"RIEC",
+											"1971-17576876314363",
+											"DOSSIER-30780180449572",
+											"Europese_BOOM.txt"
+										],
+										"type": "txt"
+									},
+									"De_Government.pdf": {
+										"name": "De_Government.pdf",
+										"path": [
+											"RIEC",
+											"1971-17576876314363",
+											"DOSSIER-30780180449572",
+											"De_Government.pdf"
+										],
+										"type": "pdf"
+									},
+									"Bureau_Caribisch.pdf": {
+										"name": "Bureau_Caribisch.pdf",
+										"path": [
+											"RIEC",
+											"1971-17576876314363",
+											"DOSSIER-30780180449572",
+											"Bureau_Caribisch.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-3602969930328": {
+								"path": [
+									"RIEC",
+									"1971-17576876314363",
+									"DOSSIER-3602969930328"
+								],
+								"name": "DOSSIER-3602969930328",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Bureau_Ministerie,.txt": {
+										"name": "Bureau_Ministerie,.txt",
+										"path": [
+											"RIEC",
+											"1971-17576876314363",
+											"DOSSIER-3602969930328",
+											"Bureau_Ministerie,.txt"
+										],
+										"type": "txt"
+									},
+									"Mensenhandel_Inlichtingen-.txt": {
+										"name": "Mensenhandel_Inlichtingen-.txt",
+										"path": [
+											"RIEC",
+											"1971-17576876314363",
+											"DOSSIER-3602969930328",
+											"Mensenhandel_Inlichtingen-.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"applicatie_Crimineel.txt": {
+								"name": "applicatie_Crimineel.txt",
+								"path": [
+									"RIEC",
+									"1971-17576876314363",
+									"applicatie_Crimineel.txt"
+								],
+								"type": "txt"
+							},
+							"European_proliferatiefmanciering..txt": {
+								"name": "European_proliferatiefmanciering..txt",
+								"path": [
+									"RIEC",
+									"1971-17576876314363",
+									"European_proliferatiefmanciering..txt"
+								],
+								"type": "txt"
+							},
+							"de_CTEPF.txt": {
+								"name": "de_CTEPF.txt",
+								"path": [
+									"RIEC",
+									"1971-17576876314363",
+									"de_CTEPF.txt"
+								],
+								"type": "txt"
+							},
+							"Nederland_Bureau.pdf": {
+								"name": "Nederland_Bureau.pdf",
+								"path": [
+									"RIEC",
+									"1971-17576876314363",
+									"Nederland_Bureau.pdf"
+								],
+								"type": "pdf"
+							},
+							"CJIB_onderdeel.txt": {
+								"name": "CJIB_onderdeel.txt",
+								"path": [
+									"RIEC",
+									"1971-17576876314363",
+									"CJIB_onderdeel.txt"
+								],
+								"type": "txt"
+							}
+						}
+					},
+					"1974-1071269824137": {
+						"path": [
+							"RIEC",
+							"1974-1071269824137"
+						],
+						"name": "1974-1071269824137",
+						"type": "dir",
+						"dirType": "archive",
+						"children": {
+							"DOSSIER-11014577611025": {
+								"path": [
+									"RIEC",
+									"1974-1071269824137",
+									"DOSSIER-11014577611025"
+								],
+								"name": "DOSSIER-11014577611025",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"eilanden_Onverklaarbaar.txt": {
+										"name": "eilanden_Onverklaarbaar.txt",
+										"path": [
+											"RIEC",
+											"1974-1071269824137",
+											"DOSSIER-11014577611025",
+											"eilanden_Onverklaarbaar.txt"
+										],
+										"type": "txt"
+									},
+									"Nederland:_Against.pdf": {
+										"name": "Nederland:_Against.pdf",
+										"path": [
+											"RIEC",
+											"1974-1071269824137",
+											"DOSSIER-11014577611025",
+											"Nederland:_Against.pdf"
+										],
+										"type": "pdf"
+									},
+									"Financial_Parket,.txt": {
+										"name": "Financial_Parket,.txt",
+										"path": [
+											"RIEC",
+											"1974-1071269824137",
+											"DOSSIER-11014577611025",
+											"Financial_Parket,.txt"
+										],
+										"type": "txt"
+									},
+									"Inkomen,_DWI.txt": {
+										"name": "Inkomen,_DWI.txt",
+										"path": [
+											"RIEC",
+											"1974-1071269824137",
+											"DOSSIER-11014577611025",
+											"Inkomen,_DWI.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-224422924627365": {
+								"path": [
+									"RIEC",
+									"1974-1071269824137",
+									"DOSSIER-224422924627365"
+								],
+								"name": "DOSSIER-224422924627365",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Opsporingsdienst_Bureau.txt": {
+										"name": "Opsporingsdienst_Bureau.txt",
+										"path": [
+											"RIEC",
+											"1974-1071269824137",
+											"DOSSIER-224422924627365",
+											"Opsporingsdienst_Bureau.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-29111419422020": {
+								"path": [
+									"RIEC",
+									"1974-1071269824137",
+									"DOSSIER-29111419422020"
+								],
+								"name": "DOSSIER-29111419422020",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Criminaliteit_Contraterrorisme.txt": {
+										"name": "Criminaliteit_Contraterrorisme.txt",
+										"path": [
+											"RIEC",
+											"1974-1071269824137",
+											"DOSSIER-29111419422020",
+											"Criminaliteit_Contraterrorisme.txt"
+										],
+										"type": "txt"
+									},
+									"Programma_van.txt": {
+										"name": "Programma_van.txt",
+										"path": [
+											"RIEC",
+											"1974-1071269824137",
+											"DOSSIER-29111419422020",
+											"Programma_van.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-5189146503889": {
+								"path": [
+									"RIEC",
+									"1974-1071269824137",
+									"DOSSIER-5189146503889"
+								],
+								"name": "DOSSIER-5189146503889",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Government_Autoriteit.pdf": {
+										"name": "Government_Autoriteit.pdf",
+										"path": [
+											"RIEC",
+											"1974-1071269824137",
+											"DOSSIER-5189146503889",
+											"Government_Autoriteit.pdf"
+										],
+										"type": "pdf"
+									},
+									"Landelijke_een.txt": {
+										"name": "Landelijke_een.txt",
+										"path": [
+											"RIEC",
+											"1974-1071269824137",
+											"DOSSIER-5189146503889",
+											"Landelijke_een.txt"
+										],
+										"type": "txt"
+									},
+									"Ontnemingswetgeving_Against.pdf": {
+										"name": "Ontnemingswetgeving_Against.pdf",
+										"path": [
+											"RIEC",
+											"1974-1071269824137",
+											"DOSSIER-5189146503889",
+											"Ontnemingswetgeving_Against.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-77921837329853": {
+								"path": [
+									"RIEC",
+									"1974-1071269824137",
+									"DOSSIER-77921837329853"
+								],
+								"name": "DOSSIER-77921837329853",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Infobox_Toezicht.txt": {
+										"name": "Infobox_Toezicht.txt",
+										"path": [
+											"RIEC",
+											"1974-1071269824137",
+											"DOSSIER-77921837329853",
+											"Infobox_Toezicht.txt"
+										],
+										"type": "txt"
+									},
+									"orgaan_EU.pdf": {
+										"name": "orgaan_EU.pdf",
+										"path": [
+											"RIEC",
+											"1974-1071269824137",
+											"DOSSIER-77921837329853",
+											"orgaan_EU.pdf"
+										],
+										"type": "pdf"
+									},
+									"Leefomgeving_Infobox.pdf": {
+										"name": "Leefomgeving_Infobox.pdf",
+										"path": [
+											"RIEC",
+											"1974-1071269824137",
+											"DOSSIER-77921837329853",
+											"Leefomgeving_Infobox.pdf"
+										],
+										"type": "pdf"
+									},
+									"Bonaire._interne.txt": {
+										"name": "Bonaire._interne.txt",
+										"path": [
+											"RIEC",
+											"1974-1071269824137",
+											"DOSSIER-77921837329853",
+											"Bonaire._interne.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"de_Opsporingsdienst.pdf": {
+								"name": "de_Opsporingsdienst.pdf",
+								"path": [
+									"RIEC",
+									"1974-1071269824137",
+									"de_Opsporingsdienst.pdf"
+								],
+								"type": "pdf"
+							},
+							"andrea_en.pdf": {
+								"name": "andrea_en.pdf",
+								"path": [
+									"RIEC",
+									"1974-1071269824137",
+									"andrea_en.pdf"
+								],
+								"type": "pdf"
+							},
+							"Ministerie,_Andrea.pdf": {
+								"name": "Ministerie,_Andrea.pdf",
+								"path": [
+									"RIEC",
+									"1974-1071269824137",
+									"Ministerie,_Andrea.pdf"
+								],
+								"type": "pdf"
+							}
+						}
+					},
+					"1992-29002257757251": {
+						"path": [
+							"RIEC",
+							"1992-29002257757251"
+						],
+						"name": "1992-29002257757251",
+						"type": "dir",
+						"dirType": "locked",
+						"children": {
+							"DOSSIER-21203277858933": {
+								"path": [
+									"RIEC",
+									"1992-29002257757251",
+									"DOSSIER-21203277858933"
+								],
+								"name": "DOSSIER-21203277858933",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"CTEPF_Inkomen,.txt": {
+										"name": "CTEPF_Inkomen,.txt",
+										"path": [
+											"RIEC",
+											"1992-29002257757251",
+											"DOSSIER-21203277858933",
+											"CTEPF_Inkomen,.txt"
+										],
+										"type": "txt"
+									},
+									"de_onderdeel.txt": {
+										"name": "de_onderdeel.txt",
+										"path": [
+											"RIEC",
+											"1992-29002257757251",
+											"DOSSIER-21203277858933",
+											"de_onderdeel.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-24209754427820": {
+								"path": [
+									"RIEC",
+									"1992-29002257757251",
+									"DOSSIER-24209754427820"
+								],
+								"name": "DOSSIER-24209754427820",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"van_BVI.pdf": {
+										"name": "van_BVI.pdf",
+										"path": [
+											"RIEC",
+											"1992-29002257757251",
+											"DOSSIER-24209754427820",
+											"van_BVI.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-24647495020600": {
+								"path": [
+									"RIEC",
+									"1992-29002257757251",
+									"DOSSIER-24647495020600"
+								],
+								"name": "DOSSIER-24647495020600",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"UNODC_van.pdf": {
+										"name": "UNODC_van.pdf",
+										"path": [
+											"RIEC",
+											"1992-29002257757251",
+											"DOSSIER-24647495020600",
+											"UNODC_van.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-281572186130944": {
+								"path": [
+									"RIEC",
+									"1992-29002257757251",
+									"DOSSIER-281572186130944"
+								],
+								"name": "DOSSIER-281572186130944",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Landelijke_Anti-Money.pdf": {
+										"name": "Landelijke_Anti-Money.pdf",
+										"path": [
+											"RIEC",
+											"1992-29002257757251",
+											"DOSSIER-281572186130944",
+											"Landelijke_Anti-Money.pdf"
+										],
+										"type": "pdf"
+									},
+									"van_European.txt": {
+										"name": "van_European.txt",
+										"path": [
+											"RIEC",
+											"1992-29002257757251",
+											"DOSSIER-281572186130944",
+											"van_European.txt"
+										],
+										"type": "txt"
+									},
+									"EC_van.pdf": {
+										"name": "EC_van.pdf",
+										"path": [
+											"RIEC",
+											"1992-29002257757251",
+											"DOSSIER-281572186130944",
+											"EC_van.pdf"
+										],
+										"type": "pdf"
+									},
+									"GoAML_een.pdf": {
+										"name": "GoAML_een.pdf",
+										"path": [
+											"RIEC",
+											"1992-29002257757251",
+											"DOSSIER-281572186130944",
+											"GoAML_een.pdf"
+										],
+										"type": "pdf"
+									},
+									"orgaan_.pdf": {
+										"name": "orgaan_.pdf",
+										"path": [
+											"RIEC",
+											"1992-29002257757251",
+											"DOSSIER-281572186130944",
+											"orgaan_.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-5567896029308": {
+								"path": [
+									"RIEC",
+									"1992-29002257757251",
+									"DOSSIER-5567896029308"
+								],
+								"name": "DOSSIER-5567896029308",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Inspectie_Against.pdf": {
+										"name": "Inspectie_Against.pdf",
+										"path": [
+											"RIEC",
+											"1992-29002257757251",
+											"DOSSIER-5567896029308",
+											"Inspectie_Against.pdf"
+										],
+										"type": "pdf"
+									},
+									"Expertise_Onverklaarbaar.pdf": {
+										"name": "Expertise_Onverklaarbaar.pdf",
+										"path": [
+											"RIEC",
+											"1992-29002257757251",
+											"DOSSIER-5567896029308",
+											"Expertise_Onverklaarbaar.pdf"
+										],
+										"type": "pdf"
+									},
+									"Financieel_EU.txt": {
+										"name": "Financieel_EU.txt",
+										"path": [
+											"RIEC",
+											"1992-29002257757251",
+											"DOSSIER-5567896029308",
+											"Financieel_EU.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"De_Bureau.txt": {
+								"name": "De_Bureau.txt",
+								"path": [
+									"RIEC",
+									"1992-29002257757251",
+									"De_Bureau.txt"
+								],
+								"type": "txt"
+							},
+							"Task_Inlichtingen-.txt": {
+								"name": "Task_Inlichtingen-.txt",
+								"path": [
+									"RIEC",
+									"1992-29002257757251",
+									"Task_Inlichtingen-.txt"
+								],
+								"type": "txt"
+							},
+							"Financial_Andrea.txt": {
+								"name": "Financial_Andrea.txt",
+								"path": [
+									"RIEC",
+									"1992-29002257757251",
+									"Financial_Andrea.txt"
+								],
+								"type": "txt"
+							},
+							"Incasso_de.txt": {
+								"name": "Incasso_de.txt",
+								"path": [
+									"RIEC",
+									"1992-29002257757251",
+									"Incasso_de.txt"
+								],
+								"type": "txt"
+							},
+							"Laundering._iCOV.txt": {
+								"name": "Laundering._iCOV.txt",
+								"path": [
+									"RIEC",
+									"1992-29002257757251",
+									"Laundering._iCOV.txt"
+								],
+								"type": "txt"
+							}
+						}
+					},
+					"1992-60812202412198": {
+						"path": [
+							"RIEC",
+							"1992-60812202412198"
+						],
+						"name": "1992-60812202412198",
+						"type": "dir",
+						"dirType": "normal",
+						"children": {
+							"DOSSIER-19801313147606": {
+								"path": [
+									"RIEC",
+									"1992-60812202412198",
+									"DOSSIER-19801313147606"
+								],
+								"name": "DOSSIER-19801313147606",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"orgaan_de.pdf": {
+										"name": "orgaan_de.pdf",
+										"path": [
+											"RIEC",
+											"1992-60812202412198",
+											"DOSSIER-19801313147606",
+											"orgaan_de.pdf"
+										],
+										"type": "pdf"
+									},
+									"Andrea_de.txt": {
+										"name": "Andrea_de.txt",
+										"path": [
+											"RIEC",
+											"1992-60812202412198",
+											"DOSSIER-19801313147606",
+											"Andrea_de.txt"
+										],
+										"type": "txt"
+									},
+									"politie_Financial.txt": {
+										"name": "politie_Financial.txt",
+										"path": [
+											"RIEC",
+											"1992-60812202412198",
+											"DOSSIER-19801313147606",
+											"politie_Financial.txt"
+										],
+										"type": "txt"
+									},
+									"Europese_en.txt": {
+										"name": "Europese_en.txt",
+										"path": [
+											"RIEC",
+											"1992-60812202412198",
+											"DOSSIER-19801313147606",
+											"Europese_en.txt"
+										],
+										"type": "txt"
+									},
+									"andrea_politie.txt": {
+										"name": "andrea_politie.txt",
+										"path": [
+											"RIEC",
+											"1992-60812202412198",
+											"DOSSIER-19801313147606",
+											"andrea_politie.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-21412323530415": {
+								"path": [
+									"RIEC",
+									"1992-60812202412198",
+									"DOSSIER-21412323530415"
+								],
+								"name": "DOSSIER-21412323530415",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"FinEC_Inlichtingen-.txt": {
+										"name": "FinEC_Inlichtingen-.txt",
+										"path": [
+											"RIEC",
+											"1992-60812202412198",
+											"DOSSIER-21412323530415",
+											"FinEC_Inlichtingen-.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-266361434210664": {
+								"path": [
+									"RIEC",
+									"1992-60812202412198",
+									"DOSSIER-266361434210664"
+								],
+								"name": "DOSSIER-266361434210664",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"EMM_Financial.txt": {
+										"name": "EMM_Financial.txt",
+										"path": [
+											"RIEC",
+											"1992-60812202412198",
+											"DOSSIER-266361434210664",
+											"EMM_Financial.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-275372940019615": {
+								"path": [
+									"RIEC",
+									"1992-60812202412198",
+									"DOSSIER-275372940019615"
+								],
+								"name": "DOSSIER-275372940019615",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Nederland:_BOOM.pdf": {
+										"name": "Nederland:_BOOM.pdf",
+										"path": [
+											"RIEC",
+											"1992-60812202412198",
+											"DOSSIER-275372940019615",
+											"Nederland:_BOOM.pdf"
+										],
+										"type": "pdf"
+									},
+									"en_Centrum.txt": {
+										"name": "en_Centrum.txt",
+										"path": [
+											"RIEC",
+											"1992-60812202412198",
+											"DOSSIER-275372940019615",
+											"en_Centrum.txt"
+										],
+										"type": "txt"
+									},
+									"F_Nederland.pdf": {
+										"name": "F_Nederland.pdf",
+										"path": [
+											"RIEC",
+											"1992-60812202412198",
+											"DOSSIER-275372940019615",
+											"F_Nederland.pdf"
+										],
+										"type": "pdf"
+									},
+									"A01C_BOOM.pdf": {
+										"name": "A01C_BOOM.pdf",
+										"path": [
+											"RIEC",
+											"1992-60812202412198",
+											"DOSSIER-275372940019615",
+											"A01C_BOOM.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-32269773315289": {
+								"path": [
+									"RIEC",
+									"1992-60812202412198",
+									"DOSSIER-32269773315289"
+								],
+								"name": "DOSSIER-32269773315289",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Bonaire._Dienst.txt": {
+										"name": "Bonaire._Dienst.txt",
+										"path": [
+											"RIEC",
+											"1992-60812202412198",
+											"DOSSIER-32269773315289",
+											"Bonaire._Dienst.txt"
+										],
+										"type": "txt"
+									},
+									"Inkomen,_Economische.txt": {
+										"name": "Inkomen,_Economische.txt",
+										"path": [
+											"RIEC",
+											"1992-60812202412198",
+											"DOSSIER-32269773315289",
+											"Inkomen,_Economische.txt"
+										],
+										"type": "txt"
+									},
+									"DLR_Platform.pdf": {
+										"name": "DLR_Platform.pdf",
+										"path": [
+											"RIEC",
+											"1992-60812202412198",
+											"DOSSIER-32269773315289",
+											"DLR_Platform.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"Inlichtingen-_onderdeel.txt": {
+								"name": "Inlichtingen-_onderdeel.txt",
+								"path": [
+									"RIEC",
+									"1992-60812202412198",
+									"Inlichtingen-_onderdeel.txt"
+								],
+								"type": "txt"
+							},
+							"Caribisch_Onverklaarbaar.txt": {
+								"name": "Caribisch_Onverklaarbaar.txt",
+								"path": [
+									"RIEC",
+									"1992-60812202412198",
+									"Caribisch_Onverklaarbaar.txt"
+								],
+								"type": "txt"
+							},
+							"FlU-Nederland_FinanciÃ«le.txt": {
+								"name": "FlU-Nederland_FinanciÃ«le.txt",
+								"path": [
+									"RIEC",
+									"1992-60812202412198",
+									"FlU-Nederland_FinanciÃ«le.txt"
+								],
+								"type": "txt"
+							},
+							"Laundering_iCOV.txt": {
+								"name": "Laundering_iCOV.txt",
+								"path": [
+									"RIEC",
+									"1992-60812202412198",
+									"Laundering_iCOV.txt"
+								],
+								"type": "txt"
+							}
+						}
+					},
+					"Basisvoorziening_en.txt": {
+						"name": "Basisvoorziening_en.txt",
+						"path": [
+							"RIEC",
+							"Basisvoorziening_en.txt"
+						],
+						"type": "txt"
 					}
 				}
 			},
@@ -33920,1290 +33969,1255 @@
 				],
 				"name": "UNODC",
 				"type": "dir",
-				"locked": false,
+				"dirType": "archive",
 				"children": {
-					"1966-3504131557003": {
+					"1968-22388115104927": {
 						"path": [
 							"UNODC",
-							"1966-3504131557003"
+							"1968-22388115104927"
 						],
-						"name": "1966-3504131557003",
+						"name": "1968-22388115104927",
 						"type": "dir",
-						"locked": false,
+						"dirType": "archive",
 						"children": {
-							"DOSSIER-120743138424318": {
+							"DOSSIER-24091610230419": {
 								"path": [
 									"UNODC",
-									"1966-3504131557003",
-									"DOSSIER-120743138424318"
+									"1968-22388115104927",
+									"DOSSIER-24091610230419"
 								],
-								"name": "DOSSIER-120743138424318",
+								"name": "DOSSIER-24091610230419",
 								"type": "dir",
-								"locked": true,
+								"dirType": "locked",
 								"children": {
-									"open_source_firmware_parsing.pdf": {
-										"name": "open_source_firmware_parsing.pdf",
+									"CT_Economische.txt": {
+										"name": "CT_Economische.txt",
 										"path": [
 											"UNODC",
-											"1966-3504131557003",
-											"DOSSIER-120743138424318",
-											"open_source_firmware_parsing.pdf"
-										],
-										"type": "pdf"
-									},
-									"suriname.pdf": {
-										"name": "suriname.pdf",
-										"path": [
-											"UNODC",
-											"1966-3504131557003",
-											"DOSSIER-120743138424318",
-											"suriname.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-19711442717843": {
-								"path": [
-									"UNODC",
-									"1966-3504131557003",
-									"DOSSIER-19711442717843"
-								],
-								"name": "DOSSIER-19711442717843",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"capability_rwanda_franc.txt": {
-										"name": "capability_rwanda_franc.txt",
-										"path": [
-											"UNODC",
-											"1966-3504131557003",
-											"DOSSIER-19711442717843",
-											"capability_rwanda_franc.txt"
+											"1968-22388115104927",
+											"DOSSIER-24091610230419",
+											"CT_Economische.txt"
 										],
 										"type": "txt"
 									},
-									"intuitive_xml.txt": {
-										"name": "intuitive_xml.txt",
+									"CWI_Transport.txt": {
+										"name": "CWI_Transport.txt",
 										"path": [
 											"UNODC",
-											"1966-3504131557003",
-											"DOSSIER-19711442717843",
-											"intuitive_xml.txt"
-										],
-										"type": "txt"
-									},
-									"payment_forward.txt": {
-										"name": "payment_forward.txt",
-										"path": [
-											"UNODC",
-											"1966-3504131557003",
-											"DOSSIER-19711442717843",
-											"payment_forward.txt"
-										],
-										"type": "txt"
-									},
-									"white_projection.txt": {
-										"name": "white_projection.txt",
-										"path": [
-											"UNODC",
-											"1966-3504131557003",
-											"DOSSIER-19711442717843",
-											"white_projection.txt"
-										],
-										"type": "txt"
-									},
-									"payment_regional.txt": {
-										"name": "payment_regional.txt",
-										"path": [
-											"UNODC",
-											"1966-3504131557003",
-											"DOSSIER-19711442717843",
-											"payment_regional.txt"
+											"1968-22388115104927",
+											"DOSSIER-24091610230419",
+											"CWI_Transport.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-2202766424065": {
+							"DOSSIER-286751359617738": {
 								"path": [
 									"UNODC",
-									"1966-3504131557003",
-									"DOSSIER-2202766424065"
+									"1968-22388115104927",
+									"DOSSIER-286751359617738"
 								],
-								"name": "DOSSIER-2202766424065",
+								"name": "DOSSIER-286751359617738",
 								"type": "dir",
-								"locked": true,
+								"dirType": "locked",
 								"children": {
-									"copy_chips_moldovan_leu.pdf": {
-										"name": "copy_chips_moldovan_leu.pdf",
+									"Nederlandsche_Inkomen,.txt": {
+										"name": "Nederlandsche_Inkomen,.txt",
 										"path": [
 											"UNODC",
-											"1966-3504131557003",
-											"DOSSIER-2202766424065",
-											"copy_chips_moldovan_leu.pdf"
-										],
-										"type": "pdf"
-									},
-									"interfaces.txt": {
-										"name": "interfaces.txt",
-										"path": [
-											"UNODC",
-											"1966-3504131557003",
-											"DOSSIER-2202766424065",
-											"interfaces.txt"
-										],
-										"type": "txt"
-									},
-									"plum_invoice.txt": {
-										"name": "plum_invoice.txt",
-										"path": [
-											"UNODC",
-											"1966-3504131557003",
-											"DOSSIER-2202766424065",
-											"plum_invoice.txt"
+											"1968-22388115104927",
+											"DOSSIER-286751359617738",
+											"Nederlandsche_Inkomen,.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-2956365014569": {
+							"DOSSIER-299363250515329": {
 								"path": [
 									"UNODC",
-									"1966-3504131557003",
-									"DOSSIER-2956365014569"
+									"1968-22388115104927",
+									"DOSSIER-299363250515329"
 								],
-								"name": "DOSSIER-2956365014569",
+								"name": "DOSSIER-299363250515329",
 								"type": "dir",
-								"locked": true,
+								"dirType": "normal",
 								"children": {
-									"black.txt": {
-										"name": "black.txt",
+									"Basisvoorziening_BOOM.txt": {
+										"name": "Basisvoorziening_BOOM.txt",
 										"path": [
 											"UNODC",
-											"1966-3504131557003",
-											"DOSSIER-2956365014569",
-											"black.txt"
+											"1968-22388115104927",
+											"DOSSIER-299363250515329",
+											"Basisvoorziening_BOOM.txt"
 										],
 										"type": "txt"
 									},
-									"crest.pdf": {
-										"name": "crest.pdf",
+									"politie_Mensensmokkel.txt": {
+										"name": "politie_Mensensmokkel.txt",
 										"path": [
 											"UNODC",
-											"1966-3504131557003",
-											"DOSSIER-2956365014569",
-											"crest.pdf"
-										],
-										"type": "pdf"
-									},
-									"tools_wireless_multi_byte.txt": {
-										"name": "tools_wireless_multi_byte.txt",
-										"path": [
-											"UNODC",
-											"1966-3504131557003",
-											"DOSSIER-2956365014569",
-											"tools_wireless_multi_byte.txt"
+											"1968-22388115104927",
+											"DOSSIER-299363250515329",
+											"politie_Mensensmokkel.txt"
 										],
 										"type": "txt"
 									},
-									"generate.txt": {
-										"name": "generate.txt",
+									"applicatie_de.txt": {
+										"name": "applicatie_de.txt",
 										"path": [
 											"UNODC",
-											"1966-3504131557003",
-											"DOSSIER-2956365014569",
-											"generate.txt"
+											"1968-22388115104927",
+											"DOSSIER-299363250515329",
+											"applicatie_de.txt"
 										],
 										"type": "txt"
 									},
-									"ergonomic.pdf": {
-										"name": "ergonomic.pdf",
+									"Dienst_Anti.pdf": {
+										"name": "Dienst_Anti.pdf",
 										"path": [
 											"UNODC",
-											"1966-3504131557003",
-											"DOSSIER-2956365014569",
-											"ergonomic.pdf"
+											"1968-22388115104927",
+											"DOSSIER-299363250515329",
+											"Dienst_Anti.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"DOSSIER-3055740701135": {
+							"DOSSIER-3533083728868": {
 								"path": [
 									"UNODC",
-									"1966-3504131557003",
-									"DOSSIER-3055740701135"
+									"1968-22388115104927",
+									"DOSSIER-3533083728868"
 								],
-								"name": "DOSSIER-3055740701135",
+								"name": "DOSSIER-3533083728868",
 								"type": "dir",
-								"locked": true,
+								"dirType": "normal",
 								"children": {
-									"credit_card_account.txt": {
-										"name": "credit_card_account.txt",
+									"Laundering_Financieel.pdf": {
+										"name": "Laundering_Financieel.pdf",
 										"path": [
 											"UNODC",
-											"1966-3504131557003",
-											"DOSSIER-3055740701135",
-											"credit_card_account.txt"
-										],
-										"type": "txt"
-									},
-									"tools_navigating_lek.txt": {
-										"name": "tools_navigating_lek.txt",
-										"path": [
-											"UNODC",
-											"1966-3504131557003",
-											"DOSSIER-3055740701135",
-											"tools_navigating_lek.txt"
-										],
-										"type": "txt"
-									},
-									"shirt_reboot_open_source.pdf": {
-										"name": "shirt_reboot_open_source.pdf",
-										"path": [
-											"UNODC",
-											"1966-3504131557003",
-											"DOSSIER-3055740701135",
-											"shirt_reboot_open_source.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"unbranded_garden.txt": {
-								"name": "unbranded_garden.txt",
-								"path": [
-									"UNODC",
-									"1966-3504131557003",
-									"unbranded_garden.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"1980-25925265414101": {
-						"path": [
-							"UNODC",
-							"1980-25925265414101"
-						],
-						"name": "1980-25925265414101",
-						"type": "dir",
-						"locked": true,
-						"children": {
-							"DOSSIER-16571455127047": {
-								"path": [
-									"UNODC",
-									"1980-25925265414101",
-									"DOSSIER-16571455127047"
-								],
-								"name": "DOSSIER-16571455127047",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"compressing.txt": {
-										"name": "compressing.txt",
-										"path": [
-											"UNODC",
-											"1980-25925265414101",
-											"DOSSIER-16571455127047",
-											"compressing.txt"
-										],
-										"type": "txt"
-									},
-									"leverage_clothing_gloves.pdf": {
-										"name": "leverage_clothing_gloves.pdf",
-										"path": [
-											"UNODC",
-											"1980-25925265414101",
-											"DOSSIER-16571455127047",
-											"leverage_clothing_gloves.pdf"
+											"1968-22388115104927",
+											"DOSSIER-3533083728868",
+											"Laundering_Financieel.pdf"
 										],
 										"type": "pdf"
 									},
-									"sexy_maryland_navigate.pdf": {
-										"name": "sexy_maryland_navigate.pdf",
+									"proliferatiefmanciering._Parket,.txt": {
+										"name": "proliferatiefmanciering._Parket,.txt",
 										"path": [
 											"UNODC",
-											"1980-25925265414101",
-											"DOSSIER-16571455127047",
-											"sexy_maryland_navigate.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-17391225873586": {
-								"path": [
-									"UNODC",
-									"1980-25925265414101",
-									"DOSSIER-17391225873586"
-								],
-								"name": "DOSSIER-17391225873586",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"sleek.pdf": {
-										"name": "sleek.pdf",
-										"path": [
-											"UNODC",
-											"1980-25925265414101",
-											"DOSSIER-17391225873586",
-											"sleek.pdf"
-										],
-										"type": "pdf"
-									},
-									"facilitator_compress.txt": {
-										"name": "facilitator_compress.txt",
-										"path": [
-											"UNODC",
-											"1980-25925265414101",
-											"DOSSIER-17391225873586",
-											"facilitator_compress.txt"
-										],
-										"type": "txt"
-									},
-									"ports.txt": {
-										"name": "ports.txt",
-										"path": [
-											"UNODC",
-											"1980-25925265414101",
-											"DOSSIER-17391225873586",
-											"ports.txt"
-										],
-										"type": "txt"
-									},
-									"agp.pdf": {
-										"name": "agp.pdf",
-										"path": [
-											"UNODC",
-											"1980-25925265414101",
-											"DOSSIER-17391225873586",
-											"agp.pdf"
-										],
-										"type": "pdf"
-									},
-									"fantastic_generic_plastic_ball_homogeneous.txt": {
-										"name": "fantastic_generic_plastic_ball_homogeneous.txt",
-										"path": [
-											"UNODC",
-											"1980-25925265414101",
-											"DOSSIER-17391225873586",
-											"fantastic_generic_plastic_ball_homogeneous.txt"
+											"1968-22388115104927",
+											"DOSSIER-3533083728868",
+											"proliferatiefmanciering._Parket,.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-23552971915462": {
+							"DOSSIER-62894965617": {
 								"path": [
 									"UNODC",
-									"1980-25925265414101",
-									"DOSSIER-23552971915462"
+									"1968-22388115104927",
+									"DOSSIER-62894965617"
 								],
-								"name": "DOSSIER-23552971915462",
+								"name": "DOSSIER-62894965617",
 								"type": "dir",
-								"locked": true,
+								"dirType": "normal",
 								"children": {
-									"calculating.txt": {
-										"name": "calculating.txt",
+									"het_van.txt": {
+										"name": "het_van.txt",
 										"path": [
 											"UNODC",
-											"1980-25925265414101",
-											"DOSSIER-23552971915462",
-											"calculating.txt"
+											"1968-22388115104927",
+											"DOSSIER-62894965617",
+											"het_van.txt"
 										],
 										"type": "txt"
 									},
-									"buckinghamshire_profit_focused.txt": {
-										"name": "buckinghamshire_profit_focused.txt",
+									"de_Contraterrorisme.txt": {
+										"name": "de_Contraterrorisme.txt",
 										"path": [
 											"UNODC",
-											"1980-25925265414101",
-											"DOSSIER-23552971915462",
-											"buckinghamshire_profit_focused.txt"
-										],
-										"type": "txt"
-									},
-									"panel.txt": {
-										"name": "panel.txt",
-										"path": [
-											"UNODC",
-											"1980-25925265414101",
-											"DOSSIER-23552971915462",
-											"panel.txt"
-										],
-										"type": "txt"
-									},
-									"rwanda_gloves.txt": {
-										"name": "rwanda_gloves.txt",
-										"path": [
-											"UNODC",
-											"1980-25925265414101",
-											"DOSSIER-23552971915462",
-											"rwanda_gloves.txt"
+											"1968-22388115104927",
+											"DOSSIER-62894965617",
+											"de_Contraterrorisme.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-257191189918785": {
+							"van_Infobox.txt": {
+								"name": "van_Infobox.txt",
 								"path": [
 									"UNODC",
-									"1980-25925265414101",
-									"DOSSIER-257191189918785"
-								],
-								"name": "DOSSIER-257191189918785",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"bus.pdf": {
-										"name": "bus.pdf",
-										"path": [
-											"UNODC",
-											"1980-25925265414101",
-											"DOSSIER-257191189918785",
-											"bus.pdf"
-										],
-										"type": "pdf"
-									},
-									"1080p_refined.pdf": {
-										"name": "1080p_refined.pdf",
-										"path": [
-											"UNODC",
-											"1980-25925265414101",
-											"DOSSIER-257191189918785",
-											"1080p_refined.pdf"
-										],
-										"type": "pdf"
-									},
-									"malagasy_ariary_dedicated.txt": {
-										"name": "malagasy_ariary_dedicated.txt",
-										"path": [
-											"UNODC",
-											"1980-25925265414101",
-											"DOSSIER-257191189918785",
-											"malagasy_ariary_dedicated.txt"
-										],
-										"type": "txt"
-									},
-									"payment_value_added.txt": {
-										"name": "payment_value_added.txt",
-										"path": [
-											"UNODC",
-											"1980-25925265414101",
-											"DOSSIER-257191189918785",
-											"payment_value_added.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-31011123008856": {
-								"path": [
-									"UNODC",
-									"1980-25925265414101",
-									"DOSSIER-31011123008856"
-								],
-								"name": "DOSSIER-31011123008856",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"fiji_dollar.txt": {
-										"name": "fiji_dollar.txt",
-										"path": [
-											"UNODC",
-											"1980-25925265414101",
-											"DOSSIER-31011123008856",
-											"fiji_dollar.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"interactions.txt": {
-								"name": "interactions.txt",
-								"path": [
-									"UNODC",
-									"1980-25925265414101",
-									"interactions.txt"
+									"1968-22388115104927",
+									"van_Infobox.txt"
 								],
 								"type": "txt"
 							},
-							"copy.txt": {
-								"name": "copy.txt",
+							"Infobox_Opsporingsdienst.pdf": {
+								"name": "Infobox_Opsporingsdienst.pdf",
 								"path": [
 									"UNODC",
-									"1980-25925265414101",
-									"copy.txt"
-								],
-								"type": "txt"
-							},
-							"steel_sas_manager.txt": {
-								"name": "steel_sas_manager.txt",
-								"path": [
-									"UNODC",
-									"1980-25925265414101",
-									"steel_sas_manager.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"1983-73802485711832": {
-						"path": [
-							"UNODC",
-							"1983-73802485711832"
-						],
-						"name": "1983-73802485711832",
-						"type": "dir",
-						"locked": true,
-						"children": {
-							"DOSSIER-10415486422214": {
-								"path": [
-									"UNODC",
-									"1983-73802485711832",
-									"DOSSIER-10415486422214"
-								],
-								"name": "DOSSIER-10415486422214",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"checking_account_cutting_edge_tactics.txt": {
-										"name": "checking_account_cutting_edge_tactics.txt",
-										"path": [
-											"UNODC",
-											"1983-73802485711832",
-											"DOSSIER-10415486422214",
-											"checking_account_cutting_edge_tactics.txt"
-										],
-										"type": "txt"
-									},
-									"software_central_withdrawal.txt": {
-										"name": "software_central_withdrawal.txt",
-										"path": [
-											"UNODC",
-											"1983-73802485711832",
-											"DOSSIER-10415486422214",
-											"software_central_withdrawal.txt"
-										],
-										"type": "txt"
-									},
-									"pa'anga_infomediaries.txt": {
-										"name": "pa'anga_infomediaries.txt",
-										"path": [
-											"UNODC",
-											"1983-73802485711832",
-											"DOSSIER-10415486422214",
-											"pa'anga_infomediaries.txt"
-										],
-										"type": "txt"
-									},
-									"black_extranet_copying.txt": {
-										"name": "black_extranet_copying.txt",
-										"path": [
-											"UNODC",
-											"1983-73802485711832",
-											"DOSSIER-10415486422214",
-											"black_extranet_copying.txt"
-										],
-										"type": "txt"
-									},
-									"saint_kitts_and_nevis_avon_synthesizing.txt": {
-										"name": "saint_kitts_and_nevis_avon_synthesizing.txt",
-										"path": [
-											"UNODC",
-											"1983-73802485711832",
-											"DOSSIER-10415486422214",
-											"saint_kitts_and_nevis_avon_synthesizing.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-161342984227698": {
-								"path": [
-									"UNODC",
-									"1983-73802485711832",
-									"DOSSIER-161342984227698"
-								],
-								"name": "DOSSIER-161342984227698",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"generate_manat_djibouti_franc.txt": {
-										"name": "generate_manat_djibouti_franc.txt",
-										"path": [
-											"UNODC",
-											"1983-73802485711832",
-											"DOSSIER-161342984227698",
-											"generate_manat_djibouti_franc.txt"
-										],
-										"type": "txt"
-									},
-									"sports.txt": {
-										"name": "sports.txt",
-										"path": [
-											"UNODC",
-											"1983-73802485711832",
-											"DOSSIER-161342984227698",
-											"sports.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-58781623928822": {
-								"path": [
-									"UNODC",
-									"1983-73802485711832",
-									"DOSSIER-58781623928822"
-								],
-								"name": "DOSSIER-58781623928822",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"overriding.txt": {
-										"name": "overriding.txt",
-										"path": [
-											"UNODC",
-											"1983-73802485711832",
-											"DOSSIER-58781623928822",
-											"overriding.txt"
-										],
-										"type": "txt"
-									},
-									"transparent_automotive.pdf": {
-										"name": "transparent_automotive.pdf",
-										"path": [
-											"UNODC",
-											"1983-73802485711832",
-											"DOSSIER-58781623928822",
-											"transparent_automotive.pdf"
-										],
-										"type": "pdf"
-									},
-									"strategist_open_source.pdf": {
-										"name": "strategist_open_source.pdf",
-										"path": [
-											"UNODC",
-											"1983-73802485711832",
-											"DOSSIER-58781623928822",
-											"strategist_open_source.pdf"
-										],
-										"type": "pdf"
-									},
-									"awesome.txt": {
-										"name": "awesome.txt",
-										"path": [
-											"UNODC",
-											"1983-73802485711832",
-											"DOSSIER-58781623928822",
-											"awesome.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-5960947711944": {
-								"path": [
-									"UNODC",
-									"1983-73802485711832",
-									"DOSSIER-5960947711944"
-								],
-								"name": "DOSSIER-5960947711944",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"mayotte.txt": {
-										"name": "mayotte.txt",
-										"path": [
-											"UNODC",
-											"1983-73802485711832",
-											"DOSSIER-5960947711944",
-											"mayotte.txt"
-										],
-										"type": "txt"
-									},
-									"chair_deposit_override.txt": {
-										"name": "chair_deposit_override.txt",
-										"path": [
-											"UNODC",
-											"1983-73802485711832",
-											"DOSSIER-5960947711944",
-											"chair_deposit_override.txt"
-										],
-										"type": "txt"
-									},
-									"intranet_future.txt": {
-										"name": "intranet_future.txt",
-										"path": [
-											"UNODC",
-											"1983-73802485711832",
-											"DOSSIER-5960947711944",
-											"intranet_future.txt"
-										],
-										"type": "txt"
-									},
-									"optimal_withdrawal_rhode_island.txt": {
-										"name": "optimal_withdrawal_rhode_island.txt",
-										"path": [
-											"UNODC",
-											"1983-73802485711832",
-											"DOSSIER-5960947711944",
-											"optimal_withdrawal_rhode_island.txt"
-										],
-										"type": "txt"
-									},
-									"seamless_jordan.txt": {
-										"name": "seamless_jordan.txt",
-										"path": [
-											"UNODC",
-											"1983-73802485711832",
-											"DOSSIER-5960947711944",
-											"seamless_jordan.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-77632297121692": {
-								"path": [
-									"UNODC",
-									"1983-73802485711832",
-									"DOSSIER-77632297121692"
-								],
-								"name": "DOSSIER-77632297121692",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"borders_payment_port.pdf": {
-										"name": "borders_payment_port.pdf",
-										"path": [
-											"UNODC",
-											"1983-73802485711832",
-											"DOSSIER-77632297121692",
-											"borders_payment_port.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"virtual.pdf": {
-								"name": "virtual.pdf",
-								"path": [
-									"UNODC",
-									"1983-73802485711832",
-									"virtual.pdf"
+									"1968-22388115104927",
+									"Infobox_Opsporingsdienst.pdf"
 								],
 								"type": "pdf"
 							},
-							"leading_edge_compress_upward_trending.pdf": {
-								"name": "leading_edge_compress_upward_trending.pdf",
+							"FIOD_Intelligence.txt": {
+								"name": "FIOD_Intelligence.txt",
 								"path": [
 									"UNODC",
-									"1983-73802485711832",
-									"leading_edge_compress_upward_trending.pdf"
+									"1968-22388115104927",
+									"FIOD_Intelligence.txt"
+								],
+								"type": "txt"
+							},
+							"van_Expertisecentrum.txt": {
+								"name": "van_Expertisecentrum.txt",
+								"path": [
+									"UNODC",
+									"1968-22388115104927",
+									"van_Expertisecentrum.txt"
+								],
+								"type": "txt"
+							},
+							"EU_ILTIOD.txt": {
+								"name": "EU_ILTIOD.txt",
+								"path": [
+									"UNODC",
+									"1968-22388115104927",
+									"EU_ILTIOD.txt"
+								],
+								"type": "txt"
+							}
+						}
+					},
+					"1978-155722411330429": {
+						"path": [
+							"UNODC",
+							"1978-155722411330429"
+						],
+						"name": "1978-155722411330429",
+						"type": "dir",
+						"dirType": "normal",
+						"children": {
+							"DOSSIER-219052729511574": {
+								"path": [
+									"UNODC",
+									"1978-155722411330429",
+									"DOSSIER-219052729511574"
+								],
+								"name": "DOSSIER-219052729511574",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Infobox_Europese.txt": {
+										"name": "Infobox_Europese.txt",
+										"path": [
+											"UNODC",
+											"1978-155722411330429",
+											"DOSSIER-219052729511574",
+											"Infobox_Europese.txt"
+										],
+										"type": "txt"
+									},
+									"Unie_organisatie.txt": {
+										"name": "Unie_organisatie.txt",
+										"path": [
+											"UNODC",
+											"1978-155722411330429",
+											"DOSSIER-219052729511574",
+											"Unie_organisatie.txt"
+										],
+										"type": "txt"
+									},
+									"Eustatiusen_de.pdf": {
+										"name": "Eustatiusen_de.pdf",
+										"path": [
+											"UNODC",
+											"1978-155722411330429",
+											"DOSSIER-219052729511574",
+											"Eustatiusen_de.pdf"
+										],
+										"type": "pdf"
+									},
+									"Financial_Laundering..pdf": {
+										"name": "Financial_Laundering..pdf",
+										"path": [
+											"UNODC",
+											"1978-155722411330429",
+											"DOSSIER-219052729511574",
+											"Financial_Laundering..pdf"
+										],
+										"type": "pdf"
+									},
+									"Criminal_CTEPF.txt": {
+										"name": "Criminal_CTEPF.txt",
+										"path": [
+											"UNODC",
+											"1978-155722411330429",
+											"DOSSIER-219052729511574",
+											"Criminal_CTEPF.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-294783033524806": {
+								"path": [
+									"UNODC",
+									"1978-155722411330429",
+									"DOSSIER-294783033524806"
+								],
+								"name": "DOSSIER-294783033524806",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Financieel_van.pdf": {
+										"name": "Financieel_van.pdf",
+										"path": [
+											"UNODC",
+											"1978-155722411330429",
+											"DOSSIER-294783033524806",
+											"Financieel_van.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-32021551718582": {
+								"path": [
+									"UNODC",
+									"1978-155722411330429",
+									"DOSSIER-32021551718582"
+								],
+								"name": "DOSSIER-32021551718582",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Bureau_Bureau.pdf": {
+										"name": "Bureau_Bureau.pdf",
+										"path": [
+											"UNODC",
+											"1978-155722411330429",
+											"DOSSIER-32021551718582",
+											"Bureau_Bureau.pdf"
+										],
+										"type": "pdf"
+									},
+									"Sint_Action.txt": {
+										"name": "Sint_Action.txt",
+										"path": [
+											"UNODC",
+											"1978-155722411330429",
+											"DOSSIER-32021551718582",
+											"Sint_Action.txt"
+										],
+										"type": "txt"
+									},
+									"onderdeel_Criminaliteit.txt": {
+										"name": "onderdeel_Criminaliteit.txt",
+										"path": [
+											"UNODC",
+											"1978-155722411330429",
+											"DOSSIER-32021551718582",
+											"onderdeel_Criminaliteit.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-720170688150": {
+								"path": [
+									"UNODC",
+									"1978-155722411330429",
+									"DOSSIER-720170688150"
+								],
+								"name": "DOSSIER-720170688150",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Infobox_Werk.txt": {
+										"name": "Infobox_Werk.txt",
+										"path": [
+											"UNODC",
+											"1978-155722411330429",
+											"DOSSIER-720170688150",
+											"Infobox_Werk.txt"
+										],
+										"type": "txt"
+									},
+									"Sint_Functioneel.txt": {
+										"name": "Sint_Functioneel.txt",
+										"path": [
+											"UNODC",
+											"1978-155722411330429",
+											"DOSSIER-720170688150",
+											"Sint_Functioneel.txt"
+										],
+										"type": "txt"
+									},
+									"Opsporingsdienst_EC.txt": {
+										"name": "Opsporingsdienst_EC.txt",
+										"path": [
+											"UNODC",
+											"1978-155722411330429",
+											"DOSSIER-720170688150",
+											"Opsporingsdienst_EC.txt"
+										],
+										"type": "txt"
+									},
+									"Autoriteit_BVI.pdf": {
+										"name": "Autoriteit_BVI.pdf",
+										"path": [
+											"UNODC",
+											"1978-155722411330429",
+											"DOSSIER-720170688150",
+											"Autoriteit_BVI.pdf"
+										],
+										"type": "pdf"
+									},
+									"van_.txt": {
+										"name": "van_.txt",
+										"path": [
+											"UNODC",
+											"1978-155722411330429",
+											"DOSSIER-720170688150",
+											"van_.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-9523800131298": {
+								"path": [
+									"UNODC",
+									"1978-155722411330429",
+									"DOSSIER-9523800131298"
+								],
+								"name": "DOSSIER-9523800131298",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Bureau_een.txt": {
+										"name": "Bureau_een.txt",
+										"path": [
+											"UNODC",
+											"1978-155722411330429",
+											"DOSSIER-9523800131298",
+											"Bureau_een.txt"
+										],
+										"type": "txt"
+									},
+									"Werk_CWI.txt": {
+										"name": "Werk_CWI.txt",
+										"path": [
+											"UNODC",
+											"1978-155722411330429",
+											"DOSSIER-9523800131298",
+											"Werk_CWI.txt"
+										],
+										"type": "txt"
+									},
+									"organisatie_Centrum.txt": {
+										"name": "organisatie_Centrum.txt",
+										"path": [
+											"UNODC",
+											"1978-155722411330429",
+											"DOSSIER-9523800131298",
+											"organisatie_Centrum.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"politie_politie.pdf": {
+								"name": "politie_politie.pdf",
+								"path": [
+									"UNODC",
+									"1978-155722411330429",
+									"politie_politie.pdf"
+								],
+								"type": "pdf"
+							}
+						}
+					},
+					"1993-14767182765215": {
+						"path": [
+							"UNODC",
+							"1993-14767182765215"
+						],
+						"name": "1993-14767182765215",
+						"type": "dir",
+						"dirType": "normal",
+						"children": {
+							"DOSSIER-1122816510653": {
+								"path": [
+									"UNODC",
+									"1993-14767182765215",
+									"DOSSIER-1122816510653"
+								],
+								"name": "DOSSIER-1122816510653",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"de_Infobox.pdf": {
+										"name": "de_Infobox.pdf",
+										"path": [
+											"UNODC",
+											"1993-14767182765215",
+											"DOSSIER-1122816510653",
+											"de_Infobox.pdf"
+										],
+										"type": "pdf"
+									},
+									"FIOD_Financieel.txt": {
+										"name": "FIOD_Financieel.txt",
+										"path": [
+											"UNODC",
+											"1993-14767182765215",
+											"DOSSIER-1122816510653",
+											"FIOD_Financieel.txt"
+										],
+										"type": "txt"
+									},
+									"DLR_Expertise.txt": {
+										"name": "DLR_Expertise.txt",
+										"path": [
+											"UNODC",
+											"1993-14767182765215",
+											"DOSSIER-1122816510653",
+											"DLR_Expertise.txt"
+										],
+										"type": "txt"
+									},
+									"binnen_Nederland:.txt": {
+										"name": "binnen_Nederland:.txt",
+										"path": [
+											"UNODC",
+											"1993-14767182765215",
+											"DOSSIER-1122816510653",
+											"binnen_Nederland:.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-12262247074078": {
+								"path": [
+									"UNODC",
+									"1993-14767182765215",
+									"DOSSIER-12262247074078"
+								],
+								"name": "DOSSIER-12262247074078",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Werk_van.pdf": {
+										"name": "Werk_van.pdf",
+										"path": [
+											"UNODC",
+											"1993-14767182765215",
+											"DOSSIER-12262247074078",
+											"Werk_van.pdf"
+										],
+										"type": "pdf"
+									},
+									"EMM_Transport.txt": {
+										"name": "EMM_Transport.txt",
+										"path": [
+											"UNODC",
+											"1993-14767182765215",
+											"DOSSIER-12262247074078",
+											"EMM_Transport.txt"
+										],
+										"type": "txt"
+									},
+									"van_andrea.txt": {
+										"name": "van_andrea.txt",
+										"path": [
+											"UNODC",
+											"1993-14767182765215",
+											"DOSSIER-12262247074078",
+											"van_andrea.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-181373227726109": {
+								"path": [
+									"UNODC",
+									"1993-14767182765215",
+									"DOSSIER-181373227726109"
+								],
+								"name": "DOSSIER-181373227726109",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"DWI_Nederlandsche.pdf": {
+										"name": "DWI_Nederlandsche.pdf",
+										"path": [
+											"UNODC",
+											"1993-14767182765215",
+											"DOSSIER-181373227726109",
+											"DWI_Nederlandsche.pdf"
+										],
+										"type": "pdf"
+									},
+									"Rotterdam_onderdeel.pdf": {
+										"name": "Rotterdam_onderdeel.pdf",
+										"path": [
+											"UNODC",
+											"1993-14767182765215",
+											"DOSSIER-181373227726109",
+											"Rotterdam_onderdeel.pdf"
+										],
+										"type": "pdf"
+									},
+									"en_Basisvoorziening.txt": {
+										"name": "en_Basisvoorziening.txt",
+										"path": [
+											"UNODC",
+											"1993-14767182765215",
+											"DOSSIER-181373227726109",
+											"en_Basisvoorziening.txt"
+										],
+										"type": "txt"
+									},
+									"Financial_van.pdf": {
+										"name": "Financial_van.pdf",
+										"path": [
+											"UNODC",
+											"1993-14767182765215",
+											"DOSSIER-181373227726109",
+											"Financial_van.pdf"
+										],
+										"type": "pdf"
+									},
+									"Financieel_Infobox.pdf": {
+										"name": "Financieel_Infobox.pdf",
+										"path": [
+											"UNODC",
+											"1993-14767182765215",
+											"DOSSIER-181373227726109",
+											"Financieel_Infobox.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-6086876184": {
+								"path": [
+									"UNODC",
+									"1993-14767182765215",
+									"DOSSIER-6086876184"
+								],
+								"name": "DOSSIER-6086876184",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Transport_Criminaliteit.txt": {
+										"name": "Transport_Criminaliteit.txt",
+										"path": [
+											"UNODC",
+											"1993-14767182765215",
+											"DOSSIER-6086876184",
+											"Transport_Criminaliteit.txt"
+										],
+										"type": "txt"
+									},
+									"FIU_team.pdf": {
+										"name": "FIU_team.pdf",
+										"path": [
+											"UNODC",
+											"1993-14767182765215",
+											"DOSSIER-6086876184",
+											"FIU_team.pdf"
+										],
+										"type": "pdf"
+									},
+									"van_Bureau.txt": {
+										"name": "van_Bureau.txt",
+										"path": [
+											"UNODC",
+											"1993-14767182765215",
+											"DOSSIER-6086876184",
+											"van_Bureau.txt"
+										],
+										"type": "txt"
+									},
+									"Financieel_andrea.txt": {
+										"name": "Financieel_andrea.txt",
+										"path": [
+											"UNODC",
+											"1993-14767182765215",
+											"DOSSIER-6086876184",
+											"Financieel_andrea.txt"
+										],
+										"type": "txt"
+									},
+									"Commissie,_Bonaire..txt": {
+										"name": "Commissie,_Bonaire..txt",
+										"path": [
+											"UNODC",
+											"1993-14767182765215",
+											"DOSSIER-6086876184",
+											"Commissie,_Bonaire..txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-90532212015534": {
+								"path": [
+									"UNODC",
+									"1993-14767182765215",
+									"DOSSIER-90532212015534"
+								],
+								"name": "DOSSIER-90532212015534",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Informatie,_UNODC.pdf": {
+										"name": "Informatie,_UNODC.pdf",
+										"path": [
+											"UNODC",
+											"1993-14767182765215",
+											"DOSSIER-90532212015534",
+											"Informatie,_UNODC.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"Commissie,_Opsporingsdienst.txt": {
+								"name": "Commissie,_Opsporingsdienst.txt",
+								"path": [
+									"UNODC",
+									"1993-14767182765215",
+									"Commissie,_Opsporingsdienst.txt"
+								],
+								"type": "txt"
+							}
+						}
+					},
+					"1999-17039918715601": {
+						"path": [
+							"UNODC",
+							"1999-17039918715601"
+						],
+						"name": "1999-17039918715601",
+						"type": "dir",
+						"dirType": "archive",
+						"children": {
+							"DOSSIER-15649812525879": {
+								"path": [
+									"UNODC",
+									"1999-17039918715601",
+									"DOSSIER-15649812525879"
+								],
+								"name": "DOSSIER-15649812525879",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"FAT_organisatie.txt": {
+										"name": "FAT_organisatie.txt",
+										"path": [
+											"UNODC",
+											"1999-17039918715601",
+											"DOSSIER-15649812525879",
+											"FAT_organisatie.txt"
+										],
+										"type": "txt"
+									},
+									"Nederland_gebouwd.pdf": {
+										"name": "Nederland_gebouwd.pdf",
+										"path": [
+											"UNODC",
+											"1999-17039918715601",
+											"DOSSIER-15649812525879",
+											"Nederland_gebouwd.pdf"
+										],
+										"type": "pdf"
+									},
+									"GoAML_Centraal.txt": {
+										"name": "GoAML_Centraal.txt",
+										"path": [
+											"UNODC",
+											"1999-17039918715601",
+											"DOSSIER-15649812525879",
+											"GoAML_Centraal.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-165992949725781": {
+								"path": [
+									"UNODC",
+									"1999-17039918715601",
+									"DOSSIER-165992949725781"
+								],
+								"name": "DOSSIER-165992949725781",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Centre,_Financial.txt": {
+										"name": "Centre,_Financial.txt",
+										"path": [
+											"UNODC",
+											"1999-17039918715601",
+											"DOSSIER-165992949725781",
+											"Centre,_Financial.txt"
+										],
+										"type": "txt"
+									},
+									"Expertise_en.txt": {
+										"name": "Expertise_en.txt",
+										"path": [
+											"UNODC",
+											"1999-17039918715601",
+											"DOSSIER-165992949725781",
+											"Expertise_en.txt"
+										],
+										"type": "txt"
+									},
+									"andrea_binnen.pdf": {
+										"name": "andrea_binnen.pdf",
+										"path": [
+											"UNODC",
+											"1999-17039918715601",
+											"DOSSIER-165992949725781",
+											"andrea_binnen.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-28356429616120": {
+								"path": [
+									"UNODC",
+									"1999-17039918715601",
+									"DOSSIER-28356429616120"
+								],
+								"name": "DOSSIER-28356429616120",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Inkomen,_A01C.txt": {
+										"name": "Inkomen,_A01C.txt",
+										"path": [
+											"UNODC",
+											"1999-17039918715601",
+											"DOSSIER-28356429616120",
+											"Inkomen,_A01C.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-32141061113917": {
+								"path": [
+									"UNODC",
+									"1999-17039918715601",
+									"DOSSIER-32141061113917"
+								],
+								"name": "DOSSIER-32141061113917",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Autoriteit_Multidisciplinary.pdf": {
+										"name": "Autoriteit_Multidisciplinary.pdf",
+										"path": [
+											"UNODC",
+											"1999-17039918715601",
+											"DOSSIER-32141061113917",
+											"Autoriteit_Multidisciplinary.pdf"
+										],
+										"type": "pdf"
+									},
+									"de_Unit.txt": {
+										"name": "de_Unit.txt",
+										"path": [
+											"UNODC",
+											"1999-17039918715601",
+											"DOSSIER-32141061113917",
+											"de_Unit.txt"
+										],
+										"type": "txt"
+									},
+									"Europese_BES.txt": {
+										"name": "Europese_BES.txt",
+										"path": [
+											"UNODC",
+											"1999-17039918715601",
+											"DOSSIER-32141061113917",
+											"Europese_BES.txt"
+										],
+										"type": "txt"
+									},
+									"Andrea_OM.txt": {
+										"name": "Andrea_OM.txt",
+										"path": [
+											"UNODC",
+											"1999-17039918715601",
+											"DOSSIER-32141061113917",
+											"Andrea_OM.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-40732291321591": {
+								"path": [
+									"UNODC",
+									"1999-17039918715601",
+									"DOSSIER-40732291321591"
+								],
+								"name": "DOSSIER-40732291321591",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Amsterdam_Action.txt": {
+										"name": "Amsterdam_Action.txt",
+										"path": [
+											"UNODC",
+											"1999-17039918715601",
+											"DOSSIER-40732291321591",
+											"Amsterdam_Action.txt"
+										],
+										"type": "txt"
+									},
+									"Eenheid_Bonaire..txt": {
+										"name": "Eenheid_Bonaire..txt",
+										"path": [
+											"UNODC",
+											"1999-17039918715601",
+											"DOSSIER-40732291321591",
+											"Eenheid_Bonaire..txt"
+										],
+										"type": "txt"
+									},
+									"Inkomen,_van.txt": {
+										"name": "Inkomen,_van.txt",
+										"path": [
+											"UNODC",
+											"1999-17039918715601",
+											"DOSSIER-40732291321591",
+											"Inkomen,_van.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"CT_Centre,.pdf": {
+								"name": "CT_Centre,.pdf",
+								"path": [
+									"UNODC",
+									"1999-17039918715601",
+									"CT_Centre,.pdf"
 								],
 								"type": "pdf"
 							},
-							"pennsylvania_calculating_vortals.txt": {
-								"name": "pennsylvania_calculating_vortals.txt",
+							"Financial_AMLC.txt": {
+								"name": "Financial_AMLC.txt",
 								"path": [
 									"UNODC",
-									"1983-73802485711832",
-									"pennsylvania_calculating_vortals.txt"
+									"1999-17039918715601",
+									"Financial_AMLC.txt"
 								],
 								"type": "txt"
 							},
-							"pine_locks.txt": {
-								"name": "pine_locks.txt",
+							"CWI_EC.txt": {
+								"name": "CWI_EC.txt",
 								"path": [
 									"UNODC",
-									"1983-73802485711832",
-									"pine_locks.txt"
+									"1999-17039918715601",
+									"CWI_EC.txt"
 								],
 								"type": "txt"
 							},
-							"monetize_belize_bedfordshire.txt": {
-								"name": "monetize_belize_bedfordshire.txt",
+							"Money_Eustatiusen.txt": {
+								"name": "Money_Eustatiusen.txt",
 								"path": [
 									"UNODC",
-									"1983-73802485711832",
-									"monetize_belize_bedfordshire.txt"
+									"1999-17039918715601",
+									"Money_Eustatiusen.txt"
 								],
 								"type": "txt"
 							}
 						}
 					},
-					"1999-26760246035303": {
+					"2011-74641127084": {
 						"path": [
 							"UNODC",
-							"1999-26760246035303"
+							"2011-74641127084"
 						],
-						"name": "1999-26760246035303",
+						"name": "2011-74641127084",
 						"type": "dir",
-						"locked": false,
+						"dirType": "normal",
 						"children": {
-							"DOSSIER-153962890310496": {
+							"DOSSIER-11679682512008": {
 								"path": [
 									"UNODC",
-									"1999-26760246035303",
-									"DOSSIER-153962890310496"
+									"2011-74641127084",
+									"DOSSIER-11679682512008"
 								],
-								"name": "DOSSIER-153962890310496",
+								"name": "DOSSIER-11679682512008",
 								"type": "dir",
-								"locked": false,
+								"dirType": "locked",
 								"children": {
-									"profound.pdf": {
-										"name": "profound.pdf",
+									"Andrea_ESW.txt": {
+										"name": "Andrea_ESW.txt",
 										"path": [
 											"UNODC",
-											"1999-26760246035303",
-											"DOSSIER-153962890310496",
-											"profound.pdf"
-										],
-										"type": "pdf"
-									},
-									"mindshare.txt": {
-										"name": "mindshare.txt",
-										"path": [
-											"UNODC",
-											"1999-26760246035303",
-											"DOSSIER-153962890310496",
-											"mindshare.txt"
+											"2011-74641127084",
+											"DOSSIER-11679682512008",
+											"Andrea_ESW.txt"
 										],
 										"type": "txt"
 									},
-									"fantastic_rubber_keyboard.txt": {
-										"name": "fantastic_rubber_keyboard.txt",
+									"van_gemeente.pdf": {
+										"name": "van_gemeente.pdf",
 										"path": [
 											"UNODC",
-											"1999-26760246035303",
-											"DOSSIER-153962890310496",
-											"fantastic_rubber_keyboard.txt"
-										],
-										"type": "txt"
-									},
-									"de_engineered_protocol.txt": {
-										"name": "de_engineered_protocol.txt",
-										"path": [
-											"UNODC",
-											"1999-26760246035303",
-											"DOSSIER-153962890310496",
-											"de_engineered_protocol.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-18751140908997": {
-								"path": [
-									"UNODC",
-									"1999-26760246035303",
-									"DOSSIER-18751140908997"
-								],
-								"name": "DOSSIER-18751140908997",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"maine_models.txt": {
-										"name": "maine_models.txt",
-										"path": [
-											"UNODC",
-											"1999-26760246035303",
-											"DOSSIER-18751140908997",
-											"maine_models.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-241323234815296": {
-								"path": [
-									"UNODC",
-									"1999-26760246035303",
-									"DOSSIER-241323234815296"
-								],
-								"name": "DOSSIER-241323234815296",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"program.txt": {
-										"name": "program.txt",
-										"path": [
-											"UNODC",
-											"1999-26760246035303",
-											"DOSSIER-241323234815296",
-											"program.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-247061286626298": {
-								"path": [
-									"UNODC",
-									"1999-26760246035303",
-									"DOSSIER-247061286626298"
-								],
-								"name": "DOSSIER-247061286626298",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"shoes_invoice_buckinghamshire.pdf": {
-										"name": "shoes_invoice_buckinghamshire.pdf",
-										"path": [
-											"UNODC",
-											"1999-26760246035303",
-											"DOSSIER-247061286626298",
-											"shoes_invoice_buckinghamshire.pdf"
-										],
-										"type": "pdf"
-									},
-									"puerto_rico_orange_ergonomic.pdf": {
-										"name": "puerto_rico_orange_ergonomic.pdf",
-										"path": [
-											"UNODC",
-											"1999-26760246035303",
-											"DOSSIER-247061286626298",
-											"puerto_rico_orange_ergonomic.pdf"
+											"2011-74641127084",
+											"DOSSIER-11679682512008",
+											"van_gemeente.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"DOSSIER-868399153905": {
+							"DOSSIER-183471804113755": {
 								"path": [
 									"UNODC",
-									"1999-26760246035303",
-									"DOSSIER-868399153905"
+									"2011-74641127084",
+									"DOSSIER-183471804113755"
 								],
-								"name": "DOSSIER-868399153905",
+								"name": "DOSSIER-183471804113755",
 								"type": "dir",
-								"locked": true,
+								"dirType": "normal",
 								"children": {
-									"granite.txt": {
-										"name": "granite.txt",
+									"Action_iCOV.txt": {
+										"name": "Action_iCOV.txt",
 										"path": [
 											"UNODC",
-											"1999-26760246035303",
-											"DOSSIER-868399153905",
-											"granite.txt"
+											"2011-74641127084",
+											"DOSSIER-183471804113755",
+											"Action_iCOV.txt"
 										],
 										"type": "txt"
 									},
-									"slovakia_(slovak_republic).txt": {
-										"name": "slovakia_(slovak_republic).txt",
+									"team_Basisvoorziening.txt": {
+										"name": "team_Basisvoorziening.txt",
 										"path": [
 											"UNODC",
-											"1999-26760246035303",
-											"DOSSIER-868399153905",
-											"slovakia_(slovak_republic).txt"
-										],
-										"type": "txt"
-									},
-									"regional_practical.txt": {
-										"name": "regional_practical.txt",
-										"path": [
-											"UNODC",
-											"1999-26760246035303",
-											"DOSSIER-868399153905",
-											"regional_practical.txt"
+											"2011-74641127084",
+											"DOSSIER-183471804113755",
+											"team_Basisvoorziening.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"copying_coordinator.txt": {
-								"name": "copying_coordinator.txt",
+							"DOSSIER-277831295226195": {
 								"path": [
 									"UNODC",
-									"1999-26760246035303",
-									"copying_coordinator.txt"
+									"2011-74641127084",
+									"DOSSIER-277831295226195"
+								],
+								"name": "DOSSIER-277831295226195",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"FIOD_Andrea.pdf": {
+										"name": "FIOD_Andrea.pdf",
+										"path": [
+											"UNODC",
+											"2011-74641127084",
+											"DOSSIER-277831295226195",
+											"FIOD_Andrea.pdf"
+										],
+										"type": "pdf"
+									},
+									"EMPACT_Basisvoorziening.pdf": {
+										"name": "EMPACT_Basisvoorziening.pdf",
+										"path": [
+											"UNODC",
+											"2011-74641127084",
+											"DOSSIER-277831295226195",
+											"EMPACT_Basisvoorziening.pdf"
+										],
+										"type": "pdf"
+									},
+									"Action_van.pdf": {
+										"name": "Action_van.pdf",
+										"path": [
+											"UNODC",
+											"2011-74641127084",
+											"DOSSIER-277831295226195",
+											"Action_van.pdf"
+										],
+										"type": "pdf"
+									},
+									"onderdeel_en.pdf": {
+										"name": "onderdeel_en.pdf",
+										"path": [
+											"UNODC",
+											"2011-74641127084",
+											"DOSSIER-277831295226195",
+											"onderdeel_en.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-4013218230882": {
+								"path": [
+									"UNODC",
+									"2011-74641127084",
+									"DOSSIER-4013218230882"
+								],
+								"name": "DOSSIER-4013218230882",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Europese_uitvoerend.txt": {
+										"name": "Europese_uitvoerend.txt",
+										"path": [
+											"UNODC",
+											"2011-74641127084",
+											"DOSSIER-4013218230882",
+											"Europese_uitvoerend.txt"
+										],
+										"type": "txt"
+									},
+									"BVI_ICT.txt": {
+										"name": "BVI_ICT.txt",
+										"path": [
+											"UNODC",
+											"2011-74641127084",
+											"DOSSIER-4013218230882",
+											"BVI_ICT.txt"
+										],
+										"type": "txt"
+									},
+									"Saba_Landelijke.txt": {
+										"name": "Saba_Landelijke.txt",
+										"path": [
+											"UNODC",
+											"2011-74641127084",
+											"DOSSIER-4013218230882",
+											"Saba_Landelijke.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-62473069431754": {
+								"path": [
+									"UNODC",
+									"2011-74641127084",
+									"DOSSIER-62473069431754"
+								],
+								"name": "DOSSIER-62473069431754",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"EU_FIOD.txt": {
+										"name": "EU_FIOD.txt",
+										"path": [
+											"UNODC",
+											"2011-74641127084",
+											"DOSSIER-62473069431754",
+											"EU_FIOD.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"Crimineel_Infobox.txt": {
+								"name": "Crimineel_Infobox.txt",
+								"path": [
+									"UNODC",
+									"2011-74641127084",
+									"Crimineel_Infobox.txt"
 								],
 								"type": "txt"
 							},
-							"granular_networks_protocol.txt": {
-								"name": "granular_networks_protocol.txt",
+							"F_.txt": {
+								"name": "F_.txt",
 								"path": [
 									"UNODC",
-									"1999-26760246035303",
-									"granular_networks_protocol.txt"
+									"2011-74641127084",
+									"F_.txt"
 								],
 								"type": "txt"
 							},
-							"backing_up_online_tuna.pdf": {
-								"name": "backing_up_online_tuna.pdf",
+							"Against_Toezicht.txt": {
+								"name": "Against_Toezicht.txt",
 								"path": [
 									"UNODC",
-									"1999-26760246035303",
-									"backing_up_online_tuna.pdf"
+									"2011-74641127084",
+									"Against_Toezicht.txt"
+								],
+								"type": "txt"
+							},
+							"interne_EU.pdf": {
+								"name": "interne_EU.pdf",
+								"path": [
+									"UNODC",
+									"2011-74641127084",
+									"interne_EU.pdf"
 								],
 								"type": "pdf"
-							},
-							"internal.txt": {
-								"name": "internal.txt",
-								"path": [
-									"UNODC",
-									"1999-26760246035303",
-									"internal.txt"
-								],
-								"type": "txt"
-							},
-							"virtual.txt": {
-								"name": "virtual.txt",
-								"path": [
-									"UNODC",
-									"1999-26760246035303",
-									"virtual.txt"
-								],
-								"type": "txt"
 							}
 						}
 					},
-					"2008-312192208821796": {
+					"en_Criminal.pdf": {
+						"name": "en_Criminal.pdf",
 						"path": [
 							"UNODC",
-							"2008-312192208821796"
+							"en_Criminal.pdf"
 						],
-						"name": "2008-312192208821796",
-						"type": "dir",
-						"locked": true,
-						"children": {
-							"DOSSIER-14793270361482": {
-								"path": [
-									"UNODC",
-									"2008-312192208821796",
-									"DOSSIER-14793270361482"
-								],
-								"name": "DOSSIER-14793270361482",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"groves_kansas_assistant.txt": {
-										"name": "groves_kansas_assistant.txt",
-										"path": [
-											"UNODC",
-											"2008-312192208821796",
-											"DOSSIER-14793270361482",
-											"groves_kansas_assistant.txt"
-										],
-										"type": "txt"
-									},
-									"operations_back_end_avon.txt": {
-										"name": "operations_back_end_avon.txt",
-										"path": [
-											"UNODC",
-											"2008-312192208821796",
-											"DOSSIER-14793270361482",
-											"operations_back_end_avon.txt"
-										],
-										"type": "txt"
-									},
-									"pizza_saint_barthelemy.pdf": {
-										"name": "pizza_saint_barthelemy.pdf",
-										"path": [
-											"UNODC",
-											"2008-312192208821796",
-											"DOSSIER-14793270361482",
-											"pizza_saint_barthelemy.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-1484131824812": {
-								"path": [
-									"UNODC",
-									"2008-312192208821796",
-									"DOSSIER-1484131824812"
-								],
-								"name": "DOSSIER-1484131824812",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"lime_upward_trending.pdf": {
-										"name": "lime_upward_trending.pdf",
-										"path": [
-											"UNODC",
-											"2008-312192208821796",
-											"DOSSIER-1484131824812",
-											"lime_upward_trending.pdf"
-										],
-										"type": "pdf"
-									},
-									"tasty_cotton_chicken.txt": {
-										"name": "tasty_cotton_chicken.txt",
-										"path": [
-											"UNODC",
-											"2008-312192208821796",
-											"DOSSIER-1484131824812",
-											"tasty_cotton_chicken.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-18792457411062": {
-								"path": [
-									"UNODC",
-									"2008-312192208821796",
-									"DOSSIER-18792457411062"
-								],
-								"name": "DOSSIER-18792457411062",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"disintermediate.txt": {
-										"name": "disintermediate.txt",
-										"path": [
-											"UNODC",
-											"2008-312192208821796",
-											"DOSSIER-18792457411062",
-											"disintermediate.txt"
-										],
-										"type": "txt"
-									},
-									"cambridgeshire.txt": {
-										"name": "cambridgeshire.txt",
-										"path": [
-											"UNODC",
-											"2008-312192208821796",
-											"DOSSIER-18792457411062",
-											"cambridgeshire.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-21446106348327": {
-								"path": [
-									"UNODC",
-									"2008-312192208821796",
-									"DOSSIER-21446106348327"
-								],
-								"name": "DOSSIER-21446106348327",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"bedfordshire.txt": {
-										"name": "bedfordshire.txt",
-										"path": [
-											"UNODC",
-											"2008-312192208821796",
-											"DOSSIER-21446106348327",
-											"bedfordshire.txt"
-										],
-										"type": "txt"
-									},
-									"expedite.txt": {
-										"name": "expedite.txt",
-										"path": [
-											"UNODC",
-											"2008-312192208821796",
-											"DOSSIER-21446106348327",
-											"expedite.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-257381838723090": {
-								"path": [
-									"UNODC",
-									"2008-312192208821796",
-									"DOSSIER-257381838723090"
-								],
-								"name": "DOSSIER-257381838723090",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"security_invoice.txt": {
-										"name": "security_invoice.txt",
-										"path": [
-											"UNODC",
-											"2008-312192208821796",
-											"DOSSIER-257381838723090",
-											"security_invoice.txt"
-										],
-										"type": "txt"
-									},
-									"investment_account_payment.txt": {
-										"name": "investment_account_payment.txt",
-										"path": [
-											"UNODC",
-											"2008-312192208821796",
-											"DOSSIER-257381838723090",
-											"investment_account_payment.txt"
-										],
-										"type": "txt"
-									},
-									"representative_connecting_wireless.pdf": {
-										"name": "representative_connecting_wireless.pdf",
-										"path": [
-											"UNODC",
-											"2008-312192208821796",
-											"DOSSIER-257381838723090",
-											"representative_connecting_wireless.pdf"
-										],
-										"type": "pdf"
-									},
-									"kansas_relationships_multi_byte.txt": {
-										"name": "kansas_relationships_multi_byte.txt",
-										"path": [
-											"UNODC",
-											"2008-312192208821796",
-											"DOSSIER-257381838723090",
-											"kansas_relationships_multi_byte.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"payment_1080p.txt": {
-								"name": "payment_1080p.txt",
-								"path": [
-									"UNODC",
-									"2008-312192208821796",
-									"payment_1080p.txt"
-								],
-								"type": "txt"
-							},
-							"next_generation.txt": {
-								"name": "next_generation.txt",
-								"path": [
-									"UNODC",
-									"2008-312192208821796",
-									"next_generation.txt"
-								],
-								"type": "txt"
-							},
-							"panel_hack_calculating.txt": {
-								"name": "panel_hack_calculating.txt",
-								"path": [
-									"UNODC",
-									"2008-312192208821796",
-									"panel_hack_calculating.txt"
-								],
-								"type": "txt"
-							},
-							"ivory_health.txt": {
-								"name": "ivory_health.txt",
-								"path": [
-									"UNODC",
-									"2008-312192208821796",
-									"ivory_health.txt"
-								],
-								"type": "txt"
-							}
-						}
+						"type": "pdf"
 					},
-					"direct_quantify_massachusetts.txt": {
-						"name": "direct_quantify_massachusetts.txt",
+					"FIU_uitvoerend.txt": {
+						"name": "FIU_uitvoerend.txt",
 						"path": [
 							"UNODC",
-							"direct_quantify_massachusetts.txt"
+							"FIU_uitvoerend.txt"
+						],
+						"type": "txt"
+					},
+					"van_van.txt": {
+						"name": "van_van.txt",
+						"path": [
+							"UNODC",
+							"van_van.txt"
+						],
+						"type": "txt"
+					},
+					"Unie_gemeente.pdf": {
+						"name": "Unie_gemeente.pdf",
+						"path": [
+							"UNODC",
+							"Unie_gemeente.pdf"
+						],
+						"type": "pdf"
+					},
+					"gemeente_CN.txt": {
+						"name": "gemeente_CN.txt",
+						"path": [
+							"UNODC",
+							"gemeente_CN.txt"
 						],
 						"type": "txt"
 					}
@@ -35215,1413 +35229,1339 @@
 				],
 				"name": "UWV",
 				"type": "dir",
-				"locked": true,
+				"dirType": "normal",
 				"children": {
-					"1986-10549889031522": {
+					"1967-14319614011526": {
 						"path": [
 							"UWV",
-							"1986-10549889031522"
+							"1967-14319614011526"
 						],
-						"name": "1986-10549889031522",
+						"name": "1967-14319614011526",
 						"type": "dir",
-						"locked": false,
+						"dirType": "normal",
 						"children": {
-							"DOSSIER-1382224716585": {
+							"DOSSIER-137501192229560": {
 								"path": [
 									"UWV",
-									"1986-10549889031522",
-									"DOSSIER-1382224716585"
+									"1967-14319614011526",
+									"DOSSIER-137501192229560"
 								],
-								"name": "DOSSIER-1382224716585",
+								"name": "DOSSIER-137501192229560",
 								"type": "dir",
-								"locked": true,
+								"dirType": "normal",
 								"children": {
-									"configuration.txt": {
-										"name": "configuration.txt",
+									"van_EMM.txt": {
+										"name": "van_EMM.txt",
 										"path": [
 											"UWV",
-											"1986-10549889031522",
-											"DOSSIER-1382224716585",
-											"configuration.txt"
+											"1967-14319614011526",
+											"DOSSIER-137501192229560",
+											"van_EMM.txt"
 										],
 										"type": "txt"
 									},
-									"cambridgeshire_falkland_islands_pound_backing_up.pdf": {
-										"name": "cambridgeshire_falkland_islands_pound_backing_up.pdf",
+									"en_de.txt": {
+										"name": "en_de.txt",
 										"path": [
 											"UWV",
-											"1986-10549889031522",
-											"DOSSIER-1382224716585",
-											"cambridgeshire_falkland_islands_pound_backing_up.pdf"
+											"1967-14319614011526",
+											"DOSSIER-137501192229560",
+											"en_de.txt"
 										],
-										"type": "pdf"
+										"type": "txt"
 									},
-									"channels.pdf": {
-										"name": "channels.pdf",
+									"en_Europese.pdf": {
+										"name": "en_Europese.pdf",
 										"path": [
 											"UWV",
-											"1986-10549889031522",
-											"DOSSIER-1382224716585",
-											"channels.pdf"
+											"1967-14319614011526",
+											"DOSSIER-137501192229560",
+											"en_Europese.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"DOSSIER-198252895521747": {
+							"DOSSIER-164352726032694": {
 								"path": [
 									"UWV",
-									"1986-10549889031522",
-									"DOSSIER-198252895521747"
+									"1967-14319614011526",
+									"DOSSIER-164352726032694"
 								],
-								"name": "DOSSIER-198252895521747",
+								"name": "DOSSIER-164352726032694",
 								"type": "dir",
-								"locked": true,
+								"dirType": "normal",
 								"children": {
-									"handmade_wooden_gloves.txt": {
-										"name": "handmade_wooden_gloves.txt",
+									"onderdeel_de.pdf": {
+										"name": "onderdeel_de.pdf",
 										"path": [
 											"UWV",
-											"1986-10549889031522",
-											"DOSSIER-198252895521747",
-											"handmade_wooden_gloves.txt"
-										],
-										"type": "txt"
-									},
-									"sleek_cotton_tuna_empower_meadow.pdf": {
-										"name": "sleek_cotton_tuna_empower_meadow.pdf",
-										"path": [
-											"UWV",
-											"1986-10549889031522",
-											"DOSSIER-198252895521747",
-											"sleek_cotton_tuna_empower_meadow.pdf"
+											"1967-14319614011526",
+											"DOSSIER-164352726032694",
+											"onderdeel_de.pdf"
 										],
 										"type": "pdf"
 									},
-									"tennessee.pdf": {
-										"name": "tennessee.pdf",
+									"Incasso_AMLC.txt": {
+										"name": "Incasso_AMLC.txt",
 										"path": [
 											"UWV",
-											"1986-10549889031522",
-											"DOSSIER-198252895521747",
-											"tennessee.pdf"
+											"1967-14319614011526",
+											"DOSSIER-164352726032694",
+											"Incasso_AMLC.txt"
+										],
+										"type": "txt"
+									},
+									"Force_team.txt": {
+										"name": "Force_team.txt",
+										"path": [
+											"UWV",
+											"1967-14319614011526",
+											"DOSSIER-164352726032694",
+											"Force_team.txt"
+										],
+										"type": "txt"
+									},
+									"Transport_controle.txt": {
+										"name": "Transport_controle.txt",
+										"path": [
+											"UWV",
+											"1967-14319614011526",
+											"DOSSIER-164352726032694",
+											"Transport_controle.txt"
+										],
+										"type": "txt"
+									},
+									"Caribisch_Centre,.txt": {
+										"name": "Caribisch_Centre,.txt",
+										"path": [
+											"UWV",
+											"1967-14319614011526",
+											"DOSSIER-164352726032694",
+											"Caribisch_Centre,.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-255432130230664": {
+								"path": [
+									"UWV",
+									"1967-14319614011526",
+									"DOSSIER-255432130230664"
+								],
+								"name": "DOSSIER-255432130230664",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Europese_en.txt": {
+										"name": "Europese_en.txt",
+										"path": [
+											"UWV",
+											"1967-14319614011526",
+											"DOSSIER-255432130230664",
+											"Europese_en.txt"
+										],
+										"type": "txt"
+									},
+									"Centrum_Bureau.txt": {
+										"name": "Centrum_Bureau.txt",
+										"path": [
+											"UWV",
+											"1967-14319614011526",
+											"DOSSIER-255432130230664",
+											"Centrum_Bureau.txt"
+										],
+										"type": "txt"
+									},
+									"Vermogen_de.txt": {
+										"name": "Vermogen_de.txt",
+										"path": [
+											"UWV",
+											"1967-14319614011526",
+											"DOSSIER-255432130230664",
+											"Vermogen_de.txt"
+										],
+										"type": "txt"
+									},
+									"Economische_Saba.txt": {
+										"name": "Economische_Saba.txt",
+										"path": [
+											"UWV",
+											"1967-14319614011526",
+											"DOSSIER-255432130230664",
+											"Economische_Saba.txt"
+										],
+										"type": "txt"
+									},
+									"een_interne.txt": {
+										"name": "een_interne.txt",
+										"path": [
+											"UWV",
+											"1967-14319614011526",
+											"DOSSIER-255432130230664",
+											"een_interne.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-26127824613128": {
+								"path": [
+									"UWV",
+									"1967-14319614011526",
+									"DOSSIER-26127824613128"
+								],
+								"name": "DOSSIER-26127824613128",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Bonaire._Inlichtingen-.txt": {
+										"name": "Bonaire._Inlichtingen-.txt",
+										"path": [
+											"UWV",
+											"1967-14319614011526",
+											"DOSSIER-26127824613128",
+											"Bonaire._Inlichtingen-.txt"
+										],
+										"type": "txt"
+									},
+									"Action_andrea.txt": {
+										"name": "Action_andrea.txt",
+										"path": [
+											"UWV",
+											"1967-14319614011526",
+											"DOSSIER-26127824613128",
+											"Action_andrea.txt"
+										],
+										"type": "txt"
+									},
+									"Action_AFM.pdf": {
+										"name": "Action_AFM.pdf",
+										"path": [
+											"UWV",
+											"1967-14319614011526",
+											"DOSSIER-26127824613128",
+											"Action_AFM.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-274202754025246": {
+								"path": [
+									"UWV",
+									"1967-14319614011526",
+									"DOSSIER-274202754025246"
+								],
+								"name": "DOSSIER-274202754025246",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Sint_en.pdf": {
+										"name": "Sint_en.pdf",
+										"path": [
+											"UWV",
+											"1967-14319614011526",
+											"DOSSIER-274202754025246",
+											"Sint_en.pdf"
 										],
 										"type": "pdf"
 									},
-									"pound_sterling_analyst_cross_platform.txt": {
-										"name": "pound_sterling_analyst_cross_platform.txt",
+									"FinanciÃ«le_organisatie.txt": {
+										"name": "FinanciÃ«le_organisatie.txt",
 										"path": [
 											"UWV",
-											"1986-10549889031522",
-											"DOSSIER-198252895521747",
-											"pound_sterling_analyst_cross_platform.txt"
+											"1967-14319614011526",
+											"DOSSIER-274202754025246",
+											"FinanciÃ«le_organisatie.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-25474186646939": {
+							"applicatie_ESW.txt": {
+								"name": "applicatie_ESW.txt",
 								"path": [
 									"UWV",
-									"1986-10549889031522",
-									"DOSSIER-25474186646939"
-								],
-								"name": "DOSSIER-25474186646939",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"refined_plastic_gloves_anguilla_security.txt": {
-										"name": "refined_plastic_gloves_anguilla_security.txt",
-										"path": [
-											"UWV",
-											"1986-10549889031522",
-											"DOSSIER-25474186646939",
-											"refined_plastic_gloves_anguilla_security.txt"
-										],
-										"type": "txt"
-									},
-									"illinois_red.txt": {
-										"name": "illinois_red.txt",
-										"path": [
-											"UWV",
-											"1986-10549889031522",
-											"DOSSIER-25474186646939",
-											"illinois_red.txt"
-										],
-										"type": "txt"
-									},
-									"virtual.txt": {
-										"name": "virtual.txt",
-										"path": [
-											"UWV",
-											"1986-10549889031522",
-											"DOSSIER-25474186646939",
-											"virtual.txt"
-										],
-										"type": "txt"
-									},
-									"withdrawal_1080p_optical.txt": {
-										"name": "withdrawal_1080p_optical.txt",
-										"path": [
-											"UWV",
-											"1986-10549889031522",
-											"DOSSIER-25474186646939",
-											"withdrawal_1080p_optical.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-2639184529096": {
-								"path": [
-									"UWV",
-									"1986-10549889031522",
-									"DOSSIER-2639184529096"
-								],
-								"name": "DOSSIER-2639184529096",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"methodologies.pdf": {
-										"name": "methodologies.pdf",
-										"path": [
-											"UWV",
-											"1986-10549889031522",
-											"DOSSIER-2639184529096",
-											"methodologies.pdf"
-										],
-										"type": "pdf"
-									},
-									"sensor_money_market_account.txt": {
-										"name": "sensor_money_market_account.txt",
-										"path": [
-											"UWV",
-											"1986-10549889031522",
-											"DOSSIER-2639184529096",
-											"sensor_money_market_account.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-3142714946542": {
-								"path": [
-									"UWV",
-									"1986-10549889031522",
-									"DOSSIER-3142714946542"
-								],
-								"name": "DOSSIER-3142714946542",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"avenue.txt": {
-										"name": "avenue.txt",
-										"path": [
-											"UWV",
-											"1986-10549889031522",
-											"DOSSIER-3142714946542",
-											"avenue.txt"
-										],
-										"type": "txt"
-									},
-									"feed_schemas_executive.txt": {
-										"name": "feed_schemas_executive.txt",
-										"path": [
-											"UWV",
-											"1986-10549889031522",
-											"DOSSIER-3142714946542",
-											"feed_schemas_executive.txt"
-										],
-										"type": "txt"
-									},
-									"serbia_alarm_reactive.txt": {
-										"name": "serbia_alarm_reactive.txt",
-										"path": [
-											"UWV",
-											"1986-10549889031522",
-											"DOSSIER-3142714946542",
-											"serbia_alarm_reactive.txt"
-										],
-										"type": "txt"
-									},
-									"optical.txt": {
-										"name": "optical.txt",
-										"path": [
-											"UWV",
-											"1986-10549889031522",
-											"DOSSIER-3142714946542",
-											"optical.txt"
-										],
-										"type": "txt"
-									},
-									"override_kyrgyz_republic_indigo.txt": {
-										"name": "override_kyrgyz_republic_indigo.txt",
-										"path": [
-											"UWV",
-											"1986-10549889031522",
-											"DOSSIER-3142714946542",
-											"override_kyrgyz_republic_indigo.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"smtp_convertible_marks.txt": {
-								"name": "smtp_convertible_marks.txt",
-								"path": [
-									"UWV",
-									"1986-10549889031522",
-									"smtp_convertible_marks.txt"
+									"1967-14319614011526",
+									"applicatie_ESW.txt"
 								],
 								"type": "txt"
 							},
-							"sports_ergonomic_rubber_chicken.pdf": {
-								"name": "sports_ergonomic_rubber_chicken.pdf",
+							"Basisvoorziening_BVI.txt": {
+								"name": "Basisvoorziening_BVI.txt",
 								"path": [
 									"UWV",
-									"1986-10549889031522",
-									"sports_ergonomic_rubber_chicken.pdf"
+									"1967-14319614011526",
+									"Basisvoorziening_BVI.txt"
+								],
+								"type": "txt"
+							},
+							"van_Expertisecentrum.txt": {
+								"name": "van_Expertisecentrum.txt",
+								"path": [
+									"UWV",
+									"1967-14319614011526",
+									"van_Expertisecentrum.txt"
+								],
+								"type": "txt"
+							},
+							"van_Government.txt": {
+								"name": "van_Government.txt",
+								"path": [
+									"UWV",
+									"1967-14319614011526",
+									"van_Government.txt"
+								],
+								"type": "txt"
+							}
+						}
+					},
+					"1971-6627269376673": {
+						"path": [
+							"UWV",
+							"1971-6627269376673"
+						],
+						"name": "1971-6627269376673",
+						"type": "dir",
+						"dirType": "archive",
+						"children": {
+							"DOSSIER-130499524538": {
+								"path": [
+									"UWV",
+									"1971-6627269376673",
+									"DOSSIER-130499524538"
+								],
+								"name": "DOSSIER-130499524538",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Criminaliteit_Toezicht.txt": {
+										"name": "Criminaliteit_Toezicht.txt",
+										"path": [
+											"UWV",
+											"1971-6627269376673",
+											"DOSSIER-130499524538",
+											"Criminaliteit_Toezicht.txt"
+										],
+										"type": "txt"
+									},
+									"van_en.pdf": {
+										"name": "van_en.pdf",
+										"path": [
+											"UWV",
+											"1971-6627269376673",
+											"DOSSIER-130499524538",
+											"van_en.pdf"
+										],
+										"type": "pdf"
+									},
+									"Money_Eenheid.txt": {
+										"name": "Money_Eenheid.txt",
+										"path": [
+											"UWV",
+											"1971-6627269376673",
+											"DOSSIER-130499524538",
+											"Money_Eenheid.txt"
+										],
+										"type": "txt"
+									},
+									"Openbaar_Financieel.txt": {
+										"name": "Openbaar_Financieel.txt",
+										"path": [
+											"UWV",
+											"1971-6627269376673",
+											"DOSSIER-130499524538",
+											"Openbaar_Financieel.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-23751176821434": {
+								"path": [
+									"UWV",
+									"1971-6627269376673",
+									"DOSSIER-23751176821434"
+								],
+								"name": "DOSSIER-23751176821434",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"de_Inlichtingen-.txt": {
+										"name": "de_Inlichtingen-.txt",
+										"path": [
+											"UWV",
+											"1971-6627269376673",
+											"DOSSIER-23751176821434",
+											"de_Inlichtingen-.txt"
+										],
+										"type": "txt"
+									},
+									"Ontnemingswetgeving_de.txt": {
+										"name": "Ontnemingswetgeving_de.txt",
+										"path": [
+											"UWV",
+											"1971-6627269376673",
+											"DOSSIER-23751176821434",
+											"Ontnemingswetgeving_de.txt"
+										],
+										"type": "txt"
+									},
+									"team_Money.txt": {
+										"name": "team_Money.txt",
+										"path": [
+											"UWV",
+											"1971-6627269376673",
+											"DOSSIER-23751176821434",
+											"team_Money.txt"
+										],
+										"type": "txt"
+									},
+									"ICT_CT.txt": {
+										"name": "ICT_CT.txt",
+										"path": [
+											"UWV",
+											"1971-6627269376673",
+											"DOSSIER-23751176821434",
+											"ICT_CT.txt"
+										],
+										"type": "txt"
+									},
+									"Cluster_Andrea.txt": {
+										"name": "Cluster_Andrea.txt",
+										"path": [
+											"UWV",
+											"1971-6627269376673",
+											"DOSSIER-23751176821434",
+											"Cluster_Andrea.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-3078136429449": {
+								"path": [
+									"UWV",
+									"1971-6627269376673",
+									"DOSSIER-3078136429449"
+								],
+								"name": "DOSSIER-3078136429449",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Infobox_politie.txt": {
+										"name": "Infobox_politie.txt",
+										"path": [
+											"UWV",
+											"1971-6627269376673",
+											"DOSSIER-3078136429449",
+											"Infobox_politie.txt"
+										],
+										"type": "txt"
+									},
+									"CTEPF_Bureau.pdf": {
+										"name": "CTEPF_Bureau.pdf",
+										"path": [
+											"UWV",
+											"1971-6627269376673",
+											"DOSSIER-3078136429449",
+											"CTEPF_Bureau.pdf"
+										],
+										"type": "pdf"
+									},
+									"Expertise_van.txt": {
+										"name": "Expertise_van.txt",
+										"path": [
+											"UWV",
+											"1971-6627269376673",
+											"DOSSIER-3078136429449",
+											"Expertise_van.txt"
+										],
+										"type": "txt"
+									},
+									"Programma_EMPACT.txt": {
+										"name": "Programma_EMPACT.txt",
+										"path": [
+											"UWV",
+											"1971-6627269376673",
+											"DOSSIER-3078136429449",
+											"Programma_EMPACT.txt"
+										],
+										"type": "txt"
+									},
+									"FIOD_Inlichtingen-.txt": {
+										"name": "FIOD_Inlichtingen-.txt",
+										"path": [
+											"UWV",
+											"1971-6627269376673",
+											"DOSSIER-3078136429449",
+											"FIOD_Inlichtingen-.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-3107326093351": {
+								"path": [
+									"UWV",
+									"1971-6627269376673",
+									"DOSSIER-3107326093351"
+								],
+								"name": "DOSSIER-3107326093351",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Financieel_Mensensmokkel.txt": {
+										"name": "Financieel_Mensensmokkel.txt",
+										"path": [
+											"UWV",
+											"1971-6627269376673",
+											"DOSSIER-3107326093351",
+											"Financieel_Mensensmokkel.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-935725121192": {
+								"path": [
+									"UWV",
+									"1971-6627269376673",
+									"DOSSIER-935725121192"
+								],
+								"name": "DOSSIER-935725121192",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"EMM_Inlichtingen-.txt": {
+										"name": "EMM_Inlichtingen-.txt",
+										"path": [
+											"UWV",
+											"1971-6627269376673",
+											"DOSSIER-935725121192",
+											"EMM_Inlichtingen-.txt"
+										],
+										"type": "txt"
+									},
+									"organisatie_Action.pdf": {
+										"name": "organisatie_Action.pdf",
+										"path": [
+											"UWV",
+											"1971-6627269376673",
+											"DOSSIER-935725121192",
+											"organisatie_Action.pdf"
+										],
+										"type": "pdf"
+									},
+									"en_Andrea.pdf": {
+										"name": "en_Andrea.pdf",
+										"path": [
+											"UWV",
+											"1971-6627269376673",
+											"DOSSIER-935725121192",
+											"en_Andrea.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"Money_binnen.txt": {
+								"name": "Money_binnen.txt",
+								"path": [
+									"UWV",
+									"1971-6627269376673",
+									"Money_binnen.txt"
+								],
+								"type": "txt"
+							},
+							"de_Europese.pdf": {
+								"name": "de_Europese.pdf",
+								"path": [
+									"UWV",
+									"1971-6627269376673",
+									"de_Europese.pdf"
 								],
 								"type": "pdf"
 							},
-							"withdrawal_implement.txt": {
-								"name": "withdrawal_implement.txt",
+							"Opsporingsdienst_FIU.pdf": {
+								"name": "Opsporingsdienst_FIU.pdf",
 								"path": [
 									"UWV",
-									"1986-10549889031522",
-									"withdrawal_implement.txt"
-								],
-								"type": "txt"
-							},
-							"copying.txt": {
-								"name": "copying.txt",
-								"path": [
-									"UWV",
-									"1986-10549889031522",
-									"copying.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"1991-270181948130504": {
-						"path": [
-							"UWV",
-							"1991-270181948130504"
-						],
-						"name": "1991-270181948130504",
-						"type": "dir",
-						"locked": false,
-						"children": {
-							"DOSSIER-18303292021258": {
-								"path": [
-									"UWV",
-									"1991-270181948130504",
-									"DOSSIER-18303292021258"
-								],
-								"name": "DOSSIER-18303292021258",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"assurance_peso_uruguayo_uruguay_peso_en_unidades_indexadas_info_mediaries.pdf": {
-										"name": "assurance_peso_uruguayo_uruguay_peso_en_unidades_indexadas_info_mediaries.pdf",
-										"path": [
-											"UWV",
-											"1991-270181948130504",
-											"DOSSIER-18303292021258",
-											"assurance_peso_uruguayo_uruguay_peso_en_unidades_indexadas_info_mediaries.pdf"
-										],
-										"type": "pdf"
-									},
-									"multi_state_networked_chief.txt": {
-										"name": "multi_state_networked_chief.txt",
-										"path": [
-											"UWV",
-											"1991-270181948130504",
-											"DOSSIER-18303292021258",
-											"multi_state_networked_chief.txt"
-										],
-										"type": "txt"
-									},
-									"louisiana_generating_payment.txt": {
-										"name": "louisiana_generating_payment.txt",
-										"path": [
-											"UWV",
-											"1991-270181948130504",
-											"DOSSIER-18303292021258",
-											"louisiana_generating_payment.txt"
-										],
-										"type": "txt"
-									},
-									"index_palau_bluetooth.txt": {
-										"name": "index_palau_bluetooth.txt",
-										"path": [
-											"UWV",
-											"1991-270181948130504",
-											"DOSSIER-18303292021258",
-											"index_palau_bluetooth.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-19776281701013": {
-								"path": [
-									"UWV",
-									"1991-270181948130504",
-									"DOSSIER-19776281701013"
-								],
-								"name": "DOSSIER-19776281701013",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"borders_utilize.txt": {
-										"name": "borders_utilize.txt",
-										"path": [
-											"UWV",
-											"1991-270181948130504",
-											"DOSSIER-19776281701013",
-											"borders_utilize.txt"
-										],
-										"type": "txt"
-									},
-									"netherlands_antilles.txt": {
-										"name": "netherlands_antilles.txt",
-										"path": [
-											"UWV",
-											"1991-270181948130504",
-											"DOSSIER-19776281701013",
-											"netherlands_antilles.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-256861636527055": {
-								"path": [
-									"UWV",
-									"1991-270181948130504",
-									"DOSSIER-256861636527055"
-								],
-								"name": "DOSSIER-256861636527055",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"fresh_electronics_leading_edge.pdf": {
-										"name": "fresh_electronics_leading_edge.pdf",
-										"path": [
-											"UWV",
-											"1991-270181948130504",
-											"DOSSIER-256861636527055",
-											"fresh_electronics_leading_edge.pdf"
-										],
-										"type": "pdf"
-									},
-									"gorgeous.txt": {
-										"name": "gorgeous.txt",
-										"path": [
-											"UWV",
-											"1991-270181948130504",
-											"DOSSIER-256861636527055",
-											"gorgeous.txt"
-										],
-										"type": "txt"
-									},
-									"optimize.txt": {
-										"name": "optimize.txt",
-										"path": [
-											"UWV",
-											"1991-270181948130504",
-											"DOSSIER-256861636527055",
-											"optimize.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-27982126830461": {
-								"path": [
-									"UWV",
-									"1991-270181948130504",
-									"DOSSIER-27982126830461"
-								],
-								"name": "DOSSIER-27982126830461",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"platforms_matrix_orange.txt": {
-										"name": "platforms_matrix_orange.txt",
-										"path": [
-											"UWV",
-											"1991-270181948130504",
-											"DOSSIER-27982126830461",
-											"platforms_matrix_orange.txt"
-										],
-										"type": "txt"
-									},
-									"withdrawal_sas.pdf": {
-										"name": "withdrawal_sas.pdf",
-										"path": [
-											"UWV",
-											"1991-270181948130504",
-											"DOSSIER-27982126830461",
-											"withdrawal_sas.pdf"
-										],
-										"type": "pdf"
-									},
-									"afghanistan.txt": {
-										"name": "afghanistan.txt",
-										"path": [
-											"UWV",
-											"1991-270181948130504",
-											"DOSSIER-27982126830461",
-											"afghanistan.txt"
-										],
-										"type": "txt"
-									},
-									"refined_rubber_tuna_forward_applications.txt": {
-										"name": "refined_rubber_tuna_forward_applications.txt",
-										"path": [
-											"UWV",
-											"1991-270181948130504",
-											"DOSSIER-27982126830461",
-											"refined_rubber_tuna_forward_applications.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-300122298429588": {
-								"path": [
-									"UWV",
-									"1991-270181948130504",
-									"DOSSIER-300122298429588"
-								],
-								"name": "DOSSIER-300122298429588",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"analyst_sensor_fork.pdf": {
-										"name": "analyst_sensor_fork.pdf",
-										"path": [
-											"UWV",
-											"1991-270181948130504",
-											"DOSSIER-300122298429588",
-											"analyst_sensor_fork.pdf"
-										],
-										"type": "pdf"
-									},
-									"programming_quality_incredible.pdf": {
-										"name": "programming_quality_incredible.pdf",
-										"path": [
-											"UWV",
-											"1991-270181948130504",
-											"DOSSIER-300122298429588",
-											"programming_quality_incredible.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"generic.txt": {
-								"name": "generic.txt",
-								"path": [
-									"UWV",
-									"1991-270181948130504",
-									"generic.txt"
-								],
-								"type": "txt"
-							},
-							"maldives_central.txt": {
-								"name": "maldives_central.txt",
-								"path": [
-									"UWV",
-									"1991-270181948130504",
-									"maldives_central.txt"
-								],
-								"type": "txt"
-							},
-							"soft_sky_blue_practical.pdf": {
-								"name": "soft_sky_blue_practical.pdf",
-								"path": [
-									"UWV",
-									"1991-270181948130504",
-									"soft_sky_blue_practical.pdf"
+									"1971-6627269376673",
+									"Opsporingsdienst_FIU.pdf"
 								],
 								"type": "pdf"
 							},
-							"concrete_manager.txt": {
-								"name": "concrete_manager.txt",
+							"Anti-Money_onderdeel.txt": {
+								"name": "Anti-Money_onderdeel.txt",
 								"path": [
 									"UWV",
-									"1991-270181948130504",
-									"concrete_manager.txt"
-								],
-								"type": "txt"
-							},
-							"distributed.txt": {
-								"name": "distributed.txt",
-								"path": [
-									"UWV",
-									"1991-270181948130504",
-									"distributed.txt"
+									"1971-6627269376673",
+									"Anti-Money_onderdeel.txt"
 								],
 								"type": "txt"
 							}
 						}
 					},
-					"1998-200411628317487": {
+					"1988-3000675869467": {
 						"path": [
 							"UWV",
-							"1998-200411628317487"
+							"1988-3000675869467"
 						],
-						"name": "1998-200411628317487",
+						"name": "1988-3000675869467",
 						"type": "dir",
-						"locked": true,
+						"dirType": "normal",
 						"children": {
-							"DOSSIER-19273200398504": {
+							"DOSSIER-10151638212728": {
 								"path": [
 									"UWV",
-									"1998-200411628317487",
-									"DOSSIER-19273200398504"
+									"1988-3000675869467",
+									"DOSSIER-10151638212728"
 								],
-								"name": "DOSSIER-19273200398504",
+								"name": "DOSSIER-10151638212728",
 								"type": "dir",
-								"locked": false,
+								"dirType": "archive",
 								"children": {
-									"backing_up_thx_ridge.txt": {
-										"name": "backing_up_thx_ridge.txt",
+									"en_&.pdf": {
+										"name": "en_&.pdf",
 										"path": [
 											"UWV",
-											"1998-200411628317487",
-											"DOSSIER-19273200398504",
-											"backing_up_thx_ridge.txt"
+											"1988-3000675869467",
+											"DOSSIER-10151638212728",
+											"en_&.pdf"
 										],
-										"type": "txt"
-									},
-									"deposit_next_generation.txt": {
-										"name": "deposit_next_generation.txt",
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-24353288125326": {
+								"path": [
+									"UWV",
+									"1988-3000675869467",
+									"DOSSIER-24353288125326"
+								],
+								"name": "DOSSIER-24353288125326",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"CJIB_en.txt": {
+										"name": "CJIB_en.txt",
 										"path": [
 											"UWV",
-											"1998-200411628317487",
-											"DOSSIER-19273200398504",
-											"deposit_next_generation.txt"
+											"1988-3000675869467",
+											"DOSSIER-24353288125326",
+											"CJIB_en.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-239991442431897": {
+							"DOSSIER-3252702821358": {
 								"path": [
 									"UWV",
-									"1998-200411628317487",
-									"DOSSIER-239991442431897"
+									"1988-3000675869467",
+									"DOSSIER-3252702821358"
 								],
-								"name": "DOSSIER-239991442431897",
+								"name": "DOSSIER-3252702821358",
 								"type": "dir",
-								"locked": false,
+								"dirType": "normal",
 								"children": {
-									"ball.txt": {
-										"name": "ball.txt",
+									"European_Commissie,.txt": {
+										"name": "European_Commissie,.txt",
 										"path": [
 											"UWV",
-											"1998-200411628317487",
-											"DOSSIER-239991442431897",
-											"ball.txt"
+											"1988-3000675869467",
+											"DOSSIER-3252702821358",
+											"European_Commissie,.txt"
 										],
 										"type": "txt"
 									},
-									"cotton_home_north_carolina.txt": {
-										"name": "cotton_home_north_carolina.txt",
+									"BES_A01C.pdf": {
+										"name": "BES_A01C.pdf",
 										"path": [
 											"UWV",
-											"1998-200411628317487",
-											"DOSSIER-239991442431897",
-											"cotton_home_north_carolina.txt"
-										],
-										"type": "txt"
-									},
-									"lebanese_pound_panel.pdf": {
-										"name": "lebanese_pound_panel.pdf",
-										"path": [
-											"UWV",
-											"1998-200411628317487",
-											"DOSSIER-239991442431897",
-											"lebanese_pound_panel.pdf"
+											"1988-3000675869467",
+											"DOSSIER-3252702821358",
+											"BES_A01C.pdf"
 										],
 										"type": "pdf"
 									},
-									"channels_reboot_buckinghamshire.txt": {
-										"name": "channels_reboot_buckinghamshire.txt",
+									"Expertise_FAT.txt": {
+										"name": "Expertise_FAT.txt",
 										"path": [
 											"UWV",
-											"1998-200411628317487",
-											"DOSSIER-239991442431897",
-											"channels_reboot_buckinghamshire.txt"
+											"1988-3000675869467",
+											"DOSSIER-3252702821358",
+											"Expertise_FAT.txt"
 										],
 										"type": "txt"
 									},
-									"louisiana_olive_invoice.txt": {
-										"name": "louisiana_olive_invoice.txt",
+									"AFM_gemeente.pdf": {
+										"name": "AFM_gemeente.pdf",
 										"path": [
 											"UWV",
-											"1998-200411628317487",
-											"DOSSIER-239991442431897",
-											"louisiana_olive_invoice.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-259442836716964": {
-								"path": [
-									"UWV",
-									"1998-200411628317487",
-									"DOSSIER-259442836716964"
-								],
-								"name": "DOSSIER-259442836716964",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"input.txt": {
-										"name": "input.txt",
-										"path": [
-											"UWV",
-											"1998-200411628317487",
-											"DOSSIER-259442836716964",
-											"input.txt"
-										],
-										"type": "txt"
-									},
-									"reduced.txt": {
-										"name": "reduced.txt",
-										"path": [
-											"UWV",
-											"1998-200411628317487",
-											"DOSSIER-259442836716964",
-											"reduced.txt"
-										],
-										"type": "txt"
-									},
-									"help_desk.pdf": {
-										"name": "help_desk.pdf",
-										"path": [
-											"UWV",
-											"1998-200411628317487",
-											"DOSSIER-259442836716964",
-											"help_desk.pdf"
+											"1988-3000675869467",
+											"DOSSIER-3252702821358",
+											"AFM_gemeente.pdf"
 										],
 										"type": "pdf"
 									},
-									"orange_transition_deposit.txt": {
-										"name": "orange_transition_deposit.txt",
+									"een_Toezicht.txt": {
+										"name": "een_Toezicht.txt",
 										"path": [
 											"UWV",
-											"1998-200411628317487",
-											"DOSSIER-259442836716964",
-											"orange_transition_deposit.txt"
+											"1988-3000675869467",
+											"DOSSIER-3252702821358",
+											"een_Toezicht.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-274121764123270": {
+							"DOSSIER-41161969817889": {
 								"path": [
 									"UWV",
-									"1998-200411628317487",
-									"DOSSIER-274121764123270"
+									"1988-3000675869467",
+									"DOSSIER-41161969817889"
 								],
-								"name": "DOSSIER-274121764123270",
+								"name": "DOSSIER-41161969817889",
 								"type": "dir",
-								"locked": true,
+								"dirType": "normal",
 								"children": {
-									"grow.txt": {
-										"name": "grow.txt",
+									"Infobox_Against.txt": {
+										"name": "Infobox_Against.txt",
 										"path": [
 											"UWV",
-											"1998-200411628317487",
-											"DOSSIER-274121764123270",
-											"grow.txt"
+											"1988-3000675869467",
+											"DOSSIER-41161969817889",
+											"Infobox_Against.txt"
 										],
 										"type": "txt"
-									},
-									"connect.txt": {
-										"name": "connect.txt",
+									}
+								}
+							},
+							"DOSSIER-8168255293957": {
+								"path": [
+									"UWV",
+									"1988-3000675869467",
+									"DOSSIER-8168255293957"
+								],
+								"name": "DOSSIER-8168255293957",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Markten_door.pdf": {
+										"name": "Markten_door.pdf",
 										"path": [
 											"UWV",
-											"1998-200411628317487",
-											"DOSSIER-274121764123270",
-											"connect.txt"
-										],
-										"type": "txt"
-									},
-									"experiences.pdf": {
-										"name": "experiences.pdf",
-										"path": [
-											"UWV",
-											"1998-200411628317487",
-											"DOSSIER-274121764123270",
-											"experiences.pdf"
+											"1988-3000675869467",
+											"DOSSIER-8168255293957",
+											"Markten_door.pdf"
 										],
 										"type": "pdf"
 									},
-									"california_reactive.txt": {
-										"name": "california_reactive.txt",
+									"de_Fiscale.txt": {
+										"name": "de_Fiscale.txt",
 										"path": [
 											"UWV",
-											"1998-200411628317487",
-											"DOSSIER-274121764123270",
-											"california_reactive.txt"
+											"1988-3000675869467",
+											"DOSSIER-8168255293957",
+											"de_Fiscale.txt"
 										],
 										"type": "txt"
 									},
-									"savings_account_initiatives_panel.txt": {
-										"name": "savings_account_initiatives_panel.txt",
+									"en_Rotterdam.txt": {
+										"name": "en_Rotterdam.txt",
 										"path": [
 											"UWV",
-											"1998-200411628317487",
-											"DOSSIER-274121764123270",
-											"savings_account_initiatives_panel.txt"
+											"1988-3000675869467",
+											"DOSSIER-8168255293957",
+											"en_Rotterdam.txt"
+										],
+										"type": "txt"
+									},
+									"van_Sint.txt": {
+										"name": "van_Sint.txt",
+										"path": [
+											"UWV",
+											"1988-3000675869467",
+											"DOSSIER-8168255293957",
+											"van_Sint.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-38211073711563": {
+							"de_Opsporingsdienst.txt": {
+								"name": "de_Opsporingsdienst.txt",
 								"path": [
 									"UWV",
-									"1998-200411628317487",
-									"DOSSIER-38211073711563"
+									"1988-3000675869467",
+									"de_Opsporingsdienst.txt"
 								],
-								"name": "DOSSIER-38211073711563",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"liason_myanmar_transmitting.txt": {
-										"name": "liason_myanmar_transmitting.txt",
-										"path": [
-											"UWV",
-											"1998-200411628317487",
-											"DOSSIER-38211073711563",
-											"liason_myanmar_transmitting.txt"
-										],
-										"type": "txt"
-									}
-								}
+								"type": "txt"
 							},
-							"purple_navigating.txt": {
-								"name": "purple_navigating.txt",
+							"team_Financial.txt": {
+								"name": "team_Financial.txt",
 								"path": [
 									"UWV",
-									"1998-200411628317487",
-									"purple_navigating.txt"
+									"1988-3000675869467",
+									"team_Financial.txt"
+								],
+								"type": "txt"
+							},
+							"Expertisecentrum_de.txt": {
+								"name": "Expertisecentrum_de.txt",
+								"path": [
+									"UWV",
+									"1988-3000675869467",
+									"Expertisecentrum_de.txt"
+								],
+								"type": "txt"
+							},
+							"de_de.txt": {
+								"name": "de_de.txt",
+								"path": [
+									"UWV",
+									"1988-3000675869467",
+									"de_de.txt"
 								],
 								"type": "txt"
 							}
 						}
 					},
-					"2002-18501166431193": {
+					"2008-55981323615769": {
 						"path": [
 							"UWV",
-							"2002-18501166431193"
+							"2008-55981323615769"
 						],
-						"name": "2002-18501166431193",
+						"name": "2008-55981323615769",
 						"type": "dir",
-						"locked": false,
+						"dirType": "locked",
 						"children": {
-							"DOSSIER-215791283627081": {
+							"DOSSIER-109772650426660": {
 								"path": [
 									"UWV",
-									"2002-18501166431193",
-									"DOSSIER-215791283627081"
+									"2008-55981323615769",
+									"DOSSIER-109772650426660"
 								],
-								"name": "DOSSIER-215791283627081",
+								"name": "DOSSIER-109772650426660",
 								"type": "dir",
-								"locked": true,
+								"dirType": "archive",
 								"children": {
-									"calculate.txt": {
-										"name": "calculate.txt",
+									"Justitieel_Financieel.pdf": {
+										"name": "Justitieel_Financieel.pdf",
 										"path": [
 											"UWV",
-											"2002-18501166431193",
-											"DOSSIER-215791283627081",
-											"calculate.txt"
-										],
-										"type": "txt"
-									},
-									"quantifying_avon_checking_account.txt": {
-										"name": "quantifying_avon_checking_account.txt",
-										"path": [
-											"UWV",
-											"2002-18501166431193",
-											"DOSSIER-215791283627081",
-											"quantifying_avon_checking_account.txt"
-										],
-										"type": "txt"
-									},
-									"forward.txt": {
-										"name": "forward.txt",
-										"path": [
-											"UWV",
-											"2002-18501166431193",
-											"DOSSIER-215791283627081",
-											"forward.txt"
-										],
-										"type": "txt"
-									},
-									"copy_profound.txt": {
-										"name": "copy_profound.txt",
-										"path": [
-											"UWV",
-											"2002-18501166431193",
-											"DOSSIER-215791283627081",
-											"copy_profound.txt"
-										],
-										"type": "txt"
-									},
-									"directives.txt": {
-										"name": "directives.txt",
-										"path": [
-											"UWV",
-											"2002-18501166431193",
-											"DOSSIER-215791283627081",
-											"directives.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-24938295128912": {
-								"path": [
-									"UWV",
-									"2002-18501166431193",
-									"DOSSIER-24938295128912"
-								],
-								"name": "DOSSIER-24938295128912",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"collaborative.txt": {
-										"name": "collaborative.txt",
-										"path": [
-											"UWV",
-											"2002-18501166431193",
-											"DOSSIER-24938295128912",
-											"collaborative.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-27808246133445": {
-								"path": [
-									"UWV",
-									"2002-18501166431193",
-									"DOSSIER-27808246133445"
-								],
-								"name": "DOSSIER-27808246133445",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"copying_associate_tuna.pdf": {
-										"name": "copying_associate_tuna.pdf",
-										"path": [
-											"UWV",
-											"2002-18501166431193",
-											"DOSSIER-27808246133445",
-											"copying_associate_tuna.pdf"
+											"2008-55981323615769",
+											"DOSSIER-109772650426660",
+											"Justitieel_Financieel.pdf"
 										],
 										"type": "pdf"
 									},
-									"synergistic_jewelery_berkshire.txt": {
-										"name": "synergistic_jewelery_berkshire.txt",
+									"van_Inkomen,.pdf": {
+										"name": "van_Inkomen,.pdf",
 										"path": [
 											"UWV",
-											"2002-18501166431193",
-											"DOSSIER-27808246133445",
-											"synergistic_jewelery_berkshire.txt"
+											"2008-55981323615769",
+											"DOSSIER-109772650426660",
+											"van_Inkomen,.pdf"
 										],
-										"type": "txt"
-									},
-									"lek.txt": {
-										"name": "lek.txt",
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-14692147214349": {
+								"path": [
+									"UWV",
+									"2008-55981323615769",
+									"DOSSIER-14692147214349"
+								],
+								"name": "DOSSIER-14692147214349",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Nederland:_CT.pdf": {
+										"name": "Nederland:_CT.pdf",
 										"path": [
 											"UWV",
-											"2002-18501166431193",
-											"DOSSIER-27808246133445",
-											"lek.txt"
-										],
-										"type": "txt"
-									},
-									"re_engineered_circle.pdf": {
-										"name": "re_engineered_circle.pdf",
-										"path": [
-											"UWV",
-											"2002-18501166431193",
-											"DOSSIER-27808246133445",
-											"re_engineered_circle.pdf"
+											"2008-55981323615769",
+											"DOSSIER-14692147214349",
+											"Nederland:_CT.pdf"
 										],
 										"type": "pdf"
 									},
-									"facilitator_sports_capacitor.txt": {
-										"name": "facilitator_sports_capacitor.txt",
+									"Financial_Andrea.pdf": {
+										"name": "Financial_Andrea.pdf",
 										"path": [
 											"UWV",
-											"2002-18501166431193",
-											"DOSSIER-27808246133445",
-											"facilitator_sports_capacitor.txt"
+											"2008-55981323615769",
+											"DOSSIER-14692147214349",
+											"Financial_Andrea.pdf"
+										],
+										"type": "pdf"
+									},
+									"Andrea_DNB.txt": {
+										"name": "Andrea_DNB.txt",
+										"path": [
+											"UWV",
+											"2008-55981323615769",
+											"DOSSIER-14692147214349",
+											"Andrea_DNB.txt"
+										],
+										"type": "txt"
+									},
+									"Criminaliteit_Nederlandsche.txt": {
+										"name": "Criminaliteit_Nederlandsche.txt",
+										"path": [
+											"UWV",
+											"2008-55981323615769",
+											"DOSSIER-14692147214349",
+											"Criminaliteit_Nederlandsche.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-78841842214598": {
+							"DOSSIER-187912380411491": {
 								"path": [
 									"UWV",
-									"2002-18501166431193",
-									"DOSSIER-78841842214598"
+									"2008-55981323615769",
+									"DOSSIER-187912380411491"
 								],
-								"name": "DOSSIER-78841842214598",
+								"name": "DOSSIER-187912380411491",
 								"type": "dir",
-								"locked": false,
+								"dirType": "archive",
 								"children": {
-									"credit_card_account_transmitter.txt": {
-										"name": "credit_card_account_transmitter.txt",
+									"Inkomen,_Bonaire..txt": {
+										"name": "Inkomen,_Bonaire..txt",
 										"path": [
 											"UWV",
-											"2002-18501166431193",
-											"DOSSIER-78841842214598",
-											"credit_card_account_transmitter.txt"
+											"2008-55981323615769",
+											"DOSSIER-187912380411491",
+											"Inkomen,_Bonaire..txt"
 										],
 										"type": "txt"
 									},
-									"compressing_open_source.txt": {
-										"name": "compressing_open_source.txt",
+									"Financieel_de.txt": {
+										"name": "Financieel_de.txt",
 										"path": [
 											"UWV",
-											"2002-18501166431193",
-											"DOSSIER-78841842214598",
-											"compressing_open_source.txt"
+											"2008-55981323615769",
+											"DOSSIER-187912380411491",
+											"Financieel_de.txt"
 										],
 										"type": "txt"
 									},
-									"liechtenstein.txt": {
-										"name": "liechtenstein.txt",
+									"EU_Andrea.pdf": {
+										"name": "EU_Andrea.pdf",
 										"path": [
 											"UWV",
-											"2002-18501166431193",
-											"DOSSIER-78841842214598",
-											"liechtenstein.txt"
+											"2008-55981323615769",
+											"DOSSIER-187912380411491",
+											"EU_Andrea.pdf"
 										],
-										"type": "txt"
+										"type": "pdf"
 									},
-									"networks_navigate.txt": {
-										"name": "networks_navigate.txt",
+									"de_Money.txt": {
+										"name": "de_Money.txt",
 										"path": [
 											"UWV",
-											"2002-18501166431193",
-											"DOSSIER-78841842214598",
-											"networks_navigate.txt"
+											"2008-55981323615769",
+											"DOSSIER-187912380411491",
+											"de_Money.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-79712486225633": {
+							"DOSSIER-2557198111358": {
 								"path": [
 									"UWV",
-									"2002-18501166431193",
-									"DOSSIER-79712486225633"
+									"2008-55981323615769",
+									"DOSSIER-2557198111358"
 								],
-								"name": "DOSSIER-79712486225633",
+								"name": "DOSSIER-2557198111358",
 								"type": "dir",
-								"locked": true,
+								"dirType": "normal",
 								"children": {
-									"digital_systemic.txt": {
-										"name": "digital_systemic.txt",
+									"Europese_Anti.txt": {
+										"name": "Europese_Anti.txt",
 										"path": [
 											"UWV",
-											"2002-18501166431193",
-											"DOSSIER-79712486225633",
-											"digital_systemic.txt"
+											"2008-55981323615769",
+											"DOSSIER-2557198111358",
+											"Europese_Anti.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"card.pdf": {
-								"name": "card.pdf",
+							"DOSSIER-327372006029066": {
 								"path": [
 									"UWV",
-									"2002-18501166431193",
-									"card.pdf"
+									"2008-55981323615769",
+									"DOSSIER-327372006029066"
+								],
+								"name": "DOSSIER-327372006029066",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Nederland_European.pdf": {
+										"name": "Nederland_European.pdf",
+										"path": [
+											"UWV",
+											"2008-55981323615769",
+											"DOSSIER-327372006029066",
+											"Nederland_European.pdf"
+										],
+										"type": "pdf"
+									},
+									"Contraterrorisme_Laundering.pdf": {
+										"name": "Contraterrorisme_Laundering.pdf",
+										"path": [
+											"UWV",
+											"2008-55981323615769",
+											"DOSSIER-327372006029066",
+											"Contraterrorisme_Laundering.pdf"
+										],
+										"type": "pdf"
+									},
+									"BOOM_applicatie.txt": {
+										"name": "BOOM_applicatie.txt",
+										"path": [
+											"UWV",
+											"2008-55981323615769",
+											"DOSSIER-327372006029066",
+											"BOOM_applicatie.txt"
+										],
+										"type": "txt"
+									},
+									"controle_Crimineel.txt": {
+										"name": "controle_Crimineel.txt",
+										"path": [
+											"UWV",
+											"2008-55981323615769",
+											"DOSSIER-327372006029066",
+											"controle_Crimineel.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"Bureau_Opsporingsdienst.pdf": {
+								"name": "Bureau_Opsporingsdienst.pdf",
+								"path": [
+									"UWV",
+									"2008-55981323615769",
+									"Bureau_Opsporingsdienst.pdf"
 								],
 								"type": "pdf"
 							},
-							"comoro_franc.pdf": {
-								"name": "comoro_franc.pdf",
+							"Andrea_Ontnemingswetgeving.txt": {
+								"name": "Andrea_Ontnemingswetgeving.txt",
 								"path": [
 									"UWV",
-									"2002-18501166431193",
-									"comoro_franc.pdf"
+									"2008-55981323615769",
+									"Andrea_Ontnemingswetgeving.txt"
+								],
+								"type": "txt"
+							},
+							"Caribisch_Inkomen,.txt": {
+								"name": "Caribisch_Inkomen,.txt",
+								"path": [
+									"UWV",
+									"2008-55981323615769",
+									"Caribisch_Inkomen,.txt"
+								],
+								"type": "txt"
+							},
+							"OM_Financieel.txt": {
+								"name": "OM_Financieel.txt",
+								"path": [
+									"UWV",
+									"2008-55981323615769",
+									"OM_Financieel.txt"
+								],
+								"type": "txt"
+							}
+						}
+					},
+					"2010-10511497011284": {
+						"path": [
+							"UWV",
+							"2010-10511497011284"
+						],
+						"name": "2010-10511497011284",
+						"type": "dir",
+						"dirType": "normal",
+						"children": {
+							"DOSSIER-16713363123881": {
+								"path": [
+									"UWV",
+									"2010-10511497011284",
+									"DOSSIER-16713363123881"
+								],
+								"name": "DOSSIER-16713363123881",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"FinanciÃ«le_AMLC.txt": {
+										"name": "FinanciÃ«le_AMLC.txt",
+										"path": [
+											"UWV",
+											"2010-10511497011284",
+											"DOSSIER-16713363123881",
+											"FinanciÃ«le_AMLC.txt"
+										],
+										"type": "txt"
+									},
+									"Werk_Financieel.txt": {
+										"name": "Werk_Financieel.txt",
+										"path": [
+											"UWV",
+											"2010-10511497011284",
+											"DOSSIER-16713363123881",
+											"Werk_Financieel.txt"
+										],
+										"type": "txt"
+									},
+									"gemeente_Opsporingsdienst.txt": {
+										"name": "gemeente_Opsporingsdienst.txt",
+										"path": [
+											"UWV",
+											"2010-10511497011284",
+											"DOSSIER-16713363123881",
+											"gemeente_Opsporingsdienst.txt"
+										],
+										"type": "txt"
+									},
+									"EC_de.txt": {
+										"name": "EC_de.txt",
+										"path": [
+											"UWV",
+											"2010-10511497011284",
+											"DOSSIER-16713363123881",
+											"EC_de.txt"
+										],
+										"type": "txt"
+									},
+									"de_onderdeel.txt": {
+										"name": "de_onderdeel.txt",
+										"path": [
+											"UWV",
+											"2010-10511497011284",
+											"DOSSIER-16713363123881",
+											"de_onderdeel.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-20351642927728": {
+								"path": [
+									"UWV",
+									"2010-10511497011284",
+									"DOSSIER-20351642927728"
+								],
+								"name": "DOSSIER-20351642927728",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Expertise_Centre,.txt": {
+										"name": "Expertise_Centre,.txt",
+										"path": [
+											"UWV",
+											"2010-10511497011284",
+											"DOSSIER-20351642927728",
+											"Expertise_Centre,.txt"
+										],
+										"type": "txt"
+									},
+									"Functioneel_BOOM.pdf": {
+										"name": "Functioneel_BOOM.pdf",
+										"path": [
+											"UWV",
+											"2010-10511497011284",
+											"DOSSIER-20351642927728",
+											"Functioneel_BOOM.pdf"
+										],
+										"type": "pdf"
+									},
+									"Commissie,_de.txt": {
+										"name": "Commissie,_de.txt",
+										"path": [
+											"UWV",
+											"2010-10511497011284",
+											"DOSSIER-20351642927728",
+											"Commissie,_de.txt"
+										],
+										"type": "txt"
+									},
+									"BES_Fiscale.txt": {
+										"name": "BES_Fiscale.txt",
+										"path": [
+											"UWV",
+											"2010-10511497011284",
+											"DOSSIER-20351642927728",
+											"BES_Fiscale.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-2059022411313": {
+								"path": [
+									"UWV",
+									"2010-10511497011284",
+									"DOSSIER-2059022411313"
+								],
+								"name": "DOSSIER-2059022411313",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Bureau_F.pdf": {
+										"name": "Bureau_F.pdf",
+										"path": [
+											"UWV",
+											"2010-10511497011284",
+											"DOSSIER-2059022411313",
+											"Bureau_F.pdf"
+										],
+										"type": "pdf"
+									},
+									"CN_Andrea.pdf": {
+										"name": "CN_Andrea.pdf",
+										"path": [
+											"UWV",
+											"2010-10511497011284",
+											"DOSSIER-2059022411313",
+											"CN_Andrea.pdf"
+										],
+										"type": "pdf"
+									},
+									"Expertisecentrum_CWI.txt": {
+										"name": "Expertisecentrum_CWI.txt",
+										"path": [
+											"UWV",
+											"2010-10511497011284",
+											"DOSSIER-2059022411313",
+											"Expertisecentrum_CWI.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-22282958229012": {
+								"path": [
+									"UWV",
+									"2010-10511497011284",
+									"DOSSIER-22282958229012"
+								],
+								"name": "DOSSIER-22282958229012",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"FinanciÃ«le_en.txt": {
+										"name": "FinanciÃ«le_en.txt",
+										"path": [
+											"UWV",
+											"2010-10511497011284",
+											"DOSSIER-22282958229012",
+											"FinanciÃ«le_en.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-26439850531329": {
+								"path": [
+									"UWV",
+									"2010-10511497011284",
+									"DOSSIER-26439850531329"
+								],
+								"name": "DOSSIER-26439850531329",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"F_GoAML.txt": {
+										"name": "F_GoAML.txt",
+										"path": [
+											"UWV",
+											"2010-10511497011284",
+											"DOSSIER-26439850531329",
+											"F_GoAML.txt"
+										],
+										"type": "txt"
+									},
+									"Europese_van.pdf": {
+										"name": "Europese_van.pdf",
+										"path": [
+											"UWV",
+											"2010-10511497011284",
+											"DOSSIER-26439850531329",
+											"Europese_van.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"gemeente_BFT.txt": {
+								"name": "gemeente_BFT.txt",
+								"path": [
+									"UWV",
+									"2010-10511497011284",
+									"gemeente_BFT.txt"
+								],
+								"type": "txt"
+							},
+							"Nederland:_de.pdf": {
+								"name": "Nederland:_de.pdf",
+								"path": [
+									"UWV",
+									"2010-10511497011284",
+									"Nederland:_de.pdf"
 								],
 								"type": "pdf"
 							},
-							"target_trafficway_expedite.txt": {
-								"name": "target_trafficway_expedite.txt",
+							"Inlichtingen-_FIU.pdf": {
+								"name": "Inlichtingen-_FIU.pdf",
 								"path": [
 									"UWV",
-									"2002-18501166431193",
-									"target_trafficway_expedite.txt"
+									"2010-10511497011284",
+									"Inlichtingen-_FIU.pdf"
+								],
+								"type": "pdf"
+							},
+							"en_Commissie,.pdf": {
+								"name": "en_Commissie,.pdf",
+								"path": [
+									"UWV",
+									"2010-10511497011284",
+									"en_Commissie,.pdf"
+								],
+								"type": "pdf"
+							},
+							"gemeente_van.txt": {
+								"name": "gemeente_van.txt",
+								"path": [
+									"UWV",
+									"2010-10511497011284",
+									"gemeente_van.txt"
 								],
 								"type": "txt"
 							}
 						}
 					},
-					"2008-207791559318594": {
+					"Programma_Inkomen,.txt": {
+						"name": "Programma_Inkomen,.txt",
 						"path": [
 							"UWV",
-							"2008-207791559318594"
+							"Programma_Inkomen,.txt"
 						],
-						"name": "2008-207791559318594",
-						"type": "dir",
-						"locked": false,
-						"children": {
-							"DOSSIER-1471192122239": {
-								"path": [
-									"UWV",
-									"2008-207791559318594",
-									"DOSSIER-1471192122239"
-								],
-								"name": "DOSSIER-1471192122239",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"land_consultant.pdf": {
-										"name": "land_consultant.pdf",
-										"path": [
-											"UWV",
-											"2008-207791559318594",
-											"DOSSIER-1471192122239",
-											"land_consultant.pdf"
-										],
-										"type": "pdf"
-									},
-									"blue_creative.txt": {
-										"name": "blue_creative.txt",
-										"path": [
-											"UWV",
-											"2008-207791559318594",
-											"DOSSIER-1471192122239",
-											"blue_creative.txt"
-										],
-										"type": "txt"
-									},
-									"back_end_bedfordshire.txt": {
-										"name": "back_end_bedfordshire.txt",
-										"path": [
-											"UWV",
-											"2008-207791559318594",
-											"DOSSIER-1471192122239",
-											"back_end_bedfordshire.txt"
-										],
-										"type": "txt"
-									},
-									"pants.txt": {
-										"name": "pants.txt",
-										"path": [
-											"UWV",
-											"2008-207791559318594",
-											"DOSSIER-1471192122239",
-											"pants.txt"
-										],
-										"type": "txt"
-									},
-									"integrated_functionalities.txt": {
-										"name": "integrated_functionalities.txt",
-										"path": [
-											"UWV",
-											"2008-207791559318594",
-											"DOSSIER-1471192122239",
-											"integrated_functionalities.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-242201179113828": {
-								"path": [
-									"UWV",
-									"2008-207791559318594",
-									"DOSSIER-242201179113828"
-								],
-								"name": "DOSSIER-242201179113828",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"multi_tiered_distributed_pci.txt": {
-										"name": "multi_tiered_distributed_pci.txt",
-										"path": [
-											"UWV",
-											"2008-207791559318594",
-											"DOSSIER-242201179113828",
-											"multi_tiered_distributed_pci.txt"
-										],
-										"type": "txt"
-									},
-									"withdrawal_navigate.txt": {
-										"name": "withdrawal_navigate.txt",
-										"path": [
-											"UWV",
-											"2008-207791559318594",
-											"DOSSIER-242201179113828",
-											"withdrawal_navigate.txt"
-										],
-										"type": "txt"
-									},
-									"driver_parsing.txt": {
-										"name": "driver_parsing.txt",
-										"path": [
-											"UWV",
-											"2008-207791559318594",
-											"DOSSIER-242201179113828",
-											"driver_parsing.txt"
-										],
-										"type": "txt"
-									},
-									"universal_open_source.txt": {
-										"name": "universal_open_source.txt",
-										"path": [
-											"UWV",
-											"2008-207791559318594",
-											"DOSSIER-242201179113828",
-											"universal_open_source.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-315012196317428": {
-								"path": [
-									"UWV",
-									"2008-207791559318594",
-									"DOSSIER-315012196317428"
-								],
-								"name": "DOSSIER-315012196317428",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"fantastic_protocol.txt": {
-										"name": "fantastic_protocol.txt",
-										"path": [
-											"UWV",
-											"2008-207791559318594",
-											"DOSSIER-315012196317428",
-											"fantastic_protocol.txt"
-										],
-										"type": "txt"
-									},
-									"product_generate.txt": {
-										"name": "product_generate.txt",
-										"path": [
-											"UWV",
-											"2008-207791559318594",
-											"DOSSIER-315012196317428",
-											"product_generate.txt"
-										],
-										"type": "txt"
-									},
-									"health_synthesize.txt": {
-										"name": "health_synthesize.txt",
-										"path": [
-											"UWV",
-											"2008-207791559318594",
-											"DOSSIER-315012196317428",
-											"health_synthesize.txt"
-										],
-										"type": "txt"
-									},
-									"panel.txt": {
-										"name": "panel.txt",
-										"path": [
-											"UWV",
-											"2008-207791559318594",
-											"DOSSIER-315012196317428",
-											"panel.txt"
-										],
-										"type": "txt"
-									},
-									"producer.txt": {
-										"name": "producer.txt",
-										"path": [
-											"UWV",
-											"2008-207791559318594",
-											"DOSSIER-315012196317428",
-											"producer.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-323791845828167": {
-								"path": [
-									"UWV",
-									"2008-207791559318594",
-									"DOSSIER-323791845828167"
-								],
-								"name": "DOSSIER-323791845828167",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"forint_human_tasty.pdf": {
-										"name": "forint_human_tasty.pdf",
-										"path": [
-											"UWV",
-											"2008-207791559318594",
-											"DOSSIER-323791845828167",
-											"forint_human_tasty.pdf"
-										],
-										"type": "pdf"
-									},
-									"unbranded_frozen_pizza_systematic_small_wooden_tuna.txt": {
-										"name": "unbranded_frozen_pizza_systematic_small_wooden_tuna.txt",
-										"path": [
-											"UWV",
-											"2008-207791559318594",
-											"DOSSIER-323791845828167",
-											"unbranded_frozen_pizza_systematic_small_wooden_tuna.txt"
-										],
-										"type": "txt"
-									},
-									"specialist.txt": {
-										"name": "specialist.txt",
-										"path": [
-											"UWV",
-											"2008-207791559318594",
-											"DOSSIER-323791845828167",
-											"specialist.txt"
-										],
-										"type": "txt"
-									},
-									"indigo_el_salvador_colon_us_dollar_creative.pdf": {
-										"name": "indigo_el_salvador_colon_us_dollar_creative.pdf",
-										"path": [
-											"UWV",
-											"2008-207791559318594",
-											"DOSSIER-323791845828167",
-											"indigo_el_salvador_colon_us_dollar_creative.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-83192677528111": {
-								"path": [
-									"UWV",
-									"2008-207791559318594",
-									"DOSSIER-83192677528111"
-								],
-								"name": "DOSSIER-83192677528111",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"heard_island_and_mcdonald_islands.txt": {
-										"name": "heard_island_and_mcdonald_islands.txt",
-										"path": [
-											"UWV",
-											"2008-207791559318594",
-											"DOSSIER-83192677528111",
-											"heard_island_and_mcdonald_islands.txt"
-										],
-										"type": "txt"
-									},
-									"practical_gorgeous_steel_cheese.pdf": {
-										"name": "practical_gorgeous_steel_cheese.pdf",
-										"path": [
-											"UWV",
-											"2008-207791559318594",
-											"DOSSIER-83192677528111",
-											"practical_gorgeous_steel_cheese.pdf"
-										],
-										"type": "pdf"
-									},
-									"planner_calculate_intelligent.txt": {
-										"name": "planner_calculate_intelligent.txt",
-										"path": [
-											"UWV",
-											"2008-207791559318594",
-											"DOSSIER-83192677528111",
-											"planner_calculate_intelligent.txt"
-										],
-										"type": "txt"
-									},
-									"vertical_steel_generic_metal_salad.txt": {
-										"name": "vertical_steel_generic_metal_salad.txt",
-										"path": [
-											"UWV",
-											"2008-207791559318594",
-											"DOSSIER-83192677528111",
-											"vertical_steel_generic_metal_salad.txt"
-										],
-										"type": "txt"
-									},
-									"granite_next_generation_towels.txt": {
-										"name": "granite_next_generation_towels.txt",
-										"path": [
-											"UWV",
-											"2008-207791559318594",
-											"DOSSIER-83192677528111",
-											"granite_next_generation_towels.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"mindshare.txt": {
-								"name": "mindshare.txt",
-								"path": [
-									"UWV",
-									"2008-207791559318594",
-									"mindshare.txt"
-								],
-								"type": "txt"
-							},
-							"specialist.txt": {
-								"name": "specialist.txt",
-								"path": [
-									"UWV",
-									"2008-207791559318594",
-									"specialist.txt"
-								],
-								"type": "txt"
-							},
-							"rustic_granite_hat.txt": {
-								"name": "rustic_granite_hat.txt",
-								"path": [
-									"UWV",
-									"2008-207791559318594",
-									"rustic_granite_hat.txt"
-								],
-								"type": "txt"
-							},
-							"ai.txt": {
-								"name": "ai.txt",
-								"path": [
-									"UWV",
-									"2008-207791559318594",
-									"ai.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"mission_compressing.pdf": {
-						"name": "mission_compressing.pdf",
-						"path": [
-							"UWV",
-							"mission_compressing.pdf"
-						],
-						"type": "pdf"
+						"type": "txt"
 					}
 				}
 			},
@@ -36631,1272 +36571,1096 @@
 				],
 				"name": "VFN",
 				"type": "dir",
-				"locked": true,
+				"dirType": "normal",
 				"children": {
-					"1977-213672823922058": {
+					"1977-128052621567": {
 						"path": [
 							"VFN",
-							"1977-213672823922058"
+							"1977-128052621567"
 						],
-						"name": "1977-213672823922058",
+						"name": "1977-128052621567",
 						"type": "dir",
-						"locked": true,
+						"dirType": "normal",
 						"children": {
-							"DOSSIER-10358382416530": {
+							"DOSSIER-15194878126150": {
 								"path": [
 									"VFN",
-									"1977-213672823922058",
-									"DOSSIER-10358382416530"
+									"1977-128052621567",
+									"DOSSIER-15194878126150"
 								],
-								"name": "DOSSIER-10358382416530",
+								"name": "DOSSIER-15194878126150",
 								"type": "dir",
-								"locked": true,
+								"dirType": "archive",
 								"children": {
-									"alarm_ivory_task_force.txt": {
-										"name": "alarm_ivory_task_force.txt",
+									"iCOV_BES.pdf": {
+										"name": "iCOV_BES.pdf",
 										"path": [
 											"VFN",
-											"1977-213672823922058",
-											"DOSSIER-10358382416530",
-											"alarm_ivory_task_force.txt"
+											"1977-128052621567",
+											"DOSSIER-15194878126150",
+											"iCOV_BES.pdf"
 										],
-										"type": "txt"
-									},
-									"security_firewall.txt": {
-										"name": "security_firewall.txt",
-										"path": [
-											"VFN",
-											"1977-213672823922058",
-											"DOSSIER-10358382416530",
-											"security_firewall.txt"
-										],
-										"type": "txt"
+										"type": "pdf"
 									}
 								}
 							},
-							"DOSSIER-1699812025959": {
+							"DOSSIER-2410982020541": {
 								"path": [
 									"VFN",
-									"1977-213672823922058",
-									"DOSSIER-1699812025959"
+									"1977-128052621567",
+									"DOSSIER-2410982020541"
 								],
-								"name": "DOSSIER-1699812025959",
+								"name": "DOSSIER-2410982020541",
 								"type": "dir",
-								"locked": false,
+								"dirType": "normal",
 								"children": {
-									"payment.txt": {
-										"name": "payment.txt",
+									"team_applicatie.pdf": {
+										"name": "team_applicatie.pdf",
 										"path": [
 											"VFN",
-											"1977-213672823922058",
-											"DOSSIER-1699812025959",
-											"payment.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-301402728119468": {
-								"path": [
-									"VFN",
-									"1977-213672823922058",
-									"DOSSIER-301402728119468"
-								],
-								"name": "DOSSIER-301402728119468",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"granular.txt": {
-										"name": "granular.txt",
-										"path": [
-											"VFN",
-											"1977-213672823922058",
-											"DOSSIER-301402728119468",
-											"granular.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-677729406590": {
-								"path": [
-									"VFN",
-									"1977-213672823922058",
-									"DOSSIER-677729406590"
-								],
-								"name": "DOSSIER-677729406590",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"override.txt": {
-										"name": "override.txt",
-										"path": [
-											"VFN",
-											"1977-213672823922058",
-											"DOSSIER-677729406590",
-											"override.txt"
-										],
-										"type": "txt"
-									},
-									"frame.txt": {
-										"name": "frame.txt",
-										"path": [
-											"VFN",
-											"1977-213672823922058",
-											"DOSSIER-677729406590",
-											"frame.txt"
-										],
-										"type": "txt"
-									},
-									"incredible_granite_ball.txt": {
-										"name": "incredible_granite_ball.txt",
-										"path": [
-											"VFN",
-											"1977-213672823922058",
-											"DOSSIER-677729406590",
-											"incredible_granite_ball.txt"
-										],
-										"type": "txt"
-									},
-									"avon_pants_assistant.pdf": {
-										"name": "avon_pants_assistant.pdf",
-										"path": [
-											"VFN",
-											"1977-213672823922058",
-											"DOSSIER-677729406590",
-											"avon_pants_assistant.pdf"
+											"1977-128052621567",
+											"DOSSIER-2410982020541",
+											"team_applicatie.pdf"
 										],
 										"type": "pdf"
 									},
-									"intelligent.txt": {
-										"name": "intelligent.txt",
+									"het_Mensensmokkel.pdf": {
+										"name": "het_Mensensmokkel.pdf",
 										"path": [
 											"VFN",
-											"1977-213672823922058",
-											"DOSSIER-677729406590",
-											"intelligent.txt"
+											"1977-128052621567",
+											"DOSSIER-2410982020541",
+											"het_Mensensmokkel.pdf"
 										],
-										"type": "txt"
+										"type": "pdf"
 									}
 								}
 							},
-							"DOSSIER-9155205168746": {
+							"DOSSIER-27356158344772": {
 								"path": [
 									"VFN",
-									"1977-213672823922058",
-									"DOSSIER-9155205168746"
+									"1977-128052621567",
+									"DOSSIER-27356158344772"
 								],
-								"name": "DOSSIER-9155205168746",
+								"name": "DOSSIER-27356158344772",
 								"type": "dir",
-								"locked": false,
+								"dirType": "locked",
 								"children": {
-									"louisiana_compressing_olive.txt": {
-										"name": "louisiana_compressing_olive.txt",
+									"CWI_onderdeel.pdf": {
+										"name": "CWI_onderdeel.pdf",
 										"path": [
 											"VFN",
-											"1977-213672823922058",
-											"DOSSIER-9155205168746",
-											"louisiana_compressing_olive.txt"
+											"1977-128052621567",
+											"DOSSIER-27356158344772",
+											"CWI_onderdeel.pdf"
 										],
-										"type": "txt"
-									},
-									"granite_auto_loan_account.txt": {
-										"name": "granite_auto_loan_account.txt",
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-2922120812485": {
+								"path": [
+									"VFN",
+									"1977-128052621567",
+									"DOSSIER-2922120812485"
+								],
+								"name": "DOSSIER-2922120812485",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Government_Intelligence.pdf": {
+										"name": "Government_Intelligence.pdf",
 										"path": [
 											"VFN",
-											"1977-213672823922058",
-											"DOSSIER-9155205168746",
-											"granite_auto_loan_account.txt"
+											"1977-128052621567",
+											"DOSSIER-2922120812485",
+											"Government_Intelligence.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-31639328928587": {
+								"path": [
+									"VFN",
+									"1977-128052621567",
+									"DOSSIER-31639328928587"
+								],
+								"name": "DOSSIER-31639328928587",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"en_en.txt": {
+										"name": "en_en.txt",
+										"path": [
+											"VFN",
+											"1977-128052621567",
+											"DOSSIER-31639328928587",
+											"en_en.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"compress_syndicate.pdf": {
-								"name": "compress_syndicate.pdf",
+							"en_Ministerie,.pdf": {
+								"name": "en_Ministerie,.pdf",
 								"path": [
 									"VFN",
-									"1977-213672823922058",
-									"compress_syndicate.pdf"
+									"1977-128052621567",
+									"en_Ministerie,.pdf"
 								],
 								"type": "pdf"
 							},
-							"sky_blue_executive.pdf": {
-								"name": "sky_blue_executive.pdf",
+							"Functioneel_gemeente.pdf": {
+								"name": "Functioneel_gemeente.pdf",
 								"path": [
 									"VFN",
-									"1977-213672823922058",
-									"sky_blue_executive.pdf"
+									"1977-128052621567",
+									"Functioneel_gemeente.pdf"
 								],
 								"type": "pdf"
 							}
 						}
 					},
-					"1994-3241298748771": {
+					"1980-266302754330581": {
 						"path": [
 							"VFN",
-							"1994-3241298748771"
+							"1980-266302754330581"
 						],
-						"name": "1994-3241298748771",
+						"name": "1980-266302754330581",
 						"type": "dir",
-						"locked": true,
+						"dirType": "normal",
 						"children": {
-							"DOSSIER-10787393716639": {
+							"DOSSIER-143001109327047": {
 								"path": [
 									"VFN",
-									"1994-3241298748771",
-									"DOSSIER-10787393716639"
+									"1980-266302754330581",
+									"DOSSIER-143001109327047"
 								],
-								"name": "DOSSIER-10787393716639",
+								"name": "DOSSIER-143001109327047",
 								"type": "dir",
-								"locked": true,
+								"dirType": "locked",
 								"children": {
-									"infrastructure.txt": {
-										"name": "infrastructure.txt",
+									"applicatie_Crimineel.txt": {
+										"name": "applicatie_Crimineel.txt",
 										"path": [
 											"VFN",
-											"1994-3241298748771",
-											"DOSSIER-10787393716639",
-											"infrastructure.txt"
-										],
-										"type": "txt"
-									},
-									"clicks_and_mortar_ram_web.txt": {
-										"name": "clicks_and_mortar_ram_web.txt",
-										"path": [
-											"VFN",
-											"1994-3241298748771",
-											"DOSSIER-10787393716639",
-											"clicks_and_mortar_ram_web.txt"
+											"1980-266302754330581",
+											"DOSSIER-143001109327047",
+											"applicatie_Crimineel.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-140571371611413": {
+							"DOSSIER-16699888520853": {
 								"path": [
 									"VFN",
-									"1994-3241298748771",
-									"DOSSIER-140571371611413"
+									"1980-266302754330581",
+									"DOSSIER-16699888520853"
 								],
-								"name": "DOSSIER-140571371611413",
+								"name": "DOSSIER-16699888520853",
 								"type": "dir",
-								"locked": true,
+								"dirType": "archive",
 								"children": {
-									"roads_borders_open_architecture.pdf": {
-										"name": "roads_borders_open_architecture.pdf",
+									"binnen_de.pdf": {
+										"name": "binnen_de.pdf",
 										"path": [
 											"VFN",
-											"1994-3241298748771",
-											"DOSSIER-140571371611413",
-											"roads_borders_open_architecture.pdf"
+											"1980-266302754330581",
+											"DOSSIER-16699888520853",
+											"binnen_de.pdf"
 										],
 										"type": "pdf"
 									},
-									"purple.txt": {
-										"name": "purple.txt",
+									"Contraterrorisme_Against.pdf": {
+										"name": "Contraterrorisme_Against.pdf",
 										"path": [
 											"VFN",
-											"1994-3241298748771",
-											"DOSSIER-140571371611413",
-											"purple.txt"
-										],
-										"type": "txt"
-									},
-									"synthesizing_generate_back_end.txt": {
-										"name": "synthesizing_generate_back_end.txt",
-										"path": [
-											"VFN",
-											"1994-3241298748771",
-											"DOSSIER-140571371611413",
-											"synthesizing_generate_back_end.txt"
-										],
-										"type": "txt"
-									},
-									"manor_books.pdf": {
-										"name": "manor_books.pdf",
-										"path": [
-											"VFN",
-											"1994-3241298748771",
-											"DOSSIER-140571371611413",
-											"manor_books.pdf"
-										],
-										"type": "pdf"
-									},
-									"games_harness.txt": {
-										"name": "games_harness.txt",
-										"path": [
-											"VFN",
-											"1994-3241298748771",
-											"DOSSIER-140571371611413",
-											"games_harness.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-2229923039266": {
-								"path": [
-									"VFN",
-									"1994-3241298748771",
-									"DOSSIER-2229923039266"
-								],
-								"name": "DOSSIER-2229923039266",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"factors_deposit.txt": {
-										"name": "factors_deposit.txt",
-										"path": [
-											"VFN",
-											"1994-3241298748771",
-											"DOSSIER-2229923039266",
-											"factors_deposit.txt"
-										],
-										"type": "txt"
-									},
-									"scalable_web_enabled.txt": {
-										"name": "scalable_web_enabled.txt",
-										"path": [
-											"VFN",
-											"1994-3241298748771",
-											"DOSSIER-2229923039266",
-											"scalable_web_enabled.txt"
-										],
-										"type": "txt"
-									},
-									"compressing.txt": {
-										"name": "compressing.txt",
-										"path": [
-											"VFN",
-											"1994-3241298748771",
-											"DOSSIER-2229923039266",
-											"compressing.txt"
-										],
-										"type": "txt"
-									},
-									"steel.txt": {
-										"name": "steel.txt",
-										"path": [
-											"VFN",
-											"1994-3241298748771",
-											"DOSSIER-2229923039266",
-											"steel.txt"
-										],
-										"type": "txt"
-									},
-									"turnpike.pdf": {
-										"name": "turnpike.pdf",
-										"path": [
-											"VFN",
-											"1994-3241298748771",
-											"DOSSIER-2229923039266",
-											"turnpike.pdf"
+											"1980-266302754330581",
+											"DOSSIER-16699888520853",
+											"Contraterrorisme_Against.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"DOSSIER-228262157729645": {
+							"DOSSIER-22263113792649": {
 								"path": [
 									"VFN",
-									"1994-3241298748771",
-									"DOSSIER-228262157729645"
+									"1980-266302754330581",
+									"DOSSIER-22263113792649"
 								],
-								"name": "DOSSIER-228262157729645",
+								"name": "DOSSIER-22263113792649",
 								"type": "dir",
-								"locked": false,
+								"dirType": "normal",
 								"children": {
-									"assistant_panel_supervisor.pdf": {
-										"name": "assistant_panel_supervisor.pdf",
+									"Andrea_Andrea.pdf": {
+										"name": "Andrea_Andrea.pdf",
 										"path": [
 											"VFN",
-											"1994-3241298748771",
-											"DOSSIER-228262157729645",
-											"assistant_panel_supervisor.pdf"
+											"1980-266302754330581",
+											"DOSSIER-22263113792649",
+											"Andrea_Andrea.pdf"
 										],
 										"type": "pdf"
 									},
-									"whiteboard.txt": {
-										"name": "whiteboard.txt",
+									"A01C_ESW.txt": {
+										"name": "A01C_ESW.txt",
 										"path": [
 											"VFN",
-											"1994-3241298748771",
-											"DOSSIER-228262157729645",
-											"whiteboard.txt"
+											"1980-266302754330581",
+											"DOSSIER-22263113792649",
+											"A01C_ESW.txt"
 										],
 										"type": "txt"
 									},
-									"withdrawal_compressing_soft.txt": {
-										"name": "withdrawal_compressing_soft.txt",
+									"Nederland:_Caribisch.txt": {
+										"name": "Nederland:_Caribisch.txt",
 										"path": [
 											"VFN",
-											"1994-3241298748771",
-											"DOSSIER-228262157729645",
-											"withdrawal_compressing_soft.txt"
+											"1980-266302754330581",
+											"DOSSIER-22263113792649",
+											"Nederland:_Caribisch.txt"
 										],
 										"type": "txt"
 									}
 								}
 							},
-							"DOSSIER-843517626865": {
+							"DOSSIER-233932601913658": {
 								"path": [
 									"VFN",
-									"1994-3241298748771",
-									"DOSSIER-843517626865"
+									"1980-266302754330581",
+									"DOSSIER-233932601913658"
 								],
-								"name": "DOSSIER-843517626865",
+								"name": "DOSSIER-233932601913658",
 								"type": "dir",
-								"locked": false,
+								"dirType": "archive",
 								"children": {
-									"analyst_mesh.pdf": {
-										"name": "analyst_mesh.pdf",
+									"CWI_en.pdf": {
+										"name": "CWI_en.pdf",
 										"path": [
 											"VFN",
-											"1994-3241298748771",
-											"DOSSIER-843517626865",
-											"analyst_mesh.pdf"
-										],
-										"type": "pdf"
-									},
-									"b2c_collaborative_personal_loan_account.pdf": {
-										"name": "b2c_collaborative_personal_loan_account.pdf",
-										"path": [
-											"VFN",
-											"1994-3241298748771",
-											"DOSSIER-843517626865",
-											"b2c_collaborative_personal_loan_account.pdf"
-										],
-										"type": "pdf"
-									},
-									"paradigms_cross_platform_dot_com.txt": {
-										"name": "paradigms_cross_platform_dot_com.txt",
-										"path": [
-											"VFN",
-											"1994-3241298748771",
-											"DOSSIER-843517626865",
-											"paradigms_cross_platform_dot_com.txt"
-										],
-										"type": "txt"
-									},
-									"district.txt": {
-										"name": "district.txt",
-										"path": [
-											"VFN",
-											"1994-3241298748771",
-											"DOSSIER-843517626865",
-											"district.txt"
-										],
-										"type": "txt"
-									},
-									"wooden_leverage_lead.pdf": {
-										"name": "wooden_leverage_lead.pdf",
-										"path": [
-											"VFN",
-											"1994-3241298748771",
-											"DOSSIER-843517626865",
-											"wooden_leverage_lead.pdf"
+											"1980-266302754330581",
+											"DOSSIER-233932601913658",
+											"CWI_en.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"pizza.txt": {
-								"name": "pizza.txt",
+							"DOSSIER-298861083122083": {
 								"path": [
 									"VFN",
-									"1994-3241298748771",
-									"pizza.txt"
+									"1980-266302754330581",
+									"DOSSIER-298861083122083"
 								],
-								"type": "txt"
-							}
-						}
-					},
-					"1997-19951508412941": {
-						"path": [
-							"VFN",
-							"1997-19951508412941"
-						],
-						"name": "1997-19951508412941",
-						"type": "dir",
-						"locked": true,
-						"children": {
-							"DOSSIER-1477145115084": {
-								"path": [
-									"VFN",
-									"1997-19951508412941",
-									"DOSSIER-1477145115084"
-								],
-								"name": "DOSSIER-1477145115084",
+								"name": "DOSSIER-298861083122083",
 								"type": "dir",
-								"locked": true,
+								"dirType": "locked",
 								"children": {
-									"corners.pdf": {
-										"name": "corners.pdf",
+									"onderdeel_EU.pdf": {
+										"name": "onderdeel_EU.pdf",
 										"path": [
 											"VFN",
-											"1997-19951508412941",
-											"DOSSIER-1477145115084",
-											"corners.pdf"
-										],
-										"type": "pdf"
-									},
-									"response.txt": {
-										"name": "response.txt",
-										"path": [
-											"VFN",
-											"1997-19951508412941",
-											"DOSSIER-1477145115084",
-											"response.txt"
-										],
-										"type": "txt"
-									},
-									"checking_account_western_sahara.txt": {
-										"name": "checking_account_western_sahara.txt",
-										"path": [
-											"VFN",
-											"1997-19951508412941",
-											"DOSSIER-1477145115084",
-											"checking_account_western_sahara.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-172052560725767": {
-								"path": [
-									"VFN",
-									"1997-19951508412941",
-									"DOSSIER-172052560725767"
-								],
-								"name": "DOSSIER-172052560725767",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"tanzanian_shilling_intelligent_red.txt": {
-										"name": "tanzanian_shilling_intelligent_red.txt",
-										"path": [
-											"VFN",
-											"1997-19951508412941",
-											"DOSSIER-172052560725767",
-											"tanzanian_shilling_intelligent_red.txt"
-										],
-										"type": "txt"
-									},
-									"colorado.pdf": {
-										"name": "colorado.pdf",
-										"path": [
-											"VFN",
-											"1997-19951508412941",
-											"DOSSIER-172052560725767",
-											"colorado.pdf"
-										],
-										"type": "pdf"
-									},
-									"customer_home_loan_account.txt": {
-										"name": "customer_home_loan_account.txt",
-										"path": [
-											"VFN",
-											"1997-19951508412941",
-											"DOSSIER-172052560725767",
-											"customer_home_loan_account.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-18596628222692": {
-								"path": [
-									"VFN",
-									"1997-19951508412941",
-									"DOSSIER-18596628222692"
-								],
-								"name": "DOSSIER-18596628222692",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"expedite_brand_bluetooth.txt": {
-										"name": "expedite_brand_bluetooth.txt",
-										"path": [
-											"VFN",
-											"1997-19951508412941",
-											"DOSSIER-18596628222692",
-											"expedite_brand_bluetooth.txt"
-										],
-										"type": "txt"
-									},
-									"regional.txt": {
-										"name": "regional.txt",
-										"path": [
-											"VFN",
-											"1997-19951508412941",
-											"DOSSIER-18596628222692",
-											"regional.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-325111681630677": {
-								"path": [
-									"VFN",
-									"1997-19951508412941",
-									"DOSSIER-325111681630677"
-								],
-								"name": "DOSSIER-325111681630677",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"buckinghamshire.pdf": {
-										"name": "buckinghamshire.pdf",
-										"path": [
-											"VFN",
-											"1997-19951508412941",
-											"DOSSIER-325111681630677",
-											"buckinghamshire.pdf"
-										],
-										"type": "pdf"
-									},
-									"invoice_credit_card_account.txt": {
-										"name": "invoice_credit_card_account.txt",
-										"path": [
-											"VFN",
-											"1997-19951508412941",
-											"DOSSIER-325111681630677",
-											"invoice_credit_card_account.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-6116967731697": {
-								"path": [
-									"VFN",
-									"1997-19951508412941",
-									"DOSSIER-6116967731697"
-								],
-								"name": "DOSSIER-6116967731697",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"kwacha_identity_payment.pdf": {
-										"name": "kwacha_identity_payment.pdf",
-										"path": [
-											"VFN",
-											"1997-19951508412941",
-											"DOSSIER-6116967731697",
-											"kwacha_identity_payment.pdf"
-										],
-										"type": "pdf"
-									},
-									"hard_drive_leading_edge.txt": {
-										"name": "hard_drive_leading_edge.txt",
-										"path": [
-											"VFN",
-											"1997-19951508412941",
-											"DOSSIER-6116967731697",
-											"hard_drive_leading_edge.txt"
-										],
-										"type": "txt"
-									},
-									"awesome_wooden_chips_transform.txt": {
-										"name": "awesome_wooden_chips_transform.txt",
-										"path": [
-											"VFN",
-											"1997-19951508412941",
-											"DOSSIER-6116967731697",
-											"awesome_wooden_chips_transform.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"functionalities.txt": {
-								"name": "functionalities.txt",
-								"path": [
-									"VFN",
-									"1997-19951508412941",
-									"functionalities.txt"
-								],
-								"type": "txt"
-							},
-							"experiences.txt": {
-								"name": "experiences.txt",
-								"path": [
-									"VFN",
-									"1997-19951508412941",
-									"experiences.txt"
-								],
-								"type": "txt"
-							},
-							"xml_bluetooth_table.txt": {
-								"name": "xml_bluetooth_table.txt",
-								"path": [
-									"VFN",
-									"1997-19951508412941",
-									"xml_bluetooth_table.txt"
-								],
-								"type": "txt"
-							},
-							"methodical_exe_adaptive.txt": {
-								"name": "methodical_exe_adaptive.txt",
-								"path": [
-									"VFN",
-									"1997-19951508412941",
-									"methodical_exe_adaptive.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"2003-57251770125122": {
-						"path": [
-							"VFN",
-							"2003-57251770125122"
-						],
-						"name": "2003-57251770125122",
-						"type": "dir",
-						"locked": true,
-						"children": {
-							"DOSSIER-11015312914231": {
-								"path": [
-									"VFN",
-									"2003-57251770125122",
-									"DOSSIER-11015312914231"
-								],
-								"name": "DOSSIER-11015312914231",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"colombia_database.pdf": {
-										"name": "colombia_database.pdf",
-										"path": [
-											"VFN",
-											"2003-57251770125122",
-											"DOSSIER-11015312914231",
-											"colombia_database.pdf"
-										],
-										"type": "pdf"
-									},
-									"estates.txt": {
-										"name": "estates.txt",
-										"path": [
-											"VFN",
-											"2003-57251770125122",
-											"DOSSIER-11015312914231",
-											"estates.txt"
-										],
-										"type": "txt"
-									},
-									"product.txt": {
-										"name": "product.txt",
-										"path": [
-											"VFN",
-											"2003-57251770125122",
-											"DOSSIER-11015312914231",
-											"product.txt"
-										],
-										"type": "txt"
-									},
-									"cotton.pdf": {
-										"name": "cotton.pdf",
-										"path": [
-											"VFN",
-											"2003-57251770125122",
-											"DOSSIER-11015312914231",
-											"cotton.pdf"
+											"1980-266302754330581",
+											"DOSSIER-298861083122083",
+											"onderdeel_EU.pdf"
 										],
 										"type": "pdf"
 									}
 								}
 							},
-							"DOSSIER-13179268504092": {
+							"Caribisch_Opsporingsdienst.pdf": {
+								"name": "Caribisch_Opsporingsdienst.pdf",
 								"path": [
 									"VFN",
-									"2003-57251770125122",
-									"DOSSIER-13179268504092"
-								],
-								"name": "DOSSIER-13179268504092",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"orchestrator.txt": {
-										"name": "orchestrator.txt",
-										"path": [
-											"VFN",
-											"2003-57251770125122",
-											"DOSSIER-13179268504092",
-											"orchestrator.txt"
-										],
-										"type": "txt"
-									},
-									"optimization.txt": {
-										"name": "optimization.txt",
-										"path": [
-											"VFN",
-											"2003-57251770125122",
-											"DOSSIER-13179268504092",
-											"optimization.txt"
-										],
-										"type": "txt"
-									},
-									"grid_enabled.txt": {
-										"name": "grid_enabled.txt",
-										"path": [
-											"VFN",
-											"2003-57251770125122",
-											"DOSSIER-13179268504092",
-											"grid_enabled.txt"
-										],
-										"type": "txt"
-									},
-									"investment_account_copy_handcrafted.txt": {
-										"name": "investment_account_copy_handcrafted.txt",
-										"path": [
-											"VFN",
-											"2003-57251770125122",
-											"DOSSIER-13179268504092",
-											"investment_account_copy_handcrafted.txt"
-										],
-										"type": "txt"
-									},
-									"san_marino.txt": {
-										"name": "san_marino.txt",
-										"path": [
-											"VFN",
-											"2003-57251770125122",
-											"DOSSIER-13179268504092",
-											"san_marino.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-164452919024": {
-								"path": [
-									"VFN",
-									"2003-57251770125122",
-									"DOSSIER-164452919024"
-								],
-								"name": "DOSSIER-164452919024",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"tasty.txt": {
-										"name": "tasty.txt",
-										"path": [
-											"VFN",
-											"2003-57251770125122",
-											"DOSSIER-164452919024",
-											"tasty.txt"
-										],
-										"type": "txt"
-									},
-									"customer_bandwidth_directives.pdf": {
-										"name": "customer_bandwidth_directives.pdf",
-										"path": [
-											"VFN",
-											"2003-57251770125122",
-											"DOSSIER-164452919024",
-											"customer_bandwidth_directives.pdf"
-										],
-										"type": "pdf"
-									},
-									"cohesive_index.pdf": {
-										"name": "cohesive_index.pdf",
-										"path": [
-											"VFN",
-											"2003-57251770125122",
-											"DOSSIER-164452919024",
-											"cohesive_index.pdf"
-										],
-										"type": "pdf"
-									},
-									"maryland_matrix_user_centric.txt": {
-										"name": "maryland_matrix_user_centric.txt",
-										"path": [
-											"VFN",
-											"2003-57251770125122",
-											"DOSSIER-164452919024",
-											"maryland_matrix_user_centric.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-220652274426477": {
-								"path": [
-									"VFN",
-									"2003-57251770125122",
-									"DOSSIER-220652274426477"
-								],
-								"name": "DOSSIER-220652274426477",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"buckinghamshire_front_end_branch.pdf": {
-										"name": "buckinghamshire_front_end_branch.pdf",
-										"path": [
-											"VFN",
-											"2003-57251770125122",
-											"DOSSIER-220652274426477",
-											"buckinghamshire_front_end_branch.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-25040201589097": {
-								"path": [
-									"VFN",
-									"2003-57251770125122",
-									"DOSSIER-25040201589097"
-								],
-								"name": "DOSSIER-25040201589097",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"facilitator_refined_incredible.pdf": {
-										"name": "facilitator_refined_incredible.pdf",
-										"path": [
-											"VFN",
-											"2003-57251770125122",
-											"DOSSIER-25040201589097",
-											"facilitator_refined_incredible.pdf"
-										],
-										"type": "pdf"
-									},
-									"managed_pass_deposit.txt": {
-										"name": "managed_pass_deposit.txt",
-										"path": [
-											"VFN",
-											"2003-57251770125122",
-											"DOSSIER-25040201589097",
-											"managed_pass_deposit.txt"
-										],
-										"type": "txt"
-									},
-									"movies_jewelery_creative.pdf": {
-										"name": "movies_jewelery_creative.pdf",
-										"path": [
-											"VFN",
-											"2003-57251770125122",
-											"DOSSIER-25040201589097",
-											"movies_jewelery_creative.pdf"
-										],
-										"type": "pdf"
-									},
-									"handmade_slovenia_summit.txt": {
-										"name": "handmade_slovenia_summit.txt",
-										"path": [
-											"VFN",
-											"2003-57251770125122",
-											"DOSSIER-25040201589097",
-											"handmade_slovenia_summit.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"moratorium_parse_invoice.txt": {
-								"name": "moratorium_parse_invoice.txt",
-								"path": [
-									"VFN",
-									"2003-57251770125122",
-									"moratorium_parse_invoice.txt"
-								],
-								"type": "txt"
-							},
-							"auto_loan_account.txt": {
-								"name": "auto_loan_account.txt",
-								"path": [
-									"VFN",
-									"2003-57251770125122",
-									"auto_loan_account.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"2010-9402981627415": {
-						"path": [
-							"VFN",
-							"2010-9402981627415"
-						],
-						"name": "2010-9402981627415",
-						"type": "dir",
-						"locked": false,
-						"children": {
-							"DOSSIER-12656951213865": {
-								"path": [
-									"VFN",
-									"2010-9402981627415",
-									"DOSSIER-12656951213865"
-								],
-								"name": "DOSSIER-12656951213865",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"intelligent_steel_chicken.pdf": {
-										"name": "intelligent_steel_chicken.pdf",
-										"path": [
-											"VFN",
-											"2010-9402981627415",
-											"DOSSIER-12656951213865",
-											"intelligent_steel_chicken.pdf"
-										],
-										"type": "pdf"
-									},
-									"response.txt": {
-										"name": "response.txt",
-										"path": [
-											"VFN",
-											"2010-9402981627415",
-											"DOSSIER-12656951213865",
-											"response.txt"
-										],
-										"type": "txt"
-									},
-									"saint_lucia_navigate_shirt.pdf": {
-										"name": "saint_lucia_navigate_shirt.pdf",
-										"path": [
-											"VFN",
-											"2010-9402981627415",
-											"DOSSIER-12656951213865",
-											"saint_lucia_navigate_shirt.pdf"
-										],
-										"type": "pdf"
-									},
-									"sdd_productize.txt": {
-										"name": "sdd_productize.txt",
-										"path": [
-											"VFN",
-											"2010-9402981627415",
-											"DOSSIER-12656951213865",
-											"sdd_productize.txt"
-										],
-										"type": "txt"
-									},
-									"isle_sweden.txt": {
-										"name": "isle_sweden.txt",
-										"path": [
-											"VFN",
-											"2010-9402981627415",
-											"DOSSIER-12656951213865",
-											"isle_sweden.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-200791357117465": {
-								"path": [
-									"VFN",
-									"2010-9402981627415",
-									"DOSSIER-200791357117465"
-								],
-								"name": "DOSSIER-200791357117465",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"bottom_line.txt": {
-										"name": "bottom_line.txt",
-										"path": [
-											"VFN",
-											"2010-9402981627415",
-											"DOSSIER-200791357117465",
-											"bottom_line.txt"
-										],
-										"type": "txt"
-									},
-									"infrastructures_e_services.pdf": {
-										"name": "infrastructures_e_services.pdf",
-										"path": [
-											"VFN",
-											"2010-9402981627415",
-											"DOSSIER-200791357117465",
-											"infrastructures_e_services.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-308783212213952": {
-								"path": [
-									"VFN",
-									"2010-9402981627415",
-									"DOSSIER-308783212213952"
-								],
-								"name": "DOSSIER-308783212213952",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"quality_focused.pdf": {
-										"name": "quality_focused.pdf",
-										"path": [
-											"VFN",
-											"2010-9402981627415",
-											"DOSSIER-308783212213952",
-											"quality_focused.pdf"
-										],
-										"type": "pdf"
-									},
-									"applications.txt": {
-										"name": "applications.txt",
-										"path": [
-											"VFN",
-											"2010-9402981627415",
-											"DOSSIER-308783212213952",
-											"applications.txt"
-										],
-										"type": "txt"
-									},
-									"supervisor_capacitor.txt": {
-										"name": "supervisor_capacitor.txt",
-										"path": [
-											"VFN",
-											"2010-9402981627415",
-											"DOSSIER-308783212213952",
-											"supervisor_capacitor.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-33332529031572": {
-								"path": [
-									"VFN",
-									"2010-9402981627415",
-									"DOSSIER-33332529031572"
-								],
-								"name": "DOSSIER-33332529031572",
-								"type": "dir",
-								"locked": true,
-								"children": {
-									"bypassing_adp_rhode_island.pdf": {
-										"name": "bypassing_adp_rhode_island.pdf",
-										"path": [
-											"VFN",
-											"2010-9402981627415",
-											"DOSSIER-33332529031572",
-											"bypassing_adp_rhode_island.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-8709856111429": {
-								"path": [
-									"VFN",
-									"2010-9402981627415",
-									"DOSSIER-8709856111429"
-								],
-								"name": "DOSSIER-8709856111429",
-								"type": "dir",
-								"locked": false,
-								"children": {
-									"matrix.txt": {
-										"name": "matrix.txt",
-										"path": [
-											"VFN",
-											"2010-9402981627415",
-											"DOSSIER-8709856111429",
-											"matrix.txt"
-										],
-										"type": "txt"
-									},
-									"georgia.txt": {
-										"name": "georgia.txt",
-										"path": [
-											"VFN",
-											"2010-9402981627415",
-											"DOSSIER-8709856111429",
-											"georgia.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"italy_security_user_centric.pdf": {
-								"name": "italy_security_user_centric.pdf",
-								"path": [
-									"VFN",
-									"2010-9402981627415",
-									"italy_security_user_centric.pdf"
+									"1980-266302754330581",
+									"Caribisch_Opsporingsdienst.pdf"
 								],
 								"type": "pdf"
 							},
-							"transmitting.pdf": {
-								"name": "transmitting.pdf",
+							"Nederlandsche_FEC.txt": {
+								"name": "Nederlandsche_FEC.txt",
 								"path": [
 									"VFN",
-									"2010-9402981627415",
-									"transmitting.pdf"
+									"1980-266302754330581",
+									"Nederlandsche_FEC.txt"
+								],
+								"type": "txt"
+							},
+							"Centrum_orgaan.txt": {
+								"name": "Centrum_orgaan.txt",
+								"path": [
+									"VFN",
+									"1980-266302754330581",
+									"Centrum_orgaan.txt"
+								],
+								"type": "txt"
+							},
+							"Incasso_Justitieel.pdf": {
+								"name": "Incasso_Justitieel.pdf",
+								"path": [
+									"VFN",
+									"1980-266302754330581",
+									"Incasso_Justitieel.pdf"
 								],
 								"type": "pdf"
-							},
-							"cotton_redefine.txt": {
-								"name": "cotton_redefine.txt",
+							}
+						}
+					},
+					"1986-19812896830962": {
+						"path": [
+							"VFN",
+							"1986-19812896830962"
+						],
+						"name": "1986-19812896830962",
+						"type": "dir",
+						"dirType": "normal",
+						"children": {
+							"DOSSIER-12263103934192": {
 								"path": [
 									"VFN",
-									"2010-9402981627415",
-									"cotton_redefine.txt"
+									"1986-19812896830962",
+									"DOSSIER-12263103934192"
+								],
+								"name": "DOSSIER-12263103934192",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"proliferatiefmanciering._EU.txt": {
+										"name": "proliferatiefmanciering._EU.txt",
+										"path": [
+											"VFN",
+											"1986-19812896830962",
+											"DOSSIER-12263103934192",
+											"proliferatiefmanciering._EU.txt"
+										],
+										"type": "txt"
+									},
+									"DWI_organisatie.txt": {
+										"name": "DWI_organisatie.txt",
+										"path": [
+											"VFN",
+											"1986-19812896830962",
+											"DOSSIER-12263103934192",
+											"DWI_organisatie.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-2144318103209": {
+								"path": [
+									"VFN",
+									"1986-19812896830962",
+									"DOSSIER-2144318103209"
+								],
+								"name": "DOSSIER-2144318103209",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Caribisch_UNODC.pdf": {
+										"name": "Caribisch_UNODC.pdf",
+										"path": [
+											"VFN",
+											"1986-19812896830962",
+											"DOSSIER-2144318103209",
+											"Caribisch_UNODC.pdf"
+										],
+										"type": "pdf"
+									},
+									"Bureau_controle.txt": {
+										"name": "Bureau_controle.txt",
+										"path": [
+											"VFN",
+											"1986-19812896830962",
+											"DOSSIER-2144318103209",
+											"Bureau_controle.txt"
+										],
+										"type": "txt"
+									},
+									"de_FinanciÃ«le.txt": {
+										"name": "de_FinanciÃ«le.txt",
+										"path": [
+											"VFN",
+											"1986-19812896830962",
+											"DOSSIER-2144318103209",
+											"de_FinanciÃ«le.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-23564409928658": {
+								"path": [
+									"VFN",
+									"1986-19812896830962",
+									"DOSSIER-23564409928658"
+								],
+								"name": "DOSSIER-23564409928658",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"van_Inkomen,.txt": {
+										"name": "van_Inkomen,.txt",
+										"path": [
+											"VFN",
+											"1986-19812896830962",
+											"DOSSIER-23564409928658",
+											"van_Inkomen,.txt"
+										],
+										"type": "txt"
+									},
+									"een_van.txt": {
+										"name": "een_van.txt",
+										"path": [
+											"VFN",
+											"1986-19812896830962",
+											"DOSSIER-23564409928658",
+											"een_van.txt"
+										],
+										"type": "txt"
+									},
+									"interne_Ministerie,.pdf": {
+										"name": "interne_Ministerie,.pdf",
+										"path": [
+											"VFN",
+											"1986-19812896830962",
+											"DOSSIER-23564409928658",
+											"interne_Ministerie,.pdf"
+										],
+										"type": "pdf"
+									},
+									"gebouwd_EC.pdf": {
+										"name": "gebouwd_EC.pdf",
+										"path": [
+											"VFN",
+											"1986-19812896830962",
+											"DOSSIER-23564409928658",
+											"gebouwd_EC.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-525384617378": {
+								"path": [
+									"VFN",
+									"1986-19812896830962",
+									"DOSSIER-525384617378"
+								],
+								"name": "DOSSIER-525384617378",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Opsporingsdienst_Opsporingsdienst.txt": {
+										"name": "Opsporingsdienst_Opsporingsdienst.txt",
+										"path": [
+											"VFN",
+											"1986-19812896830962",
+											"DOSSIER-525384617378",
+											"Opsporingsdienst_Opsporingsdienst.txt"
+										],
+										"type": "txt"
+									},
+									"_Financieel.txt": {
+										"name": "_Financieel.txt",
+										"path": [
+											"VFN",
+											"1986-19812896830962",
+											"DOSSIER-525384617378",
+											"_Financieel.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-5338461312732": {
+								"path": [
+									"VFN",
+									"1986-19812896830962",
+									"DOSSIER-5338461312732"
+								],
+								"name": "DOSSIER-5338461312732",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Financial_BFT.txt": {
+										"name": "Financial_BFT.txt",
+										"path": [
+											"VFN",
+											"1986-19812896830962",
+											"DOSSIER-5338461312732",
+											"Financial_BFT.txt"
+										],
+										"type": "txt"
+									},
+									"FP_Recherche,.txt": {
+										"name": "FP_Recherche,.txt",
+										"path": [
+											"VFN",
+											"1986-19812896830962",
+											"DOSSIER-5338461312732",
+											"FP_Recherche,.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"Transport_uitvoerend.txt": {
+								"name": "Transport_uitvoerend.txt",
+								"path": [
+									"VFN",
+									"1986-19812896830962",
+									"Transport_uitvoerend.txt"
 								],
 								"type": "txt"
 							},
-							"navigating_convergence.txt": {
-								"name": "navigating_convergence.txt",
+							"Action_Andrea.txt": {
+								"name": "Action_Andrea.txt",
 								"path": [
 									"VFN",
-									"2010-9402981627415",
-									"navigating_convergence.txt"
+									"1986-19812896830962",
+									"Action_Andrea.txt"
 								],
 								"type": "txt"
 							},
-							"rustic_soft_tuna.txt": {
-								"name": "rustic_soft_tuna.txt",
+							"FIOD_DLR.txt": {
+								"name": "FIOD_DLR.txt",
 								"path": [
 									"VFN",
-									"2010-9402981627415",
-									"rustic_soft_tuna.txt"
+									"1986-19812896830962",
+									"FIOD_DLR.txt"
 								],
 								"type": "txt"
 							}
 						}
 					},
-					"stravenue_1080p.txt": {
-						"name": "stravenue_1080p.txt",
+					"1992-46261218618244": {
 						"path": [
 							"VFN",
-							"stravenue_1080p.txt"
+							"1992-46261218618244"
 						],
-						"type": "txt"
+						"name": "1992-46261218618244",
+						"type": "dir",
+						"dirType": "locked",
+						"children": {
+							"DOSSIER-194883016213647": {
+								"path": [
+									"VFN",
+									"1992-46261218618244",
+									"DOSSIER-194883016213647"
+								],
+								"name": "DOSSIER-194883016213647",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"BVI_onderdeel.txt": {
+										"name": "BVI_onderdeel.txt",
+										"path": [
+											"VFN",
+											"1992-46261218618244",
+											"DOSSIER-194883016213647",
+											"BVI_onderdeel.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-19535176105789": {
+								"path": [
+									"VFN",
+									"1992-46261218618244",
+									"DOSSIER-19535176105789"
+								],
+								"name": "DOSSIER-19535176105789",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"van_FinanciÃ«le.txt": {
+										"name": "van_FinanciÃ«le.txt",
+										"path": [
+											"VFN",
+											"1992-46261218618244",
+											"DOSSIER-19535176105789",
+											"van_FinanciÃ«le.txt"
+										],
+										"type": "txt"
+									},
+									"de_AFM.txt": {
+										"name": "de_AFM.txt",
+										"path": [
+											"VFN",
+											"1992-46261218618244",
+											"DOSSIER-19535176105789",
+											"de_AFM.txt"
+										],
+										"type": "txt"
+									},
+									"binnen_eilanden.txt": {
+										"name": "binnen_eilanden.txt",
+										"path": [
+											"VFN",
+											"1992-46261218618244",
+											"DOSSIER-19535176105789",
+											"binnen_eilanden.txt"
+										],
+										"type": "txt"
+									},
+									"Andrea_FlU-Nederland.txt": {
+										"name": "Andrea_FlU-Nederland.txt",
+										"path": [
+											"VFN",
+											"1992-46261218618244",
+											"DOSSIER-19535176105789",
+											"Andrea_FlU-Nederland.txt"
+										],
+										"type": "txt"
+									},
+									"en_Administratieve.txt": {
+										"name": "en_Administratieve.txt",
+										"path": [
+											"VFN",
+											"1992-46261218618244",
+											"DOSSIER-19535176105789",
+											"en_Administratieve.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-2323585330305": {
+								"path": [
+									"VFN",
+									"1992-46261218618244",
+									"DOSSIER-2323585330305"
+								],
+								"name": "DOSSIER-2323585330305",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Force_Unit.txt": {
+										"name": "Force_Unit.txt",
+										"path": [
+											"VFN",
+											"1992-46261218618244",
+											"DOSSIER-2323585330305",
+											"Force_Unit.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-266042563212618": {
+								"path": [
+									"VFN",
+									"1992-46261218618244",
+									"DOSSIER-266042563212618"
+								],
+								"name": "DOSSIER-266042563212618",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"en_Europese.pdf": {
+										"name": "en_Europese.pdf",
+										"path": [
+											"VFN",
+											"1992-46261218618244",
+											"DOSSIER-266042563212618",
+											"en_Europese.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-6991602716811": {
+								"path": [
+									"VFN",
+									"1992-46261218618244",
+									"DOSSIER-6991602716811"
+								],
+								"name": "DOSSIER-6991602716811",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"applicatie_European.txt": {
+										"name": "applicatie_European.txt",
+										"path": [
+											"VFN",
+											"1992-46261218618244",
+											"DOSSIER-6991602716811",
+											"applicatie_European.txt"
+										],
+										"type": "txt"
+									},
+									"FIOD_applicatie.txt": {
+										"name": "FIOD_applicatie.txt",
+										"path": [
+											"VFN",
+											"1992-46261218618244",
+											"DOSSIER-6991602716811",
+											"FIOD_applicatie.txt"
+										],
+										"type": "txt"
+									},
+									"proliferatiefmanciering._Rotterdam.txt": {
+										"name": "proliferatiefmanciering._Rotterdam.txt",
+										"path": [
+											"VFN",
+											"1992-46261218618244",
+											"DOSSIER-6991602716811",
+											"proliferatiefmanciering._Rotterdam.txt"
+										],
+										"type": "txt"
+									},
+									"de_onderdeel.txt": {
+										"name": "de_onderdeel.txt",
+										"path": [
+											"VFN",
+											"1992-46261218618244",
+											"DOSSIER-6991602716811",
+											"de_onderdeel.txt"
+										],
+										"type": "txt"
+									},
+									"onderdeel_EMPACT.pdf": {
+										"name": "onderdeel_EMPACT.pdf",
+										"path": [
+											"VFN",
+											"1992-46261218618244",
+											"DOSSIER-6991602716811",
+											"onderdeel_EMPACT.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"Expertise_Expertisecentrum.pdf": {
+								"name": "Expertise_Expertisecentrum.pdf",
+								"path": [
+									"VFN",
+									"1992-46261218618244",
+									"Expertise_Expertisecentrum.pdf"
+								],
+								"type": "pdf"
+							},
+							"Administratieve_Money.txt": {
+								"name": "Administratieve_Money.txt",
+								"path": [
+									"VFN",
+									"1992-46261218618244",
+									"Administratieve_Money.txt"
+								],
+								"type": "txt"
+							},
+							"Force_Force.txt": {
+								"name": "Force_Force.txt",
+								"path": [
+									"VFN",
+									"1992-46261218618244",
+									"Force_Force.txt"
+								],
+								"type": "txt"
+							},
+							"Laundering._Basisvoorziening.txt": {
+								"name": "Laundering._Basisvoorziening.txt",
+								"path": [
+									"VFN",
+									"1992-46261218618244",
+									"Laundering._Basisvoorziening.txt"
+								],
+								"type": "txt"
+							}
+						}
 					},
-					"checking_account.pdf": {
-						"name": "checking_account.pdf",
+					"2005-144103028628978": {
 						"path": [
 							"VFN",
-							"checking_account.pdf"
+							"2005-144103028628978"
+						],
+						"name": "2005-144103028628978",
+						"type": "dir",
+						"dirType": "normal",
+						"children": {
+							"DOSSIER-1042010016833": {
+								"path": [
+									"VFN",
+									"2005-144103028628978",
+									"DOSSIER-1042010016833"
+								],
+								"name": "DOSSIER-1042010016833",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Europese_Contraterrorisme.txt": {
+										"name": "Europese_Contraterrorisme.txt",
+										"path": [
+											"VFN",
+											"2005-144103028628978",
+											"DOSSIER-1042010016833",
+											"Europese_Contraterrorisme.txt"
+										],
+										"type": "txt"
+									},
+									"BFT_GoAML.txt": {
+										"name": "BFT_GoAML.txt",
+										"path": [
+											"VFN",
+											"2005-144103028628978",
+											"DOSSIER-1042010016833",
+											"BFT_GoAML.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-10592141835492": {
+								"path": [
+									"VFN",
+									"2005-144103028628978",
+									"DOSSIER-10592141835492"
+								],
+								"name": "DOSSIER-10592141835492",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Crimineel_van.txt": {
+										"name": "Crimineel_van.txt",
+										"path": [
+											"VFN",
+											"2005-144103028628978",
+											"DOSSIER-10592141835492",
+											"Crimineel_van.txt"
+										],
+										"type": "txt"
+									},
+									"DWI_FP.pdf": {
+										"name": "DWI_FP.pdf",
+										"path": [
+											"VFN",
+											"2005-144103028628978",
+											"DOSSIER-10592141835492",
+											"DWI_FP.pdf"
+										],
+										"type": "pdf"
+									}
+								}
+							},
+							"DOSSIER-134741255522284": {
+								"path": [
+									"VFN",
+									"2005-144103028628978",
+									"DOSSIER-134741255522284"
+								],
+								"name": "DOSSIER-134741255522284",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Infobox_Ontnemingswetgeving.txt": {
+										"name": "Infobox_Ontnemingswetgeving.txt",
+										"path": [
+											"VFN",
+											"2005-144103028628978",
+											"DOSSIER-134741255522284",
+											"Infobox_Ontnemingswetgeving.txt"
+										],
+										"type": "txt"
+									},
+									"gebouwd_ICT.pdf": {
+										"name": "gebouwd_ICT.pdf",
+										"path": [
+											"VFN",
+											"2005-144103028628978",
+											"DOSSIER-134741255522284",
+											"gebouwd_ICT.pdf"
+										],
+										"type": "pdf"
+									},
+									"Nederland:_team.txt": {
+										"name": "Nederland:_team.txt",
+										"path": [
+											"VFN",
+											"2005-144103028628978",
+											"DOSSIER-134741255522284",
+											"Nederland:_team.txt"
+										],
+										"type": "txt"
+									},
+									"OM_Rotterdam.txt": {
+										"name": "OM_Rotterdam.txt",
+										"path": [
+											"VFN",
+											"2005-144103028628978",
+											"DOSSIER-134741255522284",
+											"OM_Rotterdam.txt"
+										],
+										"type": "txt"
+									},
+									"van_Eustatiusen.txt": {
+										"name": "van_Eustatiusen.txt",
+										"path": [
+											"VFN",
+											"2005-144103028628978",
+											"DOSSIER-134741255522284",
+											"van_Eustatiusen.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-228482641830701": {
+								"path": [
+									"VFN",
+									"2005-144103028628978",
+									"DOSSIER-228482641830701"
+								],
+								"name": "DOSSIER-228482641830701",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Andrea_en.pdf": {
+										"name": "Andrea_en.pdf",
+										"path": [
+											"VFN",
+											"2005-144103028628978",
+											"DOSSIER-228482641830701",
+											"Andrea_en.pdf"
+										],
+										"type": "pdf"
+									},
+									"Infobox_Unit.txt": {
+										"name": "Infobox_Unit.txt",
+										"path": [
+											"VFN",
+											"2005-144103028628978",
+											"DOSSIER-228482641830701",
+											"Infobox_Unit.txt"
+										],
+										"type": "txt"
+									},
+									"Infobox_de.txt": {
+										"name": "Infobox_de.txt",
+										"path": [
+											"VFN",
+											"2005-144103028628978",
+											"DOSSIER-228482641830701",
+											"Infobox_de.txt"
+										],
+										"type": "txt"
+									},
+									"organisatie_AFM.txt": {
+										"name": "organisatie_AFM.txt",
+										"path": [
+											"VFN",
+											"2005-144103028628978",
+											"DOSSIER-228482641830701",
+											"organisatie_AFM.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"DOSSIER-23559931212239": {
+								"path": [
+									"VFN",
+									"2005-144103028628978",
+									"DOSSIER-23559931212239"
+								],
+								"name": "DOSSIER-23559931212239",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Crimineel_FAT.pdf": {
+										"name": "Crimineel_FAT.pdf",
+										"path": [
+											"VFN",
+											"2005-144103028628978",
+											"DOSSIER-23559931212239",
+											"Crimineel_FAT.pdf"
+										],
+										"type": "pdf"
+									},
+									"Basisvoorziening_Contraterrorisme.txt": {
+										"name": "Basisvoorziening_Contraterrorisme.txt",
+										"path": [
+											"VFN",
+											"2005-144103028628978",
+											"DOSSIER-23559931212239",
+											"Basisvoorziening_Contraterrorisme.txt"
+										],
+										"type": "txt"
+									}
+								}
+							},
+							"Unit_OM.txt": {
+								"name": "Unit_OM.txt",
+								"path": [
+									"VFN",
+									"2005-144103028628978",
+									"Unit_OM.txt"
+								],
+								"type": "txt"
+							}
+						}
+					},
+					"Financial_van.pdf": {
+						"name": "Financial_van.pdf",
+						"path": [
+							"VFN",
+							"Financial_van.pdf"
 						],
 						"type": "pdf"
 					},
-					"portals_guinea_distributed.txt": {
-						"name": "portals_guinea_distributed.txt",
+					"FIU_FEC.txt": {
+						"name": "FIU_FEC.txt",
 						"path": [
 							"VFN",
-							"portals_guinea_distributed.txt"
+							"FIU_FEC.txt"
+						],
+						"type": "txt"
+					},
+					"Cluster_Werk.txt": {
+						"name": "Cluster_Werk.txt",
+						"path": [
+							"VFN",
+							"Cluster_Werk.txt"
+						],
+						"type": "txt"
+					},
+					"Bureau_Justitieel.txt": {
+						"name": "Bureau_Justitieel.txt",
+						"path": [
+							"VFN",
+							"Bureau_Justitieel.txt"
 						],
 						"type": "txt"
 					}
 				}
 			},
-			"brand.txt": {
-				"name": "brand.txt",
+			"Ontnemingswetgeving_Amsterdam.txt": {
+				"name": "Ontnemingswetgeving_Amsterdam.txt",
 				"path": [
 					"",
-					"brand.txt"
+					"Ontnemingswetgeving_Amsterdam.txt"
 				],
 				"type": "txt"
+			},
+			"Europese_onderdeel.txt": {
+				"name": "Europese_onderdeel.txt",
+				"path": [
+					"",
+					"Europese_onderdeel.txt"
+				],
+				"type": "txt"
+			},
+			"Eustatiusen_UNODC.pdf": {
+				"name": "Eustatiusen_UNODC.pdf",
+				"path": [
+					"",
+					"Eustatiusen_UNODC.pdf"
+				],
+				"type": "pdf"
 			}
 		}
 	};
@@ -40182,8 +39946,11 @@
 	        _react2.default.createElement('img', { className: 'item__image', draggable: 'false', src: function () {
 	            switch (itemData.type) {
 	              case "dir":
-	                if (itemData.locked) {
+	                if (itemData.dirType === "locked") {
 	                  return _lock2.default;
+	                }
+	                if (itemData.dirType === "archive") {
+	                  return _archive2.default;
 	                }
 	                return _folder2.default;
 	              case "txt":
@@ -41600,8 +41367,11 @@
 	        _react2.default.createElement('img', { className: 'listed-item__image', draggable: 'false', src: function () {
 	            switch (itemData.type) {
 	              case "dir":
-	                if (itemData.locked) {
+	                if (itemData.dirType === "locked") {
 	                  return _lock2.default;
+	                }
+	                if (itemData.dirType === "archive") {
+	                  return _archive2.default;
 	                }
 	                return _folder2.default;
 	              case "txt":
@@ -50756,7 +50526,7 @@
 
 	function data__fakeGet(windowData, dispatch) {
 
-	  dispatch(data__receive("Dummy text: Dit bestand bestaan alleen om de verkenner views aan te kleden.", windowData, dispatch));
+	  dispatch(data__receive("Dit bestand bestaan alleen om de verkenner views aan te kleden.", windowData, dispatch));
 
 	  return {
 	    type: "data__get",
@@ -62299,7 +62069,7 @@
 	            if (tab.active) {
 	              return _react2.default.createElement(
 	                'div',
-	                { className: 'browser__menubar-tab browser__menubar-tab-active' },
+	                { key: key, className: 'browser__menubar-tab browser__menubar-tab-active' },
 	                ' ',
 	                _react2.default.createElement(
 	                  'p',
@@ -62311,7 +62081,7 @@
 	            }
 	            return _react2.default.createElement(
 	              'div',
-	              { className: 'browser__menubar-tab' },
+	              { key: key, className: 'browser__menubar-tab' },
 	              ' ',
 	              _react2.default.createElement(
 	                'p',
@@ -62467,9 +62237,11 @@
 	        var readyStateCheckInterval = setInterval(function () {
 	          if (document.readyState === "complete") {
 	            clearInterval(readyStateCheckInterval);
+
 	            // Get the document of the iframe
 	            var iframeContent = iframe.contentDocument || iframe.contentWindow.document;
-	            // Attach an eventHandler
+
+	            // Attach an eventHandler (Both click and move)
 	            iframeContent.addEventListener('click', function () {
 	              // Create a bubbling event and dispatch it outside the iframe
 	              var event = new CustomEvent('click', { "bubbles": true });
@@ -63272,7 +63044,7 @@
 
 
 	// module
-	exports.push([module.id, "@font-face {\n  font-family: 'roboto';\n  src: url(" + __webpack_require__(306) + ");\n  src: url(" + __webpack_require__(306) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(307) + ") format(\"woff\"), url(" + __webpack_require__(308) + ") format(\"truetype\"), url(" + __webpack_require__(309) + "#robotomedium) format(\"svg\");\n  font-weight: bold;\n  font-style: normal; }\n\n@font-face {\n  font-family: 'roboto';\n  src: url(" + __webpack_require__(310) + ");\n  src: url(" + __webpack_require__(310) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(311) + ") format(\"woff\"), url(" + __webpack_require__(312) + ") format(\"truetype\"), url(" + __webpack_require__(313) + "#robotolight) format(\"svg\");\n  font-weight: normal;\n  font-style: normal; }\n\nhtml {\n  box-sizing: border-box;\n  font-size: 14px;\n  overflow: hidden; }\n\nhtml, body, #app {\n  width: 100%;\n  height: 100%; }\n\n*, *:before, *:after {\n  box-sizing: inherit;\n  margin: 0;\n  padding: 0;\n  outline: 0;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  font-family: roboto;\n  font-weight: normal; }\n\nul {\n  list-style: none; }\n\na {\n  color: inherit;\n  text-decoration: none; }\n\n.layout__OS {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  width: 100%;\n  height: 100%;\n  overflow: hidden; }\n\n.layout__overlay {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  z-index: 2000; }\n\n.layout__desktop {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  width: 100%;\n  height: 100%; }\n\n.layout__desktop-header {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-flex: 0;\n  -webkit-flex: 0 0 2.4rem;\n      -ms-flex: 0 0 2.4rem;\n          flex: 0 0 2.4rem; }\n\n.layout__desktop-main {\n  position: relative;\n  height: calc(100% - 2.4rem); }\n\n.desktop {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-flex-wrap: wrap;\n      -ms-flex-wrap: wrap;\n          flex-wrap: wrap;\n  -webkit-box-align: start;\n  -webkit-align-items: flex-start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  -webkit-box-pack: start;\n  -webkit-justify-content: flex-start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  -webkit-align-content: flex-start;\n      -ms-flex-line-pack: start;\n          align-content: flex-start;\n  width: 100%;\n  height: 100%;\n  padding: 1rem; }\n\n.menu {\n  position: relative;\n  z-index: 1000;\n  height: 100%;\n  width: 100%;\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.2); }\n\n.menu__list {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: start;\n  -webkit-justify-content: flex-start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  -webkit-box-flex: 1;\n  -webkit-flex-grow: 1;\n      -ms-flex-positive: 1;\n          flex-grow: 1; }\n\n.menu__list-item {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  position: relative;\n  padding: 0 1rem;\n  font-size: 1rem;\n  line-height: 2.4rem;\n  cursor: default; }\n\n.menu__list-item:hover .dropdown {\n  display: block; }\n\n.menu__search {\n  position: relative;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  width: 22rem;\n  height: 2.4rem; }\n\n.menu__searchbar {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1 1;\n      -ms-flex: 1 1;\n          flex: 1 1;\n  padding: 0 1rem;\n  font-size: 1rem;\n  line-height: 1rem;\n  background: #787878;\n  color: white;\n  -webkit-appearance: none;\n  border: none; }\n\n.menu__searchbar::-webkit-input-placeholder {\n  color: white; }\n\n.menu__searchbar::-moz-placeholder {\n  color: white; }\n\n.menu__searchbar:-ms-input-placeholder {\n  color: white; }\n\n.menu__searchbar::placeholder {\n  color: white; }\n\n.menu__search-icon {\n  height: 2rem;\n  width: 2rem;\n  padding: 0.5rem; }\n\n.menu__search-dropdown-button {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  width: 2.4rem;\n  height: 100%;\n  background: white;\n  border-left: 1px solid #414141;\n  border-right: 1px solid #414141;\n  color: #414141; }\n\n.menu__search-dropdown-button:hover .dropdown {\n  display: block; }\n\n.menu__search-dropdown-button-arrow {\n  width: 40%;\n  height: 40%; }\n\n.menu__user-container {\n  position: relative;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  margin-left: 3rem;\n  padding: 1rem 1rem 1rem 1rem;\n  font-size: 1rem;\n  line-height: 1rem; }\n\n.menu__user-container:hover .dropdown {\n  display: block; }\n\n.menu__user-notice {\n  padding-right: 1rem; }\n\n.dropdown {\n  display: none;\n  position: absolute;\n  min-width: 100%;\n  z-index: 900;\n  left: 0;\n  top: 2.4rem;\n  padding: 0.5rem 0;\n  background: white;\n  color: #414141;\n  border: 1px solid #414141;\n  border-top: none;\n  font-size: 1rem;\n  line-height: 1rem;\n  box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.2); }\n\n.dropdown__list-item {\n  position: relative;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex; }\n\n.dropdown__text {\n  display: block;\n  padding: 0.5rem 1rem;\n  width: 100%;\n  height: 100%; }\n\n.dropdown__text-type-small {\n  padding-left: 2rem;\n  font-size: 1rem;\n  color: rgba(120, 120, 120, 0.5); }\n\n.dropdown__text:hover {\n  background: #414141;\n  color: white;\n  cursor: default; }\n\n.dropdown__hr {\n  height: 0;\n  width: 100%;\n  margin: 0.5rem 0;\n  border: none;\n  border-bottom: 1px solid #414141; }\n\n.item {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 7rem;\n  padding: 1rem; }\n\n.item__image {\n  width: 3.5rem;\n  height: 3.5rem;\n  margin-bottom: 0.5rem; }\n\n.item__text {\n  display: block;\n  padding: 0.1rem 0.6rem;\n  max-width: 100%;\n  max-height: 2.2rem;\n  border-radius: 5px;\n  font-size: 1rem;\n  line-height: 1.2rem;\n  font-weight: bold;\n  text-align: center;\n  word-break: break-all;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  background: rgba(65, 65, 65, 0.1); }\n\n.listed-item {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  height: 3rem;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  width: 100%;\n  padding: 0.5rem 1rem;\n  border-bottom: 1px dashed #f2f2f2; }\n\n.listed-item:hover {\n  background: #e5f0f9;\n  cursor: pointer; }\n\n.listed-item__image {\n  width: 2rem;\n  height: 2rem; }\n\n.listed-item__name {\n  width: 100%;\n  padding: 0 1rem;\n  word-break: break-all;\n  -webkit-box-flex: 1;\n  -webkit-flex: 1 1;\n      -ms-flex: 1 1;\n          flex: 1 1; }\n\n.login {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 100%;\n  height: 100%; }\n\n.login__details {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 35rem;\n  padding: 0 2rem 2rem 2rem; }\n\n.login__logo {\n  width: 100%;\n  height: auto;\n  margin: 0 0 1rem 0; }\n\n.login__error {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  width: 100%;\n  margin: 0 0 1rem 0;\n  padding: 1rem;\n  border: 2px solid #cd1f22;\n  color: #cd1f22;\n  border-radius: 10px; }\n\n.login__group {\n  width: 100%;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  margin-bottom: 1rem; }\n\n.login__username {\n  width: 70%;\n  height: 3rem;\n  padding: 1rem;\n  border: none;\n  background: #f2f2f2;\n  font-size: 1rem;\n  border-radius: 10px; }\n\n.login__password {\n  width: 70%;\n  height: 3rem;\n  padding: 1rem;\n  border: none;\n  background: #f2f2f2;\n  font-size: 1rem;\n  border-radius: 10px; }\n\n.login__submit {\n  width: 35%;\n  padding: 1rem;\n  margin-right: 35%;\n  -webkit-align-self: flex-end;\n      -ms-flex-item-align: end;\n          align-self: flex-end;\n  -webkit-appearance: none;\n  cursor: pointer;\n  font-size: 1rem;\n  border-radius: 10px; }\n\n.shutdown {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 100%;\n  height: 100%;\n  padding-top: 3rem; }\n\n.shutdown__details {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 35rem;\n  padding: 2rem 2rem 2rem 2rem;\n  background: white;\n  border: 1px solid #f2f2f2;\n  border-radius: 10px; }\n\n.off {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: end;\n  -webkit-justify-content: flex-end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 100%;\n  height: 100%;\n  padding: 3rem 3rem 6rem 3rem;\n  background: black; }\n\n.off__reboot {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  width: 10rem;\n  padding: 1rem 6rem;\n  color: white;\n  border: 1px solid rgba(255, 255, 255, 0.1);\n  border-radius: 1rem;\n  cursor: pointer; }\n\n.off__reboot:hover {\n  background: -webkit-linear-gradient(20deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%);\n  background: linear-gradient(70deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%);\n  background-size: 400% 400%;\n  -webkit-animation: transparantWhite 1.5s ease infinite;\n          animation: transparantWhite 1.5s ease infinite; }\n\n@-webkit-keyframes transparantWhite {\n  0% {\n    background-position: 100% 50%; }\n  100% {\n    background-position: 0% 50%; } }\n\n@keyframes transparantWhite {\n  0% {\n    background-position: 100% 50%; }\n  100% {\n    background-position: 0% 50%; } }\n\n.admin {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 100%;\n  height: 100%;\n  background: black; }\n\n.admin__content {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  padding: 4rem;\n  background: #ffd900; }\n\n.admin__logo {\n  width: 14rem;\n  -webkit-align-self: flex-start;\n      -ms-flex-item-align: start;\n          align-self: flex-start; }\n\n.admin__browser-error {\n  margin: 2rem 0 0 0;\n  padding: 1rem;\n  border: 10px solid red;\n  color: red;\n  font-size: 2rem;\n  font-weight: bold; }\n\n.admin__browser-error-link {\n  text-decoration: underline; }\n\n.admin__description {\n  margin: 2rem 0; }\n\n.admin__header {\n  margin-bottom: 1rem; }\n\n.admin__list {\n  list-style-type: square;\n  list-style-position: inside; }\n\n.admin__button {\n  width: 10rem;\n  height: 4rem;\n  background: black;\n  color: #ffd900;\n  border: 4px solid #ffd900;\n  cursor: pointer; }\n\n.admin__button:hover {\n  background: #ffd900;\n  color: black;\n  border: 4px solid black; }\n\n.window {\n  position: absolute;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  z-index: 500;\n  box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.2);\n  border-radius: 5px;\n  overflow: hidden; }\n\n.window__inner {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  width: 100%;\n  height: 100%; }\n\n.react-resizable-handle {\n  position: absolute;\n  width: 50px;\n  height: 50px;\n  bottom: 0;\n  right: 0;\n  background: url(\"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pg08IS0tIEdlbmVyYXRvcjogQWRvYmUgRmlyZXdvcmtzIENTNiwgRXhwb3J0IFNWRyBFeHRlbnNpb24gYnkgQWFyb24gQmVhbGwgKGh0dHA6Ly9maXJld29ya3MuYWJlYWxsLmNvbSkgLiBWZXJzaW9uOiAwLjYuMSAgLS0+DTwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DTxzdmcgaWQ9IlVudGl0bGVkLVBhZ2UlMjAxIiB2aWV3Qm94PSIwIDAgNiA2IiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjojZmZmZmZmMDAiIHZlcnNpb249IjEuMSINCXhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbDpzcGFjZT0icHJlc2VydmUiDQl4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjZweCIgaGVpZ2h0PSI2cHgiDT4NCTxnIG9wYWNpdHk9IjAuMzAyIj4NCQk8cGF0aCBkPSJNIDYgNiBMIDAgNiBMIDAgNC4yIEwgNCA0LjIgTCA0LjIgNC4yIEwgNC4yIDAgTCA2IDAgTCA2IDYgTCA2IDYgWiIgZmlsbD0iIzAwMDAwMCIvPg0JPC9nPg08L3N2Zz4=\");\n  background-position: bottom right;\n  padding: 0 5px 5px 0;\n  background-repeat: no-repeat;\n  background-origin: content-box;\n  box-sizing: border-box;\n  cursor: se-resize; }\n\n.window__titlebar-inner {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding-left: 1rem;\n  height: 2rem; }\n\n.window__titlebar-text {\n  color: white; }\n\n.window__titlebar-close-button {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 2rem;\n  height: 2rem;\n  padding: 0.75rem;\n  cursor: pointer;\n  -webkit-transition: 0.1s ease all;\n  transition: 0.1s ease all; }\n\n.window__titlebar-close-button img {\n  width: 100%;\n  height: 100%; }\n\n.window__titlebar-close-button:hover {\n  padding: 0.5rem; }\n\n.window__content {\n  width: 100%;\n  height: calc(100% - 2rem); }\n\n.window__content-inner {\n  width: 100%;\n  height: 100%;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-flex-wrap: wrap;\n      -ms-flex-wrap: wrap;\n          flex-wrap: wrap;\n  -webkit-align-content: flex-start;\n      -ms-flex-line-pack: start;\n          align-content: flex-start; }\n\n.explorer__menubar {\n  width: 100%;\n  padding: 0 1rem;\n  height: 3rem;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  background: #dadada;\n  border-bottom: 1px solid #414141; }\n\n.explorer__menubar-path {\n  margin-left: 0rem;\n  margin-right: 1rem;\n  width: 22rem;\n  border-radius: 5px;\n  border: none;\n  padding: 0.5rem; }\n\n.explorer__menubar-icon-group {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex; }\n\n.explorer__menubar-icon {\n  width: 1.5rem;\n  height: 1.5rem;\n  padding: 0.25rem;\n  margin-right: 1rem;\n  -webkit-transition: 0.1s ease all;\n  transition: 0.1s ease all; }\n\n.explorer__menubar-icon-img {\n  width: 100%;\n  height: 100%; }\n\n.explorer__menubar-icon:hover {\n  padding: 0rem; }\n\n.explorer__sidebar {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-align: start;\n  -webkit-align-items: flex-start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  width: 12rem;\n  height: calc(100% - 3rem);\n  padding: 1rem;\n  border-right: 1px solid #414141;\n  background: #f2f2f2; }\n\n.explorer__sidebar-text {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding-bottom: 5px;\n  font-weight: bold;\n  padding: 0.25rem; }\n\n.explorer__sidebar-icon {\n  width: 2rem;\n  height: 2rem;\n  margin-right: 1rem; }\n\n.explorer__body {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-flex-wrap: wrap;\n      -ms-flex-wrap: wrap;\n          flex-wrap: wrap;\n  -webkit-box-align: start;\n  -webkit-align-items: flex-start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  -webkit-align-content: flex-start;\n      -ms-flex-line-pack: start;\n          align-content: flex-start;\n  -webkit-box-pack: start;\n  -webkit-justify-content: flex-start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  width: calc(100% - 12rem);\n  height: calc(100% - 3rem);\n  overflow-y: scroll; }\n\n.textfile__menubar {\n  width: 100%;\n  padding: 0 1rem;\n  height: 3rem;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  background: #dadada;\n  border-bottom: 1px solid #414141; }\n\n.textfile__menubar-icon {\n  width: 1.5rem;\n  height: 1.5rem;\n  padding: 0.25rem;\n  margin-right: 1rem;\n  -webkit-transition: 0.1s ease all;\n  transition: 0.1s ease all; }\n\n.textfile__menubar-icon-img {\n  width: 100%;\n  height: 100%; }\n\n.textfile__menubar-icon:hover {\n  padding: 0rem; }\n\n.textfile__body {\n  width: 100%;\n  height: calc(100% - 3rem);\n  padding: 1rem;\n  overflow-y: scroll; }\n\n.pdf__menubar {\n  width: 100%;\n  padding: 0 1rem;\n  height: 3rem;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  background: #dadada;\n  border-bottom: 1px solid #414141; }\n\n.pdf__menubar-icon {\n  width: 1.5rem;\n  height: 1.5rem;\n  padding: 0.25rem;\n  margin-right: 1rem;\n  -webkit-transition: 0.1s ease all;\n  transition: 0.1s ease all; }\n\n.pdf__menubar-icon-img {\n  width: 100%;\n  height: 100%; }\n\n.pdf__menubar-icon:hover {\n  padding: 0rem; }\n\n.pdf__sidebar {\n  height: calc(100% - 3rem);\n  width: 12rem;\n  padding: 2rem;\n  background: #f2f2f2;\n  overflow-y: scroll; }\n\n.pdf__body {\n  width: calc(100% - 12rem);\n  height: calc(100% - 3rem);\n  padding: 2rem;\n  background: #f2f2f2;\n  overflow-y: scroll; }\n\n.pdf__page {\n  width: 100%;\n  margin-bottom: 2rem;\n  box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.2); }\n\n.browser__menubar {\n  position: relative;\n  width: 100%;\n  height: 3rem;\n  background: #dadada;\n  border-bottom: 1px solid #414141; }\n\n.browser__menubar-tabs {\n  position: absolute;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  top: -1.7rem;\n  left: 10rem;\n  max-width: calc(100% - 10rem); }\n\n.browser__menubar-tab {\n  height: 1.7rem;\n  margin: 0 0.1rem;\n  padding: 0.5rem;\n  line-height: 0.7rem;\n  background: #787878;\n  border-radius: 2px 2px 0 0; }\n\n.browser__menubar-tab-active {\n  background: #f2f2f2; }\n\n.browser__menubar-inner {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  width: 100%;\n  height: 100%;\n  padding: 0 1rem; }\n\n.browser__menubar-path-container {\n  width: 100%; }\n\n.browser__menubar-path {\n  margin-left: 0rem;\n  margin-right: 1rem;\n  width: 100%;\n  border-radius: 5px;\n  border: none;\n  padding: 0.5rem; }\n\n.browser__menubar-icon-group {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex; }\n\n.browser__menubar-icon {\n  width: 1.5rem;\n  height: 1.5rem;\n  padding: 0.25rem;\n  margin-right: 1rem;\n  -webkit-transition: 0.1s ease all;\n  transition: 0.1s ease all; }\n\n.browser__menubar-icon-img {\n  width: 100%;\n  height: 100%; }\n\n.browser__menubar-icon:hover {\n  padding: 0rem; }\n\n.browser__body {\n  width: 100%;\n  height: calc(100% - 3rem); }\n\n.browser__iframe {\n  width: 100%;\n  height: 100%;\n  border: none; }\n\n.search__menubar {\n  width: 100%;\n  padding: 0 1rem;\n  height: 3rem;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  background: #dadada;\n  border-bottom: 1px solid #414141; }\n\n.search__menubar-path {\n  margin-left: 0rem;\n  margin-right: 1rem;\n  width: 22rem;\n  border-radius: 5px;\n  border: none;\n  padding: 0.5rem; }\n\n.search__menubar-open-all {\n  padding: 0.5rem;\n  background: #414141;\n  color: white;\n  border: none;\n  cursor: pointer; }\n\n.search__menubar-open-all:hover {\n  background: -webkit-linear-gradient(20deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%), #414141;\n  background: linear-gradient(70deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%), #414141;\n  background-size: 400% 400%;\n  -webkit-animation: flash 1.5s ease infinite;\n          animation: flash 1.5s ease infinite; }\n\n.search__menubar-icon-group {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex; }\n\n.search__menubar-icon {\n  width: 1.5rem;\n  height: 1.5rem;\n  padding: 0.25rem;\n  margin-right: 1rem;\n  -webkit-transition: 0.1s ease all;\n  transition: 0.1s ease all; }\n\n.search__menubar-icon-img {\n  width: 100%;\n  height: 100%; }\n\n.search__menubar-icon:hover {\n  padding: 0rem; }\n\n.search__sidebar {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-align: start;\n  -webkit-align-items: flex-start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  width: 12rem;\n  height: calc(100% - 3rem);\n  padding: 1rem;\n  border-right: 1px solid #414141;\n  background: #f2f2f2; }\n\n.search__sidebar-header {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  padding-bottom: 5px;\n  font-weight: bold; }\n\n.search__sidebar-ul {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  list-style: square inside;\n  padding-bottom: 5px; }\n\n.search__sidebar-li {\n  padding-bottom: 5px; }\n\n.search__sidebar-icon {\n  width: 1.5rem;\n  height: 1.5rem;\n  padding: 0.25rem;\n  margin-right: 1rem; }\n\n.search__no-result {\n  padding: 1rem;\n  color: #787878; }\n\n.search__body {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-flex-wrap: wrap;\n      -ms-flex-wrap: wrap;\n          flex-wrap: wrap;\n  -webkit-box-align: start;\n  -webkit-align-items: flex-start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  -webkit-align-content: flex-start;\n      -ms-flex-line-pack: start;\n          align-content: flex-start;\n  -webkit-box-pack: start;\n  -webkit-justify-content: flex-start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  width: calc(100% - 12rem);\n  height: calc(100% - 3rem);\n  overflow-y: scroll; }\n\n.modal__body {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 100%;\n  height: 100%;\n  padding: 1rem;\n  background: #f2f2f2; }\n\n.modal__content {\n  padding-bottom: 1rem; }\n\n.modal__button {\n  width: 25%;\n  height: 3rem;\n  color: white;\n  background: #414141;\n  border: none;\n  cursor: pointer;\n  border-radius: 10px; }\n\n.modal__button:hover {\n  background: -webkit-linear-gradient(20deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%), #414141;\n  background: linear-gradient(70deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%), #414141;\n  background-size: 400% 400%;\n  -webkit-animation: flash 1.5s ease infinite;\n          animation: flash 1.5s ease infinite; }\n\n@-webkit-keyframes flash {\n  0% {\n    background-position: 100% 50%; }\n  100% {\n    background-position: 0% 50%; } }\n\n@keyframes flash {\n  0% {\n    background-position: 100% 50%; }\n  100% {\n    background-position: 0% 50%; } }\n\n.layout__desktop {\n  background: #f2f2f2; }\n\n.desktop {\n  background-image: url(" + __webpack_require__(314) + ");\n  background-size: auto 100%;\n  background-repeat: no-repeat;\n  background-position: center center; }\n\n.menu {\n  background: #414141;\n  color: white; }\n\n.menu__search {\n  background: #787878;\n  color: white; }\n\n.menu__user-notice {\n  color: #f2f2f2; }\n\n.login {\n  background-size: auto 100%;\n  background-repeat: no-repeat;\n  background-position: center center;\n  background-color: #414141; }\n\n.login__details {\n  background: white;\n  border: 1px solid #414141;\n  border-radius: 10px; }\n\n.login__submit {\n  border: 1px solid #f2f2f2;\n  background: #414141;\n  color: white; }\n\n.login__submit:hover {\n  background: -webkit-linear-gradient(20deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%), #414141;\n  background: linear-gradient(70deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%), #414141;\n  background-size: 400% 400%;\n  -webkit-animation: flash 1.5s ease infinite;\n          animation: flash 1.5s ease infinite; }\n\n.shutdown {\n  background-size: auto 100%;\n  background-repeat: no-repeat;\n  background-position: center center;\n  background-origin: content-box;\n  background-color: #414141; }\n\n@keyframes flash {\n  0% {\n    background-position: 100% 50%; }\n  100% {\n    background-position: 0% 50%; } }\n\n.window__titlebar {\n  background: #414141; }\n\n.window__content-inner {\n  background: white; }\n", ""]);
+	exports.push([module.id, "@font-face {\n  font-family: 'roboto';\n  src: url(" + __webpack_require__(306) + ");\n  src: url(" + __webpack_require__(306) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(307) + ") format(\"woff\"), url(" + __webpack_require__(308) + ") format(\"truetype\"), url(" + __webpack_require__(309) + "#robotomedium) format(\"svg\");\n  font-weight: bold;\n  font-style: normal; }\n\n@font-face {\n  font-family: 'roboto';\n  src: url(" + __webpack_require__(310) + ");\n  src: url(" + __webpack_require__(310) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(311) + ") format(\"woff\"), url(" + __webpack_require__(312) + ") format(\"truetype\"), url(" + __webpack_require__(313) + "#robotolight) format(\"svg\");\n  font-weight: normal;\n  font-style: normal; }\n\nhtml {\n  box-sizing: border-box;\n  font-size: 14px;\n  overflow: hidden; }\n\nhtml, body, #app {\n  width: 100%;\n  height: 100%; }\n\n*, *:before, *:after {\n  box-sizing: inherit;\n  margin: 0;\n  padding: 0;\n  outline: 0;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  font-family: roboto;\n  font-weight: normal; }\n\nul {\n  list-style: none; }\n\na {\n  color: inherit;\n  text-decoration: none; }\n\n.layout__OS {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  width: 100%;\n  height: 100%;\n  overflow: hidden; }\n\n.layout__overlay {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  z-index: 2000; }\n\n.layout__desktop {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  width: 100%;\n  height: 100%;\n  background: #f2f2f2; }\n\n.layout__desktop-header {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-flex: 0;\n  -webkit-flex: 0 0 2.4rem;\n      -ms-flex: 0 0 2.4rem;\n          flex: 0 0 2.4rem; }\n\n.layout__desktop-main {\n  position: relative;\n  height: calc(100% - 2.4rem); }\n\n.desktop {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-flex-wrap: wrap;\n      -ms-flex-wrap: wrap;\n          flex-wrap: wrap;\n  -webkit-box-align: start;\n  -webkit-align-items: flex-start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  -webkit-box-pack: start;\n  -webkit-justify-content: flex-start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  -webkit-align-content: flex-start;\n      -ms-flex-line-pack: start;\n          align-content: flex-start;\n  width: 100%;\n  height: 100%;\n  padding: 1rem;\n  background-image: url(" + __webpack_require__(314) + ");\n  background-size: auto 100%;\n  background-repeat: no-repeat;\n  background-position: center center; }\n\n.menu {\n  position: relative;\n  z-index: 1000;\n  height: 100%;\n  width: 100%;\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  background: #414141;\n  color: white;\n  box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.2); }\n\n.menu__list {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: start;\n  -webkit-justify-content: flex-start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  -webkit-box-flex: 1;\n  -webkit-flex-grow: 1;\n      -ms-flex-positive: 1;\n          flex-grow: 1; }\n\n.menu__list-item {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  position: relative;\n  padding: 0 1rem;\n  font-size: 1rem;\n  line-height: 2.4rem;\n  cursor: default; }\n\n.menu__list-item:hover .dropdown {\n  display: block; }\n\n.menu__search {\n  position: relative;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  width: 22rem;\n  height: 2.4rem;\n  background: #787878;\n  color: white; }\n\n.menu__searchbar {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1 1;\n      -ms-flex: 1 1;\n          flex: 1 1;\n  padding: 0 1rem;\n  font-size: 1rem;\n  line-height: 1rem;\n  background: #787878;\n  color: white;\n  -webkit-appearance: none;\n  border: none; }\n\n.menu__searchbar::-webkit-input-placeholder {\n  color: white; }\n\n.menu__searchbar::-moz-placeholder {\n  color: white; }\n\n.menu__searchbar:-ms-input-placeholder {\n  color: white; }\n\n.menu__searchbar::placeholder {\n  color: white; }\n\n.menu__search-icon {\n  height: 2rem;\n  width: 2rem;\n  padding: 0.5rem; }\n\n.menu__search-dropdown-button {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  width: 2.4rem;\n  height: 100%;\n  background: white;\n  border-left: 1px solid #414141;\n  border-right: 1px solid #414141;\n  color: #414141; }\n\n.menu__search-dropdown-button:hover .dropdown {\n  display: block; }\n\n.menu__search-dropdown-button-arrow {\n  width: 40%;\n  height: 40%; }\n\n.menu__user-container {\n  position: relative;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  margin-left: 3rem;\n  padding: 1rem 1rem 1rem 1rem;\n  font-size: 1rem;\n  line-height: 1rem; }\n\n.menu__user-container:hover .dropdown {\n  display: block; }\n\n.menu__user-notice {\n  padding-right: 1rem;\n  color: #f2f2f2; }\n\n.dropdown {\n  display: none;\n  position: absolute;\n  min-width: 100%;\n  z-index: 900;\n  left: 0;\n  top: 2.4rem;\n  padding: 0.5rem 0;\n  background: white;\n  color: #414141;\n  border: 1px solid #414141;\n  border-top: none;\n  font-size: 1rem;\n  line-height: 1rem;\n  box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.2); }\n\n.dropdown__list-item {\n  position: relative;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex; }\n\n.dropdown__text {\n  display: block;\n  padding: 0.5rem 1rem;\n  width: 100%;\n  height: 100%; }\n\n.dropdown__text-type-small {\n  padding-left: 2rem;\n  font-size: 1rem;\n  color: rgba(120, 120, 120, 0.5); }\n\n.dropdown__text:hover {\n  background: #414141;\n  color: white;\n  cursor: default; }\n\n.dropdown__hr {\n  height: 0;\n  width: 100%;\n  margin: 0.5rem 0;\n  border: none;\n  border-bottom: 1px solid #414141; }\n\n.item {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 7rem;\n  padding: 1rem; }\n\n.item__image {\n  width: 3.5rem;\n  height: 3.5rem;\n  margin-bottom: 0.5rem; }\n\n.item__text {\n  display: block;\n  padding: 0.1rem 0.6rem;\n  max-width: 100%;\n  max-height: 2.2rem;\n  border-radius: 5px;\n  font-size: 1rem;\n  line-height: 1.2rem;\n  font-weight: bold;\n  text-align: center;\n  word-break: break-all;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  background: rgba(65, 65, 65, 0.1); }\n\n.listed-item {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  height: 3rem;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 100%;\n  padding: 0.5rem 1rem;\n  border-bottom: 1px dashed #f2f2f2; }\n\n.listed-item:hover {\n  background: #f2f2f2;\n  cursor: pointer; }\n\n.listed-item__image {\n  width: 2rem;\n  height: 2rem; }\n\n.listed-item__name {\n  width: 100%;\n  padding: 0 1rem;\n  word-break: break-all;\n  -webkit-box-flex: 1;\n  -webkit-flex: 1 1;\n      -ms-flex: 1 1;\n          flex: 1 1; }\n\n.login {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 100%;\n  height: 100%;\n  background-size: auto 100%;\n  background-repeat: no-repeat;\n  background-position: center center;\n  background-color: #414141; }\n\n.login__details {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 35rem;\n  padding: 0 2rem 2rem 2rem;\n  background: white;\n  border: 1px solid #414141;\n  border-radius: 10px; }\n\n.login__logo {\n  width: 100%;\n  height: auto;\n  margin: 0 0 1rem 0; }\n\n.login__error {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  width: 100%;\n  margin: 0 0 1rem 0;\n  padding: 1rem;\n  border: 2px solid #cd1f22;\n  color: #cd1f22;\n  border-radius: 10px; }\n\n.login__group {\n  width: 100%;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  margin-bottom: 1rem; }\n\n.login__username {\n  width: 70%;\n  height: 3rem;\n  padding: 1rem;\n  border: none;\n  background: #f2f2f2;\n  font-size: 1rem;\n  border-radius: 10px; }\n\n.login__password {\n  width: 70%;\n  height: 3rem;\n  padding: 1rem;\n  border: none;\n  background: #f2f2f2;\n  font-size: 1rem;\n  border-radius: 10px; }\n\n.login__submit {\n  width: 35%;\n  padding: 1rem;\n  margin-right: 35%;\n  -webkit-align-self: flex-end;\n      -ms-flex-item-align: end;\n          align-self: flex-end;\n  -webkit-appearance: none;\n  cursor: pointer;\n  font-size: 1rem;\n  border-radius: 10px;\n  border: 1px solid #f2f2f2;\n  background: #414141;\n  color: white; }\n\n.login__submit:hover {\n  background: -webkit-linear-gradient(20deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%), #414141;\n  background: linear-gradient(70deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%), #414141;\n  background-size: 400% 400%;\n  -webkit-animation: flash 1.5s ease infinite;\n          animation: flash 1.5s ease infinite; }\n\n@-webkit-keyframes flash {\n  0% {\n    background-position: 100% 50%; }\n  100% {\n    background-position: 0% 50%; } }\n\n@keyframes flash {\n  0% {\n    background-position: 100% 50%; }\n  100% {\n    background-position: 0% 50%; } }\n\n.shutdown {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 100%;\n  height: 100%;\n  padding-top: 3rem;\n  background-size: auto 100%;\n  background-repeat: no-repeat;\n  background-position: center center;\n  background-origin: content-box;\n  background-color: #414141; }\n\n.shutdown__details {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 35rem;\n  padding: 2rem 2rem 2rem 2rem;\n  background: white;\n  border: 1px solid #f2f2f2;\n  border-radius: 10px; }\n\n.off {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: end;\n  -webkit-justify-content: flex-end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 100%;\n  height: 100%;\n  padding: 3rem 3rem 6rem 3rem;\n  background: black; }\n\n.off__reboot {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  width: 10rem;\n  padding: 1rem 6rem;\n  color: white;\n  border: 1px solid rgba(255, 255, 255, 0.1);\n  border-radius: 1rem;\n  cursor: pointer; }\n\n.off__reboot:hover {\n  background: -webkit-linear-gradient(20deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%);\n  background: linear-gradient(70deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%);\n  background-size: 400% 400%;\n  -webkit-animation: flash 1.5s ease infinite;\n          animation: flash 1.5s ease infinite; }\n\n@keyframes flash {\n  0% {\n    background-position: 100% 50%; }\n  100% {\n    background-position: 0% 50%; } }\n\n.admin {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 100%;\n  height: 100%;\n  background: black; }\n\n.admin__content {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  padding: 4rem;\n  background: #ffd900; }\n\n.admin__logo {\n  width: 14rem;\n  -webkit-align-self: flex-start;\n      -ms-flex-item-align: start;\n          align-self: flex-start; }\n\n.admin__browser-error {\n  margin: 2rem 0 0 0;\n  padding: 1rem;\n  border: 10px solid red;\n  color: red;\n  font-size: 2rem;\n  font-weight: bold; }\n\n.admin__browser-error-link {\n  text-decoration: underline; }\n\n.admin__description {\n  margin: 2rem 0; }\n\n.admin__header {\n  margin-bottom: 1rem; }\n\n.admin__list {\n  list-style-type: square;\n  list-style-position: inside; }\n\n.admin__button {\n  width: 10rem;\n  height: 4rem;\n  background: black;\n  color: #ffd900;\n  border: 4px solid #ffd900;\n  cursor: pointer; }\n\n.admin__button:hover {\n  background: #ffd900;\n  color: black;\n  border: 4px solid black; }\n\n.window {\n  position: absolute;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  z-index: 500;\n  box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.2);\n  border-radius: 5px;\n  overflow: hidden; }\n\n.window__inner {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  width: 100%;\n  height: 100%;\n  background: white; }\n\n.react-resizable-handle {\n  position: absolute;\n  width: 100px;\n  height: 100px;\n  bottom: 0;\n  right: 0;\n  background: url(\"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pg08IS0tIEdlbmVyYXRvcjogQWRvYmUgRmlyZXdvcmtzIENTNiwgRXhwb3J0IFNWRyBFeHRlbnNpb24gYnkgQWFyb24gQmVhbGwgKGh0dHA6Ly9maXJld29ya3MuYWJlYWxsLmNvbSkgLiBWZXJzaW9uOiAwLjYuMSAgLS0+DTwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DTxzdmcgaWQ9IlVudGl0bGVkLVBhZ2UlMjAxIiB2aWV3Qm94PSIwIDAgNiA2IiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjojZmZmZmZmMDAiIHZlcnNpb249IjEuMSINCXhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbDpzcGFjZT0icHJlc2VydmUiDQl4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjZweCIgaGVpZ2h0PSI2cHgiDT4NCTxnIG9wYWNpdHk9IjAuMzAyIj4NCQk8cGF0aCBkPSJNIDYgNiBMIDAgNiBMIDAgNC4yIEwgNCA0LjIgTCA0LjIgNC4yIEwgNC4yIDAgTCA2IDAgTCA2IDYgTCA2IDYgWiIgZmlsbD0iIzAwMDAwMCIvPg0JPC9nPg08L3N2Zz4=\");\n  background-position: bottom right;\n  padding: 0 5px 5px 0;\n  background-repeat: no-repeat;\n  background-origin: content-box;\n  box-sizing: border-box;\n  cursor: se-resize; }\n\n.window__titlebar {\n  background: #414141; }\n\n.window__titlebar-inner {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding-left: 1rem;\n  height: 2rem; }\n\n.window__titlebar-text {\n  color: white; }\n\n.window__titlebar-close-button {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 2rem;\n  height: 2rem;\n  padding: 0.75rem;\n  cursor: pointer;\n  -webkit-transition: 0.1s ease all;\n  transition: 0.1s ease all; }\n\n.window__titlebar-close-button img {\n  width: 100%;\n  height: 100%; }\n\n.window__titlebar-close-button:hover {\n  padding: 0.5rem; }\n\n.window__content {\n  width: 100%;\n  height: calc(100% - 2rem); }\n\n.window__content-inner {\n  width: 100%;\n  height: 100%;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-flex-wrap: wrap;\n      -ms-flex-wrap: wrap;\n          flex-wrap: wrap;\n  -webkit-align-content: flex-start;\n      -ms-flex-line-pack: start;\n          align-content: flex-start; }\n\n.explorer__menubar {\n  width: 100%;\n  padding: 0 1rem;\n  height: 3rem;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  background: #dadada;\n  border-bottom: 1px solid #414141; }\n\n.explorer__menubar-path {\n  margin-left: 0rem;\n  margin-right: 1rem;\n  width: 22rem;\n  border-radius: 5px;\n  border: none;\n  padding: 0.5rem; }\n\n.explorer__menubar-icon-group {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex; }\n\n.explorer__menubar-icon {\n  width: 1.5rem;\n  height: 1.5rem;\n  padding: 0.25rem;\n  margin-right: 1rem;\n  -webkit-transition: 0.1s ease all;\n  transition: 0.1s ease all; }\n\n.explorer__menubar-icon-img {\n  width: 100%;\n  height: 100%; }\n\n.explorer__menubar-icon:hover {\n  padding: 0rem; }\n\n.explorer__sidebar {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-align: start;\n  -webkit-align-items: flex-start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  width: 12rem;\n  height: calc(100% - 3rem);\n  padding: 1rem;\n  border-right: 1px solid #414141;\n  background: #f2f2f2; }\n\n.explorer__sidebar-text {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding-bottom: 5px;\n  font-weight: bold;\n  padding: 0.25rem; }\n\n.explorer__sidebar-icon {\n  width: 2rem;\n  height: 2rem;\n  margin-right: 1rem; }\n\n.explorer__body {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-flex-wrap: wrap;\n      -ms-flex-wrap: wrap;\n          flex-wrap: wrap;\n  -webkit-box-align: start;\n  -webkit-align-items: flex-start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  -webkit-align-content: flex-start;\n      -ms-flex-line-pack: start;\n          align-content: flex-start;\n  -webkit-box-pack: start;\n  -webkit-justify-content: flex-start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  width: calc(100% - 12rem);\n  height: calc(100% - 3rem);\n  overflow-y: scroll; }\n\n.textfile__menubar {\n  width: 100%;\n  padding: 0 1rem;\n  height: 3rem;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  background: #dadada;\n  border-bottom: 1px solid #414141; }\n\n.textfile__menubar-icon {\n  width: 1.5rem;\n  height: 1.5rem;\n  padding: 0.25rem;\n  margin-right: 1rem;\n  -webkit-transition: 0.1s ease all;\n  transition: 0.1s ease all; }\n\n.textfile__menubar-icon-img {\n  width: 100%;\n  height: 100%; }\n\n.textfile__menubar-icon:hover {\n  padding: 0rem; }\n\n.textfile__body {\n  width: 100%;\n  height: calc(100% - 3rem);\n  padding: 1rem;\n  overflow-y: scroll; }\n\n.pdf__menubar {\n  width: 100%;\n  padding: 0 1rem;\n  height: 3rem;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  background: #dadada;\n  border-bottom: 1px solid #414141; }\n\n.pdf__menubar-icon {\n  width: 1.5rem;\n  height: 1.5rem;\n  padding: 0.25rem;\n  margin-right: 1rem;\n  -webkit-transition: 0.1s ease all;\n  transition: 0.1s ease all; }\n\n.pdf__menubar-icon-img {\n  width: 100%;\n  height: 100%; }\n\n.pdf__menubar-icon:hover {\n  padding: 0rem; }\n\n.pdf__sidebar {\n  height: calc(100% - 3rem);\n  width: 12rem;\n  padding: 2rem;\n  background: #f2f2f2;\n  overflow-y: scroll; }\n\n.pdf__body {\n  width: calc(100% - 12rem);\n  height: calc(100% - 3rem);\n  padding: 2rem;\n  background: #f2f2f2;\n  overflow-y: scroll; }\n\n.pdf__page {\n  width: 100%;\n  margin-bottom: 2rem;\n  box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.2); }\n\n.browser__menubar {\n  position: relative;\n  width: 100%;\n  height: 3rem;\n  background: #dadada;\n  border-bottom: 1px solid #414141; }\n\n.browser__menubar-tabs {\n  position: absolute;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  top: -1.7rem;\n  left: 10rem;\n  max-width: calc(100% - 10rem); }\n\n.browser__menubar-tab {\n  height: 1.7rem;\n  margin: 0 0.1rem;\n  padding: 0.5rem;\n  line-height: 0.7rem;\n  background: #787878;\n  border-radius: 2px 2px 0 0; }\n\n.browser__menubar-tab-active {\n  background: #f2f2f2; }\n\n.browser__menubar-inner {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  width: 100%;\n  height: 100%;\n  padding: 0 1rem; }\n\n.browser__menubar-path-container {\n  width: 100%; }\n\n.browser__menubar-path {\n  margin-left: 0rem;\n  margin-right: 1rem;\n  width: 100%;\n  border-radius: 5px;\n  border: none;\n  padding: 0.5rem; }\n\n.browser__menubar-icon-group {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex; }\n\n.browser__menubar-icon {\n  width: 1.5rem;\n  height: 1.5rem;\n  padding: 0.25rem;\n  margin-right: 1rem;\n  -webkit-transition: 0.1s ease all;\n  transition: 0.1s ease all; }\n\n.browser__menubar-icon-img {\n  width: 100%;\n  height: 100%; }\n\n.browser__menubar-icon:hover {\n  padding: 0rem; }\n\n.browser__body {\n  width: 100%;\n  height: calc(100% - 3rem); }\n\n.browser__iframe {\n  width: 100%;\n  height: 100%;\n  border: none; }\n\n.search__menubar {\n  width: 100%;\n  padding: 0 1rem;\n  height: 3rem;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  background: #dadada;\n  border-bottom: 1px solid #414141; }\n\n.search__menubar-path {\n  margin-left: 0rem;\n  margin-right: 1rem;\n  width: 22rem;\n  border-radius: 5px;\n  border: none;\n  padding: 0.5rem; }\n\n.search__menubar-open-all {\n  padding: 0.5rem;\n  background: #414141;\n  color: white;\n  border: none;\n  cursor: pointer; }\n\n.search__menubar-open-all:hover {\n  background: -webkit-linear-gradient(20deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%), #414141;\n  background: linear-gradient(70deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%), #414141;\n  background-size: 400% 400%;\n  -webkit-animation: flash 1.5s ease infinite;\n          animation: flash 1.5s ease infinite; }\n\n.search__menubar-icon-group {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex; }\n\n.search__menubar-icon {\n  width: 1.5rem;\n  height: 1.5rem;\n  padding: 0.25rem;\n  margin-right: 1rem;\n  -webkit-transition: 0.1s ease all;\n  transition: 0.1s ease all; }\n\n.search__menubar-icon-img {\n  width: 100%;\n  height: 100%; }\n\n.search__menubar-icon:hover {\n  padding: 0rem; }\n\n.search__sidebar {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-align: start;\n  -webkit-align-items: flex-start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  width: 12rem;\n  height: calc(100% - 3rem);\n  padding: 1rem;\n  border-right: 1px solid #414141;\n  background: #f2f2f2; }\n\n.search__sidebar-header {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  padding-bottom: 5px;\n  font-weight: bold; }\n\n.search__sidebar-ul {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  list-style: square inside;\n  padding-bottom: 5px; }\n\n.search__sidebar-li {\n  padding-bottom: 5px; }\n\n.search__sidebar-icon {\n  width: 1.5rem;\n  height: 1.5rem;\n  padding: 0.25rem;\n  margin-right: 1rem; }\n\n.search__no-result {\n  padding: 1rem;\n  color: #787878; }\n\n.search__body {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-flex-wrap: wrap;\n      -ms-flex-wrap: wrap;\n          flex-wrap: wrap;\n  -webkit-box-align: start;\n  -webkit-align-items: flex-start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  -webkit-align-content: flex-start;\n      -ms-flex-line-pack: start;\n          align-content: flex-start;\n  -webkit-box-pack: start;\n  -webkit-justify-content: flex-start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  width: calc(100% - 12rem);\n  height: calc(100% - 3rem);\n  overflow-y: scroll; }\n\n.modal__body {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 100%;\n  height: 100%;\n  padding: 1rem;\n  background: #f2f2f2; }\n\n.modal__content {\n  padding-bottom: 1rem; }\n\n.modal__button {\n  width: 25%;\n  height: 3rem;\n  color: white;\n  background: #414141;\n  border: none;\n  cursor: pointer;\n  border-radius: 10px; }\n\n.modal__button:hover {\n  background: -webkit-linear-gradient(20deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%), #414141;\n  background: linear-gradient(70deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%), #414141;\n  background-size: 400% 400%;\n  -webkit-animation: flash 1.5s ease infinite;\n          animation: flash 1.5s ease infinite; }\n\n@keyframes flash {\n  0% {\n    background-position: 100% 50%; }\n  100% {\n    background-position: 0% 50%; } }\n", ""]);
 
 	// exports
 
