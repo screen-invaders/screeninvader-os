@@ -3,9 +3,11 @@ import React from 'react';
 import { explorer__moveDown } from '../../actions/windows/explorer.js';
 import { window__open } from '../../actions/windows/window.js';
 
-import imgFolder from '../../assets/images/icons/row-11/3.png'
-import imgTXT from '../../assets/images/icons/row-10/12.png'
-import imgPDF from '../../assets/images/icons/row-11/6.png'
+import imgFolder from '../../assets/images/icons-aes/png/128x128/folder.png'
+import imgFolderArchive from '../../assets/images/icons-aes/png/128x128/archive.png'
+import imgFolderLocked from '../../assets/images/icons-aes/png/128x128/lock.png'
+import imgTXT from '../../assets/images/icons-aes/png/128x128/note_edit.png'
+import imgPDF from '../../assets/images/icons-aes/png/128x128/pdf.png'
 
 class ListedItem extends React.Component{
   openItem(){
@@ -18,11 +20,15 @@ class ListedItem extends React.Component{
   }
 
   render() {
+    let {itemData} = this.props;
 		return (
       <div className="listed-item" onDoubleClick={this.openItem.bind(this)}>
 			  <img className="listed-item__image" draggable="false" src={(()=>{
-          switch (this.props.itemData.type){
+          switch (itemData.type){
             case "dir": 
+              if (itemData.locked) {
+                return imgFolderLocked;
+              }
               return imgFolder;
             case "txt": 
               return imgTXT;
