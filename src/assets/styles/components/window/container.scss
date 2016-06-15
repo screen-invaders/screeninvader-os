@@ -17,6 +17,7 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
+  background: $day;
 }
 
 .react-resizable-handle {
@@ -37,6 +38,7 @@
 // titlebar
 
 .window__titlebar {
+  background: $dark;
 }
 
 .window__titlebar-inner {

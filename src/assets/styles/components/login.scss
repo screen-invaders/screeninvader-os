@@ -5,6 +5,11 @@
   align-items: center; 
   width: 100%;
   height: 100%;
+
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: $dark;
 }
 
 .login__details {
@@ -13,7 +18,10 @@
   justify-content: center;
   align-items: center;
   width: 35rem;
-  padding: 0 2rem 2rem 2rem; 
+  padding: 0 2rem 2rem 2rem;
+  background: $day;
+  border: 1px solid $dark;
+  border-radius: 10px;
 }
 
 .login__logo {
@@ -74,4 +82,18 @@
   cursor: pointer;
   font-size: 1rem;
   border-radius: 10px;
+  border: 1px solid $light;
+  background: $dark;
+  color: $day;
+}
+
+.login__submit:hover {
+  background: linear-gradient(70deg, rgba($day, 0), rgba($day, 0) 45%,rgba($day, 0.2) 50%, rgba($day, 0) 55%, rgba($day, 0) 100%), $dark;
+  background-size: 400% 400%;
+  animation: flash 1.5s ease infinite;
+}
+
+@keyframes flash { 
+  0%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }

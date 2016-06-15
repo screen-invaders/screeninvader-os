@@ -38,13 +38,14 @@
   display: flex;
   height: 3rem;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   padding: 0.5rem 1rem;
   border-bottom: 1px dashed $light;
 }
 
 .listed-item:hover {
-  background: $tertiary;
+  background: $light;
   cursor: pointer;
 }
 

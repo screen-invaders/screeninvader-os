@@ -6,6 +6,8 @@
   flex: 1;
   display: flex;
   justify-content: space-between;
+  background: $dark;
+  color: white;
   box-shadow: 0px 0px 30px 5px rgba($night, 0.2);
 }
 
@@ -37,6 +39,8 @@
   justify-content: space-between;
   width: 22rem;
   height: 2.4rem;
+  background: $heavy;
+  color: white;
 }
 
 
@@ -99,4 +103,5 @@
 
 .menu__user-notice {
   padding-right: 1rem;
+  color: $light;
 }
