@@ -26,8 +26,11 @@ class Item extends React.Component{
 			  <img className="item__image" draggable="false" src={(()=>{
           switch (itemData.type){
             case "dir": 
-              if (itemData.locked) {
+              if (itemData.dirType === "locked") {
                 return imgFolderLocked;
+              }
+              if (itemData.dirType === "archive"){
+                return imgFolderArchive;
               }
               return imgFolder;
             case "txt": 

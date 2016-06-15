@@ -15,7 +15,15 @@ function dirTree(filename) {
 
     if (stats.isDirectory()) {
         info.type = "dir";
-        info.locked = (Math.random() > 0.5) ? true : false;
+        info.dirType = (function(){
+            var rand = Math.random();
+            if (rand < (1/4)){
+                return "locked"
+            } else if (rand < (2/4)){
+                return "archive"
+            }
+            return "normal"
+        })();
 
         // do recursive
         var tempChildren = fs.readdirSync(filename).map(function(child) {

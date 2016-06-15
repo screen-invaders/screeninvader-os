@@ -26,7 +26,7 @@ export function data__get(windowData, dispatch){
 
 export function data__fakeGet(windowData, dispatch){
   
-  dispatch(data__receive("Dummy text: Dit bestand bestaan alleen om de verkenner views aan te kleden.", windowData, dispatch));
+  dispatch(data__receive("Dit bestand bestaan alleen om de verkenner views aan te kleden.", windowData, dispatch));
 
   return {
     type: "data__get",
