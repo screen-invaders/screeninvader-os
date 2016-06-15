@@ -27,21 +27,6 @@ class Body extends React.Component{
             let event = new CustomEvent('click', {"bubbles":true});
             iframe.dispatchEvent(event);
           });
-          iframeContent.addEventListener('mousemove', ()=>{
-            // Create a bubbling event and dispatch it outside the iframe
-            let event = new CustomEvent('mousemove', {"bubbles":true});
-            iframe.dispatchEvent(event);
-          });
-          iframeContent.addEventListener('mousedown', ()=>{
-            // Create a bubbling event and dispatch it outside the iframe
-            let event = new CustomEvent('mousedown', {"bubbles":true});
-            iframe.dispatchEvent(event);
-          });
-          iframeContent.addEventListener('mouseup', ()=>{
-            // Create a bubbling event and dispatch it outside the iframe
-            let event = new CustomEvent('mouseup', {"bubbles":true});
-            iframe.dispatchEvent(event);
-          });
         }
       }, 10);
     }
