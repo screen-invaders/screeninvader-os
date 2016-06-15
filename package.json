@@ -4,11 +4,7 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "prepare": "   npm install 
-                && mkdir -p build/ 
-                && cp index.html build/ 
-                && npm run data 
-                && cp -r src/assets/sites build/",
+    "prepare": "npm install   && mkdir -p build/    && cp index.html build/     && npm run data     && cp -r src/assets/sites build/",
     "dev": "webpack-dev-server --host 0.0.0.0 --hot --progress --colors --content-base build",
     "build": "NODE_ENV=production webpack",
     "deploy": "NODE_ENV=production webpack && sh deploy.sh",

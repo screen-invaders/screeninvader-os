@@ -4,18 +4,18 @@
     this.type = type;
     this.focus = 0;
     this.viewPos = {
-      x: (options.offset && options.offset.x) || (Math.random() * (window.innerWidth - 800)),
-      y: (options.offset && options.offset.x) || (Math.random() * (window.innerHeight - 500))
+      x: (options.offset && options.offset.x) || (Math.random() * (window.innerWidth - 1000)),
+      y: (options.offset && options.offset.x) || (Math.random() * (window.innerHeight - 600))
     };
     this.viewSize = {
-      x: (options.size && options.size.x) || 800,
-      y: (options.size && options.size.y) || 500
+      x: (options.size && options.size.x) || 1000,
+      y: (options.size && options.size.y) || 600
     };
     this.constraints = {
       xmin: (options.constraints && options.constraints.xmin) || 500,
       ymin: (options.constraints && options.constraints.ymin) || 350,
-      xmax: (options.constraints && options.constraints.xmax) || 1000,
-      ymax: (options.constraints && options.constraints.ymax) || 600
+      xmax: (options.constraints && options.constraints.xmax) || 2000,
+      ymax: (options.constraints && options.constraints.ymax) || 1600
     };
     this.viewIndex = options.viewIndex;
 
@@ -63,24 +63,33 @@
     }
 
     if (type == "browser"){
-      this.data = {currentTab: 2};
+      this.data = {};
       this.data.tabs = [{
         id: Math.random() * 0x10000,
-        url: "Breeze mail",
+        title: "Breeze Mail",
+        url: "Breeze Mail",
         history: [],
-        historyCursor: 0
+        historyCursor: 0, 
+        frozen: 1,
+        active: 0
       },
       {
         id: Math.random() * 0x10000,
+        title: "Tabloid news",
         url: "Tabloid news",
         history: [],
-        historyCursor: 0
+        historyCursor: 0,
+        frozen: 1,
+        active: 0
       },
       {
         id: Math.random() * 0x10000,
+        title: "Chamber of Commerce",
         url: "http://wwww.chamberofcommerce.mt/",
         history: ["./malta_coc/index.html"],
-        historyCursor: 0
+        historyCursor: 0,
+        frozen: 1,
+        active: 1
       }];
     }
   }

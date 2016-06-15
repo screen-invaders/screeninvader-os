@@ -9,7 +9,12 @@ class Browser extends React.Component{
   }
   render() {
     let {windowData, dispatch} = this.props;
-    let currentTab = windowData.data.tabs[windowData.data.currentTab];
+    let currentTab;
+    windowData.data.tabs.forEach((tab, key)=>{
+      if (tab.active == 1){
+        currentTab = tab;
+      }
+    })
     return (
       <div className="window__content-inner">
         <Menubar tab={currentTab} windowData={windowData} dispatch={dispatch}/>

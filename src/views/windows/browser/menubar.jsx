@@ -11,9 +11,12 @@ class Menubar extends React.Component{
     return (
       <div className="browser__menubar">
         <div className="browser__menubar-tabs">
-          <div className="browser__menubar-tab"> <p>Some URL</p> </div>
-          <div className="browser__menubar-tab"> <p>Some URL</p> </div>
-          <div className="browser__menubar-tab browser__menubar-tab-active"> <p>Some URL</p> </div>
+          {windowData.data.tabs.map((tab, key)=>{
+            if (tab.active) {
+              return <div className="browser__menubar-tab browser__menubar-tab-active"> <p>{tab.title}</p> </div>
+            }
+            return <div className="browser__menubar-tab"> <p>{tab.title}</p> </div>
+          })}
         </div>
         <div className="browser__menubar-inner">
           <div className="browser__menubar-icon-group">
