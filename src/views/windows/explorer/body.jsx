@@ -22,6 +22,7 @@ class Body extends React.Component{
       <div className="explorer__body">
       {(()=>{
         let items = this.getItems(filesystem, windowData.data.history[windowData.data.historyCursor]);
+        console.log(items)
         if (items){
           var templatedItems = [];
           for (var item in items) {

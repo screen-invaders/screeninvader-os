@@ -35,7 +35,6 @@ function dirTree(filename) {
         // filter empties
         tempChildren = tempChildren.filter(function(obj){if (obj != undefined) {return true;}});
 
-       
         // transform to hashmap
         info.children = {};
         tempChildren.forEach(function(child, key){
