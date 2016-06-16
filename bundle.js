@@ -47581,7 +47581,7 @@
 
 	function data__fakeGet(windowData, dispatch) {
 
-	  dispatch(data__receive("", windowData, dispatch));
+	  dispatch(data__receive(" ", windowData, dispatch));
 
 	  return {
 	    type: "data__get",
