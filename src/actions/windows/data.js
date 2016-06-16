@@ -26,7 +26,7 @@ export function data__get(windowData, dispatch){
 
 export function data__fakeGet(windowData, dispatch){
   
-  dispatch(data__receive("", windowData, dispatch));
+  dispatch(data__receive(" ", windowData, dispatch));
 
   return {
     type: "data__get",
