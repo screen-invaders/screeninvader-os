@@ -21,6 +21,7 @@ class ListedItem extends React.Component{
 
   render() {
     let {itemData} = this.props;
+    console.log(itemData)
 		return (
       <div className="listed-item" onDoubleClick={this.openItem.bind(this)}>
 			  <img className="listed-item__image" draggable="false" src={(()=>{
@@ -40,9 +41,9 @@ class ListedItem extends React.Component{
           }
         })()}></img>
         <div className="listed-item__name">
-          <p>{this.props.itemData.name}</p>
+          <p>{itemData.name}</p>
         </div>
-        <p className="listed-item__date">25-01-1998</p>
+        <p className="listed-item__date">{itemData.date && (()=>{return (new Date(itemData.date)).toDateString()})()}</p>
       </div>
     )
 	}
