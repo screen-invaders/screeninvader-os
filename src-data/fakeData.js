@@ -5,14 +5,14 @@ var finalDirectory = require('./finalDirectory.js');
 
 // Config
 var config = {
-  depth: 2,
+  depth: 3,
   dirs: {
-    min: 1,
-    max: 2
+    min: 4,
+    max: 10
   },
   files: {
-    min: 1,
-    max: 2
+    min: 3,
+    max: 10
   },
   words: words,
   finalDirectory: {
@@ -36,7 +36,7 @@ function newDirectory(path, config){
 
 // Generate random file
 function newFile(path, config){
-  var type = faker.random.arrayElement(['txt', 'txt', 'pdf']);
+  var type = faker.random.arrayElement(['txt', 'txt', 'pdf', 'csv']);
   var fileName = faker.random.arrayElement(config.words) + "_" + faker.random.arrayElement(config.words) + "." + type;
   newPath = JSON.parse(JSON.stringify(path));
   newPath.push(fileName);
@@ -68,15 +68,17 @@ function directoryTree(path, depth, config){
   }
 
   // Recursive Generation
-  if (depth < config.depth){
-    for (var i = 0; i < config.dirs.max; i++){
+  var amount = faker.random.number({min: config.dirs.min, max: config.dirs.max});
+  if (depth <= config.depth){
+    for (var i = 0; i < amount; i++){
       var childDirectory = directoryTree(directory.path, depth + 1, config);
       directory.children[childDirectory.name] = childDirectory; 
     }
   }
 
   // Plain simple file objects
-  for (var i = 0; i < config.files.max; i++){
+  var amount = faker.random.number({min: config.files.min, max: config.files.max});
+  for (var i = 0; i < amount; i++){
     var randomFile = newFile(directory.path, config);
     directory.children[randomFile.name] = randomFile;
   }

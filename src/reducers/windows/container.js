@@ -15,6 +15,10 @@ export default function container(state, action) {
           windowInstance = new newWindow(action.data.type, {viewIndex: viewIndex, path: action.data.path});
           return [...state.windows, windowInstance];
           break;
+        case "csv": 
+          windowInstance = new newWindow(action.data.type, {viewIndex: viewIndex, path: action.data.path});
+          return [...state.windows, windowInstance];
+          break;
         case "pdf": 
           windowInstance = new newWindow(action.data.type, {viewIndex: viewIndex, path: action.data.path});
           return [...state.windows, windowInstance];

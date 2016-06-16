@@ -17,6 +17,7 @@ class Content extends React.Component{
         dir:          <Explorer windowData={windowData} dispatch={dispatch}/>,
         search:       <Search   windowData={windowData} dispatch={dispatch}/>,
         txt:          <TXT      windowData={windowData} dispatch={dispatch}/>,
+        csv:          <TXT      windowData={windowData} dispatch={dispatch}/>,
         pdf:          <PDF      windowData={windowData} dispatch={dispatch}/>,
         browser:      <Browser  windowData={windowData} dispatch={dispatch}/>,
         modal:        <Modal    windowData={windowData} dispatch={dispatch}/>

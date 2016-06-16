@@ -35,6 +35,13 @@
       };
     }
 
+    if (type == "csv"){
+      this.data = {
+        path: options.path,
+        content: options.content,
+      };
+    }
+
     if (type == "pdf"){
       this.data = {
         path: options.path

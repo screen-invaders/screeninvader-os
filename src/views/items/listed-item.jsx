@@ -8,6 +8,7 @@ import imgFolderArchive from '../../assets/images/icons-aes/png/128x128/archive.
 import imgFolderLocked from '../../assets/images/icons-aes/png/128x128/lock.png'
 import imgTXT from '../../assets/images/icons-aes/png/128x128/note_edit.png'
 import imgPDF from '../../assets/images/icons-aes/png/128x128/pdf.png'
+import imgSpreadsheet from '../../assets/images/icons-aes/png/128x128/chart.png'
 
 class ListedItem extends React.Component{
   openItem(){
@@ -37,6 +38,8 @@ class ListedItem extends React.Component{
               return imgTXT;
             case "pdf": 
               return imgPDF;
+            case "csv":
+              return imgSpreadsheet;
           }
         })()}></img>
         <div className="listed-item__name">
