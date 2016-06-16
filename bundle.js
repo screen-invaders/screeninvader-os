@@ -59712,7 +59712,7 @@
 	              _react2.default.createElement(
 	                'p',
 	                null,
-	                'Dit intranet van de belastingdienst kan dit:'
+	                'Dit intranet kan:'
 	              ),
 	              _react2.default.createElement(
 	                'ul',
@@ -59725,17 +59725,17 @@
 	                _react2.default.createElement(
 	                  'li',
 	                  null,
-	                  'Inloggen: Na 5x fout inloggen wordt je automatisch ingelogd, anders is het wachtwoord "1984"'
+	                  'Inloggen: Het wachtwoord is "1984". Na 5x fout inloggen wordt er automatisch ingelogd. '
 	                ),
 	                _react2.default.createElement(
 	                  'li',
 	                  null,
-	                  'Desktop en Windowmanager: Openen en slepen van mappen en vensters is mogelijk'
+	                  'Desktop en Windowmanager: Openen en slepen van mappen en vensters'
 	                ),
 	                _react2.default.createElement(
 	                  'li',
 	                  null,
-	                  'Explorer: Twee weergave mogelijkheden (lijst/iconen) en verkenning bestandsysteem (4e map is overal dezelfde)'
+	                  'Explorer: Twee weergave mogelijkheden (lijst/iconen) en verkenning bestandsysteem (4x diep is overal hetzelfde)'
 	                ),
 	                _react2.default.createElement(
 	                  'li',
