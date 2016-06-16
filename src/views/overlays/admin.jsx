@@ -50,10 +50,13 @@ class Admin extends React.Component{
               <h1 className="admin__header"> Welkom bij je screeninvader!</h1>
               <p>Dit intranet van de belastingdienst kan dit:</p>
               <ul className="admin__list">
-                <li>Inloggen: na 2x fout inloggen, stuurt hij je de derde keer door</li>
-                <li>Openen en slepen van mappen en vensters</li>
-                <li>Weergeven van mappen en documenten</li>
-                <li>Zoekfunctionaliteiten waarbij veel vensters opengaan (zoek zonder term voor alles)</li>
+                <li>Opstarten/Afsluiten: De app kan opstarten en afsluiten met een kort effect</li>
+                <li>Inloggen: Na 5x fout inloggen wordt je automatisch ingelogd, anders is het wachtwoord "1984"</li>
+                <li>Desktop en Windowmanager: Openen en slepen van mappen en vensters is mogelijk</li>
+                <li>Explorer: Twee weergave mogelijkheden (lijst/iconen) en verkenning bestandsysteem (4e map is overal dezelfde)</li>
+                <li>Browser: Standaard ingesteld op Chamber of Commerce Malta</li>
+                <li>Zoeken: Zoekfunctionaliteiten waarbij veel vensters opengaan </li>
+                <li>PDF-lezer: Weergave van PDF documenten (Ingesteld op Investigation Bibal)</li>
               </ul>
             </div>
             <div className="admin__button-container">
