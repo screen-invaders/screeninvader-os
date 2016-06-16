@@ -21,7 +21,6 @@ class ListedItem extends React.Component{
 
   render() {
     let {itemData} = this.props;
-    console.log(itemData)
 		return (
       <div className="listed-item" onDoubleClick={this.openItem.bind(this)}>
 			  <img className="listed-item__image" draggable="false" src={(()=>{
