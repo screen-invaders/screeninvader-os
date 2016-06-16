@@ -21757,6 +21757,10 @@
 	          windowInstance = new _window2.default(action.data.type, { viewIndex: viewIndex, path: action.data.path });
 	          return [].concat(_toConsumableArray(state.windows), [windowInstance]);
 	          break;
+	        case "csv":
+	          windowInstance = new _window2.default(action.data.type, { viewIndex: viewIndex, path: action.data.path });
+	          return [].concat(_toConsumableArray(state.windows), [windowInstance]);
+	          break;
 	        case "pdf":
 	          windowInstance = new _window2.default(action.data.type, { viewIndex: viewIndex, path: action.data.path });
 	          return [].concat(_toConsumableArray(state.windows), [windowInstance]);
@@ -21882,6 +21886,13 @@
 	  }
 
 	  if (type == "txt") {
+	    this.data = {
+	      path: options.path,
+	      content: options.content
+	    };
+	  }
+
+	  if (type == "csv") {
 	    this.data = {
 	      path: options.path,
 	      content: options.content
@@ -22221,7 +22232,7 @@
 	    password: "1984"
 	  },
 	  overlay: {
-	    type: ""
+	    type: "admin"
 	  },
 	  login: {
 	    attempts: 5,
@@ -22246,15421 +22257,12449 @@
 /***/ function(module, exports) {
 
 	module.exports = {
-		"path": [
-			""
-		],
-		"name": "filesystem",
+		"path": [],
+		"name": "root",
 		"type": "dir",
-		"dirType": "locked",
+		"dirType": "normal",
 		"children": {
-			"AFM": {
+			"Andrea_CTE/PF": {
 				"path": [
-					"AFM"
+					"Andrea_CTE/PF"
 				],
-				"name": "AFM",
-				"type": "dir",
-				"dirType": "locked",
-				"children": {
-					"1962-152701442726247": {
-						"path": [
-							"AFM",
-							"1962-152701442726247"
-						],
-						"name": "1962-152701442726247",
-						"type": "dir",
-						"dirType": "normal",
-						"children": {
-							"DOSSIER-14769117929448": {
-								"path": [
-									"AFM",
-									"1962-152701442726247",
-									"DOSSIER-14769117929448"
-								],
-								"name": "DOSSIER-14769117929448",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Andrea_Landelijke.pdf": {
-										"name": "Andrea_Landelijke.pdf",
-										"path": [
-											"AFM",
-											"1962-152701442726247",
-											"DOSSIER-14769117929448",
-											"Andrea_Landelijke.pdf"
-										],
-										"type": "pdf"
-									},
-									"controle_Laundering.pdf": {
-										"name": "controle_Laundering.pdf",
-										"path": [
-											"AFM",
-											"1962-152701442726247",
-											"DOSSIER-14769117929448",
-											"controle_Laundering.pdf"
-										],
-										"type": "pdf"
-									},
-									"Basisvoorziening_Caribisch.pdf": {
-										"name": "Basisvoorziening_Caribisch.pdf",
-										"path": [
-											"AFM",
-											"1962-152701442726247",
-											"DOSSIER-14769117929448",
-											"Basisvoorziening_Caribisch.pdf"
-										],
-										"type": "pdf"
-									},
-									"Unie_Toezicht.txt": {
-										"name": "Unie_Toezicht.txt",
-										"path": [
-											"AFM",
-											"1962-152701442726247",
-											"DOSSIER-14769117929448",
-											"Unie_Toezicht.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-158981070124991": {
-								"path": [
-									"AFM",
-									"1962-152701442726247",
-									"DOSSIER-158981070124991"
-								],
-								"name": "DOSSIER-158981070124991",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Multidisciplinary_Crimineel.pdf": {
-										"name": "Multidisciplinary_Crimineel.pdf",
-										"path": [
-											"AFM",
-											"1962-152701442726247",
-											"DOSSIER-158981070124991",
-											"Multidisciplinary_Crimineel.pdf"
-										],
-										"type": "pdf"
-									},
-									"de_.txt": {
-										"name": "de_.txt",
-										"path": [
-											"AFM",
-											"1962-152701442726247",
-											"DOSSIER-158981070124991",
-											"de_.txt"
-										],
-										"type": "txt"
-									},
-									"een_Anti-Money.pdf": {
-										"name": "een_Anti-Money.pdf",
-										"path": [
-											"AFM",
-											"1962-152701442726247",
-											"DOSSIER-158981070124991",
-											"een_Anti-Money.pdf"
-										],
-										"type": "pdf"
-									},
-									"Bank_CTEPF.txt": {
-										"name": "Bank_CTEPF.txt",
-										"path": [
-											"AFM",
-											"1962-152701442726247",
-											"DOSSIER-158981070124991",
-											"Bank_CTEPF.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-23472856211461": {
-								"path": [
-									"AFM",
-									"1962-152701442726247",
-									"DOSSIER-23472856211461"
-								],
-								"name": "DOSSIER-23472856211461",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"Recherche,_UNODC.txt": {
-										"name": "Recherche,_UNODC.txt",
-										"path": [
-											"AFM",
-											"1962-152701442726247",
-											"DOSSIER-23472856211461",
-											"Recherche,_UNODC.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-28846435131968": {
-								"path": [
-									"AFM",
-									"1962-152701442726247",
-									"DOSSIER-28846435131968"
-								],
-								"name": "DOSSIER-28846435131968",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Administratieve_gebouwd.pdf": {
-										"name": "Administratieve_gebouwd.pdf",
-										"path": [
-											"AFM",
-											"1962-152701442726247",
-											"DOSSIER-28846435131968",
-											"Administratieve_gebouwd.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-4436312131562": {
-								"path": [
-									"AFM",
-									"1962-152701442726247",
-									"DOSSIER-4436312131562"
-								],
-								"name": "DOSSIER-4436312131562",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"EMM_Eustatiusen.txt": {
-										"name": "EMM_Eustatiusen.txt",
-										"path": [
-											"AFM",
-											"1962-152701442726247",
-											"DOSSIER-4436312131562",
-											"EMM_Eustatiusen.txt"
-										],
-										"type": "txt"
-									},
-									"Bureau_Administratieve.txt": {
-										"name": "Bureau_Administratieve.txt",
-										"path": [
-											"AFM",
-											"1962-152701442726247",
-											"DOSSIER-4436312131562",
-											"Bureau_Administratieve.txt"
-										],
-										"type": "txt"
-									},
-									"Sint_gemeente.pdf": {
-										"name": "Sint_gemeente.pdf",
-										"path": [
-											"AFM",
-											"1962-152701442726247",
-											"DOSSIER-4436312131562",
-											"Sint_gemeente.pdf"
-										],
-										"type": "pdf"
-									},
-									"Ontnemingswetgeving_CTEPF.txt": {
-										"name": "Ontnemingswetgeving_CTEPF.txt",
-										"path": [
-											"AFM",
-											"1962-152701442726247",
-											"DOSSIER-4436312131562",
-											"Ontnemingswetgeving_CTEPF.txt"
-										],
-										"type": "txt"
-									},
-									"Saba_Dienst.txt": {
-										"name": "Saba_Dienst.txt",
-										"path": [
-											"AFM",
-											"1962-152701442726247",
-											"DOSSIER-4436312131562",
-											"Saba_Dienst.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"en_Unit.txt": {
-								"name": "en_Unit.txt",
-								"path": [
-									"AFM",
-									"1962-152701442726247",
-									"en_Unit.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"1980-232561519329241": {
-						"path": [
-							"AFM",
-							"1980-232561519329241"
-						],
-						"name": "1980-232561519329241",
-						"type": "dir",
-						"dirType": "archive",
-						"children": {
-							"DOSSIER-1171582226588": {
-								"path": [
-									"AFM",
-									"1980-232561519329241",
-									"DOSSIER-1171582226588"
-								],
-								"name": "DOSSIER-1171582226588",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Caribisch_Sint.txt": {
-										"name": "Caribisch_Sint.txt",
-										"path": [
-											"AFM",
-											"1980-232561519329241",
-											"DOSSIER-1171582226588",
-											"Caribisch_Sint.txt"
-										],
-										"type": "txt"
-									},
-									"Financieel_de.pdf": {
-										"name": "Financieel_de.pdf",
-										"path": [
-											"AFM",
-											"1980-232561519329241",
-											"DOSSIER-1171582226588",
-											"Financieel_de.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-22151672120285": {
-								"path": [
-									"AFM",
-									"1980-232561519329241",
-									"DOSSIER-22151672120285"
-								],
-								"name": "DOSSIER-22151672120285",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Leefomgeving_ILTIOD.txt": {
-										"name": "Leefomgeving_ILTIOD.txt",
-										"path": [
-											"AFM",
-											"1980-232561519329241",
-											"DOSSIER-22151672120285",
-											"Leefomgeving_ILTIOD.txt"
-										],
-										"type": "txt"
-									},
-									"en_Informatie,.txt": {
-										"name": "en_Informatie,.txt",
-										"path": [
-											"AFM",
-											"1980-232561519329241",
-											"DOSSIER-22151672120285",
-											"en_Informatie,.txt"
-										],
-										"type": "txt"
-									},
-									"Nederlandsche_van.txt": {
-										"name": "Nederlandsche_van.txt",
-										"path": [
-											"AFM",
-											"1980-232561519329241",
-											"DOSSIER-22151672120285",
-											"Nederlandsche_van.txt"
-										],
-										"type": "txt"
-									},
-									"en_Anti-Money.pdf": {
-										"name": "en_Anti-Money.pdf",
-										"path": [
-											"AFM",
-											"1980-232561519329241",
-											"DOSSIER-22151672120285",
-											"en_Anti-Money.pdf"
-										],
-										"type": "pdf"
-									},
-									"van_en.txt": {
-										"name": "van_en.txt",
-										"path": [
-											"AFM",
-											"1980-232561519329241",
-											"DOSSIER-22151672120285",
-											"van_en.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-235652292810021": {
-								"path": [
-									"AFM",
-									"1980-232561519329241",
-									"DOSSIER-235652292810021"
-								],
-								"name": "DOSSIER-235652292810021",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"CWI_van.pdf": {
-										"name": "CWI_van.pdf",
-										"path": [
-											"AFM",
-											"1980-232561519329241",
-											"DOSSIER-235652292810021",
-											"CWI_van.pdf"
-										],
-										"type": "pdf"
-									},
-									"DLR_ICT.txt": {
-										"name": "DLR_ICT.txt",
-										"path": [
-											"AFM",
-											"1980-232561519329241",
-											"DOSSIER-235652292810021",
-											"DLR_ICT.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-276383249317396": {
-								"path": [
-									"AFM",
-									"1980-232561519329241",
-									"DOSSIER-276383249317396"
-								],
-								"name": "DOSSIER-276383249317396",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Crimineel_en.txt": {
-										"name": "Crimineel_en.txt",
-										"path": [
-											"AFM",
-											"1980-232561519329241",
-											"DOSSIER-276383249317396",
-											"Crimineel_en.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-30140327014258": {
-								"path": [
-									"AFM",
-									"1980-232561519329241",
-									"DOSSIER-30140327014258"
-								],
-								"name": "DOSSIER-30140327014258",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"onderdeel_de.pdf": {
-										"name": "onderdeel_de.pdf",
-										"path": [
-											"AFM",
-											"1980-232561519329241",
-											"DOSSIER-30140327014258",
-											"onderdeel_de.pdf"
-										],
-										"type": "pdf"
-									},
-									"Caribisch_Infobox.txt": {
-										"name": "Caribisch_Infobox.txt",
-										"path": [
-											"AFM",
-											"1980-232561519329241",
-											"DOSSIER-30140327014258",
-											"Caribisch_Infobox.txt"
-										],
-										"type": "txt"
-									},
-									"politie_Saba.txt": {
-										"name": "politie_Saba.txt",
-										"path": [
-											"AFM",
-											"1980-232561519329241",
-											"DOSSIER-30140327014258",
-											"politie_Saba.txt"
-										],
-										"type": "txt"
-									},
-									"Bank_Inlichtingen-.txt": {
-										"name": "Bank_Inlichtingen-.txt",
-										"path": [
-											"AFM",
-											"1980-232561519329241",
-											"DOSSIER-30140327014258",
-											"Bank_Inlichtingen-.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"Unit_en.txt": {
-								"name": "Unit_en.txt",
-								"path": [
-									"AFM",
-									"1980-232561519329241",
-									"Unit_en.txt"
-								],
-								"type": "txt"
-							},
-							"CN_AFM.txt": {
-								"name": "CN_AFM.txt",
-								"path": [
-									"AFM",
-									"1980-232561519329241",
-									"CN_AFM.txt"
-								],
-								"type": "txt"
-							},
-							"Ministerie,_applicatie.txt": {
-								"name": "Ministerie,_applicatie.txt",
-								"path": [
-									"AFM",
-									"1980-232561519329241",
-									"Ministerie,_applicatie.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"1989-11495168426045": {
-						"path": [
-							"AFM",
-							"1989-11495168426045"
-						],
-						"name": "1989-11495168426045",
-						"type": "dir",
-						"dirType": "normal",
-						"children": {
-							"DOSSIER-156572797617368": {
-								"path": [
-									"AFM",
-									"1989-11495168426045",
-									"DOSSIER-156572797617368"
-								],
-								"name": "DOSSIER-156572797617368",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"van_Infobox.pdf": {
-										"name": "van_Infobox.pdf",
-										"path": [
-											"AFM",
-											"1989-11495168426045",
-											"DOSSIER-156572797617368",
-											"van_Infobox.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-2032152499281": {
-								"path": [
-									"AFM",
-									"1989-11495168426045",
-									"DOSSIER-2032152499281"
-								],
-								"name": "DOSSIER-2032152499281",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"CN_BVI.pdf": {
-										"name": "CN_BVI.pdf",
-										"path": [
-											"AFM",
-											"1989-11495168426045",
-											"DOSSIER-2032152499281",
-											"CN_BVI.pdf"
-										],
-										"type": "pdf"
-									},
-									"de_Infobox.txt": {
-										"name": "de_Infobox.txt",
-										"path": [
-											"AFM",
-											"1989-11495168426045",
-											"DOSSIER-2032152499281",
-											"de_Infobox.txt"
-										],
-										"type": "txt"
-									},
-									"A01C_en.txt": {
-										"name": "A01C_en.txt",
-										"path": [
-											"AFM",
-											"1989-11495168426045",
-											"DOSSIER-2032152499281",
-											"A01C_en.txt"
-										],
-										"type": "txt"
-									},
-									"Ontnemingswetgeving_ICT.txt": {
-										"name": "Ontnemingswetgeving_ICT.txt",
-										"path": [
-											"AFM",
-											"1989-11495168426045",
-											"DOSSIER-2032152499281",
-											"Ontnemingswetgeving_ICT.txt"
-										],
-										"type": "txt"
-									},
-									"Leefomgeving_Economische.txt": {
-										"name": "Leefomgeving_Economische.txt",
-										"path": [
-											"AFM",
-											"1989-11495168426045",
-											"DOSSIER-2032152499281",
-											"Leefomgeving_Economische.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-22584168595793": {
-								"path": [
-									"AFM",
-									"1989-11495168426045",
-									"DOSSIER-22584168595793"
-								],
-								"name": "DOSSIER-22584168595793",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"AFM_en.pdf": {
-										"name": "AFM_en.pdf",
-										"path": [
-											"AFM",
-											"1989-11495168426045",
-											"DOSSIER-22584168595793",
-											"AFM_en.pdf"
-										],
-										"type": "pdf"
-									},
-									"organisatie_Landelijke.txt": {
-										"name": "organisatie_Landelijke.txt",
-										"path": [
-											"AFM",
-											"1989-11495168426045",
-											"DOSSIER-22584168595793",
-											"organisatie_Landelijke.txt"
-										],
-										"type": "txt"
-									},
-									"en_het.txt": {
-										"name": "en_het.txt",
-										"path": [
-											"AFM",
-											"1989-11495168426045",
-											"DOSSIER-22584168595793",
-											"en_het.txt"
-										],
-										"type": "txt"
-									},
-									"DLR_Andrea.txt": {
-										"name": "DLR_Andrea.txt",
-										"path": [
-											"AFM",
-											"1989-11495168426045",
-											"DOSSIER-22584168595793",
-											"DLR_Andrea.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-2811125372219": {
-								"path": [
-									"AFM",
-									"1989-11495168426045",
-									"DOSSIER-2811125372219"
-								],
-								"name": "DOSSIER-2811125372219",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Eustatiusen_Infobox.txt": {
-										"name": "Eustatiusen_Infobox.txt",
-										"path": [
-											"AFM",
-											"1989-11495168426045",
-											"DOSSIER-2811125372219",
-											"Eustatiusen_Infobox.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-54052203924363": {
-								"path": [
-									"AFM",
-									"1989-11495168426045",
-									"DOSSIER-54052203924363"
-								],
-								"name": "DOSSIER-54052203924363",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"en_Contraterrorisme.txt": {
-										"name": "en_Contraterrorisme.txt",
-										"path": [
-											"AFM",
-											"1989-11495168426045",
-											"DOSSIER-54052203924363",
-											"en_Contraterrorisme.txt"
-										],
-										"type": "txt"
-									},
-									"Infobox_Financieel.pdf": {
-										"name": "Infobox_Financieel.pdf",
-										"path": [
-											"AFM",
-											"1989-11495168426045",
-											"DOSSIER-54052203924363",
-											"Infobox_Financieel.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"BES_de.txt": {
-								"name": "BES_de.txt",
-								"path": [
-									"AFM",
-									"1989-11495168426045",
-									"BES_de.txt"
-								],
-								"type": "txt"
-							},
-							"FAT_Multidisciplinary.pdf": {
-								"name": "FAT_Multidisciplinary.pdf",
-								"path": [
-									"AFM",
-									"1989-11495168426045",
-									"FAT_Multidisciplinary.pdf"
-								],
-								"type": "pdf"
-							},
-							"van_controle.txt": {
-								"name": "van_controle.txt",
-								"path": [
-									"AFM",
-									"1989-11495168426045",
-									"van_controle.txt"
-								],
-								"type": "txt"
-							},
-							"Inspectie_Criminaliteit.txt": {
-								"name": "Inspectie_Criminaliteit.txt",
-								"path": [
-									"AFM",
-									"1989-11495168426045",
-									"Inspectie_Criminaliteit.txt"
-								],
-								"type": "txt"
-							},
-							"F_EU.pdf": {
-								"name": "F_EU.pdf",
-								"path": [
-									"AFM",
-									"1989-11495168426045",
-									"F_EU.pdf"
-								],
-								"type": "pdf"
-							}
-						}
-					},
-					"1995-28670191353718": {
-						"path": [
-							"AFM",
-							"1995-28670191353718"
-						],
-						"name": "1995-28670191353718",
-						"type": "dir",
-						"dirType": "locked",
-						"children": {
-							"DOSSIER-107222877410502": {
-								"path": [
-									"AFM",
-									"1995-28670191353718",
-									"DOSSIER-107222877410502"
-								],
-								"name": "DOSSIER-107222877410502",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Nederland_Infobox.txt": {
-										"name": "Nederland_Infobox.txt",
-										"path": [
-											"AFM",
-											"1995-28670191353718",
-											"DOSSIER-107222877410502",
-											"Nederland_Infobox.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-187963006726908": {
-								"path": [
-									"AFM",
-									"1995-28670191353718",
-									"DOSSIER-187963006726908"
-								],
-								"name": "DOSSIER-187963006726908",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Sint_Dienst.txt": {
-										"name": "Sint_Dienst.txt",
-										"path": [
-											"AFM",
-											"1995-28670191353718",
-											"DOSSIER-187963006726908",
-											"Sint_Dienst.txt"
-										],
-										"type": "txt"
-									},
-									"uitvoerend_Platform.txt": {
-										"name": "uitvoerend_Platform.txt",
-										"path": [
-											"AFM",
-											"1995-28670191353718",
-											"DOSSIER-187963006726908",
-											"uitvoerend_Platform.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-20090791132432": {
-								"path": [
-									"AFM",
-									"1995-28670191353718",
-									"DOSSIER-20090791132432"
-								],
-								"name": "DOSSIER-20090791132432",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Transport_Money.txt": {
-										"name": "Transport_Money.txt",
-										"path": [
-											"AFM",
-											"1995-28670191353718",
-											"DOSSIER-20090791132432",
-											"Transport_Money.txt"
-										],
-										"type": "txt"
-									},
-									"uitvoerend_applicatie.txt": {
-										"name": "uitvoerend_applicatie.txt",
-										"path": [
-											"AFM",
-											"1995-28670191353718",
-											"DOSSIER-20090791132432",
-											"uitvoerend_applicatie.txt"
-										],
-										"type": "txt"
-									},
-									"van_Financieel.pdf": {
-										"name": "van_Financieel.pdf",
-										"path": [
-											"AFM",
-											"1995-28670191353718",
-											"DOSSIER-20090791132432",
-											"van_Financieel.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-271033017813721": {
-								"path": [
-									"AFM",
-									"1995-28670191353718",
-									"DOSSIER-271033017813721"
-								],
-								"name": "DOSSIER-271033017813721",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"de_Justitieel.pdf": {
-										"name": "de_Justitieel.pdf",
-										"path": [
-											"AFM",
-											"1995-28670191353718",
-											"DOSSIER-271033017813721",
-											"de_Justitieel.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-77082381211165": {
-								"path": [
-									"AFM",
-									"1995-28670191353718",
-									"DOSSIER-77082381211165"
-								],
-								"name": "DOSSIER-77082381211165",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Werk_van.pdf": {
-										"name": "Werk_van.pdf",
-										"path": [
-											"AFM",
-											"1995-28670191353718",
-											"DOSSIER-77082381211165",
-											"Werk_van.pdf"
-										],
-										"type": "pdf"
-									},
-									"gemeente_Transport.pdf": {
-										"name": "gemeente_Transport.pdf",
-										"path": [
-											"AFM",
-											"1995-28670191353718",
-											"DOSSIER-77082381211165",
-											"gemeente_Transport.pdf"
-										],
-										"type": "pdf"
-									},
-									"Infobox_BOOM.txt": {
-										"name": "Infobox_BOOM.txt",
-										"path": [
-											"AFM",
-											"1995-28670191353718",
-											"DOSSIER-77082381211165",
-											"Infobox_BOOM.txt"
-										],
-										"type": "txt"
-									},
-									"Against_de.txt": {
-										"name": "Against_de.txt",
-										"path": [
-											"AFM",
-											"1995-28670191353718",
-											"DOSSIER-77082381211165",
-											"Against_de.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"Programma_Government.pdf": {
-								"name": "Programma_Government.pdf",
-								"path": [
-									"AFM",
-									"1995-28670191353718",
-									"Programma_Government.pdf"
-								],
-								"type": "pdf"
-							},
-							"Criminaliteit_DWI.txt": {
-								"name": "Criminaliteit_DWI.txt",
-								"path": [
-									"AFM",
-									"1995-28670191353718",
-									"Criminaliteit_DWI.txt"
-								],
-								"type": "txt"
-							},
-							"EC_BES.txt": {
-								"name": "EC_BES.txt",
-								"path": [
-									"AFM",
-									"1995-28670191353718",
-									"EC_BES.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"2015-54811291623709": {
-						"path": [
-							"AFM",
-							"2015-54811291623709"
-						],
-						"name": "2015-54811291623709",
-						"type": "dir",
-						"dirType": "normal",
-						"children": {
-							"DOSSIER-124462146912021": {
-								"path": [
-									"AFM",
-									"2015-54811291623709",
-									"DOSSIER-124462146912021"
-								],
-								"name": "DOSSIER-124462146912021",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"Inkomen,_.pdf": {
-										"name": "Inkomen,_.pdf",
-										"path": [
-											"AFM",
-											"2015-54811291623709",
-											"DOSSIER-124462146912021",
-											"Inkomen,_.pdf"
-										],
-										"type": "pdf"
-									},
-									"en_Intelligence.txt": {
-										"name": "en_Intelligence.txt",
-										"path": [
-											"AFM",
-											"2015-54811291623709",
-											"DOSSIER-124462146912021",
-											"en_Intelligence.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-208582905810021": {
-								"path": [
-									"AFM",
-									"2015-54811291623709",
-									"DOSSIER-208582905810021"
-								],
-								"name": "DOSSIER-208582905810021",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"CT_Autoriteit.pdf": {
-										"name": "CT_Autoriteit.pdf",
-										"path": [
-											"AFM",
-											"2015-54811291623709",
-											"DOSSIER-208582905810021",
-											"CT_Autoriteit.pdf"
-										],
-										"type": "pdf"
-									},
-									"FinanciÃ«le_Unie.txt": {
-										"name": "FinanciÃ«le_Unie.txt",
-										"path": [
-											"AFM",
-											"2015-54811291623709",
-											"DOSSIER-208582905810021",
-											"FinanciÃ«le_Unie.txt"
-										],
-										"type": "txt"
-									},
-									"ILTIOD_FinanciÃ«le.txt": {
-										"name": "ILTIOD_FinanciÃ«le.txt",
-										"path": [
-											"AFM",
-											"2015-54811291623709",
-											"DOSSIER-208582905810021",
-											"ILTIOD_FinanciÃ«le.txt"
-										],
-										"type": "txt"
-									},
-									"Europese_EMM.txt": {
-										"name": "Europese_EMM.txt",
-										"path": [
-											"AFM",
-											"2015-54811291623709",
-											"DOSSIER-208582905810021",
-											"Europese_EMM.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-210051573924832": {
-								"path": [
-									"AFM",
-									"2015-54811291623709",
-									"DOSSIER-210051573924832"
-								],
-								"name": "DOSSIER-210051573924832",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"de_Government.txt": {
-										"name": "de_Government.txt",
-										"path": [
-											"AFM",
-											"2015-54811291623709",
-											"DOSSIER-210051573924832",
-											"de_Government.txt"
-										],
-										"type": "txt"
-									},
-									"onderdeel_Bank.txt": {
-										"name": "onderdeel_Bank.txt",
-										"path": [
-											"AFM",
-											"2015-54811291623709",
-											"DOSSIER-210051573924832",
-											"onderdeel_Bank.txt"
-										],
-										"type": "txt"
-									},
-									"Incasso_Unie.txt": {
-										"name": "Incasso_Unie.txt",
-										"path": [
-											"AFM",
-											"2015-54811291623709",
-											"DOSSIER-210051573924832",
-											"Incasso_Unie.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-270543105811412": {
-								"path": [
-									"AFM",
-									"2015-54811291623709",
-									"DOSSIER-270543105811412"
-								],
-								"name": "DOSSIER-270543105811412",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"Inkomen,_Infobox.txt": {
-										"name": "Inkomen,_Infobox.txt",
-										"path": [
-											"AFM",
-											"2015-54811291623709",
-											"DOSSIER-270543105811412",
-											"Inkomen,_Infobox.txt"
-										],
-										"type": "txt"
-									},
-									"team_Inkomen,.pdf": {
-										"name": "team_Inkomen,.pdf",
-										"path": [
-											"AFM",
-											"2015-54811291623709",
-											"DOSSIER-270543105811412",
-											"team_Inkomen,.pdf"
-										],
-										"type": "pdf"
-									},
-									"Ontnemingswetgeving_Criminal.txt": {
-										"name": "Ontnemingswetgeving_Criminal.txt",
-										"path": [
-											"AFM",
-											"2015-54811291623709",
-											"DOSSIER-270543105811412",
-											"Ontnemingswetgeving_Criminal.txt"
-										],
-										"type": "txt"
-									},
-									"GoAML_de.txt": {
-										"name": "GoAML_de.txt",
-										"path": [
-											"AFM",
-											"2015-54811291623709",
-											"DOSSIER-270543105811412",
-											"GoAML_de.txt"
-										],
-										"type": "txt"
-									},
-									"Saba_door.txt": {
-										"name": "Saba_door.txt",
-										"path": [
-											"AFM",
-											"2015-54811291623709",
-											"DOSSIER-270543105811412",
-											"Saba_door.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-29627233283490": {
-								"path": [
-									"AFM",
-									"2015-54811291623709",
-									"DOSSIER-29627233283490"
-								],
-								"name": "DOSSIER-29627233283490",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"de_een.txt": {
-										"name": "de_een.txt",
-										"path": [
-											"AFM",
-											"2015-54811291623709",
-											"DOSSIER-29627233283490",
-											"de_een.txt"
-										],
-										"type": "txt"
-									},
-									"de_Inlichtingen-.txt": {
-										"name": "de_Inlichtingen-.txt",
-										"path": [
-											"AFM",
-											"2015-54811291623709",
-											"DOSSIER-29627233283490",
-											"de_Inlichtingen-.txt"
-										],
-										"type": "txt"
-									},
-									"de_Administratieve.pdf": {
-										"name": "de_Administratieve.pdf",
-										"path": [
-											"AFM",
-											"2015-54811291623709",
-											"DOSSIER-29627233283490",
-											"de_Administratieve.pdf"
-										],
-										"type": "pdf"
-									},
-									"en_door.txt": {
-										"name": "en_door.txt",
-										"path": [
-											"AFM",
-											"2015-54811291623709",
-											"DOSSIER-29627233283490",
-											"en_door.txt"
-										],
-										"type": "txt"
-									},
-									"Informatie,_Against.pdf": {
-										"name": "Informatie,_Against.pdf",
-										"path": [
-											"AFM",
-											"2015-54811291623709",
-											"DOSSIER-29627233283490",
-											"Informatie,_Against.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"BFT_Mensensmokkel.txt": {
-								"name": "BFT_Mensensmokkel.txt",
-								"path": [
-									"AFM",
-									"2015-54811291623709",
-									"BFT_Mensensmokkel.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"onderdeel_&.txt": {
-						"name": "onderdeel_&.txt",
-						"path": [
-							"AFM",
-							"onderdeel_&.txt"
-						],
-						"type": "txt"
-					},
-					"Markten_&.txt": {
-						"name": "Markten_&.txt",
-						"path": [
-							"AFM",
-							"Markten_&.txt"
-						],
-						"type": "txt"
-					},
-					"Autoriteit_team.pdf": {
-						"name": "Autoriteit_team.pdf",
-						"path": [
-							"AFM",
-							"Autoriteit_team.pdf"
-						],
-						"type": "pdf"
-					},
-					"Financial_en.pdf": {
-						"name": "Financial_en.pdf",
-						"path": [
-							"AFM",
-							"Financial_en.pdf"
-						],
-						"type": "pdf"
-					},
-					"Opsporingsdienst_de.txt": {
-						"name": "Opsporingsdienst_de.txt",
-						"path": [
-							"AFM",
-							"Opsporingsdienst_de.txt"
-						],
-						"type": "txt"
-					}
-				}
-			},
-			"CN": {
-				"path": [
-					"CN"
-				],
-				"name": "CN",
-				"type": "dir",
-				"dirType": "normal",
-				"children": {
-					"1964-26242248384350": {
-						"path": [
-							"CN",
-							"1964-26242248384350"
-						],
-						"name": "1964-26242248384350",
-						"type": "dir",
-						"dirType": "normal",
-						"children": {
-							"DOSSIER-123462279913131": {
-								"path": [
-									"CN",
-									"1964-26242248384350",
-									"DOSSIER-123462279913131"
-								],
-								"name": "DOSSIER-123462279913131",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Sint_Bank.txt": {
-										"name": "Sint_Bank.txt",
-										"path": [
-											"CN",
-											"1964-26242248384350",
-											"DOSSIER-123462279913131",
-											"Sint_Bank.txt"
-										],
-										"type": "txt"
-									},
-									"Opsporingsdienst_EU.txt": {
-										"name": "Opsporingsdienst_EU.txt",
-										"path": [
-											"CN",
-											"1964-26242248384350",
-											"DOSSIER-123462279913131",
-											"Opsporingsdienst_EU.txt"
-										],
-										"type": "txt"
-									},
-									"A01C_en.pdf": {
-										"name": "A01C_en.pdf",
-										"path": [
-											"CN",
-											"1964-26242248384350",
-											"DOSSIER-123462279913131",
-											"A01C_en.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-14508213919931": {
-								"path": [
-									"CN",
-									"1964-26242248384350",
-									"DOSSIER-14508213919931"
-								],
-								"name": "DOSSIER-14508213919931",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Rotterdam_BOOM.pdf": {
-										"name": "Rotterdam_BOOM.pdf",
-										"path": [
-											"CN",
-											"1964-26242248384350",
-											"DOSSIER-14508213919931",
-											"Rotterdam_BOOM.pdf"
-										],
-										"type": "pdf"
-									},
-									"Centre,_Bureau.pdf": {
-										"name": "Centre,_Bureau.pdf",
-										"path": [
-											"CN",
-											"1964-26242248384350",
-											"DOSSIER-14508213919931",
-											"Centre,_Bureau.pdf"
-										],
-										"type": "pdf"
-									},
-									"orgaan_Landelijke.txt": {
-										"name": "orgaan_Landelijke.txt",
-										"path": [
-											"CN",
-											"1964-26242248384350",
-											"DOSSIER-14508213919931",
-											"orgaan_Landelijke.txt"
-										],
-										"type": "txt"
-									},
-									"Money_en.txt": {
-										"name": "Money_en.txt",
-										"path": [
-											"CN",
-											"1964-26242248384350",
-											"DOSSIER-14508213919931",
-											"Money_en.txt"
-										],
-										"type": "txt"
-									},
-									"de_Bank.txt": {
-										"name": "de_Bank.txt",
-										"path": [
-											"CN",
-											"1964-26242248384350",
-											"DOSSIER-14508213919931",
-											"de_Bank.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-156962579125244": {
-								"path": [
-									"CN",
-									"1964-26242248384350",
-									"DOSSIER-156962579125244"
-								],
-								"name": "DOSSIER-156962579125244",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Crimineel_Basisvoorziening.txt": {
-										"name": "Crimineel_Basisvoorziening.txt",
-										"path": [
-											"CN",
-											"1964-26242248384350",
-											"DOSSIER-156962579125244",
-											"Crimineel_Basisvoorziening.txt"
-										],
-										"type": "txt"
-									},
-									"Caribisch_Werk.txt": {
-										"name": "Caribisch_Werk.txt",
-										"path": [
-											"CN",
-											"1964-26242248384350",
-											"DOSSIER-156962579125244",
-											"Caribisch_Werk.txt"
-										],
-										"type": "txt"
-									},
-									"Economische_en.txt": {
-										"name": "Economische_en.txt",
-										"path": [
-											"CN",
-											"1964-26242248384350",
-											"DOSSIER-156962579125244",
-											"Economische_en.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-25788640911971": {
-								"path": [
-									"CN",
-									"1964-26242248384350",
-									"DOSSIER-25788640911971"
-								],
-								"name": "DOSSIER-25788640911971",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"de_van.txt": {
-										"name": "de_van.txt",
-										"path": [
-											"CN",
-											"1964-26242248384350",
-											"DOSSIER-25788640911971",
-											"de_van.txt"
-										],
-										"type": "txt"
-									},
-									"onderdeel_Ministerie,.txt": {
-										"name": "onderdeel_Ministerie,.txt",
-										"path": [
-											"CN",
-											"1964-26242248384350",
-											"DOSSIER-25788640911971",
-											"onderdeel_Ministerie,.txt"
-										],
-										"type": "txt"
-									},
-									"CWI_interne.txt": {
-										"name": "CWI_interne.txt",
-										"path": [
-											"CN",
-											"1964-26242248384350",
-											"DOSSIER-25788640911971",
-											"CWI_interne.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-725252387285": {
-								"path": [
-									"CN",
-									"1964-26242248384350",
-									"DOSSIER-725252387285"
-								],
-								"name": "DOSSIER-725252387285",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"OM_applicatie.txt": {
-										"name": "OM_applicatie.txt",
-										"path": [
-											"CN",
-											"1964-26242248384350",
-											"DOSSIER-725252387285",
-											"OM_applicatie.txt"
-										],
-										"type": "txt"
-									},
-									"Andrea_DNB.txt": {
-										"name": "Andrea_DNB.txt",
-										"path": [
-											"CN",
-											"1964-26242248384350",
-											"DOSSIER-725252387285",
-											"Andrea_DNB.txt"
-										],
-										"type": "txt"
-									},
-									"Toezicht_Force.txt": {
-										"name": "Toezicht_Force.txt",
-										"path": [
-											"CN",
-											"1964-26242248384350",
-											"DOSSIER-725252387285",
-											"Toezicht_Force.txt"
-										],
-										"type": "txt"
-									},
-									"Economische_Nederland:.txt": {
-										"name": "Economische_Nederland:.txt",
-										"path": [
-											"CN",
-											"1964-26242248384350",
-											"DOSSIER-725252387285",
-											"Economische_Nederland:.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"CWI_UNODC.txt": {
-								"name": "CWI_UNODC.txt",
-								"path": [
-									"CN",
-									"1964-26242248384350",
-									"CWI_UNODC.txt"
-								],
-								"type": "txt"
-							},
-							"Expertisecentrum_Contraterrorisme.pdf": {
-								"name": "Expertisecentrum_Contraterrorisme.pdf",
-								"path": [
-									"CN",
-									"1964-26242248384350",
-									"Expertisecentrum_Contraterrorisme.pdf"
-								],
-								"type": "pdf"
-							},
-							"de_de.pdf": {
-								"name": "de_de.pdf",
-								"path": [
-									"CN",
-									"1964-26242248384350",
-									"de_de.pdf"
-								],
-								"type": "pdf"
-							}
-						}
-					},
-					"1966-276891020823050": {
-						"path": [
-							"CN",
-							"1966-276891020823050"
-						],
-						"name": "1966-276891020823050",
-						"type": "dir",
-						"dirType": "archive",
-						"children": {
-							"DOSSIER-18413208417249": {
-								"path": [
-									"CN",
-									"1966-276891020823050",
-									"DOSSIER-18413208417249"
-								],
-								"name": "DOSSIER-18413208417249",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"EU_Landelijke.txt": {
-										"name": "EU_Landelijke.txt",
-										"path": [
-											"CN",
-											"1966-276891020823050",
-											"DOSSIER-18413208417249",
-											"EU_Landelijke.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-185041823410509": {
-								"path": [
-									"CN",
-									"1966-276891020823050",
-									"DOSSIER-185041823410509"
-								],
-								"name": "DOSSIER-185041823410509",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"EU_de.txt": {
-										"name": "EU_de.txt",
-										"path": [
-											"CN",
-											"1966-276891020823050",
-											"DOSSIER-185041823410509",
-											"EU_de.txt"
-										],
-										"type": "txt"
-									},
-									"Transport_van.txt": {
-										"name": "Transport_van.txt",
-										"path": [
-											"CN",
-											"1966-276891020823050",
-											"DOSSIER-185041823410509",
-											"Transport_van.txt"
-										],
-										"type": "txt"
-									},
-									"Financieel_van.txt": {
-										"name": "Financieel_van.txt",
-										"path": [
-											"CN",
-											"1966-276891020823050",
-											"DOSSIER-185041823410509",
-											"Financieel_van.txt"
-										],
-										"type": "txt"
-									},
-									"Eustatiusen_Programma.txt": {
-										"name": "Eustatiusen_Programma.txt",
-										"path": [
-											"CN",
-											"1966-276891020823050",
-											"DOSSIER-185041823410509",
-											"Eustatiusen_Programma.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-312492146110331": {
-								"path": [
-									"CN",
-									"1966-276891020823050",
-									"DOSSIER-312492146110331"
-								],
-								"name": "DOSSIER-312492146110331",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"onderdeel_Unie.txt": {
-										"name": "onderdeel_Unie.txt",
-										"path": [
-											"CN",
-											"1966-276891020823050",
-											"DOSSIER-312492146110331",
-											"onderdeel_Unie.txt"
-										],
-										"type": "txt"
-									},
-									"FinEC_Sint.txt": {
-										"name": "FinEC_Sint.txt",
-										"path": [
-											"CN",
-											"1966-276891020823050",
-											"DOSSIER-312492146110331",
-											"FinEC_Sint.txt"
-										],
-										"type": "txt"
-									},
-									"Openbaar_FIOD.txt": {
-										"name": "Openbaar_FIOD.txt",
-										"path": [
-											"CN",
-											"1966-276891020823050",
-											"DOSSIER-312492146110331",
-											"Openbaar_FIOD.txt"
-										],
-										"type": "txt"
-									},
-									"Openbaar_Vermogen.pdf": {
-										"name": "Openbaar_Vermogen.pdf",
-										"path": [
-											"CN",
-											"1966-276891020823050",
-											"DOSSIER-312492146110331",
-											"Openbaar_Vermogen.pdf"
-										],
-										"type": "pdf"
-									},
-									"Centraal_en.pdf": {
-										"name": "Centraal_en.pdf",
-										"path": [
-											"CN",
-											"1966-276891020823050",
-											"DOSSIER-312492146110331",
-											"Centraal_en.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-46271805724874": {
-								"path": [
-									"CN",
-									"1966-276891020823050",
-									"DOSSIER-46271805724874"
-								],
-								"name": "DOSSIER-46271805724874",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Contraterrorisme_Bonaire..pdf": {
-										"name": "Contraterrorisme_Bonaire..pdf",
-										"path": [
-											"CN",
-											"1966-276891020823050",
-											"DOSSIER-46271805724874",
-											"Contraterrorisme_Bonaire..pdf"
-										],
-										"type": "pdf"
-									},
-									"de_Inlichtingen-.txt": {
-										"name": "de_Inlichtingen-.txt",
-										"path": [
-											"CN",
-											"1966-276891020823050",
-											"DOSSIER-46271805724874",
-											"de_Inlichtingen-.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-8681149048542": {
-								"path": [
-									"CN",
-									"1966-276891020823050",
-									"DOSSIER-8681149048542"
-								],
-								"name": "DOSSIER-8681149048542",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Sint_FIOD.txt": {
-										"name": "Sint_FIOD.txt",
-										"path": [
-											"CN",
-											"1966-276891020823050",
-											"DOSSIER-8681149048542",
-											"Sint_FIOD.txt"
-										],
-										"type": "txt"
-									},
-									"de_EC.pdf": {
-										"name": "de_EC.pdf",
-										"path": [
-											"CN",
-											"1966-276891020823050",
-											"DOSSIER-8681149048542",
-											"de_EC.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"Commissie,_Inkomen,.pdf": {
-								"name": "Commissie,_Inkomen,.pdf",
-								"path": [
-									"CN",
-									"1966-276891020823050",
-									"Commissie,_Inkomen,.pdf"
-								],
-								"type": "pdf"
-							},
-							"CT_van.pdf": {
-								"name": "CT_van.pdf",
-								"path": [
-									"CN",
-									"1966-276891020823050",
-									"CT_van.pdf"
-								],
-								"type": "pdf"
-							},
-							"team_CTEPF.pdf": {
-								"name": "team_CTEPF.pdf",
-								"path": [
-									"CN",
-									"1966-276891020823050",
-									"team_CTEPF.pdf"
-								],
-								"type": "pdf"
-							},
-							"F_de.pdf": {
-								"name": "F_de.pdf",
-								"path": [
-									"CN",
-									"1966-276891020823050",
-									"F_de.pdf"
-								],
-								"type": "pdf"
-							}
-						}
-					},
-					"1969-80442550216712": {
-						"path": [
-							"CN",
-							"1969-80442550216712"
-						],
-						"name": "1969-80442550216712",
-						"type": "dir",
-						"dirType": "archive",
-						"children": {
-							"DOSSIER-111212578619356": {
-								"path": [
-									"CN",
-									"1969-80442550216712",
-									"DOSSIER-111212578619356"
-								],
-								"name": "DOSSIER-111212578619356",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Force_Werk.txt": {
-										"name": "Force_Werk.txt",
-										"path": [
-											"CN",
-											"1969-80442550216712",
-											"DOSSIER-111212578619356",
-											"Force_Werk.txt"
-										],
-										"type": "txt"
-									},
-									"Andrea_en.pdf": {
-										"name": "Andrea_en.pdf",
-										"path": [
-											"CN",
-											"1969-80442550216712",
-											"DOSSIER-111212578619356",
-											"Andrea_en.pdf"
-										],
-										"type": "pdf"
-									},
-									"proliferatiefmanciering._organisatie.pdf": {
-										"name": "proliferatiefmanciering._organisatie.pdf",
-										"path": [
-											"CN",
-											"1969-80442550216712",
-											"DOSSIER-111212578619356",
-											"proliferatiefmanciering._organisatie.pdf"
-										],
-										"type": "pdf"
-									},
-									"European_Platform.txt": {
-										"name": "European_Platform.txt",
-										"path": [
-											"CN",
-											"1969-80442550216712",
-											"DOSSIER-111212578619356",
-											"European_Platform.txt"
-										],
-										"type": "txt"
-									},
-									"Caribisch_FAT.pdf": {
-										"name": "Caribisch_FAT.pdf",
-										"path": [
-											"CN",
-											"1969-80442550216712",
-											"DOSSIER-111212578619356",
-											"Caribisch_FAT.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-145391542427215": {
-								"path": [
-									"CN",
-									"1969-80442550216712",
-									"DOSSIER-145391542427215"
-								],
-								"name": "DOSSIER-145391542427215",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"politie_EC.txt": {
-										"name": "politie_EC.txt",
-										"path": [
-											"CN",
-											"1969-80442550216712",
-											"DOSSIER-145391542427215",
-											"politie_EC.txt"
-										],
-										"type": "txt"
-									},
-									"Ministerie,_Informatie,.txt": {
-										"name": "Ministerie,_Informatie,.txt",
-										"path": [
-											"CN",
-											"1969-80442550216712",
-											"DOSSIER-145391542427215",
-											"Ministerie,_Informatie,.txt"
-										],
-										"type": "txt"
-									},
-									"interne_Landelijke.pdf": {
-										"name": "interne_Landelijke.pdf",
-										"path": [
-											"CN",
-											"1969-80442550216712",
-											"DOSSIER-145391542427215",
-											"interne_Landelijke.pdf"
-										],
-										"type": "pdf"
-									},
-									"DWI_Opsporingsdienst.pdf": {
-										"name": "DWI_Opsporingsdienst.pdf",
-										"path": [
-											"CN",
-											"1969-80442550216712",
-											"DOSSIER-145391542427215",
-											"DWI_Opsporingsdienst.pdf"
-										],
-										"type": "pdf"
-									},
-									"Laundering_proliferatiefmanciering..pdf": {
-										"name": "Laundering_proliferatiefmanciering..pdf",
-										"path": [
-											"CN",
-											"1969-80442550216712",
-											"DOSSIER-145391542427215",
-											"Laundering_proliferatiefmanciering..pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-20920614629407": {
-								"path": [
-									"CN",
-									"1969-80442550216712",
-									"DOSSIER-20920614629407"
-								],
-								"name": "DOSSIER-20920614629407",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Unie_Bureau.pdf": {
-										"name": "Unie_Bureau.pdf",
-										"path": [
-											"CN",
-											"1969-80442550216712",
-											"DOSSIER-20920614629407",
-											"Unie_Bureau.pdf"
-										],
-										"type": "pdf"
-									},
-									"Opsporingsdienst_EMM.txt": {
-										"name": "Opsporingsdienst_EMM.txt",
-										"path": [
-											"CN",
-											"1969-80442550216712",
-											"DOSSIER-20920614629407",
-											"Opsporingsdienst_EMM.txt"
-										],
-										"type": "txt"
-									},
-									"Bureau_een.pdf": {
-										"name": "Bureau_een.pdf",
-										"path": [
-											"CN",
-											"1969-80442550216712",
-											"DOSSIER-20920614629407",
-											"Bureau_een.pdf"
-										],
-										"type": "pdf"
-									},
-									"andrea_FP.txt": {
-										"name": "andrea_FP.txt",
-										"path": [
-											"CN",
-											"1969-80442550216712",
-											"DOSSIER-20920614629407",
-											"andrea_FP.txt"
-										],
-										"type": "txt"
-									},
-									"van_interne.pdf": {
-										"name": "van_interne.pdf",
-										"path": [
-											"CN",
-											"1969-80442550216712",
-											"DOSSIER-20920614629407",
-											"van_interne.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-4337279907485": {
-								"path": [
-									"CN",
-									"1969-80442550216712",
-									"DOSSIER-4337279907485"
-								],
-								"name": "DOSSIER-4337279907485",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Bureau_Anti-Money.pdf": {
-										"name": "Bureau_Anti-Money.pdf",
-										"path": [
-											"CN",
-											"1969-80442550216712",
-											"DOSSIER-4337279907485",
-											"Bureau_Anti-Money.pdf"
-										],
-										"type": "pdf"
-									},
-									"Centrum_FinEC.txt": {
-										"name": "Centrum_FinEC.txt",
-										"path": [
-											"CN",
-											"1969-80442550216712",
-											"DOSSIER-4337279907485",
-											"Centrum_FinEC.txt"
-										],
-										"type": "txt"
-									},
-									"Amsterdam_controle.txt": {
-										"name": "Amsterdam_controle.txt",
-										"path": [
-											"CN",
-											"1969-80442550216712",
-											"DOSSIER-4337279907485",
-											"Amsterdam_controle.txt"
-										],
-										"type": "txt"
-									},
-									"EU_Incasso.txt": {
-										"name": "EU_Incasso.txt",
-										"path": [
-											"CN",
-											"1969-80442550216712",
-											"DOSSIER-4337279907485",
-											"EU_Incasso.txt"
-										],
-										"type": "txt"
-									},
-									"Against_politie.txt": {
-										"name": "Against_politie.txt",
-										"path": [
-											"CN",
-											"1969-80442550216712",
-											"DOSSIER-4337279907485",
-											"Against_politie.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-8468129115492": {
-								"path": [
-									"CN",
-									"1969-80442550216712",
-									"DOSSIER-8468129115492"
-								],
-								"name": "DOSSIER-8468129115492",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Caribisch_Against.txt": {
-										"name": "Caribisch_Against.txt",
-										"path": [
-											"CN",
-											"1969-80442550216712",
-											"DOSSIER-8468129115492",
-											"Caribisch_Against.txt"
-										],
-										"type": "txt"
-									},
-									"EU_Leefomgeving.pdf": {
-										"name": "EU_Leefomgeving.pdf",
-										"path": [
-											"CN",
-											"1969-80442550216712",
-											"DOSSIER-8468129115492",
-											"EU_Leefomgeving.pdf"
-										],
-										"type": "pdf"
-									},
-									"Crimineel_Task.txt": {
-										"name": "Crimineel_Task.txt",
-										"path": [
-											"CN",
-											"1969-80442550216712",
-											"DOSSIER-8468129115492",
-											"Crimineel_Task.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"_interne.txt": {
-								"name": "_interne.txt",
-								"path": [
-									"CN",
-									"1969-80442550216712",
-									"_interne.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"1971-90562124524937": {
-						"path": [
-							"CN",
-							"1971-90562124524937"
-						],
-						"name": "1971-90562124524937",
-						"type": "dir",
-						"dirType": "archive",
-						"children": {
-							"DOSSIER-160891699227588": {
-								"path": [
-									"CN",
-									"1971-90562124524937",
-									"DOSSIER-160891699227588"
-								],
-								"name": "DOSSIER-160891699227588",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"team_gebouwd.txt": {
-										"name": "team_gebouwd.txt",
-										"path": [
-											"CN",
-											"1971-90562124524937",
-											"DOSSIER-160891699227588",
-											"team_gebouwd.txt"
-										],
-										"type": "txt"
-									},
-									"Openbaar_de.txt": {
-										"name": "Openbaar_de.txt",
-										"path": [
-											"CN",
-											"1971-90562124524937",
-											"DOSSIER-160891699227588",
-											"Openbaar_de.txt"
-										],
-										"type": "txt"
-									},
-									"Caribisch_Bureau.txt": {
-										"name": "Caribisch_Bureau.txt",
-										"path": [
-											"CN",
-											"1971-90562124524937",
-											"DOSSIER-160891699227588",
-											"Caribisch_Bureau.txt"
-										],
-										"type": "txt"
-									},
-									"Sint_GoAML.txt": {
-										"name": "Sint_GoAML.txt",
-										"path": [
-											"CN",
-											"1971-90562124524937",
-											"DOSSIER-160891699227588",
-											"Sint_GoAML.txt"
-										],
-										"type": "txt"
-									},
-									"European_onderdeel.txt": {
-										"name": "European_onderdeel.txt",
-										"path": [
-											"CN",
-											"1971-90562124524937",
-											"DOSSIER-160891699227588",
-											"European_onderdeel.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-166802316524768": {
-								"path": [
-									"CN",
-									"1971-90562124524937",
-									"DOSSIER-166802316524768"
-								],
-								"name": "DOSSIER-166802316524768",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"gebouwd_FinanciÃ«le.txt": {
-										"name": "gebouwd_FinanciÃ«le.txt",
-										"path": [
-											"CN",
-											"1971-90562124524937",
-											"DOSSIER-166802316524768",
-											"gebouwd_FinanciÃ«le.txt"
-										],
-										"type": "txt"
-									},
-									"Platform_Ontnemingswetgeving.txt": {
-										"name": "Platform_Ontnemingswetgeving.txt",
-										"path": [
-											"CN",
-											"1971-90562124524937",
-											"DOSSIER-166802316524768",
-											"Platform_Ontnemingswetgeving.txt"
-										],
-										"type": "txt"
-									},
-									"Transport_van.txt": {
-										"name": "Transport_van.txt",
-										"path": [
-											"CN",
-											"1971-90562124524937",
-											"DOSSIER-166802316524768",
-											"Transport_van.txt"
-										],
-										"type": "txt"
-									},
-									"onderdeel_Functioneel.pdf": {
-										"name": "onderdeel_Functioneel.pdf",
-										"path": [
-											"CN",
-											"1971-90562124524937",
-											"DOSSIER-166802316524768",
-											"onderdeel_Functioneel.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-20301827110482": {
-								"path": [
-									"CN",
-									"1971-90562124524937",
-									"DOSSIER-20301827110482"
-								],
-								"name": "DOSSIER-20301827110482",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"en_Money.txt": {
-										"name": "en_Money.txt",
-										"path": [
-											"CN",
-											"1971-90562124524937",
-											"DOSSIER-20301827110482",
-											"en_Money.txt"
-										],
-										"type": "txt"
-									},
-									"van_en.txt": {
-										"name": "van_en.txt",
-										"path": [
-											"CN",
-											"1971-90562124524937",
-											"DOSSIER-20301827110482",
-											"van_en.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-88471904523784": {
-								"path": [
-									"CN",
-									"1971-90562124524937",
-									"DOSSIER-88471904523784"
-								],
-								"name": "DOSSIER-88471904523784",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"AMLC_Vermogen.txt": {
-										"name": "AMLC_Vermogen.txt",
-										"path": [
-											"CN",
-											"1971-90562124524937",
-											"DOSSIER-88471904523784",
-											"AMLC_Vermogen.txt"
-										],
-										"type": "txt"
-									},
-									"AFM_Incasso.txt": {
-										"name": "AFM_Incasso.txt",
-										"path": [
-											"CN",
-											"1971-90562124524937",
-											"DOSSIER-88471904523784",
-											"AFM_Incasso.txt"
-										],
-										"type": "txt"
-									},
-									"Bank_het.txt": {
-										"name": "Bank_het.txt",
-										"path": [
-											"CN",
-											"1971-90562124524937",
-											"DOSSIER-88471904523784",
-											"Bank_het.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-902248267635": {
-								"path": [
-									"CN",
-									"1971-90562124524937",
-									"DOSSIER-902248267635"
-								],
-								"name": "DOSSIER-902248267635",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Multidisciplinary_binnen.pdf": {
-										"name": "Multidisciplinary_binnen.pdf",
-										"path": [
-											"CN",
-											"1971-90562124524937",
-											"DOSSIER-902248267635",
-											"Multidisciplinary_binnen.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"A01C_Leefomgeving.pdf": {
-								"name": "A01C_Leefomgeving.pdf",
-								"path": [
-									"CN",
-									"1971-90562124524937",
-									"A01C_Leefomgeving.pdf"
-								],
-								"type": "pdf"
-							},
-							"Functioneel_door.txt": {
-								"name": "Functioneel_door.txt",
-								"path": [
-									"CN",
-									"1971-90562124524937",
-									"Functioneel_door.txt"
-								],
-								"type": "txt"
-							},
-							"BFT_CN.txt": {
-								"name": "BFT_CN.txt",
-								"path": [
-									"CN",
-									"1971-90562124524937",
-									"BFT_CN.txt"
-								],
-								"type": "txt"
-							},
-							"OM_Centrum.txt": {
-								"name": "OM_Centrum.txt",
-								"path": [
-									"CN",
-									"1971-90562124524937",
-									"OM_Centrum.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"1992-6235212113205": {
-						"path": [
-							"CN",
-							"1992-6235212113205"
-						],
-						"name": "1992-6235212113205",
-						"type": "dir",
-						"dirType": "normal",
-						"children": {
-							"DOSSIER-1131549343424": {
-								"path": [
-									"CN",
-									"1992-6235212113205",
-									"DOSSIER-1131549343424"
-								],
-								"name": "DOSSIER-1131549343424",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"Landelijke_andrea.txt": {
-										"name": "Landelijke_andrea.txt",
-										"path": [
-											"CN",
-											"1992-6235212113205",
-											"DOSSIER-1131549343424",
-											"Landelijke_andrea.txt"
-										],
-										"type": "txt"
-									},
-									"Werk_Opsporingsdienst.txt": {
-										"name": "Werk_Opsporingsdienst.txt",
-										"path": [
-											"CN",
-											"1992-6235212113205",
-											"DOSSIER-1131549343424",
-											"Werk_Opsporingsdienst.txt"
-										],
-										"type": "txt"
-									},
-									"BOOM_Financieel.txt": {
-										"name": "BOOM_Financieel.txt",
-										"path": [
-											"CN",
-											"1992-6235212113205",
-											"DOSSIER-1131549343424",
-											"BOOM_Financieel.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-12516226864585": {
-								"path": [
-									"CN",
-									"1992-6235212113205",
-									"DOSSIER-12516226864585"
-								],
-								"name": "DOSSIER-12516226864585",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"Money_European.txt": {
-										"name": "Money_European.txt",
-										"path": [
-											"CN",
-											"1992-6235212113205",
-											"DOSSIER-12516226864585",
-											"Money_European.txt"
-										],
-										"type": "txt"
-									},
-									"EC_Contraterrorisme.pdf": {
-										"name": "EC_Contraterrorisme.pdf",
-										"path": [
-											"CN",
-											"1992-6235212113205",
-											"DOSSIER-12516226864585",
-											"EC_Contraterrorisme.pdf"
-										],
-										"type": "pdf"
-									},
-									"Bureau_Andrea.pdf": {
-										"name": "Bureau_Andrea.pdf",
-										"path": [
-											"CN",
-											"1992-6235212113205",
-											"DOSSIER-12516226864585",
-											"Bureau_Andrea.pdf"
-										],
-										"type": "pdf"
-									},
-									"en_een.txt": {
-										"name": "en_een.txt",
-										"path": [
-											"CN",
-											"1992-6235212113205",
-											"DOSSIER-12516226864585",
-											"en_een.txt"
-										],
-										"type": "txt"
-									},
-									"Inspectie_Action.txt": {
-										"name": "Inspectie_Action.txt",
-										"path": [
-											"CN",
-											"1992-6235212113205",
-											"DOSSIER-12516226864585",
-											"Inspectie_Action.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-246122980425608": {
-								"path": [
-									"CN",
-									"1992-6235212113205",
-									"DOSSIER-246122980425608"
-								],
-								"name": "DOSSIER-246122980425608",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"Infobox_Nederland.pdf": {
-										"name": "Infobox_Nederland.pdf",
-										"path": [
-											"CN",
-											"1992-6235212113205",
-											"DOSSIER-246122980425608",
-											"Infobox_Nederland.pdf"
-										],
-										"type": "pdf"
-									},
-									"Andrea_Criminal.txt": {
-										"name": "Andrea_Criminal.txt",
-										"path": [
-											"CN",
-											"1992-6235212113205",
-											"DOSSIER-246122980425608",
-											"Andrea_Criminal.txt"
-										],
-										"type": "txt"
-									},
-									"European_Eenheid.txt": {
-										"name": "European_Eenheid.txt",
-										"path": [
-											"CN",
-											"1992-6235212113205",
-											"DOSSIER-246122980425608",
-											"European_Eenheid.txt"
-										],
-										"type": "txt"
-									},
-									"onderdeel_controle.txt": {
-										"name": "onderdeel_controle.txt",
-										"path": [
-											"CN",
-											"1992-6235212113205",
-											"DOSSIER-246122980425608",
-											"onderdeel_controle.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-266733185617760": {
-								"path": [
-									"CN",
-									"1992-6235212113205",
-									"DOSSIER-266733185617760"
-								],
-								"name": "DOSSIER-266733185617760",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"Infobox_Autoriteit.txt": {
-										"name": "Infobox_Autoriteit.txt",
-										"path": [
-											"CN",
-											"1992-6235212113205",
-											"DOSSIER-266733185617760",
-											"Infobox_Autoriteit.txt"
-										],
-										"type": "txt"
-									},
-									"de_Expertisecentrum.pdf": {
-										"name": "de_Expertisecentrum.pdf",
-										"path": [
-											"CN",
-											"1992-6235212113205",
-											"DOSSIER-266733185617760",
-											"de_Expertisecentrum.pdf"
-										],
-										"type": "pdf"
-									},
-									"Contraterrorisme_DNB.txt": {
-										"name": "Contraterrorisme_DNB.txt",
-										"path": [
-											"CN",
-											"1992-6235212113205",
-											"DOSSIER-266733185617760",
-											"Contraterrorisme_DNB.txt"
-										],
-										"type": "txt"
-									},
-									"Ontnemingswetgeving_Contraterrorisme.txt": {
-										"name": "Ontnemingswetgeving_Contraterrorisme.txt",
-										"path": [
-											"CN",
-											"1992-6235212113205",
-											"DOSSIER-266733185617760",
-											"Ontnemingswetgeving_Contraterrorisme.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-70861674329514": {
-								"path": [
-									"CN",
-									"1992-6235212113205",
-									"DOSSIER-70861674329514"
-								],
-								"name": "DOSSIER-70861674329514",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"CTEPF_van.pdf": {
-										"name": "CTEPF_van.pdf",
-										"path": [
-											"CN",
-											"1992-6235212113205",
-											"DOSSIER-70861674329514",
-											"CTEPF_van.pdf"
-										],
-										"type": "pdf"
-									},
-									"Infobox_BOOM.pdf": {
-										"name": "Infobox_BOOM.pdf",
-										"path": [
-											"CN",
-											"1992-6235212113205",
-											"DOSSIER-70861674329514",
-											"Infobox_BOOM.pdf"
-										],
-										"type": "pdf"
-									},
-									"Markten_Ontnemingswetgeving.txt": {
-										"name": "Markten_Ontnemingswetgeving.txt",
-										"path": [
-											"CN",
-											"1992-6235212113205",
-											"DOSSIER-70861674329514",
-											"Markten_Ontnemingswetgeving.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"Landelijke_Government.txt": {
-								"name": "Landelijke_Government.txt",
-								"path": [
-									"CN",
-									"1992-6235212113205",
-									"Landelijke_Government.txt"
-								],
-								"type": "txt"
-							},
-							"FIOD_Sint.pdf": {
-								"name": "FIOD_Sint.pdf",
-								"path": [
-									"CN",
-									"1992-6235212113205",
-									"FIOD_Sint.pdf"
-								],
-								"type": "pdf"
-							},
-							"onderdeel_FinEC.txt": {
-								"name": "onderdeel_FinEC.txt",
-								"path": [
-									"CN",
-									"1992-6235212113205",
-									"onderdeel_FinEC.txt"
-								],
-								"type": "txt"
-							},
-							"Inkomen,_onderdeel.pdf": {
-								"name": "Inkomen,_onderdeel.pdf",
-								"path": [
-									"CN",
-									"1992-6235212113205",
-									"Inkomen,_onderdeel.pdf"
-								],
-								"type": "pdf"
-							},
-							"CWI_Ontnemingswetgeving.txt": {
-								"name": "CWI_Ontnemingswetgeving.txt",
-								"path": [
-									"CN",
-									"1992-6235212113205",
-									"CWI_Ontnemingswetgeving.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"gemeente_en.pdf": {
-						"name": "gemeente_en.pdf",
-						"path": [
-							"CN",
-							"gemeente_en.pdf"
-						],
-						"type": "pdf"
-					},
-					"van_Infobox.pdf": {
-						"name": "van_Infobox.pdf",
-						"path": [
-							"CN",
-							"van_Infobox.pdf"
-						],
-						"type": "pdf"
-					},
-					"de_Laundering.txt": {
-						"name": "de_Laundering.txt",
-						"path": [
-							"CN",
-							"de_Laundering.txt"
-						],
-						"type": "txt"
-					}
-				}
-			},
-			"ESW": {
-				"path": [
-					"ESW"
-				],
-				"name": "ESW",
-				"type": "dir",
-				"dirType": "locked",
-				"children": {
-					"1976-31233364231465": {
-						"path": [
-							"ESW",
-							"1976-31233364231465"
-						],
-						"name": "1976-31233364231465",
-						"type": "dir",
-						"dirType": "normal",
-						"children": {
-							"DOSSIER-155641635621187": {
-								"path": [
-									"ESW",
-									"1976-31233364231465",
-									"DOSSIER-155641635621187"
-								],
-								"name": "DOSSIER-155641635621187",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"organisatie_European.pdf": {
-										"name": "organisatie_European.pdf",
-										"path": [
-											"ESW",
-											"1976-31233364231465",
-											"DOSSIER-155641635621187",
-											"organisatie_European.pdf"
-										],
-										"type": "pdf"
-									},
-									"applicatie_Eustatiusen.txt": {
-										"name": "applicatie_Eustatiusen.txt",
-										"path": [
-											"ESW",
-											"1976-31233364231465",
-											"DOSSIER-155641635621187",
-											"applicatie_Eustatiusen.txt"
-										],
-										"type": "txt"
-									},
-									"door_van.txt": {
-										"name": "door_van.txt",
-										"path": [
-											"ESW",
-											"1976-31233364231465",
-											"DOSSIER-155641635621187",
-											"door_van.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-18452217020725": {
-								"path": [
-									"ESW",
-									"1976-31233364231465",
-									"DOSSIER-18452217020725"
-								],
-								"name": "DOSSIER-18452217020725",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Financial_team.txt": {
-										"name": "Financial_team.txt",
-										"path": [
-											"ESW",
-											"1976-31233364231465",
-											"DOSSIER-18452217020725",
-											"Financial_team.txt"
-										],
-										"type": "txt"
-									},
-									"DNB_Openbaar.txt": {
-										"name": "DNB_Openbaar.txt",
-										"path": [
-											"ESW",
-											"1976-31233364231465",
-											"DOSSIER-18452217020725",
-											"DNB_Openbaar.txt"
-										],
-										"type": "txt"
-									},
-									"de_team.txt": {
-										"name": "de_team.txt",
-										"path": [
-											"ESW",
-											"1976-31233364231465",
-											"DOSSIER-18452217020725",
-											"de_team.txt"
-										],
-										"type": "txt"
-									},
-									"Mensenhandel_Intelligence.txt": {
-										"name": "Mensenhandel_Intelligence.txt",
-										"path": [
-											"ESW",
-											"1976-31233364231465",
-											"DOSSIER-18452217020725",
-											"Mensenhandel_Intelligence.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-20492614928721": {
-								"path": [
-									"ESW",
-									"1976-31233364231465",
-									"DOSSIER-20492614928721"
-								],
-								"name": "DOSSIER-20492614928721",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"Landelijke_Bonaire..pdf": {
-										"name": "Landelijke_Bonaire..pdf",
-										"path": [
-											"ESW",
-											"1976-31233364231465",
-											"DOSSIER-20492614928721",
-											"Landelijke_Bonaire..pdf"
-										],
-										"type": "pdf"
-									},
-									"van_en.pdf": {
-										"name": "van_en.pdf",
-										"path": [
-											"ESW",
-											"1976-31233364231465",
-											"DOSSIER-20492614928721",
-											"van_en.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-238471662516928": {
-								"path": [
-									"ESW",
-									"1976-31233364231465",
-									"DOSSIER-238471662516928"
-								],
-								"name": "DOSSIER-238471662516928",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Mensensmokkel_F.txt": {
-										"name": "Mensensmokkel_F.txt",
-										"path": [
-											"ESW",
-											"1976-31233364231465",
-											"DOSSIER-238471662516928",
-											"Mensensmokkel_F.txt"
-										],
-										"type": "txt"
-									},
-									"onderdeel_door.txt": {
-										"name": "onderdeel_door.txt",
-										"path": [
-											"ESW",
-											"1976-31233364231465",
-											"DOSSIER-238471662516928",
-											"onderdeel_door.txt"
-										],
-										"type": "txt"
-									},
-									"Infobox_van.txt": {
-										"name": "Infobox_van.txt",
-										"path": [
-											"ESW",
-											"1976-31233364231465",
-											"DOSSIER-238471662516928",
-											"Infobox_van.txt"
-										],
-										"type": "txt"
-									},
-									"Against_Sint.txt": {
-										"name": "Against_Sint.txt",
-										"path": [
-											"ESW",
-											"1976-31233364231465",
-											"DOSSIER-238471662516928",
-											"Against_Sint.txt"
-										],
-										"type": "txt"
-									},
-									"van_Inkomen,.pdf": {
-										"name": "van_Inkomen,.pdf",
-										"path": [
-											"ESW",
-											"1976-31233364231465",
-											"DOSSIER-238471662516928",
-											"van_Inkomen,.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-8109215231293": {
-								"path": [
-									"ESW",
-									"1976-31233364231465",
-									"DOSSIER-8109215231293"
-								],
-								"name": "DOSSIER-8109215231293",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"de_andrea.pdf": {
-										"name": "de_andrea.pdf",
-										"path": [
-											"ESW",
-											"1976-31233364231465",
-											"DOSSIER-8109215231293",
-											"de_andrea.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"van_eilanden.txt": {
-								"name": "van_eilanden.txt",
-								"path": [
-									"ESW",
-									"1976-31233364231465",
-									"van_eilanden.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"1985-234912115019211": {
-						"path": [
-							"ESW",
-							"1985-234912115019211"
-						],
-						"name": "1985-234912115019211",
-						"type": "dir",
-						"dirType": "locked",
-						"children": {
-							"DOSSIER-108641708319056": {
-								"path": [
-									"ESW",
-									"1985-234912115019211",
-									"DOSSIER-108641708319056"
-								],
-								"name": "DOSSIER-108641708319056",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"Cluster_Expertise.pdf": {
-										"name": "Cluster_Expertise.pdf",
-										"path": [
-											"ESW",
-											"1985-234912115019211",
-											"DOSSIER-108641708319056",
-											"Cluster_Expertise.pdf"
-										],
-										"type": "pdf"
-									},
-									"FlU-Nederland_Dienst.txt": {
-										"name": "FlU-Nederland_Dienst.txt",
-										"path": [
-											"ESW",
-											"1985-234912115019211",
-											"DOSSIER-108641708319056",
-											"FlU-Nederland_Dienst.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-13563932010242": {
-								"path": [
-									"ESW",
-									"1985-234912115019211",
-									"DOSSIER-13563932010242"
-								],
-								"name": "DOSSIER-13563932010242",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"en_Toezicht.txt": {
-										"name": "en_Toezicht.txt",
-										"path": [
-											"ESW",
-											"1985-234912115019211",
-											"DOSSIER-13563932010242",
-											"en_Toezicht.txt"
-										],
-										"type": "txt"
-									},
-									"Task_Task.pdf": {
-										"name": "Task_Task.pdf",
-										"path": [
-											"ESW",
-											"1985-234912115019211",
-											"DOSSIER-13563932010242",
-											"Task_Task.pdf"
-										],
-										"type": "pdf"
-									},
-									"FIOD_BES.pdf": {
-										"name": "FIOD_BES.pdf",
-										"path": [
-											"ESW",
-											"1985-234912115019211",
-											"DOSSIER-13563932010242",
-											"FIOD_BES.pdf"
-										],
-										"type": "pdf"
-									},
-									"Bureau_GoAML.pdf": {
-										"name": "Bureau_GoAML.pdf",
-										"path": [
-											"ESW",
-											"1985-234912115019211",
-											"DOSSIER-13563932010242",
-											"Bureau_GoAML.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-15813941927650": {
-								"path": [
-									"ESW",
-									"1985-234912115019211",
-									"DOSSIER-15813941927650"
-								],
-								"name": "DOSSIER-15813941927650",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"politie_uitvoerend.pdf": {
-										"name": "politie_uitvoerend.pdf",
-										"path": [
-											"ESW",
-											"1985-234912115019211",
-											"DOSSIER-15813941927650",
-											"politie_uitvoerend.pdf"
-										],
-										"type": "pdf"
-									},
-									"Eustatiusen_eilanden.txt": {
-										"name": "Eustatiusen_eilanden.txt",
-										"path": [
-											"ESW",
-											"1985-234912115019211",
-											"DOSSIER-15813941927650",
-											"Eustatiusen_eilanden.txt"
-										],
-										"type": "txt"
-									},
-									"Amsterdam_en.txt": {
-										"name": "Amsterdam_en.txt",
-										"path": [
-											"ESW",
-											"1985-234912115019211",
-											"DOSSIER-15813941927650",
-											"Amsterdam_en.txt"
-										],
-										"type": "txt"
-									},
-									"andrea_Recherche,.txt": {
-										"name": "andrea_Recherche,.txt",
-										"path": [
-											"ESW",
-											"1985-234912115019211",
-											"DOSSIER-15813941927650",
-											"andrea_Recherche,.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-271122397211283": {
-								"path": [
-									"ESW",
-									"1985-234912115019211",
-									"DOSSIER-271122397211283"
-								],
-								"name": "DOSSIER-271122397211283",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Infobox_CJIB.pdf": {
-										"name": "Infobox_CJIB.pdf",
-										"path": [
-											"ESW",
-											"1985-234912115019211",
-											"DOSSIER-271122397211283",
-											"Infobox_CJIB.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-954661831854": {
-								"path": [
-									"ESW",
-									"1985-234912115019211",
-									"DOSSIER-954661831854"
-								],
-								"name": "DOSSIER-954661831854",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"en_en.txt": {
-										"name": "en_en.txt",
-										"path": [
-											"ESW",
-											"1985-234912115019211",
-											"DOSSIER-954661831854",
-											"en_en.txt"
-										],
-										"type": "txt"
-									},
-									"Eustatiusen_DLR.txt": {
-										"name": "Eustatiusen_DLR.txt",
-										"path": [
-											"ESW",
-											"1985-234912115019211",
-											"DOSSIER-954661831854",
-											"Eustatiusen_DLR.txt"
-										],
-										"type": "txt"
-									},
-									"en_Financial.txt": {
-										"name": "en_Financial.txt",
-										"path": [
-											"ESW",
-											"1985-234912115019211",
-											"DOSSIER-954661831854",
-											"en_Financial.txt"
-										],
-										"type": "txt"
-									},
-									"ICT_Mensenhandel.txt": {
-										"name": "ICT_Mensenhandel.txt",
-										"path": [
-											"ESW",
-											"1985-234912115019211",
-											"DOSSIER-954661831854",
-											"ICT_Mensenhandel.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"Centrum_AFM.txt": {
-								"name": "Centrum_AFM.txt",
-								"path": [
-									"ESW",
-									"1985-234912115019211",
-									"Centrum_AFM.txt"
-								],
-								"type": "txt"
-							},
-							"applicatie_FIOD.txt": {
-								"name": "applicatie_FIOD.txt",
-								"path": [
-									"ESW",
-									"1985-234912115019211",
-									"applicatie_FIOD.txt"
-								],
-								"type": "txt"
-							},
-							"Andrea_Infobox.txt": {
-								"name": "Andrea_Infobox.txt",
-								"path": [
-									"ESW",
-									"1985-234912115019211",
-									"Andrea_Infobox.txt"
-								],
-								"type": "txt"
-							},
-							"EMPACT_Multidisciplinary.txt": {
-								"name": "EMPACT_Multidisciplinary.txt",
-								"path": [
-									"ESW",
-									"1985-234912115019211",
-									"EMPACT_Multidisciplinary.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"1987-24213204788704": {
-						"path": [
-							"ESW",
-							"1987-24213204788704"
-						],
-						"name": "1987-24213204788704",
-						"type": "dir",
-						"dirType": "archive",
-						"children": {
-							"DOSSIER-1081236011813": {
-								"path": [
-									"ESW",
-									"1987-24213204788704",
-									"DOSSIER-1081236011813"
-								],
-								"name": "DOSSIER-1081236011813",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"interne_Ontnemingswetgeving.pdf": {
-										"name": "interne_Ontnemingswetgeving.pdf",
-										"path": [
-											"ESW",
-											"1987-24213204788704",
-											"DOSSIER-1081236011813",
-											"interne_Ontnemingswetgeving.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-15566128716588": {
-								"path": [
-									"ESW",
-									"1987-24213204788704",
-									"DOSSIER-15566128716588"
-								],
-								"name": "DOSSIER-15566128716588",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"A01C_onderdeel.pdf": {
-										"name": "A01C_onderdeel.pdf",
-										"path": [
-											"ESW",
-											"1987-24213204788704",
-											"DOSSIER-15566128716588",
-											"A01C_onderdeel.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-178180414373": {
-								"path": [
-									"ESW",
-									"1987-24213204788704",
-									"DOSSIER-178180414373"
-								],
-								"name": "DOSSIER-178180414373",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"politie_Inkomen,.pdf": {
-										"name": "politie_Inkomen,.pdf",
-										"path": [
-											"ESW",
-											"1987-24213204788704",
-											"DOSSIER-178180414373",
-											"politie_Inkomen,.pdf"
-										],
-										"type": "pdf"
-									},
-									"EU_CWI.txt": {
-										"name": "EU_CWI.txt",
-										"path": [
-											"ESW",
-											"1987-24213204788704",
-											"DOSSIER-178180414373",
-											"EU_CWI.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-25074148472731": {
-								"path": [
-									"ESW",
-									"1987-24213204788704",
-									"DOSSIER-25074148472731"
-								],
-								"name": "DOSSIER-25074148472731",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Against_Anti-Money.pdf": {
-										"name": "Against_Anti-Money.pdf",
-										"path": [
-											"ESW",
-											"1987-24213204788704",
-											"DOSSIER-25074148472731",
-											"Against_Anti-Money.pdf"
-										],
-										"type": "pdf"
-									},
-									"BVI_EMM.pdf": {
-										"name": "BVI_EMM.pdf",
-										"path": [
-											"ESW",
-											"1987-24213204788704",
-											"DOSSIER-25074148472731",
-											"BVI_EMM.pdf"
-										],
-										"type": "pdf"
-									},
-									"Functioneel_orgaan.pdf": {
-										"name": "Functioneel_orgaan.pdf",
-										"path": [
-											"ESW",
-											"1987-24213204788704",
-											"DOSSIER-25074148472731",
-											"Functioneel_orgaan.pdf"
-										],
-										"type": "pdf"
-									},
-									"Crimineel_CTEPF.txt": {
-										"name": "Crimineel_CTEPF.txt",
-										"path": [
-											"ESW",
-											"1987-24213204788704",
-											"DOSSIER-25074148472731",
-											"Crimineel_CTEPF.txt"
-										],
-										"type": "txt"
-									},
-									"Financieel_UNODC.txt": {
-										"name": "Financieel_UNODC.txt",
-										"path": [
-											"ESW",
-											"1987-24213204788704",
-											"DOSSIER-25074148472731",
-											"Financieel_UNODC.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-598267446": {
-								"path": [
-									"ESW",
-									"1987-24213204788704",
-									"DOSSIER-598267446"
-								],
-								"name": "DOSSIER-598267446",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"een_Onverklaarbaar.txt": {
-										"name": "een_Onverklaarbaar.txt",
-										"path": [
-											"ESW",
-											"1987-24213204788704",
-											"DOSSIER-598267446",
-											"een_Onverklaarbaar.txt"
-										],
-										"type": "txt"
-									},
-									"Unie_DLR.txt": {
-										"name": "Unie_DLR.txt",
-										"path": [
-											"ESW",
-											"1987-24213204788704",
-											"DOSSIER-598267446",
-											"Unie_DLR.txt"
-										],
-										"type": "txt"
-									},
-									"FinanciÃ«le_van.txt": {
-										"name": "FinanciÃ«le_van.txt",
-										"path": [
-											"ESW",
-											"1987-24213204788704",
-											"DOSSIER-598267446",
-											"FinanciÃ«le_van.txt"
-										],
-										"type": "txt"
-									},
-									"Justitieel_van.txt": {
-										"name": "Justitieel_van.txt",
-										"path": [
-											"ESW",
-											"1987-24213204788704",
-											"DOSSIER-598267446",
-											"Justitieel_van.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"FEC_CWI.pdf": {
-								"name": "FEC_CWI.pdf",
-								"path": [
-									"ESW",
-									"1987-24213204788704",
-									"FEC_CWI.pdf"
-								],
-								"type": "pdf"
-							},
-							"FinEC_Europese.txt": {
-								"name": "FinEC_Europese.txt",
-								"path": [
-									"ESW",
-									"1987-24213204788704",
-									"FinEC_Europese.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"1988-108212577222328": {
-						"path": [
-							"ESW",
-							"1988-108212577222328"
-						],
-						"name": "1988-108212577222328",
-						"type": "dir",
-						"dirType": "locked",
-						"children": {
-							"DOSSIER-1460048553589": {
-								"path": [
-									"ESW",
-									"1988-108212577222328",
-									"DOSSIER-1460048553589"
-								],
-								"name": "DOSSIER-1460048553589",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Amsterdam_van.txt": {
-										"name": "Amsterdam_van.txt",
-										"path": [
-											"ESW",
-											"1988-108212577222328",
-											"DOSSIER-1460048553589",
-											"Amsterdam_van.txt"
-										],
-										"type": "txt"
-									},
-									"Bonaire._BOOM.txt": {
-										"name": "Bonaire._BOOM.txt",
-										"path": [
-											"ESW",
-											"1988-108212577222328",
-											"DOSSIER-1460048553589",
-											"Bonaire._BOOM.txt"
-										],
-										"type": "txt"
-									},
-									"proliferatiefmanciering._Amsterdam.txt": {
-										"name": "proliferatiefmanciering._Amsterdam.txt",
-										"path": [
-											"ESW",
-											"1988-108212577222328",
-											"DOSSIER-1460048553589",
-											"proliferatiefmanciering._Amsterdam.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-183611108015406": {
-								"path": [
-									"ESW",
-									"1988-108212577222328",
-									"DOSSIER-183611108015406"
-								],
-								"name": "DOSSIER-183611108015406",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"de_FlU-Nederland.txt": {
-										"name": "de_FlU-Nederland.txt",
-										"path": [
-											"ESW",
-											"1988-108212577222328",
-											"DOSSIER-183611108015406",
-											"de_FlU-Nederland.txt"
-										],
-										"type": "txt"
-									},
-									"Bureau_Landelijke.txt": {
-										"name": "Bureau_Landelijke.txt",
-										"path": [
-											"ESW",
-											"1988-108212577222328",
-											"DOSSIER-183611108015406",
-											"Bureau_Landelijke.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-189681530310731": {
-								"path": [
-									"ESW",
-									"1988-108212577222328",
-									"DOSSIER-189681530310731"
-								],
-								"name": "DOSSIER-189681530310731",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"FAT_Fiscale.txt": {
-										"name": "FAT_Fiscale.txt",
-										"path": [
-											"ESW",
-											"1988-108212577222328",
-											"DOSSIER-189681530310731",
-											"FAT_Fiscale.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-20512306920165": {
-								"path": [
-									"ESW",
-									"1988-108212577222328",
-									"DOSSIER-20512306920165"
-								],
-								"name": "DOSSIER-20512306920165",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"controle_Expertise.txt": {
-										"name": "controle_Expertise.txt",
-										"path": [
-											"ESW",
-											"1988-108212577222328",
-											"DOSSIER-20512306920165",
-											"controle_Expertise.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-218411168623427": {
-								"path": [
-									"ESW",
-									"1988-108212577222328",
-									"DOSSIER-218411168623427"
-								],
-								"name": "DOSSIER-218411168623427",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Toezicht_Openbaar.pdf": {
-										"name": "Toezicht_Openbaar.pdf",
-										"path": [
-											"ESW",
-											"1988-108212577222328",
-											"DOSSIER-218411168623427",
-											"Toezicht_Openbaar.pdf"
-										],
-										"type": "pdf"
-									},
-									"en_F.txt": {
-										"name": "en_F.txt",
-										"path": [
-											"ESW",
-											"1988-108212577222328",
-											"DOSSIER-218411168623427",
-											"en_F.txt"
-										],
-										"type": "txt"
-									},
-									"Opsporingsdienst_Inlichtingen-.txt": {
-										"name": "Opsporingsdienst_Inlichtingen-.txt",
-										"path": [
-											"ESW",
-											"1988-108212577222328",
-											"DOSSIER-218411168623427",
-											"Opsporingsdienst_Inlichtingen-.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DWI_van.pdf": {
-								"name": "DWI_van.pdf",
-								"path": [
-									"ESW",
-									"1988-108212577222328",
-									"DWI_van.pdf"
-								],
-								"type": "pdf"
-							},
-							"Leefomgeving_Infobox.pdf": {
-								"name": "Leefomgeving_Infobox.pdf",
-								"path": [
-									"ESW",
-									"1988-108212577222328",
-									"Leefomgeving_Infobox.pdf"
-								],
-								"type": "pdf"
-							},
-							"Toezicht_de.txt": {
-								"name": "Toezicht_de.txt",
-								"path": [
-									"ESW",
-									"1988-108212577222328",
-									"Toezicht_de.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"2015-13920285021059": {
-						"path": [
-							"ESW",
-							"2015-13920285021059"
-						],
-						"name": "2015-13920285021059",
-						"type": "dir",
-						"dirType": "archive",
-						"children": {
-							"DOSSIER-168882048927733": {
-								"path": [
-									"ESW",
-									"2015-13920285021059",
-									"DOSSIER-168882048927733"
-								],
-								"name": "DOSSIER-168882048927733",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Landelijke_van.txt": {
-										"name": "Landelijke_van.txt",
-										"path": [
-											"ESW",
-											"2015-13920285021059",
-											"DOSSIER-168882048927733",
-											"Landelijke_van.txt"
-										],
-										"type": "txt"
-									},
-									"Landelijke_Caribisch.txt": {
-										"name": "Landelijke_Caribisch.txt",
-										"path": [
-											"ESW",
-											"2015-13920285021059",
-											"DOSSIER-168882048927733",
-											"Landelijke_Caribisch.txt"
-										],
-										"type": "txt"
-									},
-									"FinanciÃ«le_van.txt": {
-										"name": "FinanciÃ«le_van.txt",
-										"path": [
-											"ESW",
-											"2015-13920285021059",
-											"DOSSIER-168882048927733",
-											"FinanciÃ«le_van.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-202822764325101": {
-								"path": [
-									"ESW",
-									"2015-13920285021059",
-									"DOSSIER-202822764325101"
-								],
-								"name": "DOSSIER-202822764325101",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"en_EMPACT.pdf": {
-										"name": "en_EMPACT.pdf",
-										"path": [
-											"ESW",
-											"2015-13920285021059",
-											"DOSSIER-202822764325101",
-											"en_EMPACT.pdf"
-										],
-										"type": "pdf"
-									},
-									"en_ESW.txt": {
-										"name": "en_ESW.txt",
-										"path": [
-											"ESW",
-											"2015-13920285021059",
-											"DOSSIER-202822764325101",
-											"en_ESW.txt"
-										],
-										"type": "txt"
-									},
-									"FP_de.pdf": {
-										"name": "FP_de.pdf",
-										"path": [
-											"ESW",
-											"2015-13920285021059",
-											"DOSSIER-202822764325101",
-											"FP_de.pdf"
-										],
-										"type": "pdf"
-									},
-									"een_een.txt": {
-										"name": "een_een.txt",
-										"path": [
-											"ESW",
-											"2015-13920285021059",
-											"DOSSIER-202822764325101",
-											"een_een.txt"
-										],
-										"type": "txt"
-									},
-									"EMM_politie.txt": {
-										"name": "EMM_politie.txt",
-										"path": [
-											"ESW",
-											"2015-13920285021059",
-											"DOSSIER-202822764325101",
-											"EMM_politie.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-26982193945896": {
-								"path": [
-									"ESW",
-									"2015-13920285021059",
-									"DOSSIER-26982193945896"
-								],
-								"name": "DOSSIER-26982193945896",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"Dienst_van.pdf": {
-										"name": "Dienst_van.pdf",
-										"path": [
-											"ESW",
-											"2015-13920285021059",
-											"DOSSIER-26982193945896",
-											"Dienst_van.pdf"
-										],
-										"type": "pdf"
-									},
-									"Bonaire._onderdeel.pdf": {
-										"name": "Bonaire._onderdeel.pdf",
-										"path": [
-											"ESW",
-											"2015-13920285021059",
-											"DOSSIER-26982193945896",
-											"Bonaire._onderdeel.pdf"
-										],
-										"type": "pdf"
-									},
-									"van_van.txt": {
-										"name": "van_van.txt",
-										"path": [
-											"ESW",
-											"2015-13920285021059",
-											"DOSSIER-26982193945896",
-											"van_van.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-28291102952868": {
-								"path": [
-									"ESW",
-									"2015-13920285021059",
-									"DOSSIER-28291102952868"
-								],
-								"name": "DOSSIER-28291102952868",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"en_Opsporingsdienst.pdf": {
-										"name": "en_Opsporingsdienst.pdf",
-										"path": [
-											"ESW",
-											"2015-13920285021059",
-											"DOSSIER-28291102952868",
-											"en_Opsporingsdienst.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-71812961929342": {
-								"path": [
-									"ESW",
-									"2015-13920285021059",
-									"DOSSIER-71812961929342"
-								],
-								"name": "DOSSIER-71812961929342",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"politie_Anti-Money.txt": {
-										"name": "politie_Anti-Money.txt",
-										"path": [
-											"ESW",
-											"2015-13920285021059",
-											"DOSSIER-71812961929342",
-											"politie_Anti-Money.txt"
-										],
-										"type": "txt"
-									},
-									"Mensensmokkel_Bureau.txt": {
-										"name": "Mensensmokkel_Bureau.txt",
-										"path": [
-											"ESW",
-											"2015-13920285021059",
-											"DOSSIER-71812961929342",
-											"Mensensmokkel_Bureau.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"Rotterdam_onderdeel.pdf": {
-								"name": "Rotterdam_onderdeel.pdf",
-								"path": [
-									"ESW",
-									"2015-13920285021059",
-									"Rotterdam_onderdeel.pdf"
-								],
-								"type": "pdf"
-							},
-							"van_CWI.txt": {
-								"name": "van_CWI.txt",
-								"path": [
-									"ESW",
-									"2015-13920285021059",
-									"van_CWI.txt"
-								],
-								"type": "txt"
-							},
-							"Inkomen,_Basisvoorziening.txt": {
-								"name": "Inkomen,_Basisvoorziening.txt",
-								"path": [
-									"ESW",
-									"2015-13920285021059",
-									"Inkomen,_Basisvoorziening.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"Centre,_GoAML.txt": {
-						"name": "Centre,_GoAML.txt",
-						"path": [
-							"ESW",
-							"Centre,_GoAML.txt"
-						],
-						"type": "txt"
-					},
-					"Saba_Financieel.txt": {
-						"name": "Saba_Financieel.txt",
-						"path": [
-							"ESW",
-							"Saba_Financieel.txt"
-						],
-						"type": "txt"
-					},
-					"Contraterrorisme_Markten.txt": {
-						"name": "Contraterrorisme_Markten.txt",
-						"path": [
-							"ESW",
-							"Contraterrorisme_Markten.txt"
-						],
-						"type": "txt"
-					}
-				}
-			},
-			"FATF": {
-				"path": [
-					"FATF"
-				],
-				"name": "FATF",
-				"type": "dir",
-				"dirType": "normal",
-				"children": {
-					"1969-246772788124657": {
-						"path": [
-							"FATF",
-							"1969-246772788124657"
-						],
-						"name": "1969-246772788124657",
-						"type": "dir",
-						"dirType": "archive",
-						"children": {
-							"DOSSIER-12624746010928": {
-								"path": [
-									"FATF",
-									"1969-246772788124657",
-									"DOSSIER-12624746010928"
-								],
-								"name": "DOSSIER-12624746010928",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"FAT_Bonaire..txt": {
-										"name": "FAT_Bonaire..txt",
-										"path": [
-											"FATF",
-											"1969-246772788124657",
-											"DOSSIER-12624746010928",
-											"FAT_Bonaire..txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-18709235336187": {
-								"path": [
-									"FATF",
-									"1969-246772788124657",
-									"DOSSIER-18709235336187"
-								],
-								"name": "DOSSIER-18709235336187",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"en_FinEC.txt": {
-										"name": "en_FinEC.txt",
-										"path": [
-											"FATF",
-											"1969-246772788124657",
-											"DOSSIER-18709235336187",
-											"en_FinEC.txt"
-										],
-										"type": "txt"
-									},
-									"de_Inkomen,.txt": {
-										"name": "de_Inkomen,.txt",
-										"path": [
-											"FATF",
-											"1969-246772788124657",
-											"DOSSIER-18709235336187",
-											"de_Inkomen,.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-191441644313067": {
-								"path": [
-									"FATF",
-									"1969-246772788124657",
-									"DOSSIER-191441644313067"
-								],
-								"name": "DOSSIER-191441644313067",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"EU_BES.txt": {
-										"name": "EU_BES.txt",
-										"path": [
-											"FATF",
-											"1969-246772788124657",
-											"DOSSIER-191441644313067",
-											"EU_BES.txt"
-										],
-										"type": "txt"
-									},
-									"Anti-Money_andrea.txt": {
-										"name": "Anti-Money_andrea.txt",
-										"path": [
-											"FATF",
-											"1969-246772788124657",
-											"DOSSIER-191441644313067",
-											"Anti-Money_andrea.txt"
-										],
-										"type": "txt"
-									},
-									"Mensensmokkel_Europese.txt": {
-										"name": "Mensensmokkel_Europese.txt",
-										"path": [
-											"FATF",
-											"1969-246772788124657",
-											"DOSSIER-191441644313067",
-											"Mensensmokkel_Europese.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-197162447619906": {
-								"path": [
-									"FATF",
-									"1969-246772788124657",
-									"DOSSIER-197162447619906"
-								],
-								"name": "DOSSIER-197162447619906",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Action_Nederlandsche.txt": {
-										"name": "Action_Nederlandsche.txt",
-										"path": [
-											"FATF",
-											"1969-246772788124657",
-											"DOSSIER-197162447619906",
-											"Action_Nederlandsche.txt"
-										],
-										"type": "txt"
-									},
-									"Werk_Incasso.txt": {
-										"name": "Werk_Incasso.txt",
-										"path": [
-											"FATF",
-											"1969-246772788124657",
-											"DOSSIER-197162447619906",
-											"Werk_Incasso.txt"
-										],
-										"type": "txt"
-									},
-									"Ministerie,_Anti-Money.txt": {
-										"name": "Ministerie,_Anti-Money.txt",
-										"path": [
-											"FATF",
-											"1969-246772788124657",
-											"DOSSIER-197162447619906",
-											"Ministerie,_Anti-Money.txt"
-										],
-										"type": "txt"
-									},
-									"DLR_Markten.txt": {
-										"name": "DLR_Markten.txt",
-										"path": [
-											"FATF",
-											"1969-246772788124657",
-											"DOSSIER-197162447619906",
-											"DLR_Markten.txt"
-										],
-										"type": "txt"
-									},
-									"EU_Inkomen,.txt": {
-										"name": "EU_Inkomen,.txt",
-										"path": [
-											"FATF",
-											"1969-246772788124657",
-											"DOSSIER-197162447619906",
-											"EU_Inkomen,.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-247891760921705": {
-								"path": [
-									"FATF",
-									"1969-246772788124657",
-									"DOSSIER-247891760921705"
-								],
-								"name": "DOSSIER-247891760921705",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"applicatie_Andrea.txt": {
-										"name": "applicatie_Andrea.txt",
-										"path": [
-											"FATF",
-											"1969-246772788124657",
-											"DOSSIER-247891760921705",
-											"applicatie_Andrea.txt"
-										],
-										"type": "txt"
-									},
-									"en_Openbaar.txt": {
-										"name": "en_Openbaar.txt",
-										"path": [
-											"FATF",
-											"1969-246772788124657",
-											"DOSSIER-247891760921705",
-											"en_Openbaar.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"Force_gebouwd.pdf": {
-								"name": "Force_gebouwd.pdf",
-								"path": [
-									"FATF",
-									"1969-246772788124657",
-									"Force_gebouwd.pdf"
-								],
-								"type": "pdf"
-							},
-							"applicatie_Criminaliteit.txt": {
-								"name": "applicatie_Criminaliteit.txt",
-								"path": [
-									"FATF",
-									"1969-246772788124657",
-									"applicatie_Criminaliteit.txt"
-								],
-								"type": "txt"
-							},
-							"Financial_Criminal.txt": {
-								"name": "Financial_Criminal.txt",
-								"path": [
-									"FATF",
-									"1969-246772788124657",
-									"Financial_Criminal.txt"
-								],
-								"type": "txt"
-							},
-							"applicatie_Rotterdam.txt": {
-								"name": "applicatie_Rotterdam.txt",
-								"path": [
-									"FATF",
-									"1969-246772788124657",
-									"applicatie_Rotterdam.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"1980-279542029728596": {
-						"path": [
-							"FATF",
-							"1980-279542029728596"
-						],
-						"name": "1980-279542029728596",
-						"type": "dir",
-						"dirType": "archive",
-						"children": {
-							"DOSSIER-106282768916333": {
-								"path": [
-									"FATF",
-									"1980-279542029728596",
-									"DOSSIER-106282768916333"
-								],
-								"name": "DOSSIER-106282768916333",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Inkomen,_UNODC.txt": {
-										"name": "Inkomen,_UNODC.txt",
-										"path": [
-											"FATF",
-											"1980-279542029728596",
-											"DOSSIER-106282768916333",
-											"Inkomen,_UNODC.txt"
-										],
-										"type": "txt"
-									},
-									"orgaan_en.txt": {
-										"name": "orgaan_en.txt",
-										"path": [
-											"FATF",
-											"1980-279542029728596",
-											"DOSSIER-106282768916333",
-											"orgaan_en.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-224732014527008": {
-								"path": [
-									"FATF",
-									"1980-279542029728596",
-									"DOSSIER-224732014527008"
-								],
-								"name": "DOSSIER-224732014527008",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Centraal_CJIB.txt": {
-										"name": "Centraal_CJIB.txt",
-										"path": [
-											"FATF",
-											"1980-279542029728596",
-											"DOSSIER-224732014527008",
-											"Centraal_CJIB.txt"
-										],
-										"type": "txt"
-									},
-									"van_Eenheid.pdf": {
-										"name": "van_Eenheid.pdf",
-										"path": [
-											"FATF",
-											"1980-279542029728596",
-											"DOSSIER-224732014527008",
-											"van_Eenheid.pdf"
-										],
-										"type": "pdf"
-									},
-									"van_FIU.txt": {
-										"name": "van_FIU.txt",
-										"path": [
-											"FATF",
-											"1980-279542029728596",
-											"DOSSIER-224732014527008",
-											"van_FIU.txt"
-										],
-										"type": "txt"
-									},
-									"Openbaar_FinEC.txt": {
-										"name": "Openbaar_FinEC.txt",
-										"path": [
-											"FATF",
-											"1980-279542029728596",
-											"DOSSIER-224732014527008",
-											"Openbaar_FinEC.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-244201165619765": {
-								"path": [
-									"FATF",
-									"1980-279542029728596",
-									"DOSSIER-244201165619765"
-								],
-								"name": "DOSSIER-244201165619765",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"door_FinEC.txt": {
-										"name": "door_FinEC.txt",
-										"path": [
-											"FATF",
-											"1980-279542029728596",
-											"DOSSIER-244201165619765",
-											"door_FinEC.txt"
-										],
-										"type": "txt"
-									},
-									"Action_.pdf": {
-										"name": "Action_.pdf",
-										"path": [
-											"FATF",
-											"1980-279542029728596",
-											"DOSSIER-244201165619765",
-											"Action_.pdf"
-										],
-										"type": "pdf"
-									},
-									"onderdeel_het.txt": {
-										"name": "onderdeel_het.txt",
-										"path": [
-											"FATF",
-											"1980-279542029728596",
-											"DOSSIER-244201165619765",
-											"onderdeel_het.txt"
-										],
-										"type": "txt"
-									},
-									"Toezicht_Anti.txt": {
-										"name": "Toezicht_Anti.txt",
-										"path": [
-											"FATF",
-											"1980-279542029728596",
-											"DOSSIER-244201165619765",
-											"Toezicht_Anti.txt"
-										],
-										"type": "txt"
-									},
-									"van_Caribisch.txt": {
-										"name": "van_Caribisch.txt",
-										"path": [
-											"FATF",
-											"1980-279542029728596",
-											"DOSSIER-244201165619765",
-											"van_Caribisch.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-307538327338": {
-								"path": [
-									"FATF",
-									"1980-279542029728596",
-									"DOSSIER-307538327338"
-								],
-								"name": "DOSSIER-307538327338",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"Parket,_EC.txt": {
-										"name": "Parket,_EC.txt",
-										"path": [
-											"FATF",
-											"1980-279542029728596",
-											"DOSSIER-307538327338",
-											"Parket,_EC.txt"
-										],
-										"type": "txt"
-									},
-									"uitvoerend_iCOV.txt": {
-										"name": "uitvoerend_iCOV.txt",
-										"path": [
-											"FATF",
-											"1980-279542029728596",
-											"DOSSIER-307538327338",
-											"uitvoerend_iCOV.txt"
-										],
-										"type": "txt"
-									},
-									"de_en.pdf": {
-										"name": "de_en.pdf",
-										"path": [
-											"FATF",
-											"1980-279542029728596",
-											"DOSSIER-307538327338",
-											"de_en.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-82432450317802": {
-								"path": [
-									"FATF",
-									"1980-279542029728596",
-									"DOSSIER-82432450317802"
-								],
-								"name": "DOSSIER-82432450317802",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"eilanden_Eustatiusen.txt": {
-										"name": "eilanden_Eustatiusen.txt",
-										"path": [
-											"FATF",
-											"1980-279542029728596",
-											"DOSSIER-82432450317802",
-											"eilanden_Eustatiusen.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"Mensensmokkel_&.txt": {
-								"name": "Mensensmokkel_&.txt",
-								"path": [
-									"FATF",
-									"1980-279542029728596",
-									"Mensensmokkel_&.txt"
-								],
-								"type": "txt"
-							},
-							"Mensenhandel_EU.txt": {
-								"name": "Mensenhandel_EU.txt",
-								"path": [
-									"FATF",
-									"1980-279542029728596",
-									"Mensenhandel_EU.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"1995-99022213843": {
-						"path": [
-							"FATF",
-							"1995-99022213843"
-						],
-						"name": "1995-99022213843",
-						"type": "dir",
-						"dirType": "archive",
-						"children": {
-							"DOSSIER-148742356920311": {
-								"path": [
-									"FATF",
-									"1995-99022213843",
-									"DOSSIER-148742356920311"
-								],
-								"name": "DOSSIER-148742356920311",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"Bureau_BES.txt": {
-										"name": "Bureau_BES.txt",
-										"path": [
-											"FATF",
-											"1995-99022213843",
-											"DOSSIER-148742356920311",
-											"Bureau_BES.txt"
-										],
-										"type": "txt"
-									},
-									"Bureau_politie.pdf": {
-										"name": "Bureau_politie.pdf",
-										"path": [
-											"FATF",
-											"1995-99022213843",
-											"DOSSIER-148742356920311",
-											"Bureau_politie.pdf"
-										],
-										"type": "pdf"
-									},
-									"Ministerie,_en.txt": {
-										"name": "Ministerie,_en.txt",
-										"path": [
-											"FATF",
-											"1995-99022213843",
-											"DOSSIER-148742356920311",
-											"Ministerie,_en.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-25396302719100": {
-								"path": [
-									"FATF",
-									"1995-99022213843",
-									"DOSSIER-25396302719100"
-								],
-								"name": "DOSSIER-25396302719100",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"Werk_Werk.txt": {
-										"name": "Werk_Werk.txt",
-										"path": [
-											"FATF",
-											"1995-99022213843",
-											"DOSSIER-25396302719100",
-											"Werk_Werk.txt"
-										],
-										"type": "txt"
-									},
-									"Europese_onderdeel.txt": {
-										"name": "Europese_onderdeel.txt",
-										"path": [
-											"FATF",
-											"1995-99022213843",
-											"DOSSIER-25396302719100",
-											"Europese_onderdeel.txt"
-										],
-										"type": "txt"
-									},
-									"de_Contraterrorisme.txt": {
-										"name": "de_Contraterrorisme.txt",
-										"path": [
-											"FATF",
-											"1995-99022213843",
-											"DOSSIER-25396302719100",
-											"de_Contraterrorisme.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-47801608312312": {
-								"path": [
-									"FATF",
-									"1995-99022213843",
-									"DOSSIER-47801608312312"
-								],
-								"name": "DOSSIER-47801608312312",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"controle_en.txt": {
-										"name": "controle_en.txt",
-										"path": [
-											"FATF",
-											"1995-99022213843",
-											"DOSSIER-47801608312312",
-											"controle_en.txt"
-										],
-										"type": "txt"
-									},
-									"onderdeel_Programma.txt": {
-										"name": "onderdeel_Programma.txt",
-										"path": [
-											"FATF",
-											"1995-99022213843",
-											"DOSSIER-47801608312312",
-											"onderdeel_Programma.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-6734188169463": {
-								"path": [
-									"FATF",
-									"1995-99022213843",
-									"DOSSIER-6734188169463"
-								],
-								"name": "DOSSIER-6734188169463",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Ministerie,_DNB.pdf": {
-										"name": "Ministerie,_DNB.pdf",
-										"path": [
-											"FATF",
-											"1995-99022213843",
-											"DOSSIER-6734188169463",
-											"Ministerie,_DNB.pdf"
-										],
-										"type": "pdf"
-									},
-									"politie_DNB.txt": {
-										"name": "politie_DNB.txt",
-										"path": [
-											"FATF",
-											"1995-99022213843",
-											"DOSSIER-6734188169463",
-											"politie_DNB.txt"
-										],
-										"type": "txt"
-									},
-									"van_Recherche,.pdf": {
-										"name": "van_Recherche,.pdf",
-										"path": [
-											"FATF",
-											"1995-99022213843",
-											"DOSSIER-6734188169463",
-											"van_Recherche,.pdf"
-										],
-										"type": "pdf"
-									},
-									"Centre,_Expertise.pdf": {
-										"name": "Centre,_Expertise.pdf",
-										"path": [
-											"FATF",
-											"1995-99022213843",
-											"DOSSIER-6734188169463",
-											"Centre,_Expertise.pdf"
-										],
-										"type": "pdf"
-									},
-									"Basisvoorziening_orgaan.txt": {
-										"name": "Basisvoorziening_orgaan.txt",
-										"path": [
-											"FATF",
-											"1995-99022213843",
-											"DOSSIER-6734188169463",
-											"Basisvoorziening_orgaan.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-9372663532057": {
-								"path": [
-									"FATF",
-									"1995-99022213843",
-									"DOSSIER-9372663532057"
-								],
-								"name": "DOSSIER-9372663532057",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"EMPACT_Laundering..txt": {
-										"name": "EMPACT_Laundering..txt",
-										"path": [
-											"FATF",
-											"1995-99022213843",
-											"DOSSIER-9372663532057",
-											"EMPACT_Laundering..txt"
-										],
-										"type": "txt"
-									},
-									"Landelijke_de.pdf": {
-										"name": "Landelijke_de.pdf",
-										"path": [
-											"FATF",
-											"1995-99022213843",
-											"DOSSIER-9372663532057",
-											"Landelijke_de.pdf"
-										],
-										"type": "pdf"
-									},
-									"en_Financieel.pdf": {
-										"name": "en_Financieel.pdf",
-										"path": [
-											"FATF",
-											"1995-99022213843",
-											"DOSSIER-9372663532057",
-											"en_Financieel.pdf"
-										],
-										"type": "pdf"
-									},
-									"Unit_Inkomen,.pdf": {
-										"name": "Unit_Inkomen,.pdf",
-										"path": [
-											"FATF",
-											"1995-99022213843",
-											"DOSSIER-9372663532057",
-											"Unit_Inkomen,.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"en_FlU-Nederland.txt": {
-								"name": "en_FlU-Nederland.txt",
-								"path": [
-									"FATF",
-									"1995-99022213843",
-									"en_FlU-Nederland.txt"
-								],
-								"type": "txt"
-							},
-							"Inkomen,_Nederland:.txt": {
-								"name": "Inkomen,_Nederland:.txt",
-								"path": [
-									"FATF",
-									"1995-99022213843",
-									"Inkomen,_Nederland:.txt"
-								],
-								"type": "txt"
-							},
-							"Unie_organisatie.txt": {
-								"name": "Unie_organisatie.txt",
-								"path": [
-									"FATF",
-									"1995-99022213843",
-									"Unie_organisatie.txt"
-								],
-								"type": "txt"
-							},
-							"Justitieel_Centrum.txt": {
-								"name": "Justitieel_Centrum.txt",
-								"path": [
-									"FATF",
-									"1995-99022213843",
-									"Justitieel_Centrum.txt"
-								],
-								"type": "txt"
-							},
-							"Crimineel_Bureau.txt": {
-								"name": "Crimineel_Bureau.txt",
-								"path": [
-									"FATF",
-									"1995-99022213843",
-									"Crimineel_Bureau.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"2004-113452229911775": {
-						"path": [
-							"FATF",
-							"2004-113452229911775"
-						],
-						"name": "2004-113452229911775",
-						"type": "dir",
-						"dirType": "archive",
-						"children": {
-							"DOSSIER-117287367838": {
-								"path": [
-									"FATF",
-									"2004-113452229911775",
-									"DOSSIER-117287367838"
-								],
-								"name": "DOSSIER-117287367838",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Saba_van.txt": {
-										"name": "Saba_van.txt",
-										"path": [
-											"FATF",
-											"2004-113452229911775",
-											"DOSSIER-117287367838",
-											"Saba_van.txt"
-										],
-										"type": "txt"
-									},
-									"Onverklaarbaar_Financieel.pdf": {
-										"name": "Onverklaarbaar_Financieel.pdf",
-										"path": [
-											"FATF",
-											"2004-113452229911775",
-											"DOSSIER-117287367838",
-											"Onverklaarbaar_Financieel.pdf"
-										],
-										"type": "pdf"
-									},
-									"de_andrea.txt": {
-										"name": "de_andrea.txt",
-										"path": [
-											"FATF",
-											"2004-113452229911775",
-											"DOSSIER-117287367838",
-											"de_andrea.txt"
-										],
-										"type": "txt"
-									},
-									"de_de.txt": {
-										"name": "de_de.txt",
-										"path": [
-											"FATF",
-											"2004-113452229911775",
-											"DOSSIER-117287367838",
-											"de_de.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-1187589092436": {
-								"path": [
-									"FATF",
-									"2004-113452229911775",
-									"DOSSIER-1187589092436"
-								],
-								"name": "DOSSIER-1187589092436",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Inkomen,_Europese.pdf": {
-										"name": "Inkomen,_Europese.pdf",
-										"path": [
-											"FATF",
-											"2004-113452229911775",
-											"DOSSIER-1187589092436",
-											"Inkomen,_Europese.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-1239318305482": {
-								"path": [
-									"FATF",
-									"2004-113452229911775",
-									"DOSSIER-1239318305482"
-								],
-								"name": "DOSSIER-1239318305482",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Vermogen_EU.pdf": {
-										"name": "Vermogen_EU.pdf",
-										"path": [
-											"FATF",
-											"2004-113452229911775",
-											"DOSSIER-1239318305482",
-											"Vermogen_EU.pdf"
-										],
-										"type": "pdf"
-									},
-									"Ministerie,_Caribisch.txt": {
-										"name": "Ministerie,_Caribisch.txt",
-										"path": [
-											"FATF",
-											"2004-113452229911775",
-											"DOSSIER-1239318305482",
-											"Ministerie,_Caribisch.txt"
-										],
-										"type": "txt"
-									},
-									"Contraterrorisme_Criminaliteit.txt": {
-										"name": "Contraterrorisme_Criminaliteit.txt",
-										"path": [
-											"FATF",
-											"2004-113452229911775",
-											"DOSSIER-1239318305482",
-											"Contraterrorisme_Criminaliteit.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-171182293719620": {
-								"path": [
-									"FATF",
-									"2004-113452229911775",
-									"DOSSIER-171182293719620"
-								],
-								"name": "DOSSIER-171182293719620",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"Expertisecentrum_AFM.txt": {
-										"name": "Expertisecentrum_AFM.txt",
-										"path": [
-											"FATF",
-											"2004-113452229911775",
-											"DOSSIER-171182293719620",
-											"Expertisecentrum_AFM.txt"
-										],
-										"type": "txt"
-									},
-									"Openbaar_EMPACT.txt": {
-										"name": "Openbaar_EMPACT.txt",
-										"path": [
-											"FATF",
-											"2004-113452229911775",
-											"DOSSIER-171182293719620",
-											"Openbaar_EMPACT.txt"
-										],
-										"type": "txt"
-									},
-									"binnen_GoAML.txt": {
-										"name": "binnen_GoAML.txt",
-										"path": [
-											"FATF",
-											"2004-113452229911775",
-											"DOSSIER-171182293719620",
-											"binnen_GoAML.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-3244292547780": {
-								"path": [
-									"FATF",
-									"2004-113452229911775",
-									"DOSSIER-3244292547780"
-								],
-								"name": "DOSSIER-3244292547780",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Opsporingsdienst_Anti.txt": {
-										"name": "Opsporingsdienst_Anti.txt",
-										"path": [
-											"FATF",
-											"2004-113452229911775",
-											"DOSSIER-3244292547780",
-											"Opsporingsdienst_Anti.txt"
-										],
-										"type": "txt"
-									},
-									"Infobox_Bureau.txt": {
-										"name": "Infobox_Bureau.txt",
-										"path": [
-											"FATF",
-											"2004-113452229911775",
-											"DOSSIER-3244292547780",
-											"Infobox_Bureau.txt"
-										],
-										"type": "txt"
-									},
-									"Contraterrorisme_iCOV.txt": {
-										"name": "Contraterrorisme_iCOV.txt",
-										"path": [
-											"FATF",
-											"2004-113452229911775",
-											"DOSSIER-3244292547780",
-											"Contraterrorisme_iCOV.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"De_interne.txt": {
-								"name": "De_interne.txt",
-								"path": [
-									"FATF",
-									"2004-113452229911775",
-									"De_interne.txt"
-								],
-								"type": "txt"
-							},
-							"en_Bank.txt": {
-								"name": "en_Bank.txt",
-								"path": [
-									"FATF",
-									"2004-113452229911775",
-									"en_Bank.txt"
-								],
-								"type": "txt"
-							},
-							"Task_Cluster.txt": {
-								"name": "Task_Cluster.txt",
-								"path": [
-									"FATF",
-									"2004-113452229911775",
-									"Task_Cluster.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"2012-29593289016246": {
-						"path": [
-							"FATF",
-							"2012-29593289016246"
-						],
-						"name": "2012-29593289016246",
-						"type": "dir",
-						"dirType": "archive",
-						"children": {
-							"DOSSIER-175321619523599": {
-								"path": [
-									"FATF",
-									"2012-29593289016246",
-									"DOSSIER-175321619523599"
-								],
-								"name": "DOSSIER-175321619523599",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Ministerie,_Werk.txt": {
-										"name": "Ministerie,_Werk.txt",
-										"path": [
-											"FATF",
-											"2012-29593289016246",
-											"DOSSIER-175321619523599",
-											"Ministerie,_Werk.txt"
-										],
-										"type": "txt"
-									},
-									"Andrea_Inlichtingen-.txt": {
-										"name": "Andrea_Inlichtingen-.txt",
-										"path": [
-											"FATF",
-											"2012-29593289016246",
-											"DOSSIER-175321619523599",
-											"Andrea_Inlichtingen-.txt"
-										],
-										"type": "txt"
-									},
-									"gemeente_Werk.txt": {
-										"name": "gemeente_Werk.txt",
-										"path": [
-											"FATF",
-											"2012-29593289016246",
-											"DOSSIER-175321619523599",
-											"gemeente_Werk.txt"
-										],
-										"type": "txt"
-									},
-									"FinEC_Contraterrorisme.txt": {
-										"name": "FinEC_Contraterrorisme.txt",
-										"path": [
-											"FATF",
-											"2012-29593289016246",
-											"DOSSIER-175321619523599",
-											"FinEC_Contraterrorisme.txt"
-										],
-										"type": "txt"
-									},
-									"eilanden_Centrum.pdf": {
-										"name": "eilanden_Centrum.pdf",
-										"path": [
-											"FATF",
-											"2012-29593289016246",
-											"DOSSIER-175321619523599",
-											"eilanden_Centrum.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-231076584543": {
-								"path": [
-									"FATF",
-									"2012-29593289016246",
-									"DOSSIER-231076584543"
-								],
-								"name": "DOSSIER-231076584543",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"gemeente_Financial.txt": {
-										"name": "gemeente_Financial.txt",
-										"path": [
-											"FATF",
-											"2012-29593289016246",
-											"DOSSIER-231076584543",
-											"gemeente_Financial.txt"
-										],
-										"type": "txt"
-									},
-									"Eenheid_Parket,.txt": {
-										"name": "Eenheid_Parket,.txt",
-										"path": [
-											"FATF",
-											"2012-29593289016246",
-											"DOSSIER-231076584543",
-											"Eenheid_Parket,.txt"
-										],
-										"type": "txt"
-									},
-									"European_Toezicht.txt": {
-										"name": "European_Toezicht.txt",
-										"path": [
-											"FATF",
-											"2012-29593289016246",
-											"DOSSIER-231076584543",
-											"European_Toezicht.txt"
-										],
-										"type": "txt"
-									},
-									"Bureau_iCOV.txt": {
-										"name": "Bureau_iCOV.txt",
-										"path": [
-											"FATF",
-											"2012-29593289016246",
-											"DOSSIER-231076584543",
-											"Bureau_iCOV.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-259522489418413": {
-								"path": [
-									"FATF",
-									"2012-29593289016246",
-									"DOSSIER-259522489418413"
-								],
-								"name": "DOSSIER-259522489418413",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"van_Bureau.txt": {
-										"name": "van_Bureau.txt",
-										"path": [
-											"FATF",
-											"2012-29593289016246",
-											"DOSSIER-259522489418413",
-											"van_Bureau.txt"
-										],
-										"type": "txt"
-									},
-									"EU_Recherche,.txt": {
-										"name": "EU_Recherche,.txt",
-										"path": [
-											"FATF",
-											"2012-29593289016246",
-											"DOSSIER-259522489418413",
-											"EU_Recherche,.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-29700254667071": {
-								"path": [
-									"FATF",
-									"2012-29593289016246",
-									"DOSSIER-29700254667071"
-								],
-								"name": "DOSSIER-29700254667071",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Incasso_binnen.txt": {
-										"name": "Incasso_binnen.txt",
-										"path": [
-											"FATF",
-											"2012-29593289016246",
-											"DOSSIER-29700254667071",
-											"Incasso_binnen.txt"
-										],
-										"type": "txt"
-									},
-									"Anti-Money_AFM.txt": {
-										"name": "Anti-Money_AFM.txt",
-										"path": [
-											"FATF",
-											"2012-29593289016246",
-											"DOSSIER-29700254667071",
-											"Anti-Money_AFM.txt"
-										],
-										"type": "txt"
-									},
-									"Contraterrorisme_ICT.txt": {
-										"name": "Contraterrorisme_ICT.txt",
-										"path": [
-											"FATF",
-											"2012-29593289016246",
-											"DOSSIER-29700254667071",
-											"Contraterrorisme_ICT.txt"
-										],
-										"type": "txt"
-									},
-									"Intelligence_van.txt": {
-										"name": "Intelligence_van.txt",
-										"path": [
-											"FATF",
-											"2012-29593289016246",
-											"DOSSIER-29700254667071",
-											"Intelligence_van.txt"
-										],
-										"type": "txt"
-									},
-									"ICT_BFT.txt": {
-										"name": "ICT_BFT.txt",
-										"path": [
-											"FATF",
-											"2012-29593289016246",
-											"DOSSIER-29700254667071",
-											"ICT_BFT.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-91351855619550": {
-								"path": [
-									"FATF",
-									"2012-29593289016246",
-									"DOSSIER-91351855619550"
-								],
-								"name": "DOSSIER-91351855619550",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"de_de.pdf": {
-										"name": "de_de.pdf",
-										"path": [
-											"FATF",
-											"2012-29593289016246",
-											"DOSSIER-91351855619550",
-											"de_de.pdf"
-										],
-										"type": "pdf"
-									},
-									"Inkomen,_BOOM.txt": {
-										"name": "Inkomen,_BOOM.txt",
-										"path": [
-											"FATF",
-											"2012-29593289016246",
-											"DOSSIER-91351855619550",
-											"Inkomen,_BOOM.txt"
-										],
-										"type": "txt"
-									},
-									"Europese_en.txt": {
-										"name": "Europese_en.txt",
-										"path": [
-											"FATF",
-											"2012-29593289016246",
-											"DOSSIER-91351855619550",
-											"Europese_en.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"onderdeel_DLR.txt": {
-								"name": "onderdeel_DLR.txt",
-								"path": [
-									"FATF",
-									"2012-29593289016246",
-									"onderdeel_DLR.txt"
-								],
-								"type": "txt"
-							},
-							"Unit_CN.txt": {
-								"name": "Unit_CN.txt",
-								"path": [
-									"FATF",
-									"2012-29593289016246",
-									"Unit_CN.txt"
-								],
-								"type": "txt"
-							},
-							"Unit_een.txt": {
-								"name": "Unit_een.txt",
-								"path": [
-									"FATF",
-									"2012-29593289016246",
-									"Unit_een.txt"
-								],
-								"type": "txt"
-							},
-							"DWI_Inkomen,.txt": {
-								"name": "DWI_Inkomen,.txt",
-								"path": [
-									"FATF",
-									"2012-29593289016246",
-									"DWI_Inkomen,.txt"
-								],
-								"type": "txt"
-							},
-							"interne_van.pdf": {
-								"name": "interne_van.pdf",
-								"path": [
-									"FATF",
-									"2012-29593289016246",
-									"interne_van.pdf"
-								],
-								"type": "pdf"
-							}
-						}
-					},
-					"DWI_Amsterdam.txt": {
-						"name": "DWI_Amsterdam.txt",
-						"path": [
-							"FATF",
-							"DWI_Amsterdam.txt"
-						],
-						"type": "txt"
-					},
-					"binnen_de.txt": {
-						"name": "binnen_de.txt",
-						"path": [
-							"FATF",
-							"binnen_de.txt"
-						],
-						"type": "txt"
-					}
-				}
-			},
-			"IND": {
-				"path": [
-					"IND"
-				],
-				"name": "IND",
-				"type": "dir",
-				"dirType": "normal",
-				"children": {
-					"1964-308701361617923": {
-						"path": [
-							"IND",
-							"1964-308701361617923"
-						],
-						"name": "1964-308701361617923",
-						"type": "dir",
-						"dirType": "archive",
-						"children": {
-							"DOSSIER-128142638726508": {
-								"path": [
-									"IND",
-									"1964-308701361617923",
-									"DOSSIER-128142638726508"
-								],
-								"name": "DOSSIER-128142638726508",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Financieel_Expertisecentrum.txt": {
-										"name": "Financieel_Expertisecentrum.txt",
-										"path": [
-											"IND",
-											"1964-308701361617923",
-											"DOSSIER-128142638726508",
-											"Financieel_Expertisecentrum.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-15817988291": {
-								"path": [
-									"IND",
-									"1964-308701361617923",
-									"DOSSIER-15817988291"
-								],
-								"name": "DOSSIER-15817988291",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"onderdeel_van.txt": {
-										"name": "onderdeel_van.txt",
-										"path": [
-											"IND",
-											"1964-308701361617923",
-											"DOSSIER-15817988291",
-											"onderdeel_van.txt"
-										],
-										"type": "txt"
-									},
-									"Programma_CTEPF.txt": {
-										"name": "Programma_CTEPF.txt",
-										"path": [
-											"IND",
-											"1964-308701361617923",
-											"DOSSIER-15817988291",
-											"Programma_CTEPF.txt"
-										],
-										"type": "txt"
-									},
-									"OM_een.txt": {
-										"name": "OM_een.txt",
-										"path": [
-											"IND",
-											"1964-308701361617923",
-											"DOSSIER-15817988291",
-											"OM_een.txt"
-										],
-										"type": "txt"
-									},
-									"Parket,_de.txt": {
-										"name": "Parket,_de.txt",
-										"path": [
-											"IND",
-											"1964-308701361617923",
-											"DOSSIER-15817988291",
-											"Parket,_de.txt"
-										],
-										"type": "txt"
-									},
-									"Parket,_BVI.pdf": {
-										"name": "Parket,_BVI.pdf",
-										"path": [
-											"IND",
-											"1964-308701361617923",
-											"DOSSIER-15817988291",
-											"Parket,_BVI.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-169591083320147": {
-								"path": [
-									"IND",
-									"1964-308701361617923",
-									"DOSSIER-169591083320147"
-								],
-								"name": "DOSSIER-169591083320147",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"van_de.txt": {
-										"name": "van_de.txt",
-										"path": [
-											"IND",
-											"1964-308701361617923",
-											"DOSSIER-169591083320147",
-											"van_de.txt"
-										],
-										"type": "txt"
-									},
-									"en_UNODC.pdf": {
-										"name": "en_UNODC.pdf",
-										"path": [
-											"IND",
-											"1964-308701361617923",
-											"DOSSIER-169591083320147",
-											"en_UNODC.pdf"
-										],
-										"type": "pdf"
-									},
-									"EC_Force.pdf": {
-										"name": "EC_Force.pdf",
-										"path": [
-											"IND",
-											"1964-308701361617923",
-											"DOSSIER-169591083320147",
-											"EC_Force.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-20896425854": {
-								"path": [
-									"IND",
-									"1964-308701361617923",
-									"DOSSIER-20896425854"
-								],
-								"name": "DOSSIER-20896425854",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Inlichtingen-_Criminal.txt": {
-										"name": "Inlichtingen-_Criminal.txt",
-										"path": [
-											"IND",
-											"1964-308701361617923",
-											"DOSSIER-20896425854",
-											"Inlichtingen-_Criminal.txt"
-										],
-										"type": "txt"
-									},
-									"EMPACT_Bureau.pdf": {
-										"name": "EMPACT_Bureau.pdf",
-										"path": [
-											"IND",
-											"1964-308701361617923",
-											"DOSSIER-20896425854",
-											"EMPACT_Bureau.pdf"
-										],
-										"type": "pdf"
-									},
-									"Programma_onderdeel.txt": {
-										"name": "Programma_onderdeel.txt",
-										"path": [
-											"IND",
-											"1964-308701361617923",
-											"DOSSIER-20896425854",
-											"Programma_onderdeel.txt"
-										],
-										"type": "txt"
-									},
-									"F_Informatie,.pdf": {
-										"name": "F_Informatie,.pdf",
-										"path": [
-											"IND",
-											"1964-308701361617923",
-											"DOSSIER-20896425854",
-											"F_Informatie,.pdf"
-										],
-										"type": "pdf"
-									},
-									"Bureau_Opsporingsdienst.txt": {
-										"name": "Bureau_Opsporingsdienst.txt",
-										"path": [
-											"IND",
-											"1964-308701361617923",
-											"DOSSIER-20896425854",
-											"Bureau_Opsporingsdienst.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-3229831034656": {
-								"path": [
-									"IND",
-									"1964-308701361617923",
-									"DOSSIER-3229831034656"
-								],
-								"name": "DOSSIER-3229831034656",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Bureau_Financieel.txt": {
-										"name": "Bureau_Financieel.txt",
-										"path": [
-											"IND",
-											"1964-308701361617923",
-											"DOSSIER-3229831034656",
-											"Bureau_Financieel.txt"
-										],
-										"type": "txt"
-									},
-									"Anti_Crimineel.txt": {
-										"name": "Anti_Crimineel.txt",
-										"path": [
-											"IND",
-											"1964-308701361617923",
-											"DOSSIER-3229831034656",
-											"Anti_Crimineel.txt"
-										],
-										"type": "txt"
-									},
-									"European_Multidisciplinary.txt": {
-										"name": "European_Multidisciplinary.txt",
-										"path": [
-											"IND",
-											"1964-308701361617923",
-											"DOSSIER-3229831034656",
-											"European_Multidisciplinary.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"Financieel_ESW.txt": {
-								"name": "Financieel_ESW.txt",
-								"path": [
-									"IND",
-									"1964-308701361617923",
-									"Financieel_ESW.txt"
-								],
-								"type": "txt"
-							},
-							"Anti-Money_CN.txt": {
-								"name": "Anti-Money_CN.txt",
-								"path": [
-									"IND",
-									"1964-308701361617923",
-									"Anti-Money_CN.txt"
-								],
-								"type": "txt"
-							},
-							"FEC_.txt": {
-								"name": "FEC_.txt",
-								"path": [
-									"IND",
-									"1964-308701361617923",
-									"FEC_.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"1964-77751572614692": {
-						"path": [
-							"IND",
-							"1964-77751572614692"
-						],
-						"name": "1964-77751572614692",
-						"type": "dir",
-						"dirType": "normal",
-						"children": {
-							"DOSSIER-107303126629453": {
-								"path": [
-									"IND",
-									"1964-77751572614692",
-									"DOSSIER-107303126629453"
-								],
-								"name": "DOSSIER-107303126629453",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Incasso_van.pdf": {
-										"name": "Incasso_van.pdf",
-										"path": [
-											"IND",
-											"1964-77751572614692",
-											"DOSSIER-107303126629453",
-											"Incasso_van.pdf"
-										],
-										"type": "pdf"
-									},
-									"BES_Opsporingsdienst.pdf": {
-										"name": "BES_Opsporingsdienst.pdf",
-										"path": [
-											"IND",
-											"1964-77751572614692",
-											"DOSSIER-107303126629453",
-											"BES_Opsporingsdienst.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-142451637117842": {
-								"path": [
-									"IND",
-									"1964-77751572614692",
-									"DOSSIER-142451637117842"
-								],
-								"name": "DOSSIER-142451637117842",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Programma_BES.txt": {
-										"name": "Programma_BES.txt",
-										"path": [
-											"IND",
-											"1964-77751572614692",
-											"DOSSIER-142451637117842",
-											"Programma_BES.txt"
-										],
-										"type": "txt"
-									},
-									"onderdeel_CWI.pdf": {
-										"name": "onderdeel_CWI.pdf",
-										"path": [
-											"IND",
-											"1964-77751572614692",
-											"DOSSIER-142451637117842",
-											"onderdeel_CWI.pdf"
-										],
-										"type": "pdf"
-									},
-									"team_Amsterdam.txt": {
-										"name": "team_Amsterdam.txt",
-										"path": [
-											"IND",
-											"1964-77751572614692",
-											"DOSSIER-142451637117842",
-											"team_Amsterdam.txt"
-										],
-										"type": "txt"
-									},
-									"Inkomen,_Laundering.pdf": {
-										"name": "Inkomen,_Laundering.pdf",
-										"path": [
-											"IND",
-											"1964-77751572614692",
-											"DOSSIER-142451637117842",
-											"Inkomen,_Laundering.pdf"
-										],
-										"type": "pdf"
-									},
-									"Caribisch_Europese.txt": {
-										"name": "Caribisch_Europese.txt",
-										"path": [
-											"IND",
-											"1964-77751572614692",
-											"DOSSIER-142451637117842",
-											"Caribisch_Europese.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-16244927426081": {
-								"path": [
-									"IND",
-									"1964-77751572614692",
-									"DOSSIER-16244927426081"
-								],
-								"name": "DOSSIER-16244927426081",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"BFT_Openbaar.pdf": {
-										"name": "BFT_Openbaar.pdf",
-										"path": [
-											"IND",
-											"1964-77751572614692",
-											"DOSSIER-16244927426081",
-											"BFT_Openbaar.pdf"
-										],
-										"type": "pdf"
-									},
-									"CTEPF_Centrum.pdf": {
-										"name": "CTEPF_Centrum.pdf",
-										"path": [
-											"IND",
-											"1964-77751572614692",
-											"DOSSIER-16244927426081",
-											"CTEPF_Centrum.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-24343658710358": {
-								"path": [
-									"IND",
-									"1964-77751572614692",
-									"DOSSIER-24343658710358"
-								],
-								"name": "DOSSIER-24343658710358",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Bureau_CN.txt": {
-										"name": "Bureau_CN.txt",
-										"path": [
-											"IND",
-											"1964-77751572614692",
-											"DOSSIER-24343658710358",
-											"Bureau_CN.txt"
-										],
-										"type": "txt"
-									},
-									"F_onderdeel.txt": {
-										"name": "F_onderdeel.txt",
-										"path": [
-											"IND",
-											"1964-77751572614692",
-											"DOSSIER-24343658710358",
-											"F_onderdeel.txt"
-										],
-										"type": "txt"
-									},
-									"FIOD_een.txt": {
-										"name": "FIOD_een.txt",
-										"path": [
-											"IND",
-											"1964-77751572614692",
-											"DOSSIER-24343658710358",
-											"FIOD_een.txt"
-										],
-										"type": "txt"
-									},
-									"UNODC_binnen.txt": {
-										"name": "UNODC_binnen.txt",
-										"path": [
-											"IND",
-											"1964-77751572614692",
-											"DOSSIER-24343658710358",
-											"UNODC_binnen.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-32131803026635": {
-								"path": [
-									"IND",
-									"1964-77751572614692",
-									"DOSSIER-32131803026635"
-								],
-								"name": "DOSSIER-32131803026635",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"Centre,_Infobox.pdf": {
-										"name": "Centre,_Infobox.pdf",
-										"path": [
-											"IND",
-											"1964-77751572614692",
-											"DOSSIER-32131803026635",
-											"Centre,_Infobox.pdf"
-										],
-										"type": "pdf"
-									},
-									"Saba_EMM.pdf": {
-										"name": "Saba_EMM.pdf",
-										"path": [
-											"IND",
-											"1964-77751572614692",
-											"DOSSIER-32131803026635",
-											"Saba_EMM.pdf"
-										],
-										"type": "pdf"
-									},
-									"de_Onverklaarbaar.pdf": {
-										"name": "de_Onverklaarbaar.pdf",
-										"path": [
-											"IND",
-											"1964-77751572614692",
-											"DOSSIER-32131803026635",
-											"de_Onverklaarbaar.pdf"
-										],
-										"type": "pdf"
-									},
-									"DWI_Nederlandsche.txt": {
-										"name": "DWI_Nederlandsche.txt",
-										"path": [
-											"IND",
-											"1964-77751572614692",
-											"DOSSIER-32131803026635",
-											"DWI_Nederlandsche.txt"
-										],
-										"type": "txt"
-									},
-									"Landelijke_OM.txt": {
-										"name": "Landelijke_OM.txt",
-										"path": [
-											"IND",
-											"1964-77751572614692",
-											"DOSSIER-32131803026635",
-											"Landelijke_OM.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"FP_A01C.pdf": {
-								"name": "FP_A01C.pdf",
-								"path": [
-									"IND",
-									"1964-77751572614692",
-									"FP_A01C.pdf"
-								],
-								"type": "pdf"
-							}
-						}
-					},
-					"1967-2655232379255": {
-						"path": [
-							"IND",
-							"1967-2655232379255"
-						],
-						"name": "1967-2655232379255",
-						"type": "dir",
-						"dirType": "normal",
-						"children": {
-							"DOSSIER-169403095618591": {
-								"path": [
-									"IND",
-									"1967-2655232379255",
-									"DOSSIER-169403095618591"
-								],
-								"name": "DOSSIER-169403095618591",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Bank_Against.txt": {
-										"name": "Bank_Against.txt",
-										"path": [
-											"IND",
-											"1967-2655232379255",
-											"DOSSIER-169403095618591",
-											"Bank_Against.txt"
-										],
-										"type": "txt"
-									},
-									"Dienst_Caribisch.pdf": {
-										"name": "Dienst_Caribisch.pdf",
-										"path": [
-											"IND",
-											"1967-2655232379255",
-											"DOSSIER-169403095618591",
-											"Dienst_Caribisch.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-211682528515766": {
-								"path": [
-									"IND",
-									"1967-2655232379255",
-									"DOSSIER-211682528515766"
-								],
-								"name": "DOSSIER-211682528515766",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"Inspectie_een.txt": {
-										"name": "Inspectie_een.txt",
-										"path": [
-											"IND",
-											"1967-2655232379255",
-											"DOSSIER-211682528515766",
-											"Inspectie_een.txt"
-										],
-										"type": "txt"
-									},
-									"Inspectie_Dienst.txt": {
-										"name": "Inspectie_Dienst.txt",
-										"path": [
-											"IND",
-											"1967-2655232379255",
-											"DOSSIER-211682528515766",
-											"Inspectie_Dienst.txt"
-										],
-										"type": "txt"
-									},
-									"DNB_Eustatiusen.txt": {
-										"name": "DNB_Eustatiusen.txt",
-										"path": [
-											"IND",
-											"1967-2655232379255",
-											"DOSSIER-211682528515766",
-											"DNB_Eustatiusen.txt"
-										],
-										"type": "txt"
-									},
-									"ILTIOD_Expertisecentrum.txt": {
-										"name": "ILTIOD_Expertisecentrum.txt",
-										"path": [
-											"IND",
-											"1967-2655232379255",
-											"DOSSIER-211682528515766",
-											"ILTIOD_Expertisecentrum.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-23768237272309": {
-								"path": [
-									"IND",
-									"1967-2655232379255",
-									"DOSSIER-23768237272309"
-								],
-								"name": "DOSSIER-23768237272309",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Dienst_Inkomen,.txt": {
-										"name": "Dienst_Inkomen,.txt",
-										"path": [
-											"IND",
-											"1967-2655232379255",
-											"DOSSIER-23768237272309",
-											"Dienst_Inkomen,.txt"
-										],
-										"type": "txt"
-									},
-									"Financieel_CTEPF.txt": {
-										"name": "Financieel_CTEPF.txt",
-										"path": [
-											"IND",
-											"1967-2655232379255",
-											"DOSSIER-23768237272309",
-											"Financieel_CTEPF.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-25278303149404": {
-								"path": [
-									"IND",
-									"1967-2655232379255",
-									"DOSSIER-25278303149404"
-								],
-								"name": "DOSSIER-25278303149404",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"Administratieve_het.txt": {
-										"name": "Administratieve_het.txt",
-										"path": [
-											"IND",
-											"1967-2655232379255",
-											"DOSSIER-25278303149404",
-											"Administratieve_het.txt"
-										],
-										"type": "txt"
-									},
-									"onderdeel_Nederland:.txt": {
-										"name": "onderdeel_Nederland:.txt",
-										"path": [
-											"IND",
-											"1967-2655232379255",
-											"DOSSIER-25278303149404",
-											"onderdeel_Nederland:.txt"
-										],
-										"type": "txt"
-									},
-									"gemeente_Andrea.txt": {
-										"name": "gemeente_Andrea.txt",
-										"path": [
-											"IND",
-											"1967-2655232379255",
-											"DOSSIER-25278303149404",
-											"gemeente_Andrea.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-2920911692762": {
-								"path": [
-									"IND",
-									"1967-2655232379255",
-									"DOSSIER-2920911692762"
-								],
-								"name": "DOSSIER-2920911692762",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Opsporingsdienst_EC.txt": {
-										"name": "Opsporingsdienst_EC.txt",
-										"path": [
-											"IND",
-											"1967-2655232379255",
-											"DOSSIER-2920911692762",
-											"Opsporingsdienst_EC.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"FIU_FIOD.txt": {
-								"name": "FIU_FIOD.txt",
-								"path": [
-									"IND",
-									"1967-2655232379255",
-									"FIU_FIOD.txt"
-								],
-								"type": "txt"
-							},
-							"door_Bonaire..txt": {
-								"name": "door_Bonaire..txt",
-								"path": [
-									"IND",
-									"1967-2655232379255",
-									"door_Bonaire..txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"1997-284091615512870": {
-						"path": [
-							"IND",
-							"1997-284091615512870"
-						],
-						"name": "1997-284091615512870",
-						"type": "dir",
-						"dirType": "locked",
-						"children": {
-							"DOSSIER-117641301118069": {
-								"path": [
-									"IND",
-									"1997-284091615512870",
-									"DOSSIER-117641301118069"
-								],
-								"name": "DOSSIER-117641301118069",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Criminal_Financieel.pdf": {
-										"name": "Criminal_Financieel.pdf",
-										"path": [
-											"IND",
-											"1997-284091615512870",
-											"DOSSIER-117641301118069",
-											"Criminal_Financieel.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-210521312121706": {
-								"path": [
-									"IND",
-									"1997-284091615512870",
-									"DOSSIER-210521312121706"
-								],
-								"name": "DOSSIER-210521312121706",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Werk_door.txt": {
-										"name": "Werk_door.txt",
-										"path": [
-											"IND",
-											"1997-284091615512870",
-											"DOSSIER-210521312121706",
-											"Werk_door.txt"
-										],
-										"type": "txt"
-									},
-									"FIU_Criminaliteit.pdf": {
-										"name": "FIU_Criminaliteit.pdf",
-										"path": [
-											"IND",
-											"1997-284091615512870",
-											"DOSSIER-210521312121706",
-											"FIU_Criminaliteit.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-74651243622711": {
-								"path": [
-									"IND",
-									"1997-284091615512870",
-									"DOSSIER-74651243622711"
-								],
-								"name": "DOSSIER-74651243622711",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"onderdeel_Onverklaarbaar.txt": {
-										"name": "onderdeel_Onverklaarbaar.txt",
-										"path": [
-											"IND",
-											"1997-284091615512870",
-											"DOSSIER-74651243622711",
-											"onderdeel_Onverklaarbaar.txt"
-										],
-										"type": "txt"
-									},
-									"Nederland_Cluster.txt": {
-										"name": "Nederland_Cluster.txt",
-										"path": [
-											"IND",
-											"1997-284091615512870",
-											"DOSSIER-74651243622711",
-											"Nederland_Cluster.txt"
-										],
-										"type": "txt"
-									},
-									"Mensensmokkel_Transport.txt": {
-										"name": "Mensensmokkel_Transport.txt",
-										"path": [
-											"IND",
-											"1997-284091615512870",
-											"DOSSIER-74651243622711",
-											"Mensensmokkel_Transport.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-87941003025387": {
-								"path": [
-									"IND",
-									"1997-284091615512870",
-									"DOSSIER-87941003025387"
-								],
-								"name": "DOSSIER-87941003025387",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"organisatie_Financieel.txt": {
-										"name": "organisatie_Financieel.txt",
-										"path": [
-											"IND",
-											"1997-284091615512870",
-											"DOSSIER-87941003025387",
-											"organisatie_Financieel.txt"
-										],
-										"type": "txt"
-									},
-									"Werk_Mensensmokkel.pdf": {
-										"name": "Werk_Mensensmokkel.pdf",
-										"path": [
-											"IND",
-											"1997-284091615512870",
-											"DOSSIER-87941003025387",
-											"Werk_Mensensmokkel.pdf"
-										],
-										"type": "pdf"
-									},
-									"Crimineel_Inspectie.txt": {
-										"name": "Crimineel_Inspectie.txt",
-										"path": [
-											"IND",
-											"1997-284091615512870",
-											"DOSSIER-87941003025387",
-											"Crimineel_Inspectie.txt"
-										],
-										"type": "txt"
-									},
-									"Rotterdam_Europese.pdf": {
-										"name": "Rotterdam_Europese.pdf",
-										"path": [
-											"IND",
-											"1997-284091615512870",
-											"DOSSIER-87941003025387",
-											"Rotterdam_Europese.pdf"
-										],
-										"type": "pdf"
-									},
-									"Criminal_van.txt": {
-										"name": "Criminal_van.txt",
-										"path": [
-											"IND",
-											"1997-284091615512870",
-											"DOSSIER-87941003025387",
-											"Criminal_van.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-9138300446244": {
-								"path": [
-									"IND",
-									"1997-284091615512870",
-									"DOSSIER-9138300446244"
-								],
-								"name": "DOSSIER-9138300446244",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"Platform_proliferatiefmanciering..txt": {
-										"name": "Platform_proliferatiefmanciering..txt",
-										"path": [
-											"IND",
-											"1997-284091615512870",
-											"DOSSIER-9138300446244",
-											"Platform_proliferatiefmanciering..txt"
-										],
-										"type": "txt"
-									},
-									"Mensenhandel_Platform.txt": {
-										"name": "Mensenhandel_Platform.txt",
-										"path": [
-											"IND",
-											"1997-284091615512870",
-											"DOSSIER-9138300446244",
-											"Mensenhandel_Platform.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"CWI_de.txt": {
-								"name": "CWI_de.txt",
-								"path": [
-									"IND",
-									"1997-284091615512870",
-									"CWI_de.txt"
-								],
-								"type": "txt"
-							},
-							"EU_Expertisecentrum.txt": {
-								"name": "EU_Expertisecentrum.txt",
-								"path": [
-									"IND",
-									"1997-284091615512870",
-									"EU_Expertisecentrum.txt"
-								],
-								"type": "txt"
-							},
-							"Transport_DLR.txt": {
-								"name": "Transport_DLR.txt",
-								"path": [
-									"IND",
-									"1997-284091615512870",
-									"Transport_DLR.txt"
-								],
-								"type": "txt"
-							},
-							"van_Contraterrorisme.pdf": {
-								"name": "van_Contraterrorisme.pdf",
-								"path": [
-									"IND",
-									"1997-284091615512870",
-									"van_Contraterrorisme.pdf"
-								],
-								"type": "pdf"
-							}
-						}
-					},
-					"1999-162831271913699": {
-						"path": [
-							"IND",
-							"1999-162831271913699"
-						],
-						"name": "1999-162831271913699",
-						"type": "dir",
-						"dirType": "normal",
-						"children": {
-							"DOSSIER-11625718331273": {
-								"path": [
-									"IND",
-									"1999-162831271913699",
-									"DOSSIER-11625718331273"
-								],
-								"name": "DOSSIER-11625718331273",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Contraterrorisme_organisatie.pdf": {
-										"name": "Contraterrorisme_organisatie.pdf",
-										"path": [
-											"IND",
-											"1999-162831271913699",
-											"DOSSIER-11625718331273",
-											"Contraterrorisme_organisatie.pdf"
-										],
-										"type": "pdf"
-									},
-									"Mensensmokkel_Caribisch.txt": {
-										"name": "Mensensmokkel_Caribisch.txt",
-										"path": [
-											"IND",
-											"1999-162831271913699",
-											"DOSSIER-11625718331273",
-											"Mensensmokkel_Caribisch.txt"
-										],
-										"type": "txt"
-									},
-									"Inkomen,_Anti.txt": {
-										"name": "Inkomen,_Anti.txt",
-										"path": [
-											"IND",
-											"1999-162831271913699",
-											"DOSSIER-11625718331273",
-											"Inkomen,_Anti.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-125512466927969": {
-								"path": [
-									"IND",
-									"1999-162831271913699",
-									"DOSSIER-125512466927969"
-								],
-								"name": "DOSSIER-125512466927969",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"andrea_DLR.txt": {
-										"name": "andrea_DLR.txt",
-										"path": [
-											"IND",
-											"1999-162831271913699",
-											"DOSSIER-125512466927969",
-											"andrea_DLR.txt"
-										],
-										"type": "txt"
-									},
-									"onderdeel_uitvoerend.txt": {
-										"name": "onderdeel_uitvoerend.txt",
-										"path": [
-											"IND",
-											"1999-162831271913699",
-											"DOSSIER-125512466927969",
-											"onderdeel_uitvoerend.txt"
-										],
-										"type": "txt"
-									},
-									"_door.txt": {
-										"name": "_door.txt",
-										"path": [
-											"IND",
-											"1999-162831271913699",
-											"DOSSIER-125512466927969",
-											"_door.txt"
-										],
-										"type": "txt"
-									},
-									"Saba_DNB.txt": {
-										"name": "Saba_DNB.txt",
-										"path": [
-											"IND",
-											"1999-162831271913699",
-											"DOSSIER-125512466927969",
-											"Saba_DNB.txt"
-										],
-										"type": "txt"
-									},
-									"Basisvoorziening_de.txt": {
-										"name": "Basisvoorziening_de.txt",
-										"path": [
-											"IND",
-											"1999-162831271913699",
-											"DOSSIER-125512466927969",
-											"Basisvoorziening_de.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-22155233761749": {
-								"path": [
-									"IND",
-									"1999-162831271913699",
-									"DOSSIER-22155233761749"
-								],
-								"name": "DOSSIER-22155233761749",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Platform_&.pdf": {
-										"name": "Platform_&.pdf",
-										"path": [
-											"IND",
-											"1999-162831271913699",
-											"DOSSIER-22155233761749",
-											"Platform_&.pdf"
-										],
-										"type": "pdf"
-									},
-									"politie_Functioneel.txt": {
-										"name": "politie_Functioneel.txt",
-										"path": [
-											"IND",
-											"1999-162831271913699",
-											"DOSSIER-22155233761749",
-											"politie_Functioneel.txt"
-										],
-										"type": "txt"
-									},
-									"FIOD_en.pdf": {
-										"name": "FIOD_en.pdf",
-										"path": [
-											"IND",
-											"1999-162831271913699",
-											"DOSSIER-22155233761749",
-											"FIOD_en.pdf"
-										],
-										"type": "pdf"
-									},
-									"DWI_.txt": {
-										"name": "DWI_.txt",
-										"path": [
-											"IND",
-											"1999-162831271913699",
-											"DOSSIER-22155233761749",
-											"DWI_.txt"
-										],
-										"type": "txt"
-									},
-									"Autoriteit_organisatie.pdf": {
-										"name": "Autoriteit_organisatie.pdf",
-										"path": [
-											"IND",
-											"1999-162831271913699",
-											"DOSSIER-22155233761749",
-											"Autoriteit_organisatie.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-290422315512974": {
-								"path": [
-									"IND",
-									"1999-162831271913699",
-									"DOSSIER-290422315512974"
-								],
-								"name": "DOSSIER-290422315512974",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Intelligence_Toezicht.txt": {
-										"name": "Intelligence_Toezicht.txt",
-										"path": [
-											"IND",
-											"1999-162831271913699",
-											"DOSSIER-290422315512974",
-											"Intelligence_Toezicht.txt"
-										],
-										"type": "txt"
-									},
-									"Andrea_Financieel.txt": {
-										"name": "Andrea_Financieel.txt",
-										"path": [
-											"IND",
-											"1999-162831271913699",
-											"DOSSIER-290422315512974",
-											"Andrea_Financieel.txt"
-										],
-										"type": "txt"
-									},
-									"Onverklaarbaar_van.txt": {
-										"name": "Onverklaarbaar_van.txt",
-										"path": [
-											"IND",
-											"1999-162831271913699",
-											"DOSSIER-290422315512974",
-											"Onverklaarbaar_van.txt"
-										],
-										"type": "txt"
-									},
-									"A01C_van.txt": {
-										"name": "A01C_van.txt",
-										"path": [
-											"IND",
-											"1999-162831271913699",
-											"DOSSIER-290422315512974",
-											"A01C_van.txt"
-										],
-										"type": "txt"
-									},
-									"van_Bonaire..txt": {
-										"name": "van_Bonaire..txt",
-										"path": [
-											"IND",
-											"1999-162831271913699",
-											"DOSSIER-290422315512974",
-											"van_Bonaire..txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-3937261336875": {
-								"path": [
-									"IND",
-									"1999-162831271913699",
-									"DOSSIER-3937261336875"
-								],
-								"name": "DOSSIER-3937261336875",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Bureau_team.pdf": {
-										"name": "Bureau_team.pdf",
-										"path": [
-											"IND",
-											"1999-162831271913699",
-											"DOSSIER-3937261336875",
-											"Bureau_team.pdf"
-										],
-										"type": "pdf"
-									},
-									"Laundering_Force.pdf": {
-										"name": "Laundering_Force.pdf",
-										"path": [
-											"IND",
-											"1999-162831271913699",
-											"DOSSIER-3937261336875",
-											"Laundering_Force.pdf"
-										],
-										"type": "pdf"
-									},
-									"de_Basisvoorziening.txt": {
-										"name": "de_Basisvoorziening.txt",
-										"path": [
-											"IND",
-											"1999-162831271913699",
-											"DOSSIER-3937261336875",
-											"de_Basisvoorziening.txt"
-										],
-										"type": "txt"
-									},
-									"Mensensmokkel_Openbaar.txt": {
-										"name": "Mensensmokkel_Openbaar.txt",
-										"path": [
-											"IND",
-											"1999-162831271913699",
-											"DOSSIER-3937261336875",
-											"Mensensmokkel_Openbaar.txt"
-										],
-										"type": "txt"
-									},
-									"Informatie,_Werk.pdf": {
-										"name": "Informatie,_Werk.pdf",
-										"path": [
-											"IND",
-											"1999-162831271913699",
-											"DOSSIER-3937261336875",
-											"Informatie,_Werk.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"AMLC_uitvoerend.txt": {
-								"name": "AMLC_uitvoerend.txt",
-								"path": [
-									"IND",
-									"1999-162831271913699",
-									"AMLC_uitvoerend.txt"
-								],
-								"type": "txt"
-							},
-							"Criminal_A01C.txt": {
-								"name": "Criminal_A01C.txt",
-								"path": [
-									"IND",
-									"1999-162831271913699",
-									"Criminal_A01C.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"Contraterrorisme_en.txt": {
-						"name": "Contraterrorisme_en.txt",
-						"path": [
-							"IND",
-							"Contraterrorisme_en.txt"
-						],
-						"type": "txt"
-					},
-					"en_DWI.txt": {
-						"name": "en_DWI.txt",
-						"path": [
-							"IND",
-							"en_DWI.txt"
-						],
-						"type": "txt"
-					},
-					"Financieel_FP.pdf": {
-						"name": "Financieel_FP.pdf",
-						"path": [
-							"IND",
-							"Financieel_FP.pdf"
-						],
-						"type": "pdf"
-					},
-					"BOOM_Inspectie.txt": {
-						"name": "BOOM_Inspectie.txt",
-						"path": [
-							"IND",
-							"BOOM_Inspectie.txt"
-						],
-						"type": "txt"
-					},
-					"Unit_van.pdf": {
-						"name": "Unit_van.pdf",
-						"path": [
-							"IND",
-							"Unit_van.pdf"
-						],
-						"type": "pdf"
-					}
-				}
-			},
-			"KPCN": {
-				"path": [
-					"KPCN"
-				],
-				"name": "KPCN",
-				"type": "dir",
-				"dirType": "normal",
-				"children": {
-					"1970-172522044313400": {
-						"path": [
-							"KPCN",
-							"1970-172522044313400"
-						],
-						"name": "1970-172522044313400",
-						"type": "dir",
-						"dirType": "normal",
-						"children": {
-							"DOSSIER-12281251020163": {
-								"path": [
-									"KPCN",
-									"1970-172522044313400",
-									"DOSSIER-12281251020163"
-								],
-								"name": "DOSSIER-12281251020163",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"FP_van.txt": {
-										"name": "FP_van.txt",
-										"path": [
-											"KPCN",
-											"1970-172522044313400",
-											"DOSSIER-12281251020163",
-											"FP_van.txt"
-										],
-										"type": "txt"
-									},
-									"AMLC_Werk.txt": {
-										"name": "AMLC_Werk.txt",
-										"path": [
-											"KPCN",
-											"1970-172522044313400",
-											"DOSSIER-12281251020163",
-											"AMLC_Werk.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-212912494025703": {
-								"path": [
-									"KPCN",
-									"1970-172522044313400",
-									"DOSSIER-212912494025703"
-								],
-								"name": "DOSSIER-212912494025703",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Platform_Expertise.txt": {
-										"name": "Platform_Expertise.txt",
-										"path": [
-											"KPCN",
-											"1970-172522044313400",
-											"DOSSIER-212912494025703",
-											"Platform_Expertise.txt"
-										],
-										"type": "txt"
-									},
-									"DLR_Infobox.txt": {
-										"name": "DLR_Infobox.txt",
-										"path": [
-											"KPCN",
-											"1970-172522044313400",
-											"DOSSIER-212912494025703",
-											"DLR_Infobox.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-22942463710395": {
-								"path": [
-									"KPCN",
-									"1970-172522044313400",
-									"DOSSIER-22942463710395"
-								],
-								"name": "DOSSIER-22942463710395",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"de_Task.txt": {
-										"name": "de_Task.txt",
-										"path": [
-											"KPCN",
-											"1970-172522044313400",
-											"DOSSIER-22942463710395",
-											"de_Task.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-3579174842953": {
-								"path": [
-									"KPCN",
-									"1970-172522044313400",
-									"DOSSIER-3579174842953"
-								],
-								"name": "DOSSIER-3579174842953",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Bureau_en.txt": {
-										"name": "Bureau_en.txt",
-										"path": [
-											"KPCN",
-											"1970-172522044313400",
-											"DOSSIER-3579174842953",
-											"Bureau_en.txt"
-										],
-										"type": "txt"
-									},
-									"en_onderdeel.txt": {
-										"name": "en_onderdeel.txt",
-										"path": [
-											"KPCN",
-											"1970-172522044313400",
-											"DOSSIER-3579174842953",
-											"en_onderdeel.txt"
-										],
-										"type": "txt"
-									},
-									"Programma_BOOM.txt": {
-										"name": "Programma_BOOM.txt",
-										"path": [
-											"KPCN",
-											"1970-172522044313400",
-											"DOSSIER-3579174842953",
-											"Programma_BOOM.txt"
-										],
-										"type": "txt"
-									},
-									"de_CN.pdf": {
-										"name": "de_CN.pdf",
-										"path": [
-											"KPCN",
-											"1970-172522044313400",
-											"DOSSIER-3579174842953",
-											"de_CN.pdf"
-										],
-										"type": "pdf"
-									},
-									"eilanden_Cluster.pdf": {
-										"name": "eilanden_Cluster.pdf",
-										"path": [
-											"KPCN",
-											"1970-172522044313400",
-											"DOSSIER-3579174842953",
-											"eilanden_Cluster.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-81831018827590": {
-								"path": [
-									"KPCN",
-									"1970-172522044313400",
-									"DOSSIER-81831018827590"
-								],
-								"name": "DOSSIER-81831018827590",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"OM_team.txt": {
-										"name": "OM_team.txt",
-										"path": [
-											"KPCN",
-											"1970-172522044313400",
-											"DOSSIER-81831018827590",
-											"OM_team.txt"
-										],
-										"type": "txt"
-									},
-									"Transport_Platform.txt": {
-										"name": "Transport_Platform.txt",
-										"path": [
-											"KPCN",
-											"1970-172522044313400",
-											"DOSSIER-81831018827590",
-											"Transport_Platform.txt"
-										],
-										"type": "txt"
-									},
-									"Criminal_en.txt": {
-										"name": "Criminal_en.txt",
-										"path": [
-											"KPCN",
-											"1970-172522044313400",
-											"DOSSIER-81831018827590",
-											"Criminal_en.txt"
-										],
-										"type": "txt"
-									},
-									"Centrum_Europese.txt": {
-										"name": "Centrum_Europese.txt",
-										"path": [
-											"KPCN",
-											"1970-172522044313400",
-											"DOSSIER-81831018827590",
-											"Centrum_Europese.txt"
-										],
-										"type": "txt"
-									},
-									"Rotterdam_EU.pdf": {
-										"name": "Rotterdam_EU.pdf",
-										"path": [
-											"KPCN",
-											"1970-172522044313400",
-											"DOSSIER-81831018827590",
-											"Rotterdam_EU.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"BES_Bureau.pdf": {
-								"name": "BES_Bureau.pdf",
-								"path": [
-									"KPCN",
-									"1970-172522044313400",
-									"BES_Bureau.pdf"
-								],
-								"type": "pdf"
-							},
-							"Cluster_Anti.pdf": {
-								"name": "Cluster_Anti.pdf",
-								"path": [
-									"KPCN",
-									"1970-172522044313400",
-									"Cluster_Anti.pdf"
-								],
-								"type": "pdf"
-							},
-							"de_EC.txt": {
-								"name": "de_EC.txt",
-								"path": [
-									"KPCN",
-									"1970-172522044313400",
-									"de_EC.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"1970-21589122533359": {
-						"path": [
-							"KPCN",
-							"1970-21589122533359"
-						],
-						"name": "1970-21589122533359",
-						"type": "dir",
-						"dirType": "normal",
-						"children": {
-							"DOSSIER-15426251220290": {
-								"path": [
-									"KPCN",
-									"1970-21589122533359",
-									"DOSSIER-15426251220290"
-								],
-								"name": "DOSSIER-15426251220290",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"controle_ILTIOD.txt": {
-										"name": "controle_ILTIOD.txt",
-										"path": [
-											"KPCN",
-											"1970-21589122533359",
-											"DOSSIER-15426251220290",
-											"controle_ILTIOD.txt"
-										],
-										"type": "txt"
-									},
-									"andrea_Caribisch.pdf": {
-										"name": "andrea_Caribisch.pdf",
-										"path": [
-											"KPCN",
-											"1970-21589122533359",
-											"DOSSIER-15426251220290",
-											"andrea_Caribisch.pdf"
-										],
-										"type": "pdf"
-									},
-									"Force_Nederlandsche.pdf": {
-										"name": "Force_Nederlandsche.pdf",
-										"path": [
-											"KPCN",
-											"1970-21589122533359",
-											"DOSSIER-15426251220290",
-											"Force_Nederlandsche.pdf"
-										],
-										"type": "pdf"
-									},
-									"gemeente_en.txt": {
-										"name": "gemeente_en.txt",
-										"path": [
-											"KPCN",
-											"1970-21589122533359",
-											"DOSSIER-15426251220290",
-											"gemeente_en.txt"
-										],
-										"type": "txt"
-									},
-									"de_FIU.txt": {
-										"name": "de_FIU.txt",
-										"path": [
-											"KPCN",
-											"1970-21589122533359",
-											"DOSSIER-15426251220290",
-											"de_FIU.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-18644415614338": {
-								"path": [
-									"KPCN",
-									"1970-21589122533359",
-									"DOSSIER-18644415614338"
-								],
-								"name": "DOSSIER-18644415614338",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"de_Nederland:.txt": {
-										"name": "de_Nederland:.txt",
-										"path": [
-											"KPCN",
-											"1970-21589122533359",
-											"DOSSIER-18644415614338",
-											"de_Nederland:.txt"
-										],
-										"type": "txt"
-									},
-									"Cluster_BES.txt": {
-										"name": "Cluster_BES.txt",
-										"path": [
-											"KPCN",
-											"1970-21589122533359",
-											"DOSSIER-18644415614338",
-											"Cluster_BES.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-25126846829272": {
-								"path": [
-									"KPCN",
-									"1970-21589122533359",
-									"DOSSIER-25126846829272"
-								],
-								"name": "DOSSIER-25126846829272",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Nederlandsche_Inkomen,.txt": {
-										"name": "Nederlandsche_Inkomen,.txt",
-										"path": [
-											"KPCN",
-											"1970-21589122533359",
-											"DOSSIER-25126846829272",
-											"Nederlandsche_Inkomen,.txt"
-										],
-										"type": "txt"
-									},
-									"DWI_FAT.txt": {
-										"name": "DWI_FAT.txt",
-										"path": [
-											"KPCN",
-											"1970-21589122533359",
-											"DOSSIER-25126846829272",
-											"DWI_FAT.txt"
-										],
-										"type": "txt"
-									},
-									"BES_Nederland.pdf": {
-										"name": "BES_Nederland.pdf",
-										"path": [
-											"KPCN",
-											"1970-21589122533359",
-											"DOSSIER-25126846829272",
-											"BES_Nederland.pdf"
-										],
-										"type": "pdf"
-									},
-									"applicatie_de.txt": {
-										"name": "applicatie_de.txt",
-										"path": [
-											"KPCN",
-											"1970-21589122533359",
-											"DOSSIER-25126846829272",
-											"applicatie_de.txt"
-										],
-										"type": "txt"
-									},
-									"European_andrea.txt": {
-										"name": "European_andrea.txt",
-										"path": [
-											"KPCN",
-											"1970-21589122533359",
-											"DOSSIER-25126846829272",
-											"European_andrea.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-26761317028455": {
-								"path": [
-									"KPCN",
-									"1970-21589122533359",
-									"DOSSIER-26761317028455"
-								],
-								"name": "DOSSIER-26761317028455",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"het_Inlichtingen-.pdf": {
-										"name": "het_Inlichtingen-.pdf",
-										"path": [
-											"KPCN",
-											"1970-21589122533359",
-											"DOSSIER-26761317028455",
-											"het_Inlichtingen-.pdf"
-										],
-										"type": "pdf"
-									},
-									"FEC_Intelligence.txt": {
-										"name": "FEC_Intelligence.txt",
-										"path": [
-											"KPCN",
-											"1970-21589122533359",
-											"DOSSIER-26761317028455",
-											"FEC_Intelligence.txt"
-										],
-										"type": "txt"
-									},
-									"Financieel_Openbaar.pdf": {
-										"name": "Financieel_Openbaar.pdf",
-										"path": [
-											"KPCN",
-											"1970-21589122533359",
-											"DOSSIER-26761317028455",
-											"Financieel_Openbaar.pdf"
-										],
-										"type": "pdf"
-									},
-									"team_de.txt": {
-										"name": "team_de.txt",
-										"path": [
-											"KPCN",
-											"1970-21589122533359",
-											"DOSSIER-26761317028455",
-											"team_de.txt"
-										],
-										"type": "txt"
-									},
-									"F_Centre,.pdf": {
-										"name": "F_Centre,.pdf",
-										"path": [
-											"KPCN",
-											"1970-21589122533359",
-											"DOSSIER-26761317028455",
-											"F_Centre,.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-61181130928954": {
-								"path": [
-									"KPCN",
-									"1970-21589122533359",
-									"DOSSIER-61181130928954"
-								],
-								"name": "DOSSIER-61181130928954",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"van_Inspectie.txt": {
-										"name": "van_Inspectie.txt",
-										"path": [
-											"KPCN",
-											"1970-21589122533359",
-											"DOSSIER-61181130928954",
-											"van_Inspectie.txt"
-										],
-										"type": "txt"
-									},
-									"Landelijke_DNB.txt": {
-										"name": "Landelijke_DNB.txt",
-										"path": [
-											"KPCN",
-											"1970-21589122533359",
-											"DOSSIER-61181130928954",
-											"Landelijke_DNB.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"Informatie,_van.txt": {
-								"name": "Informatie,_van.txt",
-								"path": [
-									"KPCN",
-									"1970-21589122533359",
-									"Informatie,_van.txt"
-								],
-								"type": "txt"
-							},
-							"Inkomen,_onderdeel.pdf": {
-								"name": "Inkomen,_onderdeel.pdf",
-								"path": [
-									"KPCN",
-									"1970-21589122533359",
-									"Inkomen,_onderdeel.pdf"
-								],
-								"type": "pdf"
-							},
-							"Informatie,_van.pdf": {
-								"name": "Informatie,_van.pdf",
-								"path": [
-									"KPCN",
-									"1970-21589122533359",
-									"Informatie,_van.pdf"
-								],
-								"type": "pdf"
-							},
-							"een_van.txt": {
-								"name": "een_van.txt",
-								"path": [
-									"KPCN",
-									"1970-21589122533359",
-									"een_van.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"1981-136602120618312": {
-						"path": [
-							"KPCN",
-							"1981-136602120618312"
-						],
-						"name": "1981-136602120618312",
-						"type": "dir",
-						"dirType": "locked",
-						"children": {
-							"DOSSIER-123503079131009": {
-								"path": [
-									"KPCN",
-									"1981-136602120618312",
-									"DOSSIER-123503079131009"
-								],
-								"name": "DOSSIER-123503079131009",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"de_Basisvoorziening.txt": {
-										"name": "de_Basisvoorziening.txt",
-										"path": [
-											"KPCN",
-											"1981-136602120618312",
-											"DOSSIER-123503079131009",
-											"de_Basisvoorziening.txt"
-										],
-										"type": "txt"
-									},
-									"Action_het.txt": {
-										"name": "Action_het.txt",
-										"path": [
-											"KPCN",
-											"1981-136602120618312",
-											"DOSSIER-123503079131009",
-											"Action_het.txt"
-										],
-										"type": "txt"
-									},
-									"Contraterrorisme_Inkomen,.txt": {
-										"name": "Contraterrorisme_Inkomen,.txt",
-										"path": [
-											"KPCN",
-											"1981-136602120618312",
-											"DOSSIER-123503079131009",
-											"Contraterrorisme_Inkomen,.txt"
-										],
-										"type": "txt"
-									},
-									"Informatie,_applicatie.txt": {
-										"name": "Informatie,_applicatie.txt",
-										"path": [
-											"KPCN",
-											"1981-136602120618312",
-											"DOSSIER-123503079131009",
-											"Informatie,_applicatie.txt"
-										],
-										"type": "txt"
-									},
-									"Functioneel_Contraterrorisme.txt": {
-										"name": "Functioneel_Contraterrorisme.txt",
-										"path": [
-											"KPCN",
-											"1981-136602120618312",
-											"DOSSIER-123503079131009",
-											"Functioneel_Contraterrorisme.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-173312570324528": {
-								"path": [
-									"KPCN",
-									"1981-136602120618312",
-									"DOSSIER-173312570324528"
-								],
-								"name": "DOSSIER-173312570324528",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"FEC_en.txt": {
-										"name": "FEC_en.txt",
-										"path": [
-											"KPCN",
-											"1981-136602120618312",
-											"DOSSIER-173312570324528",
-											"FEC_en.txt"
-										],
-										"type": "txt"
-									},
-									"Fiscale_CT.txt": {
-										"name": "Fiscale_CT.txt",
-										"path": [
-											"KPCN",
-											"1981-136602120618312",
-											"DOSSIER-173312570324528",
-											"Fiscale_CT.txt"
-										],
-										"type": "txt"
-									},
-									"European_uitvoerend.txt": {
-										"name": "European_uitvoerend.txt",
-										"path": [
-											"KPCN",
-											"1981-136602120618312",
-											"DOSSIER-173312570324528",
-											"European_uitvoerend.txt"
-										],
-										"type": "txt"
-									},
-									"de_Financial.txt": {
-										"name": "de_Financial.txt",
-										"path": [
-											"KPCN",
-											"1981-136602120618312",
-											"DOSSIER-173312570324528",
-											"de_Financial.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-2570038709417": {
-								"path": [
-									"KPCN",
-									"1981-136602120618312",
-									"DOSSIER-2570038709417"
-								],
-								"name": "DOSSIER-2570038709417",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Laundering._van.txt": {
-										"name": "Laundering._van.txt",
-										"path": [
-											"KPCN",
-											"1981-136602120618312",
-											"DOSSIER-2570038709417",
-											"Laundering._van.txt"
-										],
-										"type": "txt"
-									},
-									"BFT_Dienst.txt": {
-										"name": "BFT_Dienst.txt",
-										"path": [
-											"KPCN",
-											"1981-136602120618312",
-											"DOSSIER-2570038709417",
-											"BFT_Dienst.txt"
-										],
-										"type": "txt"
-									},
-									"de_Bureau.txt": {
-										"name": "de_Bureau.txt",
-										"path": [
-											"KPCN",
-											"1981-136602120618312",
-											"DOSSIER-2570038709417",
-											"de_Bureau.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-75341463426411": {
-								"path": [
-									"KPCN",
-									"1981-136602120618312",
-									"DOSSIER-75341463426411"
-								],
-								"name": "DOSSIER-75341463426411",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"onderdeel_Expertisecentrum.txt": {
-										"name": "onderdeel_Expertisecentrum.txt",
-										"path": [
-											"KPCN",
-											"1981-136602120618312",
-											"DOSSIER-75341463426411",
-											"onderdeel_Expertisecentrum.txt"
-										],
-										"type": "txt"
-									},
-									"Centrum_Anti.txt": {
-										"name": "Centrum_Anti.txt",
-										"path": [
-											"KPCN",
-											"1981-136602120618312",
-											"DOSSIER-75341463426411",
-											"Centrum_Anti.txt"
-										],
-										"type": "txt"
-									},
-									"Openbaar_het.txt": {
-										"name": "Openbaar_het.txt",
-										"path": [
-											"KPCN",
-											"1981-136602120618312",
-											"DOSSIER-75341463426411",
-											"Openbaar_het.txt"
-										],
-										"type": "txt"
-									},
-									"Recherche,_Laundering.pdf": {
-										"name": "Recherche,_Laundering.pdf",
-										"path": [
-											"KPCN",
-											"1981-136602120618312",
-											"DOSSIER-75341463426411",
-											"Recherche,_Laundering.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-9373138215912": {
-								"path": [
-									"KPCN",
-									"1981-136602120618312",
-									"DOSSIER-9373138215912"
-								],
-								"name": "DOSSIER-9373138215912",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Centre,_en.txt": {
-										"name": "Centre,_en.txt",
-										"path": [
-											"KPCN",
-											"1981-136602120618312",
-											"DOSSIER-9373138215912",
-											"Centre,_en.txt"
-										],
-										"type": "txt"
-									},
-									"de_organisatie.txt": {
-										"name": "de_organisatie.txt",
-										"path": [
-											"KPCN",
-											"1981-136602120618312",
-											"DOSSIER-9373138215912",
-											"de_organisatie.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"_EMM.txt": {
-								"name": "_EMM.txt",
-								"path": [
-									"KPCN",
-									"1981-136602120618312",
-									"_EMM.txt"
-								],
-								"type": "txt"
-							},
-							"gebouwd_ILTIOD.pdf": {
-								"name": "gebouwd_ILTIOD.pdf",
-								"path": [
-									"KPCN",
-									"1981-136602120618312",
-									"gebouwd_ILTIOD.pdf"
-								],
-								"type": "pdf"
-							},
-							"de_een.pdf": {
-								"name": "de_een.pdf",
-								"path": [
-									"KPCN",
-									"1981-136602120618312",
-									"de_een.pdf"
-								],
-								"type": "pdf"
-							},
-							"ILTIOD_F.txt": {
-								"name": "ILTIOD_F.txt",
-								"path": [
-									"KPCN",
-									"1981-136602120618312",
-									"ILTIOD_F.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"1993-17649104313852": {
-						"path": [
-							"KPCN",
-							"1993-17649104313852"
-						],
-						"name": "1993-17649104313852",
-						"type": "dir",
-						"dirType": "normal",
-						"children": {
-							"DOSSIER-121153203629521": {
-								"path": [
-									"KPCN",
-									"1993-17649104313852",
-									"DOSSIER-121153203629521"
-								],
-								"name": "DOSSIER-121153203629521",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Against_en.pdf": {
-										"name": "Against_en.pdf",
-										"path": [
-											"KPCN",
-											"1993-17649104313852",
-											"DOSSIER-121153203629521",
-											"Against_en.pdf"
-										],
-										"type": "pdf"
-									},
-									"Financial_Government.txt": {
-										"name": "Financial_Government.txt",
-										"path": [
-											"KPCN",
-											"1993-17649104313852",
-											"DOSSIER-121153203629521",
-											"Financial_Government.txt"
-										],
-										"type": "txt"
-									},
-									"Incasso_Autoriteit.txt": {
-										"name": "Incasso_Autoriteit.txt",
-										"path": [
-											"KPCN",
-											"1993-17649104313852",
-											"DOSSIER-121153203629521",
-											"Incasso_Autoriteit.txt"
-										],
-										"type": "txt"
-									},
-									"Sint_Centrum.txt": {
-										"name": "Sint_Centrum.txt",
-										"path": [
-											"KPCN",
-											"1993-17649104313852",
-											"DOSSIER-121153203629521",
-											"Sint_Centrum.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-22714538425078": {
-								"path": [
-									"KPCN",
-									"1993-17649104313852",
-									"DOSSIER-22714538425078"
-								],
-								"name": "DOSSIER-22714538425078",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"binnen_CJIB.txt": {
-										"name": "binnen_CJIB.txt",
-										"path": [
-											"KPCN",
-											"1993-17649104313852",
-											"DOSSIER-22714538425078",
-											"binnen_CJIB.txt"
-										],
-										"type": "txt"
-									},
-									"Caribisch_Bureau.pdf": {
-										"name": "Caribisch_Bureau.pdf",
-										"path": [
-											"KPCN",
-											"1993-17649104313852",
-											"DOSSIER-22714538425078",
-											"Caribisch_Bureau.pdf"
-										],
-										"type": "pdf"
-									},
-									"gemeente_Cluster.txt": {
-										"name": "gemeente_Cluster.txt",
-										"path": [
-											"KPCN",
-											"1993-17649104313852",
-											"DOSSIER-22714538425078",
-											"gemeente_Cluster.txt"
-										],
-										"type": "txt"
-									},
-									"Andrea_onderdeel.pdf": {
-										"name": "Andrea_onderdeel.pdf",
-										"path": [
-											"KPCN",
-											"1993-17649104313852",
-											"DOSSIER-22714538425078",
-											"Andrea_onderdeel.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-2511414749307": {
-								"path": [
-									"KPCN",
-									"1993-17649104313852",
-									"DOSSIER-2511414749307"
-								],
-								"name": "DOSSIER-2511414749307",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"en_Platform.txt": {
-										"name": "en_Platform.txt",
-										"path": [
-											"KPCN",
-											"1993-17649104313852",
-											"DOSSIER-2511414749307",
-											"en_Platform.txt"
-										],
-										"type": "txt"
-									},
-									"en_en.txt": {
-										"name": "en_en.txt",
-										"path": [
-											"KPCN",
-											"1993-17649104313852",
-											"DOSSIER-2511414749307",
-											"en_en.txt"
-										],
-										"type": "txt"
-									},
-									"CN_.pdf": {
-										"name": "CN_.pdf",
-										"path": [
-											"KPCN",
-											"1993-17649104313852",
-											"DOSSIER-2511414749307",
-											"CN_.pdf"
-										],
-										"type": "pdf"
-									},
-									"CTEPF_organisatie.txt": {
-										"name": "CTEPF_organisatie.txt",
-										"path": [
-											"KPCN",
-											"1993-17649104313852",
-											"DOSSIER-2511414749307",
-											"CTEPF_organisatie.txt"
-										],
-										"type": "txt"
-									},
-									"de_Government.txt": {
-										"name": "de_Government.txt",
-										"path": [
-											"KPCN",
-											"1993-17649104313852",
-											"DOSSIER-2511414749307",
-											"de_Government.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-26357535221401": {
-								"path": [
-									"KPCN",
-									"1993-17649104313852",
-									"DOSSIER-26357535221401"
-								],
-								"name": "DOSSIER-26357535221401",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"BES_van.pdf": {
-										"name": "BES_van.pdf",
-										"path": [
-											"KPCN",
-											"1993-17649104313852",
-											"DOSSIER-26357535221401",
-											"BES_van.pdf"
-										],
-										"type": "pdf"
-									},
-									"Bonaire._van.pdf": {
-										"name": "Bonaire._van.pdf",
-										"path": [
-											"KPCN",
-											"1993-17649104313852",
-											"DOSSIER-26357535221401",
-											"Bonaire._van.pdf"
-										],
-										"type": "pdf"
-									},
-									"Europese_Expertisecentrum.txt": {
-										"name": "Europese_Expertisecentrum.txt",
-										"path": [
-											"KPCN",
-											"1993-17649104313852",
-											"DOSSIER-26357535221401",
-											"Europese_Expertisecentrum.txt"
-										],
-										"type": "txt"
-									},
-									"Financial_Toezicht.txt": {
-										"name": "Financial_Toezicht.txt",
-										"path": [
-											"KPCN",
-											"1993-17649104313852",
-											"DOSSIER-26357535221401",
-											"Financial_Toezicht.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-33661627720657": {
-								"path": [
-									"KPCN",
-									"1993-17649104313852",
-									"DOSSIER-33661627720657"
-								],
-								"name": "DOSSIER-33661627720657",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Force_Platform.txt": {
-										"name": "Force_Platform.txt",
-										"path": [
-											"KPCN",
-											"1993-17649104313852",
-											"DOSSIER-33661627720657",
-											"Force_Platform.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"Criminal_Markten.txt": {
-								"name": "Criminal_Markten.txt",
-								"path": [
-									"KPCN",
-									"1993-17649104313852",
-									"Criminal_Markten.txt"
-								],
-								"type": "txt"
-							},
-							"Nederland:_Inspectie.pdf": {
-								"name": "Nederland:_Inspectie.pdf",
-								"path": [
-									"KPCN",
-									"1993-17649104313852",
-									"Nederland:_Inspectie.pdf"
-								],
-								"type": "pdf"
-							}
-						}
-					},
-					"2014-23963171928072": {
-						"path": [
-							"KPCN",
-							"2014-23963171928072"
-						],
-						"name": "2014-23963171928072",
-						"type": "dir",
-						"dirType": "locked",
-						"children": {
-							"DOSSIER-15161260465822": {
-								"path": [
-									"KPCN",
-									"2014-23963171928072",
-									"DOSSIER-15161260465822"
-								],
-								"name": "DOSSIER-15161260465822",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"BES_Anti-Money.txt": {
-										"name": "BES_Anti-Money.txt",
-										"path": [
-											"KPCN",
-											"2014-23963171928072",
-											"DOSSIER-15161260465822",
-											"BES_Anti-Money.txt"
-										],
-										"type": "txt"
-									},
-									"en_Inkomen,.pdf": {
-										"name": "en_Inkomen,.pdf",
-										"path": [
-											"KPCN",
-											"2014-23963171928072",
-											"DOSSIER-15161260465822",
-											"en_Inkomen,.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-15365120872706": {
-								"path": [
-									"KPCN",
-									"2014-23963171928072",
-									"DOSSIER-15365120872706"
-								],
-								"name": "DOSSIER-15365120872706",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"Criminal_FlU-Nederland.pdf": {
-										"name": "Criminal_FlU-Nederland.pdf",
-										"path": [
-											"KPCN",
-											"2014-23963171928072",
-											"DOSSIER-15365120872706",
-											"Criminal_FlU-Nederland.pdf"
-										],
-										"type": "pdf"
-									},
-									"van_onderdeel.pdf": {
-										"name": "van_onderdeel.pdf",
-										"path": [
-											"KPCN",
-											"2014-23963171928072",
-											"DOSSIER-15365120872706",
-											"van_onderdeel.pdf"
-										],
-										"type": "pdf"
-									},
-									"OM_Bureau.pdf": {
-										"name": "OM_Bureau.pdf",
-										"path": [
-											"KPCN",
-											"2014-23963171928072",
-											"DOSSIER-15365120872706",
-											"OM_Bureau.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-16936314222085": {
-								"path": [
-									"KPCN",
-									"2014-23963171928072",
-									"DOSSIER-16936314222085"
-								],
-								"name": "DOSSIER-16936314222085",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"European_Inspectie.txt": {
-										"name": "European_Inspectie.txt",
-										"path": [
-											"KPCN",
-											"2014-23963171928072",
-											"DOSSIER-16936314222085",
-											"European_Inspectie.txt"
-										],
-										"type": "txt"
-									},
-									"EMM_en.txt": {
-										"name": "EMM_en.txt",
-										"path": [
-											"KPCN",
-											"2014-23963171928072",
-											"DOSSIER-16936314222085",
-											"EMM_en.txt"
-										],
-										"type": "txt"
-									},
-									"de_van.txt": {
-										"name": "de_van.txt",
-										"path": [
-											"KPCN",
-											"2014-23963171928072",
-											"DOSSIER-16936314222085",
-											"de_van.txt"
-										],
-										"type": "txt"
-									},
-									"van_de.txt": {
-										"name": "van_de.txt",
-										"path": [
-											"KPCN",
-											"2014-23963171928072",
-											"DOSSIER-16936314222085",
-											"van_de.txt"
-										],
-										"type": "txt"
-									},
-									"OM_gebouwd.pdf": {
-										"name": "OM_gebouwd.pdf",
-										"path": [
-											"KPCN",
-											"2014-23963171928072",
-											"DOSSIER-16936314222085",
-											"OM_gebouwd.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-1866472754350": {
-								"path": [
-									"KPCN",
-									"2014-23963171928072",
-									"DOSSIER-1866472754350"
-								],
-								"name": "DOSSIER-1866472754350",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"de_Bonaire..pdf": {
-										"name": "de_Bonaire..pdf",
-										"path": [
-											"KPCN",
-											"2014-23963171928072",
-											"DOSSIER-1866472754350",
-											"de_Bonaire..pdf"
-										],
-										"type": "pdf"
-									},
-									"orgaan_CWI.txt": {
-										"name": "orgaan_CWI.txt",
-										"path": [
-											"KPCN",
-											"2014-23963171928072",
-											"DOSSIER-1866472754350",
-											"orgaan_CWI.txt"
-										],
-										"type": "txt"
-									},
-									"AMLC_Infobox.txt": {
-										"name": "AMLC_Infobox.txt",
-										"path": [
-											"KPCN",
-											"2014-23963171928072",
-											"DOSSIER-1866472754350",
-											"AMLC_Infobox.txt"
-										],
-										"type": "txt"
-									},
-									"Opsporingsdienst_Parket,.txt": {
-										"name": "Opsporingsdienst_Parket,.txt",
-										"path": [
-											"KPCN",
-											"2014-23963171928072",
-											"DOSSIER-1866472754350",
-											"Opsporingsdienst_Parket,.txt"
-										],
-										"type": "txt"
-									},
-									"FIOD_gebouwd.txt": {
-										"name": "FIOD_gebouwd.txt",
-										"path": [
-											"KPCN",
-											"2014-23963171928072",
-											"DOSSIER-1866472754350",
-											"FIOD_gebouwd.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-68753150820940": {
-								"path": [
-									"KPCN",
-									"2014-23963171928072",
-									"DOSSIER-68753150820940"
-								],
-								"name": "DOSSIER-68753150820940",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"UNODC_Europese.pdf": {
-										"name": "UNODC_Europese.pdf",
-										"path": [
-											"KPCN",
-											"2014-23963171928072",
-											"DOSSIER-68753150820940",
-											"UNODC_Europese.pdf"
-										],
-										"type": "pdf"
-									},
-									"de_Unit.pdf": {
-										"name": "de_Unit.pdf",
-										"path": [
-											"KPCN",
-											"2014-23963171928072",
-											"DOSSIER-68753150820940",
-											"de_Unit.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"en_Dienst.txt": {
-								"name": "en_Dienst.txt",
-								"path": [
-									"KPCN",
-									"2014-23963171928072",
-									"en_Dienst.txt"
-								],
-								"type": "txt"
-							},
-							"binnen_en.pdf": {
-								"name": "binnen_en.pdf",
-								"path": [
-									"KPCN",
-									"2014-23963171928072",
-									"binnen_en.pdf"
-								],
-								"type": "pdf"
-							},
-							"de_F.txt": {
-								"name": "de_F.txt",
-								"path": [
-									"KPCN",
-									"2014-23963171928072",
-									"de_F.txt"
-								],
-								"type": "txt"
-							},
-							"Europese_Vermogen.pdf": {
-								"name": "Europese_Vermogen.pdf",
-								"path": [
-									"KPCN",
-									"2014-23963171928072",
-									"Europese_Vermogen.pdf"
-								],
-								"type": "pdf"
-							},
-							"Dienst_Laundering.pdf": {
-								"name": "Dienst_Laundering.pdf",
-								"path": [
-									"KPCN",
-									"2014-23963171928072",
-									"Dienst_Laundering.pdf"
-								],
-								"type": "pdf"
-							}
-						}
-					},
-					"Functioneel_ILTIOD.txt": {
-						"name": "Functioneel_ILTIOD.txt",
-						"path": [
-							"KPCN",
-							"Functioneel_ILTIOD.txt"
-						],
-						"type": "txt"
-					},
-					"Commissie,_en.pdf": {
-						"name": "Commissie,_en.pdf",
-						"path": [
-							"KPCN",
-							"Commissie,_en.pdf"
-						],
-						"type": "pdf"
-					}
-				}
-			},
-			"LIEC": {
-				"path": [
-					"LIEC"
-				],
-				"name": "LIEC",
-				"type": "dir",
-				"dirType": "normal",
-				"children": {
-					"1974-24583185117337": {
-						"path": [
-							"LIEC",
-							"1974-24583185117337"
-						],
-						"name": "1974-24583185117337",
-						"type": "dir",
-						"dirType": "normal",
-						"children": {
-							"DOSSIER-102772731528146": {
-								"path": [
-									"LIEC",
-									"1974-24583185117337",
-									"DOSSIER-102772731528146"
-								],
-								"name": "DOSSIER-102772731528146",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"organisatie_Landelijke.pdf": {
-										"name": "organisatie_Landelijke.pdf",
-										"path": [
-											"LIEC",
-											"1974-24583185117337",
-											"DOSSIER-102772731528146",
-											"organisatie_Landelijke.pdf"
-										],
-										"type": "pdf"
-									},
-									"De_EU.txt": {
-										"name": "De_EU.txt",
-										"path": [
-											"LIEC",
-											"1974-24583185117337",
-											"DOSSIER-102772731528146",
-											"De_EU.txt"
-										],
-										"type": "txt"
-									},
-									"Bonaire._Basisvoorziening.pdf": {
-										"name": "Bonaire._Basisvoorziening.pdf",
-										"path": [
-											"LIEC",
-											"1974-24583185117337",
-											"DOSSIER-102772731528146",
-											"Bonaire._Basisvoorziening.pdf"
-										],
-										"type": "pdf"
-									},
-									"Anti-Money_van.pdf": {
-										"name": "Anti-Money_van.pdf",
-										"path": [
-											"LIEC",
-											"1974-24583185117337",
-											"DOSSIER-102772731528146",
-											"Anti-Money_van.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-1244686348": {
-								"path": [
-									"LIEC",
-									"1974-24583185117337",
-									"DOSSIER-1244686348"
-								],
-								"name": "DOSSIER-1244686348",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"orgaan_proliferatiefmanciering..pdf": {
-										"name": "orgaan_proliferatiefmanciering..pdf",
-										"path": [
-											"LIEC",
-											"1974-24583185117337",
-											"DOSSIER-1244686348",
-											"orgaan_proliferatiefmanciering..pdf"
-										],
-										"type": "pdf"
-									},
-									"Programma_Financieel.txt": {
-										"name": "Programma_Financieel.txt",
-										"path": [
-											"LIEC",
-											"1974-24583185117337",
-											"DOSSIER-1244686348",
-											"Programma_Financieel.txt"
-										],
-										"type": "txt"
-									},
-									"de_Administratieve.txt": {
-										"name": "de_Administratieve.txt",
-										"path": [
-											"LIEC",
-											"1974-24583185117337",
-											"DOSSIER-1244686348",
-											"de_Administratieve.txt"
-										],
-										"type": "txt"
-									},
-									"Force_CT.pdf": {
-										"name": "Force_CT.pdf",
-										"path": [
-											"LIEC",
-											"1974-24583185117337",
-											"DOSSIER-1244686348",
-											"Force_CT.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-21901303593768": {
-								"path": [
-									"LIEC",
-									"1974-24583185117337",
-									"DOSSIER-21901303593768"
-								],
-								"name": "DOSSIER-21901303593768",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"F_Incasso.txt": {
-										"name": "F_Incasso.txt",
-										"path": [
-											"LIEC",
-											"1974-24583185117337",
-											"DOSSIER-21901303593768",
-											"F_Incasso.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-239003024522571": {
-								"path": [
-									"LIEC",
-									"1974-24583185117337",
-									"DOSSIER-239003024522571"
-								],
-								"name": "DOSSIER-239003024522571",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Informatie,_Opsporingsdienst.txt": {
-										"name": "Informatie,_Opsporingsdienst.txt",
-										"path": [
-											"LIEC",
-											"1974-24583185117337",
-											"DOSSIER-239003024522571",
-											"Informatie,_Opsporingsdienst.txt"
-										],
-										"type": "txt"
-									},
-									"Money_eilanden.txt": {
-										"name": "Money_eilanden.txt",
-										"path": [
-											"LIEC",
-											"1974-24583185117337",
-											"DOSSIER-239003024522571",
-											"Money_eilanden.txt"
-										],
-										"type": "txt"
-									},
-									"Parket,_CN.pdf": {
-										"name": "Parket,_CN.pdf",
-										"path": [
-											"LIEC",
-											"1974-24583185117337",
-											"DOSSIER-239003024522571",
-											"Parket,_CN.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-48712691313432": {
-								"path": [
-									"LIEC",
-									"1974-24583185117337",
-									"DOSSIER-48712691313432"
-								],
-								"name": "DOSSIER-48712691313432",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Anti_en.pdf": {
-										"name": "Anti_en.pdf",
-										"path": [
-											"LIEC",
-											"1974-24583185117337",
-											"DOSSIER-48712691313432",
-											"Anti_en.pdf"
-										],
-										"type": "pdf"
-									},
-									"CJIB_Eenheid.pdf": {
-										"name": "CJIB_Eenheid.pdf",
-										"path": [
-											"LIEC",
-											"1974-24583185117337",
-											"DOSSIER-48712691313432",
-											"CJIB_Eenheid.pdf"
-										],
-										"type": "pdf"
-									},
-									"Multidisciplinary_De.txt": {
-										"name": "Multidisciplinary_De.txt",
-										"path": [
-											"LIEC",
-											"1974-24583185117337",
-											"DOSSIER-48712691313432",
-											"Multidisciplinary_De.txt"
-										],
-										"type": "txt"
-									},
-									"EU_de.pdf": {
-										"name": "EU_de.pdf",
-										"path": [
-											"LIEC",
-											"1974-24583185117337",
-											"DOSSIER-48712691313432",
-											"EU_de.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"Opsporingsdienst_Mensenhandel.pdf": {
-								"name": "Opsporingsdienst_Mensenhandel.pdf",
-								"path": [
-									"LIEC",
-									"1974-24583185117337",
-									"Opsporingsdienst_Mensenhandel.pdf"
-								],
-								"type": "pdf"
-							}
-						}
-					},
-					"1977-11808191218429": {
-						"path": [
-							"LIEC",
-							"1977-11808191218429"
-						],
-						"name": "1977-11808191218429",
-						"type": "dir",
-						"dirType": "archive",
-						"children": {
-							"DOSSIER-16492307689165": {
-								"path": [
-									"LIEC",
-									"1977-11808191218429",
-									"DOSSIER-16492307689165"
-								],
-								"name": "DOSSIER-16492307689165",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Government_eilanden.txt": {
-										"name": "Government_eilanden.txt",
-										"path": [
-											"LIEC",
-											"1977-11808191218429",
-											"DOSSIER-16492307689165",
-											"Government_eilanden.txt"
-										],
-										"type": "txt"
-									},
-									"interne_binnen.txt": {
-										"name": "interne_binnen.txt",
-										"path": [
-											"LIEC",
-											"1977-11808191218429",
-											"DOSSIER-16492307689165",
-											"interne_binnen.txt"
-										],
-										"type": "txt"
-									},
-									"Force_het.txt": {
-										"name": "Force_het.txt",
-										"path": [
-											"LIEC",
-											"1977-11808191218429",
-											"DOSSIER-16492307689165",
-											"Force_het.txt"
-										],
-										"type": "txt"
-									},
-									"de_ESW.txt": {
-										"name": "de_ESW.txt",
-										"path": [
-											"LIEC",
-											"1977-11808191218429",
-											"DOSSIER-16492307689165",
-											"de_ESW.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-19255723612041": {
-								"path": [
-									"LIEC",
-									"1977-11808191218429",
-									"DOSSIER-19255723612041"
-								],
-								"name": "DOSSIER-19255723612041",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Economische_Laundering..txt": {
-										"name": "Economische_Laundering..txt",
-										"path": [
-											"LIEC",
-											"1977-11808191218429",
-											"DOSSIER-19255723612041",
-											"Economische_Laundering..txt"
-										],
-										"type": "txt"
-									},
-									"FAT_FIU.txt": {
-										"name": "FAT_FIU.txt",
-										"path": [
-											"LIEC",
-											"1977-11808191218429",
-											"DOSSIER-19255723612041",
-											"FAT_FIU.txt"
-										],
-										"type": "txt"
-									},
-									"Expertisecentrum_Intelligence.pdf": {
-										"name": "Expertisecentrum_Intelligence.pdf",
-										"path": [
-											"LIEC",
-											"1977-11808191218429",
-											"DOSSIER-19255723612041",
-											"Expertisecentrum_Intelligence.pdf"
-										],
-										"type": "pdf"
-									},
-									"BVI_Inspectie.txt": {
-										"name": "BVI_Inspectie.txt",
-										"path": [
-											"LIEC",
-											"1977-11808191218429",
-											"DOSSIER-19255723612041",
-											"BVI_Inspectie.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-24666154531952": {
-								"path": [
-									"LIEC",
-									"1977-11808191218429",
-									"DOSSIER-24666154531952"
-								],
-								"name": "DOSSIER-24666154531952",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Intelligence_een.pdf": {
-										"name": "Intelligence_een.pdf",
-										"path": [
-											"LIEC",
-											"1977-11808191218429",
-											"DOSSIER-24666154531952",
-											"Intelligence_een.pdf"
-										],
-										"type": "pdf"
-									},
-									"van_Landelijke.txt": {
-										"name": "van_Landelijke.txt",
-										"path": [
-											"LIEC",
-											"1977-11808191218429",
-											"DOSSIER-24666154531952",
-											"van_Landelijke.txt"
-										],
-										"type": "txt"
-									},
-									"de_FIOD.pdf": {
-										"name": "de_FIOD.pdf",
-										"path": [
-											"LIEC",
-											"1977-11808191218429",
-											"DOSSIER-24666154531952",
-											"de_FIOD.pdf"
-										],
-										"type": "pdf"
-									},
-									"Basisvoorziening_CTEPF.txt": {
-										"name": "Basisvoorziening_CTEPF.txt",
-										"path": [
-											"LIEC",
-											"1977-11808191218429",
-											"DOSSIER-24666154531952",
-											"Basisvoorziening_CTEPF.txt"
-										],
-										"type": "txt"
-									},
-									"EMPACT_de.pdf": {
-										"name": "EMPACT_de.pdf",
-										"path": [
-											"LIEC",
-											"1977-11808191218429",
-											"DOSSIER-24666154531952",
-											"EMPACT_de.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-305243062425712": {
-								"path": [
-									"LIEC",
-									"1977-11808191218429",
-									"DOSSIER-305243062425712"
-								],
-								"name": "DOSSIER-305243062425712",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"Financial_en.txt": {
-										"name": "Financial_en.txt",
-										"path": [
-											"LIEC",
-											"1977-11808191218429",
-											"DOSSIER-305243062425712",
-											"Financial_en.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-4514245696312": {
-								"path": [
-									"LIEC",
-									"1977-11808191218429",
-									"DOSSIER-4514245696312"
-								],
-								"name": "DOSSIER-4514245696312",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Economische_Laundering.pdf": {
-										"name": "Economische_Laundering.pdf",
-										"path": [
-											"LIEC",
-											"1977-11808191218429",
-											"DOSSIER-4514245696312",
-											"Economische_Laundering.pdf"
-										],
-										"type": "pdf"
-									},
-									"Money_ESW.pdf": {
-										"name": "Money_ESW.pdf",
-										"path": [
-											"LIEC",
-											"1977-11808191218429",
-											"DOSSIER-4514245696312",
-											"Money_ESW.pdf"
-										],
-										"type": "pdf"
-									},
-									"Financieel_Task.txt": {
-										"name": "Financieel_Task.txt",
-										"path": [
-											"LIEC",
-											"1977-11808191218429",
-											"DOSSIER-4514245696312",
-											"Financieel_Task.txt"
-										],
-										"type": "txt"
-									},
-									"de_Informatie,.txt": {
-										"name": "de_Informatie,.txt",
-										"path": [
-											"LIEC",
-											"1977-11808191218429",
-											"DOSSIER-4514245696312",
-											"de_Informatie,.txt"
-										],
-										"type": "txt"
-									},
-									"Commissie,_Centrum.pdf": {
-										"name": "Commissie,_Centrum.pdf",
-										"path": [
-											"LIEC",
-											"1977-11808191218429",
-											"DOSSIER-4514245696312",
-											"Commissie,_Centrum.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"Parket,_F.txt": {
-								"name": "Parket,_F.txt",
-								"path": [
-									"LIEC",
-									"1977-11808191218429",
-									"Parket,_F.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"1986-324411930516589": {
-						"path": [
-							"LIEC",
-							"1986-324411930516589"
-						],
-						"name": "1986-324411930516589",
-						"type": "dir",
-						"dirType": "locked",
-						"children": {
-							"DOSSIER-198451903129933": {
-								"path": [
-									"LIEC",
-									"1986-324411930516589",
-									"DOSSIER-198451903129933"
-								],
-								"name": "DOSSIER-198451903129933",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"ESW_Expertisecentrum.txt": {
-										"name": "ESW_Expertisecentrum.txt",
-										"path": [
-											"LIEC",
-											"1986-324411930516589",
-											"DOSSIER-198451903129933",
-											"ESW_Expertisecentrum.txt"
-										],
-										"type": "txt"
-									},
-									"Expertisecentrum_Inspectie.pdf": {
-										"name": "Expertisecentrum_Inspectie.pdf",
-										"path": [
-											"LIEC",
-											"1986-324411930516589",
-											"DOSSIER-198451903129933",
-											"Expertisecentrum_Inspectie.pdf"
-										],
-										"type": "pdf"
-									},
-									"Infobox_Laundering..txt": {
-										"name": "Infobox_Laundering..txt",
-										"path": [
-											"LIEC",
-											"1986-324411930516589",
-											"DOSSIER-198451903129933",
-											"Infobox_Laundering..txt"
-										],
-										"type": "txt"
-									},
-									"Intelligence_de.txt": {
-										"name": "Intelligence_de.txt",
-										"path": [
-											"LIEC",
-											"1986-324411930516589",
-											"DOSSIER-198451903129933",
-											"Intelligence_de.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-22222176577349": {
-								"path": [
-									"LIEC",
-									"1986-324411930516589",
-									"DOSSIER-22222176577349"
-								],
-								"name": "DOSSIER-22222176577349",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"en_Centraal.txt": {
-										"name": "en_Centraal.txt",
-										"path": [
-											"LIEC",
-											"1986-324411930516589",
-											"DOSSIER-22222176577349",
-											"en_Centraal.txt"
-										],
-										"type": "txt"
-									},
-									"Infobox_Mensenhandel.txt": {
-										"name": "Infobox_Mensenhandel.txt",
-										"path": [
-											"LIEC",
-											"1986-324411930516589",
-											"DOSSIER-22222176577349",
-											"Infobox_Mensenhandel.txt"
-										],
-										"type": "txt"
-									},
-									"ESW_Expertise.txt": {
-										"name": "ESW_Expertise.txt",
-										"path": [
-											"LIEC",
-											"1986-324411930516589",
-											"DOSSIER-22222176577349",
-											"ESW_Expertise.txt"
-										],
-										"type": "txt"
-									},
-									"Mensenhandel_Bureau.pdf": {
-										"name": "Mensenhandel_Bureau.pdf",
-										"path": [
-											"LIEC",
-											"1986-324411930516589",
-											"DOSSIER-22222176577349",
-											"Mensenhandel_Bureau.pdf"
-										],
-										"type": "pdf"
-									},
-									"Toezicht_Anti.txt": {
-										"name": "Toezicht_Anti.txt",
-										"path": [
-											"LIEC",
-											"1986-324411930516589",
-											"DOSSIER-22222176577349",
-											"Toezicht_Anti.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-2265691467414": {
-								"path": [
-									"LIEC",
-									"1986-324411930516589",
-									"DOSSIER-2265691467414"
-								],
-								"name": "DOSSIER-2265691467414",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Financial_Informatie,.txt": {
-										"name": "Financial_Informatie,.txt",
-										"path": [
-											"LIEC",
-											"1986-324411930516589",
-											"DOSSIER-2265691467414",
-											"Financial_Informatie,.txt"
-										],
-										"type": "txt"
-									},
-									"_CWI.txt": {
-										"name": "_CWI.txt",
-										"path": [
-											"LIEC",
-											"1986-324411930516589",
-											"DOSSIER-2265691467414",
-											"_CWI.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-305443243210230": {
-								"path": [
-									"LIEC",
-									"1986-324411930516589",
-									"DOSSIER-305443243210230"
-								],
-								"name": "DOSSIER-305443243210230",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"CTEPF_en.pdf": {
-										"name": "CTEPF_en.pdf",
-										"path": [
-											"LIEC",
-											"1986-324411930516589",
-											"DOSSIER-305443243210230",
-											"CTEPF_en.pdf"
-										],
-										"type": "pdf"
-									},
-									"Dienst_gemeente.txt": {
-										"name": "Dienst_gemeente.txt",
-										"path": [
-											"LIEC",
-											"1986-324411930516589",
-											"DOSSIER-305443243210230",
-											"Dienst_gemeente.txt"
-										],
-										"type": "txt"
-									},
-									"Administratieve_Nederlandsche.pdf": {
-										"name": "Administratieve_Nederlandsche.pdf",
-										"path": [
-											"LIEC",
-											"1986-324411930516589",
-											"DOSSIER-305443243210230",
-											"Administratieve_Nederlandsche.pdf"
-										],
-										"type": "pdf"
-									},
-									"UNODC_ICT.pdf": {
-										"name": "UNODC_ICT.pdf",
-										"path": [
-											"LIEC",
-											"1986-324411930516589",
-											"DOSSIER-305443243210230",
-											"UNODC_ICT.pdf"
-										],
-										"type": "pdf"
-									},
-									"politie_UNODC.txt": {
-										"name": "politie_UNODC.txt",
-										"path": [
-											"LIEC",
-											"1986-324411930516589",
-											"DOSSIER-305443243210230",
-											"politie_UNODC.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-8907474412335": {
-								"path": [
-									"LIEC",
-									"1986-324411930516589",
-									"DOSSIER-8907474412335"
-								],
-								"name": "DOSSIER-8907474412335",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"onderdeel_De.txt": {
-										"name": "onderdeel_De.txt",
-										"path": [
-											"LIEC",
-											"1986-324411930516589",
-											"DOSSIER-8907474412335",
-											"onderdeel_De.txt"
-										],
-										"type": "txt"
-									},
-									"Landelijke_FinanciÃ«le.txt": {
-										"name": "Landelijke_FinanciÃ«le.txt",
-										"path": [
-											"LIEC",
-											"1986-324411930516589",
-											"DOSSIER-8907474412335",
-											"Landelijke_FinanciÃ«le.txt"
-										],
-										"type": "txt"
-									},
-									"een_Laundering..txt": {
-										"name": "een_Laundering..txt",
-										"path": [
-											"LIEC",
-											"1986-324411930516589",
-											"DOSSIER-8907474412335",
-											"een_Laundering..txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"de_Caribisch.pdf": {
-								"name": "de_Caribisch.pdf",
-								"path": [
-									"LIEC",
-									"1986-324411930516589",
-									"de_Caribisch.pdf"
-								],
-								"type": "pdf"
-							},
-							"Action_Opsporingsdienst.pdf": {
-								"name": "Action_Opsporingsdienst.pdf",
-								"path": [
-									"LIEC",
-									"1986-324411930516589",
-									"Action_Opsporingsdienst.pdf"
-								],
-								"type": "pdf"
-							},
-							"Incasso_EU.txt": {
-								"name": "Incasso_EU.txt",
-								"path": [
-									"LIEC",
-									"1986-324411930516589",
-									"Incasso_EU.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"2004-123841672216305": {
-						"path": [
-							"LIEC",
-							"2004-123841672216305"
-						],
-						"name": "2004-123841672216305",
-						"type": "dir",
-						"dirType": "archive",
-						"children": {
-							"DOSSIER-153671170927127": {
-								"path": [
-									"LIEC",
-									"2004-123841672216305",
-									"DOSSIER-153671170927127"
-								],
-								"name": "DOSSIER-153671170927127",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"CT_DLR.txt": {
-										"name": "CT_DLR.txt",
-										"path": [
-											"LIEC",
-											"2004-123841672216305",
-											"DOSSIER-153671170927127",
-											"CT_DLR.txt"
-										],
-										"type": "txt"
-									},
-									"onderdeel_Financial.pdf": {
-										"name": "onderdeel_Financial.pdf",
-										"path": [
-											"LIEC",
-											"2004-123841672216305",
-											"DOSSIER-153671170927127",
-											"onderdeel_Financial.pdf"
-										],
-										"type": "pdf"
-									},
-									"FinanciÃ«le_van.txt": {
-										"name": "FinanciÃ«le_van.txt",
-										"path": [
-											"LIEC",
-											"2004-123841672216305",
-											"DOSSIER-153671170927127",
-											"FinanciÃ«le_van.txt"
-										],
-										"type": "txt"
-									},
-									"A01C_Caribisch.txt": {
-										"name": "A01C_Caribisch.txt",
-										"path": [
-											"LIEC",
-											"2004-123841672216305",
-											"DOSSIER-153671170927127",
-											"A01C_Caribisch.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-164423109025294": {
-								"path": [
-									"LIEC",
-									"2004-123841672216305",
-									"DOSSIER-164423109025294"
-								],
-								"name": "DOSSIER-164423109025294",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Crimineel_politie.pdf": {
-										"name": "Crimineel_politie.pdf",
-										"path": [
-											"LIEC",
-											"2004-123841672216305",
-											"DOSSIER-164423109025294",
-											"Crimineel_politie.pdf"
-										],
-										"type": "pdf"
-									},
-									"CJIB_Criminaliteit.txt": {
-										"name": "CJIB_Criminaliteit.txt",
-										"path": [
-											"LIEC",
-											"2004-123841672216305",
-											"DOSSIER-164423109025294",
-											"CJIB_Criminaliteit.txt"
-										],
-										"type": "txt"
-									},
-									"Platform_Inspectie.txt": {
-										"name": "Platform_Inspectie.txt",
-										"path": [
-											"LIEC",
-											"2004-123841672216305",
-											"DOSSIER-164423109025294",
-											"Platform_Inspectie.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-2912892614832": {
-								"path": [
-									"LIEC",
-									"2004-123841672216305",
-									"DOSSIER-2912892614832"
-								],
-								"name": "DOSSIER-2912892614832",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"en_Amsterdam.txt": {
-										"name": "en_Amsterdam.txt",
-										"path": [
-											"LIEC",
-											"2004-123841672216305",
-											"DOSSIER-2912892614832",
-											"en_Amsterdam.txt"
-										],
-										"type": "txt"
-									},
-									"van_Europese.pdf": {
-										"name": "van_Europese.pdf",
-										"path": [
-											"LIEC",
-											"2004-123841672216305",
-											"DOSSIER-2912892614832",
-											"van_Europese.pdf"
-										],
-										"type": "pdf"
-									},
-									"Financieel_FinanciÃ«le.txt": {
-										"name": "Financieel_FinanciÃ«le.txt",
-										"path": [
-											"LIEC",
-											"2004-123841672216305",
-											"DOSSIER-2912892614832",
-											"Financieel_FinanciÃ«le.txt"
-										],
-										"type": "txt"
-									},
-									"en_Inlichtingen-.txt": {
-										"name": "en_Inlichtingen-.txt",
-										"path": [
-											"LIEC",
-											"2004-123841672216305",
-											"DOSSIER-2912892614832",
-											"en_Inlichtingen-.txt"
-										],
-										"type": "txt"
-									},
-									"Basisvoorziening_gebouwd.txt": {
-										"name": "Basisvoorziening_gebouwd.txt",
-										"path": [
-											"LIEC",
-											"2004-123841672216305",
-											"DOSSIER-2912892614832",
-											"Basisvoorziening_gebouwd.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-32133283723626": {
-								"path": [
-									"LIEC",
-									"2004-123841672216305",
-									"DOSSIER-32133283723626"
-								],
-								"name": "DOSSIER-32133283723626",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"DLR_Unie.pdf": {
-										"name": "DLR_Unie.pdf",
-										"path": [
-											"LIEC",
-											"2004-123841672216305",
-											"DOSSIER-32133283723626",
-											"DLR_Unie.pdf"
-										],
-										"type": "pdf"
-									},
-									"Fiscale_AFM.txt": {
-										"name": "Fiscale_AFM.txt",
-										"path": [
-											"LIEC",
-											"2004-123841672216305",
-											"DOSSIER-32133283723626",
-											"Fiscale_AFM.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-325423226316008": {
-								"path": [
-									"LIEC",
-									"2004-123841672216305",
-									"DOSSIER-325423226316008"
-								],
-								"name": "DOSSIER-325423226316008",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"Leefomgeving_De.txt": {
-										"name": "Leefomgeving_De.txt",
-										"path": [
-											"LIEC",
-											"2004-123841672216305",
-											"DOSSIER-325423226316008",
-											"Leefomgeving_De.txt"
-										],
-										"type": "txt"
-									},
-									"De_Opsporingsdienst.pdf": {
-										"name": "De_Opsporingsdienst.pdf",
-										"path": [
-											"LIEC",
-											"2004-123841672216305",
-											"DOSSIER-325423226316008",
-											"De_Opsporingsdienst.pdf"
-										],
-										"type": "pdf"
-									},
-									"ILTIOD_andrea.txt": {
-										"name": "ILTIOD_andrea.txt",
-										"path": [
-											"LIEC",
-											"2004-123841672216305",
-											"DOSSIER-325423226316008",
-											"ILTIOD_andrea.txt"
-										],
-										"type": "txt"
-									},
-									"Criminaliteit_en.txt": {
-										"name": "Criminaliteit_en.txt",
-										"path": [
-											"LIEC",
-											"2004-123841672216305",
-											"DOSSIER-325423226316008",
-											"Criminaliteit_en.txt"
-										],
-										"type": "txt"
-									},
-									"Anti_Transport.txt": {
-										"name": "Anti_Transport.txt",
-										"path": [
-											"LIEC",
-											"2004-123841672216305",
-											"DOSSIER-325423226316008",
-											"Anti_Transport.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"Leefomgeving_Laundering..pdf": {
-								"name": "Leefomgeving_Laundering..pdf",
-								"path": [
-									"LIEC",
-									"2004-123841672216305",
-									"Leefomgeving_Laundering..pdf"
-								],
-								"type": "pdf"
-							}
-						}
-					},
-					"2006-1364522196505": {
-						"path": [
-							"LIEC",
-							"2006-1364522196505"
-						],
-						"name": "2006-1364522196505",
-						"type": "dir",
-						"dirType": "normal",
-						"children": {
-							"DOSSIER-1201862971484": {
-								"path": [
-									"LIEC",
-									"2006-1364522196505",
-									"DOSSIER-1201862971484"
-								],
-								"name": "DOSSIER-1201862971484",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Action_BES.pdf": {
-										"name": "Action_BES.pdf",
-										"path": [
-											"LIEC",
-											"2006-1364522196505",
-											"DOSSIER-1201862971484",
-											"Action_BES.pdf"
-										],
-										"type": "pdf"
-									},
-									"Opsporingsdienst_BES.txt": {
-										"name": "Opsporingsdienst_BES.txt",
-										"path": [
-											"LIEC",
-											"2006-1364522196505",
-											"DOSSIER-1201862971484",
-											"Opsporingsdienst_BES.txt"
-										],
-										"type": "txt"
-									},
-									"Onverklaarbaar_EC.pdf": {
-										"name": "Onverklaarbaar_EC.pdf",
-										"path": [
-											"LIEC",
-											"2006-1364522196505",
-											"DOSSIER-1201862971484",
-											"Onverklaarbaar_EC.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-1912114794902": {
-								"path": [
-									"LIEC",
-									"2006-1364522196505",
-									"DOSSIER-1912114794902"
-								],
-								"name": "DOSSIER-1912114794902",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"GoAML_EU.txt": {
-										"name": "GoAML_EU.txt",
-										"path": [
-											"LIEC",
-											"2006-1364522196505",
-											"DOSSIER-1912114794902",
-											"GoAML_EU.txt"
-										],
-										"type": "txt"
-									},
-									"de_Europese.txt": {
-										"name": "de_Europese.txt",
-										"path": [
-											"LIEC",
-											"2006-1364522196505",
-											"DOSSIER-1912114794902",
-											"de_Europese.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-209572199314136": {
-								"path": [
-									"LIEC",
-									"2006-1364522196505",
-									"DOSSIER-209572199314136"
-								],
-								"name": "DOSSIER-209572199314136",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"&_en.txt": {
-										"name": "&_en.txt",
-										"path": [
-											"LIEC",
-											"2006-1364522196505",
-											"DOSSIER-209572199314136",
-											"&_en.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-43581457330391": {
-								"path": [
-									"LIEC",
-									"2006-1364522196505",
-									"DOSSIER-43581457330391"
-								],
-								"name": "DOSSIER-43581457330391",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Fiscale_de.txt": {
-										"name": "Fiscale_de.txt",
-										"path": [
-											"LIEC",
-											"2006-1364522196505",
-											"DOSSIER-43581457330391",
-											"Fiscale_de.txt"
-										],
-										"type": "txt"
-									},
-									"BVI_de.txt": {
-										"name": "BVI_de.txt",
-										"path": [
-											"LIEC",
-											"2006-1364522196505",
-											"DOSSIER-43581457330391",
-											"BVI_de.txt"
-										],
-										"type": "txt"
-									},
-									"een_iCOV.txt": {
-										"name": "een_iCOV.txt",
-										"path": [
-											"LIEC",
-											"2006-1364522196505",
-											"DOSSIER-43581457330391",
-											"een_iCOV.txt"
-										],
-										"type": "txt"
-									},
-									"de_de.pdf": {
-										"name": "de_de.pdf",
-										"path": [
-											"LIEC",
-											"2006-1364522196505",
-											"DOSSIER-43581457330391",
-											"de_de.pdf"
-										],
-										"type": "pdf"
-									},
-									"DNB_Ontnemingswetgeving.pdf": {
-										"name": "DNB_Ontnemingswetgeving.pdf",
-										"path": [
-											"LIEC",
-											"2006-1364522196505",
-											"DOSSIER-43581457330391",
-											"DNB_Ontnemingswetgeving.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-55192384723197": {
-								"path": [
-									"LIEC",
-									"2006-1364522196505",
-									"DOSSIER-55192384723197"
-								],
-								"name": "DOSSIER-55192384723197",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"applicatie_en.txt": {
-										"name": "applicatie_en.txt",
-										"path": [
-											"LIEC",
-											"2006-1364522196505",
-											"DOSSIER-55192384723197",
-											"applicatie_en.txt"
-										],
-										"type": "txt"
-									},
-									"de_Financieel.txt": {
-										"name": "de_Financieel.txt",
-										"path": [
-											"LIEC",
-											"2006-1364522196505",
-											"DOSSIER-55192384723197",
-											"de_Financieel.txt"
-										],
-										"type": "txt"
-									},
-									"Mensenhandel_onderdeel.txt": {
-										"name": "Mensenhandel_onderdeel.txt",
-										"path": [
-											"LIEC",
-											"2006-1364522196505",
-											"DOSSIER-55192384723197",
-											"Mensenhandel_onderdeel.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"EC_gemeente.pdf": {
-								"name": "EC_gemeente.pdf",
-								"path": [
-									"LIEC",
-									"2006-1364522196505",
-									"EC_gemeente.pdf"
-								],
-								"type": "pdf"
-							},
-							"Multidisciplinary_DLR.pdf": {
-								"name": "Multidisciplinary_DLR.pdf",
-								"path": [
-									"LIEC",
-									"2006-1364522196505",
-									"Multidisciplinary_DLR.pdf"
-								],
-								"type": "pdf"
-							},
-							"Vermogen_Toezicht.pdf": {
-								"name": "Vermogen_Toezicht.pdf",
-								"path": [
-									"LIEC",
-									"2006-1364522196505",
-									"Vermogen_Toezicht.pdf"
-								],
-								"type": "pdf"
-							},
-							"EMM_Criminal.pdf": {
-								"name": "EMM_Criminal.pdf",
-								"path": [
-									"LIEC",
-									"2006-1364522196505",
-									"EMM_Criminal.pdf"
-								],
-								"type": "pdf"
-							},
-							"Financial_Informatie,.pdf": {
-								"name": "Financial_Informatie,.pdf",
-								"path": [
-									"LIEC",
-									"2006-1364522196505",
-									"Financial_Informatie,.pdf"
-								],
-								"type": "pdf"
-							}
-						}
-					},
-					"CN_Expertise.txt": {
-						"name": "CN_Expertise.txt",
-						"path": [
-							"LIEC",
-							"CN_Expertise.txt"
-						],
-						"type": "txt"
-					},
-					"van_en.txt": {
-						"name": "van_en.txt",
-						"path": [
-							"LIEC",
-							"van_en.txt"
-						],
-						"type": "txt"
-					},
-					"Nederland:_FAT.txt": {
-						"name": "Nederland:_FAT.txt",
-						"path": [
-							"LIEC",
-							"Nederland:_FAT.txt"
-						],
-						"type": "txt"
-					}
-				}
-			},
-			"PPS": {
-				"path": [
-					"PPS"
-				],
-				"name": "PPS",
-				"type": "dir",
-				"dirType": "locked",
-				"children": {
-					"1969-8677243831233": {
-						"path": [
-							"PPS",
-							"1969-8677243831233"
-						],
-						"name": "1969-8677243831233",
-						"type": "dir",
-						"dirType": "normal",
-						"children": {
-							"DOSSIER-14488171349393": {
-								"path": [
-									"PPS",
-									"1969-8677243831233",
-									"DOSSIER-14488171349393"
-								],
-								"name": "DOSSIER-14488171349393",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"eilanden_&.pdf": {
-										"name": "eilanden_&.pdf",
-										"path": [
-											"PPS",
-											"1969-8677243831233",
-											"DOSSIER-14488171349393",
-											"eilanden_&.pdf"
-										],
-										"type": "pdf"
-									},
-									"en_Openbaar.txt": {
-										"name": "en_Openbaar.txt",
-										"path": [
-											"PPS",
-											"1969-8677243831233",
-											"DOSSIER-14488171349393",
-											"en_Openbaar.txt"
-										],
-										"type": "txt"
-									},
-									"Action_EMPACT.pdf": {
-										"name": "Action_EMPACT.pdf",
-										"path": [
-											"PPS",
-											"1969-8677243831233",
-											"DOSSIER-14488171349393",
-											"Action_EMPACT.pdf"
-										],
-										"type": "pdf"
-									},
-									"en_uitvoerend.pdf": {
-										"name": "en_uitvoerend.pdf",
-										"path": [
-											"PPS",
-											"1969-8677243831233",
-											"DOSSIER-14488171349393",
-											"en_uitvoerend.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-152671915819216": {
-								"path": [
-									"PPS",
-									"1969-8677243831233",
-									"DOSSIER-152671915819216"
-								],
-								"name": "DOSSIER-152671915819216",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"Basisvoorziening_van.txt": {
-										"name": "Basisvoorziening_van.txt",
-										"path": [
-											"PPS",
-											"1969-8677243831233",
-											"DOSSIER-152671915819216",
-											"Basisvoorziening_van.txt"
-										],
-										"type": "txt"
-									},
-									"Centre,_en.txt": {
-										"name": "Centre,_en.txt",
-										"path": [
-											"PPS",
-											"1969-8677243831233",
-											"DOSSIER-152671915819216",
-											"Centre,_en.txt"
-										],
-										"type": "txt"
-									},
-									"Functioneel_eilanden.txt": {
-										"name": "Functioneel_eilanden.txt",
-										"path": [
-											"PPS",
-											"1969-8677243831233",
-											"DOSSIER-152671915819216",
-											"Functioneel_eilanden.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-213282473028432": {
-								"path": [
-									"PPS",
-									"1969-8677243831233",
-									"DOSSIER-213282473028432"
-								],
-								"name": "DOSSIER-213282473028432",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"van_onderdeel.pdf": {
-										"name": "van_onderdeel.pdf",
-										"path": [
-											"PPS",
-											"1969-8677243831233",
-											"DOSSIER-213282473028432",
-											"van_onderdeel.pdf"
-										],
-										"type": "pdf"
-									},
-									"Landelijke_Platform.pdf": {
-										"name": "Landelijke_Platform.pdf",
-										"path": [
-											"PPS",
-											"1969-8677243831233",
-											"DOSSIER-213282473028432",
-											"Landelijke_Platform.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-2281829524807": {
-								"path": [
-									"PPS",
-									"1969-8677243831233",
-									"DOSSIER-2281829524807"
-								],
-								"name": "DOSSIER-2281829524807",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"onderdeel_applicatie.pdf": {
-										"name": "onderdeel_applicatie.pdf",
-										"path": [
-											"PPS",
-											"1969-8677243831233",
-											"DOSSIER-2281829524807",
-											"onderdeel_applicatie.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-322052247913453": {
-								"path": [
-									"PPS",
-									"1969-8677243831233",
-									"DOSSIER-322052247913453"
-								],
-								"name": "DOSSIER-322052247913453",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Multidisciplinary_Basisvoorziening.txt": {
-										"name": "Multidisciplinary_Basisvoorziening.txt",
-										"path": [
-											"PPS",
-											"1969-8677243831233",
-											"DOSSIER-322052247913453",
-											"Multidisciplinary_Basisvoorziening.txt"
-										],
-										"type": "txt"
-									},
-									"de_CT.txt": {
-										"name": "de_CT.txt",
-										"path": [
-											"PPS",
-											"1969-8677243831233",
-											"DOSSIER-322052247913453",
-											"de_CT.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"de_onderdeel.txt": {
-								"name": "de_onderdeel.txt",
-								"path": [
-									"PPS",
-									"1969-8677243831233",
-									"de_onderdeel.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"1970-229902901620566": {
-						"path": [
-							"PPS",
-							"1970-229902901620566"
-						],
-						"name": "1970-229902901620566",
-						"type": "dir",
-						"dirType": "normal",
-						"children": {
-							"DOSSIER-12597490220775": {
-								"path": [
-									"PPS",
-									"1970-229902901620566",
-									"DOSSIER-12597490220775"
-								],
-								"name": "DOSSIER-12597490220775",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"Mensenhandel_FinEC.txt": {
-										"name": "Mensenhandel_FinEC.txt",
-										"path": [
-											"PPS",
-											"1970-229902901620566",
-											"DOSSIER-12597490220775",
-											"Mensenhandel_FinEC.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-1568405326977": {
-								"path": [
-									"PPS",
-									"1970-229902901620566",
-									"DOSSIER-1568405326977"
-								],
-								"name": "DOSSIER-1568405326977",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"CN_Laundering..txt": {
-										"name": "CN_Laundering..txt",
-										"path": [
-											"PPS",
-											"1970-229902901620566",
-											"DOSSIER-1568405326977",
-											"CN_Laundering..txt"
-										],
-										"type": "txt"
-									},
-									"FIOD_Criminaliteit.txt": {
-										"name": "FIOD_Criminaliteit.txt",
-										"path": [
-											"PPS",
-											"1970-229902901620566",
-											"DOSSIER-1568405326977",
-											"FIOD_Criminaliteit.txt"
-										],
-										"type": "txt"
-									},
-									"FIOD_FP.pdf": {
-										"name": "FIOD_FP.pdf",
-										"path": [
-											"PPS",
-											"1970-229902901620566",
-											"DOSSIER-1568405326977",
-											"FIOD_FP.pdf"
-										],
-										"type": "pdf"
-									},
-									"en_Caribisch.pdf": {
-										"name": "en_Caribisch.pdf",
-										"path": [
-											"PPS",
-											"1970-229902901620566",
-											"DOSSIER-1568405326977",
-											"en_Caribisch.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-241332309415099": {
-								"path": [
-									"PPS",
-									"1970-229902901620566",
-									"DOSSIER-241332309415099"
-								],
-								"name": "DOSSIER-241332309415099",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"BOOM_Caribisch.txt": {
-										"name": "BOOM_Caribisch.txt",
-										"path": [
-											"PPS",
-											"1970-229902901620566",
-											"DOSSIER-241332309415099",
-											"BOOM_Caribisch.txt"
-										],
-										"type": "txt"
-									},
-									"Laundering_organisatie.txt": {
-										"name": "Laundering_organisatie.txt",
-										"path": [
-											"PPS",
-											"1970-229902901620566",
-											"DOSSIER-241332309415099",
-											"Laundering_organisatie.txt"
-										],
-										"type": "txt"
-									},
-									"van_CJIB.pdf": {
-										"name": "van_CJIB.pdf",
-										"path": [
-											"PPS",
-											"1970-229902901620566",
-											"DOSSIER-241332309415099",
-											"van_CJIB.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-25798452112609": {
-								"path": [
-									"PPS",
-									"1970-229902901620566",
-									"DOSSIER-25798452112609"
-								],
-								"name": "DOSSIER-25798452112609",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"Criminal_en.pdf": {
-										"name": "Criminal_en.pdf",
-										"path": [
-											"PPS",
-											"1970-229902901620566",
-											"DOSSIER-25798452112609",
-											"Criminal_en.pdf"
-										],
-										"type": "pdf"
-									},
-									"de_Crimineel.txt": {
-										"name": "de_Crimineel.txt",
-										"path": [
-											"PPS",
-											"1970-229902901620566",
-											"DOSSIER-25798452112609",
-											"de_Crimineel.txt"
-										],
-										"type": "txt"
-									},
-									"van_Nederland:.pdf": {
-										"name": "van_Nederland:.pdf",
-										"path": [
-											"PPS",
-											"1970-229902901620566",
-											"DOSSIER-25798452112609",
-											"van_Nederland:.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-30940373531013": {
-								"path": [
-									"PPS",
-									"1970-229902901620566",
-									"DOSSIER-30940373531013"
-								],
-								"name": "DOSSIER-30940373531013",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Commissie,_Bureau.pdf": {
-										"name": "Commissie,_Bureau.pdf",
-										"path": [
-											"PPS",
-											"1970-229902901620566",
-											"DOSSIER-30940373531013",
-											"Commissie,_Bureau.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"UNODC_het.pdf": {
-								"name": "UNODC_het.pdf",
-								"path": [
-									"PPS",
-									"1970-229902901620566",
-									"UNODC_het.pdf"
-								],
-								"type": "pdf"
-							}
-						}
-					},
-					"1987-24929621224659": {
-						"path": [
-							"PPS",
-							"1987-24929621224659"
-						],
-						"name": "1987-24929621224659",
-						"type": "dir",
-						"dirType": "archive",
-						"children": {
-							"DOSSIER-118223140825119": {
-								"path": [
-									"PPS",
-									"1987-24929621224659",
-									"DOSSIER-118223140825119"
-								],
-								"name": "DOSSIER-118223140825119",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Landelijke_FIOD.pdf": {
-										"name": "Landelijke_FIOD.pdf",
-										"path": [
-											"PPS",
-											"1987-24929621224659",
-											"DOSSIER-118223140825119",
-											"Landelijke_FIOD.pdf"
-										],
-										"type": "pdf"
-									},
-									"Dienst_Caribisch.txt": {
-										"name": "Dienst_Caribisch.txt",
-										"path": [
-											"PPS",
-											"1987-24929621224659",
-											"DOSSIER-118223140825119",
-											"Dienst_Caribisch.txt"
-										],
-										"type": "txt"
-									},
-									"Rotterdam_Landelijke.pdf": {
-										"name": "Rotterdam_Landelijke.pdf",
-										"path": [
-											"PPS",
-											"1987-24929621224659",
-											"DOSSIER-118223140825119",
-											"Rotterdam_Landelijke.pdf"
-										],
-										"type": "pdf"
-									},
-									"onderdeel_Action.txt": {
-										"name": "onderdeel_Action.txt",
-										"path": [
-											"PPS",
-											"1987-24929621224659",
-											"DOSSIER-118223140825119",
-											"onderdeel_Action.txt"
-										],
-										"type": "txt"
-									},
-									"de_EU.txt": {
-										"name": "de_EU.txt",
-										"path": [
-											"PPS",
-											"1987-24929621224659",
-											"DOSSIER-118223140825119",
-											"de_EU.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-12959148357674": {
-								"path": [
-									"PPS",
-									"1987-24929621224659",
-									"DOSSIER-12959148357674"
-								],
-								"name": "DOSSIER-12959148357674",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"en_een.txt": {
-										"name": "en_een.txt",
-										"path": [
-											"PPS",
-											"1987-24929621224659",
-											"DOSSIER-12959148357674",
-											"en_een.txt"
-										],
-										"type": "txt"
-									},
-									"Saba_CJIB.pdf": {
-										"name": "Saba_CJIB.pdf",
-										"path": [
-											"PPS",
-											"1987-24929621224659",
-											"DOSSIER-12959148357674",
-											"Saba_CJIB.pdf"
-										],
-										"type": "pdf"
-									},
-									"van_ICT.txt": {
-										"name": "van_ICT.txt",
-										"path": [
-											"PPS",
-											"1987-24929621224659",
-											"DOSSIER-12959148357674",
-											"van_ICT.txt"
-										],
-										"type": "txt"
-									},
-									"Action_CN.txt": {
-										"name": "Action_CN.txt",
-										"path": [
-											"PPS",
-											"1987-24929621224659",
-											"DOSSIER-12959148357674",
-											"Action_CN.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-1422130131954": {
-								"path": [
-									"PPS",
-									"1987-24929621224659",
-									"DOSSIER-1422130131954"
-								],
-								"name": "DOSSIER-1422130131954",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"van_Financieel.txt": {
-										"name": "van_Financieel.txt",
-										"path": [
-											"PPS",
-											"1987-24929621224659",
-											"DOSSIER-1422130131954",
-											"van_Financieel.txt"
-										],
-										"type": "txt"
-									},
-									"Andrea_ESW.txt": {
-										"name": "Andrea_ESW.txt",
-										"path": [
-											"PPS",
-											"1987-24929621224659",
-											"DOSSIER-1422130131954",
-											"Andrea_ESW.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-23722272910645": {
-								"path": [
-									"PPS",
-									"1987-24929621224659",
-									"DOSSIER-23722272910645"
-								],
-								"name": "DOSSIER-23722272910645",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Informatie,_GoAML.txt": {
-										"name": "Informatie,_GoAML.txt",
-										"path": [
-											"PPS",
-											"1987-24929621224659",
-											"DOSSIER-23722272910645",
-											"Informatie,_GoAML.txt"
-										],
-										"type": "txt"
-									},
-									"de_De.pdf": {
-										"name": "de_De.pdf",
-										"path": [
-											"PPS",
-											"1987-24929621224659",
-											"DOSSIER-23722272910645",
-											"de_De.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-66743043512178": {
-								"path": [
-									"PPS",
-									"1987-24929621224659",
-									"DOSSIER-66743043512178"
-								],
-								"name": "DOSSIER-66743043512178",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Vermogen_Inlichtingen-.txt": {
-										"name": "Vermogen_Inlichtingen-.txt",
-										"path": [
-											"PPS",
-											"1987-24929621224659",
-											"DOSSIER-66743043512178",
-											"Vermogen_Inlichtingen-.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"CN_Against.pdf": {
-								"name": "CN_Against.pdf",
-								"path": [
-									"PPS",
-									"1987-24929621224659",
-									"CN_Against.pdf"
-								],
-								"type": "pdf"
-							}
-						}
-					},
-					"1990-167852658828082": {
-						"path": [
-							"PPS",
-							"1990-167852658828082"
-						],
-						"name": "1990-167852658828082",
-						"type": "dir",
-						"dirType": "normal",
-						"children": {
-							"DOSSIER-2507722355950": {
-								"path": [
-									"PPS",
-									"1990-167852658828082",
-									"DOSSIER-2507722355950"
-								],
-								"name": "DOSSIER-2507722355950",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"EC_Mensensmokkel.txt": {
-										"name": "EC_Mensensmokkel.txt",
-										"path": [
-											"PPS",
-											"1990-167852658828082",
-											"DOSSIER-2507722355950",
-											"EC_Mensensmokkel.txt"
-										],
-										"type": "txt"
-									},
-									"onderdeel_Multidisciplinary.txt": {
-										"name": "onderdeel_Multidisciplinary.txt",
-										"path": [
-											"PPS",
-											"1990-167852658828082",
-											"DOSSIER-2507722355950",
-											"onderdeel_Multidisciplinary.txt"
-										],
-										"type": "txt"
-									},
-									"Centrum_gemeente.txt": {
-										"name": "Centrum_gemeente.txt",
-										"path": [
-											"PPS",
-											"1990-167852658828082",
-											"DOSSIER-2507722355950",
-											"Centrum_gemeente.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-321022198218499": {
-								"path": [
-									"PPS",
-									"1990-167852658828082",
-									"DOSSIER-321022198218499"
-								],
-								"name": "DOSSIER-321022198218499",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Centrum_FlU-Nederland.pdf": {
-										"name": "Centrum_FlU-Nederland.pdf",
-										"path": [
-											"PPS",
-											"1990-167852658828082",
-											"DOSSIER-321022198218499",
-											"Centrum_FlU-Nederland.pdf"
-										],
-										"type": "pdf"
-									},
-									"Infobox_BOOM.txt": {
-										"name": "Infobox_BOOM.txt",
-										"path": [
-											"PPS",
-											"1990-167852658828082",
-											"DOSSIER-321022198218499",
-											"Infobox_BOOM.txt"
-										],
-										"type": "txt"
-									},
-									"politie_Inspectie.pdf": {
-										"name": "politie_Inspectie.pdf",
-										"path": [
-											"PPS",
-											"1990-167852658828082",
-											"DOSSIER-321022198218499",
-											"politie_Inspectie.pdf"
-										],
-										"type": "pdf"
-									},
-									"Ontnemingswetgeving_FIU.pdf": {
-										"name": "Ontnemingswetgeving_FIU.pdf",
-										"path": [
-											"PPS",
-											"1990-167852658828082",
-											"DOSSIER-321022198218499",
-											"Ontnemingswetgeving_FIU.pdf"
-										],
-										"type": "pdf"
-									},
-									"Markten_Saba.txt": {
-										"name": "Markten_Saba.txt",
-										"path": [
-											"PPS",
-											"1990-167852658828082",
-											"DOSSIER-321022198218499",
-											"Markten_Saba.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-47541103719086": {
-								"path": [
-									"PPS",
-									"1990-167852658828082",
-									"DOSSIER-47541103719086"
-								],
-								"name": "DOSSIER-47541103719086",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Economische_UNODC.pdf": {
-										"name": "Economische_UNODC.pdf",
-										"path": [
-											"PPS",
-											"1990-167852658828082",
-											"DOSSIER-47541103719086",
-											"Economische_UNODC.pdf"
-										],
-										"type": "pdf"
-									},
-									"van_Unit.txt": {
-										"name": "van_Unit.txt",
-										"path": [
-											"PPS",
-											"1990-167852658828082",
-											"DOSSIER-47541103719086",
-											"van_Unit.txt"
-										],
-										"type": "txt"
-									},
-									"FEC_Financial.txt": {
-										"name": "FEC_Financial.txt",
-										"path": [
-											"PPS",
-											"1990-167852658828082",
-											"DOSSIER-47541103719086",
-											"FEC_Financial.txt"
-										],
-										"type": "txt"
-									},
-									"Functioneel_organisatie.pdf": {
-										"name": "Functioneel_organisatie.pdf",
-										"path": [
-											"PPS",
-											"1990-167852658828082",
-											"DOSSIER-47541103719086",
-											"Functioneel_organisatie.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-7074304278081": {
-								"path": [
-									"PPS",
-									"1990-167852658828082",
-									"DOSSIER-7074304278081"
-								],
-								"name": "DOSSIER-7074304278081",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"Nederlandsche_Functioneel.txt": {
-										"name": "Nederlandsche_Functioneel.txt",
-										"path": [
-											"PPS",
-											"1990-167852658828082",
-											"DOSSIER-7074304278081",
-											"Nederlandsche_Functioneel.txt"
-										],
-										"type": "txt"
-									},
-									"Platform_andrea.txt": {
-										"name": "Platform_andrea.txt",
-										"path": [
-											"PPS",
-											"1990-167852658828082",
-											"DOSSIER-7074304278081",
-											"Platform_andrea.txt"
-										],
-										"type": "txt"
-									},
-									"BFT_de.txt": {
-										"name": "BFT_de.txt",
-										"path": [
-											"PPS",
-											"1990-167852658828082",
-											"DOSSIER-7074304278081",
-											"BFT_de.txt"
-										],
-										"type": "txt"
-									},
-									"Anti-Money_UNODC.pdf": {
-										"name": "Anti-Money_UNODC.pdf",
-										"path": [
-											"PPS",
-											"1990-167852658828082",
-											"DOSSIER-7074304278081",
-											"Anti-Money_UNODC.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-93961557422749": {
-								"path": [
-									"PPS",
-									"1990-167852658828082",
-									"DOSSIER-93961557422749"
-								],
-								"name": "DOSSIER-93961557422749",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"CJIB_Mensensmokkel.txt": {
-										"name": "CJIB_Mensensmokkel.txt",
-										"path": [
-											"PPS",
-											"1990-167852658828082",
-											"DOSSIER-93961557422749",
-											"CJIB_Mensensmokkel.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"Commissie,_en.pdf": {
-								"name": "Commissie,_en.pdf",
-								"path": [
-									"PPS",
-									"1990-167852658828082",
-									"Commissie,_en.pdf"
-								],
-								"type": "pdf"
-							},
-							"DNB_van.txt": {
-								"name": "DNB_van.txt",
-								"path": [
-									"PPS",
-									"1990-167852658828082",
-									"DNB_van.txt"
-								],
-								"type": "txt"
-							},
-							"GoAML_en.pdf": {
-								"name": "GoAML_en.pdf",
-								"path": [
-									"PPS",
-									"1990-167852658828082",
-									"GoAML_en.pdf"
-								],
-								"type": "pdf"
-							},
-							"Caribisch_Werk.txt": {
-								"name": "Caribisch_Werk.txt",
-								"path": [
-									"PPS",
-									"1990-167852658828082",
-									"Caribisch_Werk.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"2003-271192730612025": {
-						"path": [
-							"PPS",
-							"2003-271192730612025"
-						],
-						"name": "2003-271192730612025",
-						"type": "dir",
-						"dirType": "normal",
-						"children": {
-							"DOSSIER-135766122679": {
-								"path": [
-									"PPS",
-									"2003-271192730612025",
-									"DOSSIER-135766122679"
-								],
-								"name": "DOSSIER-135766122679",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Infobox_de.txt": {
-										"name": "Infobox_de.txt",
-										"path": [
-											"PPS",
-											"2003-271192730612025",
-											"DOSSIER-135766122679",
-											"Infobox_de.txt"
-										],
-										"type": "txt"
-									},
-									"FinEC_EMM.txt": {
-										"name": "FinEC_EMM.txt",
-										"path": [
-											"PPS",
-											"2003-271192730612025",
-											"DOSSIER-135766122679",
-											"FinEC_EMM.txt"
-										],
-										"type": "txt"
-									},
-									"van_Mensenhandel.pdf": {
-										"name": "van_Mensenhandel.pdf",
-										"path": [
-											"PPS",
-											"2003-271192730612025",
-											"DOSSIER-135766122679",
-											"van_Mensenhandel.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-139715148761": {
-								"path": [
-									"PPS",
-									"2003-271192730612025",
-									"DOSSIER-139715148761"
-								],
-								"name": "DOSSIER-139715148761",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"andrea_FAT.txt": {
-										"name": "andrea_FAT.txt",
-										"path": [
-											"PPS",
-											"2003-271192730612025",
-											"DOSSIER-139715148761",
-											"andrea_FAT.txt"
-										],
-										"type": "txt"
-									},
-									"Financieel_en.txt": {
-										"name": "Financieel_en.txt",
-										"path": [
-											"PPS",
-											"2003-271192730612025",
-											"DOSSIER-139715148761",
-											"Financieel_en.txt"
-										],
-										"type": "txt"
-									},
-									"Economische_en.txt": {
-										"name": "Economische_en.txt",
-										"path": [
-											"PPS",
-											"2003-271192730612025",
-											"DOSSIER-139715148761",
-											"Economische_en.txt"
-										],
-										"type": "txt"
-									},
-									"Werk_organisatie.pdf": {
-										"name": "Werk_organisatie.pdf",
-										"path": [
-											"PPS",
-											"2003-271192730612025",
-											"DOSSIER-139715148761",
-											"Werk_organisatie.pdf"
-										],
-										"type": "pdf"
-									},
-									"UNODC_van.pdf": {
-										"name": "UNODC_van.pdf",
-										"path": [
-											"PPS",
-											"2003-271192730612025",
-											"DOSSIER-139715148761",
-											"UNODC_van.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-31994578823921": {
-								"path": [
-									"PPS",
-									"2003-271192730612025",
-									"DOSSIER-31994578823921"
-								],
-								"name": "DOSSIER-31994578823921",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Infobox_A01C.txt": {
-										"name": "Infobox_A01C.txt",
-										"path": [
-											"PPS",
-											"2003-271192730612025",
-											"DOSSIER-31994578823921",
-											"Infobox_A01C.txt"
-										],
-										"type": "txt"
-									},
-									"Criminal_De.txt": {
-										"name": "Criminal_De.txt",
-										"path": [
-											"PPS",
-											"2003-271192730612025",
-											"DOSSIER-31994578823921",
-											"Criminal_De.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-8972100642036": {
-								"path": [
-									"PPS",
-									"2003-271192730612025",
-									"DOSSIER-8972100642036"
-								],
-								"name": "DOSSIER-8972100642036",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"de_Platform.pdf": {
-										"name": "de_Platform.pdf",
-										"path": [
-											"PPS",
-											"2003-271192730612025",
-											"DOSSIER-8972100642036",
-											"de_Platform.pdf"
-										],
-										"type": "pdf"
-									},
-									"Financieel_Platform.txt": {
-										"name": "Financieel_Platform.txt",
-										"path": [
-											"PPS",
-											"2003-271192730612025",
-											"DOSSIER-8972100642036",
-											"Financieel_Platform.txt"
-										],
-										"type": "txt"
-									},
-									"BOOM_Fiscale.pdf": {
-										"name": "BOOM_Fiscale.pdf",
-										"path": [
-											"PPS",
-											"2003-271192730612025",
-											"DOSSIER-8972100642036",
-											"BOOM_Fiscale.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-9582789111747": {
-								"path": [
-									"PPS",
-									"2003-271192730612025",
-									"DOSSIER-9582789111747"
-								],
-								"name": "DOSSIER-9582789111747",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Recherche,_van.txt": {
-										"name": "Recherche,_van.txt",
-										"path": [
-											"PPS",
-											"2003-271192730612025",
-											"DOSSIER-9582789111747",
-											"Recherche,_van.txt"
-										],
-										"type": "txt"
-									},
-									"de_van.txt": {
-										"name": "de_van.txt",
-										"path": [
-											"PPS",
-											"2003-271192730612025",
-											"DOSSIER-9582789111747",
-											"de_van.txt"
-										],
-										"type": "txt"
-									},
-									"de_DNB.txt": {
-										"name": "de_DNB.txt",
-										"path": [
-											"PPS",
-											"2003-271192730612025",
-											"DOSSIER-9582789111747",
-											"de_DNB.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"ICT_en.pdf": {
-								"name": "ICT_en.pdf",
-								"path": [
-									"PPS",
-									"2003-271192730612025",
-									"ICT_en.pdf"
-								],
-								"type": "pdf"
-							}
-						}
-					},
-					"Commissie,_Werk.pdf": {
-						"name": "Commissie,_Werk.pdf",
-						"path": [
-							"PPS",
-							"Commissie,_Werk.pdf"
-						],
-						"type": "pdf"
-					},
-					"Anti-Money_Incasso.txt": {
-						"name": "Anti-Money_Incasso.txt",
-						"path": [
-							"PPS",
-							"Anti-Money_Incasso.txt"
-						],
-						"type": "txt"
-					},
-					"DLR_De.txt": {
-						"name": "DLR_De.txt",
-						"path": [
-							"PPS",
-							"DLR_De.txt"
-						],
-						"type": "txt"
-					}
-				}
-			},
-			"RIEC": {
-				"path": [
-					"RIEC"
-				],
-				"name": "RIEC",
-				"type": "dir",
-				"dirType": "locked",
-				"children": {
-					"1966-167361072610951": {
-						"path": [
-							"RIEC",
-							"1966-167361072610951"
-						],
-						"name": "1966-167361072610951",
-						"type": "dir",
-						"dirType": "archive",
-						"children": {
-							"DOSSIER-15036562128475": {
-								"path": [
-									"RIEC",
-									"1966-167361072610951",
-									"DOSSIER-15036562128475"
-								],
-								"name": "DOSSIER-15036562128475",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"onderdeel_Transport.pdf": {
-										"name": "onderdeel_Transport.pdf",
-										"path": [
-											"RIEC",
-											"1966-167361072610951",
-											"DOSSIER-15036562128475",
-											"onderdeel_Transport.pdf"
-										],
-										"type": "pdf"
-									},
-									"AFM_en.pdf": {
-										"name": "AFM_en.pdf",
-										"path": [
-											"RIEC",
-											"1966-167361072610951",
-											"DOSSIER-15036562128475",
-											"AFM_en.pdf"
-										],
-										"type": "pdf"
-									},
-									"Caribisch_de.txt": {
-										"name": "Caribisch_de.txt",
-										"path": [
-											"RIEC",
-											"1966-167361072610951",
-											"DOSSIER-15036562128475",
-											"Caribisch_de.txt"
-										],
-										"type": "txt"
-									},
-									"UNODC_Anti-Money.txt": {
-										"name": "UNODC_Anti-Money.txt",
-										"path": [
-											"RIEC",
-											"1966-167361072610951",
-											"DOSSIER-15036562128475",
-											"UNODC_Anti-Money.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-302072958629779": {
-								"path": [
-									"RIEC",
-									"1966-167361072610951",
-									"DOSSIER-302072958629779"
-								],
-								"name": "DOSSIER-302072958629779",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Inlichtingen-_Markten.txt": {
-										"name": "Inlichtingen-_Markten.txt",
-										"path": [
-											"RIEC",
-											"1966-167361072610951",
-											"DOSSIER-302072958629779",
-											"Inlichtingen-_Markten.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-312543100122315": {
-								"path": [
-									"RIEC",
-									"1966-167361072610951",
-									"DOSSIER-312543100122315"
-								],
-								"name": "DOSSIER-312543100122315",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"CN_Werk.pdf": {
-										"name": "CN_Werk.pdf",
-										"path": [
-											"RIEC",
-											"1966-167361072610951",
-											"DOSSIER-312543100122315",
-											"CN_Werk.pdf"
-										],
-										"type": "pdf"
-									},
-									"van_Inlichtingen-.pdf": {
-										"name": "van_Inlichtingen-.pdf",
-										"path": [
-											"RIEC",
-											"1966-167361072610951",
-											"DOSSIER-312543100122315",
-											"van_Inlichtingen-.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-9478109993528": {
-								"path": [
-									"RIEC",
-									"1966-167361072610951",
-									"DOSSIER-9478109993528"
-								],
-								"name": "DOSSIER-9478109993528",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Administratieve_uitvoerend.pdf": {
-										"name": "Administratieve_uitvoerend.pdf",
-										"path": [
-											"RIEC",
-											"1966-167361072610951",
-											"DOSSIER-9478109993528",
-											"Administratieve_uitvoerend.pdf"
-										],
-										"type": "pdf"
-									},
-									"Eustatiusen_ILTIOD.txt": {
-										"name": "Eustatiusen_ILTIOD.txt",
-										"path": [
-											"RIEC",
-											"1966-167361072610951",
-											"DOSSIER-9478109993528",
-											"Eustatiusen_ILTIOD.txt"
-										],
-										"type": "txt"
-									},
-									"van_Eustatiusen.txt": {
-										"name": "van_Eustatiusen.txt",
-										"path": [
-											"RIEC",
-											"1966-167361072610951",
-											"DOSSIER-9478109993528",
-											"van_Eustatiusen.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-9856290172830": {
-								"path": [
-									"RIEC",
-									"1966-167361072610951",
-									"DOSSIER-9856290172830"
-								],
-								"name": "DOSSIER-9856290172830",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"Saba_Centre,.txt": {
-										"name": "Saba_Centre,.txt",
-										"path": [
-											"RIEC",
-											"1966-167361072610951",
-											"DOSSIER-9856290172830",
-											"Saba_Centre,.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"onderdeel_de.txt": {
-								"name": "onderdeel_de.txt",
-								"path": [
-									"RIEC",
-									"1966-167361072610951",
-									"onderdeel_de.txt"
-								],
-								"type": "txt"
-							},
-							"AMLC_Opsporingsdienst.txt": {
-								"name": "AMLC_Opsporingsdienst.txt",
-								"path": [
-									"RIEC",
-									"1966-167361072610951",
-									"AMLC_Opsporingsdienst.txt"
-								],
-								"type": "txt"
-							},
-							"en_Landelijke.pdf": {
-								"name": "en_Landelijke.pdf",
-								"path": [
-									"RIEC",
-									"1966-167361072610951",
-									"en_Landelijke.pdf"
-								],
-								"type": "pdf"
-							}
-						}
-					},
-					"1971-17576876314363": {
-						"path": [
-							"RIEC",
-							"1971-17576876314363"
-						],
-						"name": "1971-17576876314363",
-						"type": "dir",
-						"dirType": "locked",
-						"children": {
-							"DOSSIER-188262923420900": {
-								"path": [
-									"RIEC",
-									"1971-17576876314363",
-									"DOSSIER-188262923420900"
-								],
-								"name": "DOSSIER-188262923420900",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Informatie,_GoAML.txt": {
-										"name": "Informatie,_GoAML.txt",
-										"path": [
-											"RIEC",
-											"1971-17576876314363",
-											"DOSSIER-188262923420900",
-											"Informatie,_GoAML.txt"
-										],
-										"type": "txt"
-									},
-									"en_Nederland.txt": {
-										"name": "en_Nederland.txt",
-										"path": [
-											"RIEC",
-											"1971-17576876314363",
-											"DOSSIER-188262923420900",
-											"en_Nederland.txt"
-										],
-										"type": "txt"
-									},
-									"Government_Force.txt": {
-										"name": "Government_Force.txt",
-										"path": [
-											"RIEC",
-											"1971-17576876314363",
-											"DOSSIER-188262923420900",
-											"Government_Force.txt"
-										],
-										"type": "txt"
-									},
-									"EMM_Markten.txt": {
-										"name": "EMM_Markten.txt",
-										"path": [
-											"RIEC",
-											"1971-17576876314363",
-											"DOSSIER-188262923420900",
-											"EMM_Markten.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-25191716117239": {
-								"path": [
-									"RIEC",
-									"1971-17576876314363",
-									"DOSSIER-25191716117239"
-								],
-								"name": "DOSSIER-25191716117239",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"interne_Andrea.pdf": {
-										"name": "interne_Andrea.pdf",
-										"path": [
-											"RIEC",
-											"1971-17576876314363",
-											"DOSSIER-25191716117239",
-											"interne_Andrea.pdf"
-										],
-										"type": "pdf"
-									},
-									"iCOV_BFT.txt": {
-										"name": "iCOV_BFT.txt",
-										"path": [
-											"RIEC",
-											"1971-17576876314363",
-											"DOSSIER-25191716117239",
-											"iCOV_BFT.txt"
-										],
-										"type": "txt"
-									},
-									"Task_Criminaliteit.pdf": {
-										"name": "Task_Criminaliteit.pdf",
-										"path": [
-											"RIEC",
-											"1971-17576876314363",
-											"DOSSIER-25191716117239",
-											"Task_Criminaliteit.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-276841602327071": {
-								"path": [
-									"RIEC",
-									"1971-17576876314363",
-									"DOSSIER-276841602327071"
-								],
-								"name": "DOSSIER-276841602327071",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"Europese_FlU-Nederland.txt": {
-										"name": "Europese_FlU-Nederland.txt",
-										"path": [
-											"RIEC",
-											"1971-17576876314363",
-											"DOSSIER-276841602327071",
-											"Europese_FlU-Nederland.txt"
-										],
-										"type": "txt"
-									},
-									"Sint_en.pdf": {
-										"name": "Sint_en.pdf",
-										"path": [
-											"RIEC",
-											"1971-17576876314363",
-											"DOSSIER-276841602327071",
-											"Sint_en.pdf"
-										],
-										"type": "pdf"
-									},
-									"Financieel_onderdeel.pdf": {
-										"name": "Financieel_onderdeel.pdf",
-										"path": [
-											"RIEC",
-											"1971-17576876314363",
-											"DOSSIER-276841602327071",
-											"Financieel_onderdeel.pdf"
-										],
-										"type": "pdf"
-									},
-									"FIOD_Multidisciplinary.txt": {
-										"name": "FIOD_Multidisciplinary.txt",
-										"path": [
-											"RIEC",
-											"1971-17576876314363",
-											"DOSSIER-276841602327071",
-											"FIOD_Multidisciplinary.txt"
-										],
-										"type": "txt"
-									},
-									"Bureau_Leefomgeving.pdf": {
-										"name": "Bureau_Leefomgeving.pdf",
-										"path": [
-											"RIEC",
-											"1971-17576876314363",
-											"DOSSIER-276841602327071",
-											"Bureau_Leefomgeving.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-30780180449572": {
-								"path": [
-									"RIEC",
-									"1971-17576876314363",
-									"DOSSIER-30780180449572"
-								],
-								"name": "DOSSIER-30780180449572",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"Administratieve_FinEC.txt": {
-										"name": "Administratieve_FinEC.txt",
-										"path": [
-											"RIEC",
-											"1971-17576876314363",
-											"DOSSIER-30780180449572",
-											"Administratieve_FinEC.txt"
-										],
-										"type": "txt"
-									},
-									"Europese_BOOM.txt": {
-										"name": "Europese_BOOM.txt",
-										"path": [
-											"RIEC",
-											"1971-17576876314363",
-											"DOSSIER-30780180449572",
-											"Europese_BOOM.txt"
-										],
-										"type": "txt"
-									},
-									"De_Government.pdf": {
-										"name": "De_Government.pdf",
-										"path": [
-											"RIEC",
-											"1971-17576876314363",
-											"DOSSIER-30780180449572",
-											"De_Government.pdf"
-										],
-										"type": "pdf"
-									},
-									"Bureau_Caribisch.pdf": {
-										"name": "Bureau_Caribisch.pdf",
-										"path": [
-											"RIEC",
-											"1971-17576876314363",
-											"DOSSIER-30780180449572",
-											"Bureau_Caribisch.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-3602969930328": {
-								"path": [
-									"RIEC",
-									"1971-17576876314363",
-									"DOSSIER-3602969930328"
-								],
-								"name": "DOSSIER-3602969930328",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Bureau_Ministerie,.txt": {
-										"name": "Bureau_Ministerie,.txt",
-										"path": [
-											"RIEC",
-											"1971-17576876314363",
-											"DOSSIER-3602969930328",
-											"Bureau_Ministerie,.txt"
-										],
-										"type": "txt"
-									},
-									"Mensenhandel_Inlichtingen-.txt": {
-										"name": "Mensenhandel_Inlichtingen-.txt",
-										"path": [
-											"RIEC",
-											"1971-17576876314363",
-											"DOSSIER-3602969930328",
-											"Mensenhandel_Inlichtingen-.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"applicatie_Crimineel.txt": {
-								"name": "applicatie_Crimineel.txt",
-								"path": [
-									"RIEC",
-									"1971-17576876314363",
-									"applicatie_Crimineel.txt"
-								],
-								"type": "txt"
-							},
-							"European_proliferatiefmanciering..txt": {
-								"name": "European_proliferatiefmanciering..txt",
-								"path": [
-									"RIEC",
-									"1971-17576876314363",
-									"European_proliferatiefmanciering..txt"
-								],
-								"type": "txt"
-							},
-							"de_CTEPF.txt": {
-								"name": "de_CTEPF.txt",
-								"path": [
-									"RIEC",
-									"1971-17576876314363",
-									"de_CTEPF.txt"
-								],
-								"type": "txt"
-							},
-							"Nederland_Bureau.pdf": {
-								"name": "Nederland_Bureau.pdf",
-								"path": [
-									"RIEC",
-									"1971-17576876314363",
-									"Nederland_Bureau.pdf"
-								],
-								"type": "pdf"
-							},
-							"CJIB_onderdeel.txt": {
-								"name": "CJIB_onderdeel.txt",
-								"path": [
-									"RIEC",
-									"1971-17576876314363",
-									"CJIB_onderdeel.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"1974-1071269824137": {
-						"path": [
-							"RIEC",
-							"1974-1071269824137"
-						],
-						"name": "1974-1071269824137",
-						"type": "dir",
-						"dirType": "archive",
-						"children": {
-							"DOSSIER-11014577611025": {
-								"path": [
-									"RIEC",
-									"1974-1071269824137",
-									"DOSSIER-11014577611025"
-								],
-								"name": "DOSSIER-11014577611025",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"eilanden_Onverklaarbaar.txt": {
-										"name": "eilanden_Onverklaarbaar.txt",
-										"path": [
-											"RIEC",
-											"1974-1071269824137",
-											"DOSSIER-11014577611025",
-											"eilanden_Onverklaarbaar.txt"
-										],
-										"type": "txt"
-									},
-									"Nederland:_Against.pdf": {
-										"name": "Nederland:_Against.pdf",
-										"path": [
-											"RIEC",
-											"1974-1071269824137",
-											"DOSSIER-11014577611025",
-											"Nederland:_Against.pdf"
-										],
-										"type": "pdf"
-									},
-									"Financial_Parket,.txt": {
-										"name": "Financial_Parket,.txt",
-										"path": [
-											"RIEC",
-											"1974-1071269824137",
-											"DOSSIER-11014577611025",
-											"Financial_Parket,.txt"
-										],
-										"type": "txt"
-									},
-									"Inkomen,_DWI.txt": {
-										"name": "Inkomen,_DWI.txt",
-										"path": [
-											"RIEC",
-											"1974-1071269824137",
-											"DOSSIER-11014577611025",
-											"Inkomen,_DWI.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-224422924627365": {
-								"path": [
-									"RIEC",
-									"1974-1071269824137",
-									"DOSSIER-224422924627365"
-								],
-								"name": "DOSSIER-224422924627365",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Opsporingsdienst_Bureau.txt": {
-										"name": "Opsporingsdienst_Bureau.txt",
-										"path": [
-											"RIEC",
-											"1974-1071269824137",
-											"DOSSIER-224422924627365",
-											"Opsporingsdienst_Bureau.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-29111419422020": {
-								"path": [
-									"RIEC",
-									"1974-1071269824137",
-									"DOSSIER-29111419422020"
-								],
-								"name": "DOSSIER-29111419422020",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Criminaliteit_Contraterrorisme.txt": {
-										"name": "Criminaliteit_Contraterrorisme.txt",
-										"path": [
-											"RIEC",
-											"1974-1071269824137",
-											"DOSSIER-29111419422020",
-											"Criminaliteit_Contraterrorisme.txt"
-										],
-										"type": "txt"
-									},
-									"Programma_van.txt": {
-										"name": "Programma_van.txt",
-										"path": [
-											"RIEC",
-											"1974-1071269824137",
-											"DOSSIER-29111419422020",
-											"Programma_van.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-5189146503889": {
-								"path": [
-									"RIEC",
-									"1974-1071269824137",
-									"DOSSIER-5189146503889"
-								],
-								"name": "DOSSIER-5189146503889",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Government_Autoriteit.pdf": {
-										"name": "Government_Autoriteit.pdf",
-										"path": [
-											"RIEC",
-											"1974-1071269824137",
-											"DOSSIER-5189146503889",
-											"Government_Autoriteit.pdf"
-										],
-										"type": "pdf"
-									},
-									"Landelijke_een.txt": {
-										"name": "Landelijke_een.txt",
-										"path": [
-											"RIEC",
-											"1974-1071269824137",
-											"DOSSIER-5189146503889",
-											"Landelijke_een.txt"
-										],
-										"type": "txt"
-									},
-									"Ontnemingswetgeving_Against.pdf": {
-										"name": "Ontnemingswetgeving_Against.pdf",
-										"path": [
-											"RIEC",
-											"1974-1071269824137",
-											"DOSSIER-5189146503889",
-											"Ontnemingswetgeving_Against.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-77921837329853": {
-								"path": [
-									"RIEC",
-									"1974-1071269824137",
-									"DOSSIER-77921837329853"
-								],
-								"name": "DOSSIER-77921837329853",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Infobox_Toezicht.txt": {
-										"name": "Infobox_Toezicht.txt",
-										"path": [
-											"RIEC",
-											"1974-1071269824137",
-											"DOSSIER-77921837329853",
-											"Infobox_Toezicht.txt"
-										],
-										"type": "txt"
-									},
-									"orgaan_EU.pdf": {
-										"name": "orgaan_EU.pdf",
-										"path": [
-											"RIEC",
-											"1974-1071269824137",
-											"DOSSIER-77921837329853",
-											"orgaan_EU.pdf"
-										],
-										"type": "pdf"
-									},
-									"Leefomgeving_Infobox.pdf": {
-										"name": "Leefomgeving_Infobox.pdf",
-										"path": [
-											"RIEC",
-											"1974-1071269824137",
-											"DOSSIER-77921837329853",
-											"Leefomgeving_Infobox.pdf"
-										],
-										"type": "pdf"
-									},
-									"Bonaire._interne.txt": {
-										"name": "Bonaire._interne.txt",
-										"path": [
-											"RIEC",
-											"1974-1071269824137",
-											"DOSSIER-77921837329853",
-											"Bonaire._interne.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"de_Opsporingsdienst.pdf": {
-								"name": "de_Opsporingsdienst.pdf",
-								"path": [
-									"RIEC",
-									"1974-1071269824137",
-									"de_Opsporingsdienst.pdf"
-								],
-								"type": "pdf"
-							},
-							"andrea_en.pdf": {
-								"name": "andrea_en.pdf",
-								"path": [
-									"RIEC",
-									"1974-1071269824137",
-									"andrea_en.pdf"
-								],
-								"type": "pdf"
-							},
-							"Ministerie,_Andrea.pdf": {
-								"name": "Ministerie,_Andrea.pdf",
-								"path": [
-									"RIEC",
-									"1974-1071269824137",
-									"Ministerie,_Andrea.pdf"
-								],
-								"type": "pdf"
-							}
-						}
-					},
-					"1992-29002257757251": {
-						"path": [
-							"RIEC",
-							"1992-29002257757251"
-						],
-						"name": "1992-29002257757251",
-						"type": "dir",
-						"dirType": "locked",
-						"children": {
-							"DOSSIER-21203277858933": {
-								"path": [
-									"RIEC",
-									"1992-29002257757251",
-									"DOSSIER-21203277858933"
-								],
-								"name": "DOSSIER-21203277858933",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"CTEPF_Inkomen,.txt": {
-										"name": "CTEPF_Inkomen,.txt",
-										"path": [
-											"RIEC",
-											"1992-29002257757251",
-											"DOSSIER-21203277858933",
-											"CTEPF_Inkomen,.txt"
-										],
-										"type": "txt"
-									},
-									"de_onderdeel.txt": {
-										"name": "de_onderdeel.txt",
-										"path": [
-											"RIEC",
-											"1992-29002257757251",
-											"DOSSIER-21203277858933",
-											"de_onderdeel.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-24209754427820": {
-								"path": [
-									"RIEC",
-									"1992-29002257757251",
-									"DOSSIER-24209754427820"
-								],
-								"name": "DOSSIER-24209754427820",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"van_BVI.pdf": {
-										"name": "van_BVI.pdf",
-										"path": [
-											"RIEC",
-											"1992-29002257757251",
-											"DOSSIER-24209754427820",
-											"van_BVI.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-24647495020600": {
-								"path": [
-									"RIEC",
-									"1992-29002257757251",
-									"DOSSIER-24647495020600"
-								],
-								"name": "DOSSIER-24647495020600",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"UNODC_van.pdf": {
-										"name": "UNODC_van.pdf",
-										"path": [
-											"RIEC",
-											"1992-29002257757251",
-											"DOSSIER-24647495020600",
-											"UNODC_van.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-281572186130944": {
-								"path": [
-									"RIEC",
-									"1992-29002257757251",
-									"DOSSIER-281572186130944"
-								],
-								"name": "DOSSIER-281572186130944",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Landelijke_Anti-Money.pdf": {
-										"name": "Landelijke_Anti-Money.pdf",
-										"path": [
-											"RIEC",
-											"1992-29002257757251",
-											"DOSSIER-281572186130944",
-											"Landelijke_Anti-Money.pdf"
-										],
-										"type": "pdf"
-									},
-									"van_European.txt": {
-										"name": "van_European.txt",
-										"path": [
-											"RIEC",
-											"1992-29002257757251",
-											"DOSSIER-281572186130944",
-											"van_European.txt"
-										],
-										"type": "txt"
-									},
-									"EC_van.pdf": {
-										"name": "EC_van.pdf",
-										"path": [
-											"RIEC",
-											"1992-29002257757251",
-											"DOSSIER-281572186130944",
-											"EC_van.pdf"
-										],
-										"type": "pdf"
-									},
-									"GoAML_een.pdf": {
-										"name": "GoAML_een.pdf",
-										"path": [
-											"RIEC",
-											"1992-29002257757251",
-											"DOSSIER-281572186130944",
-											"GoAML_een.pdf"
-										],
-										"type": "pdf"
-									},
-									"orgaan_.pdf": {
-										"name": "orgaan_.pdf",
-										"path": [
-											"RIEC",
-											"1992-29002257757251",
-											"DOSSIER-281572186130944",
-											"orgaan_.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-5567896029308": {
-								"path": [
-									"RIEC",
-									"1992-29002257757251",
-									"DOSSIER-5567896029308"
-								],
-								"name": "DOSSIER-5567896029308",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"Inspectie_Against.pdf": {
-										"name": "Inspectie_Against.pdf",
-										"path": [
-											"RIEC",
-											"1992-29002257757251",
-											"DOSSIER-5567896029308",
-											"Inspectie_Against.pdf"
-										],
-										"type": "pdf"
-									},
-									"Expertise_Onverklaarbaar.pdf": {
-										"name": "Expertise_Onverklaarbaar.pdf",
-										"path": [
-											"RIEC",
-											"1992-29002257757251",
-											"DOSSIER-5567896029308",
-											"Expertise_Onverklaarbaar.pdf"
-										],
-										"type": "pdf"
-									},
-									"Financieel_EU.txt": {
-										"name": "Financieel_EU.txt",
-										"path": [
-											"RIEC",
-											"1992-29002257757251",
-											"DOSSIER-5567896029308",
-											"Financieel_EU.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"De_Bureau.txt": {
-								"name": "De_Bureau.txt",
-								"path": [
-									"RIEC",
-									"1992-29002257757251",
-									"De_Bureau.txt"
-								],
-								"type": "txt"
-							},
-							"Task_Inlichtingen-.txt": {
-								"name": "Task_Inlichtingen-.txt",
-								"path": [
-									"RIEC",
-									"1992-29002257757251",
-									"Task_Inlichtingen-.txt"
-								],
-								"type": "txt"
-							},
-							"Financial_Andrea.txt": {
-								"name": "Financial_Andrea.txt",
-								"path": [
-									"RIEC",
-									"1992-29002257757251",
-									"Financial_Andrea.txt"
-								],
-								"type": "txt"
-							},
-							"Incasso_de.txt": {
-								"name": "Incasso_de.txt",
-								"path": [
-									"RIEC",
-									"1992-29002257757251",
-									"Incasso_de.txt"
-								],
-								"type": "txt"
-							},
-							"Laundering._iCOV.txt": {
-								"name": "Laundering._iCOV.txt",
-								"path": [
-									"RIEC",
-									"1992-29002257757251",
-									"Laundering._iCOV.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"1992-60812202412198": {
-						"path": [
-							"RIEC",
-							"1992-60812202412198"
-						],
-						"name": "1992-60812202412198",
-						"type": "dir",
-						"dirType": "normal",
-						"children": {
-							"DOSSIER-19801313147606": {
-								"path": [
-									"RIEC",
-									"1992-60812202412198",
-									"DOSSIER-19801313147606"
-								],
-								"name": "DOSSIER-19801313147606",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"orgaan_de.pdf": {
-										"name": "orgaan_de.pdf",
-										"path": [
-											"RIEC",
-											"1992-60812202412198",
-											"DOSSIER-19801313147606",
-											"orgaan_de.pdf"
-										],
-										"type": "pdf"
-									},
-									"Andrea_de.txt": {
-										"name": "Andrea_de.txt",
-										"path": [
-											"RIEC",
-											"1992-60812202412198",
-											"DOSSIER-19801313147606",
-											"Andrea_de.txt"
-										],
-										"type": "txt"
-									},
-									"politie_Financial.txt": {
-										"name": "politie_Financial.txt",
-										"path": [
-											"RIEC",
-											"1992-60812202412198",
-											"DOSSIER-19801313147606",
-											"politie_Financial.txt"
-										],
-										"type": "txt"
-									},
-									"Europese_en.txt": {
-										"name": "Europese_en.txt",
-										"path": [
-											"RIEC",
-											"1992-60812202412198",
-											"DOSSIER-19801313147606",
-											"Europese_en.txt"
-										],
-										"type": "txt"
-									},
-									"andrea_politie.txt": {
-										"name": "andrea_politie.txt",
-										"path": [
-											"RIEC",
-											"1992-60812202412198",
-											"DOSSIER-19801313147606",
-											"andrea_politie.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-21412323530415": {
-								"path": [
-									"RIEC",
-									"1992-60812202412198",
-									"DOSSIER-21412323530415"
-								],
-								"name": "DOSSIER-21412323530415",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"FinEC_Inlichtingen-.txt": {
-										"name": "FinEC_Inlichtingen-.txt",
-										"path": [
-											"RIEC",
-											"1992-60812202412198",
-											"DOSSIER-21412323530415",
-											"FinEC_Inlichtingen-.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-266361434210664": {
-								"path": [
-									"RIEC",
-									"1992-60812202412198",
-									"DOSSIER-266361434210664"
-								],
-								"name": "DOSSIER-266361434210664",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"EMM_Financial.txt": {
-										"name": "EMM_Financial.txt",
-										"path": [
-											"RIEC",
-											"1992-60812202412198",
-											"DOSSIER-266361434210664",
-											"EMM_Financial.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-275372940019615": {
-								"path": [
-									"RIEC",
-									"1992-60812202412198",
-									"DOSSIER-275372940019615"
-								],
-								"name": "DOSSIER-275372940019615",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Nederland:_BOOM.pdf": {
-										"name": "Nederland:_BOOM.pdf",
-										"path": [
-											"RIEC",
-											"1992-60812202412198",
-											"DOSSIER-275372940019615",
-											"Nederland:_BOOM.pdf"
-										],
-										"type": "pdf"
-									},
-									"en_Centrum.txt": {
-										"name": "en_Centrum.txt",
-										"path": [
-											"RIEC",
-											"1992-60812202412198",
-											"DOSSIER-275372940019615",
-											"en_Centrum.txt"
-										],
-										"type": "txt"
-									},
-									"F_Nederland.pdf": {
-										"name": "F_Nederland.pdf",
-										"path": [
-											"RIEC",
-											"1992-60812202412198",
-											"DOSSIER-275372940019615",
-											"F_Nederland.pdf"
-										],
-										"type": "pdf"
-									},
-									"A01C_BOOM.pdf": {
-										"name": "A01C_BOOM.pdf",
-										"path": [
-											"RIEC",
-											"1992-60812202412198",
-											"DOSSIER-275372940019615",
-											"A01C_BOOM.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-32269773315289": {
-								"path": [
-									"RIEC",
-									"1992-60812202412198",
-									"DOSSIER-32269773315289"
-								],
-								"name": "DOSSIER-32269773315289",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Bonaire._Dienst.txt": {
-										"name": "Bonaire._Dienst.txt",
-										"path": [
-											"RIEC",
-											"1992-60812202412198",
-											"DOSSIER-32269773315289",
-											"Bonaire._Dienst.txt"
-										],
-										"type": "txt"
-									},
-									"Inkomen,_Economische.txt": {
-										"name": "Inkomen,_Economische.txt",
-										"path": [
-											"RIEC",
-											"1992-60812202412198",
-											"DOSSIER-32269773315289",
-											"Inkomen,_Economische.txt"
-										],
-										"type": "txt"
-									},
-									"DLR_Platform.pdf": {
-										"name": "DLR_Platform.pdf",
-										"path": [
-											"RIEC",
-											"1992-60812202412198",
-											"DOSSIER-32269773315289",
-											"DLR_Platform.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"Inlichtingen-_onderdeel.txt": {
-								"name": "Inlichtingen-_onderdeel.txt",
-								"path": [
-									"RIEC",
-									"1992-60812202412198",
-									"Inlichtingen-_onderdeel.txt"
-								],
-								"type": "txt"
-							},
-							"Caribisch_Onverklaarbaar.txt": {
-								"name": "Caribisch_Onverklaarbaar.txt",
-								"path": [
-									"RIEC",
-									"1992-60812202412198",
-									"Caribisch_Onverklaarbaar.txt"
-								],
-								"type": "txt"
-							},
-							"FlU-Nederland_FinanciÃ«le.txt": {
-								"name": "FlU-Nederland_FinanciÃ«le.txt",
-								"path": [
-									"RIEC",
-									"1992-60812202412198",
-									"FlU-Nederland_FinanciÃ«le.txt"
-								],
-								"type": "txt"
-							},
-							"Laundering_iCOV.txt": {
-								"name": "Laundering_iCOV.txt",
-								"path": [
-									"RIEC",
-									"1992-60812202412198",
-									"Laundering_iCOV.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"Basisvoorziening_en.txt": {
-						"name": "Basisvoorziening_en.txt",
-						"path": [
-							"RIEC",
-							"Basisvoorziening_en.txt"
-						],
-						"type": "txt"
-					}
-				}
-			},
-			"UNODC": {
-				"path": [
-					"UNODC"
-				],
-				"name": "UNODC",
+				"name": "Andrea_CTE/PF",
 				"type": "dir",
 				"dirType": "archive",
 				"children": {
-					"1968-22388115104927": {
+					"AFM_Centre,": {
 						"path": [
-							"UNODC",
-							"1968-22388115104927"
+							"Andrea_CTE/PF",
+							"AFM_Centre,"
 						],
-						"name": "1968-22388115104927",
+						"name": "AFM_Centre,",
+						"type": "dir",
+						"dirType": "normal",
+						"children": {
+							"applicatie_Financial": {
+								"path": [
+									"Andrea_CTE/PF",
+									"AFM_Centre,",
+									"applicatie_Financial"
+								],
+								"name": "applicatie_Financial",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"onderdeel_andrea": {
+								"path": [
+									"Andrea_CTE/PF",
+									"AFM_Centre,",
+									"onderdeel_andrea"
+								],
+								"name": "onderdeel_andrea",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Laundering_Bank": {
+								"path": [
+									"Andrea_CTE/PF",
+									"AFM_Centre,",
+									"Laundering_Bank"
+								],
+								"name": "Laundering_Bank",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"BVI_Opsporingsdienst": {
+								"path": [
+									"Andrea_CTE/PF",
+									"AFM_Centre,",
+									"BVI_Opsporingsdienst"
+								],
+								"name": "BVI_Opsporingsdienst",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"ESW_iCOV.txt": {
+								"path": [
+									"Andrea_CTE/PF",
+									"AFM_Centre,",
+									"ESW_iCOV.txt"
+								],
+								"name": "ESW_iCOV.txt",
+								"type": "txt",
+								"date": "2013-10-29T01:19:45.935Z"
+							},
+							"iCOV_Bureau.txt": {
+								"path": [
+									"Andrea_CTE/PF",
+									"AFM_Centre,",
+									"iCOV_Bureau.txt"
+								],
+								"name": "iCOV_Bureau.txt",
+								"type": "txt",
+								"date": "1979-08-22T17:52:41.167Z"
+							},
+							"Bureau_Anti.pdf": {
+								"path": [
+									"Andrea_CTE/PF",
+									"AFM_Centre,",
+									"Bureau_Anti.pdf"
+								],
+								"name": "Bureau_Anti.pdf",
+								"type": "pdf",
+								"date": "2001-01-13T11:27:43.882Z"
+							},
+							"Anti-Money_FlU-Nederland.csv": {
+								"path": [
+									"Andrea_CTE/PF",
+									"AFM_Centre,",
+									"Anti-Money_FlU-Nederland.csv"
+								],
+								"name": "Anti-Money_FlU-Nederland.csv",
+								"type": "csv",
+								"date": "1981-12-10T17:36:44.891Z"
+							},
+							"Platform_Basisvoorziening.txt": {
+								"path": [
+									"Andrea_CTE/PF",
+									"AFM_Centre,",
+									"Platform_Basisvoorziening.txt"
+								],
+								"name": "Platform_Basisvoorziening.txt",
+								"type": "txt",
+								"date": "1996-02-06T23:06:46.365Z"
+							},
+							"BVI_BES.txt": {
+								"path": [
+									"Andrea_CTE/PF",
+									"AFM_Centre,",
+									"BVI_BES.txt"
+								],
+								"name": "BVI_BES.txt",
+								"type": "txt",
+								"date": "2012-05-27T05:31:48.802Z"
+							},
+							"Ontnemingswetgeving_Bureau.txt": {
+								"path": [
+									"Andrea_CTE/PF",
+									"AFM_Centre,",
+									"Ontnemingswetgeving_Bureau.txt"
+								],
+								"name": "Ontnemingswetgeving_Bureau.txt",
+								"type": "txt",
+								"date": "1988-09-29T02:56:37.789Z"
+							},
+							"ILT/IOD_UNODC.txt": {
+								"path": [
+									"Andrea_CTE/PF",
+									"AFM_Centre,",
+									"ILT/IOD_UNODC.txt"
+								],
+								"name": "ILT/IOD_UNODC.txt",
+								"type": "txt",
+								"date": "2000-04-16T02:23:30.217Z"
+							},
+							"onderdeel_Money.pdf": {
+								"path": [
+									"Andrea_CTE/PF",
+									"AFM_Centre,",
+									"onderdeel_Money.pdf"
+								],
+								"name": "onderdeel_Money.pdf",
+								"type": "pdf",
+								"date": "1973-04-15T15:52:50.777Z"
+							}
+						}
+					},
+					"Crimineel_investigation": {
+						"path": [
+							"Andrea_CTE/PF",
+							"Crimineel_investigation"
+						],
+						"name": "Crimineel_investigation",
+						"type": "dir",
+						"dirType": "normal",
+						"children": {
+							"interne_Landelijke": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Crimineel_investigation",
+									"interne_Landelijke"
+								],
+								"name": "interne_Landelijke",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Commissie_Informatie": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Crimineel_investigation",
+									"Commissie_Informatie"
+								],
+								"name": "Commissie_Informatie",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Centre,_Platform": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Crimineel_investigation",
+									"Centre,_Platform"
+								],
+								"name": "Centre,_Platform",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Dienst_FlU-Nederland": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Crimineel_investigation",
+									"Dienst_FlU-Nederland"
+								],
+								"name": "Dienst_FlU-Nederland",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Contraterrorisme_EC": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Crimineel_investigation",
+									"Contraterrorisme_EC"
+								],
+								"name": "Contraterrorisme_EC",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Eustatiusen_Financial": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Crimineel_investigation",
+									"Eustatiusen_Financial"
+								],
+								"name": "Eustatiusen_Financial",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Ontnemingswetgeving_Landelijke": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Crimineel_investigation",
+									"Ontnemingswetgeving_Landelijke"
+								],
+								"name": "Ontnemingswetgeving_Landelijke",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"gemeente_bibal": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Crimineel_investigation",
+									"gemeente_bibal"
+								],
+								"name": "gemeente_bibal",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Bureau_applicatie": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Crimineel_investigation",
+									"Bureau_applicatie"
+								],
+								"name": "Bureau_applicatie",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Laundering_Inspectie": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Crimineel_investigation",
+									"Laundering_Inspectie"
+								],
+								"name": "Laundering_Inspectie",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Inkomen_Europese.csv": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Crimineel_investigation",
+									"Inkomen_Europese.csv"
+								],
+								"name": "Inkomen_Europese.csv",
+								"type": "csv",
+								"date": "2006-08-23T21:51:30.993Z"
+							},
+							"Intelligence_ILT/IOD.pdf": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Crimineel_investigation",
+									"Intelligence_ILT/IOD.pdf"
+								],
+								"name": "Intelligence_ILT/IOD.pdf",
+								"type": "pdf",
+								"date": "2001-08-20T22:57:06.073Z"
+							},
+							"Basisvoorziening_Europese.txt": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Crimineel_investigation",
+									"Basisvoorziening_Europese.txt"
+								],
+								"name": "Basisvoorziening_Europese.txt",
+								"type": "txt",
+								"date": "1974-08-31T17:22:13.785Z"
+							},
+							"Infobox_Financial.csv": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Crimineel_investigation",
+									"Infobox_Financial.csv"
+								],
+								"name": "Infobox_Financial.csv",
+								"type": "csv",
+								"date": "2009-11-19T08:44:30.007Z"
+							},
+							"Expertisecentrum_UNODC.csv": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Crimineel_investigation",
+									"Expertisecentrum_UNODC.csv"
+								],
+								"name": "Expertisecentrum_UNODC.csv",
+								"type": "csv",
+								"date": "1972-07-18T14:39:02.351Z"
+							}
+						}
+					},
+					"Criminal_Financial": {
+						"path": [
+							"Andrea_CTE/PF",
+							"Criminal_Financial"
+						],
+						"name": "Criminal_Financial",
+						"type": "dir",
+						"dirType": "normal",
+						"children": {
+							"Nederland_EU": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Criminal_Financial",
+									"Nederland_EU"
+								],
+								"name": "Nederland_EU",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"DLR_BES": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Criminal_Financial",
+									"DLR_BES"
+								],
+								"name": "DLR_BES",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"CJIB_OM": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Criminal_Financial",
+									"CJIB_OM"
+								],
+								"name": "CJIB_OM",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Recherche_Administratieve": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Criminal_Financial",
+									"Recherche_Administratieve"
+								],
+								"name": "Recherche_Administratieve",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"CN_Infobox": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Criminal_Financial",
+									"CN_Infobox"
+								],
+								"name": "CN_Infobox",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"CWI_gemeente": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Criminal_Financial",
+									"CWI_gemeente"
+								],
+								"name": "CWI_gemeente",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Recherche_Andrea": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Criminal_Financial",
+									"Recherche_Andrea"
+								],
+								"name": "Recherche_Andrea",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"andrea_onderdeel.txt": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Criminal_Financial",
+									"andrea_onderdeel.txt"
+								],
+								"name": "andrea_onderdeel.txt",
+								"type": "txt",
+								"date": "1971-07-26T02:22:47.112Z"
+							},
+							"politie_proliferatiefmanciering.txt": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Criminal_Financial",
+									"politie_proliferatiefmanciering.txt"
+								],
+								"name": "politie_proliferatiefmanciering.txt",
+								"type": "txt",
+								"date": "1996-09-17T04:51:31.319Z"
+							},
+							"Centraal_Criminal.txt": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Criminal_Financial",
+									"Centraal_Criminal.txt"
+								],
+								"name": "Centraal_Criminal.txt",
+								"type": "txt",
+								"date": "1992-04-01T03:20:20.924Z"
+							}
+						}
+					},
+					"controle_Caribisch": {
+						"path": [
+							"Andrea_CTE/PF",
+							"controle_Caribisch"
+						],
+						"name": "controle_Caribisch",
 						"type": "dir",
 						"dirType": "archive",
 						"children": {
-							"DOSSIER-24091610230419": {
+							"OM_CJIB": {
 								"path": [
-									"UNODC",
-									"1968-22388115104927",
-									"DOSSIER-24091610230419"
+									"Andrea_CTE/PF",
+									"controle_Caribisch",
+									"OM_CJIB"
 								],
-								"name": "DOSSIER-24091610230419",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"CT_Economische.txt": {
-										"name": "CT_Economische.txt",
-										"path": [
-											"UNODC",
-											"1968-22388115104927",
-											"DOSSIER-24091610230419",
-											"CT_Economische.txt"
-										],
-										"type": "txt"
-									},
-									"CWI_Transport.txt": {
-										"name": "CWI_Transport.txt",
-										"path": [
-											"UNODC",
-											"1968-22388115104927",
-											"DOSSIER-24091610230419",
-											"CWI_Transport.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-286751359617738": {
-								"path": [
-									"UNODC",
-									"1968-22388115104927",
-									"DOSSIER-286751359617738"
-								],
-								"name": "DOSSIER-286751359617738",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Nederlandsche_Inkomen,.txt": {
-										"name": "Nederlandsche_Inkomen,.txt",
-										"path": [
-											"UNODC",
-											"1968-22388115104927",
-											"DOSSIER-286751359617738",
-											"Nederlandsche_Inkomen,.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-299363250515329": {
-								"path": [
-									"UNODC",
-									"1968-22388115104927",
-									"DOSSIER-299363250515329"
-								],
-								"name": "DOSSIER-299363250515329",
+								"name": "OM_CJIB",
 								"type": "dir",
 								"dirType": "normal",
 								"children": {
-									"Basisvoorziening_BOOM.txt": {
-										"name": "Basisvoorziening_BOOM.txt",
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
 										"path": [
-											"UNODC",
-											"1968-22388115104927",
-											"DOSSIER-299363250515329",
-											"Basisvoorziening_BOOM.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
 									},
-									"politie_Mensensmokkel.txt": {
-										"name": "politie_Mensensmokkel.txt",
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
 										"path": [
-											"UNODC",
-											"1968-22388115104927",
-											"DOSSIER-299363250515329",
-											"politie_Mensensmokkel.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
 									},
-									"applicatie_de.txt": {
-										"name": "applicatie_de.txt",
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
 										"path": [
-											"UNODC",
-											"1968-22388115104927",
-											"DOSSIER-299363250515329",
-											"applicatie_de.txt"
-										],
-										"type": "txt"
-									},
-									"Dienst_Anti.pdf": {
-										"name": "Dienst_Anti.pdf",
-										"path": [
-											"UNODC",
-											"1968-22388115104927",
-											"DOSSIER-299363250515329",
-											"Dienst_Anti.pdf"
-										],
-										"type": "pdf"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
 									}
 								}
 							},
-							"DOSSIER-3533083728868": {
+							"Bank_Fiscale": {
 								"path": [
-									"UNODC",
-									"1968-22388115104927",
-									"DOSSIER-3533083728868"
+									"Andrea_CTE/PF",
+									"controle_Caribisch",
+									"Bank_Fiscale"
 								],
-								"name": "DOSSIER-3533083728868",
+								"name": "Bank_Fiscale",
 								"type": "dir",
 								"dirType": "normal",
 								"children": {
-									"Laundering_Financieel.pdf": {
-										"name": "Laundering_Financieel.pdf",
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
 										"path": [
-											"UNODC",
-											"1968-22388115104927",
-											"DOSSIER-3533083728868",
-											"Laundering_Financieel.pdf"
-										],
-										"type": "pdf"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
 									},
-									"proliferatiefmanciering._Parket,.txt": {
-										"name": "proliferatiefmanciering._Parket,.txt",
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
 										"path": [
-											"UNODC",
-											"1968-22388115104927",
-											"DOSSIER-3533083728868",
-											"proliferatiefmanciering._Parket,.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
 									}
 								}
 							},
-							"DOSSIER-62894965617": {
+							"Force_OM": {
 								"path": [
-									"UNODC",
-									"1968-22388115104927",
-									"DOSSIER-62894965617"
+									"Andrea_CTE/PF",
+									"controle_Caribisch",
+									"Force_OM"
 								],
-								"name": "DOSSIER-62894965617",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"het_van.txt": {
-										"name": "het_van.txt",
-										"path": [
-											"UNODC",
-											"1968-22388115104927",
-											"DOSSIER-62894965617",
-											"het_van.txt"
-										],
-										"type": "txt"
-									},
-									"de_Contraterrorisme.txt": {
-										"name": "de_Contraterrorisme.txt",
-										"path": [
-											"UNODC",
-											"1968-22388115104927",
-											"DOSSIER-62894965617",
-											"de_Contraterrorisme.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"van_Infobox.txt": {
-								"name": "van_Infobox.txt",
-								"path": [
-									"UNODC",
-									"1968-22388115104927",
-									"van_Infobox.txt"
-								],
-								"type": "txt"
-							},
-							"Infobox_Opsporingsdienst.pdf": {
-								"name": "Infobox_Opsporingsdienst.pdf",
-								"path": [
-									"UNODC",
-									"1968-22388115104927",
-									"Infobox_Opsporingsdienst.pdf"
-								],
-								"type": "pdf"
-							},
-							"FIOD_Intelligence.txt": {
-								"name": "FIOD_Intelligence.txt",
-								"path": [
-									"UNODC",
-									"1968-22388115104927",
-									"FIOD_Intelligence.txt"
-								],
-								"type": "txt"
-							},
-							"van_Expertisecentrum.txt": {
-								"name": "van_Expertisecentrum.txt",
-								"path": [
-									"UNODC",
-									"1968-22388115104927",
-									"van_Expertisecentrum.txt"
-								],
-								"type": "txt"
-							},
-							"EU_ILTIOD.txt": {
-								"name": "EU_ILTIOD.txt",
-								"path": [
-									"UNODC",
-									"1968-22388115104927",
-									"EU_ILTIOD.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"1978-155722411330429": {
-						"path": [
-							"UNODC",
-							"1978-155722411330429"
-						],
-						"name": "1978-155722411330429",
-						"type": "dir",
-						"dirType": "normal",
-						"children": {
-							"DOSSIER-219052729511574": {
-								"path": [
-									"UNODC",
-									"1978-155722411330429",
-									"DOSSIER-219052729511574"
-								],
-								"name": "DOSSIER-219052729511574",
+								"name": "Force_OM",
 								"type": "dir",
 								"dirType": "archive",
 								"children": {
-									"Infobox_Europese.txt": {
-										"name": "Infobox_Europese.txt",
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
 										"path": [
-											"UNODC",
-											"1978-155722411330429",
-											"DOSSIER-219052729511574",
-											"Infobox_Europese.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
 									},
-									"Unie_organisatie.txt": {
-										"name": "Unie_organisatie.txt",
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
 										"path": [
-											"UNODC",
-											"1978-155722411330429",
-											"DOSSIER-219052729511574",
-											"Unie_organisatie.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
 									},
-									"Eustatiusen_de.pdf": {
-										"name": "Eustatiusen_de.pdf",
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
 										"path": [
-											"UNODC",
-											"1978-155722411330429",
-											"DOSSIER-219052729511574",
-											"Eustatiusen_de.pdf"
-										],
-										"type": "pdf"
-									},
-									"Financial_Laundering..pdf": {
-										"name": "Financial_Laundering..pdf",
-										"path": [
-											"UNODC",
-											"1978-155722411330429",
-											"DOSSIER-219052729511574",
-											"Financial_Laundering..pdf"
-										],
-										"type": "pdf"
-									},
-									"Criminal_CTEPF.txt": {
-										"name": "Criminal_CTEPF.txt",
-										"path": [
-											"UNODC",
-											"1978-155722411330429",
-											"DOSSIER-219052729511574",
-											"Criminal_CTEPF.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
 									}
 								}
 							},
-							"DOSSIER-294783033524806": {
+							"Centrum_Eenheid": {
 								"path": [
-									"UNODC",
-									"1978-155722411330429",
-									"DOSSIER-294783033524806"
+									"Andrea_CTE/PF",
+									"controle_Caribisch",
+									"Centrum_Eenheid"
 								],
-								"name": "DOSSIER-294783033524806",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Financieel_van.pdf": {
-										"name": "Financieel_van.pdf",
-										"path": [
-											"UNODC",
-											"1978-155722411330429",
-											"DOSSIER-294783033524806",
-											"Financieel_van.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-32021551718582": {
-								"path": [
-									"UNODC",
-									"1978-155722411330429",
-									"DOSSIER-32021551718582"
-								],
-								"name": "DOSSIER-32021551718582",
+								"name": "Centrum_Eenheid",
 								"type": "dir",
 								"dirType": "locked",
 								"children": {
-									"Bureau_Bureau.pdf": {
-										"name": "Bureau_Bureau.pdf",
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
 										"path": [
-											"UNODC",
-											"1978-155722411330429",
-											"DOSSIER-32021551718582",
-											"Bureau_Bureau.pdf"
-										],
-										"type": "pdf"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
 									},
-									"Sint_Action.txt": {
-										"name": "Sint_Action.txt",
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
 										"path": [
-											"UNODC",
-											"1978-155722411330429",
-											"DOSSIER-32021551718582",
-											"Sint_Action.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
 									},
-									"onderdeel_Criminaliteit.txt": {
-										"name": "onderdeel_Criminaliteit.txt",
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
 										"path": [
-											"UNODC",
-											"1978-155722411330429",
-											"DOSSIER-32021551718582",
-											"onderdeel_Criminaliteit.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
 									}
 								}
 							},
-							"DOSSIER-720170688150": {
+							"Bureau_onderdeel": {
 								"path": [
-									"UNODC",
-									"1978-155722411330429",
-									"DOSSIER-720170688150"
+									"Andrea_CTE/PF",
+									"controle_Caribisch",
+									"Bureau_onderdeel"
 								],
-								"name": "DOSSIER-720170688150",
+								"name": "Bureau_onderdeel",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Investigation_Financial": {
+								"path": [
+									"Andrea_CTE/PF",
+									"controle_Caribisch",
+									"Investigation_Financial"
+								],
+								"name": "Investigation_Financial",
 								"type": "dir",
 								"dirType": "archive",
 								"children": {
-									"Infobox_Werk.txt": {
-										"name": "Infobox_Werk.txt",
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
 										"path": [
-											"UNODC",
-											"1978-155722411330429",
-											"DOSSIER-720170688150",
-											"Infobox_Werk.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
 									},
-									"Sint_Functioneel.txt": {
-										"name": "Sint_Functioneel.txt",
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
 										"path": [
-											"UNODC",
-											"1978-155722411330429",
-											"DOSSIER-720170688150",
-											"Sint_Functioneel.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
 									},
-									"Opsporingsdienst_EC.txt": {
-										"name": "Opsporingsdienst_EC.txt",
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
 										"path": [
-											"UNODC",
-											"1978-155722411330429",
-											"DOSSIER-720170688150",
-											"Opsporingsdienst_EC.txt"
-										],
-										"type": "txt"
-									},
-									"Autoriteit_BVI.pdf": {
-										"name": "Autoriteit_BVI.pdf",
-										"path": [
-											"UNODC",
-											"1978-155722411330429",
-											"DOSSIER-720170688150",
-											"Autoriteit_BVI.pdf"
-										],
-										"type": "pdf"
-									},
-									"van_.txt": {
-										"name": "van_.txt",
-										"path": [
-											"UNODC",
-											"1978-155722411330429",
-											"DOSSIER-720170688150",
-											"van_.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
 									}
 								}
 							},
-							"DOSSIER-9523800131298": {
+							"onderdeel_Inspectie": {
 								"path": [
-									"UNODC",
-									"1978-155722411330429",
-									"DOSSIER-9523800131298"
+									"Andrea_CTE/PF",
+									"controle_Caribisch",
+									"onderdeel_Inspectie"
 								],
-								"name": "DOSSIER-9523800131298",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Bureau_een.txt": {
-										"name": "Bureau_een.txt",
-										"path": [
-											"UNODC",
-											"1978-155722411330429",
-											"DOSSIER-9523800131298",
-											"Bureau_een.txt"
-										],
-										"type": "txt"
-									},
-									"Werk_CWI.txt": {
-										"name": "Werk_CWI.txt",
-										"path": [
-											"UNODC",
-											"1978-155722411330429",
-											"DOSSIER-9523800131298",
-											"Werk_CWI.txt"
-										],
-										"type": "txt"
-									},
-									"organisatie_Centrum.txt": {
-										"name": "organisatie_Centrum.txt",
-										"path": [
-											"UNODC",
-											"1978-155722411330429",
-											"DOSSIER-9523800131298",
-											"organisatie_Centrum.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"politie_politie.pdf": {
-								"name": "politie_politie.pdf",
-								"path": [
-									"UNODC",
-									"1978-155722411330429",
-									"politie_politie.pdf"
-								],
-								"type": "pdf"
-							}
-						}
-					},
-					"1993-14767182765215": {
-						"path": [
-							"UNODC",
-							"1993-14767182765215"
-						],
-						"name": "1993-14767182765215",
-						"type": "dir",
-						"dirType": "normal",
-						"children": {
-							"DOSSIER-1122816510653": {
-								"path": [
-									"UNODC",
-									"1993-14767182765215",
-									"DOSSIER-1122816510653"
-								],
-								"name": "DOSSIER-1122816510653",
+								"name": "onderdeel_Inspectie",
 								"type": "dir",
 								"dirType": "locked",
 								"children": {
-									"de_Infobox.pdf": {
-										"name": "de_Infobox.pdf",
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
 										"path": [
-											"UNODC",
-											"1993-14767182765215",
-											"DOSSIER-1122816510653",
-											"de_Infobox.pdf"
-										],
-										"type": "pdf"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
 									},
-									"FIOD_Financieel.txt": {
-										"name": "FIOD_Financieel.txt",
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
 										"path": [
-											"UNODC",
-											"1993-14767182765215",
-											"DOSSIER-1122816510653",
-											"FIOD_Financieel.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
 									},
-									"DLR_Expertise.txt": {
-										"name": "DLR_Expertise.txt",
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
 										"path": [
-											"UNODC",
-											"1993-14767182765215",
-											"DOSSIER-1122816510653",
-											"DLR_Expertise.txt"
-										],
-										"type": "txt"
-									},
-									"binnen_Nederland:.txt": {
-										"name": "binnen_Nederland:.txt",
-										"path": [
-											"UNODC",
-											"1993-14767182765215",
-											"DOSSIER-1122816510653",
-											"binnen_Nederland:.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
 									}
 								}
 							},
-							"DOSSIER-12262247074078": {
+							"eilanden_European": {
 								"path": [
-									"UNODC",
-									"1993-14767182765215",
-									"DOSSIER-12262247074078"
+									"Andrea_CTE/PF",
+									"controle_Caribisch",
+									"eilanden_European"
 								],
-								"name": "DOSSIER-12262247074078",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Werk_van.pdf": {
-										"name": "Werk_van.pdf",
-										"path": [
-											"UNODC",
-											"1993-14767182765215",
-											"DOSSIER-12262247074078",
-											"Werk_van.pdf"
-										],
-										"type": "pdf"
-									},
-									"EMM_Transport.txt": {
-										"name": "EMM_Transport.txt",
-										"path": [
-											"UNODC",
-											"1993-14767182765215",
-											"DOSSIER-12262247074078",
-											"EMM_Transport.txt"
-										],
-										"type": "txt"
-									},
-									"van_andrea.txt": {
-										"name": "van_andrea.txt",
-										"path": [
-											"UNODC",
-											"1993-14767182765215",
-											"DOSSIER-12262247074078",
-											"van_andrea.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-181373227726109": {
-								"path": [
-									"UNODC",
-									"1993-14767182765215",
-									"DOSSIER-181373227726109"
-								],
-								"name": "DOSSIER-181373227726109",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"DWI_Nederlandsche.pdf": {
-										"name": "DWI_Nederlandsche.pdf",
-										"path": [
-											"UNODC",
-											"1993-14767182765215",
-											"DOSSIER-181373227726109",
-											"DWI_Nederlandsche.pdf"
-										],
-										"type": "pdf"
-									},
-									"Rotterdam_onderdeel.pdf": {
-										"name": "Rotterdam_onderdeel.pdf",
-										"path": [
-											"UNODC",
-											"1993-14767182765215",
-											"DOSSIER-181373227726109",
-											"Rotterdam_onderdeel.pdf"
-										],
-										"type": "pdf"
-									},
-									"en_Basisvoorziening.txt": {
-										"name": "en_Basisvoorziening.txt",
-										"path": [
-											"UNODC",
-											"1993-14767182765215",
-											"DOSSIER-181373227726109",
-											"en_Basisvoorziening.txt"
-										],
-										"type": "txt"
-									},
-									"Financial_van.pdf": {
-										"name": "Financial_van.pdf",
-										"path": [
-											"UNODC",
-											"1993-14767182765215",
-											"DOSSIER-181373227726109",
-											"Financial_van.pdf"
-										],
-										"type": "pdf"
-									},
-									"Financieel_Infobox.pdf": {
-										"name": "Financieel_Infobox.pdf",
-										"path": [
-											"UNODC",
-											"1993-14767182765215",
-											"DOSSIER-181373227726109",
-											"Financieel_Infobox.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-6086876184": {
-								"path": [
-									"UNODC",
-									"1993-14767182765215",
-									"DOSSIER-6086876184"
-								],
-								"name": "DOSSIER-6086876184",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Transport_Criminaliteit.txt": {
-										"name": "Transport_Criminaliteit.txt",
-										"path": [
-											"UNODC",
-											"1993-14767182765215",
-											"DOSSIER-6086876184",
-											"Transport_Criminaliteit.txt"
-										],
-										"type": "txt"
-									},
-									"FIU_team.pdf": {
-										"name": "FIU_team.pdf",
-										"path": [
-											"UNODC",
-											"1993-14767182765215",
-											"DOSSIER-6086876184",
-											"FIU_team.pdf"
-										],
-										"type": "pdf"
-									},
-									"van_Bureau.txt": {
-										"name": "van_Bureau.txt",
-										"path": [
-											"UNODC",
-											"1993-14767182765215",
-											"DOSSIER-6086876184",
-											"van_Bureau.txt"
-										],
-										"type": "txt"
-									},
-									"Financieel_andrea.txt": {
-										"name": "Financieel_andrea.txt",
-										"path": [
-											"UNODC",
-											"1993-14767182765215",
-											"DOSSIER-6086876184",
-											"Financieel_andrea.txt"
-										],
-										"type": "txt"
-									},
-									"Commissie,_Bonaire..txt": {
-										"name": "Commissie,_Bonaire..txt",
-										"path": [
-											"UNODC",
-											"1993-14767182765215",
-											"DOSSIER-6086876184",
-											"Commissie,_Bonaire..txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-90532212015534": {
-								"path": [
-									"UNODC",
-									"1993-14767182765215",
-									"DOSSIER-90532212015534"
-								],
-								"name": "DOSSIER-90532212015534",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Informatie,_UNODC.pdf": {
-										"name": "Informatie,_UNODC.pdf",
-										"path": [
-											"UNODC",
-											"1993-14767182765215",
-											"DOSSIER-90532212015534",
-											"Informatie,_UNODC.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"Commissie,_Opsporingsdienst.txt": {
-								"name": "Commissie,_Opsporingsdienst.txt",
-								"path": [
-									"UNODC",
-									"1993-14767182765215",
-									"Commissie,_Opsporingsdienst.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"1999-17039918715601": {
-						"path": [
-							"UNODC",
-							"1999-17039918715601"
-						],
-						"name": "1999-17039918715601",
-						"type": "dir",
-						"dirType": "archive",
-						"children": {
-							"DOSSIER-15649812525879": {
-								"path": [
-									"UNODC",
-									"1999-17039918715601",
-									"DOSSIER-15649812525879"
-								],
-								"name": "DOSSIER-15649812525879",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"FAT_organisatie.txt": {
-										"name": "FAT_organisatie.txt",
-										"path": [
-											"UNODC",
-											"1999-17039918715601",
-											"DOSSIER-15649812525879",
-											"FAT_organisatie.txt"
-										],
-										"type": "txt"
-									},
-									"Nederland_gebouwd.pdf": {
-										"name": "Nederland_gebouwd.pdf",
-										"path": [
-											"UNODC",
-											"1999-17039918715601",
-											"DOSSIER-15649812525879",
-											"Nederland_gebouwd.pdf"
-										],
-										"type": "pdf"
-									},
-									"GoAML_Centraal.txt": {
-										"name": "GoAML_Centraal.txt",
-										"path": [
-											"UNODC",
-											"1999-17039918715601",
-											"DOSSIER-15649812525879",
-											"GoAML_Centraal.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-165992949725781": {
-								"path": [
-									"UNODC",
-									"1999-17039918715601",
-									"DOSSIER-165992949725781"
-								],
-								"name": "DOSSIER-165992949725781",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Centre,_Financial.txt": {
-										"name": "Centre,_Financial.txt",
-										"path": [
-											"UNODC",
-											"1999-17039918715601",
-											"DOSSIER-165992949725781",
-											"Centre,_Financial.txt"
-										],
-										"type": "txt"
-									},
-									"Expertise_en.txt": {
-										"name": "Expertise_en.txt",
-										"path": [
-											"UNODC",
-											"1999-17039918715601",
-											"DOSSIER-165992949725781",
-											"Expertise_en.txt"
-										],
-										"type": "txt"
-									},
-									"andrea_binnen.pdf": {
-										"name": "andrea_binnen.pdf",
-										"path": [
-											"UNODC",
-											"1999-17039918715601",
-											"DOSSIER-165992949725781",
-											"andrea_binnen.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-28356429616120": {
-								"path": [
-									"UNODC",
-									"1999-17039918715601",
-									"DOSSIER-28356429616120"
-								],
-								"name": "DOSSIER-28356429616120",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Inkomen,_A01C.txt": {
-										"name": "Inkomen,_A01C.txt",
-										"path": [
-											"UNODC",
-											"1999-17039918715601",
-											"DOSSIER-28356429616120",
-											"Inkomen,_A01C.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-32141061113917": {
-								"path": [
-									"UNODC",
-									"1999-17039918715601",
-									"DOSSIER-32141061113917"
-								],
-								"name": "DOSSIER-32141061113917",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Autoriteit_Multidisciplinary.pdf": {
-										"name": "Autoriteit_Multidisciplinary.pdf",
-										"path": [
-											"UNODC",
-											"1999-17039918715601",
-											"DOSSIER-32141061113917",
-											"Autoriteit_Multidisciplinary.pdf"
-										],
-										"type": "pdf"
-									},
-									"de_Unit.txt": {
-										"name": "de_Unit.txt",
-										"path": [
-											"UNODC",
-											"1999-17039918715601",
-											"DOSSIER-32141061113917",
-											"de_Unit.txt"
-										],
-										"type": "txt"
-									},
-									"Europese_BES.txt": {
-										"name": "Europese_BES.txt",
-										"path": [
-											"UNODC",
-											"1999-17039918715601",
-											"DOSSIER-32141061113917",
-											"Europese_BES.txt"
-										],
-										"type": "txt"
-									},
-									"Andrea_OM.txt": {
-										"name": "Andrea_OM.txt",
-										"path": [
-											"UNODC",
-											"1999-17039918715601",
-											"DOSSIER-32141061113917",
-											"Andrea_OM.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-40732291321591": {
-								"path": [
-									"UNODC",
-									"1999-17039918715601",
-									"DOSSIER-40732291321591"
-								],
-								"name": "DOSSIER-40732291321591",
+								"name": "eilanden_European",
 								"type": "dir",
 								"dirType": "archive",
 								"children": {
-									"Amsterdam_Action.txt": {
-										"name": "Amsterdam_Action.txt",
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
 										"path": [
-											"UNODC",
-											"1999-17039918715601",
-											"DOSSIER-40732291321591",
-											"Amsterdam_Action.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
 									},
-									"Eenheid_Bonaire..txt": {
-										"name": "Eenheid_Bonaire..txt",
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
 										"path": [
-											"UNODC",
-											"1999-17039918715601",
-											"DOSSIER-40732291321591",
-											"Eenheid_Bonaire..txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
 									},
-									"Inkomen,_van.txt": {
-										"name": "Inkomen,_van.txt",
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
 										"path": [
-											"UNODC",
-											"1999-17039918715601",
-											"DOSSIER-40732291321591",
-											"Inkomen,_van.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
 									}
 								}
 							},
-							"CT_Centre,.pdf": {
-								"name": "CT_Centre,.pdf",
+							"FP_Toezicht": {
 								"path": [
-									"UNODC",
-									"1999-17039918715601",
-									"CT_Centre,.pdf"
+									"Andrea_CTE/PF",
+									"controle_Caribisch",
+									"FP_Toezicht"
 								],
-								"type": "pdf"
+								"name": "FP_Toezicht",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
 							},
-							"Financial_AMLC.txt": {
-								"name": "Financial_AMLC.txt",
+							"Inlichtingen_Criminal": {
 								"path": [
-									"UNODC",
-									"1999-17039918715601",
-									"Financial_AMLC.txt"
+									"Andrea_CTE/PF",
+									"controle_Caribisch",
+									"Inlichtingen_Criminal"
 								],
-								"type": "txt"
+								"name": "Inlichtingen_Criminal",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
 							},
-							"CWI_EC.txt": {
-								"name": "CWI_EC.txt",
+							"Centraal_Onverklaarbaar.pdf": {
 								"path": [
-									"UNODC",
-									"1999-17039918715601",
-									"CWI_EC.txt"
+									"Andrea_CTE/PF",
+									"controle_Caribisch",
+									"Centraal_Onverklaarbaar.pdf"
 								],
-								"type": "txt"
+								"name": "Centraal_Onverklaarbaar.pdf",
+								"type": "pdf",
+								"date": "1978-05-04T17:56:03.127Z"
 							},
-							"Money_Eustatiusen.txt": {
-								"name": "Money_Eustatiusen.txt",
+							"Programma_Mensenhandel.txt": {
 								"path": [
-									"UNODC",
-									"1999-17039918715601",
-									"Money_Eustatiusen.txt"
+									"Andrea_CTE/PF",
+									"controle_Caribisch",
+									"Programma_Mensenhandel.txt"
 								],
-								"type": "txt"
+								"name": "Programma_Mensenhandel.txt",
+								"type": "txt",
+								"date": "1976-02-12T21:17:49.229Z"
+							},
+							"Anti-Money_orgaan.txt": {
+								"path": [
+									"Andrea_CTE/PF",
+									"controle_Caribisch",
+									"Anti-Money_orgaan.txt"
+								],
+								"name": "Anti-Money_orgaan.txt",
+								"type": "txt",
+								"date": "1989-02-10T16:50:07.768Z"
+							},
+							"Unit_Transport.csv": {
+								"path": [
+									"Andrea_CTE/PF",
+									"controle_Caribisch",
+									"Unit_Transport.csv"
+								],
+								"name": "Unit_Transport.csv",
+								"type": "csv",
+								"date": "1986-09-03T23:10:09.846Z"
+							},
+							"proliferatiefmanciering_Infobox.pdf": {
+								"path": [
+									"Andrea_CTE/PF",
+									"controle_Caribisch",
+									"proliferatiefmanciering_Infobox.pdf"
+								],
+								"name": "proliferatiefmanciering_Infobox.pdf",
+								"type": "pdf",
+								"date": "1974-11-26T01:52:52.416Z"
+							},
+							"Administratieve_ESW.pdf": {
+								"path": [
+									"Andrea_CTE/PF",
+									"controle_Caribisch",
+									"Administratieve_ESW.pdf"
+								],
+								"name": "Administratieve_ESW.pdf",
+								"type": "pdf",
+								"date": "1999-12-03T07:37:28.617Z"
+							},
+							"onderdeel_Programma.txt": {
+								"path": [
+									"Andrea_CTE/PF",
+									"controle_Caribisch",
+									"onderdeel_Programma.txt"
+								],
+								"name": "onderdeel_Programma.txt",
+								"type": "txt",
+								"date": "2000-10-12T10:53:12.432Z"
 							}
 						}
 					},
-					"2011-74641127084": {
+					"Justitieel_Unie": {
 						"path": [
-							"UNODC",
-							"2011-74641127084"
+							"Andrea_CTE/PF",
+							"Justitieel_Unie"
 						],
-						"name": "2011-74641127084",
+						"name": "Justitieel_Unie",
 						"type": "dir",
 						"dirType": "normal",
 						"children": {
-							"DOSSIER-11679682512008": {
+							"Administratieve_Centraal": {
 								"path": [
-									"UNODC",
-									"2011-74641127084",
-									"DOSSIER-11679682512008"
+									"Andrea_CTE/PF",
+									"Justitieel_Unie",
+									"Administratieve_Centraal"
 								],
-								"name": "DOSSIER-11679682512008",
+								"name": "Administratieve_Centraal",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"BVI_interne": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Justitieel_Unie",
+									"BVI_interne"
+								],
+								"name": "BVI_interne",
 								"type": "dir",
 								"dirType": "locked",
 								"children": {
-									"Andrea_ESW.txt": {
-										"name": "Andrea_ESW.txt",
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
 										"path": [
-											"UNODC",
-											"2011-74641127084",
-											"DOSSIER-11679682512008",
-											"Andrea_ESW.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
 									},
-									"van_gemeente.pdf": {
-										"name": "van_gemeente.pdf",
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
 										"path": [
-											"UNODC",
-											"2011-74641127084",
-											"DOSSIER-11679682512008",
-											"van_gemeente.pdf"
-										],
-										"type": "pdf"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
 									}
 								}
 							},
-							"DOSSIER-183471804113755": {
+							"Money_FEC": {
 								"path": [
-									"UNODC",
-									"2011-74641127084",
-									"DOSSIER-183471804113755"
+									"Andrea_CTE/PF",
+									"Justitieel_Unie",
+									"Money_FEC"
 								],
-								"name": "DOSSIER-183471804113755",
+								"name": "Money_FEC",
 								"type": "dir",
 								"dirType": "normal",
 								"children": {
-									"Action_iCOV.txt": {
-										"name": "Action_iCOV.txt",
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
 										"path": [
-											"UNODC",
-											"2011-74641127084",
-											"DOSSIER-183471804113755",
-											"Action_iCOV.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
 									},
-									"team_Basisvoorziening.txt": {
-										"name": "team_Basisvoorziening.txt",
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
 										"path": [
-											"UNODC",
-											"2011-74641127084",
-											"DOSSIER-183471804113755",
-											"team_Basisvoorziening.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
 									}
 								}
 							},
-							"DOSSIER-277831295226195": {
+							"ICT_Unit": {
 								"path": [
-									"UNODC",
-									"2011-74641127084",
-									"DOSSIER-277831295226195"
+									"Andrea_CTE/PF",
+									"Justitieel_Unie",
+									"ICT_Unit"
 								],
-								"name": "DOSSIER-277831295226195",
+								"name": "ICT_Unit",
 								"type": "dir",
 								"dirType": "normal",
 								"children": {
-									"FIOD_Andrea.pdf": {
-										"name": "FIOD_Andrea.pdf",
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
 										"path": [
-											"UNODC",
-											"2011-74641127084",
-											"DOSSIER-277831295226195",
-											"FIOD_Andrea.pdf"
-										],
-										"type": "pdf"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
 									},
-									"EMPACT_Basisvoorziening.pdf": {
-										"name": "EMPACT_Basisvoorziening.pdf",
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
 										"path": [
-											"UNODC",
-											"2011-74641127084",
-											"DOSSIER-277831295226195",
-											"EMPACT_Basisvoorziening.pdf"
-										],
-										"type": "pdf"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
 									},
-									"Action_van.pdf": {
-										"name": "Action_van.pdf",
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
 										"path": [
-											"UNODC",
-											"2011-74641127084",
-											"DOSSIER-277831295226195",
-											"Action_van.pdf"
-										],
-										"type": "pdf"
-									},
-									"onderdeel_en.pdf": {
-										"name": "onderdeel_en.pdf",
-										"path": [
-											"UNODC",
-											"2011-74641127084",
-											"DOSSIER-277831295226195",
-											"onderdeel_en.pdf"
-										],
-										"type": "pdf"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
 									}
 								}
 							},
-							"DOSSIER-4013218230882": {
+							"Intelligence_onderdeel": {
 								"path": [
-									"UNODC",
-									"2011-74641127084",
-									"DOSSIER-4013218230882"
+									"Andrea_CTE/PF",
+									"Justitieel_Unie",
+									"Intelligence_onderdeel"
 								],
-								"name": "DOSSIER-4013218230882",
+								"name": "Intelligence_onderdeel",
 								"type": "dir",
 								"dirType": "normal",
 								"children": {
-									"Europese_uitvoerend.txt": {
-										"name": "Europese_uitvoerend.txt",
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
 										"path": [
-											"UNODC",
-											"2011-74641127084",
-											"DOSSIER-4013218230882",
-											"Europese_uitvoerend.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
 									},
-									"BVI_ICT.txt": {
-										"name": "BVI_ICT.txt",
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
 										"path": [
-											"UNODC",
-											"2011-74641127084",
-											"DOSSIER-4013218230882",
-											"BVI_ICT.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
 									},
-									"Saba_Landelijke.txt": {
-										"name": "Saba_Landelijke.txt",
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
 										"path": [
-											"UNODC",
-											"2011-74641127084",
-											"DOSSIER-4013218230882",
-											"Saba_Landelijke.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
 									}
 								}
 							},
-							"DOSSIER-62473069431754": {
+							"Werk_gemeente": {
 								"path": [
-									"UNODC",
-									"2011-74641127084",
-									"DOSSIER-62473069431754"
+									"Andrea_CTE/PF",
+									"Justitieel_Unie",
+									"Werk_gemeente"
 								],
-								"name": "DOSSIER-62473069431754",
+								"name": "Werk_gemeente",
 								"type": "dir",
 								"dirType": "normal",
 								"children": {
-									"EU_FIOD.txt": {
-										"name": "EU_FIOD.txt",
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
 										"path": [
-											"UNODC",
-											"2011-74641127084",
-											"DOSSIER-62473069431754",
-											"EU_FIOD.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
 									}
 								}
 							},
-							"Crimineel_Infobox.txt": {
-								"name": "Crimineel_Infobox.txt",
+							"Force_Intelligence": {
 								"path": [
-									"UNODC",
-									"2011-74641127084",
-									"Crimineel_Infobox.txt"
+									"Andrea_CTE/PF",
+									"Justitieel_Unie",
+									"Force_Intelligence"
 								],
-								"type": "txt"
+								"name": "Force_Intelligence",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
 							},
-							"F_.txt": {
-								"name": "F_.txt",
+							"FIOD_Bonaire": {
 								"path": [
-									"UNODC",
-									"2011-74641127084",
-									"F_.txt"
+									"Andrea_CTE/PF",
+									"Justitieel_Unie",
+									"FIOD_Bonaire"
 								],
-								"type": "txt"
+								"name": "FIOD_Bonaire",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
 							},
-							"Against_Toezicht.txt": {
-								"name": "Against_Toezicht.txt",
+							"Incasso_Centraal.csv": {
 								"path": [
-									"UNODC",
-									"2011-74641127084",
-									"Against_Toezicht.txt"
+									"Andrea_CTE/PF",
+									"Justitieel_Unie",
+									"Incasso_Centraal.csv"
 								],
-								"type": "txt"
+								"name": "Incasso_Centraal.csv",
+								"type": "csv",
+								"date": "1984-12-04T08:01:12.691Z"
 							},
-							"interne_EU.pdf": {
-								"name": "interne_EU.pdf",
+							"Transport_Financial.csv": {
 								"path": [
-									"UNODC",
-									"2011-74641127084",
-									"interne_EU.pdf"
+									"Andrea_CTE/PF",
+									"Justitieel_Unie",
+									"Transport_Financial.csv"
 								],
-								"type": "pdf"
+								"name": "Transport_Financial.csv",
+								"type": "csv",
+								"date": "2014-03-21T07:25:39.283Z"
+							},
+							"Basisvoorziening_Inlichtingen.txt": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Justitieel_Unie",
+									"Basisvoorziening_Inlichtingen.txt"
+								],
+								"name": "Basisvoorziening_Inlichtingen.txt",
+								"type": "txt",
+								"date": "2010-03-06T01:32:25.271Z"
+							},
+							"Landelijke_FIOD.csv": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Justitieel_Unie",
+									"Landelijke_FIOD.csv"
+								],
+								"name": "Landelijke_FIOD.csv",
+								"type": "csv",
+								"date": "1966-07-08T18:04:06.969Z"
+							},
+							"FIOD_Bureau.csv": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Justitieel_Unie",
+									"FIOD_Bureau.csv"
+								],
+								"name": "FIOD_Bureau.csv",
+								"type": "csv",
+								"date": "2009-10-10T01:00:28.889Z"
+							},
+							"FAT_Dienst.txt": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Justitieel_Unie",
+									"FAT_Dienst.txt"
+								],
+								"name": "FAT_Dienst.txt",
+								"type": "txt",
+								"date": "1973-03-13T17:16:44.917Z"
+							},
+							"FIU_investigation.txt": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Justitieel_Unie",
+									"FIU_investigation.txt"
+								],
+								"name": "FIU_investigation.txt",
+								"type": "txt",
+								"date": "1997-08-19T21:57:06.847Z"
+							},
+							"Laundering_FinEC.pdf": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Justitieel_Unie",
+									"Laundering_FinEC.pdf"
+								],
+								"name": "Laundering_FinEC.pdf",
+								"type": "pdf",
+								"date": "1968-09-15T13:10:38.027Z"
 							}
 						}
 					},
-					"en_Criminal.pdf": {
-						"name": "en_Criminal.pdf",
+					"BES_CN": {
 						"path": [
-							"UNODC",
-							"en_Criminal.pdf"
+							"Andrea_CTE/PF",
+							"BES_CN"
 						],
-						"type": "pdf"
+						"name": "BES_CN",
+						"type": "dir",
+						"dirType": "normal",
+						"children": {
+							"ILT/IOD_orgaan": {
+								"path": [
+									"Andrea_CTE/PF",
+									"BES_CN",
+									"ILT/IOD_orgaan"
+								],
+								"name": "ILT/IOD_orgaan",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"OM_Eenheid": {
+								"path": [
+									"Andrea_CTE/PF",
+									"BES_CN",
+									"OM_Eenheid"
+								],
+								"name": "OM_Eenheid",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Expertisecentrum_GoAML": {
+								"path": [
+									"Andrea_CTE/PF",
+									"BES_CN",
+									"Expertisecentrum_GoAML"
+								],
+								"name": "Expertisecentrum_GoAML",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Autoriteit_DWI": {
+								"path": [
+									"Andrea_CTE/PF",
+									"BES_CN",
+									"Autoriteit_DWI"
+								],
+								"name": "Autoriteit_DWI",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"bibal_EU": {
+								"path": [
+									"Andrea_CTE/PF",
+									"BES_CN",
+									"bibal_EU"
+								],
+								"name": "bibal_EU",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Bureau_ESW": {
+								"path": [
+									"Andrea_CTE/PF",
+									"BES_CN",
+									"Bureau_ESW"
+								],
+								"name": "Bureau_ESW",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"EU_Leefomgeving": {
+								"path": [
+									"Andrea_CTE/PF",
+									"BES_CN",
+									"EU_Leefomgeving"
+								],
+								"name": "EU_Leefomgeving",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Landelijke_DNB": {
+								"path": [
+									"Andrea_CTE/PF",
+									"BES_CN",
+									"Landelijke_DNB"
+								],
+								"name": "Landelijke_DNB",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"OM_Mensenhandel": {
+								"path": [
+									"Andrea_CTE/PF",
+									"BES_CN",
+									"OM_Mensenhandel"
+								],
+								"name": "OM_Mensenhandel",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Andrea_Money.csv": {
+								"path": [
+									"Andrea_CTE/PF",
+									"BES_CN",
+									"Andrea_Money.csv"
+								],
+								"name": "Andrea_Money.csv",
+								"type": "csv",
+								"date": "1993-08-10T07:13:40.866Z"
+							},
+							"Rotterdam_Anti.pdf": {
+								"path": [
+									"Andrea_CTE/PF",
+									"BES_CN",
+									"Rotterdam_Anti.pdf"
+								],
+								"name": "Rotterdam_Anti.pdf",
+								"type": "pdf",
+								"date": "2012-05-13T20:50:36.074Z"
+							},
+							"Bank_Inspectie.csv": {
+								"path": [
+									"Andrea_CTE/PF",
+									"BES_CN",
+									"Bank_Inspectie.csv"
+								],
+								"name": "Bank_Inspectie.csv",
+								"type": "csv",
+								"date": "2013-12-27T21:29:32.610Z"
+							},
+							"CT_AMLC.pdf": {
+								"path": [
+									"Andrea_CTE/PF",
+									"BES_CN",
+									"CT_AMLC.pdf"
+								],
+								"name": "CT_AMLC.pdf",
+								"type": "pdf",
+								"date": "1966-11-07T07:27:53.354Z"
+							},
+							"Transport_door.txt": {
+								"path": [
+									"Andrea_CTE/PF",
+									"BES_CN",
+									"Transport_door.txt"
+								],
+								"name": "Transport_door.txt",
+								"type": "txt",
+								"date": "1977-04-23T07:39:52.443Z"
+							},
+							"Investigation_investigation.csv": {
+								"path": [
+									"Andrea_CTE/PF",
+									"BES_CN",
+									"Investigation_investigation.csv"
+								],
+								"name": "Investigation_investigation.csv",
+								"type": "csv",
+								"date": "1998-08-28T04:02:53.586Z"
+							},
+							"Mensenhandel_FIU.txt": {
+								"path": [
+									"Andrea_CTE/PF",
+									"BES_CN",
+									"Mensenhandel_FIU.txt"
+								],
+								"name": "Mensenhandel_FIU.txt",
+								"type": "txt",
+								"date": "1989-07-16T01:34:45.468Z"
+							}
+						}
 					},
-					"FIU_uitvoerend.txt": {
-						"name": "FIU_uitvoerend.txt",
+					"Europese_Markten": {
 						"path": [
-							"UNODC",
-							"FIU_uitvoerend.txt"
+							"Andrea_CTE/PF",
+							"Europese_Markten"
 						],
-						"type": "txt"
+						"name": "Europese_Markten",
+						"type": "dir",
+						"dirType": "normal",
+						"children": {
+							"Anti-Money_gemeente": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Europese_Markten",
+									"Anti-Money_gemeente"
+								],
+								"name": "Anti-Money_gemeente",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"DWI_Financieel": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Europese_Markten",
+									"DWI_Financieel"
+								],
+								"name": "DWI_Financieel",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"gebouwd_politie": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Europese_Markten",
+									"gebouwd_politie"
+								],
+								"name": "gebouwd_politie",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"uitvoerend_Centrum": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Europese_Markten",
+									"uitvoerend_Centrum"
+								],
+								"name": "uitvoerend_Centrum",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"FIOD_FlU-Nederland.txt": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Europese_Markten",
+									"FIOD_FlU-Nederland.txt"
+								],
+								"name": "FIOD_FlU-Nederland.txt",
+								"type": "txt",
+								"date": "2003-03-29T17:30:57.119Z"
+							},
+							"onderdeel_ICT.txt": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Europese_Markten",
+									"onderdeel_ICT.txt"
+								],
+								"name": "onderdeel_ICT.txt",
+								"type": "txt",
+								"date": "2013-01-04T06:29:19.947Z"
+							},
+							"organisatie_FlU-Nederland.txt": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Europese_Markten",
+									"organisatie_FlU-Nederland.txt"
+								],
+								"name": "organisatie_FlU-Nederland.txt",
+								"type": "txt",
+								"date": "2012-02-11T07:48:55.554Z"
+							},
+							"Inkomen_Bibal.txt": {
+								"path": [
+									"Andrea_CTE/PF",
+									"Europese_Markten",
+									"Inkomen_Bibal.txt"
+								],
+								"name": "Inkomen_Bibal.txt",
+								"type": "txt",
+								"date": "1995-05-06T19:47:28.294Z"
+							}
+						}
 					},
-					"van_van.txt": {
-						"name": "van_van.txt",
+					"Task_Leefomgeving.pdf": {
 						"path": [
-							"UNODC",
-							"van_van.txt"
+							"Andrea_CTE/PF",
+							"Task_Leefomgeving.pdf"
 						],
-						"type": "txt"
+						"name": "Task_Leefomgeving.pdf",
+						"type": "pdf",
+						"date": "1977-12-27T08:43:21.344Z"
 					},
-					"Unie_gemeente.pdf": {
-						"name": "Unie_gemeente.pdf",
+					"Infobox_politie.pdf": {
 						"path": [
-							"UNODC",
-							"Unie_gemeente.pdf"
+							"Andrea_CTE/PF",
+							"Infobox_politie.pdf"
 						],
-						"type": "pdf"
+						"name": "Infobox_politie.pdf",
+						"type": "pdf",
+						"date": "2007-11-28T11:09:35.538Z"
 					},
-					"gemeente_CN.txt": {
-						"name": "gemeente_CN.txt",
+					"Platform_Autoriteit.txt": {
 						"path": [
-							"UNODC",
-							"gemeente_CN.txt"
+							"Andrea_CTE/PF",
+							"Platform_Autoriteit.txt"
 						],
-						"type": "txt"
+						"name": "Platform_Autoriteit.txt",
+						"type": "txt",
+						"date": "1985-10-11T00:32:37.270Z"
+					},
+					"Andrea_Caribisch.txt": {
+						"path": [
+							"Andrea_CTE/PF",
+							"Andrea_Caribisch.txt"
+						],
+						"name": "Andrea_Caribisch.txt",
+						"type": "txt",
+						"date": "1999-03-05T20:02:25.263Z"
 					}
 				}
 			},
-			"UWV": {
+			"Eustatiusen_Financieel": {
 				"path": [
-					"UWV"
+					"Eustatiusen_Financieel"
 				],
-				"name": "UWV",
+				"name": "Eustatiusen_Financieel",
 				"type": "dir",
-				"dirType": "normal",
+				"dirType": "locked",
 				"children": {
-					"1967-14319614011526": {
+					"Landelijke_CTE/PF": {
 						"path": [
-							"UWV",
-							"1967-14319614011526"
+							"Eustatiusen_Financieel",
+							"Landelijke_CTE/PF"
 						],
-						"name": "1967-14319614011526",
-						"type": "dir",
-						"dirType": "normal",
-						"children": {
-							"DOSSIER-137501192229560": {
-								"path": [
-									"UWV",
-									"1967-14319614011526",
-									"DOSSIER-137501192229560"
-								],
-								"name": "DOSSIER-137501192229560",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"van_EMM.txt": {
-										"name": "van_EMM.txt",
-										"path": [
-											"UWV",
-											"1967-14319614011526",
-											"DOSSIER-137501192229560",
-											"van_EMM.txt"
-										],
-										"type": "txt"
-									},
-									"en_de.txt": {
-										"name": "en_de.txt",
-										"path": [
-											"UWV",
-											"1967-14319614011526",
-											"DOSSIER-137501192229560",
-											"en_de.txt"
-										],
-										"type": "txt"
-									},
-									"en_Europese.pdf": {
-										"name": "en_Europese.pdf",
-										"path": [
-											"UWV",
-											"1967-14319614011526",
-											"DOSSIER-137501192229560",
-											"en_Europese.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-164352726032694": {
-								"path": [
-									"UWV",
-									"1967-14319614011526",
-									"DOSSIER-164352726032694"
-								],
-								"name": "DOSSIER-164352726032694",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"onderdeel_de.pdf": {
-										"name": "onderdeel_de.pdf",
-										"path": [
-											"UWV",
-											"1967-14319614011526",
-											"DOSSIER-164352726032694",
-											"onderdeel_de.pdf"
-										],
-										"type": "pdf"
-									},
-									"Incasso_AMLC.txt": {
-										"name": "Incasso_AMLC.txt",
-										"path": [
-											"UWV",
-											"1967-14319614011526",
-											"DOSSIER-164352726032694",
-											"Incasso_AMLC.txt"
-										],
-										"type": "txt"
-									},
-									"Force_team.txt": {
-										"name": "Force_team.txt",
-										"path": [
-											"UWV",
-											"1967-14319614011526",
-											"DOSSIER-164352726032694",
-											"Force_team.txt"
-										],
-										"type": "txt"
-									},
-									"Transport_controle.txt": {
-										"name": "Transport_controle.txt",
-										"path": [
-											"UWV",
-											"1967-14319614011526",
-											"DOSSIER-164352726032694",
-											"Transport_controle.txt"
-										],
-										"type": "txt"
-									},
-									"Caribisch_Centre,.txt": {
-										"name": "Caribisch_Centre,.txt",
-										"path": [
-											"UWV",
-											"1967-14319614011526",
-											"DOSSIER-164352726032694",
-											"Caribisch_Centre,.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-255432130230664": {
-								"path": [
-									"UWV",
-									"1967-14319614011526",
-									"DOSSIER-255432130230664"
-								],
-								"name": "DOSSIER-255432130230664",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"Europese_en.txt": {
-										"name": "Europese_en.txt",
-										"path": [
-											"UWV",
-											"1967-14319614011526",
-											"DOSSIER-255432130230664",
-											"Europese_en.txt"
-										],
-										"type": "txt"
-									},
-									"Centrum_Bureau.txt": {
-										"name": "Centrum_Bureau.txt",
-										"path": [
-											"UWV",
-											"1967-14319614011526",
-											"DOSSIER-255432130230664",
-											"Centrum_Bureau.txt"
-										],
-										"type": "txt"
-									},
-									"Vermogen_de.txt": {
-										"name": "Vermogen_de.txt",
-										"path": [
-											"UWV",
-											"1967-14319614011526",
-											"DOSSIER-255432130230664",
-											"Vermogen_de.txt"
-										],
-										"type": "txt"
-									},
-									"Economische_Saba.txt": {
-										"name": "Economische_Saba.txt",
-										"path": [
-											"UWV",
-											"1967-14319614011526",
-											"DOSSIER-255432130230664",
-											"Economische_Saba.txt"
-										],
-										"type": "txt"
-									},
-									"een_interne.txt": {
-										"name": "een_interne.txt",
-										"path": [
-											"UWV",
-											"1967-14319614011526",
-											"DOSSIER-255432130230664",
-											"een_interne.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-26127824613128": {
-								"path": [
-									"UWV",
-									"1967-14319614011526",
-									"DOSSIER-26127824613128"
-								],
-								"name": "DOSSIER-26127824613128",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Bonaire._Inlichtingen-.txt": {
-										"name": "Bonaire._Inlichtingen-.txt",
-										"path": [
-											"UWV",
-											"1967-14319614011526",
-											"DOSSIER-26127824613128",
-											"Bonaire._Inlichtingen-.txt"
-										],
-										"type": "txt"
-									},
-									"Action_andrea.txt": {
-										"name": "Action_andrea.txt",
-										"path": [
-											"UWV",
-											"1967-14319614011526",
-											"DOSSIER-26127824613128",
-											"Action_andrea.txt"
-										],
-										"type": "txt"
-									},
-									"Action_AFM.pdf": {
-										"name": "Action_AFM.pdf",
-										"path": [
-											"UWV",
-											"1967-14319614011526",
-											"DOSSIER-26127824613128",
-											"Action_AFM.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-274202754025246": {
-								"path": [
-									"UWV",
-									"1967-14319614011526",
-									"DOSSIER-274202754025246"
-								],
-								"name": "DOSSIER-274202754025246",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Sint_en.pdf": {
-										"name": "Sint_en.pdf",
-										"path": [
-											"UWV",
-											"1967-14319614011526",
-											"DOSSIER-274202754025246",
-											"Sint_en.pdf"
-										],
-										"type": "pdf"
-									},
-									"FinanciÃ«le_organisatie.txt": {
-										"name": "FinanciÃ«le_organisatie.txt",
-										"path": [
-											"UWV",
-											"1967-14319614011526",
-											"DOSSIER-274202754025246",
-											"FinanciÃ«le_organisatie.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"applicatie_ESW.txt": {
-								"name": "applicatie_ESW.txt",
-								"path": [
-									"UWV",
-									"1967-14319614011526",
-									"applicatie_ESW.txt"
-								],
-								"type": "txt"
-							},
-							"Basisvoorziening_BVI.txt": {
-								"name": "Basisvoorziening_BVI.txt",
-								"path": [
-									"UWV",
-									"1967-14319614011526",
-									"Basisvoorziening_BVI.txt"
-								],
-								"type": "txt"
-							},
-							"van_Expertisecentrum.txt": {
-								"name": "van_Expertisecentrum.txt",
-								"path": [
-									"UWV",
-									"1967-14319614011526",
-									"van_Expertisecentrum.txt"
-								],
-								"type": "txt"
-							},
-							"van_Government.txt": {
-								"name": "van_Government.txt",
-								"path": [
-									"UWV",
-									"1967-14319614011526",
-									"van_Government.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"1971-6627269376673": {
-						"path": [
-							"UWV",
-							"1971-6627269376673"
-						],
-						"name": "1971-6627269376673",
+						"name": "Landelijke_CTE/PF",
 						"type": "dir",
 						"dirType": "archive",
 						"children": {
-							"DOSSIER-130499524538": {
+							"CWI_bibal": {
 								"path": [
-									"UWV",
-									"1971-6627269376673",
-									"DOSSIER-130499524538"
+									"Eustatiusen_Financieel",
+									"Landelijke_CTE/PF",
+									"CWI_bibal"
 								],
-								"name": "DOSSIER-130499524538",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"Criminaliteit_Toezicht.txt": {
-										"name": "Criminaliteit_Toezicht.txt",
-										"path": [
-											"UWV",
-											"1971-6627269376673",
-											"DOSSIER-130499524538",
-											"Criminaliteit_Toezicht.txt"
-										],
-										"type": "txt"
-									},
-									"van_en.pdf": {
-										"name": "van_en.pdf",
-										"path": [
-											"UWV",
-											"1971-6627269376673",
-											"DOSSIER-130499524538",
-											"van_en.pdf"
-										],
-										"type": "pdf"
-									},
-									"Money_Eenheid.txt": {
-										"name": "Money_Eenheid.txt",
-										"path": [
-											"UWV",
-											"1971-6627269376673",
-											"DOSSIER-130499524538",
-											"Money_Eenheid.txt"
-										],
-										"type": "txt"
-									},
-									"Openbaar_Financieel.txt": {
-										"name": "Openbaar_Financieel.txt",
-										"path": [
-											"UWV",
-											"1971-6627269376673",
-											"DOSSIER-130499524538",
-											"Openbaar_Financieel.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-23751176821434": {
-								"path": [
-									"UWV",
-									"1971-6627269376673",
-									"DOSSIER-23751176821434"
-								],
-								"name": "DOSSIER-23751176821434",
+								"name": "CWI_bibal",
 								"type": "dir",
 								"dirType": "locked",
 								"children": {
-									"de_Inlichtingen-.txt": {
-										"name": "de_Inlichtingen-.txt",
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
 										"path": [
-											"UWV",
-											"1971-6627269376673",
-											"DOSSIER-23751176821434",
-											"de_Inlichtingen-.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
 									},
-									"Ontnemingswetgeving_de.txt": {
-										"name": "Ontnemingswetgeving_de.txt",
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
 										"path": [
-											"UWV",
-											"1971-6627269376673",
-											"DOSSIER-23751176821434",
-											"Ontnemingswetgeving_de.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
 									},
-									"team_Money.txt": {
-										"name": "team_Money.txt",
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
 										"path": [
-											"UWV",
-											"1971-6627269376673",
-											"DOSSIER-23751176821434",
-											"team_Money.txt"
-										],
-										"type": "txt"
-									},
-									"ICT_CT.txt": {
-										"name": "ICT_CT.txt",
-										"path": [
-											"UWV",
-											"1971-6627269376673",
-											"DOSSIER-23751176821434",
-											"ICT_CT.txt"
-										],
-										"type": "txt"
-									},
-									"Cluster_Andrea.txt": {
-										"name": "Cluster_Andrea.txt",
-										"path": [
-											"UWV",
-											"1971-6627269376673",
-											"DOSSIER-23751176821434",
-											"Cluster_Andrea.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
 									}
 								}
 							},
-							"DOSSIER-3078136429449": {
+							"EMPACT_gebouwd": {
 								"path": [
-									"UWV",
-									"1971-6627269376673",
-									"DOSSIER-3078136429449"
+									"Eustatiusen_Financieel",
+									"Landelijke_CTE/PF",
+									"EMPACT_gebouwd"
 								],
-								"name": "DOSSIER-3078136429449",
+								"name": "EMPACT_gebouwd",
 								"type": "dir",
 								"dirType": "normal",
 								"children": {
-									"Infobox_politie.txt": {
-										"name": "Infobox_politie.txt",
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
 										"path": [
-											"UWV",
-											"1971-6627269376673",
-											"DOSSIER-3078136429449",
-											"Infobox_politie.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
 									},
-									"CTEPF_Bureau.pdf": {
-										"name": "CTEPF_Bureau.pdf",
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
 										"path": [
-											"UWV",
-											"1971-6627269376673",
-											"DOSSIER-3078136429449",
-											"CTEPF_Bureau.pdf"
-										],
-										"type": "pdf"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
 									},
-									"Expertise_van.txt": {
-										"name": "Expertise_van.txt",
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
 										"path": [
-											"UWV",
-											"1971-6627269376673",
-											"DOSSIER-3078136429449",
-											"Expertise_van.txt"
-										],
-										"type": "txt"
-									},
-									"Programma_EMPACT.txt": {
-										"name": "Programma_EMPACT.txt",
-										"path": [
-											"UWV",
-											"1971-6627269376673",
-											"DOSSIER-3078136429449",
-											"Programma_EMPACT.txt"
-										],
-										"type": "txt"
-									},
-									"FIOD_Inlichtingen-.txt": {
-										"name": "FIOD_Inlichtingen-.txt",
-										"path": [
-											"UWV",
-											"1971-6627269376673",
-											"DOSSIER-3078136429449",
-											"FIOD_Inlichtingen-.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
 									}
 								}
 							},
-							"DOSSIER-3107326093351": {
+							"onderdeel_Contraterrorisme": {
 								"path": [
-									"UWV",
-									"1971-6627269376673",
-									"DOSSIER-3107326093351"
+									"Eustatiusen_Financieel",
+									"Landelijke_CTE/PF",
+									"onderdeel_Contraterrorisme"
 								],
-								"name": "DOSSIER-3107326093351",
+								"name": "onderdeel_Contraterrorisme",
 								"type": "dir",
 								"dirType": "archive",
 								"children": {
-									"Financieel_Mensensmokkel.txt": {
-										"name": "Financieel_Mensensmokkel.txt",
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
 										"path": [
-											"UWV",
-											"1971-6627269376673",
-											"DOSSIER-3107326093351",
-											"Financieel_Mensensmokkel.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
 									}
 								}
 							},
-							"DOSSIER-935725121192": {
+							"Vermogen_Autoriteit": {
 								"path": [
-									"UWV",
-									"1971-6627269376673",
-									"DOSSIER-935725121192"
+									"Eustatiusen_Financieel",
+									"Landelijke_CTE/PF",
+									"Vermogen_Autoriteit"
 								],
-								"name": "DOSSIER-935725121192",
+								"name": "Vermogen_Autoriteit",
 								"type": "dir",
 								"dirType": "locked",
 								"children": {
-									"EMM_Inlichtingen-.txt": {
-										"name": "EMM_Inlichtingen-.txt",
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
 										"path": [
-											"UWV",
-											"1971-6627269376673",
-											"DOSSIER-935725121192",
-											"EMM_Inlichtingen-.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
 									},
-									"organisatie_Action.pdf": {
-										"name": "organisatie_Action.pdf",
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
 										"path": [
-											"UWV",
-											"1971-6627269376673",
-											"DOSSIER-935725121192",
-											"organisatie_Action.pdf"
-										],
-										"type": "pdf"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
 									},
-									"en_Andrea.pdf": {
-										"name": "en_Andrea.pdf",
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
 										"path": [
-											"UWV",
-											"1971-6627269376673",
-											"DOSSIER-935725121192",
-											"en_Andrea.pdf"
-										],
-										"type": "pdf"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
 									}
 								}
 							},
-							"Money_binnen.txt": {
-								"name": "Money_binnen.txt",
+							"Landelijke_Werk.pdf": {
 								"path": [
-									"UWV",
-									"1971-6627269376673",
-									"Money_binnen.txt"
+									"Eustatiusen_Financieel",
+									"Landelijke_CTE/PF",
+									"Landelijke_Werk.pdf"
 								],
-								"type": "txt"
+								"name": "Landelijke_Werk.pdf",
+								"type": "pdf",
+								"date": "1969-01-06T20:53:19.776Z"
 							},
-							"de_Europese.pdf": {
-								"name": "de_Europese.pdf",
+							"onderdeel_Laundering.txt": {
 								"path": [
-									"UWV",
-									"1971-6627269376673",
-									"de_Europese.pdf"
+									"Eustatiusen_Financieel",
+									"Landelijke_CTE/PF",
+									"onderdeel_Laundering.txt"
 								],
-								"type": "pdf"
+								"name": "onderdeel_Laundering.txt",
+								"type": "txt",
+								"date": "1985-06-24T23:22:34.315Z"
 							},
-							"Opsporingsdienst_FIU.pdf": {
-								"name": "Opsporingsdienst_FIU.pdf",
+							"Andrea_bibal.txt": {
 								"path": [
-									"UWV",
-									"1971-6627269376673",
-									"Opsporingsdienst_FIU.pdf"
+									"Eustatiusen_Financieel",
+									"Landelijke_CTE/PF",
+									"Andrea_bibal.txt"
 								],
-								"type": "pdf"
+								"name": "Andrea_bibal.txt",
+								"type": "txt",
+								"date": "2010-08-27T16:36:31.548Z"
 							},
-							"Anti-Money_onderdeel.txt": {
-								"name": "Anti-Money_onderdeel.txt",
+							"Leefomgeving_Transport.csv": {
 								"path": [
-									"UWV",
-									"1971-6627269376673",
-									"Anti-Money_onderdeel.txt"
+									"Eustatiusen_Financieel",
+									"Landelijke_CTE/PF",
+									"Leefomgeving_Transport.csv"
 								],
-								"type": "txt"
+								"name": "Leefomgeving_Transport.csv",
+								"type": "csv",
+								"date": "1970-05-02T09:02:38.247Z"
+							},
+							"Bureau_Autoriteit.txt": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Landelijke_CTE/PF",
+									"Bureau_Autoriteit.txt"
+								],
+								"name": "Bureau_Autoriteit.txt",
+								"type": "txt",
+								"date": "1996-02-22T00:36:05.286Z"
 							}
 						}
 					},
-					"1988-3000675869467": {
+					"Inlichtingen_gemeente": {
 						"path": [
-							"UWV",
-							"1988-3000675869467"
+							"Eustatiusen_Financieel",
+							"Inlichtingen_gemeente"
 						],
-						"name": "1988-3000675869467",
+						"name": "Inlichtingen_gemeente",
+						"type": "dir",
+						"dirType": "archive",
+						"children": {
+							"organisatie_Werk": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Inlichtingen_gemeente",
+									"organisatie_Werk"
+								],
+								"name": "organisatie_Werk",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Bank_Werk": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Inlichtingen_gemeente",
+									"Bank_Werk"
+								],
+								"name": "Bank_Werk",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Financiële_Parket,": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Inlichtingen_gemeente",
+									"Financiële_Parket,"
+								],
+								"name": "Financiële_Parket,",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Mensenhandel_onderdeel": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Inlichtingen_gemeente",
+									"Mensenhandel_onderdeel"
+								],
+								"name": "Mensenhandel_onderdeel",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"FinEC_Investigation": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Inlichtingen_gemeente",
+									"FinEC_Investigation"
+								],
+								"name": "FinEC_Investigation",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Fiscale_Bureau.txt": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Inlichtingen_gemeente",
+									"Fiscale_Bureau.txt"
+								],
+								"name": "Fiscale_Bureau.txt",
+								"type": "txt",
+								"date": "2001-12-22T22:50:33.777Z"
+							},
+							"binnen_Multidisciplinary.pdf": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Inlichtingen_gemeente",
+									"binnen_Multidisciplinary.pdf"
+								],
+								"name": "binnen_Multidisciplinary.pdf",
+								"type": "pdf",
+								"date": "1999-08-04T17:44:03.254Z"
+							},
+							"applicatie_Centre,.csv": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Inlichtingen_gemeente",
+									"applicatie_Centre,.csv"
+								],
+								"name": "applicatie_Centre,.csv",
+								"type": "csv",
+								"date": "1969-11-12T06:03:15.996Z"
+							},
+							"Commissie_proliferatiefmanciering.txt": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Inlichtingen_gemeente",
+									"Commissie_proliferatiefmanciering.txt"
+								],
+								"name": "Commissie_proliferatiefmanciering.txt",
+								"type": "txt",
+								"date": "1994-10-17T20:56:35.165Z"
+							},
+							"Rotterdam_Eustatiusen.pdf": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Inlichtingen_gemeente",
+									"Rotterdam_Eustatiusen.pdf"
+								],
+								"name": "Rotterdam_Eustatiusen.pdf",
+								"type": "pdf",
+								"date": "1979-02-15T01:10:02.101Z"
+							},
+							"Transport_BOOM.txt": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Inlichtingen_gemeente",
+									"Transport_BOOM.txt"
+								],
+								"name": "Transport_BOOM.txt",
+								"type": "txt",
+								"date": "1999-03-16T05:15:34.408Z"
+							},
+							"FP_Ontnemingswetgeving.txt": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Inlichtingen_gemeente",
+									"FP_Ontnemingswetgeving.txt"
+								],
+								"name": "FP_Ontnemingswetgeving.txt",
+								"type": "txt",
+								"date": "2009-02-06T21:11:14.136Z"
+							}
+						}
+					},
+					"EU_Contraterrorisme": {
+						"path": [
+							"Eustatiusen_Financieel",
+							"EU_Contraterrorisme"
+						],
+						"name": "EU_Contraterrorisme",
 						"type": "dir",
 						"dirType": "normal",
 						"children": {
-							"DOSSIER-10151638212728": {
+							"Caribisch_BVI": {
 								"path": [
-									"UWV",
-									"1988-3000675869467",
-									"DOSSIER-10151638212728"
+									"Eustatiusen_Financieel",
+									"EU_Contraterrorisme",
+									"Caribisch_BVI"
 								],
-								"name": "DOSSIER-10151638212728",
+								"name": "Caribisch_BVI",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"ICT_Intelligence": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"EU_Contraterrorisme",
+									"ICT_Intelligence"
+								],
+								"name": "ICT_Intelligence",
 								"type": "dir",
 								"dirType": "archive",
 								"children": {
-									"en_&.pdf": {
-										"name": "en_&.pdf",
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
 										"path": [
-											"UWV",
-											"1988-3000675869467",
-											"DOSSIER-10151638212728",
-											"en_&.pdf"
-										],
-										"type": "pdf"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
 									}
 								}
 							},
-							"DOSSIER-24353288125326": {
+							"Sint_Ontnemingswetgeving": {
 								"path": [
-									"UWV",
-									"1988-3000675869467",
-									"DOSSIER-24353288125326"
+									"Eustatiusen_Financieel",
+									"EU_Contraterrorisme",
+									"Sint_Ontnemingswetgeving"
 								],
-								"name": "DOSSIER-24353288125326",
+								"name": "Sint_Ontnemingswetgeving",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Toezicht_Criminaliteit": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"EU_Contraterrorisme",
+									"Toezicht_Criminaliteit"
+								],
+								"name": "Toezicht_Criminaliteit",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"interne_Nederlandsche": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"EU_Contraterrorisme",
+									"interne_Nederlandsche"
+								],
+								"name": "interne_Nederlandsche",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"onderdeel_FAT": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"EU_Contraterrorisme",
+									"onderdeel_FAT"
+								],
+								"name": "onderdeel_FAT",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"bibal_Anti-Money": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"EU_Contraterrorisme",
+									"bibal_Anti-Money"
+								],
+								"name": "bibal_Anti-Money",
 								"type": "dir",
 								"dirType": "archive",
 								"children": {
-									"CJIB_en.txt": {
-										"name": "CJIB_en.txt",
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
 										"path": [
-											"UWV",
-											"1988-3000675869467",
-											"DOSSIER-24353288125326",
-											"CJIB_en.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
 									}
 								}
 							},
-							"DOSSIER-3252702821358": {
+							"EMM_Unit.pdf": {
 								"path": [
-									"UWV",
-									"1988-3000675869467",
-									"DOSSIER-3252702821358"
+									"Eustatiusen_Financieel",
+									"EU_Contraterrorisme",
+									"EMM_Unit.pdf"
 								],
-								"name": "DOSSIER-3252702821358",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"European_Commissie,.txt": {
-										"name": "European_Commissie,.txt",
-										"path": [
-											"UWV",
-											"1988-3000675869467",
-											"DOSSIER-3252702821358",
-											"European_Commissie,.txt"
-										],
-										"type": "txt"
-									},
-									"BES_A01C.pdf": {
-										"name": "BES_A01C.pdf",
-										"path": [
-											"UWV",
-											"1988-3000675869467",
-											"DOSSIER-3252702821358",
-											"BES_A01C.pdf"
-										],
-										"type": "pdf"
-									},
-									"Expertise_FAT.txt": {
-										"name": "Expertise_FAT.txt",
-										"path": [
-											"UWV",
-											"1988-3000675869467",
-											"DOSSIER-3252702821358",
-											"Expertise_FAT.txt"
-										],
-										"type": "txt"
-									},
-									"AFM_gemeente.pdf": {
-										"name": "AFM_gemeente.pdf",
-										"path": [
-											"UWV",
-											"1988-3000675869467",
-											"DOSSIER-3252702821358",
-											"AFM_gemeente.pdf"
-										],
-										"type": "pdf"
-									},
-									"een_Toezicht.txt": {
-										"name": "een_Toezicht.txt",
-										"path": [
-											"UWV",
-											"1988-3000675869467",
-											"DOSSIER-3252702821358",
-											"een_Toezicht.txt"
-										],
-										"type": "txt"
-									}
-								}
+								"name": "EMM_Unit.pdf",
+								"type": "pdf",
+								"date": "2011-08-09T20:19:27.891Z"
 							},
-							"DOSSIER-41161969817889": {
+							"Task_Markten.txt": {
 								"path": [
-									"UWV",
-									"1988-3000675869467",
-									"DOSSIER-41161969817889"
+									"Eustatiusen_Financieel",
+									"EU_Contraterrorisme",
+									"Task_Markten.txt"
 								],
-								"name": "DOSSIER-41161969817889",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Infobox_Against.txt": {
-										"name": "Infobox_Against.txt",
-										"path": [
-											"UWV",
-											"1988-3000675869467",
-											"DOSSIER-41161969817889",
-											"Infobox_Against.txt"
-										],
-										"type": "txt"
-									}
-								}
+								"name": "Task_Markten.txt",
+								"type": "txt",
+								"date": "2000-02-24T22:11:43.433Z"
 							},
-							"DOSSIER-8168255293957": {
+							"BFT_Contraterrorisme.txt": {
 								"path": [
-									"UWV",
-									"1988-3000675869467",
-									"DOSSIER-8168255293957"
+									"Eustatiusen_Financieel",
+									"EU_Contraterrorisme",
+									"BFT_Contraterrorisme.txt"
 								],
-								"name": "DOSSIER-8168255293957",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Markten_door.pdf": {
-										"name": "Markten_door.pdf",
-										"path": [
-											"UWV",
-											"1988-3000675869467",
-											"DOSSIER-8168255293957",
-											"Markten_door.pdf"
-										],
-										"type": "pdf"
-									},
-									"de_Fiscale.txt": {
-										"name": "de_Fiscale.txt",
-										"path": [
-											"UWV",
-											"1988-3000675869467",
-											"DOSSIER-8168255293957",
-											"de_Fiscale.txt"
-										],
-										"type": "txt"
-									},
-									"en_Rotterdam.txt": {
-										"name": "en_Rotterdam.txt",
-										"path": [
-											"UWV",
-											"1988-3000675869467",
-											"DOSSIER-8168255293957",
-											"en_Rotterdam.txt"
-										],
-										"type": "txt"
-									},
-									"van_Sint.txt": {
-										"name": "van_Sint.txt",
-										"path": [
-											"UWV",
-											"1988-3000675869467",
-											"DOSSIER-8168255293957",
-											"van_Sint.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"de_Opsporingsdienst.txt": {
-								"name": "de_Opsporingsdienst.txt",
-								"path": [
-									"UWV",
-									"1988-3000675869467",
-									"de_Opsporingsdienst.txt"
-								],
-								"type": "txt"
-							},
-							"team_Financial.txt": {
-								"name": "team_Financial.txt",
-								"path": [
-									"UWV",
-									"1988-3000675869467",
-									"team_Financial.txt"
-								],
-								"type": "txt"
-							},
-							"Expertisecentrum_de.txt": {
-								"name": "Expertisecentrum_de.txt",
-								"path": [
-									"UWV",
-									"1988-3000675869467",
-									"Expertisecentrum_de.txt"
-								],
-								"type": "txt"
-							},
-							"de_de.txt": {
-								"name": "de_de.txt",
-								"path": [
-									"UWV",
-									"1988-3000675869467",
-									"de_de.txt"
-								],
-								"type": "txt"
+								"name": "BFT_Contraterrorisme.txt",
+								"type": "txt",
+								"date": "1976-02-12T16:24:19.233Z"
 							}
 						}
 					},
-					"2008-55981323615769": {
+					"team_Ontnemingswetgeving": {
 						"path": [
-							"UWV",
-							"2008-55981323615769"
+							"Eustatiusen_Financieel",
+							"team_Ontnemingswetgeving"
 						],
-						"name": "2008-55981323615769",
+						"name": "team_Ontnemingswetgeving",
+						"type": "dir",
+						"dirType": "archive",
+						"children": {
+							"Andrea_Centrum": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"team_Ontnemingswetgeving",
+									"Andrea_Centrum"
+								],
+								"name": "Andrea_Centrum",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"onderdeel_EU": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"team_Ontnemingswetgeving",
+									"onderdeel_EU"
+								],
+								"name": "onderdeel_EU",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Autoriteit_Contraterrorisme": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"team_Ontnemingswetgeving",
+									"Autoriteit_Contraterrorisme"
+								],
+								"name": "Autoriteit_Contraterrorisme",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"gemeente_Against": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"team_Ontnemingswetgeving",
+									"gemeente_Against"
+								],
+								"name": "gemeente_Against",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Recherche_applicatie": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"team_Ontnemingswetgeving",
+									"Recherche_applicatie"
+								],
+								"name": "Recherche_applicatie",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"onderdeel_gebouwd": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"team_Ontnemingswetgeving",
+									"onderdeel_gebouwd"
+								],
+								"name": "onderdeel_gebouwd",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"DWI_Centrum": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"team_Ontnemingswetgeving",
+									"DWI_Centrum"
+								],
+								"name": "DWI_Centrum",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"interne_andrea": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"team_Ontnemingswetgeving",
+									"interne_andrea"
+								],
+								"name": "interne_andrea",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Bank_Action": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"team_Ontnemingswetgeving",
+									"Bank_Action"
+								],
+								"name": "Bank_Action",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"ESW_applicatie.pdf": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"team_Ontnemingswetgeving",
+									"ESW_applicatie.pdf"
+								],
+								"name": "ESW_applicatie.pdf",
+								"type": "pdf",
+								"date": "1998-04-29T16:45:30.706Z"
+							},
+							"Fiscale_Infobox.txt": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"team_Ontnemingswetgeving",
+									"Fiscale_Infobox.txt"
+								],
+								"name": "Fiscale_Infobox.txt",
+								"type": "txt",
+								"date": "2013-03-26T03:58:19.030Z"
+							},
+							"applicatie_BFT.txt": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"team_Ontnemingswetgeving",
+									"applicatie_BFT.txt"
+								],
+								"name": "applicatie_BFT.txt",
+								"type": "txt",
+								"date": "2006-02-06T00:04:48.171Z"
+							},
+							"Inspectie_investigation.pdf": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"team_Ontnemingswetgeving",
+									"Inspectie_investigation.pdf"
+								],
+								"name": "Inspectie_investigation.pdf",
+								"type": "pdf",
+								"date": "1992-01-21T02:15:34.828Z"
+							}
+						}
+					},
+					"Justitieel_Economische": {
+						"path": [
+							"Eustatiusen_Financieel",
+							"Justitieel_Economische"
+						],
+						"name": "Justitieel_Economische",
+						"type": "dir",
+						"dirType": "normal",
+						"children": {
+							"Centre,_Openbaar": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Justitieel_Economische",
+									"Centre,_Openbaar"
+								],
+								"name": "Centre,_Openbaar",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Money_Transport": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Justitieel_Economische",
+									"Money_Transport"
+								],
+								"name": "Money_Transport",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"EU_Ontnemingswetgeving": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Justitieel_Economische",
+									"EU_Ontnemingswetgeving"
+								],
+								"name": "EU_Ontnemingswetgeving",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Amsterdam_Markten": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Justitieel_Economische",
+									"Amsterdam_Markten"
+								],
+								"name": "Amsterdam_Markten",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Criminal_FIOD": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Justitieel_Economische",
+									"Criminal_FIOD"
+								],
+								"name": "Criminal_FIOD",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Transport_Eenheid": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Justitieel_Economische",
+									"Transport_Eenheid"
+								],
+								"name": "Transport_Eenheid",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"ILT/IOD_EU": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Justitieel_Economische",
+									"ILT/IOD_EU"
+								],
+								"name": "ILT/IOD_EU",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Financieel_uitvoerend.txt": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Justitieel_Economische",
+									"Financieel_uitvoerend.txt"
+								],
+								"name": "Financieel_uitvoerend.txt",
+								"type": "txt",
+								"date": "1972-12-29T01:15:49.723Z"
+							},
+							"Inlichtingen_Commissie.txt": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Justitieel_Economische",
+									"Inlichtingen_Commissie.txt"
+								],
+								"name": "Inlichtingen_Commissie.txt",
+								"type": "txt",
+								"date": "1988-04-18T03:09:12.064Z"
+							},
+							"Markten_DNB.txt": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Justitieel_Economische",
+									"Markten_DNB.txt"
+								],
+								"name": "Markten_DNB.txt",
+								"type": "txt",
+								"date": "1980-07-13T13:51:03.426Z"
+							},
+							"ESW_Werk.txt": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Justitieel_Economische",
+									"ESW_Werk.txt"
+								],
+								"name": "ESW_Werk.txt",
+								"type": "txt",
+								"date": "1992-07-16T15:26:45.027Z"
+							},
+							"AFM_ESW.txt": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Justitieel_Economische",
+									"AFM_ESW.txt"
+								],
+								"name": "AFM_ESW.txt",
+								"type": "txt",
+								"date": "2002-06-26T04:42:36.203Z"
+							},
+							"Ontnemingswetgeving_AMLC.csv": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Justitieel_Economische",
+									"Ontnemingswetgeving_AMLC.csv"
+								],
+								"name": "Ontnemingswetgeving_AMLC.csv",
+								"type": "csv",
+								"date": "1975-05-25T22:43:58.839Z"
+							},
+							"Rotterdam_investigation.pdf": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Justitieel_Economische",
+									"Rotterdam_investigation.pdf"
+								],
+								"name": "Rotterdam_investigation.pdf",
+								"type": "pdf",
+								"date": "2001-12-17T11:27:20.840Z"
+							},
+							"Onverklaarbaar_Opsporingsdienst.csv": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Justitieel_Economische",
+									"Onverklaarbaar_Opsporingsdienst.csv"
+								],
+								"name": "Onverklaarbaar_Opsporingsdienst.csv",
+								"type": "csv",
+								"date": "1976-08-04T00:42:14.008Z"
+							}
+						}
+					},
+					"Nederland_applicatie": {
+						"path": [
+							"Eustatiusen_Financieel",
+							"Nederland_applicatie"
+						],
+						"name": "Nederland_applicatie",
+						"type": "dir",
+						"dirType": "archive",
+						"children": {
+							"Financieel_FIOD": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Nederland_applicatie",
+									"Financieel_FIOD"
+								],
+								"name": "Financieel_FIOD",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"team_Task": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Nederland_applicatie",
+									"team_Task"
+								],
+								"name": "team_Task",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Financial_onderdeel": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Nederland_applicatie",
+									"Financial_onderdeel"
+								],
+								"name": "Financial_onderdeel",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"applicatie_FIOD": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Nederland_applicatie",
+									"applicatie_FIOD"
+								],
+								"name": "applicatie_FIOD",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Informatie_bibal": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Nederland_applicatie",
+									"Informatie_bibal"
+								],
+								"name": "Informatie_bibal",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Investigation_Inlichtingen": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Nederland_applicatie",
+									"Investigation_Inlichtingen"
+								],
+								"name": "Investigation_Inlichtingen",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Infobox_Opsporingsdienst": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Nederland_applicatie",
+									"Infobox_Opsporingsdienst"
+								],
+								"name": "Infobox_Opsporingsdienst",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Anti_FIU": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Nederland_applicatie",
+									"Anti_FIU"
+								],
+								"name": "Anti_FIU",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Ministerie_Programma": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Nederland_applicatie",
+									"Ministerie_Programma"
+								],
+								"name": "Ministerie_Programma",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Financieel_Inlichtingen.csv": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Nederland_applicatie",
+									"Financieel_Inlichtingen.csv"
+								],
+								"name": "Financieel_Inlichtingen.csv",
+								"type": "csv",
+								"date": "2000-07-12T08:43:20.156Z"
+							},
+							"politie_Inkomen.csv": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Nederland_applicatie",
+									"politie_Inkomen.csv"
+								],
+								"name": "politie_Inkomen.csv",
+								"type": "csv",
+								"date": "2003-03-20T18:04:38.548Z"
+							},
+							"Centre,_Infobox.txt": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Nederland_applicatie",
+									"Centre,_Infobox.txt"
+								],
+								"name": "Centre,_Infobox.txt",
+								"type": "txt",
+								"date": "1988-06-17T17:41:17.466Z"
+							},
+							"Vermogen_EC.txt": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Nederland_applicatie",
+									"Vermogen_EC.txt"
+								],
+								"name": "Vermogen_EC.txt",
+								"type": "txt",
+								"date": "1967-06-06T04:53:27.725Z"
+							},
+							"Commissie_bibal.pdf": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"Nederland_applicatie",
+									"Commissie_bibal.pdf"
+								],
+								"name": "Commissie_bibal.pdf",
+								"type": "pdf",
+								"date": "2015-01-27T04:52:46.147Z"
+							}
+						}
+					},
+					"CJIB_Financial": {
+						"path": [
+							"Eustatiusen_Financieel",
+							"CJIB_Financial"
+						],
+						"name": "CJIB_Financial",
+						"type": "dir",
+						"dirType": "normal",
+						"children": {
+							"gebouwd_Landelijke": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"CJIB_Financial",
+									"gebouwd_Landelijke"
+								],
+								"name": "gebouwd_Landelijke",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Action_Leefomgeving": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"CJIB_Financial",
+									"Action_Leefomgeving"
+								],
+								"name": "Action_Leefomgeving",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"interne_team": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"CJIB_Financial",
+									"interne_team"
+								],
+								"name": "interne_team",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Financieel_Money": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"CJIB_Financial",
+									"Financieel_Money"
+								],
+								"name": "Financieel_Money",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Markten_Financiële": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"CJIB_Financial",
+									"Markten_Financiële"
+								],
+								"name": "Markten_Financiële",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"onderdeel_Platform": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"CJIB_Financial",
+									"onderdeel_Platform"
+								],
+								"name": "onderdeel_Platform",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"AFM_organisatie.txt": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"CJIB_Financial",
+									"AFM_organisatie.txt"
+								],
+								"name": "AFM_organisatie.txt",
+								"type": "txt",
+								"date": "1999-03-29T03:46:38.301Z"
+							},
+							"onderdeel_Intelligence.pdf": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"CJIB_Financial",
+									"onderdeel_Intelligence.pdf"
+								],
+								"name": "onderdeel_Intelligence.pdf",
+								"type": "pdf",
+								"date": "1981-04-29T13:16:32.670Z"
+							},
+							"Expertisecentrum_team.txt": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"CJIB_Financial",
+									"Expertisecentrum_team.txt"
+								],
+								"name": "Expertisecentrum_team.txt",
+								"type": "txt",
+								"date": "2011-03-20T04:04:37.050Z"
+							},
+							"onderdeel_FEC.txt": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"CJIB_Financial",
+									"onderdeel_FEC.txt"
+								],
+								"name": "onderdeel_FEC.txt",
+								"type": "txt",
+								"date": "1992-06-23T23:46:14.185Z"
+							},
+							"CN_eilanden.pdf": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"CJIB_Financial",
+									"CN_eilanden.pdf"
+								],
+								"name": "CN_eilanden.pdf",
+								"type": "pdf",
+								"date": "1981-08-14T09:20:55.290Z"
+							},
+							"BFT_ESW.txt": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"CJIB_Financial",
+									"BFT_ESW.txt"
+								],
+								"name": "BFT_ESW.txt",
+								"type": "txt",
+								"date": "1984-09-21T17:51:09.598Z"
+							}
+						}
+					},
+					"binnen_Mensenhandel": {
+						"path": [
+							"Eustatiusen_Financieel",
+							"binnen_Mensenhandel"
+						],
+						"name": "binnen_Mensenhandel",
 						"type": "dir",
 						"dirType": "locked",
 						"children": {
-							"DOSSIER-109772650426660": {
+							"Landelijke_Ministerie": {
 								"path": [
-									"UWV",
-									"2008-55981323615769",
-									"DOSSIER-109772650426660"
+									"Eustatiusen_Financieel",
+									"binnen_Mensenhandel",
+									"Landelijke_Ministerie"
 								],
-								"name": "DOSSIER-109772650426660",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"Justitieel_Financieel.pdf": {
-										"name": "Justitieel_Financieel.pdf",
-										"path": [
-											"UWV",
-											"2008-55981323615769",
-											"DOSSIER-109772650426660",
-											"Justitieel_Financieel.pdf"
-										],
-										"type": "pdf"
-									},
-									"van_Inkomen,.pdf": {
-										"name": "van_Inkomen,.pdf",
-										"path": [
-											"UWV",
-											"2008-55981323615769",
-											"DOSSIER-109772650426660",
-											"van_Inkomen,.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-14692147214349": {
-								"path": [
-									"UWV",
-									"2008-55981323615769",
-									"DOSSIER-14692147214349"
-								],
-								"name": "DOSSIER-14692147214349",
+								"name": "Landelijke_Ministerie",
 								"type": "dir",
 								"dirType": "normal",
 								"children": {
-									"Nederland:_CT.pdf": {
-										"name": "Nederland:_CT.pdf",
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
 										"path": [
-											"UWV",
-											"2008-55981323615769",
-											"DOSSIER-14692147214349",
-											"Nederland:_CT.pdf"
-										],
-										"type": "pdf"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
 									},
-									"Financial_Andrea.pdf": {
-										"name": "Financial_Andrea.pdf",
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
 										"path": [
-											"UWV",
-											"2008-55981323615769",
-											"DOSSIER-14692147214349",
-											"Financial_Andrea.pdf"
-										],
-										"type": "pdf"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
 									},
-									"Andrea_DNB.txt": {
-										"name": "Andrea_DNB.txt",
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
 										"path": [
-											"UWV",
-											"2008-55981323615769",
-											"DOSSIER-14692147214349",
-											"Andrea_DNB.txt"
-										],
-										"type": "txt"
-									},
-									"Criminaliteit_Nederlandsche.txt": {
-										"name": "Criminaliteit_Nederlandsche.txt",
-										"path": [
-											"UWV",
-											"2008-55981323615769",
-											"DOSSIER-14692147214349",
-											"Criminaliteit_Nederlandsche.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
 									}
 								}
 							},
-							"DOSSIER-187912380411491": {
+							"Fiscale_Informatie": {
 								"path": [
-									"UWV",
-									"2008-55981323615769",
-									"DOSSIER-187912380411491"
+									"Eustatiusen_Financieel",
+									"binnen_Mensenhandel",
+									"Fiscale_Informatie"
 								],
-								"name": "DOSSIER-187912380411491",
+								"name": "Fiscale_Informatie",
 								"type": "dir",
 								"dirType": "archive",
 								"children": {
-									"Inkomen,_Bonaire..txt": {
-										"name": "Inkomen,_Bonaire..txt",
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
 										"path": [
-											"UWV",
-											"2008-55981323615769",
-											"DOSSIER-187912380411491",
-											"Inkomen,_Bonaire..txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
 									},
-									"Financieel_de.txt": {
-										"name": "Financieel_de.txt",
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
 										"path": [
-											"UWV",
-											"2008-55981323615769",
-											"DOSSIER-187912380411491",
-											"Financieel_de.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
 									},
-									"EU_Andrea.pdf": {
-										"name": "EU_Andrea.pdf",
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
 										"path": [
-											"UWV",
-											"2008-55981323615769",
-											"DOSSIER-187912380411491",
-											"EU_Andrea.pdf"
-										],
-										"type": "pdf"
-									},
-									"de_Money.txt": {
-										"name": "de_Money.txt",
-										"path": [
-											"UWV",
-											"2008-55981323615769",
-											"DOSSIER-187912380411491",
-											"de_Money.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
 									}
 								}
 							},
-							"DOSSIER-2557198111358": {
+							"Caribisch_DNB": {
 								"path": [
-									"UWV",
-									"2008-55981323615769",
-									"DOSSIER-2557198111358"
+									"Eustatiusen_Financieel",
+									"binnen_Mensenhandel",
+									"Caribisch_DNB"
 								],
-								"name": "DOSSIER-2557198111358",
+								"name": "Caribisch_DNB",
 								"type": "dir",
 								"dirType": "normal",
 								"children": {
-									"Europese_Anti.txt": {
-										"name": "Europese_Anti.txt",
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
 										"path": [
-											"UWV",
-											"2008-55981323615769",
-											"DOSSIER-2557198111358",
-											"Europese_Anti.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
 									}
 								}
 							},
-							"DOSSIER-327372006029066": {
+							"FIOD_gebouwd": {
 								"path": [
-									"UWV",
-									"2008-55981323615769",
-									"DOSSIER-327372006029066"
+									"Eustatiusen_Financieel",
+									"binnen_Mensenhandel",
+									"FIOD_gebouwd"
 								],
-								"name": "DOSSIER-327372006029066",
+								"name": "FIOD_gebouwd",
 								"type": "dir",
 								"dirType": "archive",
 								"children": {
-									"Nederland_European.pdf": {
-										"name": "Nederland_European.pdf",
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
 										"path": [
-											"UWV",
-											"2008-55981323615769",
-											"DOSSIER-327372006029066",
-											"Nederland_European.pdf"
-										],
-										"type": "pdf"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
 									},
-									"Contraterrorisme_Laundering.pdf": {
-										"name": "Contraterrorisme_Laundering.pdf",
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
 										"path": [
-											"UWV",
-											"2008-55981323615769",
-											"DOSSIER-327372006029066",
-											"Contraterrorisme_Laundering.pdf"
-										],
-										"type": "pdf"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
 									},
-									"BOOM_applicatie.txt": {
-										"name": "BOOM_applicatie.txt",
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
 										"path": [
-											"UWV",
-											"2008-55981323615769",
-											"DOSSIER-327372006029066",
-											"BOOM_applicatie.txt"
-										],
-										"type": "txt"
-									},
-									"controle_Crimineel.txt": {
-										"name": "controle_Crimineel.txt",
-										"path": [
-											"UWV",
-											"2008-55981323615769",
-											"DOSSIER-327372006029066",
-											"controle_Crimineel.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
 									}
 								}
 							},
-							"Bureau_Opsporingsdienst.pdf": {
-								"name": "Bureau_Opsporingsdienst.pdf",
+							"Justitieel_investigation": {
 								"path": [
-									"UWV",
-									"2008-55981323615769",
-									"Bureau_Opsporingsdienst.pdf"
+									"Eustatiusen_Financieel",
+									"binnen_Mensenhandel",
+									"Justitieel_investigation"
 								],
-								"type": "pdf"
+								"name": "Justitieel_investigation",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
 							},
-							"Andrea_Ontnemingswetgeving.txt": {
-								"name": "Andrea_Ontnemingswetgeving.txt",
+							"organisatie_Werk": {
 								"path": [
-									"UWV",
-									"2008-55981323615769",
-									"Andrea_Ontnemingswetgeving.txt"
+									"Eustatiusen_Financieel",
+									"binnen_Mensenhandel",
+									"organisatie_Werk"
 								],
-								"type": "txt"
+								"name": "organisatie_Werk",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
 							},
-							"Caribisch_Inkomen,.txt": {
-								"name": "Caribisch_Inkomen,.txt",
+							"FIU_Crimineel": {
 								"path": [
-									"UWV",
-									"2008-55981323615769",
-									"Caribisch_Inkomen,.txt"
+									"Eustatiusen_Financieel",
+									"binnen_Mensenhandel",
+									"FIU_Crimineel"
 								],
-								"type": "txt"
+								"name": "FIU_Crimineel",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
 							},
-							"OM_Financieel.txt": {
-								"name": "OM_Financieel.txt",
+							"controle_Landelijke": {
 								"path": [
-									"UWV",
-									"2008-55981323615769",
-									"OM_Financieel.txt"
+									"Eustatiusen_Financieel",
+									"binnen_Mensenhandel",
+									"controle_Landelijke"
 								],
-								"type": "txt"
+								"name": "controle_Landelijke",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"FEC_Force": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"binnen_Mensenhandel",
+									"FEC_Force"
+								],
+								"name": "FEC_Force",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"CT_Landelijke": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"binnen_Mensenhandel",
+									"CT_Landelijke"
+								],
+								"name": "CT_Landelijke",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Financieel_gemeente.csv": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"binnen_Mensenhandel",
+									"Financieel_gemeente.csv"
+								],
+								"name": "Financieel_gemeente.csv",
+								"type": "csv",
+								"date": "1970-03-05T13:51:49.088Z"
+							},
+							"OM_Intelligence.txt": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"binnen_Mensenhandel",
+									"OM_Intelligence.txt"
+								],
+								"name": "OM_Intelligence.txt",
+								"type": "txt",
+								"date": "2004-09-20T00:28:13.039Z"
+							},
+							"onderdeel_Autoriteit.txt": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"binnen_Mensenhandel",
+									"onderdeel_Autoriteit.txt"
+								],
+								"name": "onderdeel_Autoriteit.txt",
+								"type": "txt",
+								"date": "2002-04-25T23:22:04.277Z"
+							},
+							"Werk_EMM.txt": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"binnen_Mensenhandel",
+									"Werk_EMM.txt"
+								],
+								"name": "Werk_EMM.txt",
+								"type": "txt",
+								"date": "2010-12-09T20:57:23.627Z"
+							},
+							"gemeente_onderdeel.txt": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"binnen_Mensenhandel",
+									"gemeente_onderdeel.txt"
+								],
+								"name": "gemeente_onderdeel.txt",
+								"type": "txt",
+								"date": "2007-04-06T10:20:24.219Z"
+							},
+							"Expertisecentrum_Opsporingsdienst.txt": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"binnen_Mensenhandel",
+									"Expertisecentrum_Opsporingsdienst.txt"
+								],
+								"name": "Expertisecentrum_Opsporingsdienst.txt",
+								"type": "txt",
+								"date": "1974-04-05T10:07:29.662Z"
+							},
+							"Administratieve_Rotterdam.txt": {
+								"path": [
+									"Eustatiusen_Financieel",
+									"binnen_Mensenhandel",
+									"Administratieve_Rotterdam.txt"
+								],
+								"name": "Administratieve_Rotterdam.txt",
+								"type": "txt",
+								"date": "1979-06-19T13:56:55.069Z"
 							}
 						}
 					},
-					"2010-10511497011284": {
+					"EMM_onderdeel.pdf": {
 						"path": [
-							"UWV",
-							"2010-10511497011284"
+							"Eustatiusen_Financieel",
+							"EMM_onderdeel.pdf"
 						],
-						"name": "2010-10511497011284",
-						"type": "dir",
-						"dirType": "normal",
-						"children": {
-							"DOSSIER-16713363123881": {
-								"path": [
-									"UWV",
-									"2010-10511497011284",
-									"DOSSIER-16713363123881"
-								],
-								"name": "DOSSIER-16713363123881",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"FinanciÃ«le_AMLC.txt": {
-										"name": "FinanciÃ«le_AMLC.txt",
-										"path": [
-											"UWV",
-											"2010-10511497011284",
-											"DOSSIER-16713363123881",
-											"FinanciÃ«le_AMLC.txt"
-										],
-										"type": "txt"
-									},
-									"Werk_Financieel.txt": {
-										"name": "Werk_Financieel.txt",
-										"path": [
-											"UWV",
-											"2010-10511497011284",
-											"DOSSIER-16713363123881",
-											"Werk_Financieel.txt"
-										],
-										"type": "txt"
-									},
-									"gemeente_Opsporingsdienst.txt": {
-										"name": "gemeente_Opsporingsdienst.txt",
-										"path": [
-											"UWV",
-											"2010-10511497011284",
-											"DOSSIER-16713363123881",
-											"gemeente_Opsporingsdienst.txt"
-										],
-										"type": "txt"
-									},
-									"EC_de.txt": {
-										"name": "EC_de.txt",
-										"path": [
-											"UWV",
-											"2010-10511497011284",
-											"DOSSIER-16713363123881",
-											"EC_de.txt"
-										],
-										"type": "txt"
-									},
-									"de_onderdeel.txt": {
-										"name": "de_onderdeel.txt",
-										"path": [
-											"UWV",
-											"2010-10511497011284",
-											"DOSSIER-16713363123881",
-											"de_onderdeel.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-20351642927728": {
-								"path": [
-									"UWV",
-									"2010-10511497011284",
-									"DOSSIER-20351642927728"
-								],
-								"name": "DOSSIER-20351642927728",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Expertise_Centre,.txt": {
-										"name": "Expertise_Centre,.txt",
-										"path": [
-											"UWV",
-											"2010-10511497011284",
-											"DOSSIER-20351642927728",
-											"Expertise_Centre,.txt"
-										],
-										"type": "txt"
-									},
-									"Functioneel_BOOM.pdf": {
-										"name": "Functioneel_BOOM.pdf",
-										"path": [
-											"UWV",
-											"2010-10511497011284",
-											"DOSSIER-20351642927728",
-											"Functioneel_BOOM.pdf"
-										],
-										"type": "pdf"
-									},
-									"Commissie,_de.txt": {
-										"name": "Commissie,_de.txt",
-										"path": [
-											"UWV",
-											"2010-10511497011284",
-											"DOSSIER-20351642927728",
-											"Commissie,_de.txt"
-										],
-										"type": "txt"
-									},
-									"BES_Fiscale.txt": {
-										"name": "BES_Fiscale.txt",
-										"path": [
-											"UWV",
-											"2010-10511497011284",
-											"DOSSIER-20351642927728",
-											"BES_Fiscale.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-2059022411313": {
-								"path": [
-									"UWV",
-									"2010-10511497011284",
-									"DOSSIER-2059022411313"
-								],
-								"name": "DOSSIER-2059022411313",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Bureau_F.pdf": {
-										"name": "Bureau_F.pdf",
-										"path": [
-											"UWV",
-											"2010-10511497011284",
-											"DOSSIER-2059022411313",
-											"Bureau_F.pdf"
-										],
-										"type": "pdf"
-									},
-									"CN_Andrea.pdf": {
-										"name": "CN_Andrea.pdf",
-										"path": [
-											"UWV",
-											"2010-10511497011284",
-											"DOSSIER-2059022411313",
-											"CN_Andrea.pdf"
-										],
-										"type": "pdf"
-									},
-									"Expertisecentrum_CWI.txt": {
-										"name": "Expertisecentrum_CWI.txt",
-										"path": [
-											"UWV",
-											"2010-10511497011284",
-											"DOSSIER-2059022411313",
-											"Expertisecentrum_CWI.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-22282958229012": {
-								"path": [
-									"UWV",
-									"2010-10511497011284",
-									"DOSSIER-22282958229012"
-								],
-								"name": "DOSSIER-22282958229012",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"FinanciÃ«le_en.txt": {
-										"name": "FinanciÃ«le_en.txt",
-										"path": [
-											"UWV",
-											"2010-10511497011284",
-											"DOSSIER-22282958229012",
-											"FinanciÃ«le_en.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-26439850531329": {
-								"path": [
-									"UWV",
-									"2010-10511497011284",
-									"DOSSIER-26439850531329"
-								],
-								"name": "DOSSIER-26439850531329",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"F_GoAML.txt": {
-										"name": "F_GoAML.txt",
-										"path": [
-											"UWV",
-											"2010-10511497011284",
-											"DOSSIER-26439850531329",
-											"F_GoAML.txt"
-										],
-										"type": "txt"
-									},
-									"Europese_van.pdf": {
-										"name": "Europese_van.pdf",
-										"path": [
-											"UWV",
-											"2010-10511497011284",
-											"DOSSIER-26439850531329",
-											"Europese_van.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"gemeente_BFT.txt": {
-								"name": "gemeente_BFT.txt",
-								"path": [
-									"UWV",
-									"2010-10511497011284",
-									"gemeente_BFT.txt"
-								],
-								"type": "txt"
-							},
-							"Nederland:_de.pdf": {
-								"name": "Nederland:_de.pdf",
-								"path": [
-									"UWV",
-									"2010-10511497011284",
-									"Nederland:_de.pdf"
-								],
-								"type": "pdf"
-							},
-							"Inlichtingen-_FIU.pdf": {
-								"name": "Inlichtingen-_FIU.pdf",
-								"path": [
-									"UWV",
-									"2010-10511497011284",
-									"Inlichtingen-_FIU.pdf"
-								],
-								"type": "pdf"
-							},
-							"en_Commissie,.pdf": {
-								"name": "en_Commissie,.pdf",
-								"path": [
-									"UWV",
-									"2010-10511497011284",
-									"en_Commissie,.pdf"
-								],
-								"type": "pdf"
-							},
-							"gemeente_van.txt": {
-								"name": "gemeente_van.txt",
-								"path": [
-									"UWV",
-									"2010-10511497011284",
-									"gemeente_van.txt"
-								],
-								"type": "txt"
-							}
-						}
+						"name": "EMM_onderdeel.pdf",
+						"type": "pdf",
+						"date": "2008-06-03T13:40:14.696Z"
 					},
-					"Programma_Inkomen,.txt": {
-						"name": "Programma_Inkomen,.txt",
+					"Eenheid_Informatie.txt": {
 						"path": [
-							"UWV",
-							"Programma_Inkomen,.txt"
+							"Eustatiusen_Financieel",
+							"Eenheid_Informatie.txt"
 						],
-						"type": "txt"
+						"name": "Eenheid_Informatie.txt",
+						"type": "txt",
+						"date": "2012-04-08T09:57:39.031Z"
+					},
+					"Opsporingsdienst_Laundering.pdf": {
+						"path": [
+							"Eustatiusen_Financieel",
+							"Opsporingsdienst_Laundering.pdf"
+						],
+						"name": "Opsporingsdienst_Laundering.pdf",
+						"type": "pdf",
+						"date": "1982-03-29T16:17:03.998Z"
+					},
+					"EC_Nederlandsche.txt": {
+						"path": [
+							"Eustatiusen_Financieel",
+							"EC_Nederlandsche.txt"
+						],
+						"name": "EC_Nederlandsche.txt",
+						"type": "txt",
+						"date": "1979-04-20T23:42:59.789Z"
 					}
 				}
 			},
-			"VFN": {
+			"Markten_Administratieve": {
 				"path": [
-					"VFN"
+					"Markten_Administratieve"
 				],
-				"name": "VFN",
+				"name": "Markten_Administratieve",
 				"type": "dir",
 				"dirType": "normal",
 				"children": {
-					"1977-128052621567": {
+					"CTE/PF_Anti-Money": {
 						"path": [
-							"VFN",
-							"1977-128052621567"
+							"Markten_Administratieve",
+							"CTE/PF_Anti-Money"
 						],
-						"name": "1977-128052621567",
-						"type": "dir",
-						"dirType": "normal",
-						"children": {
-							"DOSSIER-15194878126150": {
-								"path": [
-									"VFN",
-									"1977-128052621567",
-									"DOSSIER-15194878126150"
-								],
-								"name": "DOSSIER-15194878126150",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"iCOV_BES.pdf": {
-										"name": "iCOV_BES.pdf",
-										"path": [
-											"VFN",
-											"1977-128052621567",
-											"DOSSIER-15194878126150",
-											"iCOV_BES.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-2410982020541": {
-								"path": [
-									"VFN",
-									"1977-128052621567",
-									"DOSSIER-2410982020541"
-								],
-								"name": "DOSSIER-2410982020541",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"team_applicatie.pdf": {
-										"name": "team_applicatie.pdf",
-										"path": [
-											"VFN",
-											"1977-128052621567",
-											"DOSSIER-2410982020541",
-											"team_applicatie.pdf"
-										],
-										"type": "pdf"
-									},
-									"het_Mensensmokkel.pdf": {
-										"name": "het_Mensensmokkel.pdf",
-										"path": [
-											"VFN",
-											"1977-128052621567",
-											"DOSSIER-2410982020541",
-											"het_Mensensmokkel.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-27356158344772": {
-								"path": [
-									"VFN",
-									"1977-128052621567",
-									"DOSSIER-27356158344772"
-								],
-								"name": "DOSSIER-27356158344772",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"CWI_onderdeel.pdf": {
-										"name": "CWI_onderdeel.pdf",
-										"path": [
-											"VFN",
-											"1977-128052621567",
-											"DOSSIER-27356158344772",
-											"CWI_onderdeel.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-2922120812485": {
-								"path": [
-									"VFN",
-									"1977-128052621567",
-									"DOSSIER-2922120812485"
-								],
-								"name": "DOSSIER-2922120812485",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"Government_Intelligence.pdf": {
-										"name": "Government_Intelligence.pdf",
-										"path": [
-											"VFN",
-											"1977-128052621567",
-											"DOSSIER-2922120812485",
-											"Government_Intelligence.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-31639328928587": {
-								"path": [
-									"VFN",
-									"1977-128052621567",
-									"DOSSIER-31639328928587"
-								],
-								"name": "DOSSIER-31639328928587",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"en_en.txt": {
-										"name": "en_en.txt",
-										"path": [
-											"VFN",
-											"1977-128052621567",
-											"DOSSIER-31639328928587",
-											"en_en.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"en_Ministerie,.pdf": {
-								"name": "en_Ministerie,.pdf",
-								"path": [
-									"VFN",
-									"1977-128052621567",
-									"en_Ministerie,.pdf"
-								],
-								"type": "pdf"
-							},
-							"Functioneel_gemeente.pdf": {
-								"name": "Functioneel_gemeente.pdf",
-								"path": [
-									"VFN",
-									"1977-128052621567",
-									"Functioneel_gemeente.pdf"
-								],
-								"type": "pdf"
-							}
-						}
-					},
-					"1980-266302754330581": {
-						"path": [
-							"VFN",
-							"1980-266302754330581"
-						],
-						"name": "1980-266302754330581",
-						"type": "dir",
-						"dirType": "normal",
-						"children": {
-							"DOSSIER-143001109327047": {
-								"path": [
-									"VFN",
-									"1980-266302754330581",
-									"DOSSIER-143001109327047"
-								],
-								"name": "DOSSIER-143001109327047",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"applicatie_Crimineel.txt": {
-										"name": "applicatie_Crimineel.txt",
-										"path": [
-											"VFN",
-											"1980-266302754330581",
-											"DOSSIER-143001109327047",
-											"applicatie_Crimineel.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-16699888520853": {
-								"path": [
-									"VFN",
-									"1980-266302754330581",
-									"DOSSIER-16699888520853"
-								],
-								"name": "DOSSIER-16699888520853",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"binnen_de.pdf": {
-										"name": "binnen_de.pdf",
-										"path": [
-											"VFN",
-											"1980-266302754330581",
-											"DOSSIER-16699888520853",
-											"binnen_de.pdf"
-										],
-										"type": "pdf"
-									},
-									"Contraterrorisme_Against.pdf": {
-										"name": "Contraterrorisme_Against.pdf",
-										"path": [
-											"VFN",
-											"1980-266302754330581",
-											"DOSSIER-16699888520853",
-											"Contraterrorisme_Against.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-22263113792649": {
-								"path": [
-									"VFN",
-									"1980-266302754330581",
-									"DOSSIER-22263113792649"
-								],
-								"name": "DOSSIER-22263113792649",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Andrea_Andrea.pdf": {
-										"name": "Andrea_Andrea.pdf",
-										"path": [
-											"VFN",
-											"1980-266302754330581",
-											"DOSSIER-22263113792649",
-											"Andrea_Andrea.pdf"
-										],
-										"type": "pdf"
-									},
-									"A01C_ESW.txt": {
-										"name": "A01C_ESW.txt",
-										"path": [
-											"VFN",
-											"1980-266302754330581",
-											"DOSSIER-22263113792649",
-											"A01C_ESW.txt"
-										],
-										"type": "txt"
-									},
-									"Nederland:_Caribisch.txt": {
-										"name": "Nederland:_Caribisch.txt",
-										"path": [
-											"VFN",
-											"1980-266302754330581",
-											"DOSSIER-22263113792649",
-											"Nederland:_Caribisch.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-233932601913658": {
-								"path": [
-									"VFN",
-									"1980-266302754330581",
-									"DOSSIER-233932601913658"
-								],
-								"name": "DOSSIER-233932601913658",
-								"type": "dir",
-								"dirType": "archive",
-								"children": {
-									"CWI_en.pdf": {
-										"name": "CWI_en.pdf",
-										"path": [
-											"VFN",
-											"1980-266302754330581",
-											"DOSSIER-233932601913658",
-											"CWI_en.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-298861083122083": {
-								"path": [
-									"VFN",
-									"1980-266302754330581",
-									"DOSSIER-298861083122083"
-								],
-								"name": "DOSSIER-298861083122083",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"onderdeel_EU.pdf": {
-										"name": "onderdeel_EU.pdf",
-										"path": [
-											"VFN",
-											"1980-266302754330581",
-											"DOSSIER-298861083122083",
-											"onderdeel_EU.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"Caribisch_Opsporingsdienst.pdf": {
-								"name": "Caribisch_Opsporingsdienst.pdf",
-								"path": [
-									"VFN",
-									"1980-266302754330581",
-									"Caribisch_Opsporingsdienst.pdf"
-								],
-								"type": "pdf"
-							},
-							"Nederlandsche_FEC.txt": {
-								"name": "Nederlandsche_FEC.txt",
-								"path": [
-									"VFN",
-									"1980-266302754330581",
-									"Nederlandsche_FEC.txt"
-								],
-								"type": "txt"
-							},
-							"Centrum_orgaan.txt": {
-								"name": "Centrum_orgaan.txt",
-								"path": [
-									"VFN",
-									"1980-266302754330581",
-									"Centrum_orgaan.txt"
-								],
-								"type": "txt"
-							},
-							"Incasso_Justitieel.pdf": {
-								"name": "Incasso_Justitieel.pdf",
-								"path": [
-									"VFN",
-									"1980-266302754330581",
-									"Incasso_Justitieel.pdf"
-								],
-								"type": "pdf"
-							}
-						}
-					},
-					"1986-19812896830962": {
-						"path": [
-							"VFN",
-							"1986-19812896830962"
-						],
-						"name": "1986-19812896830962",
-						"type": "dir",
-						"dirType": "normal",
-						"children": {
-							"DOSSIER-12263103934192": {
-								"path": [
-									"VFN",
-									"1986-19812896830962",
-									"DOSSIER-12263103934192"
-								],
-								"name": "DOSSIER-12263103934192",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"proliferatiefmanciering._EU.txt": {
-										"name": "proliferatiefmanciering._EU.txt",
-										"path": [
-											"VFN",
-											"1986-19812896830962",
-											"DOSSIER-12263103934192",
-											"proliferatiefmanciering._EU.txt"
-										],
-										"type": "txt"
-									},
-									"DWI_organisatie.txt": {
-										"name": "DWI_organisatie.txt",
-										"path": [
-											"VFN",
-											"1986-19812896830962",
-											"DOSSIER-12263103934192",
-											"DWI_organisatie.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-2144318103209": {
-								"path": [
-									"VFN",
-									"1986-19812896830962",
-									"DOSSIER-2144318103209"
-								],
-								"name": "DOSSIER-2144318103209",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Caribisch_UNODC.pdf": {
-										"name": "Caribisch_UNODC.pdf",
-										"path": [
-											"VFN",
-											"1986-19812896830962",
-											"DOSSIER-2144318103209",
-											"Caribisch_UNODC.pdf"
-										],
-										"type": "pdf"
-									},
-									"Bureau_controle.txt": {
-										"name": "Bureau_controle.txt",
-										"path": [
-											"VFN",
-											"1986-19812896830962",
-											"DOSSIER-2144318103209",
-											"Bureau_controle.txt"
-										],
-										"type": "txt"
-									},
-									"de_FinanciÃ«le.txt": {
-										"name": "de_FinanciÃ«le.txt",
-										"path": [
-											"VFN",
-											"1986-19812896830962",
-											"DOSSIER-2144318103209",
-											"de_FinanciÃ«le.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-23564409928658": {
-								"path": [
-									"VFN",
-									"1986-19812896830962",
-									"DOSSIER-23564409928658"
-								],
-								"name": "DOSSIER-23564409928658",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"van_Inkomen,.txt": {
-										"name": "van_Inkomen,.txt",
-										"path": [
-											"VFN",
-											"1986-19812896830962",
-											"DOSSIER-23564409928658",
-											"van_Inkomen,.txt"
-										],
-										"type": "txt"
-									},
-									"een_van.txt": {
-										"name": "een_van.txt",
-										"path": [
-											"VFN",
-											"1986-19812896830962",
-											"DOSSIER-23564409928658",
-											"een_van.txt"
-										],
-										"type": "txt"
-									},
-									"interne_Ministerie,.pdf": {
-										"name": "interne_Ministerie,.pdf",
-										"path": [
-											"VFN",
-											"1986-19812896830962",
-											"DOSSIER-23564409928658",
-											"interne_Ministerie,.pdf"
-										],
-										"type": "pdf"
-									},
-									"gebouwd_EC.pdf": {
-										"name": "gebouwd_EC.pdf",
-										"path": [
-											"VFN",
-											"1986-19812896830962",
-											"DOSSIER-23564409928658",
-											"gebouwd_EC.pdf"
-										],
-										"type": "pdf"
-									}
-								}
-							},
-							"DOSSIER-525384617378": {
-								"path": [
-									"VFN",
-									"1986-19812896830962",
-									"DOSSIER-525384617378"
-								],
-								"name": "DOSSIER-525384617378",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Opsporingsdienst_Opsporingsdienst.txt": {
-										"name": "Opsporingsdienst_Opsporingsdienst.txt",
-										"path": [
-											"VFN",
-											"1986-19812896830962",
-											"DOSSIER-525384617378",
-											"Opsporingsdienst_Opsporingsdienst.txt"
-										],
-										"type": "txt"
-									},
-									"_Financieel.txt": {
-										"name": "_Financieel.txt",
-										"path": [
-											"VFN",
-											"1986-19812896830962",
-											"DOSSIER-525384617378",
-											"_Financieel.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-5338461312732": {
-								"path": [
-									"VFN",
-									"1986-19812896830962",
-									"DOSSIER-5338461312732"
-								],
-								"name": "DOSSIER-5338461312732",
-								"type": "dir",
-								"dirType": "normal",
-								"children": {
-									"Financial_BFT.txt": {
-										"name": "Financial_BFT.txt",
-										"path": [
-											"VFN",
-											"1986-19812896830962",
-											"DOSSIER-5338461312732",
-											"Financial_BFT.txt"
-										],
-										"type": "txt"
-									},
-									"FP_Recherche,.txt": {
-										"name": "FP_Recherche,.txt",
-										"path": [
-											"VFN",
-											"1986-19812896830962",
-											"DOSSIER-5338461312732",
-											"FP_Recherche,.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"Transport_uitvoerend.txt": {
-								"name": "Transport_uitvoerend.txt",
-								"path": [
-									"VFN",
-									"1986-19812896830962",
-									"Transport_uitvoerend.txt"
-								],
-								"type": "txt"
-							},
-							"Action_Andrea.txt": {
-								"name": "Action_Andrea.txt",
-								"path": [
-									"VFN",
-									"1986-19812896830962",
-									"Action_Andrea.txt"
-								],
-								"type": "txt"
-							},
-							"FIOD_DLR.txt": {
-								"name": "FIOD_DLR.txt",
-								"path": [
-									"VFN",
-									"1986-19812896830962",
-									"FIOD_DLR.txt"
-								],
-								"type": "txt"
-							}
-						}
-					},
-					"1992-46261218618244": {
-						"path": [
-							"VFN",
-							"1992-46261218618244"
-						],
-						"name": "1992-46261218618244",
+						"name": "CTE/PF_Anti-Money",
 						"type": "dir",
 						"dirType": "locked",
 						"children": {
-							"DOSSIER-194883016213647": {
+							"Intelligence_Investigation": {
 								"path": [
-									"VFN",
-									"1992-46261218618244",
-									"DOSSIER-194883016213647"
+									"Markten_Administratieve",
+									"CTE/PF_Anti-Money",
+									"Intelligence_Investigation"
 								],
-								"name": "DOSSIER-194883016213647",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"BVI_onderdeel.txt": {
-										"name": "BVI_onderdeel.txt",
-										"path": [
-											"VFN",
-											"1992-46261218618244",
-											"DOSSIER-194883016213647",
-											"BVI_onderdeel.txt"
-										],
-										"type": "txt"
-									}
-								}
-							},
-							"DOSSIER-19535176105789": {
-								"path": [
-									"VFN",
-									"1992-46261218618244",
-									"DOSSIER-19535176105789"
-								],
-								"name": "DOSSIER-19535176105789",
+								"name": "Intelligence_Investigation",
 								"type": "dir",
 								"dirType": "archive",
 								"children": {
-									"van_FinanciÃ«le.txt": {
-										"name": "van_FinanciÃ«le.txt",
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
 										"path": [
-											"VFN",
-											"1992-46261218618244",
-											"DOSSIER-19535176105789",
-											"van_FinanciÃ«le.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
 									},
-									"de_AFM.txt": {
-										"name": "de_AFM.txt",
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
 										"path": [
-											"VFN",
-											"1992-46261218618244",
-											"DOSSIER-19535176105789",
-											"de_AFM.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
 									},
-									"binnen_eilanden.txt": {
-										"name": "binnen_eilanden.txt",
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
 										"path": [
-											"VFN",
-											"1992-46261218618244",
-											"DOSSIER-19535176105789",
-											"binnen_eilanden.txt"
-										],
-										"type": "txt"
-									},
-									"Andrea_FlU-Nederland.txt": {
-										"name": "Andrea_FlU-Nederland.txt",
-										"path": [
-											"VFN",
-											"1992-46261218618244",
-											"DOSSIER-19535176105789",
-											"Andrea_FlU-Nederland.txt"
-										],
-										"type": "txt"
-									},
-									"en_Administratieve.txt": {
-										"name": "en_Administratieve.txt",
-										"path": [
-											"VFN",
-											"1992-46261218618244",
-											"DOSSIER-19535176105789",
-											"en_Administratieve.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
 									}
 								}
 							},
-							"DOSSIER-2323585330305": {
+							"politie_Expertisecentrum": {
 								"path": [
-									"VFN",
-									"1992-46261218618244",
-									"DOSSIER-2323585330305"
+									"Markten_Administratieve",
+									"CTE/PF_Anti-Money",
+									"politie_Expertisecentrum"
 								],
-								"name": "DOSSIER-2323585330305",
+								"name": "politie_Expertisecentrum",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Financial_Eenheid": {
+								"path": [
+									"Markten_Administratieve",
+									"CTE/PF_Anti-Money",
+									"Financial_Eenheid"
+								],
+								"name": "Financial_Eenheid",
 								"type": "dir",
 								"dirType": "normal",
 								"children": {
-									"Force_Unit.txt": {
-										"name": "Force_Unit.txt",
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
 										"path": [
-											"VFN",
-											"1992-46261218618244",
-											"DOSSIER-2323585330305",
-											"Force_Unit.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
 									}
 								}
 							},
-							"DOSSIER-266042563212618": {
+							"Centraal_FlU-Nederland": {
 								"path": [
-									"VFN",
-									"1992-46261218618244",
-									"DOSSIER-266042563212618"
+									"Markten_Administratieve",
+									"CTE/PF_Anti-Money",
+									"Centraal_FlU-Nederland"
 								],
-								"name": "DOSSIER-266042563212618",
+								"name": "Centraal_FlU-Nederland",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Caribisch_Europese": {
+								"path": [
+									"Markten_Administratieve",
+									"CTE/PF_Anti-Money",
+									"Caribisch_Europese"
+								],
+								"name": "Caribisch_Europese",
 								"type": "dir",
 								"dirType": "normal",
 								"children": {
-									"en_Europese.pdf": {
-										"name": "en_Europese.pdf",
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
 										"path": [
-											"VFN",
-											"1992-46261218618244",
-											"DOSSIER-266042563212618",
-											"en_Europese.pdf"
-										],
-										"type": "pdf"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
 									}
 								}
 							},
-							"DOSSIER-6991602716811": {
+							"Criminaliteit_Onverklaarbaar": {
 								"path": [
-									"VFN",
-									"1992-46261218618244",
-									"DOSSIER-6991602716811"
+									"Markten_Administratieve",
+									"CTE/PF_Anti-Money",
+									"Criminaliteit_Onverklaarbaar"
 								],
-								"name": "DOSSIER-6991602716811",
+								"name": "Criminaliteit_Onverklaarbaar",
 								"type": "dir",
 								"dirType": "normal",
 								"children": {
-									"applicatie_European.txt": {
-										"name": "applicatie_European.txt",
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
 										"path": [
-											"VFN",
-											"1992-46261218618244",
-											"DOSSIER-6991602716811",
-											"applicatie_European.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
 									},
-									"FIOD_applicatie.txt": {
-										"name": "FIOD_applicatie.txt",
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
 										"path": [
-											"VFN",
-											"1992-46261218618244",
-											"DOSSIER-6991602716811",
-											"FIOD_applicatie.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
 									},
-									"proliferatiefmanciering._Rotterdam.txt": {
-										"name": "proliferatiefmanciering._Rotterdam.txt",
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
 										"path": [
-											"VFN",
-											"1992-46261218618244",
-											"DOSSIER-6991602716811",
-											"proliferatiefmanciering._Rotterdam.txt"
-										],
-										"type": "txt"
-									},
-									"de_onderdeel.txt": {
-										"name": "de_onderdeel.txt",
-										"path": [
-											"VFN",
-											"1992-46261218618244",
-											"DOSSIER-6991602716811",
-											"de_onderdeel.txt"
-										],
-										"type": "txt"
-									},
-									"onderdeel_EMPACT.pdf": {
-										"name": "onderdeel_EMPACT.pdf",
-										"path": [
-											"VFN",
-											"1992-46261218618244",
-											"DOSSIER-6991602716811",
-											"onderdeel_EMPACT.pdf"
-										],
-										"type": "pdf"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
 									}
 								}
 							},
-							"Expertise_Expertisecentrum.pdf": {
-								"name": "Expertise_Expertisecentrum.pdf",
+							"Financiële_Saba": {
 								"path": [
-									"VFN",
-									"1992-46261218618244",
-									"Expertise_Expertisecentrum.pdf"
+									"Markten_Administratieve",
+									"CTE/PF_Anti-Money",
+									"Financiële_Saba"
 								],
-								"type": "pdf"
+								"name": "Financiële_Saba",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
 							},
-							"Administratieve_Money.txt": {
-								"name": "Administratieve_Money.txt",
+							"EMPACT_EMPACT": {
 								"path": [
-									"VFN",
-									"1992-46261218618244",
-									"Administratieve_Money.txt"
+									"Markten_Administratieve",
+									"CTE/PF_Anti-Money",
+									"EMPACT_EMPACT"
 								],
-								"type": "txt"
+								"name": "EMPACT_EMPACT",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
 							},
-							"Force_Force.txt": {
-								"name": "Force_Force.txt",
+							"Justitieel_Inkomen": {
 								"path": [
-									"VFN",
-									"1992-46261218618244",
-									"Force_Force.txt"
+									"Markten_Administratieve",
+									"CTE/PF_Anti-Money",
+									"Justitieel_Inkomen"
 								],
-								"type": "txt"
+								"name": "Justitieel_Inkomen",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
 							},
-							"Laundering._Basisvoorziening.txt": {
-								"name": "Laundering._Basisvoorziening.txt",
+							"EMPACT_Financieel.txt": {
 								"path": [
-									"VFN",
-									"1992-46261218618244",
-									"Laundering._Basisvoorziening.txt"
+									"Markten_Administratieve",
+									"CTE/PF_Anti-Money",
+									"EMPACT_Financieel.txt"
 								],
-								"type": "txt"
+								"name": "EMPACT_Financieel.txt",
+								"type": "txt",
+								"date": "1983-02-03T20:45:22.319Z"
+							},
+							"Basisvoorziening_CT.txt": {
+								"path": [
+									"Markten_Administratieve",
+									"CTE/PF_Anti-Money",
+									"Basisvoorziening_CT.txt"
+								],
+								"name": "Basisvoorziening_CT.txt",
+								"type": "txt",
+								"date": "2013-06-11T19:50:24.824Z"
+							},
+							"Openbaar_Infobox.txt": {
+								"path": [
+									"Markten_Administratieve",
+									"CTE/PF_Anti-Money",
+									"Openbaar_Infobox.txt"
+								],
+								"name": "Openbaar_Infobox.txt",
+								"type": "txt",
+								"date": "2000-06-22T22:43:48.213Z"
+							},
+							"Financieel_Against.pdf": {
+								"path": [
+									"Markten_Administratieve",
+									"CTE/PF_Anti-Money",
+									"Financieel_Against.pdf"
+								],
+								"name": "Financieel_Against.pdf",
+								"type": "pdf",
+								"date": "1994-06-09T23:46:02.249Z"
+							},
+							"Caribisch_European.txt": {
+								"path": [
+									"Markten_Administratieve",
+									"CTE/PF_Anti-Money",
+									"Caribisch_European.txt"
+								],
+								"name": "Caribisch_European.txt",
+								"type": "txt",
+								"date": "1975-03-08T09:04:38.125Z"
+							},
+							"bibal_andrea.txt": {
+								"path": [
+									"Markten_Administratieve",
+									"CTE/PF_Anti-Money",
+									"bibal_andrea.txt"
+								],
+								"name": "bibal_andrea.txt",
+								"type": "txt",
+								"date": "1973-08-24T01:32:03.571Z"
+							},
+							"Inkomen_Programma.txt": {
+								"path": [
+									"Markten_Administratieve",
+									"CTE/PF_Anti-Money",
+									"Inkomen_Programma.txt"
+								],
+								"name": "Inkomen_Programma.txt",
+								"type": "txt",
+								"date": "2012-10-17T23:39:53.097Z"
+							},
+							"team_Laundering.csv": {
+								"path": [
+									"Markten_Administratieve",
+									"CTE/PF_Anti-Money",
+									"team_Laundering.csv"
+								],
+								"name": "team_Laundering.csv",
+								"type": "csv",
+								"date": "1966-12-25T20:49:16.636Z"
+							},
+							"proliferatiefmanciering_Toezicht.txt": {
+								"path": [
+									"Markten_Administratieve",
+									"CTE/PF_Anti-Money",
+									"proliferatiefmanciering_Toezicht.txt"
+								],
+								"name": "proliferatiefmanciering_Toezicht.txt",
+								"type": "txt",
+								"date": "2013-05-26T01:32:42.463Z"
 							}
 						}
 					},
-					"2005-144103028628978": {
+					"Anti_Infobox": {
 						"path": [
-							"VFN",
-							"2005-144103028628978"
+							"Markten_Administratieve",
+							"Anti_Infobox"
 						],
-						"name": "2005-144103028628978",
+						"name": "Anti_Infobox",
 						"type": "dir",
 						"dirType": "normal",
 						"children": {
-							"DOSSIER-1042010016833": {
+							"Sint_Against": {
 								"path": [
-									"VFN",
-									"2005-144103028628978",
-									"DOSSIER-1042010016833"
+									"Markten_Administratieve",
+									"Anti_Infobox",
+									"Sint_Against"
 								],
-								"name": "DOSSIER-1042010016833",
+								"name": "Sint_Against",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Werk_FAT": {
+								"path": [
+									"Markten_Administratieve",
+									"Anti_Infobox",
+									"Werk_FAT"
+								],
+								"name": "Werk_FAT",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Commissie_Caribisch": {
+								"path": [
+									"Markten_Administratieve",
+									"Anti_Infobox",
+									"Commissie_Caribisch"
+								],
+								"name": "Commissie_Caribisch",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"andrea_Onverklaarbaar": {
+								"path": [
+									"Markten_Administratieve",
+									"Anti_Infobox",
+									"andrea_Onverklaarbaar"
+								],
+								"name": "andrea_Onverklaarbaar",
 								"type": "dir",
 								"dirType": "archive",
 								"children": {
-									"Europese_Contraterrorisme.txt": {
-										"name": "Europese_Contraterrorisme.txt",
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
 										"path": [
-											"VFN",
-											"2005-144103028628978",
-											"DOSSIER-1042010016833",
-											"Europese_Contraterrorisme.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
 									},
-									"BFT_GoAML.txt": {
-										"name": "BFT_GoAML.txt",
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
 										"path": [
-											"VFN",
-											"2005-144103028628978",
-											"DOSSIER-1042010016833",
-											"BFT_GoAML.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
 									}
 								}
 							},
-							"DOSSIER-10592141835492": {
+							"Infobox_Bonaire": {
 								"path": [
-									"VFN",
-									"2005-144103028628978",
-									"DOSSIER-10592141835492"
+									"Markten_Administratieve",
+									"Anti_Infobox",
+									"Infobox_Bonaire"
 								],
-								"name": "DOSSIER-10592141835492",
+								"name": "Infobox_Bonaire",
 								"type": "dir",
 								"dirType": "normal",
 								"children": {
-									"Crimineel_van.txt": {
-										"name": "Crimineel_van.txt",
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
 										"path": [
-											"VFN",
-											"2005-144103028628978",
-											"DOSSIER-10592141835492",
-											"Crimineel_van.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
 									},
-									"DWI_FP.pdf": {
-										"name": "DWI_FP.pdf",
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
 										"path": [
-											"VFN",
-											"2005-144103028628978",
-											"DOSSIER-10592141835492",
-											"DWI_FP.pdf"
-										],
-										"type": "pdf"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
 									}
 								}
 							},
-							"DOSSIER-134741255522284": {
+							"CT_BFT": {
 								"path": [
-									"VFN",
-									"2005-144103028628978",
-									"DOSSIER-134741255522284"
+									"Markten_Administratieve",
+									"Anti_Infobox",
+									"CT_BFT"
 								],
-								"name": "DOSSIER-134741255522284",
+								"name": "CT_BFT",
 								"type": "dir",
 								"dirType": "normal",
 								"children": {
-									"Infobox_Ontnemingswetgeving.txt": {
-										"name": "Infobox_Ontnemingswetgeving.txt",
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
 										"path": [
-											"VFN",
-											"2005-144103028628978",
-											"DOSSIER-134741255522284",
-											"Infobox_Ontnemingswetgeving.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
 									},
-									"gebouwd_ICT.pdf": {
-										"name": "gebouwd_ICT.pdf",
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
 										"path": [
-											"VFN",
-											"2005-144103028628978",
-											"DOSSIER-134741255522284",
-											"gebouwd_ICT.pdf"
-										],
-										"type": "pdf"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
 									},
-									"Nederland:_team.txt": {
-										"name": "Nederland:_team.txt",
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
 										"path": [
-											"VFN",
-											"2005-144103028628978",
-											"DOSSIER-134741255522284",
-											"Nederland:_team.txt"
-										],
-										"type": "txt"
-									},
-									"OM_Rotterdam.txt": {
-										"name": "OM_Rotterdam.txt",
-										"path": [
-											"VFN",
-											"2005-144103028628978",
-											"DOSSIER-134741255522284",
-											"OM_Rotterdam.txt"
-										],
-										"type": "txt"
-									},
-									"van_Eustatiusen.txt": {
-										"name": "van_Eustatiusen.txt",
-										"path": [
-											"VFN",
-											"2005-144103028628978",
-											"DOSSIER-134741255522284",
-											"van_Eustatiusen.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
 									}
 								}
 							},
-							"DOSSIER-228482641830701": {
+							"Centrum_Nederland": {
 								"path": [
-									"VFN",
-									"2005-144103028628978",
-									"DOSSIER-228482641830701"
+									"Markten_Administratieve",
+									"Anti_Infobox",
+									"Centrum_Nederland"
 								],
-								"name": "DOSSIER-228482641830701",
+								"name": "Centrum_Nederland",
 								"type": "dir",
 								"dirType": "locked",
 								"children": {
-									"Andrea_en.pdf": {
-										"name": "Andrea_en.pdf",
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
 										"path": [
-											"VFN",
-											"2005-144103028628978",
-											"DOSSIER-228482641830701",
-											"Andrea_en.pdf"
-										],
-										"type": "pdf"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
 									},
-									"Infobox_Unit.txt": {
-										"name": "Infobox_Unit.txt",
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
 										"path": [
-											"VFN",
-											"2005-144103028628978",
-											"DOSSIER-228482641830701",
-											"Infobox_Unit.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
 									},
-									"Infobox_de.txt": {
-										"name": "Infobox_de.txt",
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
 										"path": [
-											"VFN",
-											"2005-144103028628978",
-											"DOSSIER-228482641830701",
-											"Infobox_de.txt"
-										],
-										"type": "txt"
-									},
-									"organisatie_AFM.txt": {
-										"name": "organisatie_AFM.txt",
-										"path": [
-											"VFN",
-											"2005-144103028628978",
-											"DOSSIER-228482641830701",
-											"organisatie_AFM.txt"
-										],
-										"type": "txt"
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
 									}
 								}
 							},
-							"DOSSIER-23559931212239": {
+							"BES_Recherche.pdf": {
 								"path": [
-									"VFN",
-									"2005-144103028628978",
-									"DOSSIER-23559931212239"
+									"Markten_Administratieve",
+									"Anti_Infobox",
+									"BES_Recherche.pdf"
 								],
-								"name": "DOSSIER-23559931212239",
-								"type": "dir",
-								"dirType": "locked",
-								"children": {
-									"Crimineel_FAT.pdf": {
-										"name": "Crimineel_FAT.pdf",
-										"path": [
-											"VFN",
-											"2005-144103028628978",
-											"DOSSIER-23559931212239",
-											"Crimineel_FAT.pdf"
-										],
-										"type": "pdf"
-									},
-									"Basisvoorziening_Contraterrorisme.txt": {
-										"name": "Basisvoorziening_Contraterrorisme.txt",
-										"path": [
-											"VFN",
-											"2005-144103028628978",
-											"DOSSIER-23559931212239",
-											"Basisvoorziening_Contraterrorisme.txt"
-										],
-										"type": "txt"
-									}
-								}
+								"name": "BES_Recherche.pdf",
+								"type": "pdf",
+								"date": "2015-02-25T12:36:52.193Z"
 							},
-							"Unit_OM.txt": {
-								"name": "Unit_OM.txt",
+							"DLR_controle.csv": {
 								"path": [
-									"VFN",
-									"2005-144103028628978",
-									"Unit_OM.txt"
+									"Markten_Administratieve",
+									"Anti_Infobox",
+									"DLR_controle.csv"
 								],
-								"type": "txt"
+								"name": "DLR_controle.csv",
+								"type": "csv",
+								"date": "1990-07-25T00:31:41.477Z"
+							},
+							"Task_door.txt": {
+								"path": [
+									"Markten_Administratieve",
+									"Anti_Infobox",
+									"Task_door.txt"
+								],
+								"name": "Task_door.txt",
+								"type": "txt",
+								"date": "1983-05-18T14:50:32.205Z"
+							},
+							"Administratieve_EMPACT.txt": {
+								"path": [
+									"Markten_Administratieve",
+									"Anti_Infobox",
+									"Administratieve_EMPACT.txt"
+								],
+								"name": "Administratieve_EMPACT.txt",
+								"type": "txt",
+								"date": "2002-01-22T06:11:40.278Z"
+							},
+							"Financiële_Administratieve.txt": {
+								"path": [
+									"Markten_Administratieve",
+									"Anti_Infobox",
+									"Financiële_Administratieve.txt"
+								],
+								"name": "Financiële_Administratieve.txt",
+								"type": "txt",
+								"date": "1981-10-10T00:28:37.997Z"
+							},
+							"Cluster_Centrum.csv": {
+								"path": [
+									"Markten_Administratieve",
+									"Anti_Infobox",
+									"Cluster_Centrum.csv"
+								],
+								"name": "Cluster_Centrum.csv",
+								"type": "csv",
+								"date": "2007-08-04T00:46:27.356Z"
 							}
 						}
 					},
-					"Financial_van.pdf": {
-						"name": "Financial_van.pdf",
+					"Administratieve_Eustatiusen": {
 						"path": [
-							"VFN",
-							"Financial_van.pdf"
+							"Markten_Administratieve",
+							"Administratieve_Eustatiusen"
 						],
-						"type": "pdf"
+						"name": "Administratieve_Eustatiusen",
+						"type": "dir",
+						"dirType": "archive",
+						"children": {
+							"bibal_FP": {
+								"path": [
+									"Markten_Administratieve",
+									"Administratieve_Eustatiusen",
+									"bibal_FP"
+								],
+								"name": "bibal_FP",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"gebouwd_AMLC": {
+								"path": [
+									"Markten_Administratieve",
+									"Administratieve_Eustatiusen",
+									"gebouwd_AMLC"
+								],
+								"name": "gebouwd_AMLC",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Bank_EC": {
+								"path": [
+									"Markten_Administratieve",
+									"Administratieve_Eustatiusen",
+									"Bank_EC"
+								],
+								"name": "Bank_EC",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"andrea_Infobox": {
+								"path": [
+									"Markten_Administratieve",
+									"Administratieve_Eustatiusen",
+									"andrea_Infobox"
+								],
+								"name": "andrea_Infobox",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Financieel_Expertise": {
+								"path": [
+									"Markten_Administratieve",
+									"Administratieve_Eustatiusen",
+									"Financieel_Expertise"
+								],
+								"name": "Financieel_Expertise",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Dienst_Infobox": {
+								"path": [
+									"Markten_Administratieve",
+									"Administratieve_Eustatiusen",
+									"Dienst_Infobox"
+								],
+								"name": "Dienst_Infobox",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"EMPACT_Andrea": {
+								"path": [
+									"Markten_Administratieve",
+									"Administratieve_Eustatiusen",
+									"EMPACT_Andrea"
+								],
+								"name": "EMPACT_Andrea",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Financieel_Unit.csv": {
+								"path": [
+									"Markten_Administratieve",
+									"Administratieve_Eustatiusen",
+									"Financieel_Unit.csv"
+								],
+								"name": "Financieel_Unit.csv",
+								"type": "csv",
+								"date": "2008-11-06T09:00:00.952Z"
+							},
+							"Parket,_CJIB.pdf": {
+								"path": [
+									"Markten_Administratieve",
+									"Administratieve_Eustatiusen",
+									"Parket,_CJIB.pdf"
+								],
+								"name": "Parket,_CJIB.pdf",
+								"type": "pdf",
+								"date": "1999-10-30T09:06:51.220Z"
+							},
+							"Expertisecentrum_Infobox.pdf": {
+								"path": [
+									"Markten_Administratieve",
+									"Administratieve_Eustatiusen",
+									"Expertisecentrum_Infobox.pdf"
+								],
+								"name": "Expertisecentrum_Infobox.pdf",
+								"type": "pdf",
+								"date": "2010-09-25T00:30:14.234Z"
+							}
+						}
 					},
-					"FIU_FEC.txt": {
-						"name": "FIU_FEC.txt",
+					"DNB_Financieel": {
 						"path": [
-							"VFN",
-							"FIU_FEC.txt"
+							"Markten_Administratieve",
+							"DNB_Financieel"
 						],
-						"type": "txt"
+						"name": "DNB_Financieel",
+						"type": "dir",
+						"dirType": "locked",
+						"children": {
+							"FIU_Caribisch": {
+								"path": [
+									"Markten_Administratieve",
+									"DNB_Financieel",
+									"FIU_Caribisch"
+								],
+								"name": "FIU_Caribisch",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Financieel_Criminaliteit": {
+								"path": [
+									"Markten_Administratieve",
+									"DNB_Financieel",
+									"Financieel_Criminaliteit"
+								],
+								"name": "Financieel_Criminaliteit",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Mensenhandel_Contraterrorisme": {
+								"path": [
+									"Markten_Administratieve",
+									"DNB_Financieel",
+									"Mensenhandel_Contraterrorisme"
+								],
+								"name": "Mensenhandel_Contraterrorisme",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Opsporingsdienst_CJIB": {
+								"path": [
+									"Markten_Administratieve",
+									"DNB_Financieel",
+									"Opsporingsdienst_CJIB"
+								],
+								"name": "Opsporingsdienst_CJIB",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"ILT/IOD_Centrum": {
+								"path": [
+									"Markten_Administratieve",
+									"DNB_Financieel",
+									"ILT/IOD_Centrum"
+								],
+								"name": "ILT/IOD_Centrum",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Unie_Inspectie": {
+								"path": [
+									"Markten_Administratieve",
+									"DNB_Financieel",
+									"Unie_Inspectie"
+								],
+								"name": "Unie_Inspectie",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Vermogen_Saba": {
+								"path": [
+									"Markten_Administratieve",
+									"DNB_Financieel",
+									"Vermogen_Saba"
+								],
+								"name": "Vermogen_Saba",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Financieel_DNB.csv": {
+								"path": [
+									"Markten_Administratieve",
+									"DNB_Financieel",
+									"Financieel_DNB.csv"
+								],
+								"name": "Financieel_DNB.csv",
+								"type": "csv",
+								"date": "1998-02-01T01:29:47.395Z"
+							},
+							"Economische_onderdeel.csv": {
+								"path": [
+									"Markten_Administratieve",
+									"DNB_Financieel",
+									"Economische_onderdeel.csv"
+								],
+								"name": "Economische_onderdeel.csv",
+								"type": "csv",
+								"date": "1971-04-08T16:06:55.303Z"
+							},
+							"Bureau_Inkomen.pdf": {
+								"path": [
+									"Markten_Administratieve",
+									"DNB_Financieel",
+									"Bureau_Inkomen.pdf"
+								],
+								"name": "Bureau_Inkomen.pdf",
+								"type": "pdf",
+								"date": "1983-06-15T18:03:54.580Z"
+							},
+							"politie_FinEC.pdf": {
+								"path": [
+									"Markten_Administratieve",
+									"DNB_Financieel",
+									"politie_FinEC.pdf"
+								],
+								"name": "politie_FinEC.pdf",
+								"type": "pdf",
+								"date": "1999-08-29T23:32:50.675Z"
+							},
+							"Opsporingsdienst_Administratieve.txt": {
+								"path": [
+									"Markten_Administratieve",
+									"DNB_Financieel",
+									"Opsporingsdienst_Administratieve.txt"
+								],
+								"name": "Opsporingsdienst_Administratieve.txt",
+								"type": "txt",
+								"date": "1997-09-27T11:30:28.870Z"
+							},
+							"Force_andrea.txt": {
+								"path": [
+									"Markten_Administratieve",
+									"DNB_Financieel",
+									"Force_andrea.txt"
+								],
+								"name": "Force_andrea.txt",
+								"type": "txt",
+								"date": "1994-09-21T00:23:39.198Z"
+							},
+							"Centrum_Europese.txt": {
+								"path": [
+									"Markten_Administratieve",
+									"DNB_Financieel",
+									"Centrum_Europese.txt"
+								],
+								"name": "Centrum_Europese.txt",
+								"type": "txt",
+								"date": "1984-04-18T22:50:14.466Z"
+							},
+							"ESW_Europese.txt": {
+								"path": [
+									"Markten_Administratieve",
+									"DNB_Financieel",
+									"ESW_Europese.txt"
+								],
+								"name": "ESW_Europese.txt",
+								"type": "txt",
+								"date": "1966-07-03T13:25:45.385Z"
+							},
+							"door_Infobox.csv": {
+								"path": [
+									"Markten_Administratieve",
+									"DNB_Financieel",
+									"door_Infobox.csv"
+								],
+								"name": "door_Infobox.csv",
+								"type": "csv",
+								"date": "1981-12-25T16:12:01.981Z"
+							},
+							"Financial_Bureau.csv": {
+								"path": [
+									"Markten_Administratieve",
+									"DNB_Financieel",
+									"Financial_Bureau.csv"
+								],
+								"name": "Financial_Bureau.csv",
+								"type": "csv",
+								"date": "1995-08-30T08:34:46.988Z"
+							}
+						}
 					},
-					"Cluster_Werk.txt": {
-						"name": "Cluster_Werk.txt",
+					"Unie_Financieel": {
 						"path": [
-							"VFN",
-							"Cluster_Werk.txt"
+							"Markten_Administratieve",
+							"Unie_Financieel"
 						],
-						"type": "txt"
+						"name": "Unie_Financieel",
+						"type": "dir",
+						"dirType": "locked",
+						"children": {
+							"Nederland_UNODC": {
+								"path": [
+									"Markten_Administratieve",
+									"Unie_Financieel",
+									"Nederland_UNODC"
+								],
+								"name": "Nederland_UNODC",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Financiële_Markten": {
+								"path": [
+									"Markten_Administratieve",
+									"Unie_Financieel",
+									"Financiële_Markten"
+								],
+								"name": "Financiële_Markten",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Bank_Mensensmokkel": {
+								"path": [
+									"Markten_Administratieve",
+									"Unie_Financieel",
+									"Bank_Mensensmokkel"
+								],
+								"name": "Bank_Mensensmokkel",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Dienst_binnen": {
+								"path": [
+									"Markten_Administratieve",
+									"Unie_Financieel",
+									"Dienst_binnen"
+								],
+								"name": "Dienst_binnen",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Werk_CWI": {
+								"path": [
+									"Markten_Administratieve",
+									"Unie_Financieel",
+									"Werk_CWI"
+								],
+								"name": "Werk_CWI",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Centraal_Sint": {
+								"path": [
+									"Markten_Administratieve",
+									"Unie_Financieel",
+									"Centraal_Sint"
+								],
+								"name": "Centraal_Sint",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Openbaar_Bureau": {
+								"path": [
+									"Markten_Administratieve",
+									"Unie_Financieel",
+									"Openbaar_Bureau"
+								],
+								"name": "Openbaar_Bureau",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"iCOV_Anti-Money": {
+								"path": [
+									"Markten_Administratieve",
+									"Unie_Financieel",
+									"iCOV_Anti-Money"
+								],
+								"name": "iCOV_Anti-Money",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Bureau_Mensenhandel": {
+								"path": [
+									"Markten_Administratieve",
+									"Unie_Financieel",
+									"Bureau_Mensenhandel"
+								],
+								"name": "Bureau_Mensenhandel",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"gebouwd_FinEC": {
+								"path": [
+									"Markten_Administratieve",
+									"Unie_Financieel",
+									"gebouwd_FinEC"
+								],
+								"name": "gebouwd_FinEC",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Landelijke_Onverklaarbaar.csv": {
+								"path": [
+									"Markten_Administratieve",
+									"Unie_Financieel",
+									"Landelijke_Onverklaarbaar.csv"
+								],
+								"name": "Landelijke_Onverklaarbaar.csv",
+								"type": "csv",
+								"date": "2003-05-21T02:34:59.870Z"
+							},
+							"Opsporingsdienst_Financieel.txt": {
+								"path": [
+									"Markten_Administratieve",
+									"Unie_Financieel",
+									"Opsporingsdienst_Financieel.txt"
+								],
+								"name": "Opsporingsdienst_Financieel.txt",
+								"type": "txt",
+								"date": "2001-05-24T23:29:40.043Z"
+							},
+							"Werk_Financieel.csv": {
+								"path": [
+									"Markten_Administratieve",
+									"Unie_Financieel",
+									"Werk_Financieel.csv"
+								],
+								"name": "Werk_Financieel.csv",
+								"type": "csv",
+								"date": "2011-01-02T23:56:59.488Z"
+							},
+							"orgaan_onderdeel.txt": {
+								"path": [
+									"Markten_Administratieve",
+									"Unie_Financieel",
+									"orgaan_onderdeel.txt"
+								],
+								"name": "orgaan_onderdeel.txt",
+								"type": "txt",
+								"date": "1992-05-15T04:19:25.673Z"
+							},
+							"Government_Economische.txt": {
+								"path": [
+									"Markten_Administratieve",
+									"Unie_Financieel",
+									"Government_Economische.txt"
+								],
+								"name": "Government_Economische.txt",
+								"type": "txt",
+								"date": "2006-11-24T01:11:53.320Z"
+							},
+							"gemeente_Infobox.csv": {
+								"path": [
+									"Markten_Administratieve",
+									"Unie_Financieel",
+									"gemeente_Infobox.csv"
+								],
+								"name": "gemeente_Infobox.csv",
+								"type": "csv",
+								"date": "2002-10-15T07:13:25.234Z"
+							}
+						}
 					},
-					"Bureau_Justitieel.txt": {
-						"name": "Bureau_Justitieel.txt",
+					"EU_controle": {
 						"path": [
-							"VFN",
-							"Bureau_Justitieel.txt"
+							"Markten_Administratieve",
+							"EU_controle"
 						],
-						"type": "txt"
+						"name": "EU_controle",
+						"type": "dir",
+						"dirType": "locked",
+						"children": {
+							"Europese_BVI": {
+								"path": [
+									"Markten_Administratieve",
+									"EU_controle",
+									"Europese_BVI"
+								],
+								"name": "Europese_BVI",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Infobox_Cluster": {
+								"path": [
+									"Markten_Administratieve",
+									"EU_controle",
+									"Infobox_Cluster"
+								],
+								"name": "Infobox_Cluster",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"AMLC_applicatie": {
+								"path": [
+									"Markten_Administratieve",
+									"EU_controle",
+									"AMLC_applicatie"
+								],
+								"name": "AMLC_applicatie",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"EU_door": {
+								"path": [
+									"Markten_Administratieve",
+									"EU_controle",
+									"EU_door"
+								],
+								"name": "EU_door",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Opsporingsdienst_Crimineel": {
+								"path": [
+									"Markten_Administratieve",
+									"EU_controle",
+									"Opsporingsdienst_Crimineel"
+								],
+								"name": "Opsporingsdienst_Crimineel",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"European_Financieel": {
+								"path": [
+									"Markten_Administratieve",
+									"EU_controle",
+									"European_Financieel"
+								],
+								"name": "European_Financieel",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"FAT_UNODC": {
+								"path": [
+									"Markten_Administratieve",
+									"EU_controle",
+									"FAT_UNODC"
+								],
+								"name": "FAT_UNODC",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"ILT/IOD_investigation": {
+								"path": [
+									"Markten_Administratieve",
+									"EU_controle",
+									"ILT/IOD_investigation"
+								],
+								"name": "ILT/IOD_investigation",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Parket,_Financieel": {
+								"path": [
+									"Markten_Administratieve",
+									"EU_controle",
+									"Parket,_Financieel"
+								],
+								"name": "Parket,_Financieel",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Werk_ILT/IOD.pdf": {
+								"path": [
+									"Markten_Administratieve",
+									"EU_controle",
+									"Werk_ILT/IOD.pdf"
+								],
+								"name": "Werk_ILT/IOD.pdf",
+								"type": "pdf",
+								"date": "1983-01-24T17:47:10.008Z"
+							},
+							"investigation_FinEC.pdf": {
+								"path": [
+									"Markten_Administratieve",
+									"EU_controle",
+									"investigation_FinEC.pdf"
+								],
+								"name": "investigation_FinEC.pdf",
+								"type": "pdf",
+								"date": "1978-08-15T07:27:32.762Z"
+							},
+							"BVI_Criminaliteit.pdf": {
+								"path": [
+									"Markten_Administratieve",
+									"EU_controle",
+									"BVI_Criminaliteit.pdf"
+								],
+								"name": "BVI_Criminaliteit.pdf",
+								"type": "pdf",
+								"date": "2012-02-15T17:57:03.359Z"
+							},
+							"GoAML_Unie.pdf": {
+								"path": [
+									"Markten_Administratieve",
+									"EU_controle",
+									"GoAML_Unie.pdf"
+								],
+								"name": "GoAML_Unie.pdf",
+								"type": "pdf",
+								"date": "2009-04-18T14:32:28.140Z"
+							},
+							"Cluster_Recherche.pdf": {
+								"path": [
+									"Markten_Administratieve",
+									"EU_controle",
+									"Cluster_Recherche.pdf"
+								],
+								"name": "Cluster_Recherche.pdf",
+								"type": "pdf",
+								"date": "1968-08-06T00:02:36.420Z"
+							},
+							"EMPACT_Opsporingsdienst.pdf": {
+								"path": [
+									"Markten_Administratieve",
+									"EU_controle",
+									"EMPACT_Opsporingsdienst.pdf"
+								],
+								"name": "EMPACT_Opsporingsdienst.pdf",
+								"type": "pdf",
+								"date": "1992-08-13T13:22:39.736Z"
+							},
+							"onderdeel_Justitieel.csv": {
+								"path": [
+									"Markten_Administratieve",
+									"EU_controle",
+									"onderdeel_Justitieel.csv"
+								],
+								"name": "onderdeel_Justitieel.csv",
+								"type": "csv",
+								"date": "2007-04-12T18:19:18.530Z"
+							},
+							"Leefomgeving_ICT.txt": {
+								"path": [
+									"Markten_Administratieve",
+									"EU_controle",
+									"Leefomgeving_ICT.txt"
+								],
+								"name": "Leefomgeving_ICT.txt",
+								"type": "txt",
+								"date": "2009-10-23T10:21:27.587Z"
+							},
+							"Dienst_Administratieve.pdf": {
+								"path": [
+									"Markten_Administratieve",
+									"EU_controle",
+									"Dienst_Administratieve.pdf"
+								],
+								"name": "Dienst_Administratieve.pdf",
+								"type": "pdf",
+								"date": "1994-11-19T22:48:14.056Z"
+							}
+						}
+					},
+					"Functioneel_Criminal": {
+						"path": [
+							"Markten_Administratieve",
+							"Functioneel_Criminal"
+						],
+						"name": "Functioneel_Criminal",
+						"type": "dir",
+						"dirType": "archive",
+						"children": {
+							"FIOD_Inlichtingen": {
+								"path": [
+									"Markten_Administratieve",
+									"Functioneel_Criminal",
+									"FIOD_Inlichtingen"
+								],
+								"name": "FIOD_Inlichtingen",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Werk_gemeente": {
+								"path": [
+									"Markten_Administratieve",
+									"Functioneel_Criminal",
+									"Werk_gemeente"
+								],
+								"name": "Werk_gemeente",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Expertise_Investigation": {
+								"path": [
+									"Markten_Administratieve",
+									"Functioneel_Criminal",
+									"Expertise_Investigation"
+								],
+								"name": "Expertise_Investigation",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"ICT_applicatie": {
+								"path": [
+									"Markten_Administratieve",
+									"Functioneel_Criminal",
+									"ICT_applicatie"
+								],
+								"name": "ICT_applicatie",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Inkomen_iCOV.txt": {
+								"path": [
+									"Markten_Administratieve",
+									"Functioneel_Criminal",
+									"Inkomen_iCOV.txt"
+								],
+								"name": "Inkomen_iCOV.txt",
+								"type": "txt",
+								"date": "1990-04-02T17:38:25.753Z"
+							},
+							"Investigation_Incasso.txt": {
+								"path": [
+									"Markten_Administratieve",
+									"Functioneel_Criminal",
+									"Investigation_Incasso.txt"
+								],
+								"name": "Investigation_Incasso.txt",
+								"type": "txt",
+								"date": "2014-04-26T16:30:03.984Z"
+							},
+							"FEC_onderdeel.txt": {
+								"path": [
+									"Markten_Administratieve",
+									"Functioneel_Criminal",
+									"FEC_onderdeel.txt"
+								],
+								"name": "FEC_onderdeel.txt",
+								"type": "txt",
+								"date": "2005-12-30T06:03:15.087Z"
+							},
+							"Fiscale_Financial.txt": {
+								"path": [
+									"Markten_Administratieve",
+									"Functioneel_Criminal",
+									"Fiscale_Financial.txt"
+								],
+								"name": "Fiscale_Financial.txt",
+								"type": "txt",
+								"date": "1996-11-20T08:26:00.195Z"
+							},
+							"Action_Justitieel.txt": {
+								"path": [
+									"Markten_Administratieve",
+									"Functioneel_Criminal",
+									"Action_Justitieel.txt"
+								],
+								"name": "Action_Justitieel.txt",
+								"type": "txt",
+								"date": "2006-07-23T19:52:40.614Z"
+							}
+						}
+					},
+					"FP_Caribisch": {
+						"path": [
+							"Markten_Administratieve",
+							"FP_Caribisch"
+						],
+						"name": "FP_Caribisch",
+						"type": "dir",
+						"dirType": "locked",
+						"children": {
+							"Force_gemeente": {
+								"path": [
+									"Markten_Administratieve",
+									"FP_Caribisch",
+									"Force_gemeente"
+								],
+								"name": "Force_gemeente",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Opsporingsdienst_ICT": {
+								"path": [
+									"Markten_Administratieve",
+									"FP_Caribisch",
+									"Opsporingsdienst_ICT"
+								],
+								"name": "Opsporingsdienst_ICT",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"gebouwd_Against": {
+								"path": [
+									"Markten_Administratieve",
+									"FP_Caribisch",
+									"gebouwd_Against"
+								],
+								"name": "gebouwd_Against",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Bureau_Bureau": {
+								"path": [
+									"Markten_Administratieve",
+									"FP_Caribisch",
+									"Bureau_Bureau"
+								],
+								"name": "Bureau_Bureau",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Werk_Ontnemingswetgeving": {
+								"path": [
+									"Markten_Administratieve",
+									"FP_Caribisch",
+									"Werk_Ontnemingswetgeving"
+								],
+								"name": "Werk_Ontnemingswetgeving",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"BOOM_Contraterrorisme": {
+								"path": [
+									"Markten_Administratieve",
+									"FP_Caribisch",
+									"BOOM_Contraterrorisme"
+								],
+								"name": "BOOM_Contraterrorisme",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"EC_Against": {
+								"path": [
+									"Markten_Administratieve",
+									"FP_Caribisch",
+									"EC_Against"
+								],
+								"name": "EC_Against",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Crimineel_Bureau": {
+								"path": [
+									"Markten_Administratieve",
+									"FP_Caribisch",
+									"Crimineel_Bureau"
+								],
+								"name": "Crimineel_Bureau",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Caribisch_Fiscale": {
+								"path": [
+									"Markten_Administratieve",
+									"FP_Caribisch",
+									"Caribisch_Fiscale"
+								],
+								"name": "Caribisch_Fiscale",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"FEC_Commissie": {
+								"path": [
+									"Markten_Administratieve",
+									"FP_Caribisch",
+									"FEC_Commissie"
+								],
+								"name": "FEC_Commissie",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Incasso_Financial.pdf": {
+								"path": [
+									"Markten_Administratieve",
+									"FP_Caribisch",
+									"Incasso_Financial.pdf"
+								],
+								"name": "Incasso_Financial.pdf",
+								"type": "pdf",
+								"date": "1997-06-16T01:53:40.293Z"
+							},
+							"Amsterdam_BES.txt": {
+								"path": [
+									"Markten_Administratieve",
+									"FP_Caribisch",
+									"Amsterdam_BES.txt"
+								],
+								"name": "Amsterdam_BES.txt",
+								"type": "txt",
+								"date": "2014-03-02T23:00:41.051Z"
+							},
+							"Infobox_Andrea.txt": {
+								"path": [
+									"Markten_Administratieve",
+									"FP_Caribisch",
+									"Infobox_Andrea.txt"
+								],
+								"name": "Infobox_Andrea.txt",
+								"type": "txt",
+								"date": "1968-11-27T03:07:44.905Z"
+							},
+							"team_Centrum.txt": {
+								"path": [
+									"Markten_Administratieve",
+									"FP_Caribisch",
+									"team_Centrum.txt"
+								],
+								"name": "team_Centrum.txt",
+								"type": "txt",
+								"date": "1987-06-12T01:33:37.754Z"
+							},
+							"UNODC_Infobox.txt": {
+								"path": [
+									"Markten_Administratieve",
+									"FP_Caribisch",
+									"UNODC_Infobox.txt"
+								],
+								"name": "UNODC_Infobox.txt",
+								"type": "txt",
+								"date": "1982-11-05T16:26:03.337Z"
+							}
+						}
+					},
+					"Informatie_Eustatiusen": {
+						"path": [
+							"Markten_Administratieve",
+							"Informatie_Eustatiusen"
+						],
+						"name": "Informatie_Eustatiusen",
+						"type": "dir",
+						"dirType": "normal",
+						"children": {
+							"Infobox_Parket,": {
+								"path": [
+									"Markten_Administratieve",
+									"Informatie_Eustatiusen",
+									"Infobox_Parket,"
+								],
+								"name": "Infobox_Parket,",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"andrea_Multidisciplinary": {
+								"path": [
+									"Markten_Administratieve",
+									"Informatie_Eustatiusen",
+									"andrea_Multidisciplinary"
+								],
+								"name": "andrea_Multidisciplinary",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Financial_BES": {
+								"path": [
+									"Markten_Administratieve",
+									"Informatie_Eustatiusen",
+									"Financial_BES"
+								],
+								"name": "Financial_BES",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Investigation_Infobox": {
+								"path": [
+									"Markten_Administratieve",
+									"Informatie_Eustatiusen",
+									"Investigation_Infobox"
+								],
+								"name": "Investigation_Infobox",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Money_Rotterdam": {
+								"path": [
+									"Markten_Administratieve",
+									"Informatie_Eustatiusen",
+									"Money_Rotterdam"
+								],
+								"name": "Money_Rotterdam",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Transport_gemeente": {
+								"path": [
+									"Markten_Administratieve",
+									"Informatie_Eustatiusen",
+									"Transport_gemeente"
+								],
+								"name": "Transport_gemeente",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Mensenhandel_EMPACT": {
+								"path": [
+									"Markten_Administratieve",
+									"Informatie_Eustatiusen",
+									"Mensenhandel_EMPACT"
+								],
+								"name": "Mensenhandel_EMPACT",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"DNB_EU": {
+								"path": [
+									"Markten_Administratieve",
+									"Informatie_Eustatiusen",
+									"DNB_EU"
+								],
+								"name": "DNB_EU",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"BES_Werk": {
+								"path": [
+									"Markten_Administratieve",
+									"Informatie_Eustatiusen",
+									"BES_Werk"
+								],
+								"name": "BES_Werk",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Nederlandsche_CT.csv": {
+								"path": [
+									"Markten_Administratieve",
+									"Informatie_Eustatiusen",
+									"Nederlandsche_CT.csv"
+								],
+								"name": "Nederlandsche_CT.csv",
+								"type": "csv",
+								"date": "1993-07-25T01:09:23.132Z"
+							},
+							"ESW_ICT.pdf": {
+								"path": [
+									"Markten_Administratieve",
+									"Informatie_Eustatiusen",
+									"ESW_ICT.pdf"
+								],
+								"name": "ESW_ICT.pdf",
+								"type": "pdf",
+								"date": "1986-02-09T12:23:13.413Z"
+							},
+							"Werk_ICT.csv": {
+								"path": [
+									"Markten_Administratieve",
+									"Informatie_Eustatiusen",
+									"Werk_ICT.csv"
+								],
+								"name": "Werk_ICT.csv",
+								"type": "csv",
+								"date": "1999-12-31T14:02:33.833Z"
+							},
+							"GoAML_CWI.pdf": {
+								"path": [
+									"Markten_Administratieve",
+									"Informatie_Eustatiusen",
+									"GoAML_CWI.pdf"
+								],
+								"name": "GoAML_CWI.pdf",
+								"type": "pdf",
+								"date": "2010-06-24T07:35:16.618Z"
+							},
+							"Bibal_EC.txt": {
+								"path": [
+									"Markten_Administratieve",
+									"Informatie_Eustatiusen",
+									"Bibal_EC.txt"
+								],
+								"name": "Bibal_EC.txt",
+								"type": "txt",
+								"date": "1995-01-06T17:25:14.377Z"
+							},
+							"DWI_binnen.csv": {
+								"path": [
+									"Markten_Administratieve",
+									"Informatie_Eustatiusen",
+									"DWI_binnen.csv"
+								],
+								"name": "DWI_binnen.csv",
+								"type": "csv",
+								"date": "1982-01-29T00:32:36.705Z"
+							},
+							"onderdeel_EU.csv": {
+								"path": [
+									"Markten_Administratieve",
+									"Informatie_Eustatiusen",
+									"onderdeel_EU.csv"
+								],
+								"name": "onderdeel_EU.csv",
+								"type": "csv",
+								"date": "1994-08-27T15:25:37.021Z"
+							}
+						}
+					},
+					"DLR_Bureau": {
+						"path": [
+							"Markten_Administratieve",
+							"DLR_Bureau"
+						],
+						"name": "DLR_Bureau",
+						"type": "dir",
+						"dirType": "normal",
+						"children": {
+							"Europese_gemeente": {
+								"path": [
+									"Markten_Administratieve",
+									"DLR_Bureau",
+									"Europese_gemeente"
+								],
+								"name": "Europese_gemeente",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Unit_Dienst": {
+								"path": [
+									"Markten_Administratieve",
+									"DLR_Bureau",
+									"Unit_Dienst"
+								],
+								"name": "Unit_Dienst",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Landelijke_Criminal": {
+								"path": [
+									"Markten_Administratieve",
+									"DLR_Bureau",
+									"Landelijke_Criminal"
+								],
+								"name": "Landelijke_Criminal",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Basisvoorziening_Expertise": {
+								"path": [
+									"Markten_Administratieve",
+									"DLR_Bureau",
+									"Basisvoorziening_Expertise"
+								],
+								"name": "Basisvoorziening_Expertise",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"EMM_Recherche": {
+								"path": [
+									"Markten_Administratieve",
+									"DLR_Bureau",
+									"EMM_Recherche"
+								],
+								"name": "EMM_Recherche",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Toezicht_Unie": {
+								"path": [
+									"Markten_Administratieve",
+									"DLR_Bureau",
+									"Toezicht_Unie"
+								],
+								"name": "Toezicht_Unie",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"BES_onderdeel": {
+								"path": [
+									"Markten_Administratieve",
+									"DLR_Bureau",
+									"BES_onderdeel"
+								],
+								"name": "BES_onderdeel",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"BES_CTE/PF": {
+								"path": [
+									"Markten_Administratieve",
+									"DLR_Bureau",
+									"BES_CTE/PF"
+								],
+								"name": "BES_CTE/PF",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"onderdeel_iCOV.pdf": {
+								"path": [
+									"Markten_Administratieve",
+									"DLR_Bureau",
+									"onderdeel_iCOV.pdf"
+								],
+								"name": "onderdeel_iCOV.pdf",
+								"type": "pdf",
+								"date": "2001-12-02T04:47:07.451Z"
+							},
+							"FlU-Nederland_politie.txt": {
+								"path": [
+									"Markten_Administratieve",
+									"DLR_Bureau",
+									"FlU-Nederland_politie.txt"
+								],
+								"name": "FlU-Nederland_politie.txt",
+								"type": "txt",
+								"date": "1976-05-31T23:59:27.473Z"
+							},
+							"gebouwd_Criminaliteit.txt": {
+								"path": [
+									"Markten_Administratieve",
+									"DLR_Bureau",
+									"gebouwd_Criminaliteit.txt"
+								],
+								"name": "gebouwd_Criminaliteit.txt",
+								"type": "txt",
+								"date": "1985-10-27T02:53:47.719Z"
+							},
+							"Anti_onderdeel.csv": {
+								"path": [
+									"Markten_Administratieve",
+									"DLR_Bureau",
+									"Anti_onderdeel.csv"
+								],
+								"name": "Anti_onderdeel.csv",
+								"type": "csv",
+								"date": "1990-04-18T11:31:27.737Z"
+							},
+							"andrea_EMM.pdf": {
+								"path": [
+									"Markten_Administratieve",
+									"DLR_Bureau",
+									"andrea_EMM.pdf"
+								],
+								"name": "andrea_EMM.pdf",
+								"type": "pdf",
+								"date": "1987-02-04T19:14:42.139Z"
+							},
+							"Anti-Money_team.txt": {
+								"path": [
+									"Markten_Administratieve",
+									"DLR_Bureau",
+									"Anti-Money_team.txt"
+								],
+								"name": "Anti-Money_team.txt",
+								"type": "txt",
+								"date": "2009-07-19T20:09:41.632Z"
+							},
+							"FP_Against.txt": {
+								"path": [
+									"Markten_Administratieve",
+									"DLR_Bureau",
+									"FP_Against.txt"
+								],
+								"name": "FP_Against.txt",
+								"type": "txt",
+								"date": "1984-04-27T10:44:11.478Z"
+							},
+							"Toezicht_EU.pdf": {
+								"path": [
+									"Markten_Administratieve",
+									"DLR_Bureau",
+									"Toezicht_EU.pdf"
+								],
+								"name": "Toezicht_EU.pdf",
+								"type": "pdf",
+								"date": "1988-05-19T05:31:23.415Z"
+							}
+						}
+					},
+					"Bonaire_BOOM.txt": {
+						"path": [
+							"Markten_Administratieve",
+							"Bonaire_BOOM.txt"
+						],
+						"name": "Bonaire_BOOM.txt",
+						"type": "txt",
+						"date": "1997-12-09T13:41:52.493Z"
+					},
+					"Landelijke_Nederlandsche.txt": {
+						"path": [
+							"Markten_Administratieve",
+							"Landelijke_Nederlandsche.txt"
+						],
+						"name": "Landelijke_Nederlandsche.txt",
+						"type": "txt",
+						"date": "2014-08-19T21:51:23.862Z"
+					},
+					"Laundering_Unie.pdf": {
+						"path": [
+							"Markten_Administratieve",
+							"Laundering_Unie.pdf"
+						],
+						"name": "Laundering_Unie.pdf",
+						"type": "pdf",
+						"date": "1969-11-07T21:14:12.958Z"
+					},
+					"Financial_Against.txt": {
+						"path": [
+							"Markten_Administratieve",
+							"Financial_Against.txt"
+						],
+						"name": "Financial_Against.txt",
+						"type": "txt",
+						"date": "1999-05-03T16:00:22.534Z"
+					},
+					"Landelijke_Financial.pdf": {
+						"path": [
+							"Markten_Administratieve",
+							"Landelijke_Financial.pdf"
+						],
+						"name": "Landelijke_Financial.pdf",
+						"type": "pdf",
+						"date": "1980-04-17T15:21:34.210Z"
+					},
+					"Infobox_Inkomen.pdf": {
+						"path": [
+							"Markten_Administratieve",
+							"Infobox_Inkomen.pdf"
+						],
+						"name": "Infobox_Inkomen.pdf",
+						"type": "pdf",
+						"date": "2010-07-26T02:40:34.822Z"
+					},
+					"controle_Transport.csv": {
+						"path": [
+							"Markten_Administratieve",
+							"controle_Transport.csv"
+						],
+						"name": "controle_Transport.csv",
+						"type": "csv",
+						"date": "1969-03-09T04:53:28.595Z"
+					},
+					"Inkomen_applicatie.txt": {
+						"path": [
+							"Markten_Administratieve",
+							"Inkomen_applicatie.txt"
+						],
+						"name": "Inkomen_applicatie.txt",
+						"type": "txt",
+						"date": "2011-10-23T05:30:50.893Z"
+					},
+					"CTE/PF_Ontnemingswetgeving.csv": {
+						"path": [
+							"Markten_Administratieve",
+							"CTE/PF_Ontnemingswetgeving.csv"
+						],
+						"name": "CTE/PF_Ontnemingswetgeving.csv",
+						"type": "csv",
+						"date": "1967-12-31T01:32:33.775Z"
+					},
+					"Caribisch_andrea.txt": {
+						"path": [
+							"Markten_Administratieve",
+							"Caribisch_andrea.txt"
+						],
+						"name": "Caribisch_andrea.txt",
+						"type": "txt",
+						"date": "2006-09-25T23:45:29.029Z"
 					}
 				}
 			},
-			"Ontnemingswetgeving_Amsterdam.txt": {
-				"name": "Ontnemingswetgeving_Amsterdam.txt",
+			"BOOM_gemeente": {
 				"path": [
-					"",
-					"Ontnemingswetgeving_Amsterdam.txt"
+					"BOOM_gemeente"
 				],
-				"type": "txt"
+				"name": "BOOM_gemeente",
+				"type": "dir",
+				"dirType": "locked",
+				"children": {
+					"FIOD_FlU-Nederland": {
+						"path": [
+							"BOOM_gemeente",
+							"FIOD_FlU-Nederland"
+						],
+						"name": "FIOD_FlU-Nederland",
+						"type": "dir",
+						"dirType": "normal",
+						"children": {
+							"Financieel_Ontnemingswetgeving": {
+								"path": [
+									"BOOM_gemeente",
+									"FIOD_FlU-Nederland",
+									"Financieel_Ontnemingswetgeving"
+								],
+								"name": "Financieel_Ontnemingswetgeving",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Bureau_Financial": {
+								"path": [
+									"BOOM_gemeente",
+									"FIOD_FlU-Nederland",
+									"Bureau_Financial"
+								],
+								"name": "Bureau_Financial",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Mensensmokkel_Financiële": {
+								"path": [
+									"BOOM_gemeente",
+									"FIOD_FlU-Nederland",
+									"Mensensmokkel_Financiële"
+								],
+								"name": "Mensensmokkel_Financiële",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"EC_Crimineel": {
+								"path": [
+									"BOOM_gemeente",
+									"FIOD_FlU-Nederland",
+									"EC_Crimineel"
+								],
+								"name": "EC_Crimineel",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"iCOV_Laundering": {
+								"path": [
+									"BOOM_gemeente",
+									"FIOD_FlU-Nederland",
+									"iCOV_Laundering"
+								],
+								"name": "iCOV_Laundering",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"GoAML_Nederlandsche": {
+								"path": [
+									"BOOM_gemeente",
+									"FIOD_FlU-Nederland",
+									"GoAML_Nederlandsche"
+								],
+								"name": "GoAML_Nederlandsche",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"FinEC_Against": {
+								"path": [
+									"BOOM_gemeente",
+									"FIOD_FlU-Nederland",
+									"FinEC_Against"
+								],
+								"name": "FinEC_Against",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Inkomen_ILT/IOD": {
+								"path": [
+									"BOOM_gemeente",
+									"FIOD_FlU-Nederland",
+									"Inkomen_ILT/IOD"
+								],
+								"name": "Inkomen_ILT/IOD",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Platform_Centrum.csv": {
+								"path": [
+									"BOOM_gemeente",
+									"FIOD_FlU-Nederland",
+									"Platform_Centrum.csv"
+								],
+								"name": "Platform_Centrum.csv",
+								"type": "csv",
+								"date": "1968-06-15T16:26:20.603Z"
+							},
+							"Government_politie.txt": {
+								"path": [
+									"BOOM_gemeente",
+									"FIOD_FlU-Nederland",
+									"Government_politie.txt"
+								],
+								"name": "Government_politie.txt",
+								"type": "txt",
+								"date": "2007-05-19T16:50:22.360Z"
+							},
+							"European_iCOV.txt": {
+								"path": [
+									"BOOM_gemeente",
+									"FIOD_FlU-Nederland",
+									"European_iCOV.txt"
+								],
+								"name": "European_iCOV.txt",
+								"type": "txt",
+								"date": "2014-06-21T11:37:27.685Z"
+							},
+							"GoAML_Informatie.csv": {
+								"path": [
+									"BOOM_gemeente",
+									"FIOD_FlU-Nederland",
+									"GoAML_Informatie.csv"
+								],
+								"name": "GoAML_Informatie.csv",
+								"type": "csv",
+								"date": "1969-10-03T14:32:15.844Z"
+							},
+							"Caribisch_Bonaire.txt": {
+								"path": [
+									"BOOM_gemeente",
+									"FIOD_FlU-Nederland",
+									"Caribisch_Bonaire.txt"
+								],
+								"name": "Caribisch_Bonaire.txt",
+								"type": "txt",
+								"date": "1983-07-12T06:28:05.155Z"
+							},
+							"Platform_Nederland.txt": {
+								"path": [
+									"BOOM_gemeente",
+									"FIOD_FlU-Nederland",
+									"Platform_Nederland.txt"
+								],
+								"name": "Platform_Nederland.txt",
+								"type": "txt",
+								"date": "1983-09-28T19:23:00.159Z"
+							},
+							"Vermogen_Ontnemingswetgeving.txt": {
+								"path": [
+									"BOOM_gemeente",
+									"FIOD_FlU-Nederland",
+									"Vermogen_Ontnemingswetgeving.txt"
+								],
+								"name": "Vermogen_Ontnemingswetgeving.txt",
+								"type": "txt",
+								"date": "1970-11-26T01:42:46.875Z"
+							}
+						}
+					},
+					"investigation_Toezicht": {
+						"path": [
+							"BOOM_gemeente",
+							"investigation_Toezicht"
+						],
+						"name": "investigation_Toezicht",
+						"type": "dir",
+						"dirType": "locked",
+						"children": {
+							"Financieel_EU": {
+								"path": [
+									"BOOM_gemeente",
+									"investigation_Toezicht",
+									"Financieel_EU"
+								],
+								"name": "Financieel_EU",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"ILT/IOD_Ministerie": {
+								"path": [
+									"BOOM_gemeente",
+									"investigation_Toezicht",
+									"ILT/IOD_Ministerie"
+								],
+								"name": "ILT/IOD_Ministerie",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Infobox_Cluster": {
+								"path": [
+									"BOOM_gemeente",
+									"investigation_Toezicht",
+									"Infobox_Cluster"
+								],
+								"name": "Infobox_Cluster",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Platform_Openbaar": {
+								"path": [
+									"BOOM_gemeente",
+									"investigation_Toezicht",
+									"Platform_Openbaar"
+								],
+								"name": "Platform_Openbaar",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"FinEC_Caribisch": {
+								"path": [
+									"BOOM_gemeente",
+									"investigation_Toezicht",
+									"FinEC_Caribisch"
+								],
+								"name": "FinEC_Caribisch",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"organisatie_bibal": {
+								"path": [
+									"BOOM_gemeente",
+									"investigation_Toezicht",
+									"organisatie_bibal"
+								],
+								"name": "organisatie_bibal",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Centre,_politie": {
+								"path": [
+									"BOOM_gemeente",
+									"investigation_Toezicht",
+									"Centre,_politie"
+								],
+								"name": "Centre,_politie",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"gemeente_binnen": {
+								"path": [
+									"BOOM_gemeente",
+									"investigation_Toezicht",
+									"gemeente_binnen"
+								],
+								"name": "gemeente_binnen",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"AMLC_Financiële": {
+								"path": [
+									"BOOM_gemeente",
+									"investigation_Toezicht",
+									"AMLC_Financiële"
+								],
+								"name": "AMLC_Financiële",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Bureau_Caribisch": {
+								"path": [
+									"BOOM_gemeente",
+									"investigation_Toezicht",
+									"Bureau_Caribisch"
+								],
+								"name": "Bureau_Caribisch",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Economische_Europese.pdf": {
+								"path": [
+									"BOOM_gemeente",
+									"investigation_Toezicht",
+									"Economische_Europese.pdf"
+								],
+								"name": "Economische_Europese.pdf",
+								"type": "pdf",
+								"date": "2000-05-08T15:06:11.983Z"
+							},
+							"Against_Toezicht.csv": {
+								"path": [
+									"BOOM_gemeente",
+									"investigation_Toezicht",
+									"Against_Toezicht.csv"
+								],
+								"name": "Against_Toezicht.csv",
+								"type": "csv",
+								"date": "1972-11-29T15:34:06.764Z"
+							},
+							"onderdeel_Caribisch.txt": {
+								"path": [
+									"BOOM_gemeente",
+									"investigation_Toezicht",
+									"onderdeel_Caribisch.txt"
+								],
+								"name": "onderdeel_Caribisch.txt",
+								"type": "txt",
+								"date": "1972-11-30T20:58:17.291Z"
+							},
+							"Ministerie_uitvoerend.csv": {
+								"path": [
+									"BOOM_gemeente",
+									"investigation_Toezicht",
+									"Ministerie_uitvoerend.csv"
+								],
+								"name": "Ministerie_uitvoerend.csv",
+								"type": "csv",
+								"date": "1970-06-21T05:28:04.312Z"
+							},
+							"BFT_onderdeel.txt": {
+								"path": [
+									"BOOM_gemeente",
+									"investigation_Toezicht",
+									"BFT_onderdeel.txt"
+								],
+								"name": "BFT_onderdeel.txt",
+								"type": "txt",
+								"date": "2011-06-02T20:45:56.027Z"
+							}
+						}
+					},
+					"Leefomgeving_Task": {
+						"path": [
+							"BOOM_gemeente",
+							"Leefomgeving_Task"
+						],
+						"name": "Leefomgeving_Task",
+						"type": "dir",
+						"dirType": "locked",
+						"children": {
+							"Mensenhandel_Action": {
+								"path": [
+									"BOOM_gemeente",
+									"Leefomgeving_Task",
+									"Mensenhandel_Action"
+								],
+								"name": "Mensenhandel_Action",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Laundering_Anti": {
+								"path": [
+									"BOOM_gemeente",
+									"Leefomgeving_Task",
+									"Laundering_Anti"
+								],
+								"name": "Laundering_Anti",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"proliferatiefmanciering_Basisvoorziening": {
+								"path": [
+									"BOOM_gemeente",
+									"Leefomgeving_Task",
+									"proliferatiefmanciering_Basisvoorziening"
+								],
+								"name": "proliferatiefmanciering_Basisvoorziening",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Opsporingsdienst_FlU-Nederland": {
+								"path": [
+									"BOOM_gemeente",
+									"Leefomgeving_Task",
+									"Opsporingsdienst_FlU-Nederland"
+								],
+								"name": "Opsporingsdienst_FlU-Nederland",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Infobox_Saba": {
+								"path": [
+									"BOOM_gemeente",
+									"Leefomgeving_Task",
+									"Infobox_Saba"
+								],
+								"name": "Infobox_Saba",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"door_OM": {
+								"path": [
+									"BOOM_gemeente",
+									"Leefomgeving_Task",
+									"door_OM"
+								],
+								"name": "door_OM",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Inlichtingen_applicatie": {
+								"path": [
+									"BOOM_gemeente",
+									"Leefomgeving_Task",
+									"Inlichtingen_applicatie"
+								],
+								"name": "Inlichtingen_applicatie",
+								"type": "dir",
+								"dirType": "normal",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Openbaar_Crimineel.txt": {
+								"path": [
+									"BOOM_gemeente",
+									"Leefomgeving_Task",
+									"Openbaar_Crimineel.txt"
+								],
+								"name": "Openbaar_Crimineel.txt",
+								"type": "txt",
+								"date": "1977-06-05T22:07:53.147Z"
+							},
+							"Infobox_DLR.pdf": {
+								"path": [
+									"BOOM_gemeente",
+									"Leefomgeving_Task",
+									"Infobox_DLR.pdf"
+								],
+								"name": "Infobox_DLR.pdf",
+								"type": "pdf",
+								"date": "1991-05-15T17:05:11.536Z"
+							},
+							"BVI_Crimineel.csv": {
+								"path": [
+									"BOOM_gemeente",
+									"Leefomgeving_Task",
+									"BVI_Crimineel.csv"
+								],
+								"name": "BVI_Crimineel.csv",
+								"type": "csv",
+								"date": "1966-10-03T21:33:01.209Z"
+							},
+							"Centrum_Parket,.txt": {
+								"path": [
+									"BOOM_gemeente",
+									"Leefomgeving_Task",
+									"Centrum_Parket,.txt"
+								],
+								"name": "Centrum_Parket,.txt",
+								"type": "txt",
+								"date": "2000-10-17T21:01:16.688Z"
+							},
+							"Andrea_Openbaar.txt": {
+								"path": [
+									"BOOM_gemeente",
+									"Leefomgeving_Task",
+									"Andrea_Openbaar.txt"
+								],
+								"name": "Andrea_Openbaar.txt",
+								"type": "txt",
+								"date": "2005-12-04T07:24:28.529Z"
+							},
+							"Force_Onverklaarbaar.txt": {
+								"path": [
+									"BOOM_gemeente",
+									"Leefomgeving_Task",
+									"Force_Onverklaarbaar.txt"
+								],
+								"name": "Force_Onverklaarbaar.txt",
+								"type": "txt",
+								"date": "2015-03-16T04:44:10.946Z"
+							}
+						}
+					},
+					"Opsporingsdienst_Centrum": {
+						"path": [
+							"BOOM_gemeente",
+							"Opsporingsdienst_Centrum"
+						],
+						"name": "Opsporingsdienst_Centrum",
+						"type": "dir",
+						"dirType": "locked",
+						"children": {
+							"EC_FP": {
+								"path": [
+									"BOOM_gemeente",
+									"Opsporingsdienst_Centrum",
+									"EC_FP"
+								],
+								"name": "EC_FP",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"andrea_proliferatiefmanciering": {
+								"path": [
+									"BOOM_gemeente",
+									"Opsporingsdienst_Centrum",
+									"andrea_proliferatiefmanciering"
+								],
+								"name": "andrea_proliferatiefmanciering",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"EU_Dienst": {
+								"path": [
+									"BOOM_gemeente",
+									"Opsporingsdienst_Centrum",
+									"EU_Dienst"
+								],
+								"name": "EU_Dienst",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"onderdeel_onderdeel": {
+								"path": [
+									"BOOM_gemeente",
+									"Opsporingsdienst_Centrum",
+									"onderdeel_onderdeel"
+								],
+								"name": "onderdeel_onderdeel",
+								"type": "dir",
+								"dirType": "locked",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"politie_Andrea": {
+								"path": [
+									"BOOM_gemeente",
+									"Opsporingsdienst_Centrum",
+									"politie_Andrea"
+								],
+								"name": "politie_Andrea",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Basisvoorziening_Contraterrorisme": {
+								"path": [
+									"BOOM_gemeente",
+									"Opsporingsdienst_Centrum",
+									"Basisvoorziening_Contraterrorisme"
+								],
+								"name": "Basisvoorziening_Contraterrorisme",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"EC_Dienst": {
+								"path": [
+									"BOOM_gemeente",
+									"Opsporingsdienst_Centrum",
+									"EC_Dienst"
+								],
+								"name": "EC_Dienst",
+								"type": "dir",
+								"dirType": "archive",
+								"children": {
+									"Investigation_Bibal": {
+										"name": "Investigation_Bibal",
+										"type": "pdf",
+										"date": "1975-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Investigation_Bibal.pdf"
+										]
+									},
+									"Malta_Chamber_of_Commerce": {
+										"name": "Malta_Chamber_of_Commerce",
+										"type": "txt",
+										"date": "1988-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Malta_Chamber_of_Commerce.txt"
+										]
+									},
+									"Money_Laundering": {
+										"name": "Money_Laundering",
+										"type": "csv",
+										"date": "1999-05-20T01:23:22.774Z",
+										"path": [
+											"BOOM_gemeente",
+											"Opsporingsdienst_Centrum",
+											"EC_Dienst",
+											"Money_Laundering.csv"
+										]
+									}
+								}
+							},
+							"Europese_Inkomen.csv": {
+								"path": [
+									"BOOM_gemeente",
+									"Opsporingsdienst_Centrum",
+									"Europese_Inkomen.csv"
+								],
+								"name": "Europese_Inkomen.csv",
+								"type": "csv",
+								"date": "1982-03-13T21:47:32.104Z"
+							},
+							"onderdeel_Bibal.txt": {
+								"path": [
+									"BOOM_gemeente",
+									"Opsporingsdienst_Centrum",
+									"onderdeel_Bibal.txt"
+								],
+								"name": "onderdeel_Bibal.txt",
+								"type": "txt",
+								"date": "1994-11-24T10:37:08.077Z"
+							},
+							"team_binnen.pdf": {
+								"path": [
+									"BOOM_gemeente",
+									"Opsporingsdienst_Centrum",
+									"team_binnen.pdf"
+								],
+								"name": "team_binnen.pdf",
+								"type": "pdf",
+								"date": "2009-06-07T15:29:50.808Z"
+							},
+							"Toezicht_ESW.pdf": {
+								"path": [
+									"BOOM_gemeente",
+									"Opsporingsdienst_Centrum",
+									"Toezicht_ESW.pdf"
+								],
+								"name": "Toezicht_ESW.pdf",
+								"type": "pdf",
+								"date": "1976-12-19T04:37:58.578Z"
+							},
+							"BES_FAT.txt": {
+								"path": [
+									"BOOM_gemeente",
+									"Opsporingsdienst_Centrum",
+									"BES_FAT.txt"
+								],
+								"name": "BES_FAT.txt",
+								"type": "txt",
+								"date": "1990-12-17T22:42:21.874Z"
+							},
+							"gebouwd_Force.txt": {
+								"path": [
+									"BOOM_gemeente",
+									"Opsporingsdienst_Centrum",
+									"gebouwd_Force.txt"
+								],
+								"name": "gebouwd_Force.txt",
+								"type": "txt",
+								"date": "1967-10-04T04:19:51.517Z"
+							},
+							"EU_Bibal.txt": {
+								"path": [
+									"BOOM_gemeente",
+									"Opsporingsdienst_Centrum",
+									"EU_Bibal.txt"
+								],
+								"name": "EU_Bibal.txt",
+								"type": "txt",
+								"date": "1975-03-13T12:23:11.277Z"
+							},
+							"Ontnemingswetgeving_Eustatiusen.txt": {
+								"path": [
+									"BOOM_gemeente",
+									"Opsporingsdienst_Centrum",
+									"Ontnemingswetgeving_Eustatiusen.txt"
+								],
+								"name": "Ontnemingswetgeving_Eustatiusen.txt",
+								"type": "txt",
+								"date": "1996-11-14T17:39:12.933Z"
+							},
+							"gemeente_Basisvoorziening.txt": {
+								"path": [
+									"BOOM_gemeente",
+									"Opsporingsdienst_Centrum",
+									"gemeente_Basisvoorziening.txt"
+								],
+								"name": "gemeente_Basisvoorziening.txt",
+								"type": "txt",
+								"date": "2013-11-21T20:58:15.961Z"
+							}
+						}
+					},
+					"andrea_Inlichtingen.txt": {
+						"path": [
+							"BOOM_gemeente",
+							"andrea_Inlichtingen.txt"
+						],
+						"name": "andrea_Inlichtingen.txt",
+						"type": "txt",
+						"date": "1967-10-25T15:36:32.810Z"
+					},
+					"Europese_BES.csv": {
+						"path": [
+							"BOOM_gemeente",
+							"Europese_BES.csv"
+						],
+						"name": "Europese_BES.csv",
+						"type": "csv",
+						"date": "2014-08-12T18:09:55.219Z"
+					},
+					"politie_Financial.txt": {
+						"path": [
+							"BOOM_gemeente",
+							"politie_Financial.txt"
+						],
+						"name": "politie_Financial.txt",
+						"type": "txt",
+						"date": "2006-05-17T13:22:45.848Z"
+					},
+					"FIOD_Against.pdf": {
+						"path": [
+							"BOOM_gemeente",
+							"FIOD_Against.pdf"
+						],
+						"name": "FIOD_Against.pdf",
+						"type": "pdf",
+						"date": "1975-06-01T14:25:40.097Z"
+					},
+					"Financieel_CJIB.txt": {
+						"path": [
+							"BOOM_gemeente",
+							"Financieel_CJIB.txt"
+						],
+						"name": "Financieel_CJIB.txt",
+						"type": "txt",
+						"date": "1974-07-26T18:15:10.277Z"
+					},
+					"Andrea_Sint.csv": {
+						"path": [
+							"BOOM_gemeente",
+							"Andrea_Sint.csv"
+						],
+						"name": "Andrea_Sint.csv",
+						"type": "csv",
+						"date": "2006-07-22T13:56:13.493Z"
+					},
+					"AFM_controle.txt": {
+						"path": [
+							"BOOM_gemeente",
+							"AFM_controle.txt"
+						],
+						"name": "AFM_controle.txt",
+						"type": "txt",
+						"date": "1972-09-03T21:18:09.833Z"
+					}
+				}
 			},
-			"Europese_onderdeel.txt": {
-				"name": "Europese_onderdeel.txt",
+			"UNODC_Inlichtingen.txt": {
 				"path": [
-					"",
-					"Europese_onderdeel.txt"
+					"UNODC_Inlichtingen.txt"
 				],
-				"type": "txt"
+				"name": "UNODC_Inlichtingen.txt",
+				"type": "txt",
+				"date": "1995-01-28T22:43:52.600Z"
 			},
-			"Eustatiusen_UNODC.pdf": {
-				"name": "Eustatiusen_UNODC.pdf",
+			"Openbaar_door.pdf": {
 				"path": [
-					"",
-					"Eustatiusen_UNODC.pdf"
+					"Openbaar_door.pdf"
 				],
-				"type": "pdf"
+				"name": "Openbaar_door.pdf",
+				"type": "pdf",
+				"date": "2005-05-17T12:12:47.003Z"
+			},
+			"Parket,_Dienst.csv": {
+				"path": [
+					"Parket,_Dienst.csv"
+				],
+				"name": "Parket,_Dienst.csv",
+				"type": "csv",
+				"date": "1988-10-19T16:13:04.024Z"
+			},
+			"Eustatiusen_Centrum.pdf": {
+				"path": [
+					"Eustatiusen_Centrum.pdf"
+				],
+				"name": "Eustatiusen_Centrum.pdf",
+				"type": "pdf",
+				"date": "1988-04-04T11:53:05.308Z"
+			},
+			"Vermogen_Eustatiusen.txt": {
+				"path": [
+					"Vermogen_Eustatiusen.txt"
+				],
+				"name": "Vermogen_Eustatiusen.txt",
+				"type": "txt",
+				"date": "2015-12-07T01:56:36.336Z"
+			},
+			"DLR_Criminaliteit.txt": {
+				"path": [
+					"DLR_Criminaliteit.txt"
+				],
+				"name": "DLR_Criminaliteit.txt",
+				"type": "txt",
+				"date": "1994-09-28T21:41:19.170Z"
+			},
+			"Centrum_Government.pdf": {
+				"path": [
+					"Centrum_Government.pdf"
+				],
+				"name": "Centrum_Government.pdf",
+				"type": "pdf",
+				"date": "1972-12-23T03:04:25.523Z"
+			},
+			"Infobox_Opsporingsdienst.txt": {
+				"path": [
+					"Infobox_Opsporingsdienst.txt"
+				],
+				"name": "Infobox_Opsporingsdienst.txt",
+				"type": "txt",
+				"date": "1978-03-03T10:36:56.530Z"
+			},
+			"andrea_proliferatiefmanciering.pdf": {
+				"path": [
+					"andrea_proliferatiefmanciering.pdf"
+				],
+				"name": "andrea_proliferatiefmanciering.pdf",
+				"type": "pdf",
+				"date": "2013-10-22T23:50:49.766Z"
+			},
+			"Contraterrorisme_EMM.txt": {
+				"path": [
+					"Contraterrorisme_EMM.txt"
+				],
+				"name": "Contraterrorisme_EMM.txt",
+				"type": "txt",
+				"date": "1971-10-25T07:50:42.093Z"
 			}
 		}
 	};
@@ -38371,7 +35410,7 @@
 
 	var _itemDraggable2 = _interopRequireDefault(_itemDraggable);
 
-	var _index = __webpack_require__(217);
+	var _index = __webpack_require__(218);
 
 	var _index2 = _interopRequireDefault(_index);
 
@@ -39901,6 +36940,10 @@
 
 	var _pdf2 = _interopRequireDefault(_pdf);
 
+	var _chart = __webpack_require__(217);
+
+	var _chart2 = _interopRequireDefault(_chart);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -39957,6 +37000,8 @@
 	                return _note_edit2.default;
 	              case "pdf":
 	                return _pdf2.default;
+	              case "csv":
+	                return _chart2.default;
 	            }
 	          }() }),
 	        _react2.default.createElement(
@@ -40062,6 +37107,12 @@
 
 /***/ },
 /* 217 */
+/***/ function(module, exports) {
+
+	module.exports = "data:image/png;base64,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"
+
+/***/ },
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/Robert-Jan/Desktop/screeninvader-os/node_modules/react-hot-loader/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/Robert-Jan/Desktop/screeninvader-os/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -40084,13 +37135,13 @@
 
 	var _reactDraggable2 = _interopRequireDefault(_reactDraggable);
 
-	var _reactResizable = __webpack_require__(218);
+	var _reactResizable = __webpack_require__(219);
 
-	var _titlebar = __webpack_require__(222);
+	var _titlebar = __webpack_require__(223);
 
 	var _titlebar2 = _interopRequireDefault(_titlebar);
 
-	var _content = __webpack_require__(224);
+	var _content = __webpack_require__(225);
 
 	var _content2 = _interopRequireDefault(_content);
 
@@ -40230,7 +37281,7 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/Robert-Jan/Desktop/screeninvader-os/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 218 */
+/* 219 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40238,12 +37289,12 @@
 	  throw new Error("Don't instantiate Resizable directly! Use require('react-resizable').Resizable");
 	};
 
-	module.exports.Resizable = __webpack_require__(219).default;
-	module.exports.ResizableBox = __webpack_require__(221).default;
+	module.exports.Resizable = __webpack_require__(220).default;
+	module.exports.ResizableBox = __webpack_require__(222).default;
 
 
 /***/ },
-/* 219 */
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40258,7 +37309,7 @@
 
 	var _reactDraggable = __webpack_require__(209);
 
-	var _cloneElement = __webpack_require__(220);
+	var _cloneElement = __webpack_require__(221);
 
 	var _cloneElement2 = _interopRequireDefault(_cloneElement);
 
@@ -40493,7 +37544,7 @@
 	exports.default = Resizable;
 
 /***/ },
-/* 220 */
+/* 221 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40518,7 +37569,7 @@
 	};
 
 /***/ },
-/* 221 */
+/* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40531,7 +37582,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Resizable = __webpack_require__(219);
+	var _Resizable = __webpack_require__(220);
 
 	var _Resizable2 = _interopRequireDefault(_Resizable);
 
@@ -40628,7 +37679,7 @@
 	exports.default = ResizableBox;
 
 /***/ },
-/* 222 */
+/* 223 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/Robert-Jan/Desktop/screeninvader-os/node_modules/react-hot-loader/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/Robert-Jan/Desktop/screeninvader-os/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -40649,7 +37700,7 @@
 
 	var _window = __webpack_require__(201);
 
-	var _ = __webpack_require__(223);
+	var _ = __webpack_require__(224);
 
 	var _2 = _interopRequireDefault(_);
 
@@ -40722,13 +37773,13 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/Robert-Jan/Desktop/screeninvader-os/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "titlebar.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 223 */
+/* 224 */
 /***/ function(module, exports) {
 
 	module.exports = "data:image/png;base64,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"
 
 /***/ },
-/* 224 */
+/* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/Robert-Jan/Desktop/screeninvader-os/node_modules/react-hot-loader/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/Robert-Jan/Desktop/screeninvader-os/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -40745,7 +37796,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _index = __webpack_require__(225);
+	var _index = __webpack_require__(226);
 
 	var _index2 = _interopRequireDefault(_index);
 
@@ -40801,6 +37852,7 @@
 	            dir: _react2.default.createElement(_index2.default, { windowData: windowData, dispatch: dispatch }),
 	            search: _react2.default.createElement(_index4.default, { windowData: windowData, dispatch: dispatch }),
 	            txt: _react2.default.createElement(_index6.default, { windowData: windowData, dispatch: dispatch }),
+	            csv: _react2.default.createElement(_index6.default, { windowData: windowData, dispatch: dispatch }),
 	            pdf: _react2.default.createElement(_index8.default, { windowData: windowData, dispatch: dispatch }),
 	            browser: _react2.default.createElement(_index10.default, { windowData: windowData, dispatch: dispatch }),
 	            modal: _react2.default.createElement(_index12.default, { windowData: windowData, dispatch: dispatch })
@@ -40819,7 +37871,7 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/Robert-Jan/Desktop/screeninvader-os/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "content.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 225 */
+/* 226 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/Robert-Jan/Desktop/screeninvader-os/node_modules/react-hot-loader/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/Robert-Jan/Desktop/screeninvader-os/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -40836,11 +37888,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _menubar = __webpack_require__(226);
+	var _menubar = __webpack_require__(227);
 
 	var _menubar2 = _interopRequireDefault(_menubar);
 
-	var _sidebar = __webpack_require__(232);
+	var _sidebar = __webpack_require__(233);
 
 	var _sidebar2 = _interopRequireDefault(_sidebar);
 
@@ -40895,7 +37947,7 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/Robert-Jan/Desktop/screeninvader-os/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 226 */
+/* 227 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/Robert-Jan/Desktop/screeninvader-os/node_modules/react-hot-loader/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/Robert-Jan/Desktop/screeninvader-os/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -40914,23 +37966,23 @@
 
 	var _explorer = __webpack_require__(211);
 
-	var _ = __webpack_require__(227);
+	var _ = __webpack_require__(228);
 
 	var _2 = _interopRequireDefault(_);
 
-	var _3 = __webpack_require__(228);
+	var _3 = __webpack_require__(229);
 
 	var _4 = _interopRequireDefault(_3);
 
-	var _5 = __webpack_require__(229);
+	var _5 = __webpack_require__(230);
 
 	var _6 = _interopRequireDefault(_5);
 
-	var _7 = __webpack_require__(230);
+	var _7 = __webpack_require__(231);
 
 	var _8 = _interopRequireDefault(_7);
 
-	var _9 = __webpack_require__(231);
+	var _9 = __webpack_require__(232);
 
 	var _10 = _interopRequireDefault(_9);
 
@@ -41011,37 +38063,37 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/Robert-Jan/Desktop/screeninvader-os/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "menubar.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 227 */
+/* 228 */
 /***/ function(module, exports) {
 
 	module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjIxQTY2NUIxNEJGNjExRTI5MDlCODA3QTA5NTQzODRGIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjIxQTY2NUIyNEJGNjExRTI5MDlCODA3QTA5NTQzODRGIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MjFBNjY1QUY0QkY2MTFFMjkwOUI4MDdBMDk1NDM4NEYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MjFBNjY1QjA0QkY2MTFFMjkwOUI4MDdBMDk1NDM4NEYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4TI7b/AAABF0lEQVR42uza0QrCMAyF4VX73EqevOKFMGTOZiVpmnMCu9X9HxvOrqW1tiHPbQMfAhCAAAQgAAEIgDt19ANKKVMDRp9keQtM+t5HGIH3JTRyXIxvYc7fGeATDwmwj4cD+I6HAjiKhwH4FQ8BcBafHuBffGqAnvi0AL3xKQE08ekAtPHmhydAuHg3gKjxLgCR480BosebAqwQbwawSrwJwErxGgDNmuA95aqo8hYQ2FtgNQTrn0GBBlgBwetRWKABIiN4/x0WdIArCCmXxAQdQIOQellc0AF6ECBejQk6wBkC1OtxQQc4QoDcIiPoAHuEEAB1859npBWxMrrTcvWdonX2CcwebpUlAAEIQAACEIAABECdlwADAAxIS0j1HP7kAAAAAElFTkSuQmCC"
 
 /***/ },
-/* 228 */
+/* 229 */
 /***/ function(module, exports) {
 
 	module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjIyQzI4ODNBNEJGNjExRTJBQTkwRUQyQ0ZFMjNFMEM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjIyQzI4ODNCNEJGNjExRTJBQTkwRUQyQ0ZFMjNFMEM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MjJDMjg4Mzg0QkY2MTFFMkFBOTBFRDJDRkUyM0UwQzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MjJDMjg4Mzk0QkY2MTFFMkFBOTBFRDJDRkUyM0UwQzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7/VnRHAAABCklEQVR42uza2w6EIAwEULvrd5vMl7PJvm32RqkRnZkmPGLKURQL0VpblOO2iIcBDGAAAxjAAAbQjbV6gYiYOoDqStZT4ES5bNMeoUrbM5URhHL+JwNIIzACpBBYAboRmAG6ENgB/iIoAPxEUAH4iqAE8BFBDeANQRHgBeEwgGSCR7RNHeCJoA5QRmAAKCGwAAwjMAEMIbABpBEYAVIIrEXR++4lpQvdfShPASi/BKH8GYTyQgjKS2Eo/wxBuSAC5YoQlEtiUC6KQrksDuWNEShvjUF5cxRdnUgB0N2JEACpTmQASHciAsCQWjH/qA7i6idF19kJ+KSoAQxgAAMYwAAGMIAB5sRDgAEAdMaq5u7GptkAAAAASUVORK5CYII="
 
 /***/ },
-/* 229 */
+/* 230 */
 /***/ function(module, exports) {
 
 	module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjIzQzJFNEZCNEJGNjExRTJCRkE2RkFFMTRERkI4MzY4IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjIzQzJFNEZDNEJGNjExRTJCRkE2RkFFMTRERkI4MzY4Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MjNDMkU0Rjk0QkY2MTFFMkJGQTZGQUUxNERGQjgzNjgiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MjNDMkU0RkE0QkY2MTFFMkJGQTZGQUUxNERGQjgzNjgiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5fggHhAAAA/UlEQVR42uzb0Q6DIAxAUbv43f46ezGLZs4BRdrCbcKr7J64ZcEoKaVl5nktkw8AAAAAAAAzz6q9gIiYBmj/x/AVMN5/25ftLaRZyvi0r83s8xsBHONVCBEBruKrEaIB3MVXIUQCyIkvRogCUBJfhBABoCY+G8E7gCY+C8EzQIv4vwheAVrG3yJ4BHgi/ieCN4An4y8RPAH0iP9C8ALQM/6E4AHAIv6DYApgHN8EIXq8GmGEeBXCKPHVCKI9Vc04FdY+fhZOhXkwAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAk1k77CFDA0R/7Y7fAAAAAAAAAACYd94CDACNCnwfY5XQzwAAAABJRU5ErkJggg=="
 
 /***/ },
-/* 230 */
+/* 231 */
 /***/ function(module, exports) {
 
 	module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkM1M0M2NzIyNEJGNjExRTI5NDczOEI4RDUzMTQxN0E0IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkM1M0M2NzIzNEJGNjExRTI5NDczOEI4RDUzMTQxN0E0Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QzUzQzY3MjA0QkY2MTFFMjk0NzM4QjhENTMxNDE3QTQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QzUzQzY3MjE0QkY2MTFFMjk0NzM4QjhENTMxNDE3QTQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4GAbWdAAAA4klEQVR42uzY0QqCMBgG0C16r257dR9E9hiWohKhQf5Kjs4Hu4qNdZiDfTlVnq7rQvMvSebcnqPpUb8czTh373WPGsN++5PzfnpKYNHyAaCc6M/P+50A8uvnFDxBee0zPendkd0BAAAAAAAAAAAAAAAMaQPrtBt/+1UW93Tf+HIr49y1bF33sJdgv6el16BGyCUIAACAf45WOGmFQ9EKuwQBAAAAAAAAAAAA1AmgFU5a4fqiFXYJAgAAYKdohZNWOBStsEsQAAAAAAAAAAAAQJ0AWuGkFa4v0Vb4Gl2g9jwEGABZeSy0p0eS+wAAAABJRU5ErkJggg=="
 
 /***/ },
-/* 231 */
+/* 232 */
 /***/ function(module, exports) {
 
 	module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjBFNDlCQTk3NEJGNzExRTJBMjExQzQ1RUVBMzBENkI2IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjBFNDlCQTk4NEJGNzExRTJBMjExQzQ1RUVBMzBENkI2Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MEU0OUJBOTU0QkY3MTFFMkEyMTFDNDVFRUEzMEQ2QjYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MEU0OUJBOTY0QkY3MTFFMkEyMTFDNDVFRUEzMEQ2QjYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6qzrJqAAABWUlEQVR42uybSwrCMBCG0+IJuush4tVzD6GbcSUI3XajV6gVIvioNVX7yHwZGChdJb/fP2QmNWvb1pAjN/BIApgUKdCR9bw7dVksvIZFa8CBXgSPdAFqkgCbFRAw51G06bIkW6CiF8EgAc4+sQJopmAXKoDGOtD4xApQjekGa7oAR4L/hxqRwjdFmqLsqwEp0jzAGOnSQve/vxZBBwbAZf7XF6gA29uD+LaUlHJ/DiDa4GHPFkjAS+EXGv7PR2FHxZ9og7fnHiHh39cNOir+JBt8PPYLBf93AxFHxZ9gg+CuVwj4D80EHRV/zTYYPfQR7fgPWUCbDb7aiyXjr8kGg+O+fAp0NOCvyQY/j/xFK/4hFojdBn9ZuyXjH7MNgi578jlRihH/mG3w9wtf0Yb/GAvEZoNJ1mrJ+Mdkg1FX/fka0IoB/5hsQP3c57vI0l9n4ZEESALA4yLAAHqojzQV2sl5AAAAAElFTkSuQmCC"
 
 /***/ },
-/* 232 */
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/Robert-Jan/Desktop/screeninvader-os/node_modules/react-hot-loader/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/Robert-Jan/Desktop/screeninvader-os/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -41062,7 +38114,7 @@
 
 	var _reactDraggable2 = _interopRequireDefault(_reactDraggable);
 
-	var _home = __webpack_require__(233);
+	var _home = __webpack_require__(234);
 
 	var _home2 = _interopRequireDefault(_home);
 
@@ -41070,11 +38122,11 @@
 
 	var _note_edit2 = _interopRequireDefault(_note_edit);
 
-	var _image = __webpack_require__(234);
+	var _image = __webpack_require__(235);
 
 	var _image2 = _interopRequireDefault(_image);
 
-	var _chart = __webpack_require__(235);
+	var _chart = __webpack_require__(217);
 
 	var _chart2 = _interopRequireDefault(_chart);
 
@@ -41157,22 +38209,16 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/Robert-Jan/Desktop/screeninvader-os/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "sidebar.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 233 */
+/* 234 */
 /***/ function(module, exports) {
 
 	module.exports = "data:image/png;base64,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"
 
 /***/ },
-/* 234 */
-/***/ function(module, exports) {
-
-	module.exports = "data:image/png;base64,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"
-
-/***/ },
 /* 235 */
 /***/ function(module, exports) {
 
-	module.exports = "data:image/png;base64,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"
+	module.exports = "data:image/png;base64,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"
 
 /***/ },
 /* 236 */
@@ -41254,6 +38300,7 @@
 	        { className: 'explorer__body' },
 	        function () {
 	          var items = _this2.getItems(filesystem, windowData.data.history[windowData.data.historyCursor]);
+	          console.log(items);
 	          if (items) {
 	            var templatedItems = [];
 	            for (var item in items) {
@@ -41325,6 +38372,10 @@
 
 	var _pdf2 = _interopRequireDefault(_pdf);
 
+	var _chart = __webpack_require__(217);
+
+	var _chart2 = _interopRequireDefault(_chart);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -41378,6 +38429,8 @@
 	                return _note_edit2.default;
 	              case "pdf":
 	                return _pdf2.default;
+	              case "csv":
+	                return _chart2.default;
 	            }
 	          }() }),
 	        _react2.default.createElement(
@@ -41386,13 +38439,15 @@
 	          _react2.default.createElement(
 	            'p',
 	            null,
-	            this.props.itemData.name
+	            itemData.name
 	          )
 	        ),
 	        _react2.default.createElement(
 	          'p',
 	          { className: 'listed-item__date' },
-	          '25-01-1998'
+	          itemData.date && function () {
+	            return new Date(itemData.date).toDateString();
+	          }()
 	        )
 	      );
 	    }
@@ -62026,11 +59081,11 @@
 
 	var _browser = __webpack_require__(292);
 
-	var _ = __webpack_require__(227);
+	var _ = __webpack_require__(228);
 
 	var _2 = _interopRequireDefault(_);
 
-	var _3 = __webpack_require__(228);
+	var _3 = __webpack_require__(229);
 
 	var _4 = _interopRequireDefault(_3);
 
@@ -62665,22 +59720,37 @@
 	                _react2.default.createElement(
 	                  'li',
 	                  null,
-	                  'Inloggen: na 2x fout inloggen, stuurt hij je de derde keer door'
+	                  'Opstarten/Afsluiten: De app kan opstarten en afsluiten met een kort effect'
 	                ),
 	                _react2.default.createElement(
 	                  'li',
 	                  null,
-	                  'Openen en slepen van mappen en vensters'
+	                  'Inloggen: Na 5x fout inloggen wordt je automatisch ingelogd, anders is het wachtwoord "1984"'
 	                ),
 	                _react2.default.createElement(
 	                  'li',
 	                  null,
-	                  'Weergeven van mappen en documenten'
+	                  'Desktop en Windowmanager: Openen en slepen van mappen en vensters is mogelijk'
 	                ),
 	                _react2.default.createElement(
 	                  'li',
 	                  null,
-	                  'Zoekfunctionaliteiten waarbij veel vensters opengaan (zoek zonder term voor alles)'
+	                  'Explorer: Twee weergave mogelijkheden (lijst/iconen) en verkenning bestandsysteem (4e map is overal dezelfde)'
+	                ),
+	                _react2.default.createElement(
+	                  'li',
+	                  null,
+	                  'Browser: Standaard ingesteld op Chamber of Commerce Malta'
+	                ),
+	                _react2.default.createElement(
+	                  'li',
+	                  null,
+	                  'Zoeken: Zoekfunctionaliteiten waarbij veel vensters opengaan '
+	                ),
+	                _react2.default.createElement(
+	                  'li',
+	                  null,
+	                  'PDF-lezer: Weergave van PDF documenten (Ingesteld op Investigation Bibal)'
 	                )
 	              )
 	            ),
@@ -63044,7 +60114,7 @@
 
 
 	// module
-	exports.push([module.id, "@font-face {\n  font-family: 'roboto';\n  src: url(" + __webpack_require__(306) + ");\n  src: url(" + __webpack_require__(306) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(307) + ") format(\"woff\"), url(" + __webpack_require__(308) + ") format(\"truetype\"), url(" + __webpack_require__(309) + "#robotomedium) format(\"svg\");\n  font-weight: bold;\n  font-style: normal; }\n\n@font-face {\n  font-family: 'roboto';\n  src: url(" + __webpack_require__(310) + ");\n  src: url(" + __webpack_require__(310) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(311) + ") format(\"woff\"), url(" + __webpack_require__(312) + ") format(\"truetype\"), url(" + __webpack_require__(313) + "#robotolight) format(\"svg\");\n  font-weight: normal;\n  font-style: normal; }\n\nhtml {\n  box-sizing: border-box;\n  font-size: 14px;\n  overflow: hidden; }\n\nhtml, body, #app {\n  width: 100%;\n  height: 100%; }\n\n*, *:before, *:after {\n  box-sizing: inherit;\n  margin: 0;\n  padding: 0;\n  outline: 0;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  font-family: roboto;\n  font-weight: normal; }\n\nul {\n  list-style: none; }\n\na {\n  color: inherit;\n  text-decoration: none; }\n\n.layout__OS {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  width: 100%;\n  height: 100%;\n  overflow: hidden; }\n\n.layout__overlay {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  z-index: 2000; }\n\n.layout__desktop {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  width: 100%;\n  height: 100%;\n  background: #f2f2f2; }\n\n.layout__desktop-header {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-flex: 0;\n  -webkit-flex: 0 0 2.4rem;\n      -ms-flex: 0 0 2.4rem;\n          flex: 0 0 2.4rem; }\n\n.layout__desktop-main {\n  position: relative;\n  height: calc(100% - 2.4rem); }\n\n.desktop {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-flex-wrap: wrap;\n      -ms-flex-wrap: wrap;\n          flex-wrap: wrap;\n  -webkit-box-align: start;\n  -webkit-align-items: flex-start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  -webkit-box-pack: start;\n  -webkit-justify-content: flex-start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  -webkit-align-content: flex-start;\n      -ms-flex-line-pack: start;\n          align-content: flex-start;\n  width: 100%;\n  height: 100%;\n  padding: 1rem;\n  background-image: url(" + __webpack_require__(314) + ");\n  background-size: auto 100%;\n  background-repeat: no-repeat;\n  background-position: center center; }\n\n.menu {\n  position: relative;\n  z-index: 1000;\n  height: 100%;\n  width: 100%;\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  background: #414141;\n  color: white;\n  box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.2); }\n\n.menu__list {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: start;\n  -webkit-justify-content: flex-start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  -webkit-box-flex: 1;\n  -webkit-flex-grow: 1;\n      -ms-flex-positive: 1;\n          flex-grow: 1; }\n\n.menu__list-item {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  position: relative;\n  padding: 0 1rem;\n  font-size: 1rem;\n  line-height: 2.4rem;\n  cursor: default; }\n\n.menu__list-item:hover .dropdown {\n  display: block; }\n\n.menu__search {\n  position: relative;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  width: 22rem;\n  height: 2.4rem;\n  background: #787878;\n  color: white; }\n\n.menu__searchbar {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1 1;\n      -ms-flex: 1 1;\n          flex: 1 1;\n  padding: 0 1rem;\n  font-size: 1rem;\n  line-height: 1rem;\n  background: #787878;\n  color: white;\n  -webkit-appearance: none;\n  border: none; }\n\n.menu__searchbar::-webkit-input-placeholder {\n  color: white; }\n\n.menu__searchbar::-moz-placeholder {\n  color: white; }\n\n.menu__searchbar:-ms-input-placeholder {\n  color: white; }\n\n.menu__searchbar::placeholder {\n  color: white; }\n\n.menu__search-icon {\n  height: 2rem;\n  width: 2rem;\n  padding: 0.5rem; }\n\n.menu__search-dropdown-button {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  width: 2.4rem;\n  height: 100%;\n  background: white;\n  border-left: 1px solid #414141;\n  border-right: 1px solid #414141;\n  color: #414141; }\n\n.menu__search-dropdown-button:hover .dropdown {\n  display: block; }\n\n.menu__search-dropdown-button-arrow {\n  width: 40%;\n  height: 40%; }\n\n.menu__user-container {\n  position: relative;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  margin-left: 3rem;\n  padding: 1rem 1rem 1rem 1rem;\n  font-size: 1rem;\n  line-height: 1rem; }\n\n.menu__user-container:hover .dropdown {\n  display: block; }\n\n.menu__user-notice {\n  padding-right: 1rem;\n  color: #f2f2f2; }\n\n.dropdown {\n  display: none;\n  position: absolute;\n  min-width: 100%;\n  z-index: 900;\n  left: 0;\n  top: 2.4rem;\n  padding: 0.5rem 0;\n  background: white;\n  color: #414141;\n  border: 1px solid #414141;\n  border-top: none;\n  font-size: 1rem;\n  line-height: 1rem;\n  box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.2); }\n\n.dropdown__list-item {\n  position: relative;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex; }\n\n.dropdown__text {\n  display: block;\n  padding: 0.5rem 1rem;\n  width: 100%;\n  height: 100%; }\n\n.dropdown__text-type-small {\n  padding-left: 2rem;\n  font-size: 1rem;\n  color: rgba(120, 120, 120, 0.5); }\n\n.dropdown__text:hover {\n  background: #414141;\n  color: white;\n  cursor: default; }\n\n.dropdown__hr {\n  height: 0;\n  width: 100%;\n  margin: 0.5rem 0;\n  border: none;\n  border-bottom: 1px solid #414141; }\n\n.item {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 7rem;\n  padding: 1rem; }\n\n.item__image {\n  width: 3.5rem;\n  height: 3.5rem;\n  margin-bottom: 0.5rem; }\n\n.item__text {\n  display: block;\n  padding: 0.1rem 0.6rem;\n  max-width: 100%;\n  max-height: 2.2rem;\n  border-radius: 5px;\n  font-size: 1rem;\n  line-height: 1.2rem;\n  font-weight: bold;\n  text-align: center;\n  word-break: break-all;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  background: rgba(65, 65, 65, 0.1); }\n\n.listed-item {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  height: 3rem;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 100%;\n  padding: 0.5rem 1rem;\n  border-bottom: 1px dashed #f2f2f2; }\n\n.listed-item:hover {\n  background: #f2f2f2;\n  cursor: pointer; }\n\n.listed-item__image {\n  width: 2rem;\n  height: 2rem; }\n\n.listed-item__name {\n  width: 100%;\n  padding: 0 1rem;\n  word-break: break-all;\n  -webkit-box-flex: 1;\n  -webkit-flex: 1 1;\n      -ms-flex: 1 1;\n          flex: 1 1; }\n\n.login {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 100%;\n  height: 100%;\n  background-size: auto 100%;\n  background-repeat: no-repeat;\n  background-position: center center;\n  background-color: #414141; }\n\n.login__details {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 35rem;\n  padding: 0 2rem 2rem 2rem;\n  background: white;\n  border: 1px solid #414141;\n  border-radius: 10px; }\n\n.login__logo {\n  width: 100%;\n  height: auto;\n  margin: 0 0 1rem 0; }\n\n.login__error {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  width: 100%;\n  margin: 0 0 1rem 0;\n  padding: 1rem;\n  border: 2px solid #cd1f22;\n  color: #cd1f22;\n  border-radius: 10px; }\n\n.login__group {\n  width: 100%;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  margin-bottom: 1rem; }\n\n.login__username {\n  width: 70%;\n  height: 3rem;\n  padding: 1rem;\n  border: none;\n  background: #f2f2f2;\n  font-size: 1rem;\n  border-radius: 10px; }\n\n.login__password {\n  width: 70%;\n  height: 3rem;\n  padding: 1rem;\n  border: none;\n  background: #f2f2f2;\n  font-size: 1rem;\n  border-radius: 10px; }\n\n.login__submit {\n  width: 35%;\n  padding: 1rem;\n  margin-right: 35%;\n  -webkit-align-self: flex-end;\n      -ms-flex-item-align: end;\n          align-self: flex-end;\n  -webkit-appearance: none;\n  cursor: pointer;\n  font-size: 1rem;\n  border-radius: 10px;\n  border: 1px solid #f2f2f2;\n  background: #414141;\n  color: white; }\n\n.login__submit:hover {\n  background: -webkit-linear-gradient(20deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%), #414141;\n  background: linear-gradient(70deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%), #414141;\n  background-size: 400% 400%;\n  -webkit-animation: flash 1.5s ease infinite;\n          animation: flash 1.5s ease infinite; }\n\n@-webkit-keyframes flash {\n  0% {\n    background-position: 100% 50%; }\n  100% {\n    background-position: 0% 50%; } }\n\n@keyframes flash {\n  0% {\n    background-position: 100% 50%; }\n  100% {\n    background-position: 0% 50%; } }\n\n.shutdown {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 100%;\n  height: 100%;\n  padding-top: 3rem;\n  background-size: auto 100%;\n  background-repeat: no-repeat;\n  background-position: center center;\n  background-origin: content-box;\n  background-color: #414141; }\n\n.shutdown__details {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 35rem;\n  padding: 2rem 2rem 2rem 2rem;\n  background: white;\n  border: 1px solid #f2f2f2;\n  border-radius: 10px; }\n\n.off {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: end;\n  -webkit-justify-content: flex-end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 100%;\n  height: 100%;\n  padding: 3rem 3rem 6rem 3rem;\n  background: black; }\n\n.off__reboot {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  width: 10rem;\n  padding: 1rem 6rem;\n  color: white;\n  border: 1px solid rgba(255, 255, 255, 0.1);\n  border-radius: 1rem;\n  cursor: pointer; }\n\n.off__reboot:hover {\n  background: -webkit-linear-gradient(20deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%);\n  background: linear-gradient(70deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%);\n  background-size: 400% 400%;\n  -webkit-animation: flash 1.5s ease infinite;\n          animation: flash 1.5s ease infinite; }\n\n@keyframes flash {\n  0% {\n    background-position: 100% 50%; }\n  100% {\n    background-position: 0% 50%; } }\n\n.admin {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 100%;\n  height: 100%;\n  background: black; }\n\n.admin__content {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  padding: 4rem;\n  background: #ffd900; }\n\n.admin__logo {\n  width: 14rem;\n  -webkit-align-self: flex-start;\n      -ms-flex-item-align: start;\n          align-self: flex-start; }\n\n.admin__browser-error {\n  margin: 2rem 0 0 0;\n  padding: 1rem;\n  border: 10px solid red;\n  color: red;\n  font-size: 2rem;\n  font-weight: bold; }\n\n.admin__browser-error-link {\n  text-decoration: underline; }\n\n.admin__description {\n  margin: 2rem 0; }\n\n.admin__header {\n  margin-bottom: 1rem; }\n\n.admin__list {\n  list-style-type: square;\n  list-style-position: inside; }\n\n.admin__button {\n  width: 10rem;\n  height: 4rem;\n  background: black;\n  color: #ffd900;\n  border: 4px solid #ffd900;\n  cursor: pointer; }\n\n.admin__button:hover {\n  background: #ffd900;\n  color: black;\n  border: 4px solid black; }\n\n.window {\n  position: absolute;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  z-index: 500;\n  box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.2);\n  border-radius: 5px;\n  overflow: hidden; }\n\n.window__inner {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  width: 100%;\n  height: 100%;\n  background: white; }\n\n.react-resizable-handle {\n  position: absolute;\n  width: 100px;\n  height: 100px;\n  bottom: 0;\n  right: 0;\n  background: url(\"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pg08IS0tIEdlbmVyYXRvcjogQWRvYmUgRmlyZXdvcmtzIENTNiwgRXhwb3J0IFNWRyBFeHRlbnNpb24gYnkgQWFyb24gQmVhbGwgKGh0dHA6Ly9maXJld29ya3MuYWJlYWxsLmNvbSkgLiBWZXJzaW9uOiAwLjYuMSAgLS0+DTwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DTxzdmcgaWQ9IlVudGl0bGVkLVBhZ2UlMjAxIiB2aWV3Qm94PSIwIDAgNiA2IiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjojZmZmZmZmMDAiIHZlcnNpb249IjEuMSINCXhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbDpzcGFjZT0icHJlc2VydmUiDQl4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjZweCIgaGVpZ2h0PSI2cHgiDT4NCTxnIG9wYWNpdHk9IjAuMzAyIj4NCQk8cGF0aCBkPSJNIDYgNiBMIDAgNiBMIDAgNC4yIEwgNCA0LjIgTCA0LjIgNC4yIEwgNC4yIDAgTCA2IDAgTCA2IDYgTCA2IDYgWiIgZmlsbD0iIzAwMDAwMCIvPg0JPC9nPg08L3N2Zz4=\");\n  background-position: bottom right;\n  padding: 0 5px 5px 0;\n  background-repeat: no-repeat;\n  background-origin: content-box;\n  box-sizing: border-box;\n  cursor: se-resize; }\n\n.window__titlebar {\n  background: #414141; }\n\n.window__titlebar-inner {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding-left: 1rem;\n  height: 2rem; }\n\n.window__titlebar-text {\n  color: white; }\n\n.window__titlebar-close-button {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 2rem;\n  height: 2rem;\n  padding: 0.75rem;\n  cursor: pointer;\n  -webkit-transition: 0.1s ease all;\n  transition: 0.1s ease all; }\n\n.window__titlebar-close-button img {\n  width: 100%;\n  height: 100%; }\n\n.window__titlebar-close-button:hover {\n  padding: 0.5rem; }\n\n.window__content {\n  width: 100%;\n  height: calc(100% - 2rem); }\n\n.window__content-inner {\n  width: 100%;\n  height: 100%;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-flex-wrap: wrap;\n      -ms-flex-wrap: wrap;\n          flex-wrap: wrap;\n  -webkit-align-content: flex-start;\n      -ms-flex-line-pack: start;\n          align-content: flex-start; }\n\n.explorer__menubar {\n  width: 100%;\n  padding: 0 1rem;\n  height: 3rem;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  background: #dadada;\n  border-bottom: 1px solid #414141; }\n\n.explorer__menubar-path {\n  margin-left: 0rem;\n  margin-right: 1rem;\n  width: 22rem;\n  border-radius: 5px;\n  border: none;\n  padding: 0.5rem; }\n\n.explorer__menubar-icon-group {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex; }\n\n.explorer__menubar-icon {\n  width: 1.5rem;\n  height: 1.5rem;\n  padding: 0.25rem;\n  margin-right: 1rem;\n  -webkit-transition: 0.1s ease all;\n  transition: 0.1s ease all; }\n\n.explorer__menubar-icon-img {\n  width: 100%;\n  height: 100%; }\n\n.explorer__menubar-icon:hover {\n  padding: 0rem; }\n\n.explorer__sidebar {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-align: start;\n  -webkit-align-items: flex-start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  width: 12rem;\n  height: calc(100% - 3rem);\n  padding: 1rem;\n  border-right: 1px solid #414141;\n  background: #f2f2f2; }\n\n.explorer__sidebar-text {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding-bottom: 5px;\n  font-weight: bold;\n  padding: 0.25rem; }\n\n.explorer__sidebar-icon {\n  width: 2rem;\n  height: 2rem;\n  margin-right: 1rem; }\n\n.explorer__body {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-flex-wrap: wrap;\n      -ms-flex-wrap: wrap;\n          flex-wrap: wrap;\n  -webkit-box-align: start;\n  -webkit-align-items: flex-start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  -webkit-align-content: flex-start;\n      -ms-flex-line-pack: start;\n          align-content: flex-start;\n  -webkit-box-pack: start;\n  -webkit-justify-content: flex-start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  width: calc(100% - 12rem);\n  height: calc(100% - 3rem);\n  overflow-y: scroll; }\n\n.textfile__menubar {\n  width: 100%;\n  padding: 0 1rem;\n  height: 3rem;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  background: #dadada;\n  border-bottom: 1px solid #414141; }\n\n.textfile__menubar-icon {\n  width: 1.5rem;\n  height: 1.5rem;\n  padding: 0.25rem;\n  margin-right: 1rem;\n  -webkit-transition: 0.1s ease all;\n  transition: 0.1s ease all; }\n\n.textfile__menubar-icon-img {\n  width: 100%;\n  height: 100%; }\n\n.textfile__menubar-icon:hover {\n  padding: 0rem; }\n\n.textfile__body {\n  width: 100%;\n  height: calc(100% - 3rem);\n  padding: 1rem;\n  overflow-y: scroll; }\n\n.pdf__menubar {\n  width: 100%;\n  padding: 0 1rem;\n  height: 3rem;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  background: #dadada;\n  border-bottom: 1px solid #414141; }\n\n.pdf__menubar-icon {\n  width: 1.5rem;\n  height: 1.5rem;\n  padding: 0.25rem;\n  margin-right: 1rem;\n  -webkit-transition: 0.1s ease all;\n  transition: 0.1s ease all; }\n\n.pdf__menubar-icon-img {\n  width: 100%;\n  height: 100%; }\n\n.pdf__menubar-icon:hover {\n  padding: 0rem; }\n\n.pdf__sidebar {\n  height: calc(100% - 3rem);\n  width: 12rem;\n  padding: 2rem;\n  background: #f2f2f2;\n  overflow-y: scroll; }\n\n.pdf__body {\n  width: calc(100% - 12rem);\n  height: calc(100% - 3rem);\n  padding: 2rem;\n  background: #f2f2f2;\n  overflow-y: scroll; }\n\n.pdf__page {\n  width: 100%;\n  margin-bottom: 2rem;\n  box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.2); }\n\n.browser__menubar {\n  position: relative;\n  width: 100%;\n  height: 3rem;\n  background: #dadada;\n  border-bottom: 1px solid #414141; }\n\n.browser__menubar-tabs {\n  position: absolute;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  top: -1.7rem;\n  left: 10rem;\n  max-width: calc(100% - 10rem); }\n\n.browser__menubar-tab {\n  height: 1.7rem;\n  margin: 0 0.1rem;\n  padding: 0.5rem;\n  line-height: 0.7rem;\n  background: #787878;\n  border-radius: 2px 2px 0 0; }\n\n.browser__menubar-tab-active {\n  background: #f2f2f2; }\n\n.browser__menubar-inner {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  width: 100%;\n  height: 100%;\n  padding: 0 1rem; }\n\n.browser__menubar-path-container {\n  width: 100%; }\n\n.browser__menubar-path {\n  margin-left: 0rem;\n  margin-right: 1rem;\n  width: 100%;\n  border-radius: 5px;\n  border: none;\n  padding: 0.5rem; }\n\n.browser__menubar-icon-group {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex; }\n\n.browser__menubar-icon {\n  width: 1.5rem;\n  height: 1.5rem;\n  padding: 0.25rem;\n  margin-right: 1rem;\n  -webkit-transition: 0.1s ease all;\n  transition: 0.1s ease all; }\n\n.browser__menubar-icon-img {\n  width: 100%;\n  height: 100%; }\n\n.browser__menubar-icon:hover {\n  padding: 0rem; }\n\n.browser__body {\n  width: 100%;\n  height: calc(100% - 3rem); }\n\n.browser__iframe {\n  width: 100%;\n  height: 100%;\n  border: none; }\n\n.search__menubar {\n  width: 100%;\n  padding: 0 1rem;\n  height: 3rem;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  background: #dadada;\n  border-bottom: 1px solid #414141; }\n\n.search__menubar-path {\n  margin-left: 0rem;\n  margin-right: 1rem;\n  width: 22rem;\n  border-radius: 5px;\n  border: none;\n  padding: 0.5rem; }\n\n.search__menubar-open-all {\n  padding: 0.5rem;\n  background: #414141;\n  color: white;\n  border: none;\n  cursor: pointer; }\n\n.search__menubar-open-all:hover {\n  background: -webkit-linear-gradient(20deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%), #414141;\n  background: linear-gradient(70deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%), #414141;\n  background-size: 400% 400%;\n  -webkit-animation: flash 1.5s ease infinite;\n          animation: flash 1.5s ease infinite; }\n\n.search__menubar-icon-group {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex; }\n\n.search__menubar-icon {\n  width: 1.5rem;\n  height: 1.5rem;\n  padding: 0.25rem;\n  margin-right: 1rem;\n  -webkit-transition: 0.1s ease all;\n  transition: 0.1s ease all; }\n\n.search__menubar-icon-img {\n  width: 100%;\n  height: 100%; }\n\n.search__menubar-icon:hover {\n  padding: 0rem; }\n\n.search__sidebar {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-align: start;\n  -webkit-align-items: flex-start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  width: 12rem;\n  height: calc(100% - 3rem);\n  padding: 1rem;\n  border-right: 1px solid #414141;\n  background: #f2f2f2; }\n\n.search__sidebar-header {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  padding-bottom: 5px;\n  font-weight: bold; }\n\n.search__sidebar-ul {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  list-style: square inside;\n  padding-bottom: 5px; }\n\n.search__sidebar-li {\n  padding-bottom: 5px; }\n\n.search__sidebar-icon {\n  width: 1.5rem;\n  height: 1.5rem;\n  padding: 0.25rem;\n  margin-right: 1rem; }\n\n.search__no-result {\n  padding: 1rem;\n  color: #787878; }\n\n.search__body {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-flex-wrap: wrap;\n      -ms-flex-wrap: wrap;\n          flex-wrap: wrap;\n  -webkit-box-align: start;\n  -webkit-align-items: flex-start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  -webkit-align-content: flex-start;\n      -ms-flex-line-pack: start;\n          align-content: flex-start;\n  -webkit-box-pack: start;\n  -webkit-justify-content: flex-start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  width: calc(100% - 12rem);\n  height: calc(100% - 3rem);\n  overflow-y: scroll; }\n\n.modal__body {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 100%;\n  height: 100%;\n  padding: 1rem;\n  background: #f2f2f2; }\n\n.modal__content {\n  padding-bottom: 1rem; }\n\n.modal__button {\n  width: 25%;\n  height: 3rem;\n  color: white;\n  background: #414141;\n  border: none;\n  cursor: pointer;\n  border-radius: 10px; }\n\n.modal__button:hover {\n  background: -webkit-linear-gradient(20deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%), #414141;\n  background: linear-gradient(70deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%), #414141;\n  background-size: 400% 400%;\n  -webkit-animation: flash 1.5s ease infinite;\n          animation: flash 1.5s ease infinite; }\n\n@keyframes flash {\n  0% {\n    background-position: 100% 50%; }\n  100% {\n    background-position: 0% 50%; } }\n", ""]);
+	exports.push([module.id, "@font-face {\n  font-family: 'roboto';\n  src: url(" + __webpack_require__(306) + ");\n  src: url(" + __webpack_require__(306) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(307) + ") format(\"woff\"), url(" + __webpack_require__(308) + ") format(\"truetype\"), url(" + __webpack_require__(309) + "#robotomedium) format(\"svg\");\n  font-weight: bold;\n  font-style: normal; }\n\n@font-face {\n  font-family: 'roboto';\n  src: url(" + __webpack_require__(310) + ");\n  src: url(" + __webpack_require__(310) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(311) + ") format(\"woff\"), url(" + __webpack_require__(312) + ") format(\"truetype\"), url(" + __webpack_require__(313) + "#robotolight) format(\"svg\");\n  font-weight: normal;\n  font-style: normal; }\n\nhtml {\n  box-sizing: border-box;\n  font-size: 14px;\n  overflow: hidden; }\n\nhtml, body, #app {\n  width: 100%;\n  height: 100%; }\n\n*, *:before, *:after {\n  box-sizing: inherit;\n  margin: 0;\n  padding: 0;\n  outline: 0;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  font-family: roboto;\n  font-weight: normal; }\n\nul {\n  list-style: none; }\n\na {\n  color: inherit;\n  text-decoration: none; }\n\n.layout__OS {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  width: 100%;\n  height: 100%;\n  overflow: hidden; }\n\n.layout__overlay {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  z-index: 2000; }\n\n.layout__desktop {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  width: 100%;\n  height: 100%;\n  background: #f2f2f2; }\n\n.layout__desktop-header {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-flex: 0;\n  -webkit-flex: 0 0 2.4rem;\n      -ms-flex: 0 0 2.4rem;\n          flex: 0 0 2.4rem; }\n\n.layout__desktop-main {\n  position: relative;\n  height: calc(100% - 2.4rem); }\n\n.desktop {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-flex-wrap: wrap;\n      -ms-flex-wrap: wrap;\n          flex-wrap: wrap;\n  -webkit-box-align: start;\n  -webkit-align-items: flex-start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  -webkit-box-pack: start;\n  -webkit-justify-content: flex-start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  -webkit-align-content: flex-start;\n      -ms-flex-line-pack: start;\n          align-content: flex-start;\n  width: 100%;\n  height: 100%;\n  padding: 1rem;\n  background-image: url(" + __webpack_require__(314) + ");\n  background-size: auto 100%;\n  background-repeat: no-repeat;\n  background-position: center center; }\n\n.menu {\n  position: relative;\n  z-index: 1000;\n  height: 100%;\n  width: 100%;\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  background: #414141;\n  color: white;\n  box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.2); }\n\n.menu__list {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: start;\n  -webkit-justify-content: flex-start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  -webkit-box-flex: 1;\n  -webkit-flex-grow: 1;\n      -ms-flex-positive: 1;\n          flex-grow: 1; }\n\n.menu__list-item {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  position: relative;\n  padding: 0 1rem;\n  font-size: 1rem;\n  line-height: 2.4rem;\n  cursor: default; }\n\n.menu__list-item:hover .dropdown {\n  display: block; }\n\n.menu__search {\n  position: relative;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  width: 22rem;\n  height: 2.4rem;\n  background: #787878;\n  color: white; }\n\n.menu__searchbar {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1 1;\n      -ms-flex: 1 1;\n          flex: 1 1;\n  padding: 0 1rem;\n  font-size: 1rem;\n  line-height: 1rem;\n  background: #787878;\n  color: white;\n  -webkit-appearance: none;\n  border: none; }\n\n.menu__searchbar::-webkit-input-placeholder {\n  color: white; }\n\n.menu__searchbar::-moz-placeholder {\n  color: white; }\n\n.menu__searchbar:-ms-input-placeholder {\n  color: white; }\n\n.menu__searchbar::placeholder {\n  color: white; }\n\n.menu__search-icon {\n  height: 2rem;\n  width: 2rem;\n  padding: 0.5rem; }\n\n.menu__search-dropdown-button {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  width: 2.4rem;\n  height: 100%;\n  background: white;\n  border-left: 1px solid #414141;\n  border-right: 1px solid #414141;\n  color: #414141; }\n\n.menu__search-dropdown-button:hover .dropdown {\n  display: block; }\n\n.menu__search-dropdown-button-arrow {\n  width: 40%;\n  height: 40%; }\n\n.menu__user-container {\n  position: relative;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  margin-left: 3rem;\n  padding: 1rem 1rem 1rem 1rem;\n  font-size: 1rem;\n  line-height: 1rem; }\n\n.menu__user-container:hover .dropdown {\n  display: block; }\n\n.menu__user-notice {\n  padding-right: 1rem;\n  color: #f2f2f2; }\n\n.dropdown {\n  display: none;\n  position: absolute;\n  min-width: 100%;\n  z-index: 900;\n  left: 0;\n  top: 2.4rem;\n  padding: 0.5rem 0;\n  background: white;\n  color: #414141;\n  border: 1px solid #414141;\n  border-top: none;\n  font-size: 1rem;\n  line-height: 1rem;\n  box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.2); }\n\n.dropdown__list-item {\n  position: relative;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex; }\n\n.dropdown__text {\n  display: block;\n  padding: 0.5rem 1rem;\n  width: 100%;\n  height: 100%; }\n\n.dropdown__text-type-small {\n  padding-left: 2rem;\n  font-size: 1rem;\n  color: rgba(120, 120, 120, 0.5); }\n\n.dropdown__text:hover {\n  background: #414141;\n  color: white;\n  cursor: default; }\n\n.dropdown__hr {\n  height: 0;\n  width: 100%;\n  margin: 0.5rem 0;\n  border: none;\n  border-bottom: 1px solid #414141; }\n\n.item {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 7rem;\n  padding: 1rem; }\n\n.item__image {\n  width: 3.5rem;\n  height: 3.5rem;\n  margin-bottom: 0.5rem; }\n\n.item__text {\n  display: block;\n  padding: 0.1rem 0.6rem;\n  max-width: 100%;\n  max-height: 2.2rem;\n  border-radius: 5px;\n  font-size: 1rem;\n  line-height: 1.2rem;\n  font-weight: bold;\n  text-align: center;\n  word-break: break-all;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  background: rgba(65, 65, 65, 0.1); }\n\n.listed-item {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  height: 3rem;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 100%;\n  padding: 0.5rem 1rem;\n  border-bottom: 1px dashed #f2f2f2; }\n\n.listed-item:hover {\n  background: #f2f2f2;\n  cursor: pointer; }\n\n.listed-item__image {\n  width: 2rem;\n  height: 2rem; }\n\n.listed-item__name {\n  width: 100%;\n  padding: 0 1rem;\n  word-break: break-all;\n  -webkit-box-flex: 1;\n  -webkit-flex: 1 1;\n      -ms-flex: 1 1;\n          flex: 1 1; }\n\n.login {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 100%;\n  height: 100%;\n  background-size: auto 100%;\n  background-repeat: no-repeat;\n  background-position: center center;\n  background-color: #414141; }\n\n.login__details {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 35rem;\n  padding: 0 2rem 2rem 2rem;\n  background: white;\n  border: 1px solid #414141; }\n\n.login__logo {\n  width: 100%;\n  height: auto;\n  margin: 0 0 1rem 0; }\n\n.login__error {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  width: 100%;\n  margin: 0 0 1rem 0;\n  padding: 1rem;\n  border: 2px solid #cd1f22;\n  color: #cd1f22; }\n\n.login__group {\n  width: 100%;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  margin-bottom: 1rem; }\n\n.login__username {\n  width: 70%;\n  height: 3rem;\n  padding: 1rem;\n  border: none;\n  background: #f2f2f2;\n  font-size: 1rem; }\n\n.login__password {\n  width: 70%;\n  height: 3rem;\n  padding: 1rem;\n  border: none;\n  background: #f2f2f2;\n  font-size: 1rem; }\n\n.login__submit {\n  width: 35%;\n  padding: 1rem;\n  margin-right: 35%;\n  -webkit-align-self: flex-end;\n      -ms-flex-item-align: end;\n          align-self: flex-end;\n  -webkit-appearance: none;\n  cursor: pointer;\n  font-size: 1rem;\n  border: 1px solid #f2f2f2;\n  background: #414141;\n  color: white; }\n\n.login__submit:hover {\n  background: -webkit-linear-gradient(20deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%), #414141;\n  background: linear-gradient(70deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%), #414141;\n  background-size: 400% 400%;\n  -webkit-animation: flash 1.5s ease infinite;\n          animation: flash 1.5s ease infinite; }\n\n@-webkit-keyframes flash {\n  0% {\n    background-position: 100% 50%; }\n  100% {\n    background-position: 0% 50%; } }\n\n@keyframes flash {\n  0% {\n    background-position: 100% 50%; }\n  100% {\n    background-position: 0% 50%; } }\n\n.shutdown {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 100%;\n  height: 100%;\n  padding-top: 3rem;\n  background-size: auto 100%;\n  background-repeat: no-repeat;\n  background-position: center center;\n  background-origin: content-box;\n  background-color: #414141; }\n\n.shutdown__details {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 35rem;\n  padding: 2rem 2rem 2rem 2rem;\n  background: white;\n  border: 1px solid #f2f2f2; }\n\n.off {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: end;\n  -webkit-justify-content: flex-end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 100%;\n  height: 100%;\n  padding: 3rem 3rem 6rem 3rem;\n  background: black; }\n\n.off__reboot {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  width: 10rem;\n  padding: 1rem 6rem;\n  color: white;\n  border: 1px solid rgba(255, 255, 255, 0.1);\n  cursor: pointer; }\n\n.off__reboot:hover {\n  background: -webkit-linear-gradient(20deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%);\n  background: linear-gradient(70deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%);\n  background-size: 400% 400%;\n  -webkit-animation: flash 1.5s ease infinite;\n          animation: flash 1.5s ease infinite; }\n\n@keyframes flash {\n  0% {\n    background-position: 100% 50%; }\n  100% {\n    background-position: 0% 50%; } }\n\n.admin {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 100%;\n  height: 100%;\n  background: black; }\n\n.admin__content {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  padding: 4rem;\n  background: #ffd900; }\n\n.admin__logo {\n  width: 14rem;\n  -webkit-align-self: flex-start;\n      -ms-flex-item-align: start;\n          align-self: flex-start; }\n\n.admin__browser-error {\n  margin: 2rem 0 0 0;\n  padding: 1rem;\n  border: 10px solid red;\n  color: red;\n  font-size: 2rem;\n  font-weight: bold; }\n\n.admin__browser-error-link {\n  text-decoration: underline; }\n\n.admin__description {\n  margin: 2rem 0; }\n\n.admin__header {\n  margin-bottom: 1rem; }\n\n.admin__list {\n  list-style-type: square;\n  list-style-position: inside; }\n\n.admin__button {\n  width: 10rem;\n  height: 4rem;\n  background: black;\n  color: #ffd900;\n  border: 4px solid #ffd900;\n  cursor: pointer; }\n\n.admin__button:hover {\n  background: #ffd900;\n  color: black;\n  border: 4px solid black; }\n\n.window {\n  position: absolute;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  z-index: 500;\n  box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.2);\n  border-radius: 5px;\n  overflow: hidden; }\n\n.window__inner {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  width: 100%;\n  height: 100%;\n  background: white; }\n\n.react-resizable-handle {\n  position: absolute;\n  width: 100px;\n  height: 100px;\n  bottom: 0;\n  right: 0;\n  background: url(\"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pg08IS0tIEdlbmVyYXRvcjogQWRvYmUgRmlyZXdvcmtzIENTNiwgRXhwb3J0IFNWRyBFeHRlbnNpb24gYnkgQWFyb24gQmVhbGwgKGh0dHA6Ly9maXJld29ya3MuYWJlYWxsLmNvbSkgLiBWZXJzaW9uOiAwLjYuMSAgLS0+DTwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DTxzdmcgaWQ9IlVudGl0bGVkLVBhZ2UlMjAxIiB2aWV3Qm94PSIwIDAgNiA2IiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjojZmZmZmZmMDAiIHZlcnNpb249IjEuMSINCXhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbDpzcGFjZT0icHJlc2VydmUiDQl4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjZweCIgaGVpZ2h0PSI2cHgiDT4NCTxnIG9wYWNpdHk9IjAuMzAyIj4NCQk8cGF0aCBkPSJNIDYgNiBMIDAgNiBMIDAgNC4yIEwgNCA0LjIgTCA0LjIgNC4yIEwgNC4yIDAgTCA2IDAgTCA2IDYgTCA2IDYgWiIgZmlsbD0iIzAwMDAwMCIvPg0JPC9nPg08L3N2Zz4=\");\n  background-position: bottom right;\n  padding: 0 5px 5px 0;\n  background-repeat: no-repeat;\n  background-origin: content-box;\n  box-sizing: border-box;\n  cursor: se-resize; }\n\n.window__titlebar {\n  background: #414141; }\n\n.window__titlebar-inner {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding-left: 1rem;\n  height: 2rem; }\n\n.window__titlebar-text {\n  color: white; }\n\n.window__titlebar-close-button {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 2rem;\n  height: 2rem;\n  padding: 0.75rem;\n  cursor: pointer;\n  -webkit-transition: 0.1s ease all;\n  transition: 0.1s ease all; }\n\n.window__titlebar-close-button img {\n  width: 100%;\n  height: 100%; }\n\n.window__titlebar-close-button:hover {\n  padding: 0.5rem; }\n\n.window__content {\n  width: 100%;\n  height: calc(100% - 2rem); }\n\n.window__content-inner {\n  width: 100%;\n  height: 100%;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-flex-wrap: wrap;\n      -ms-flex-wrap: wrap;\n          flex-wrap: wrap;\n  -webkit-align-content: flex-start;\n      -ms-flex-line-pack: start;\n          align-content: flex-start; }\n\n.explorer__menubar {\n  width: 100%;\n  padding: 0 1rem;\n  height: 3rem;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  background: #dadada;\n  border-bottom: 1px solid #414141; }\n\n.explorer__menubar-path {\n  margin-left: 0rem;\n  margin-right: 1rem;\n  width: 22rem;\n  border-radius: 5px;\n  border: none;\n  padding: 0.5rem; }\n\n.explorer__menubar-icon-group {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex; }\n\n.explorer__menubar-icon {\n  width: 1.5rem;\n  height: 1.5rem;\n  padding: 0.25rem;\n  margin-right: 1rem;\n  -webkit-transition: 0.1s ease all;\n  transition: 0.1s ease all; }\n\n.explorer__menubar-icon-img {\n  width: 100%;\n  height: 100%; }\n\n.explorer__menubar-icon:hover {\n  padding: 0rem; }\n\n.explorer__sidebar {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-align: start;\n  -webkit-align-items: flex-start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  width: 12rem;\n  height: calc(100% - 3rem);\n  padding: 1rem;\n  border-right: 1px solid #414141;\n  background: #f2f2f2; }\n\n.explorer__sidebar-text {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding-bottom: 5px;\n  font-weight: bold;\n  padding: 0.25rem; }\n\n.explorer__sidebar-icon {\n  width: 2rem;\n  height: 2rem;\n  margin-right: 1rem; }\n\n.explorer__body {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-flex-wrap: wrap;\n      -ms-flex-wrap: wrap;\n          flex-wrap: wrap;\n  -webkit-box-align: start;\n  -webkit-align-items: flex-start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  -webkit-align-content: flex-start;\n      -ms-flex-line-pack: start;\n          align-content: flex-start;\n  -webkit-box-pack: start;\n  -webkit-justify-content: flex-start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  width: calc(100% - 12rem);\n  height: calc(100% - 3rem);\n  overflow-y: scroll; }\n\n.textfile__menubar {\n  width: 100%;\n  padding: 0 1rem;\n  height: 3rem;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  background: #dadada;\n  border-bottom: 1px solid #414141; }\n\n.textfile__menubar-icon {\n  width: 1.5rem;\n  height: 1.5rem;\n  padding: 0.25rem;\n  margin-right: 1rem;\n  -webkit-transition: 0.1s ease all;\n  transition: 0.1s ease all; }\n\n.textfile__menubar-icon-img {\n  width: 100%;\n  height: 100%; }\n\n.textfile__menubar-icon:hover {\n  padding: 0rem; }\n\n.textfile__body {\n  width: 100%;\n  height: calc(100% - 3rem);\n  padding: 1rem;\n  overflow-y: scroll; }\n\n.pdf__menubar {\n  width: 100%;\n  padding: 0 1rem;\n  height: 3rem;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  background: #dadada;\n  border-bottom: 1px solid #414141; }\n\n.pdf__menubar-icon {\n  width: 1.5rem;\n  height: 1.5rem;\n  padding: 0.25rem;\n  margin-right: 1rem;\n  -webkit-transition: 0.1s ease all;\n  transition: 0.1s ease all; }\n\n.pdf__menubar-icon-img {\n  width: 100%;\n  height: 100%; }\n\n.pdf__menubar-icon:hover {\n  padding: 0rem; }\n\n.pdf__sidebar {\n  height: calc(100% - 3rem);\n  width: 12rem;\n  padding: 2rem;\n  background: #f2f2f2;\n  overflow-y: scroll; }\n\n.pdf__body {\n  width: calc(100% - 12rem);\n  height: calc(100% - 3rem);\n  padding: 2rem;\n  background: #f2f2f2;\n  overflow-y: scroll; }\n\n.pdf__page {\n  width: 100%;\n  margin-bottom: 2rem;\n  box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.2); }\n\n.browser__menubar {\n  position: relative;\n  width: 100%;\n  height: 3rem;\n  background: #dadada;\n  border-bottom: 1px solid #414141; }\n\n.browser__menubar-tabs {\n  position: absolute;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  top: -1.7rem;\n  left: 10rem;\n  max-width: calc(100% - 10rem); }\n\n.browser__menubar-tab {\n  height: 1.7rem;\n  margin: 0 0.1rem;\n  padding: 0.5rem;\n  line-height: 0.7rem;\n  background: #787878;\n  border-radius: 2px 2px 0 0; }\n\n.browser__menubar-tab-active {\n  background: #f2f2f2; }\n\n.browser__menubar-inner {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  width: 100%;\n  height: 100%;\n  padding: 0 1rem; }\n\n.browser__menubar-path-container {\n  width: 100%; }\n\n.browser__menubar-path {\n  margin-left: 0rem;\n  margin-right: 1rem;\n  width: 100%;\n  border-radius: 5px;\n  border: none;\n  padding: 0.5rem; }\n\n.browser__menubar-icon-group {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex; }\n\n.browser__menubar-icon {\n  width: 1.5rem;\n  height: 1.5rem;\n  padding: 0.25rem;\n  margin-right: 1rem;\n  -webkit-transition: 0.1s ease all;\n  transition: 0.1s ease all; }\n\n.browser__menubar-icon-img {\n  width: 100%;\n  height: 100%; }\n\n.browser__menubar-icon:hover {\n  padding: 0rem; }\n\n.browser__body {\n  width: 100%;\n  height: calc(100% - 3rem); }\n\n.browser__iframe {\n  width: 100%;\n  height: 100%;\n  border: none; }\n\n.search__menubar {\n  width: 100%;\n  padding: 0 1rem;\n  height: 3rem;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  background: #dadada;\n  border-bottom: 1px solid #414141; }\n\n.search__menubar-path {\n  margin-left: 0rem;\n  margin-right: 1rem;\n  width: 22rem;\n  border-radius: 5px;\n  border: none;\n  padding: 0.5rem; }\n\n.search__menubar-open-all {\n  padding: 0.5rem;\n  background: #414141;\n  color: white;\n  border: none;\n  cursor: pointer; }\n\n.search__menubar-open-all:hover {\n  background: -webkit-linear-gradient(20deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%), #414141;\n  background: linear-gradient(70deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%), #414141;\n  background-size: 400% 400%;\n  -webkit-animation: flash 1.5s ease infinite;\n          animation: flash 1.5s ease infinite; }\n\n.search__menubar-icon-group {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex; }\n\n.search__menubar-icon {\n  width: 1.5rem;\n  height: 1.5rem;\n  padding: 0.25rem;\n  margin-right: 1rem;\n  -webkit-transition: 0.1s ease all;\n  transition: 0.1s ease all; }\n\n.search__menubar-icon-img {\n  width: 100%;\n  height: 100%; }\n\n.search__menubar-icon:hover {\n  padding: 0rem; }\n\n.search__sidebar {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-align: start;\n  -webkit-align-items: flex-start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  width: 12rem;\n  height: calc(100% - 3rem);\n  padding: 1rem;\n  border-right: 1px solid #414141;\n  background: #f2f2f2; }\n\n.search__sidebar-header {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  padding-bottom: 5px;\n  font-weight: bold; }\n\n.search__sidebar-ul {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  list-style: square inside;\n  padding-bottom: 5px; }\n\n.search__sidebar-li {\n  padding-bottom: 5px; }\n\n.search__sidebar-icon {\n  width: 1.5rem;\n  height: 1.5rem;\n  padding: 0.25rem;\n  margin-right: 1rem; }\n\n.search__no-result {\n  padding: 1rem;\n  color: #787878; }\n\n.search__body {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-flex-wrap: wrap;\n      -ms-flex-wrap: wrap;\n          flex-wrap: wrap;\n  -webkit-box-align: start;\n  -webkit-align-items: flex-start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  -webkit-align-content: flex-start;\n      -ms-flex-line-pack: start;\n          align-content: flex-start;\n  -webkit-box-pack: start;\n  -webkit-justify-content: flex-start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  width: calc(100% - 12rem);\n  height: calc(100% - 3rem);\n  overflow-y: scroll; }\n\n.modal__body {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 100%;\n  height: 100%;\n  padding: 1rem;\n  background: #f2f2f2; }\n\n.modal__content {\n  padding-bottom: 1rem; }\n\n.modal__button {\n  width: 25%;\n  height: 3rem;\n  color: white;\n  background: #414141;\n  border: none;\n  cursor: pointer; }\n\n.modal__button:hover {\n  background: -webkit-linear-gradient(20deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%), #414141;\n  background: linear-gradient(70deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%), #414141;\n  background-size: 400% 400%;\n  -webkit-animation: flash 1.5s ease infinite;\n          animation: flash 1.5s ease infinite; }\n\n@keyframes flash {\n  0% {\n    background-position: 100% 50%; }\n  100% {\n    background-position: 0% 50%; } }\n", ""]);
 
 	// exports
 
