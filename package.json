@@ -8,7 +8,7 @@
     "dev": "webpack-dev-server --host 0.0.0.0 --hot --progress --colors --content-base build",
     "build": "NODE_ENV=production webpack",
     "deploy": "NODE_ENV=production webpack && sh deploy.sh",
-    "data": "sh generate.sh && node serialize.js"
+    "data": "node src-data/fakeData.js"
   },
   "repository": {
     "type": "git",
