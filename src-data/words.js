@@ -136,7 +136,6 @@ var words = [
   "ICT",
   "applicatie",
   "gebouwd",
-  "door",
   "UNODC",
   "Infobox",
   "Crimineel",
