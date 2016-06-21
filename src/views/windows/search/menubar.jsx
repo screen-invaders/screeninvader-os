@@ -4,8 +4,10 @@ import { window__open } from '../../../actions/windows/window.js';
 
 class Menubar extends React.Component{
   activateAll(items){
-    items.forEach((item)=>{
-      this.props.dispatch(window__open(item.type, item));
+    items.forEach((item, key)=>{
+      if (key < 20){
+        this.props.dispatch(window__open(item.type, item));
+      }
     })
   }
   render() {
