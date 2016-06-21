@@ -23,7 +23,7 @@ export default function search(state, action) {
         let result = [];
         for (var item in folder) {
           if (folder.hasOwnProperty(item)) {
-            if (result.length > 150){
+            if (result.length > 50){
               break;
             }
             if (folder[item].name.indexOf(query) != -1){
