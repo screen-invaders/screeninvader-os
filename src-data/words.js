@@ -1,4 +1,32 @@
-var words = [
+var important = [
+  "Investigation",
+  "Investigation",
+  "investigation",
+  "investigation",
+  "BiebaLtd",
+  "biebaLtd",
+  "Bieba",
+  "bieba",
+  "Andrea",
+  "Andrea",
+  "andrea",
+  "andrea",
+  "zwart",
+  "Zwart",
+  "Geld-stromen",
+  "geld-stromen",
+  "In",
+  "in",
+  "nederland", 
+  "Nederland",
+  "zwart geld-stromen in nederland",
+  "zwart geld-stromen in Nederland",
+  "Zwart geld-stromen in Nederland",
+  "Zwart geld-stromen in nederland",
+  "zwart geld stromen in nederland"
+];
+
+var full = [
   "AFM",
   "AMLC",
   "BES",
@@ -27,7 +55,8 @@ var words = [
   "FP",
   "GoAML",
   "iCOV",
-  "ILT/IOD",
+  "ILT",
+  "IOD",
   "Autoriteit",
   "Financiële",
   "Markten",
@@ -145,17 +174,40 @@ var words = [
   "Leefomgeving",
   "Transport",
   "Inlichtingen",
-  "Opsporingsdienst",
-  "Investigation",
-  "Investigation",
-  "investigation",
-  "investigation",
-  "Bibal",
-  "bibal",
-  "Andrea",
-  "Andrea",
-  "andrea",
-  "andrea"
+  "Opsporingsdienst"
 ];
 
-module.exports = words;
+var short = [
+  "AFM",
+  "AMLC",
+  "BES",
+  "BFT",
+  "BOOM",
+  "BVI",
+  "CJIB",
+  "CN",
+  "CTE/PF",
+  "CT",
+  "Infobox",
+  "CWI",
+  "DLR",
+  "DNB",
+  "DWI",
+  "EC",
+  "EMM",
+  "EMPACT",
+  "ESW",
+  "EU",
+  "FAT",
+  "FEC",
+  "FinEC",
+  "FIU",
+  "FIOD",
+  "FP",
+  "GoAML",
+  "iCOV",
+  "ILT",
+  "IOD"
+]
+
+module.exports = {short: short, full: full, important: important};

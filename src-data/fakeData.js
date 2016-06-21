@@ -5,14 +5,14 @@ var finalDirectory = require('./finalDirectory.js');
 
 // Config
 var config = {
-  depth: 3,
+  depth: 4,
   dirs: {
-    min: 4,
-    max: 10
+    min: 7,
+    max: 13
   },
   files: {
-    min: 3,
-    max: 10
+    min: 7,
+    max: 13
   },
   words: words,
   finalDirectory: {
@@ -22,22 +22,32 @@ var config = {
 }
 
 // Generate random directory
-function newDirectory(path, config){
-  var dirName = faker.random.arrayElement(config.words) + "_" + faker.random.arrayElement(config.words);
+function newDirectory(path, depth, config){
+  if (depth == 1){
+    var words = config.words.short;
+    var dirName = faker.random.arrayElement(words);
+  } else if (depth == 2){
+    var words = config.words.full;
+    var dirName = faker.random.arrayElement(words) + "_" + faker.random.arrayElement(words);
+  } else {
+    var words = config.words.full.concat(config.words.important);
+    var dirName = faker.random.arrayElement(words) + "_" + faker.random.arrayElement(words);
+  }
+
   newPath = JSON.parse(JSON.stringify(path));
   newPath.push(dirName);
   return {
     path: newPath,
     name: dirName,
     type: "dir",
-    dirType: faker.random.arrayElement(['locked', 'archive', 'normal'])
+    dirType: faker.random.arrayElement(['locked', 'archive', 'normal', 'normal', 'normal'])
   }
 }
 
 // Generate random file
 function newFile(path, config){
   var type = faker.random.arrayElement(['txt', 'txt', 'pdf', 'csv']);
-  var fileName = faker.random.arrayElement(config.words) + "_" + faker.random.arrayElement(config.words) + "." + type;
+  var fileName = faker.random.arrayElement(config.words.full) + "_" + faker.random.arrayElement(config.words.full) + "." + type;
   newPath = JSON.parse(JSON.stringify(path));
   newPath.push(fileName);
   return {
@@ -50,7 +60,7 @@ function newFile(path, config){
 
 // Generate tree
 function directoryTree(path, depth, config){
-  var directory = newDirectory(path, config);
+  var directory = newDirectory(path, depth, config);
 
   if (depth == 0){
     directory.name = "root",
@@ -65,8 +75,7 @@ function directoryTree(path, depth, config){
   // Return Final Directory and stop generation
   if ((config.finalDirectory.isSet === true) && (depth === config.depth)){
     directory.children = finalDirectory(directory.path);
-  } 
-  else {
+  } else {
     // Generate
     // Generate subdirectories
     var amount = faker.random.number({min: config.dirs.min, max: config.dirs.max});

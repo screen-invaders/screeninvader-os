@@ -1,6 +1,6 @@
 var filenames = [
   { 
-    name: "Investigation_Bibal", 
+    name: "Investigation_BiebaLtd", 
     type: "pdf",
     date: "1975-05-20T01:23:22.774Z"
   },

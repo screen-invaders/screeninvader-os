@@ -22,6 +22,10 @@
     // Window Types
 
     if (type == "modal"){
+      this.viewPos = {
+        x: (options.offset && options.offset.x) || ((window.innerWidth / 2) - 200),
+        y: (options.offset && options.offset.x) || ((window.innerHeight / 2) - 100)
+      };
       this.data = {
         content: options.content,
         submitText: options.submitText,
