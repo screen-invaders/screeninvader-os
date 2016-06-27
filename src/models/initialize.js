@@ -5,7 +5,7 @@ let initialState = {
   user: {
     name: "IvMourik",
     displayName: "I. van Mourik",
-    password: "1984"
+    password: "250571"
   },
   overlay: {
     type: "admin",

@@ -51,12 +51,12 @@ class Admin extends React.Component{
               <p>Dit intranet kan:</p>
               <ul className="admin__list">
                 <li>Opstarten/Afsluiten: De app kan opstarten en afsluiten met een kort effect</li>
-                <li>Inloggen: Het wachtwoord is "1984". Na 5x fout inloggen wordt er automatisch ingelogd. </li>
+                <li>Inloggen: Het wachtwoord is "250571". Na 5x fout inloggen wordt er automatisch ingelogd. </li>
                 <li>Desktop en Windowmanager: Openen en slepen van mappen en vensters</li>
                 <li>Explorer: Twee weergave mogelijkheden (lijst/iconen) en verkenning bestandsysteem (4x diep is overal hetzelfde)</li>
                 <li>Browser: Standaard ingesteld op Chamber of Commerce Malta</li>
                 <li>Zoeken: Zoekfunctionaliteiten waarbij veel vensters opengaan </li>
-                <li>PDF-lezer: Weergave van PDF documenten (Ingesteld op Investigation Bibal)</li>
+                <li>PDF-lezer: Weergave van PDF documenten (Ingesteld op Investigation Bieba)</li>
               </ul>
             </div>
             <div className="admin__button-container">

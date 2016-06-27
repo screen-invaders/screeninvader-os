@@ -12,7 +12,7 @@ var config = {
   },
   files: {
     min: 10,
-    max: 20
+    max: 15
   },
   words: words,
   finalDirectory: {
@@ -33,7 +33,7 @@ function newDirectory(path, depth, config){
     var words = config.words.full;
     var dirName = faker.random.arrayElement(words) + "_" + faker.random.arrayElement(words);
   } else {
-    var words = config.words.full.concat(config.words.important);
+    var words = config.words.compact.concat(config.words.important);
     var dirName = faker.random.arrayElement(words) + "_" + faker.random.arrayElement(words);
   }
 
@@ -48,9 +48,16 @@ function newDirectory(path, depth, config){
 }
 
 // Generate random file
-function newFile(path, config){
-  var type = faker.random.arrayElement(['txt', 'txt', 'pdf', 'csv']);
-  var fileName = faker.random.arrayElement(config.words.full) + "_" + faker.random.arrayElement(config.words.full) + "." + type;
+function newFile(path, depth, config){
+  if (depth >= 2){
+    var words = config.words.full.concat(["bieba", "Bieba", "biebaLtd", "BiebaLtd"]);
+    var dirName = faker.random.arrayElement(words);
+  } else {
+    var words = config.words.full;
+    var dirName = faker.random.arrayElement(words) + "_" + faker.random.arrayElement(words);
+  }
+  var type = faker.random.arrayElement(['txt', 'txt', 'txt','pdf', 'csv', 'csv']);
+  var fileName = faker.random.arrayElement(words) + "_" + faker.random.arrayElement(words) + "." + type;
   newPath = JSON.parse(JSON.stringify(path));
   newPath.push(fileName);
   return {
@@ -88,7 +95,7 @@ function directoryTree(path, depth, config){
     } else if (depth === config.depth - 1) {
       var amount = faker.random.number({min: 1, max: 1});
     } else {
-      var amount = faker.random.number({min: 2, max: 4});
+      var amount = faker.random.number({min: 2, max: 5});
     }
     if (depth <= config.depth){
       for (var i = 0; i < amount; i++){
@@ -100,7 +107,7 @@ function directoryTree(path, depth, config){
     // Add some file objects
     var amount = faker.random.number({min: config.files.min, max: config.files.max});
     for (var i = 0; i < amount; i++){
-      var randomFile = newFile(directory.path, config);
+      var randomFile = newFile(directory.path, depth, config);
       directory.children[randomFile.name] = randomFile;
     }
   }
