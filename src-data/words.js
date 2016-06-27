@@ -1,29 +1,24 @@
 var important = [
   "Investigation",
-  "Investigation",
-  "investigation",
   "investigation",
   "BiebaLtd",
   "biebaLtd",
   "Bieba",
   "bieba",
   "Andrea",
-  "Andrea",
   "andrea",
-  "andrea",
-  "zwart",
   "Zwart",
-  "Geld-stromen",
-  "geld-stromen",
+  "zwart",
+  "Geldstromen",
+  "geldstromen",
   "In",
   "in",
-  "nederland", 
   "Nederland",
-  "zwart geld-stromen in nederland",
-  "zwart geld-stromen in Nederland",
-  "Zwart geld-stromen in Nederland",
-  "Zwart geld-stromen in nederland",
-  "zwart geld stromen in nederland"
+  "nederland", 
+  "Zwart geldstromen in Nederland",
+  "Zwart geldstromen in nederland",
+  "zwart geldstromen in Nederland",
+  "zwart geldstromen in nederland"
 ];
 
 var full = [
