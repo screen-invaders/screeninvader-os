@@ -5,14 +5,14 @@ var finalDirectory = require('./finalDirectory.js');
 
 // Config
 var config = {
-  depth: 4,
+  depth: 7,
   dirs: {
-    min: 7,
-    max: 13
+    min: 8,
+    max: 8
   },
   files: {
-    min: 7,
-    max: 13
+    min: 10,
+    max: 20
   },
   words: words,
   finalDirectory: {
@@ -27,6 +27,9 @@ function newDirectory(path, depth, config){
     var words = config.words.short;
     var dirName = faker.random.arrayElement(words);
   } else if (depth == 2){
+    var words = config.words.full;
+    var dirName = faker.random.arrayElement(words) + "_" + faker.random.arrayElement(words);
+  } else if (depth >= config.depth - 1){
     var words = config.words.full;
     var dirName = faker.random.arrayElement(words) + "_" + faker.random.arrayElement(words);
   } else {
@@ -78,7 +81,15 @@ function directoryTree(path, depth, config){
   } else {
     // Generate
     // Generate subdirectories
-    var amount = faker.random.number({min: config.dirs.min, max: config.dirs.max});
+    if (depth == 0){
+      var amount = faker.random.number({min: config.dirs.min, max: config.dirs.max});
+    } else if (depth === 1) {
+      var amount = faker.random.number({min: 1, max: 1});
+    } else if (depth === config.depth - 1) {
+      var amount = faker.random.number({min: 1, max: 1});
+    } else {
+      var amount = faker.random.number({min: 2, max: 4});
+    }
     if (depth <= config.depth){
       for (var i = 0; i < amount; i++){
         var childDirectory = directoryTree(directory.path, depth + 1, config);

@@ -5,7 +5,7 @@ var filenames = [
     date: "1975-05-20T01:23:22.774Z"
   },
   { 
-    name: "Malta_Chamber_of_Commerce", 
+    name: "notities", 
     type: "txt",
     date: "1988-05-20T01:23:22.774Z"
   },

@@ -1,11 +1,7 @@
 var important = [
-  "Investigation",
-  "investigation",
-  "BiebaLtd",
-  "biebaLtd",
-  "Bieba",
-  "bieba",
   "Andrea",
+  "Andrea",
+  "andrea",
   "andrea",
   "Zwart",
   "zwart",
