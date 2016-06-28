@@ -111,3 +111,8 @@
   height: calc(100% - 3rem);
   overflow-y: scroll;
 }
+
+.search__body .item__text {
+  color: black;
+  text-shadow: none;
+}
