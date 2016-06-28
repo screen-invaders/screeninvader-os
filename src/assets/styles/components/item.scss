@@ -21,6 +21,7 @@
 
   border-radius: 5px;
 
+  color: white;
   font-size: 1rem;
   line-height: 1.2rem;
   font-weight: bold;
@@ -31,7 +32,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 
-  background: rgba($dark, 0.1);
+  text-shadow: 1px 1px 6px rgb(50,50,50);
 }
 
 .listed-item {

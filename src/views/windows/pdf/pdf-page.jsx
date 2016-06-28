@@ -16,8 +16,12 @@ class PdfPage extends React.Component{
       };
       page.render(renderContext);
     });
+    console.log(page);
     return (
-      <canvas ref="pdfCanvas" className="pdf__page"/>
+      <div className="pdf__page-container">
+        <canvas className="pdf__page" ref="pdfCanvas"/>
+        <p className="pdf__pagenum" style={{display: "none"}}>{page.pageIndex + 137}</p>
+      </div>
     )
   }
 }

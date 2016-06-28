@@ -2,13 +2,18 @@
 
 .pdf__menubar {
   width: 100%;
-  padding: 0 1rem;
+  padding: 0 1rem 0 3rem;
   height: 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: $medium;
   border-bottom: 1px solid $dark;
+}
+
+.pdf__menubar-icon-group {
+  display: flex;
+  align-items: center;
 }
 
 .pdf__menubar-icon {
@@ -28,6 +33,15 @@
   padding: 0rem;
 }
 
+.pdf__menubar-path {
+  margin-left: 0rem;
+  margin-right: 1rem;
+  width: 22rem;
+  border: none;
+  padding: 0.5rem;
+}
+
+
 // Sidebar
 
 .pdf__sidebar {
@@ -36,6 +50,10 @@
   padding: 2rem;
   background: $light;
   overflow-y: scroll;
+}
+
+.pdf__sidebar .pdf__pagenum {
+  display: block !important; 
 }
 
 // Body
@@ -48,8 +66,20 @@
   overflow-y: scroll;
 }
 
-.pdf__page {
+// PDF Renderer
+
+.pdf__page-container {
   width: 100%;
   margin-bottom: 2rem;
+}
+
+.pdf__page {
+  width: 100%;
   box-shadow: 0px 0px 30px 5px rgba($night, 0.2);
+}
+
+.pdf__pagenum {
+  padding-top: 0.25rem;
+  display: block;
+  text-align: center;
 }
