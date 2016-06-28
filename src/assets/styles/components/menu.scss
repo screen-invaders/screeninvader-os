@@ -39,7 +39,7 @@
   justify-content: space-between;
   width: 22rem;
   height: 2.4rem;
-  background: $heavy;
+  background: $grayer;
   color: white;
 }
 
@@ -49,7 +49,7 @@
   padding: 0 1rem;
   font-size: 1rem; 
   line-height: 1rem; 
-  background: $heavy;
+  background: $grayer;
   color: white;
   -webkit-appearance: none;
   border: none;
@@ -71,7 +71,7 @@
   justify-content: center;
   width: 2.4rem;
   height: 100%;
-  background: $day;
+  background: $lightest;
   border-left: 1px solid $dark;
   border-right: 1px solid $dark;
   color: $dark;

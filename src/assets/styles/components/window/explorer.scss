@@ -79,3 +79,8 @@
   height: calc(100% - 3rem);
   overflow-y: scroll;
 }
+
+.explorer__body .item__text {
+  color: black;
+  text-shadow: none;
+}

@@ -5,10 +5,10 @@ import { window__open } from '../../actions/windows/window.js';
 
 import imgFolder from '../../assets/images/icons-berries/folder_closed.png'
 import imgFolderArchive from '../../assets/images/icons-berries/files_closed.png'
-import imgFolderLocked from '../../assets/images/icons-berries/lock_closed_blue.png'
+import imgFolderLocked from '../../assets/images/icons-berries/safe_closed.png'
 import imgTXT from '../../assets/images/icons-berries/note_write.png'
-import imgPDF from '../../assets/images/icons-berries/note_search.png'
-import imgSpreadsheet from '../../assets/images/icons-berries/calculator.png'
+import imgPDF from '../../assets/images/icons-berries/pdf-icon.png'
+import imgSpreadsheet from '../../assets/images/icons-berries/chart.png'
 
 class ListedItem extends React.Component{
   openItem(){
