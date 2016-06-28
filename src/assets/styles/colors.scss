@@ -5,10 +5,10 @@ $darkblue: rgba(16, 83, 121, 1);
 $red: rgba(205, 31, 34, 1);
 
 $white: rgba(255, 255, 255, 1);
-$lightgray: rgba(242, 242, 242, 1);
-$gray: rgba(218, 218, 218, 1);
-$heavygray: rgba(120, 120, 120, 1);
-$darkgray: rgba(65, 65, 65, 1);
+$lightgray: rgba(200, 200, 200, 1);
+$gray: rgba(120, 120, 120, 1);
+$heavygray: rgba(75, 75, 75, 1);
+$darkgray: rgba(39, 39, 39, 1);
 $black: rgba(0, 0, 0, 1);
 $black-hover: rgba(0,0,0,0.9);
 
@@ -26,9 +26,9 @@ $tertiary: $lightblue;
 
 $complementary: $red;
 
-$night: $black;
+$day: $white;
 $light: $lightgray;
 $medium: $gray;
 $heavy: $heavygray;
 $dark: $darkgray;
-$day: $white;
+$night: $black;
