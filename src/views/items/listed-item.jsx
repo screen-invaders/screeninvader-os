@@ -3,12 +3,12 @@ import React from 'react';
 import { explorer__moveDown } from '../../actions/windows/explorer.js';
 import { window__open } from '../../actions/windows/window.js';
 
-import imgFolder from '../../assets/images/icons-aes/png/128x128/folder.png'
-import imgFolderArchive from '../../assets/images/icons-aes/png/128x128/archive.png'
-import imgFolderLocked from '../../assets/images/icons-aes/png/128x128/lock.png'
-import imgTXT from '../../assets/images/icons-aes/png/128x128/note_edit.png'
-import imgPDF from '../../assets/images/icons-aes/png/128x128/pdf.png'
-import imgSpreadsheet from '../../assets/images/icons-aes/png/128x128/chart.png'
+import imgFolder from '../../assets/images/icons-berries/folder_closed.png'
+import imgFolderArchive from '../../assets/images/icons-berries/files_closed.png'
+import imgFolderLocked from '../../assets/images/icons-berries/lock_closed_blue.png'
+import imgTXT from '../../assets/images/icons-berries/note_write.png'
+import imgPDF from '../../assets/images/icons-berries/note_search.png'
+import imgSpreadsheet from '../../assets/images/icons-berries/calculator.png'
 
 class ListedItem extends React.Component{
   openItem(){

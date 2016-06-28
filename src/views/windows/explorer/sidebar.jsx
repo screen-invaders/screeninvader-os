@@ -1,12 +1,12 @@
 import React from 'react';
 import Draggable, {DraggableCore} from 'react-draggable';
 
-import iconDesktop from '../../../assets/images/icons-aes/png/128x128/home.png'
-import iconDocumenten from '../../../assets/images/icons-aes/png/128x128/note_edit.png'
-import iconAfbeeldingen from '../../../assets/images/icons-aes/png/128x128/image.png'
-import iconSpreadsheets from '../../../assets/images/icons-aes/png/128x128/chart.png'
-import iconDatabases from '../../../assets/images/icons-aes/png/128x128/database.png'
-import iconBeveiligd from '../../../assets/images/icons-aes/png/128x128/lock.png'
+import iconDesktop from '../../../assets/images/icons-berries/home.png'
+import iconDocumenten from '../../../assets/images/icons-berries/note_write.png'
+import iconAfbeeldingen from '../../../assets/images/icons-berries/pictures.png'
+import iconSpreadsheets from '../../../assets/images/icons-berries/calculator.png'
+import iconDatabases from '../../../assets/images/icons-berries/safe_closed.png'
+import iconBeveiligd from '../../../assets/images/icons-berries/lock_open_blue.png'
 
 class Sidebar extends React.Component{
   render() {
