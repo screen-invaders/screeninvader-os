@@ -26,7 +26,9 @@ export default function search(state, action) {
             if (result.length > 150){
               break;
             }
-            if (folder[item].name.indexOf(query) != -1){
+            if (folder[item].tag && folder[item].tag.indexOf(query) != -1){
+              result.push(folder[item]);
+            } else if (folder[item].name.indexOf(query) != -1){
               result.push(folder[item]);
             }
             if (folder[item].children) {

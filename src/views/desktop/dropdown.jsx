@@ -1,20 +1,22 @@
 import React from 'react';
 
 import { window__open } from '../../actions/windows/window.js';
-import { overlay__change } from '../../actions/overlay.js';
+import { overlay__change, overlay__fullscreen } from '../../actions/overlay.js';
 import { login__logout } from '../../actions/login.js';
 
 class Dropdown extends React.Component{
   handleClick(subItem){
     let { dispatch } = this.props;
     if (subItem.action){
-      if (subItem.action.type == "overlay__change"){
+      if (subItem.action.type == "overlay__fullscreen"){
+        dispatch(overlay__fullscreen());
+      } else if (subItem.action.type == "overlay__change"){
         if (subItem.action.overlay == "login"){
-          dispatch(login__logout(subItem.action.overlay))
+          dispatch(login__logout(subItem.action.overlay));
         }
-        dispatch(overlay__change(subItem.action.overlay))
+        dispatch(overlay__change(subItem.action.overlay));
       } else if (subItem.action.type == "window__open") {
-        dispatch(window__open(subItem.action.window, {content: subItem.action.content, submitText: subItem.action.submitText}))
+        dispatch(window__open(subItem.action.window, {content: subItem.action.content, submitText: subItem.action.submitText}));
       }
     }
   }

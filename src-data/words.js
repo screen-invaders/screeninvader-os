@@ -7,14 +7,16 @@ var important = [
   "zwart",
   "Geldstromen",
   "geldstromen",
+  "Zwartgeldstromen",
+  "zwartgeldstromen",
   "In",
   "in",
   "Nederland",
   "nederland", 
-  "Zwart geldstromen in Nederland",
-  "Zwart geldstromen in nederland",
-  "zwart geldstromen in Nederland",
-  "zwart geldstromen in nederland"
+  "Zwartgeldstromen in Nederland",
+  "Zwartgeldstromen in nederland",
+  "zwartgeldstromen in Nederland",
+  "zwartgeldstromen in nederland"
 ];
 
 var full = [
@@ -54,7 +56,7 @@ var full = [
   "Anti",
   "Money",
   "Laundering",
-  "Centre,",
+  "Centre",
   "onderdeel",
   "FIOD",
   "Administratieve",

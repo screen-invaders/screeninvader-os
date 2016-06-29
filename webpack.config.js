@@ -19,7 +19,7 @@ var config = {
       { test: /\.md$/, loader: 'raw' },
       { test: /\.yml$/, loader: 'json!yaml' },
       { test: /\.scss$/, loader: 'style-loader!css-loader!postcss-loader!sass' },
-      { test: /\.(pdf|png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
+      { test: /\.(pdf|png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=200000' }
     ]
   },
   plugins: [

@@ -16,7 +16,6 @@ class PdfPage extends React.Component{
       };
       page.render(renderContext);
     });
-    console.log(page);
     return (
       <div className="pdf__page-container">
         <canvas className="pdf__page" ref="pdfCanvas"/>

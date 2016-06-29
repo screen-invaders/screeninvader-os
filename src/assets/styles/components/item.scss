@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   width: 7rem;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .item__image {
@@ -17,7 +17,7 @@
   display: block;
   padding: 0.1rem 0.6rem;
   max-width: 100%;
-  max-height: 2.2rem;
+  height: 2.4rem;
 
   border-radius: 5px;
 
@@ -28,9 +28,7 @@
   text-align: center;
 
   word-break: break-all; 
-  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
 
   text-shadow: 1px 1px 6px rgb(50,50,50);
 }

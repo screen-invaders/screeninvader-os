@@ -12,6 +12,10 @@ menu:
         submitAction: window__close
     - type: hr
     - name: Configuratiescherm
+    - type: normal
+      name: Beeldscherm
+      action:
+        type: overlay__fullscreen
     - type: hr
     - type: normal
       name: Uitloggen

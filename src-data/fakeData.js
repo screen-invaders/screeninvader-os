@@ -33,8 +33,9 @@ function newDirectory(path, depth, config){
     var words = config.words.full;
     var dirName = faker.random.arrayElement(words) + "_" + faker.random.arrayElement(words);
   } else {
-    var words = config.words.compact.concat(config.words.important);
+    var words = config.words.full;
     var dirName = faker.random.arrayElement(words) + "_" + faker.random.arrayElement(words);
+    var tag = faker.random.arrayElement(config.words.important);
   }
 
   newPath = JSON.parse(JSON.stringify(path));
@@ -43,6 +44,7 @@ function newDirectory(path, depth, config){
     path: newPath,
     name: dirName,
     type: "dir",
+    tag: tag,
     dirType: faker.random.arrayElement(['locked', 'archive', 'normal', 'normal', 'normal'])
   }
 }

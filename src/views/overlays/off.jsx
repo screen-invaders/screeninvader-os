@@ -23,7 +23,6 @@ class Shutdown extends React.Component{
 
   render() {
     let {state, dispatch} = this.props;
-    console.log(this.state.onButton)
 		return (
       <div className="layout__overlay">
   			<div className="off">

@@ -14,7 +14,7 @@ class Menubar extends React.Component{
     let {windowData} = this.props;
     return (
       <div className="search__menubar">
-        <p>Zoekopdracht: {windowData.data.query}</p>
+        <p>{windowData.data.query} komt voor in de volgende mappen:</p>
         <button className ="search__menubar-open-all" onClick={this.activateAll.bind(this, windowData.data.searchResult)}>Open alle</button>
       </div>
     )
